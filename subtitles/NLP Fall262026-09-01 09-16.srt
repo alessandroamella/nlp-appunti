@@ -1,0 +1,3265 @@
+1
+00:00:01,630 --> 00:00:06,110
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Og hvis man ikke. Gør det.
+
+2
+00:00:10,230 --> 00:00:17,830
+Tror jeg det er dejligt at være. Sammen med sin kæreste og.
+
+3
+00:00:22,590 --> 00:00:34,030
+Jeg ved godt, at det kan jeg. Ikke se nogen grund til.
+
+4
+00:00:34,910 --> 00:00:44,470
+Så nu må du prøve at vise dig vejen, for så bliver der plads til alle, der har været i kontakt.
+
+5
+00:00:47,310 --> 00:00:57,590
+Med os. Og så. Er det bare.
+
+6
+00:01:02,330 --> 00:01:11,010
+Her snakker vi om at komme i gang med at sidde og læse og skrive, og det vil sige, at det.
+
+7
+00:01:34,290 --> 00:01:38,690
+Bliver. Spændende at.
+
+8
+00:01:44,010 --> 00:01:51,650
+Se. Men jeg er spændt på at se det.
+
+9
+00:01:55,010 --> 00:02:14,760
+Fordi jeg For. Mig har det været en dejlig sommer.
+
+10
+00:02:15,520 --> 00:58:59,650
+Jeg synes det. Okay that start.
+
+11
+00:59:00,570 --> 00:59:07,730
+Okay, så just before the break we discovered about the future of metrics and how we can computer great.
+
+12
+00:59:08,090 --> 00:59:16,170
+So just again just going to this back of our matrix is basically each is a dark.
+
+13
+00:59:17,050 --> 00:59:25,530
+Each colour is a right and how you come out of what if Matrix is that you actually computtive for itself,
+
+14
+00:59:26,090 --> 00:59:31,150
+which is basically you complete for each document.
+
+15
+00:59:31,670 --> 00:59:35,230
+You see how many times each other peers and then you computer one inverse
+
+16
+00:59:35,630 --> 00:59:41,990
+argument frequently for the world W which is computer korpusset of documents,
+
+17
+00:59:42,910 --> 00:59:48,270
+and then you just multiple to terms and you get your matrix. Okay, so.
+
+18
+00:59:50,830 --> 00:59:54,510
+What we are talking about post processing that we can do on the top of back of our matrix.
+
+19
+00:59:54,990 --> 01:00:00,030
+So that we can actually have a better feature representation, so we all talk about one post processing,
+
+20
+01:00:00,470 --> 01:00:06,830
+which is computing like taking the accounts and changing it to the future of representation, which has its own.
+
+21
+01:00:06,990 --> 01:00:11,550
+I want. IT is also discused what other aspect that can also be done.
+
+22
+01:00:11,790 --> 01:00:17,390
+Great think about randomalisation and that's what do you mean by this?
+
+23
+01:00:17,630 --> 01:00:23,230
+And why do we need to do this right? So first, let's think about what do we have a natural?
+
+24
+01:00:23,750 --> 01:00:24,790
+IT is a document rate.
+
+25
+01:00:25,370 --> 01:00:34,330
+so and if you do a standard classical background representation doctor at a longer will have more nonchalance because longer ducks.
+
+26
+01:00:34,570 --> 01:00:44,730
+We have more words and more which means that they would have because each side of this or the end of this is the total number of work in the right,
+
+27
+01:00:45,410 --> 01:00:50,370
+so the documents had a longer will have more words and natural that we will have Robert which
+
+28
+01:00:50,610 --> 01:00:54,890
+means that which which is what we are just leading to write and what can happen now in this
+
+29
+01:00:55,090 --> 01:01:00,730
+case is that this is is a single that we want our machine learning comes to actually capture
+
+30
+01:01:01,370 --> 01:01:06,770
+write what we have and in case is that a longer will just be more from short document,
+
+31
+01:01:07,210 --> 01:01:14,610
+because we have justmore entries. So this is why we need some of what we are in.
+
+32
+01:01:14,970 --> 01:01:26,080
+This is that we can try to actually make sure that we do not distance like we do not create longer different from small great and to do.
+
+33
+01:01:26,280 --> 01:01:28,720
+This is a trick, because now we actually gave you.
+
+34
+01:01:28,800 --> 01:01:34,800
+And what does it main to have move on entries, But then since everything is a vektor going back to how we think of normalization.
+
+35
+01:01:35,520 --> 01:01:41,320
+En klassisk line up and you talk about to come and techniques come to mind your own obligation,
+
+36
+01:01:41,840 --> 01:01:50,800
+and what there is basically en eller to normal additional growth have or you in this one from the one and only one on one on one,
+
+37
+01:01:51,480 --> 01:02:01,920
+and we will see that allows of the entries like to basically each row vector here, which is each document The entry level some to one,
+
+38
+01:02:02,440 --> 01:02:06,760
+and this is how you can anything to a different anything to distribution as well,
+
+39
+01:02:07,480 --> 01:02:17,240
+just to get your individually how it looks like think about a to space light so and what what we do is basically take your actors,
+
+40
+01:02:17,960 --> 01:02:25,840
+which is the original vectoring normaliseret to this field And what are all one and we do is now it?
+
+41
+01:02:26,080 --> 01:02:35,280
+Do this digital time and shape or as you so this is how and actually all 11 normalization
+
+42
+01:02:36,000 --> 01:02:40,320
+looks like if you think about it from you know how if you want to visualiser this into you.
+
+43
+01:02:43,120 --> 01:02:50,720
+Can and you and tell me which is better is that a way to decide what is one and is better to is better, and you will.
+
+44
+01:03:07,800 --> 01:03:11,920
+Come on, you know many things from the lectures that you in the past.
+
+45
+01:03:13,800 --> 01:03:23,780
+Yes, we love them Of course yes with you and Dog, but that's not the one of them when.
+
+46
+01:03:26,420 --> 01:03:33,700
+I think it's all one with that. But that's not that looking for any any ideas.
+
+47
+01:03:36,500 --> 01:03:43,100
+It's very simple and that's not answer. SoMe of.
+
+48
+01:03:46,540 --> 01:03:54,820
+Your style thinking from the aspect that you have to all one is the choices. That's why you have bashing a great give you anything light.
+
+49
+01:03:55,220 --> 01:04:02,740
+I can get you any choices IF you have six choices you and the tools one how to do that you
+
+50
+01:04:03,100 --> 01:04:09,020
+so what exactly think so that so basically it would Ally Depend on what you wanna do with
+
+51
+01:04:09,260 --> 01:04:14,780
+the great you want because it's the best processing step you want to see that in some cases
+
+52
+01:04:15,860 --> 01:04:22,040
+and make better in some of 11 might work with Case is about general machine learning here,
+
+53
+01:04:22,680 --> 01:04:30,360
+because you have actually what what is this? We are actually converting a piece of data into some features,
+
+54
+01:04:31,440 --> 01:04:38,320
+and this is one of represent like doing this feature vector extraction right now you eventually want you ready to machine learning
+
+55
+01:04:38,560 --> 01:04:45,760
+algoritme which well actually do some tasks so eventually what you want to Do you want you to be your accuracy or whatever?
+
+56
+01:04:46,160 --> 01:04:49,640
+How are you measure performance on the dash to be good right?
+
+57
+01:04:50,360 --> 01:04:58,560
+So what you need to do here is to literally see which normalization leads to a better performance depends on How are you doing it?
+
+58
+01:04:58,840 --> 01:05:05,960
+But that if you dont know any information, then what what you can do you know what so that's the that's more or less the high level.
+
+59
+01:05:07,160 --> 01:05:14,920
+Okay, let's talk about Callum and we have looked into ideas killing great ideas killing can be seen as some of kolonisation.
+
+60
+01:05:16,000 --> 01:05:24,030
+Can you on my way again recall that in this representation, documents are rolls and words,
+
+61
+01:05:24,470 --> 01:05:30,790
+Callum and idea of Apple is something to what is compared for it?
+
+62
+01:05:30,990 --> 01:05:36,790
+What to know and you and tell me? Idea of killing week and it is calling be seen as a kolonisation.
+
+63
+01:05:42,710 --> 01:05:48,790
+So what? Let's try to breaking dawn. What is it just kidding? What is it?
+
+64
+01:05:48,950 --> 01:05:52,830
+IF it's basically, that's not the killing? What is what do you do when you come out?
+
+65
+01:05:52,950 --> 01:06:01,590
+And. I will actually not move forward because we just look that what if this is and what
+
+66
+01:06:01,790 --> 01:06:10,830
+you do it on you you computer idea for each Edward is so we so that what is it is?
+
+67
+01:06:12,710 --> 01:06:16,950
+What is what you do it for? Så wait for it covers.
+
+68
+01:06:18,190 --> 01:06:25,910
+Yes no. Idea is done for the covers for one word.
+
+69
+01:06:26,550 --> 01:06:30,990
+You do it you? What what you do? What? What is it idea of is your counting?
+
+70
+01:06:31,630 --> 01:06:42,550
+How many times a word appear in each dokument to know you counting the number of documents in which a great so you basically for each word,
+
+71
+01:06:42,950 --> 01:06:51,830
+you are existing the korpus and your getting one number for dit Word right now what you do when you come.
+
+72
+01:06:51,950 --> 01:07:07,510
+But if you are actually what you know what about collums, which is why I said recall that this book of representation rolls a docs colums.
+
+73
+01:07:10,390 --> 01:07:13,750
+So for each word what a computer and it.
+
+74
+01:07:16,450 --> 01:07:22,050
+What would be? So what what would be here?
+
+75
+01:07:28,250 --> 01:07:31,770
+End of what if you can see og for.
+
+76
+01:07:37,250 --> 01:07:44,850
+Each selv her would be a specific en specifik color right?
+
+77
+01:07:45,570 --> 01:07:51,610
+So what what are you doing? The world is fixed and the calm and what you are doing is your checking.
+
+78
+01:07:52,770 --> 01:07:57,010
+How many times that word appearance dokument light?
+
+79
+01:07:57,570 --> 01:08:02,730
+So what you are doing is for. Edward. You are a single transformation on the hill.
+
+80
+01:08:03,570 --> 01:08:07,530
+Like you are keeping the word constant and you are applied a single transformation that applied to all the documents.
+
+81
+01:08:07,970 --> 01:08:16,640
+So this is how why you say is that when you are doing this, it is calling You are actually apply some of normalization on the column space.
+
+82
+01:08:17,400 --> 01:08:23,400
+When we are now and we look that something How can we actually look at because then what we are doing is very keeping
+
+83
+01:08:23,680 --> 01:08:27,720
+the document fixed and they are different words in the document and we are doing something that representation.
+
+84
+01:08:28,360 --> 01:08:36,720
+Now we are looking for each word and we are trying to see how and we perform an operation that was not impact that we are a level.
+
+85
+01:08:37,280 --> 01:08:40,680
+Okay, so what you can do.
+
+86
+01:08:40,840 --> 01:08:44,000
+Besides this is that the idea fits all you are very to do kolonisation.
+
+87
+01:08:45,280 --> 01:08:49,760
+You can also do some of other normalization that you might have seen in your machine learning
+
+88
+01:08:50,080 --> 01:09:00,000
+class or even in basic algebra or you know analysis one to whatever you back to or 3 years ago,
+
+89
+01:09:01,120 --> 01:09:09,080
+What you can do something like me max killing, which is something as simple as that you look at the minimum value of a specific.
+
+90
+01:09:09,760 --> 01:09:14,180
+What are we look at the maximum value and then you transform it like you change
+
+91
+01:09:14,420 --> 01:09:18,980
+everything so that you think based on minimum minimum minimum maximum values.
+
+92
+01:09:19,700 --> 01:09:25,820
+You can also some of something what we collision, which basically where it's a specific operation.
+
+93
+01:09:26,220 --> 01:09:36,860
+It's collision, but it's also can be as min normalization review of each entry from mind and divided by the by the division.
+
+94
+01:09:37,420 --> 01:09:41,740
+And that's all standardisering. There is a classical operation that a performing machine learning.
+
+95
+01:09:42,020 --> 01:09:45,820
+I see very very. This is not that machine learning class has not an machine learning class so far.
+
+96
+01:09:49,020 --> 01:09:52,860
+Okay. 2. 3 Test How to machine learning class today.
+
+97
+01:09:53,220 --> 01:10:01,300
+Actually ask Casper What did you are as you guys? IF you learned or not what this think not covered in learning class, so we are the long faces.
+
+98
+01:10:09,060 --> 01:10:17,030
+So you can apply this kind of different normalizations, so that so what you can just actually you know.
+
+99
+01:10:17,190 --> 01:10:26,670
+You can also apply this minmaxing and standardisering and do also or what things are all that you can use to perform certain normal again.
+
+100
+01:10:27,150 --> 01:10:36,590
+The same question ask can and you and tell me know how can we decide whether we should do standardisation or max calling or just leave this.
+
+101
+01:10:44,270 --> 01:10:45,510
+Time in the same Read more information.
+
+102
+01:10:45,990 --> 01:10:52,550
+You just have what you have to Do you have to your life on your dust performance and you to see which one works better on your tasks.
+
+103
+01:10:53,510 --> 01:10:59,270
+Okay, quick polling, let's get your hands on this link out.
+
+104
+01:10:59,470 --> 01:11:04,270
+Og if you have a PDF on the slides, click on the link. Let's try to understand what?
+
+105
+01:11:11,280 --> 01:11:38,880
+Basically asking the same question. Okay.
+
+106
+01:11:39,400 --> 01:11:43,320
+Good. Så I think just want to make sure that is being good and without more information.
+
+107
+01:11:43,840 --> 01:11:49,240
+This is the only thing that you can do you have to tell me on your task, you have to do and what you can observe the data science.
+
+108
+01:11:49,680 --> 01:11:54,280
+This way of doing things is that you have your data, and you have some way to measure, what's good and bad?
+
+109
+01:11:54,880 --> 01:11:59,400
+And then you basically use that information to do what strategy is better?
+
+110
+01:12:02,120 --> 01:12:08,460
+Than lets know, which is so what we have doctor about is that we are looking for a different as off on LP,
+
+111
+01:12:08,740 --> 01:12:12,620
+and this is also domain model as well as we doctor about one.
+
+112
+01:12:13,420 --> 01:12:17,100
+The secret source here actually do everything was to come up with a features record representation,
+
+113
+01:12:18,140 --> 01:12:26,420
+which we also a moment which we also defacto as a DF matrix representation and we discourse what kind of transformation?
+
+114
+01:12:29,020 --> 01:12:34,380
+But the important to know is that we will we can actually think of this more
+
+115
+01:12:34,620 --> 01:12:39,020
+classical approaches of repræsenterer extra acting features from text in the world.
+
+116
+01:12:39,620 --> 01:12:49,380
+We actually mostly more off and the not really on neutral networks, and we all of this as a new NLP problem that you can save light,
+
+117
+01:12:49,900 --> 01:12:56,180
+and we look at certain aspects, which is what you true today right? We will take a bit different road to this right.
+
+118
+01:12:56,500 --> 01:13:00,420
+So there 3 important aspects of recovery today and what we see.
+
+119
+01:13:00,740 --> 01:13:04,920
+How do we actually represent seekings of the words into vectors Right?
+
+120
+01:13:05,480 --> 01:13:11,680
+Then we love you know how and we actually use neurale netværk to model and NLP tasks also
+
+121
+01:13:12,120 --> 01:13:15,680
+basically with what it means that how can you come out this representation that we are?
+
+122
+01:13:16,640 --> 01:13:20,800
+How you can actually change your transform this representation to your scene in
+
+123
+01:13:20,960 --> 01:13:25,040
+the avoidance to a high level representation that can be used for your task.
+
+124
+01:13:25,600 --> 01:13:31,440
+And then how can we use this high repræsentations to actually do some meningsfuld predictions,
+
+125
+01:13:32,600 --> 01:13:37,640
+so that thing that we look into a meetings model and production, but we would like to how do we model things?
+
+126
+01:13:37,920 --> 01:13:47,920
+How do we protect things and then we will go back to see? How do we love and beading will just like this slightly kontraintuitive to understanding.
+
+127
+01:13:48,360 --> 01:13:51,120
+What is so? What's not to go back to our again?
+
+128
+01:13:51,800 --> 01:14:00,040
+Certain example tasks and think about what is an NLP model When we think from manual and what if you dont know certain operations,
+
+129
+01:14:00,960 --> 01:14:04,940
+you will also have a practical exercise this week, with you all of this site.
+
+130
+01:14:05,220 --> 01:14:11,020
+How do you actually perform this tasks using Python and photos and actually
+
+131
+01:14:11,380 --> 01:14:15,220
+it to the first things let try to understand a basic task like an analysis.
+
+132
+01:14:15,660 --> 01:14:23,300
+We also already located in the first lecture. When we see is to actually convert sentence descriving a movie review to a sentiment
+
+133
+01:14:23,820 --> 01:14:29,460
+or a restaurant review to actually whether that restaurant is going to or not write.
+
+134
+01:14:30,060 --> 01:14:34,180
+And that's just take the example, It's I really enjoyed the movie.
+
+135
+01:14:34,460 --> 01:14:42,020
+We wasted on it right to the wall of this model is that the model will Ernest the best of text, and it will output it on a place of it.
+
+136
+01:14:42,140 --> 01:14:45,420
+Let's get a very simple task of binary classification what you just want to say.
+
+137
+01:14:45,780 --> 01:14:49,980
+Positive og negative. That's and that's what so what do we do?
+
+138
+01:14:50,340 --> 01:14:53,500
+En neural model og en NLP model,
+
+139
+01:14:53,740 --> 01:15:02,630
+Which is a new NLP model is that we have a way to actually take this space of text and represented as a sequance of
+
+140
+01:15:03,950 --> 01:15:14,870
+records and before what we use to do is that we use to the present this text as when we talk about back of the right,
+
+141
+01:15:15,630 --> 01:15:26,270
+what was that it was repræsenteret as? Yes, but it's about what kind of.
+
+142
+01:15:29,190 --> 01:15:35,030
+Landsholdspause. Gasing or okay?
+
+143
+01:15:35,750 --> 01:15:46,590
+IT is Sparta representation. Why because we were just rally represented by the accounts or a more fancy representation of how many times.
+
+144
+01:15:47,350 --> 01:15:55,750
+This world is a bearing in the document and the. Lady of this sweater is the number of words,
+
+145
+01:15:56,030 --> 01:16:01,820
+and that's why we are because every world is not appear in every what it does not a
+
+146
+01:16:01,900 --> 01:16:07,380
+bear on every document and that's what about what are because we are very non entries.
+
+147
+01:16:07,820 --> 01:16:09,700
+Great again all that we so.
+
+148
+01:16:10,460 --> 01:16:23,620
+En neutral NLP instead every word is a way to what is a dance and all just what why and how that happiness so because again going back to this right,
+
+149
+01:16:23,820 --> 01:16:31,420
+so we use to represent things using simple counts. What if you see, I really enjoyed the movie, it will have once a place where we have.
+
+150
+01:16:31,660 --> 01:16:39,420
+This was like and every place else will be great and even if you computer using some sort of the if you will have the same things,
+
+151
+01:16:40,220 --> 01:16:43,460
+it will not be a great count. IT will just be something more.
+
+152
+01:16:43,820 --> 01:16:45,740
+IT will be something more fancy real value numbers.
+
+153
+01:16:47,060 --> 01:16:53,420
+You know which we will which capture all different aspects that we want to capture what they will be this sports representation.
+
+154
+01:16:55,180 --> 01:17:00,150
+The problem in this is that What what we are doing.
+
+155
+01:17:00,430 --> 01:17:04,950
+Yes, we are actually represent everything as a function of common words.
+
+156
+01:17:05,670 --> 01:17:10,390
+IF you are equal when we want to do something with this back of our representation, right?
+
+157
+01:17:10,950 --> 01:17:14,550
+What we do? We can actually look at similarity where we can actually see.
+
+158
+01:17:14,910 --> 01:17:18,790
+We will computer some of a distance and a distance function here could be
+
+159
+01:17:18,990 --> 01:17:22,350
+something is how many years a common great you can say that one is a records.
+
+160
+01:17:23,150 --> 01:17:26,670
+These are very nice ally, you know what a value numbers.
+
+161
+01:17:26,990 --> 01:17:30,670
+We can also do some of course and distance. We can do some of England as you great.
+
+162
+01:17:31,470 --> 01:17:36,510
+But the point. This is still eventually will capture only something as you know.
+
+163
+01:17:36,790 --> 01:17:46,510
+Common ality, it will capture between do sentences like I really enjoyed the movie versus I really loved the movie, right?
+
+164
+01:17:47,990 --> 01:17:51,510
+The fact is that will they are semantic ally very similar right.
+
+165
+01:17:52,110 --> 01:17:56,510
+IF I ask you, and if you think you will see you. This is a large by the same rights.
+
+166
+01:17:56,790 --> 01:18:04,650
+I will get a very similar discovery with a bank of representation me not that he of a score because of the difference between enjoyed and loved,
+
+167
+01:18:04,930 --> 01:18:10,410
+because it is not know that enjoyed and love actually similar things that it will still give a
+
+168
+01:18:10,490 --> 01:18:15,570
+high school because large part of the settings a similar what if you replace each word here,
+
+169
+01:18:15,930 --> 01:18:19,250
+and you see with something which is similar end mening,
+
+170
+01:18:19,890 --> 01:18:24,570
+but not exactly the same thing that distance will suffer because they are not drain there
+
+171
+01:18:24,770 --> 01:18:30,130
+not actually design to capture design of light so and if you just go back to understanding,
+
+172
+01:18:30,690 --> 01:18:36,890
+the most simple as that right. How do we actually measure the singularity between words think about this world like enjoyed and loved the singularity?
+
+173
+01:18:37,490 --> 01:18:39,730
+IF you look at the book of the representation will be zero,
+
+174
+01:18:40,690 --> 01:18:46,250
+because nothing Germany are no matter what kind of transformations you do and see that you do.
+
+175
+01:18:46,650 --> 01:18:54,050
+IT will always be zero because they are not the same words what we do with what a matter is that the
+
+176
+01:18:54,250 --> 01:18:59,910
+goal here we go to be able to understand the semantik as we see what we need to really understand.
+
+177
+01:19:00,750 --> 01:19:05,790
+What is a relationship of the world man of the world woman or relationship between the King and the Queen?
+
+178
+01:19:06,270 --> 01:19:13,910
+Or if you think about what is is what and walking is that a relationship between them similarly swimming and swim right similarly country capital.
+
+179
+01:19:14,310 --> 01:19:20,430
+Do we have a relationship Canada, You know who is being all right to do this things?
+
+180
+01:19:21,190 --> 01:19:24,590
+Wordhovandir relationship and this is what when we say.
+
+181
+01:19:24,990 --> 01:19:31,150
+What are you use the dome? I just a dome meaning because that's what so that means right so Symantec.
+
+182
+01:19:32,710 --> 01:19:39,590
+And that's why we could thema something about us because this world actually allow is to capture meaning of this was that's right to understand.
+
+183
+01:19:40,350 --> 01:19:46,790
+How do we actually use this information, So what ever saying is that?
+
+184
+01:19:47,150 --> 01:19:53,910
+En moderne og neutral NLP agent. Now it's clear when I doctor about classic NLP back of art directors, Asparges.
+
+185
+01:19:55,520 --> 01:19:55,520
+Asparges.
+
+186
+01:19:56,280 --> 01:20:04,360
+When we talk about more than neutral NLP, the writers are dance, the capture something that will see how to do that what is about to understand?
+
+187
+01:20:04,760 --> 01:20:13,200
+This is more very basic level The point that we also say that the world representation are also high dimensional,
+
+188
+01:20:13,680 --> 01:20:18,000
+but there is not in millions there dimensional. IT will be off the order of thousands.
+
+189
+01:20:18,920 --> 01:20:25,160
+IF you if some of you have played with some of the large language models of today, write if you and if you have read about them.
+
+190
+01:20:25,800 --> 01:20:34,040
+SoMe of these large models still have a lady of those who you want to there always in multiple of tosoor
+
+191
+01:20:36,000 --> 01:20:43,720
+or sixty on this way out there are still of what we are still in a very you know how they are not.
+
+192
+01:20:44,560 --> 01:20:49,840
+I would not call dem low style, high dimensional, but not in millions and we are not support.
+
+193
+01:20:50,960 --> 01:20:54,940
+Okay, so basically what we are doing is that we are making of these words.
+
+194
+01:20:55,340 --> 01:21:02,380
+I really enjoyed the movie exploration mark even write your dick in this world of darkness and we are actually transforming them.
+
+195
+01:21:02,860 --> 01:21:08,180
+En do something gold award og hvordan betting og Nutella betting og dens betting
+
+196
+01:21:09,060 --> 01:21:12,740
+synonymer for the same thing and eventually it's a representation for each word,
+
+197
+01:21:13,180 --> 01:21:13,620
+which is Dennis,
+
+198
+01:21:14,820 --> 01:21:22,700
+which is lower en dimension when compared to your back of work with a style high definition with that sider that slide to actually know.
+
+199
+01:21:23,020 --> 01:21:29,660
+See what you have such a representation. What would you do Not what you can do you can use you are you know?
+
+200
+01:21:30,020 --> 01:21:34,780
+Favourite operations of a casino military or a question of things. We do actually measure the similarity of words,
+
+201
+01:21:35,180 --> 01:21:44,420
+because we were trained to actually capture that it will not not give you enjoyed and love being the similarity of these to thumbs a zero.
+
+202
+01:21:44,820 --> 01:21:54,090
+It's not because we are trying to capture disability and based on this is how as a simple model looks like so we have a tendens.
+
+203
+01:21:54,490 --> 01:22:04,690
+I really enjoyed the movie based on Saturday. IT will basically convert each likeed sequence to a secrets of a bad is like and how do we do?
+
+204
+01:22:04,850 --> 01:22:10,250
+This is basically the madding that actually you know what we?
+
+205
+01:22:10,490 --> 01:22:16,530
+What we do is that for each unique word? We lån a vector representation and that's what that's what we can use the madding.
+
+206
+01:22:17,410 --> 01:22:18,570
+So what we happen here is that.
+
+207
+01:22:18,770 --> 01:22:30,250
+IF you see is to sentences sentence one I really the movie regulation and that's how it is really loved of what we love in this cases is really,
+
+208
+01:22:31,210 --> 01:22:34,490
+and we will have the same same unique and meetings.
+
+209
+01:22:35,370 --> 01:22:39,370
+So what a dream to say it is that now every word. No matter what it appears.
+
+210
+01:22:40,050 --> 01:22:47,570
+IT will still have one entry in a dictionary, which is our vokabulary and that's a dance with a representation of your learning.
+
+211
+01:22:48,910 --> 01:23:03,430
+Okay. Now we have what we are done that we are in the sun things, and we have represent using a sekvens of a meetings, which we do this matrix.
+
+212
+01:23:04,710 --> 01:23:08,750
+Okay, let's be a done that now we have a word of things.
+
+213
+01:23:09,430 --> 01:23:19,470
+We can feeder to model which we which some of natural gas because we talking about a neural model that will be some of a neurale netværk.
+
+214
+01:23:20,550 --> 01:23:23,710
+What what what do we do know? What do we do?
+
+215
+01:23:23,910 --> 01:23:32,710
+Here is basically we have to have a model that can actually take this records the secrets of a meetings and can do some transformation.
+
+216
+01:23:33,910 --> 01:23:39,870
+So that we can actually do some meaningful production on top of it like to the model actually takes.
+
+217
+01:23:41,390 --> 01:23:49,240
+This is about this way to write a ratings, and that's all the same thing here to the stakes.
+
+218
+01:23:49,720 --> 01:23:59,000
+This is as input from zero to te great and I actually dust some sort of transformation on this records.
+
+219
+01:23:59,920 --> 01:24:09,520
+So that then we can actually make a production out of it can and tell me what can be this model right?
+
+220
+01:24:10,120 --> 01:24:14,400
+How do we perform this transformation anything to your head of you guessed?
+
+221
+01:24:15,920 --> 01:24:20,680
+IT is so many familier. This is actually so what we are actually also work with it or Transformers.
+
+222
+01:24:21,760 --> 01:24:30,920
+So anything that you know. IT could also be something simple like the goal is basically you have a series of records right?
+
+223
+01:24:31,600 --> 01:24:37,080
+And then you have a block here, which is this great greebox which you do something.
+
+224
+01:24:37,800 --> 01:24:41,600
+So that you can do a production with just also a plus minus.
+
+225
+01:24:44,560 --> 01:24:50,210
+Sorry, but That would actually do that this entry was logistic division,
+
+226
+01:24:50,970 --> 01:24:55,690
+but what we believe that will actually perform that will perform the plus minus.
+
+227
+01:24:57,090 --> 01:25:02,930
+But there is one step before that. Can you pass on this way to go to logistics?
+
+228
+01:25:03,330 --> 01:25:11,410
+Education now like. Cousins similar.
+
+229
+01:25:14,770 --> 01:25:17,730
+Show. But that's a way to understand how this is.
+
+230
+01:25:26,330 --> 01:25:31,610
+So what do you need to do on this vector like you can not pass, Then we come to a logistik a version model write.
+
+231
+01:25:39,890 --> 01:25:46,510
+Yes, dimensions not just reducing the dimension you are you on the right track, but you are not.
+
+232
+01:25:46,990 --> 01:25:53,670
+The goal is not just a dimension that is. So what would actually do a place on the Anton was a aggression with the classified.
+
+233
+01:25:54,230 --> 01:26:00,270
+That's a classified will actually love you to do. Plus minus. What can you feed all of this way to directly do what makes sense?
+
+234
+01:26:03,870 --> 01:26:06,910
+Okay. Yes, we okay. What we can do?
+
+235
+01:26:07,070 --> 01:26:07,990
+Yes, we can it all of them.
+
+236
+01:26:08,430 --> 01:26:16,590
+What is it is is actually some of a transformation which steaks all of the sweaters and coming of them into a representation with some.
+
+237
+01:26:16,870 --> 01:26:23,350
+How says I can take information from? I really enjoyed and just and putting them together.
+
+238
+01:26:23,830 --> 01:26:27,790
+And that will be used to classified write that's a dumb transformation.
+
+239
+01:26:28,510 --> 01:26:35,350
+But that is one night, so we have your heart of things like a neurale netværk who is head of the record network?
+
+240
+01:26:36,310 --> 01:26:41,030
+Okay, because I said I so many familier you are working with this with some of them.
+
+241
+01:26:41,230 --> 01:26:47,410
+Also with me on some projects your heart Atlas DMS. Og gru.
+
+242
+01:26:49,210 --> 01:27:00,450
+Not in the movie, but. Then Transformers write self attention Transformers which will come on the state
+
+243
+01:27:00,690 --> 01:27:06,170
+space models with will not cover this art and the operations that can be used.
+
+244
+01:27:07,090 --> 01:27:14,730
+There is just to actually fuel this boks that makes this seconds of madness and transform them somehow.
+
+245
+01:27:16,050 --> 01:27:25,490
+We will see how in future lectures we transform them somehow so that they can we do eventually to work classified and as well as it.
+
+246
+01:27:25,690 --> 01:27:36,690
+Share this. Because we have think so as is that there will be something as simple as which is also sounds like a fancy dome goal.
+
+247
+01:27:37,010 --> 01:27:43,900
+SoMe bullit basically Mainz bowling this week this together and we are some which is what was discourse,
+
+248
+01:27:44,500 --> 01:27:48,300
+which we sagde we just eat, This is up to get one single what a representation,
+
+249
+01:27:49,340 --> 01:27:57,220
+which we will pass along to the machine learning model or a classified, but you can not just only do some you can also to an average write.
+
+250
+01:27:58,020 --> 01:28:07,540
+You can also do. We max would like to understand what a max full on or what we can and you and tell me what a max and we would be yes.
+
+251
+01:28:10,020 --> 01:28:14,540
+Of what? What does it want to take a maximum value of what you have?
+
+252
+01:28:14,900 --> 01:28:18,100
+And what does and you have to take the max?
+
+253
+01:28:23,500 --> 01:28:30,780
+What if someone else also the chance to what you get back to you. Again.
+
+254
+01:28:32,020 --> 01:28:36,980
+Lineær algebra. One on one year and that's how do you take a max?
+
+255
+01:28:41,720 --> 01:28:50,640
+Men det blev ikke til noget. But you dont have to actually decide,
+
+256
+01:28:51,240 --> 01:28:58,720
+which is the maximum like you in the some your kind of collecting information from all Victors and doing a some operation.
+
+257
+01:28:59,280 --> 01:29:02,680
+Here you do a max operation to create information from all of them.
+
+258
+01:29:06,120 --> 01:29:09,920
+So you do some of this world is an element was a maximum rate,
+
+259
+01:29:10,760 --> 01:29:21,560
+which basically means is that you take each vector and the first entry in each so each vector has a entries right to, and you have a few records,
+
+260
+01:29:22,560 --> 01:29:25,080
+so you take the first entry you need of those and you take the maximum,
+
+261
+01:29:25,760 --> 01:29:31,560
+then you take the second entry of those big time and you do the element which operation gives you need to brush up your line.
+
+262
+01:29:32,640 --> 01:29:35,040
+Otherwise things are not gonna workout. Just saying.
+
+263
+01:29:35,720 --> 01:29:43,980
+Okay, so this is what how you can do max write what is a very simple operations, So let's look at the symbol operation.
+
+264
+01:29:44,620 --> 01:29:49,100
+What you do is your heart is what does night and you just them up you get one?
+
+265
+01:29:49,380 --> 01:29:55,940
+Representation what we love and just want to know setup some dominology as well is that we will actually use this term.
+
+266
+01:29:58,460 --> 01:30:02,940
+To actually represent to the output of a model. In the course,
+
+267
+01:30:03,260 --> 01:30:10,340
+we can also use the offer that let's talk about your network representation will sayed is the output of this
+
+268
+01:30:10,580 --> 01:30:16,820
+model is not the output of the new age is just the output of this internal thing that we are to as a model.
+
+269
+01:30:17,660 --> 01:30:23,340
+SoMe of you have actually class and neural lightbox something to as the head and representation basically
+
+270
+01:30:24,020 --> 01:30:29,060
+which is something you get a briefing and learn before you apply a classified eventually thing,
+
+271
+01:30:29,420 --> 01:30:33,980
+which will actually get the output of plus minus in this case if something else with you something else,
+
+272
+01:30:34,820 --> 01:30:42,530
+and so basically what this is doing is this model is actually composite a betting into a different representation and that representation
+
+273
+01:30:43,290 --> 01:30:52,450
+I then passed along to our you know classified and this case which actually perform eventually of you breaking it to as it a place and.
+
+274
+01:30:56,370 --> 01:31:03,570
+Then you and tell me how do we know it? The output of our model to a production know what we are done is that we take
+
+275
+01:31:03,810 --> 01:31:07,290
+on this segment of meetings and we have konverteret into a representation,
+
+276
+01:31:07,970 --> 01:31:09,170
+which is one vector light,
+
+277
+01:31:10,090 --> 01:31:20,530
+and that we need to passed along to a classified with gives me a plus on minus and you and tell me how to see how can be done?
+
+278
+01:31:25,970 --> 01:31:30,010
+Yes. Yes.
+
+279
+01:31:30,650 --> 01:31:37,290
+So basically what you do you use some of our activation function here Dont get lost and to do.
+
+280
+01:31:37,930 --> 01:31:46,450
+What do we made by activation function is basically a mathematical operation light that will allow også to transform the outputs once again light.
+
+281
+01:31:47,050 --> 01:31:50,890
+But there are more steps to and all good to all of this. Thanks for sharing.
+
+282
+01:31:52,050 --> 01:31:57,010
+So what we know who is let's understand that we have this representation goal.
+
+283
+01:31:57,850 --> 01:32:02,130
+This is still vector what we can do you know?
+
+284
+01:32:02,690 --> 01:32:06,410
+We can again logistik equation is just a discovery activation function.
+
+285
+01:32:06,770 --> 01:32:10,930
+IF you will write eventually night, so your it on that sound, but also logistik.
+
+286
+01:32:11,330 --> 01:32:19,810
+IT was one of an logistik decoration is one of the simple as that we that all of you would have learned in your machine learning class.
+
+287
+01:32:20,610 --> 01:32:28,370
+That's the first thing that any way you in the machine learning Clash of course Aminoclenet equation What is a great and not to go again?
+
+288
+01:32:28,690 --> 01:32:36,470
+Get lost with the terminologi. The operation is very very simple what you need to do so you need this new guy here,
+
+289
+01:32:37,030 --> 01:32:41,910
+which was W.C. which we are we introducere right or you wanna college,
+
+290
+01:32:42,310 --> 01:32:52,710
+and you have so you had this was a simple as they are repræsentations and some write that you are so much as you know what you
+
+291
+01:32:52,830 --> 01:32:59,150
+need is that there was a mention of activation functions right to this guy here Sigma is your Segway activation function.
+
+292
+01:32:59,550 --> 01:33:06,230
+IT can be a teenage it can be here distance later and what is all mathematical functions right you will here.
+
+293
+01:33:06,470 --> 01:33:10,150
+This is like this is dead or so many different doms out there.
+
+294
+01:33:10,430 --> 01:33:15,750
+Today Activation functions is like okay. You might find thousands of activation what we are all matematik a laboratory right?
+
+295
+01:33:16,230 --> 01:33:20,550
+So what you are doing is your taking your multiple in this with a matrix.Write.
+
+296
+01:33:23,150 --> 01:33:26,070
+What is actually gives you sense? It's a binary classification.
+
+297
+01:33:26,750 --> 01:33:38,650
+This should give view a real value number and on that you you apply and operate a C more function which transform it
+
+298
+01:33:38,890 --> 01:33:48,890
+to probability great offzero and one in this case for plus og minus know how do that I would like that for you do it?
+
+299
+01:33:49,450 --> 01:33:54,770
+But that keep on here IS you need this element for classified work you need an
+
+300
+01:33:54,890 --> 01:34:01,770
+activation function which is this write with takes up a real value number one entry.
+
+301
+01:34:02,130 --> 01:34:07,890
+IT is not a vector is this one entry and transforming to distribution or what you are closed.
+
+302
+01:34:08,170 --> 01:34:17,570
+Labels. And you you need a trade metrics which we can all which we can learn which we can actually get inspired from different.
+
+303
+01:34:18,090 --> 01:34:21,370
+IF we have from a separate model that can also be like that right.
+
+304
+01:34:22,010 --> 01:34:25,530
+So what do we have this what we have here?
+
+305
+01:34:25,890 --> 01:34:34,590
+So what what we need? Here is that we need a way to actually Either so one simple as that it or you are given with all things,
+
+306
+01:34:35,030 --> 01:34:42,950
+so you you had someone who had actually train is what a meeting and they just do it to you so that this is all right.
+
+307
+01:34:43,590 --> 01:34:50,590
+And then what you just need to do you have to? And so much said that somebody is the best operation that will work for you that is also great.
+
+308
+01:34:51,190 --> 01:34:54,270
+And then what you just need to do you have to learn this love you?
+
+309
+01:34:55,110 --> 01:35:04,750
+That's what we wait Matrix which always you do kind of this vector and then convert to which eventually allow you to do predictions,
+
+310
+01:35:05,270 --> 01:35:06,150
+how will all of this happen?
+
+311
+01:35:06,990 --> 01:35:14,470
+This is all done using a concept callback reputation in your networks where basically you have your training data where you actually know.
+
+312
+01:35:15,190 --> 01:35:19,990
+This was your movie review and this was label Positive og negative, right?
+
+313
+01:35:20,670 --> 01:35:27,550
+And what you do is based on that you actually you know you actually computer the lost at step,
+
+314
+01:35:27,870 --> 01:35:32,850
+which actually tell you whether you you actually let the hold for the training leader,
+
+315
+01:35:33,050 --> 01:35:38,450
+but you have is that you you know what you should be right and you let the neurale network computer the for you.
+
+316
+01:35:39,130 --> 01:35:47,410
+And then you see the difference between the actual answer and the that you are pain and you try to minimis difference right, and this is eventually.
+
+317
+01:35:48,170 --> 01:35:51,530
+How you love you know training? Neurale netværk.
+
+318
+01:35:51,970 --> 01:35:57,850
+This is true back on which we will actually go on deep in the next lecture when we talk about language models,
+
+319
+01:35:58,370 --> 01:36:02,970
+but you will also try this out empirically in this weeks exercise session.
+
+320
+01:36:03,970 --> 01:36:09,050
+Okay, so can you tell me? How can we use this models beyond classification?
+
+321
+01:36:12,290 --> 01:36:15,730
+So we are how we can do classification here? How can we go beyond classification?
+
+322
+01:36:19,250 --> 01:36:22,810
+Okay, that's a look a certain tasks like seekings, labeling great.
+
+323
+01:36:23,650 --> 01:36:30,070
+So here. What do we need is that in classification? We want you to actually perform like literally as a label to a segment of text light,
+
+324
+01:36:30,750 --> 01:36:36,630
+but in segment labeling what we want is that we want to understand which words actually response to sentimental words,
+
+325
+01:36:36,830 --> 01:36:42,590
+so we really want to understand that okay really enjoyed enjoyed actually contribute the positive
+
+326
+01:36:42,990 --> 01:36:51,510
+sentiment and watch is maybe you are in this up and that can also be a negative sentiment.
+
+327
+01:36:52,110 --> 01:36:57,510
+We were here and what we want to do is that instead of coming up with one label for the old things.
+
+328
+01:36:57,870 --> 01:37:02,030
+We want to actually come up with a label for each of this is like.
+
+329
+01:37:02,830 --> 01:37:07,430
+So what we really want here is that instead of having the modal give was just
+
+330
+01:37:07,750 --> 01:37:14,990
+one representation right We want something that Apple is certain operations,
+
+331
+01:37:15,630 --> 01:37:24,270
+so that we can oktan certain segments of representation, because we know you want to perform a labeling you are the words says seekings labeling.
+
+332
+01:37:24,750 --> 01:37:30,530
+We want one label we want one classy label for the whole text, we want a segment of the labels,
+
+333
+01:37:31,170 --> 01:37:37,810
+so something that actually pills that okay each word might have its own meaning to words.
+
+334
+01:37:38,090 --> 01:37:43,250
+The eventually task right, and that this is where certain aspects of you know this blog.
+
+335
+01:37:43,610 --> 01:37:47,570
+This models needs to be more powerful which we again long in the following for
+
+336
+01:37:47,930 --> 01:37:52,610
+your lectures is that you need an insourself attention and transforming blog,
+
+337
+01:37:53,090 --> 01:37:59,730
+which actually allow you to get repræsentations, which have some aspects of which actually kun in the sequential information,
+
+338
+01:38:00,330 --> 01:38:04,490
+which kun a certain information about segment or time into the great.
+
+339
+01:38:05,050 --> 01:38:12,490
+And that's where we actually you know how jazz instead of one stupid representation of the some old school.
+
+340
+01:38:12,930 --> 01:38:18,130
+We do something more fancy to get more powerful representation that we use the model sekvenser is.
+
+341
+01:38:20,890 --> 01:38:28,380
+That we also be you know that is that all of you want to actually learn more about this generation, which is what actually to write and here.
+
+342
+01:38:28,620 --> 01:38:40,180
+Basically the whole is to actually see can be generated text rather than just labeling text og either high level or a sequential of words level,
+
+343
+01:38:41,100 --> 01:38:46,340
+so good and you and tell me how can we do next generation give and what we have seen so far?
+
+344
+01:38:53,540 --> 01:38:59,500
+Look up and what? You can do what so what it would.
+
+345
+01:39:02,340 --> 01:39:05,780
+Be done. Okay, okay.
+
+346
+01:39:07,380 --> 01:39:12,140
+Okay. Fair. So-so. The point was that so you think we can do the reverse?
+
+347
+01:39:13,780 --> 01:39:19,380
+Okay, så eventually what what you want to say that? Can we do some sort of the look up in our vokabulary, right?
+
+348
+01:39:20,340 --> 01:39:25,360
+Okay, that's nice and you and wanna do's and you and health have any other ideas.
+
+349
+01:39:29,320 --> 01:39:34,520
+That is very close. Well, well, discuss what you are Actually you know with you to do things?
+
+350
+01:39:40,040 --> 01:39:49,800
+Yes. Jeg tror aldrig jeg har lært, at der er noget at komme efter.
+
+351
+01:39:51,840 --> 01:39:55,920
+Okay, okay, okay. You that a lot here and baked.
+
+352
+01:39:56,240 --> 01:39:59,720
+But it's a life and so basically you what you need.
+
+353
+01:40:00,080 --> 01:40:03,760
+Here is that how that's actually a dictionary it works.
+
+354
+01:40:04,200 --> 01:40:10,000
+Let's face it understand this light. I takes a sekvens of which is a input right and it generate the next word.
+
+355
+01:40:11,280 --> 01:40:17,640
+That's a way to do you feed all the world that you want, Then you generate one on the next word?
+
+356
+01:40:17,920 --> 01:40:21,720
+Then you need one more work another world and you keep going like this light.
+
+357
+01:40:22,980 --> 01:40:27,820
+records. Only you keep going. One thing That's the best way to do it.
+
+358
+01:40:28,300 --> 01:40:32,020
+But many models do it that way still right?
+
+359
+01:40:32,580 --> 01:40:35,900
+So what happens here is that what? What do you need for light?
+
+360
+01:40:36,180 --> 01:40:42,660
+IF you want to generate instead of a spinning a label or you know a label to each word.
+
+361
+01:40:43,140 --> 01:40:48,700
+AS we are in the sentiment classification or security labeling, and this is your look up argument.
+
+362
+01:40:49,140 --> 01:40:58,540
+Content is that know what you want to generate as you want to generate or from your ability a model product actually award from it
+
+363
+01:40:58,660 --> 01:41:08,860
+existing vocabulary and for this we need actually now a logistik decoration which and just you know do it class classification.
+
+364
+01:41:09,820 --> 01:41:16,820
+We need a multi-class logistik acquisition what I mean why that here is that I want a close something that can
+
+365
+01:41:17,380 --> 01:41:22,510
+multiple classes what can you and you and tell me right now you gave some things that will be my class is here.
+
+366
+01:41:26,070 --> 01:41:38,030
+And you and else please. Read a walk and now is it is to do that is really classification What would be your classes?
+
+367
+01:41:41,070 --> 01:41:51,190
+Actually. Yes, close with labels.
+
+368
+01:42:14,670 --> 01:42:24,420
+So basically each and there is a class Because you want to predict, so what you really want is that IF you have a million words in your category,
+
+369
+01:42:25,380 --> 01:42:31,220
+you have a million classes, so you want to see which we should come in next.
+
+370
+01:42:31,700 --> 01:42:35,420
+But that's what a classification actually daily show, which is the most likely thing that we have a great.
+
+371
+01:42:35,780 --> 01:42:40,220
+So you want to protect the most likely word, but you have actually want to actually have all the klasse.
+
+372
+01:42:40,540 --> 01:42:45,580
+All the body words will be your class levels right? Because you want a really see which we come next.
+
+373
+01:42:46,140 --> 01:42:49,740
+So what happens is that you are, and you know coming back to this.
+
+374
+01:42:50,300 --> 01:42:55,660
+You see a lot to do that you cannot just and on a activation function you need a soft max,
+
+375
+01:42:55,980 --> 01:43:04,180
+which actually convert a vectoring to probability distribution over that so here is just to
+
+376
+01:43:04,580 --> 01:43:12,380
+tell you your wait what the Matrix will not transform this into a single real value number.
+
+377
+01:43:13,060 --> 01:43:19,790
+But it will transform it to a vector and that we will have the sex and the city of your vocabulary,
+
+378
+01:43:22,150 --> 01:43:31,870
+so this will produce if your vocabulary has a million words and if the dimension here is one power as we said it, so this way or what?
+
+379
+01:43:32,630 --> 01:43:43,310
+This Wade Matrix what you do is take that tauson dimensional thing and convert to a million row vector and then you apply a soft max on top of it,
+
+380
+01:43:44,230 --> 01:43:48,270
+which we will get you a proability distribution over alle words and your book apply,
+
+381
+01:43:49,670 --> 01:43:54,390
+and that will tell you should be the next year, so the most likely next word will be it.
+
+382
+01:43:54,750 --> 01:43:58,310
+In this case you feed back, and then you keep doing it again. IT will be walls.
+
+383
+01:43:59,150 --> 01:44:05,350
+And this is how it will keep going right, so we can and you and tell me and again.
+
+384
+01:44:05,630 --> 01:44:09,190
+Take out you like it and tell me. What are you? Learn will parameters and the system?
+
+385
+01:44:24,810 --> 01:44:33,250
+Move it, do it. Again, But this.
+
+386
+01:44:38,610 --> 01:44:47,810
+To you have this system light what you have the meetings what you have this logistik relation so you and so just be able parameters.
+
+387
+01:44:57,690 --> 01:45:18,260
+Ja. Okay, så Can anyone tell me why high stakes or not parameters?
+
+388
+01:45:22,260 --> 01:45:25,820
+Yes. Og den er god.
+
+389
+01:45:26,540 --> 01:45:31,940
+Okay, så the healing States are not learnable parameters because what we are doing is.
+
+390
+01:45:32,180 --> 01:45:42,540
+We are calculating them. Based on. A very calculator then there are so what we are doing as we are calculating them.
+
+391
+01:45:42,820 --> 01:45:45,940
+Based on this a meetings, right?
+
+392
+01:45:46,620 --> 01:45:52,260
+So there are not learnable parameters drive parameters along the way what we do
+
+393
+01:45:52,380 --> 01:45:57,500
+not alone them Explicitly in this case right in this system in search and cases.
+
+394
+01:45:57,860 --> 01:46:07,780
+Yes, you do it. But in this case, you dont write so-so learning by parameters in the system actually the great Matrix that we
+
+395
+01:46:08,500 --> 01:46:15,240
+were learn for the specifik task and also the embedings that we land for this specific jazz.
+
+396
+01:46:21,960 --> 01:46:33,840
+Can you and also tell me how many unique madings will exist? 1 X for the specific sentences is the state of the thumbnails.
+
+397
+01:46:45,600 --> 01:46:51,480
+Again, so that Hitler States usually sweats in te streets.
+
+398
+01:46:52,560 --> 01:46:59,960
+You know, I know that you just say yes.
+
+399
+01:47:01,440 --> 01:47:07,040
+It's not so much not So it is the parameter of that something better Learn how you I think that
+
+400
+01:47:07,200 --> 01:47:14,740
+the point that was trying to make is that it depends som Because I define this them and when a z.
+
+401
+01:47:14,940 --> 01:47:21,700
+This is an output and not a headstart rate, but it depends when we talk about you know more complex models,
+
+402
+01:47:23,420 --> 01:47:27,140
+because we will see is what we actually define what actually goals into the model,
+
+403
+01:47:27,460 --> 01:47:36,020
+which is what comes out of here, and there you can see that the insurance as you can think of the city States as long as well well,
+
+404
+01:47:36,140 --> 01:47:44,540
+looking to this when we come back to more powerful models. Okay, can you want sorry to the point to make?
+
+405
+01:47:44,740 --> 01:47:52,540
+Here is that this is again thing that there are only as many as the number of unique words.
+
+406
+01:47:53,060 --> 01:47:54,380
+Stille right to in this intense.
+
+407
+01:47:54,700 --> 01:48:01,340
+We have the I was a repeater right, so you only have seven unik words, so you only learn seven unicorn meetings and not.
+
+408
+01:48:03,940 --> 01:48:08,700
+Okay, this why not let's take a break and then will be back to study where repræsentations.
+
+409
+01:48:21,770 --> 01:48:31,730
+System. Som stort set.
+
+410
+01:58:14,560 --> 01:58:21,360
+Så okay, let's let's go home. We have a last minute to finish.
+
+411
+01:58:22,120 --> 01:58:32,040
+What a thing? Great.
+
+412
+01:58:33,360 --> 01:58:38,760
+Okay, så I slide also previously when we see the.
+
+413
+01:58:41,120 --> 01:58:49,300
+We have a simple NLP modulator classified a c eddies as input piece of text right,
+
+414
+01:58:49,740 --> 01:58:53,060
+and we have to convert the space of text into a seconds of the meetings.
+
+415
+01:58:53,820 --> 01:58:56,260
+Then we are the long to model which we do some transformations,
+
+416
+01:58:58,660 --> 01:59:06,500
+and then that will have a projector that can take that transform output and round into a production great.
+
+417
+01:59:07,300 --> 01:59:14,460
+But what do we need is like the basic recipe in this is that we scene? How can we actually model things using simple settings and more module powerful
+
+418
+01:59:14,860 --> 01:59:19,580
+things that will come in later weeks like we can do some build approach to combo
+
+419
+01:59:20,020 --> 01:59:24,340
+use this way to use together into something meaningful that can be as a long to
+
+420
+01:59:24,460 --> 01:59:28,300
+a break to what you can also do something more fancy like you know a record.
+
+421
+01:59:28,580 --> 01:59:33,020
+Neurale netværk on STM or transformer, which will come in the future classes.
+
+422
+01:59:34,540 --> 01:59:39,540
+And then we also so that what do we need what we have this compost output?
+
+423
+01:59:40,900 --> 01:59:42,780
+How do we convert this and do production?
+
+424
+01:59:43,720 --> 01:59:51,680
+We so that you can apply a logistik regulation to actually with you are you know which is able to do a some sort of being a classification.
+
+425
+01:59:52,240 --> 01:59:59,120
+But you can also do some of a multiclass logistic revolution that you to do you know multilable classification,
+
+426
+02:00:00,200 --> 02:00:06,960
+and you can then you used to generate text already how you can just break this simple pipeline and also be generated text,
+
+427
+02:00:07,520 --> 02:00:10,320
+which is what a great and this is a approach.
+
+428
+02:00:10,680 --> 02:00:17,440
+But it's an approach that can be used and it was also one of the first that was actually used to training models will be with some powerful modeling.
+
+429
+02:00:18,240 --> 02:00:22,320
+The Goodiebox Read more. Okay. What the heart of?
+
+430
+02:00:22,520 --> 02:00:29,480
+What is what we are all of This is that we need a vector representation for words and that's why to see how do we get?
+
+431
+02:00:32,400 --> 02:00:35,600
+So you and tell me based on what you think so far?
+
+432
+02:00:36,360 --> 02:00:46,410
+How can you actually learn things we starter that this meeting and we are in the break breaks, but what you started from this this nice model?
+
+433
+02:00:47,690 --> 02:00:56,410
+Can you whatever you have to actually long December things that is nice you know what do that you see?
+
+434
+02:01:01,250 --> 02:01:04,810
+Yes. Det er så spændende.
+
+435
+02:01:15,850 --> 02:01:19,610
+Exactly so the same, but now and the slide great.
+
+436
+02:01:19,890 --> 02:01:26,410
+We so that I think you also like that what you can do you have a training data, which is in the woods?
+
+437
+02:01:26,850 --> 02:01:30,050
+Plus minus great and this case right, and you have your input, right?
+
+438
+02:01:30,690 --> 02:01:43,670
+So what you can do you can just in this words with some random factors right, but the output by performing arts and then performer a logistik,
+
+439
+02:01:44,070 --> 02:01:54,310
+regression and get a production and see how far from your ground correct production, one and based on that as the new entries,
+
+440
+02:01:54,710 --> 02:02:00,910
+which is going to lose what a great losses what it means that how far from the ground protection.
+
+441
+02:02:01,590 --> 02:02:08,830
+IF your production should be one, and if you get you not get a single value prop like a like out of this production, so you have to start.
+
+442
+02:02:09,510 --> 02:02:14,630
+But that's more is what you will see in the lab session to say that let's get about the
+
+443
+02:02:14,750 --> 02:02:19,670
+likelihood or probability of the production was one and you got zero point to one right.
+
+444
+02:02:20,270 --> 02:02:25,550
+So what you need to do is that you have to take that one to one, and this is what you are.
+
+445
+02:02:25,670 --> 02:02:29,390
+Neurale netværk for you is that which is John using grading and back,
+
+446
+02:02:29,990 --> 02:02:35,510
+and what you will basically propagate and the information back to the start lead,
+
+447
+02:02:36,990 --> 02:02:43,850
+and you will change this what is so that eventually take you closer to the ground truth, and this is how we love.
+
+448
+02:02:44,050 --> 02:02:47,850
+This is that you will see more of this inddo practically in.
+
+449
+02:02:47,970 --> 02:02:53,410
+This is what we also look and how production is done, but in a context of a more powerful model,
+
+450
+02:02:54,010 --> 02:02:59,650
+which is an and also a last time in the coming lectures as you.
+
+451
+02:03:00,210 --> 02:03:04,610
+We can actually do back up again and back to get it all the way to the madding,
+
+452
+02:03:04,930 --> 02:03:09,930
+so that we can also be the only problem in this case is that this will not be generic.
+
+453
+02:03:10,810 --> 02:03:15,290
+They will not be learned for anything and everything they will just be learned
+
+454
+02:03:15,690 --> 02:03:19,530
+specifically for this task because you learn this using super is learning,
+
+455
+02:03:21,090 --> 02:03:25,770
+and this is what it comes because you are actually using the single write your actually using
+
+456
+02:03:26,290 --> 02:03:33,050
+the output on the task to project to actually learn is this is not only kompatibel with a dansk.
+
+457
+02:03:33,330 --> 02:03:40,180
+So if you drain, this is for a movie production, it will be there will only capture information to actually detect,
+
+458
+02:03:40,700 --> 02:03:48,380
+whether a piece of review is positive og negative. IT will not be able to tell you whether which are more positive og negative will
+
+459
+02:03:48,540 --> 02:03:52,860
+not be able to win tell you where you know what the relationship between Ukraine.
+
+460
+02:03:53,940 --> 02:03:59,540
+Write your same because you have not learned death for a more general way of learning,
+
+461
+02:03:59,900 --> 02:04:05,620
+the meaning of the representation and then the other aspect what I do not so here is
+
+462
+02:04:05,860 --> 02:04:10,660
+that it can also be a big time of what so you do not have a lot of training data.
+
+463
+02:04:11,380 --> 02:04:15,220
+You will not be able to learn high quality and Beijings again.
+
+464
+02:04:15,660 --> 02:04:22,060
+IF I said this on the first lecture, so you also how it is to know, but the first waterboarding methods.
+
+465
+02:04:22,540 --> 02:04:26,500
+What do work and was actually learned?
+
+466
+02:04:26,980 --> 02:04:34,420
+And what was prompt on a big output from the internet large language models today actually learn on the internet great
+
+467
+02:04:34,880 --> 02:04:41,440
+So the amazing that they have underline that they have learned actually have a lot of information and it's not date.
+
+468
+02:04:41,760 --> 02:04:46,560
+Do you know a data point that you can collect for te movie reviews that you have to yourself,
+
+469
+02:04:47,200 --> 02:04:53,200
+because it's always a limited to a superviseret setup where we depends on how much training data that you can get.
+
+470
+02:04:54,480 --> 02:04:56,760
+But there is no limit to the data that you can see on the website.
+
+471
+02:04:57,160 --> 02:05:03,560
+So that's what the problem and as the American learned from a specifik learn for a specifik task,
+
+472
+02:05:03,840 --> 02:05:09,520
+and they can not my own generalised to other different tasks. So what can we do in this setup?
+
+473
+02:05:09,960 --> 02:05:13,760
+I go back to this. Close.
+
+474
+02:05:14,280 --> 02:05:23,200
+Quote from British link with our actually name is John Robert Ford Also I actually usually know og word by the company.
+
+475
+02:05:23,520 --> 02:05:30,120
+IT keeps who has a head of this previously in one or in any other context.
+
+476
+02:05:30,680 --> 02:05:33,220
+Sometimes when your parents or pigerne.
+
+477
+02:05:33,620 --> 02:05:40,380
+You know, I know that you know you keep a bad company and that's why you are doing wrong things in life and not direct things.
+
+478
+02:05:40,980 --> 02:05:44,380
+Anyway, so what the point was basically.
+
+479
+02:05:45,020 --> 02:05:55,020
+This is what is called as self surprised learning rate. This is the principle with which actually warmings where country we like this was you know?
+
+480
+02:05:55,460 --> 02:06:03,900
+This is a link wish you know what he was saying rate. This is basically literally the board of also distribution all time index,
+
+481
+02:06:04,460 --> 02:06:13,700
+which actually do how we were made today right so and we will hard the context because it got so popular of language.
+
+482
+02:06:14,060 --> 02:06:20,220
+Modul to understand What is English where it has a great and basically it literally the
+
+483
+02:06:20,380 --> 02:06:26,420
+word context by the setup context is the city of what is that we like the surrounding?
+
+484
+02:06:27,180 --> 02:06:31,870
+Og to be your own by the company that you keep it or exactly what a basic principles,
+
+485
+02:06:33,190 --> 02:06:37,870
+so if you look at the sentenser, I really enjoyed the blank rewards blank.
+
+486
+02:06:38,350 --> 02:06:43,110
+Grow let me making me on a way or I need to go to the blank to make up some great.
+
+487
+02:06:43,670 --> 02:06:49,510
+You can easily protect what's here in between because of context you know that would be it would be a movie.
+
+488
+02:06:49,910 --> 02:06:53,590
+IT would be there you know how you can also be an opera.
+
+489
+02:06:55,430 --> 02:07:03,750
+The next will be you know really someone that you got to be a good to be a world of being on how adventure you are in life great and in the end.
+
+490
+02:07:04,030 --> 02:07:11,030
+IT would be also you can go to a supermarked or also a fancy restaurant and how much you wanna spend on a great.
+
+491
+02:07:11,270 --> 02:07:17,150
+So you can actually choose based on the context you actually and tell what does what should be great and similarly?
+
+492
+02:07:18,310 --> 02:07:22,190
+Waterboarding can also be learn to understand the meaning because based on the context you
+
+493
+02:07:22,270 --> 02:07:26,750
+can actually predict what the world is in between and by doing that you can actually learn.
+
+494
+02:07:27,350 --> 02:07:31,660
+What is the meaning employed by that specific word that is something.
+
+495
+02:07:32,740 --> 02:07:37,620
+And this was basically the online idea behind what to work,
+
+496
+02:07:38,100 --> 02:07:44,300
+which is also all as that was to learn to ways and that PayPal which is what do with the
+
+497
+02:07:44,660 --> 02:07:49,860
+Beatles simply word to work mind your own writing a word to a vector representation.
+
+498
+02:07:50,580 --> 02:07:54,700
+That's why. What do we do approaches this continuous book of work?
+
+499
+02:07:54,900 --> 02:08:03,820
+Also a simple, which was basically where the goal is to learn to protect missing word from surrounding window of what you are so in this slide,
+
+500
+02:08:04,580 --> 02:08:06,660
+and there is another approach goals webcam,
+
+501
+02:08:07,220 --> 02:08:18,100
+which is the great where you have to the dark is to protect the surrounding words when you are given the world in between or the middle of the world.
+
+502
+02:08:18,820 --> 02:08:24,860
+So this is a harder task, but in which cases things work out and this this was basically.
+
+503
+02:08:25,420 --> 02:08:28,590
+IF you can see this was the proxy that What do actually do this,
+
+504
+02:08:29,030 --> 02:08:36,910
+but eventually that allowed as to learn warmings based on the principle that we sold from the British
+
+505
+02:08:37,230 --> 02:08:43,950
+language that we are the art and also other approaches to do what you love is what other famous approach.
+
+506
+02:08:44,670 --> 02:08:48,070
+Any other will not go to love today, What a drop in a paper link.
+
+507
+02:08:48,630 --> 02:08:52,310
+IF you know about how you can also some blogs about what you are not so much.
+
+508
+02:08:53,230 --> 02:08:56,830
+IF you dont know how love is done, you know about it, what if your industry,
+
+509
+02:08:57,150 --> 02:09:08,110
+you can also your you know your welcome to read more about so how is see how to see what so the world is to literally project to
+
+510
+02:09:08,270 --> 02:09:13,630
+missing word format window of sound words and this let's try to see how is a setup based on the model that we are previously.
+
+511
+02:09:14,390 --> 02:09:17,750
+So we see context was enjoyed the blank.
+
+512
+02:09:18,190 --> 02:09:22,750
+We watch write and think about again. The stupid buying operator that we are.
+
+513
+02:09:23,030 --> 02:09:27,000
+We just take a some of all of this, which is a model in this case,
+
+514
+02:09:27,600 --> 02:09:32,520
+and then you need something more, which is a projection what this means and then eventually.
+
+515
+02:09:33,320 --> 02:09:39,840
+Your task is to protect the missing ward like what you know because you know from this will you know in a document.
+
+516
+02:09:40,280 --> 02:09:45,080
+This world will be given you have made that as a missing word dokument on the web.
+
+517
+02:09:45,840 --> 02:09:50,240
+Wikipedia articles you will have sentenser, which we have what's in between the way.
+
+518
+02:09:50,360 --> 02:09:57,120
+IT is that you just keep masking and training your model to protect those who with you best,
+
+519
+02:09:57,880 --> 02:10:01,960
+and that was how what do it was in this way to understand what the learning right?
+
+520
+02:10:02,400 --> 02:10:11,120
+So the objective vasily you want to maximize the probability of the world movie given kontekst, which is enjoyed.
+
+521
+02:10:11,960 --> 02:10:19,760
+Komma komma? We know what is this is how you really down in this article formulation and what it would down to is.
+
+522
+02:10:20,280 --> 02:10:28,990
+IF we changed change the notation. Dommere mod abstrakt notation, You just say I want to maximity of my tagged with the context,
+
+523
+02:10:29,790 --> 02:10:37,550
+which is the minus to the one people is one and place to write in this case of the context is to work on it a sites.
+
+524
+02:10:37,910 --> 02:10:43,750
+You can also have five then and that's a parameter that can be anything and that is literally come
+
+525
+02:10:43,910 --> 02:10:51,470
+back notation is to the ability of observing ext given access which is again surrounding here,
+
+526
+02:10:51,710 --> 02:10:53,910
+and you can find what the subscribe is here.
+
+527
+02:10:54,790 --> 02:11:08,550
+Okay, how this is how to do you really need you know you have to element here you have what you have is the surrounding word right?
+
+528
+02:11:09,030 --> 02:11:14,270
+Where for you from a some pool light and you have protection matrix here,
+
+529
+02:11:14,710 --> 02:11:24,970
+which we do as you write what is if you as if you have if you might know if you might have now is this from now is what if you are sing a soft mix,
+
+530
+02:11:25,370 --> 02:11:29,130
+it means that it. GIF so what does it get you?
+
+531
+02:11:29,330 --> 02:11:34,090
+IF your abling software as what would be the output of you? You do te access.
+
+532
+02:11:42,330 --> 02:11:52,530
+For someone else. You want you should be back.
+
+533
+02:12:02,410 --> 02:12:06,930
+Frithaftig the soft max actually give is your probability distribution.
+
+534
+02:12:08,250 --> 02:12:12,650
+When the input the soft gallery and you and tell me what would be the sense of this.
+
+535
+02:12:19,250 --> 02:12:23,770
+IS so to of the victory will be there is a walk so what we are trying to know.
+
+536
+02:12:24,010 --> 02:12:30,210
+Basically do we have some surrounding and I am not learned anything right now so far just
+
+537
+02:12:30,410 --> 02:12:35,890
+like to say you have the surrounding words and you Let's do you have them to some random?
+
+538
+02:12:37,730 --> 02:12:44,930
+You just them using some random function great, so you have for each of the surrounding words,
+
+539
+02:12:45,370 --> 02:12:51,170
+you will have some whatever representation as you will have for all the world and you like
+
+540
+02:12:52,090 --> 02:12:58,250
+what now you need to do as you need to maximum the probability of observing the world movie,
+
+541
+02:12:58,730 --> 02:13:04,130
+which is your tagged with given what you have given what the great so,
+
+542
+02:13:04,610 --> 02:13:14,930
+and what is that for that you can computers you have all things for actors you and some it up will be one way to write because you can get some it up.
+
+543
+02:13:15,450 --> 02:13:20,950
+And then I say that you have you need one more Element, which is a projection matrix?
+
+544
+02:13:21,750 --> 02:13:27,550
+IF you in blue is to components to you have this each actors, you do a some you.
+
+545
+02:13:27,830 --> 02:13:30,870
+This is nothing fancy here and you need a projection operation.
+
+546
+02:13:32,030 --> 02:13:40,910
+So the projection operation is performing by this projection matrix goal you, and this is to actually take your.
+
+547
+02:13:44,150 --> 02:13:52,830
+Rector, which will be of it is the size of your lady of your meetings.
+
+548
+02:13:53,630 --> 02:14:01,110
+How big you are a meeting or 2000 great and what you want to do is of all the possible words,
+
+549
+02:14:02,230 --> 02:14:12,310
+which is the vocabulary as of all the people who cares you want to say that move comes up should be there is.
+
+550
+02:14:12,470 --> 02:14:22,330
+This is what you want to maximum is like so naturally your softmax need So we every to take all of this and gives you all distribution over alle
+
+551
+02:14:22,650 --> 02:14:33,170
+property og all all of the world and you are in your document and some of you might be confused because I know if you so you can not multiplayer,
+
+552
+02:14:33,610 --> 02:14:40,410
+This is like this is more abstract, and what if you want to literally think about how you can do this,
+
+553
+02:14:40,690 --> 02:14:48,930
+because you actually have to say you want to a transform of the projection metrics and you and to do it from.
+
+554
+02:14:53,050 --> 02:15:01,410
+The surrounding world vector operation or how you do this and your python is how you basically do
+
+555
+02:15:02,370 --> 02:15:06,810
+this operation write so you see this when you kind of free to do this in the practical exercise?
+
+556
+02:15:07,290 --> 02:15:10,130
+But that's a small cap, but that notation is not wrong.
+
+557
+02:15:10,370 --> 02:15:17,900
+This is how you do it in this specification just one of your wondering dimensions if you do because of this is like us dames,
+
+558
+02:15:18,380 --> 02:15:23,260
+we were as the book ability like the sense of the book ability and the age of the rings.
+
+559
+02:15:24,540 --> 02:15:28,860
+This is one night, so you can only multiple you can only multiple choice.
+
+560
+02:15:29,180 --> 02:15:34,580
+IF you take transforms and you would be come. And if you take a transform of eggs, it will become one.
+
+561
+02:15:34,980 --> 02:15:41,580
+IF you multiple it or not product of something, which we do what it will get you, we dims one which we get you,
+
+562
+02:15:42,340 --> 02:15:55,500
+and they will get you a vector where you have as many entries of your vocabulary, and this is what I would you previously what it is that it gives me?
+
+563
+02:15:58,460 --> 02:16:09,780
+Literally the og distribution over al possible words and my body pride and what I want to really do is still learning process right?
+
+564
+02:16:10,060 --> 02:16:12,820
+Of course, it will not start where the movie has.
+
+565
+02:16:13,100 --> 02:16:21,480
+He is like likelihood, but what eventually distribution to look like is that movie should be the highest it.
+
+566
+02:16:22,920 --> 02:16:26,600
+Hvor let it go to be film can also be a word here.
+
+567
+02:16:27,000 --> 02:16:30,960
+We can be somewhere here. IT would also be a show right.
+
+568
+02:16:31,480 --> 02:16:38,640
+So this is how after the model is learning about that has converse about what have actually read a case,
+
+569
+02:16:38,920 --> 02:16:43,760
+when it is picking up on the single from the data. This is how a distribution look like that overall.
+
+570
+02:16:44,520 --> 02:16:56,600
+This is nothing fancy here. You have some records for which which is great You have a projection that makes you from a death metal way to go.
+
+571
+02:16:57,680 --> 02:17:07,240
+Transformers do we are and we all the possible words in your vocabulary, and then you want to what you want to maximise is what?
+
+572
+02:17:07,800 --> 02:17:12,950
+What's the likelihood of observing that is one, which is which is the world?
+
+573
+02:17:13,910 --> 02:17:19,590
+xD Because I like to do you need a great after all of this transformation?
+
+574
+02:17:20,310 --> 02:17:24,150
+The only thing that is that I want to basically you know.
+
+575
+02:17:25,030 --> 02:17:30,470
+Do what to do bagage like using what I need to do is basically just a just do it.
+
+576
+02:17:30,870 --> 02:17:41,310
+So that my distribution should look like the ground or distribution, which is what we will be a one at the world movie and zero at other places.
+
+577
+02:17:41,910 --> 02:17:48,350
+But if there are more choices, it will be a point at the world movie and point to a show and so on.
+
+578
+02:17:48,470 --> 02:17:52,390
+So what so basically what you want to do is that this is all the same thing,
+
+579
+02:17:53,030 --> 02:18:00,310
+what we so previously with the sentiment classification great what you can actually from this rotation do actually that's the something you do.
+
+580
+02:18:00,510 --> 02:18:10,560
+Here is just that you need one specification. Just you have a question that you will be done that we know it is a kategorier.
+
+581
+02:18:11,200 --> 02:18:14,240
+Det samme. Som altid.
+
+582
+02:18:15,200 --> 02:18:19,240
+Hvis ja, så så. This is the most basic way to do this.
+
+583
+02:18:19,760 --> 02:18:25,120
+You can do like literally knock yourself out here Are you can neutral you do what whatever you want,
+
+584
+02:18:26,000 --> 02:18:31,560
+but baby shower that this basic setup actually work with more data.
+
+585
+02:18:32,520 --> 02:18:38,920
+And just you know this is like literally a single larger than a single and learn neurale netværk Great.
+
+586
+02:18:39,240 --> 02:18:45,880
+IF I think about a projection that what you are learning only, and that we know what you can always do more fancy stuff.
+
+587
+02:18:50,000 --> 02:18:57,880
+Transform the power some of the actors with that this is something is that there is it works that makes me.
+
+588
+02:19:04,520 --> 02:19:13,690
+So can you again? IF you? Så for eksempel SoMe to be with reality.
+
+589
+02:19:14,450 --> 02:19:20,930
+Mere om det senere. Og det er beskrevet i Historier og inspiration.
+
+590
+02:19:23,250 --> 02:19:30,770
+I think it depends so many different things, so if you like people, if you can actually what if.
+
+591
+02:19:33,250 --> 02:19:41,050
+IT makes a learning faster, what if you did it using something which actually destroy something you can have that impact,
+
+592
+02:19:42,570 --> 02:19:48,170
+what if it does not destroyed the same relationship within just your retail, which is important?
+
+593
+02:19:49,010 --> 02:19:52,810
+Not so it actually mix a learning faster. Okay.
+
+594
+02:19:53,330 --> 02:20:04,130
+Great question. Okay, so that this is look at example, how it is happening so så let say basically we you have only forward in your carport.
+
+595
+02:20:04,890 --> 02:20:12,950
+You only have for what's in your body with this movie, walk and health and you have your input and what we do is basically.
+
+596
+02:20:15,710 --> 02:20:21,070
+We want a submission over there is what was previously because what we want.
+
+597
+02:20:21,270 --> 02:20:24,510
+This movie is the word which we want to protect?
+
+598
+02:20:24,910 --> 02:20:30,190
+So that there is likelihood and the other are kind of as an censors approval to
+
+599
+02:20:30,310 --> 02:20:35,270
+distribution some of you with that this some to one that this thing some to one,
+
+600
+02:20:35,510 --> 02:20:41,150
+which is the property of a property distribution, so what we usually do is.
+
+601
+02:20:41,830 --> 02:20:48,390
+IF you see, this is what am representing to you as what this things, we should look like when we are when we are training this model,
+
+602
+02:20:49,150 --> 02:20:59,270
+so basically you have to say in search and point when your traning this model you have to which looks like this,
+
+603
+02:20:59,590 --> 02:21:04,470
+which is a tredimensional briefings, and you have your protection matrix here it looks like this.
+
+604
+02:21:05,090 --> 02:21:11,450
+We are basically again each word. So we are the projection matrix again.
+
+605
+02:21:11,730 --> 02:21:17,730
+The same great you have all possible. You know what about you are here,
+
+606
+02:21:18,210 --> 02:21:29,770
+and then we also have a representation so you intuition here is that this is somehow capturing the feature of the context.
+
+607
+02:21:30,570 --> 02:21:37,770
+So what we do we think that there is that back and try to understand this way, so we do enjoy that we watch.
+
+608
+02:21:38,410 --> 02:21:44,650
+It's a context right. What we did is that we did some basic operations, which is like it all about it?
+
+609
+02:21:45,050 --> 02:21:48,330
+So what we are doing. Yes, we are doing the same thing that we did in the sentiment.
+
+610
+02:21:48,970 --> 02:21:54,130
+For example, what we previous Lord of the lecture where we are taking all the kontekstuelle information,
+
+611
+02:21:54,650 --> 02:21:58,570
+and we are apply some transformation to represented as a feature.
+
+612
+02:21:59,010 --> 02:22:00,690
+So it's a very simple. It's a very dumb transformation,
+
+613
+02:22:01,250 --> 02:22:10,740
+but it bringing all of this together rate So this is just represent the feature of the context and you here is
+
+614
+02:22:10,860 --> 02:22:18,700
+basically literally contain the future race of a spending in the bookability because literally the number of rose.
+
+615
+02:22:18,940 --> 02:22:24,500
+Here is Edward in the book and the Callum is in the future space and know what
+
+616
+02:22:24,740 --> 02:22:29,660
+happens is that we just take a lot product light between the projection metrics
+
+617
+02:22:30,020 --> 02:22:35,180
+you and the representation like what happens here is that we simply just we
+
+618
+02:22:35,340 --> 02:22:41,540
+can simply multiplayer the road of you matrix with the colour is the record,
+
+619
+02:22:41,980 --> 02:22:44,220
+so you can just a dot product and you can computing.
+
+620
+02:22:44,780 --> 02:22:54,020
+This entry was one of you, and if you keep going like this, you will get the end of each of this like you will get all the future of you multiplayer.
+
+621
+02:22:54,500 --> 02:23:01,260
+The first roll on this again. You get one way you like the second roll again with you will get me.
+
+622
+02:23:02,250 --> 02:23:11,410
+eleverne online. So what not what soft max what we would like which we have scene like what we discuss a bit individually,
+
+623
+02:23:12,010 --> 02:23:16,050
+but also now see more automatically what software actually does it again?
+
+624
+02:23:16,690 --> 02:23:27,490
+IT is you a probability distribution from the elements of the given input like this is how soft mix is an eksponentiation of the end of a vektor,
+
+625
+02:23:27,850 --> 02:23:36,530
+so that a s is vector and is the specific dimension of a vector within entries right and.
+
+626
+02:23:38,930 --> 02:23:44,050
+I will do they are so we will be the end of that we are the element of that
+
+627
+02:23:45,250 --> 02:23:50,210
+and in this case when we do so when we perform this software collaboration.
+
+628
+02:23:51,210 --> 02:24:02,550
+The dimension of the output, so basically after we from the software as we will again get as many entries in the water as the as we had a input,
+
+629
+02:24:03,110 --> 02:24:10,350
+what it would just have transform into the probability of that specific class.
+
+630
+02:24:11,070 --> 02:24:19,230
+I like to this is what software as the setup so basically in this case, when we do a soft mix of you are here.
+
+631
+02:24:19,910 --> 02:24:28,590
+IT was just eat my again food, and there is what it will not represent the likely of this word being the missing word.
+
+632
+02:24:31,470 --> 02:24:33,150
+So that it's a sensor to distribution.
+
+633
+02:24:33,710 --> 02:24:42,350
+IT will some of two okay, so again, you know softmax in this course keeping up so we are you understand what you do?
+
+634
+02:24:42,750 --> 02:24:51,350
+You can also try it out behind my computing for what you can also try it out in which you will do on the great again as you,
+
+635
+02:24:51,510 --> 02:24:59,910
+so it just GIS as a property distribution over the same entries in and in this case again.
+
+636
+02:25:00,950 --> 02:25:10,390
+This is some of the one is what so this is what Seeberg is great Anne Just to mention is that how to train as
+
+637
+02:25:10,590 --> 02:25:18,270
+a kind of also explained is about previously is that the ideas that we want to maximity of the world rate,
+
+638
+02:25:18,910 --> 02:25:26,190
+and how do we actually usually train? Machine learning model is for computational reasons is that we also instead of the power of the world.
+
+639
+02:25:26,470 --> 02:25:29,870
+We try to a negative logability of the world,
+
+640
+02:25:30,030 --> 02:25:36,550
+which is that the something is just saying the same things in different ways and what we are in the example
+
+641
+02:25:36,910 --> 02:25:42,230
+that we see we are actually using the context wonders is and do to what this is a hybrid parameter.
+
+642
+02:25:42,710 --> 02:25:51,950
+This you can also literally set as we discuss which calling to use kolonisation, which is no one that is also a hybrid parameter.
+
+643
+02:25:52,510 --> 02:26:00,610
+Now I can see that word because now we are you can like all hybrid tool based on a standard approach and machine learning.
+
+644
+02:26:00,970 --> 02:26:05,050
+IF you know, dont know, this is also usually divide your data into training valuation.
+
+645
+02:26:05,570 --> 02:26:11,370
+Interest training is just a model validation is usually used to validator.
+
+646
+02:26:11,810 --> 02:26:19,530
+This is so you basically try to see the output of the module on the evaluation side,
+
+647
+02:26:20,250 --> 02:26:27,450
+and you see how is a performing based on that you can train oldies beates calling or be in the side of the context.
+
+648
+02:26:28,090 --> 02:26:34,690
+This is all that can be using the validation, and that is it is a security your whatever you want.
+
+649
+02:26:35,090 --> 02:26:41,570
+So basically you do not your ever. You always do all the tuning that you want to do and your validation,
+
+650
+02:26:43,330 --> 02:26:50,050
+and you just measure the performance of your model on the I am giving to machine learning advice,
+
+651
+02:26:50,410 --> 02:26:54,330
+but this is important to understand and some people and release.
+
+652
+02:26:54,670 --> 02:26:58,070
+this? I will be used to make it. I want to do this way out loud.
+
+653
+02:26:58,630 --> 02:27:01,910
+Okay, some of you might have heart of the same, but again.
+
+654
+02:27:02,150 --> 02:27:06,190
+This is not that important from the technical aspects of this lecture.
+
+655
+02:27:06,990 --> 02:27:15,910
+You can also use soft max to make the training of this model faster and health soft mix is something that you I you to read if your interest,
+
+656
+02:27:16,710 --> 02:27:19,870
+but again not that you want to understand the basics concepts.
+
+657
+02:27:20,990 --> 02:27:25,750
+Okay, now will move on the script game, which is very simple, because now you understood simple.
+
+658
+02:27:27,190 --> 02:27:33,070
+The only different programme is that how we model how we actually frame the magical objectives,
+
+659
+02:27:33,910 --> 02:27:40,030
+so instead of now breaking the missing word or the middle or what we are doing is.
+
+660
+02:27:40,470 --> 02:27:46,070
+We are actually using the middle word, and we are breaking the surrounding kontekst from that single word.
+
+661
+02:27:46,470 --> 02:27:49,550
+So we know that the world is movie and we want to protect.
+
+662
+02:27:50,150 --> 02:27:54,400
+What does it surround what so what surrounded what we do.
+
+663
+02:27:54,840 --> 02:27:58,600
+Enjoy. That's why we want to protect so if you want to post, this is again.
+
+664
+02:27:59,200 --> 02:28:07,120
+Matematik a way. What would say that we want to Maxime is a probability of the single awards enjoyed given the word movie, right?
+
+665
+02:28:07,800 --> 02:28:09,840
+And if we breaking dawn to abstract notation.
+
+666
+02:28:10,320 --> 02:28:19,320
+How we want to do is that maximity of peace supremes to do you want to give and the tagged with te night?
+
+667
+02:28:20,040 --> 02:28:25,560
+So we will do some of assumption that will assume that this is as well as you
+
+668
+02:28:27,040 --> 02:28:33,520
+like a conceptual condition independence with that they are only there is now
+
+669
+02:28:33,760 --> 02:28:37,120
+we cannot model John property distribution here we will say that we will just
+
+670
+02:28:37,360 --> 02:28:42,400
+look at what a difference of each of this words on going on the right to will,
+
+671
+02:28:42,600 --> 02:28:55,300
+so we try to maximize the logaritmisk of the property of observing except minus to next next Next step is one and only and this is to again.
+
+672
+02:28:57,340 --> 02:29:05,100
+This problem as some of the make of observing the ability observing the surrounding words,
+
+673
+02:29:05,460 --> 02:29:13,540
+which is again the same objective that you are in the Cebu what a reward manner and
+
+674
+02:29:13,700 --> 02:29:17,980
+now comes again friendly and that we så given that we know how are very to construct.
+
+675
+02:29:19,340 --> 02:29:23,020
+We again just want one projection matrix you with you.
+
+676
+02:29:23,100 --> 02:29:30,940
+And then just allow what to do the same objective? The whole different here is that we just trained to the Lord of the surrounding
+
+677
+02:29:31,380 --> 02:29:37,860
+words and not the property of the target word of light and what is done.
+
+678
+02:29:38,180 --> 02:29:48,580
+Usually is that basically instead of doing it is so instead of support each of this context.
+
+679
+02:29:50,520 --> 02:29:55,520
+words, give and tagged with you actually for each of that you train an independent, soft max night,
+
+680
+02:29:56,120 --> 02:30:01,920
+so you maximise the provinity of each of them independently and just take a some of it.
+
+681
+02:30:02,320 --> 02:30:07,400
+That's how it is done in real life, conversational and there is an assumption that you need here.
+
+682
+02:30:07,600 --> 02:30:10,880
+You cannot modulation property distributions not with such a simple model.
+
+683
+02:30:12,000 --> 02:30:21,120
+Okay, so this is what is and what is just like to say you have actually snow scene to basic approaches to do.
+
+684
+02:30:21,760 --> 02:30:31,200
+What is what the other part of the same paper is what do, which is a revolutionary paper which game in any way you are the exact date,
+
+685
+02:30:32,400 --> 02:30:34,440
+and this was one of the most famous papers,
+
+686
+02:30:34,760 --> 02:30:47,200
+which gave and it actually was brain on a large cut off text extract from not the holy internet, but a big enough to know I take a.
+
+687
+02:30:48,690 --> 02:30:55,730
+Quick to do something what we look in the first lecture right different tasks and is also a topic detection is one of those.
+
+688
+02:30:56,330 --> 02:31:01,930
+I tell you why I have you know secured that also how does it equ willing to actually learning?
+
+689
+02:31:02,250 --> 02:31:08,050
+What do we? So that's a nice thing that I learned from from my own reading.
+
+690
+02:31:09,130 --> 02:31:15,370
+It's not a lot of blogs. You can find about what I want to do you so that you know something interesting?
+
+691
+02:31:16,210 --> 02:31:20,050
+Okay, so we look at the matrix.
+
+692
+02:31:20,690 --> 02:31:24,770
+Let's go back to that where we see the rolls a documents and the column words right?
+
+693
+02:31:25,530 --> 02:31:27,130
+And we want you to do something like.
+
+694
+02:31:27,530 --> 02:31:35,930
+Topic detection og topic labling Write a day you can do something basic as close trying to understand this who knows a very high level.
+
+695
+02:31:36,170 --> 02:31:36,770
+What is?
+
+696
+02:31:39,410 --> 02:31:53,240
+I think everyone you know What is we need you have not ready en klasse or just want to it is just one to understand so that if not then you some.
+
+697
+02:31:56,680 --> 02:32:03,000
+Of you making a basic machine learning or a datamining or similar class.
+
+698
+02:32:04,840 --> 02:32:18,080
+You know how your machine learning class so again, we will not assume any knowledge of these things what I mean to you will not lose anything,
+
+699
+02:32:18,400 --> 02:32:22,880
+but you do that you may not be able to kind of me that happy that is not so we not so that you
+
+700
+02:32:23,000 --> 02:32:30,240
+know all of this concept and so far also going to literally going to very basics or not said that.
+
+701
+02:32:30,480 --> 02:32:37,680
+But you should pick up some of this concepts as much as so orlanded from the curse of your biking.
+
+702
+02:32:38,560 --> 02:32:42,000
+Okay, so what you can do is IF you want to do some of like,
+
+703
+02:32:42,240 --> 02:32:46,060
+let's go back to this very high level Ask What so we want you to say that we are going on a
+
+704
+02:32:46,140 --> 02:32:51,300
+certain documents and we want to grab them into news related documents of sports document.
+
+705
+02:32:51,940 --> 02:32:55,260
+This example lecture one great and one way to do.
+
+706
+02:32:55,420 --> 02:33:01,020
+This is something like. Plus also even if you know what this is just think about what it means.
+
+707
+02:33:01,660 --> 02:33:10,660
+In English great basically growing things together right How you think together when we have now after this with the stream of representation,
+
+708
+02:33:11,540 --> 02:33:16,540
+we literally have repræsenteret each of your documents, so know what you know.
+
+709
+02:33:16,740 --> 02:33:20,420
+IF you can use your favourite closing algoritme which just group a point together,
+
+710
+02:33:22,100 --> 02:33:28,420
+and we are all the data points or a group together with you all that news of sports that is a separate point and for
+
+711
+02:33:28,540 --> 02:33:36,940
+that you need some butan and that's not relevant what to say that you are closed with and all that you can also group.
+
+712
+02:33:39,620 --> 02:33:45,630
+Okay, so here is that if you apply your standard closing algoritme.
+
+713
+02:33:46,150 --> 02:33:52,910
+The biggest issue here is that there is a curse of all right, because when we look at the city of representation of the documents,
+
+714
+02:33:53,750 --> 02:34:02,230
+they can be the end of dimension and curse of the place here also there was a difference about outliers here today with you doctor about.
+
+715
+02:34:03,190 --> 02:34:07,910
+IF you are read about string and some of you will you know that can be really one of my outliers.
+
+716
+02:34:08,670 --> 02:34:14,390
+IF you used distance function great outliers on the data and if you leading distance your own great,
+
+717
+02:34:14,590 --> 02:34:20,550
+you will never have very good listing many years to actually get that would like to come on that problem
+
+718
+02:34:21,230 --> 02:34:28,550
+What again not the focus of this is this one to mention that is so this some basic ideas that we can do.
+
+719
+02:34:29,350 --> 02:34:36,070
+I actually mention a bit briefly in the first Lego anyone records, but now based on your basically knowledge.
+
+720
+02:34:37,270 --> 02:34:40,890
+You have a Steffi repræsentation, and you think you can do something smarter?
+
+721
+02:34:41,490 --> 02:34:45,210
+Fuck you have a matrix? What can you to do a matrix?
+
+722
+02:34:52,010 --> 02:34:55,410
+Ja. Massage. Nej. Okay.
+
+723
+02:34:55,730 --> 02:35:02,530
+You can do what tradition has and you have any that and you and not know the matrix over min.
+
+724
+02:35:06,530 --> 02:35:12,170
+Matrix. Okay. Matrix Factory ization is basically.
+
+725
+02:35:13,250 --> 02:35:23,690
+What is a factory of a number is basically or trying to represent juice mother like fact is, so you trying to you know how can can be a fight?
+
+726
+02:35:24,210 --> 02:35:31,530
+So what to do what factors? The same operations can be from the Matrix as well what you are breaking down the matrix in a box,
+
+727
+02:35:31,810 --> 02:35:35,410
+but not that all of you know What is can you really?
+
+728
+02:35:35,770 --> 02:35:45,660
+Why you think we will you to look? Så er vi i.
+
+729
+02:35:50,060 --> 02:35:54,140
+Gang. Okay. Great so good.
+
+730
+02:35:54,500 --> 02:35:56,420
+You are on the right track free to understand with this.
+
+731
+02:35:57,820 --> 02:36:10,140
+So you can do metrics and as you can just take your deafity of metrics and you can breaking dawn and to do metrics match race and where are you?
+
+732
+02:36:10,500 --> 02:36:19,860
+The property is a different. It's what we do that. How do it was to do some of losing is that we assume that documents have some
+
+733
+02:36:20,100 --> 02:36:25,180
+representation in the topic space and also in the workspace so literally This
+
+734
+02:36:25,380 --> 02:36:29,660
+is what this metrics is giving as we so we break This metrics og e-commerce this
+
+735
+02:36:29,860 --> 02:36:35,660
+metrics which has a Rolls-Royce docs and words as Columbus to do something,
+
+736
+02:36:36,500 --> 02:36:44,110
+which is a. Which has rosa dos, and there is a leading colum, which is called topics later,
+
+737
+02:36:45,070 --> 02:36:51,110
+which you know what you are trying to ground of uncover this and the same Apple is to this be matrix.
+
+738
+02:36:51,510 --> 02:36:55,350
+Where you see the Collins award what we are so what this fact,
+
+739
+02:36:55,990 --> 02:37:07,110
+and then you is to represent your documents as some function or topics and also your words as some function over words awards as some function,
+
+740
+02:37:08,270 --> 02:37:11,590
+so that the leading factor here are not the Navision.
+
+741
+02:37:12,150 --> 02:37:22,550
+Here are you to kind of represent word dokument Anders? And that's all in the right because topics is what you want to do this things to be with this.
+
+742
+02:37:22,870 --> 02:37:33,430
+IF you know your topics, these are good and you and then easily which documents go response to which topics or which words then can actually lead do
+
+743
+02:37:33,550 --> 02:37:40,650
+with topic labels write Så you can use of this information to actually perform this topic classification in some or string.
+
+744
+02:37:40,930 --> 02:37:48,210
+IF you will. Rate this is how you can do it? But what does it work because you actually post this again as a medical objective
+
+745
+02:37:48,610 --> 02:37:53,530
+here is to see that can we assume that there is an actual representation,
+
+746
+02:37:54,290 --> 02:38:04,010
+and we do not actually learn an exact and what we do as we want to approximate this matrix using to te Matrix is a and B.
+
+747
+02:38:04,570 --> 02:38:08,290
+And this is the objective that we do that we are trying to actually minimax,
+
+748
+02:38:10,050 --> 02:38:17,730
+so we are literally trying to say that we break the sun and do part and what we want to say is that a distance between each selv Write each
+
+749
+02:38:18,730 --> 02:38:26,530
+selv here and the one that you optagne after multiple and this should be minimum to your literally trying to offre constructed the matrix.
+
+750
+02:38:27,130 --> 02:38:36,390
+What to do we can use them and to do it and what you want like you with that slides and so what we do,
+
+751
+02:38:36,630 --> 02:38:39,830
+what is so now you know This is what is like an analysis?
+
+752
+02:38:42,590 --> 02:38:55,190
+So and you know how can be done again going back to you all you are all right with a singular value the competitions or what the competition is so.
+
+753
+02:38:56,150 --> 02:38:59,470
+This is how we actually try this metrics like you, so this optimization function,
+
+754
+02:38:59,830 --> 02:39:05,190
+but this is how effect this is metrics and do we performing arts on top of the year of metrics.
+
+755
+02:39:05,550 --> 02:39:14,110
+IT will go as you and we transports, which are basically which are basically how we can contract we are,
+
+756
+02:39:14,310 --> 02:39:18,230
+and we is so what you want is that if you want care topics.
+
+757
+02:39:18,910 --> 02:39:22,510
+What you do is your keep on the column of your you and we made us.
+
+758
+02:39:23,150 --> 02:39:30,110
+And you keep the full because as is a sweat metrics, so you keep the end of the matrix,
+
+759
+02:39:30,830 --> 02:39:35,800
+and then you based on that you can be constructed, which will be you prime and be can be.
+
+760
+02:39:38,000 --> 02:39:43,160
+Transports or you can actually constructor as you must try and be the people transfers rate.
+
+761
+02:39:43,680 --> 02:39:48,600
+This is literally how you get to use too we like to mirrors.
+
+762
+02:39:49,120 --> 02:39:52,520
+Du repræsenterer Topic spaces. Okay.
+
+763
+02:39:58,200 --> 02:40:01,440
+So you just one thing. This is.
+
+764
+02:40:05,520 --> 02:40:14,600
+Everything. This is. One of also venture that I wanted to mention the connection How this this connection of
+
+765
+02:40:14,880 --> 02:40:23,680
+the Matrix Factory session leads to you know what is great because literally what if you?
+
+766
+02:40:23,920 --> 02:40:30,500
+IF you remember this way, you are actually also learning this representation write your ally.
+
+767
+02:40:31,940 --> 02:40:36,100
+What is te matrix? What is we get you? IT gets you for each word?
+
+768
+02:40:37,100 --> 02:40:41,780
+This is other factors of public and this topics is this.
+
+769
+02:40:42,140 --> 02:40:52,060
+This is this is actually your body, and you can actually control you can see that we will go to your own.
+
+770
+02:40:53,860 --> 02:41:00,980
+IF you do do you like and this is what you are actually doing in this setup which you do.
+
+771
+02:41:01,460 --> 02:41:05,180
+What is this is a very neat transformation and also need connection,
+
+772
+02:41:05,620 --> 02:41:13,220
+which is you that you can also strut your classical is to actually just law and what a making of off the off the future of the current base.
+
+773
+02:41:15,740 --> 02:41:23,620
+But in this case that is one small problem great og one small transformation that you need to do you for you can on your waterboarding
+
+774
+02:41:24,500 --> 02:41:32,560
+in a way you need to do what you need to do is a standard er Work What you need to do is something you are my transformation,
+
+775
+02:41:33,120 --> 02:41:34,840
+which is also the point for is mutual information.
+
+776
+02:41:35,720 --> 02:41:46,440
+I welcome to read what information is is very simple, and I am not actually connecting this proof to you that will be my actually gifts.
+
+777
+02:41:46,720 --> 02:41:51,040
+You were records for which I will point to do this paper that you can read what again.
+
+778
+02:41:51,240 --> 02:41:54,800
+This is This is a connection that you?
+
+779
+02:41:54,960 --> 02:42:01,560
+You have to know what this is a new. I was a moment like this was for me, and I read this page for that look.
+
+780
+02:42:01,920 --> 02:42:06,160
+Hvilken stil du Matrix fra Tradition of life is with some transformation.
+
+781
+02:42:06,800 --> 02:42:11,560
+Do actually get what a meetings instead of training and so that transformations do health.
+
+782
+02:42:12,120 --> 02:42:20,680
+And this is the reading that we have given in this specific slide you can you and how you can have a look.
+
+783
+02:42:21,000 --> 02:42:24,960
+There is a paper, but there is also blogs that actually explained to you.
+
+784
+02:42:25,440 --> 02:42:36,450
+So there is a three Blog with care and also some actually shows you wish you to be my life and if metrics actually give so what things we do.
+
+785
+02:42:36,570 --> 02:42:42,850
+What do? I just want to do you something about?
+
+786
+02:42:43,330 --> 02:42:52,730
+What do we do beyond workouts and what a madness it just to slides promises so basically we know looked at literally
+
+787
+02:42:54,050 --> 02:43:00,050
+that there is this book of representation and you look and what they want to represent words as bittersweet,
+
+788
+02:43:01,490 --> 02:43:05,250
+but what you need right now is that we have documents sentences.
+
+789
+02:43:05,770 --> 02:43:08,290
+We have a huge street.
+
+790
+02:43:08,530 --> 02:43:16,250
+So how do we represent them as actors Many techniques that actually allow you to embedded a settings directly or also a dokument
+
+791
+02:43:16,650 --> 02:43:22,330
+directly they are something called also a doctor who which was public library or what do what we actually just give you a meeting.
+
+792
+02:43:23,290 --> 02:43:25,760
+But a simple thing is also that you can take all the woods and your document.
+
+793
+02:43:26,160 --> 02:43:31,160
+And then there is something that would also give you a dokument representation not a nice one.
+
+794
+02:43:32,760 --> 02:43:35,960
+And it's a simple one which we are some buying you and also to.
+
+795
+02:43:36,680 --> 02:43:41,000
+But there was that you learn like. And you can be used to combine this together.
+
+796
+02:43:41,720 --> 02:43:45,360
+You might have hard board who is heart of the module board.
+
+797
+02:43:48,320 --> 02:43:52,080
+Of the character board from the anime cartoon as you.
+
+798
+02:43:53,360 --> 02:43:59,120
+So what is was the most one of the most famous transformer models that was just to
+
+799
+02:43:59,240 --> 02:44:03,800
+learn where we come and badings of what is the only difference is that IF you recall,
+
+800
+02:44:04,800 --> 02:44:11,880
+I said that the world is all that I know where the bears will have only one and one meaning.
+
+801
+02:44:12,200 --> 02:44:16,120
+IT would be like a dictionary. We will have the word really will have entry.
+
+802
+02:44:16,640 --> 02:44:17,520
+IT is like a lookup table.
+
+803
+02:44:18,200 --> 02:44:25,250
+That's the thing that changed with this transformer models on board models where we brudt ind kontext or kontext into the world.
+
+804
+02:44:26,090 --> 02:44:33,610
+That's what ever contextual is what is what we actually just trying to say that the flow into the cause what he is the bad,
+
+805
+02:44:33,890 --> 02:44:35,450
+and he had a home run will be different things.
+
+806
+02:44:36,170 --> 02:44:42,410
+This cannot happen your classical links because we had by design before them to be like a look like a story,
+
+807
+02:44:43,330 --> 02:44:47,650
+but this can happen with transformation models like bird and which is again what we see.
+
+808
+02:44:47,890 --> 02:44:59,450
+1 5 6. Just want to get you that means that there is something also a connection is where we will read super retail in the world a big fish.
+
+809
+02:45:02,090 --> 02:45:11,330
+And this is your classical pipeline. Now you know what of this and now from next week will start into language modeling again leader motivationtext.
+
+810
+02:45:12,090 --> 02:45:16,490
+This is not something that covers the meat of the concept that we learn today.
+
+811
+02:45:17,010 --> 02:45:20,690
+This is just to kind of mention we go again. This is somewhere motivation recovery in the first week.
+
+812
+02:45:21,170 --> 02:45:24,260
+Giving it back. What what do we do? And how do we do things that?
+
+813
+02:45:26,100 --> 02:45:29,860
+This is a question that I leave you guys with, and we will see the thing next time.
+
+814
+02:45:30,020 --> 02:45:41,860
+We made you see more and think about what a difference between this what a difference between the writing that you learn from this models and so that.
+
+815
+02:45:42,460 --> 02:45:47,060
+But that's a thing to think about you know. IF you can think about you think about it, IF you cannot will.
+
+816
+02:45:50,420 --> 02:45:51,660
+Always feel free to your feedback.
+

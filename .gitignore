@@ -1,0 +1,10 @@
+appunti_nlp/.obsidian/workspace.json
+appunti_nlp/.obsidian/plugins/*/data.json
+appunti_nlp/.obsidian/plugins/*/embeddings/
+.trash/
+.DS_Store
+
+# le registrazioni video non stanno in git: sono GB. I sottotitoli sì.
+vids/
+*.mp4
+*.m4a
