@@ -1,0 +1,5628 @@
+1
+00:58:57,989 --> 00:59:01,506
+Okay. Let's start. Okay. So just
+
+2
+00:59:02,006 --> 00:59:06,912
+before the break, we discussed about the TF-IDF matrix and
+
+3
+00:59:07,412 --> 00:59:11,039
+how we can compute it, right? So just again,
+
+4
+00:59:11,153 --> 00:59:15,640
+just going through this, Bag of word matrix is basically each
+
+5
+00:59:15,752 --> 00:59:19,012
+row is a doc, each column is a word,
+
+6
+00:59:19,188 --> 00:59:23,106
+right? And how you compute the TF-IDF matrix is that you actually
+
+7
+00:59:23,122 --> 00:59:27,441
+compute the TF for each cell, which is basically
+
+8
+00:59:28,019 --> 00:59:31,857
+you compute the— for each document,
+
+9
+00:59:31,873 --> 00:59:35,068
+you see how many times each word appears, and then you compute
+
+10
+00:59:35,165 --> 00:59:39,115
+1 inverse document frequency for the word W,
+
+11
+00:59:39,260 --> 00:59:42,585
+which is computed over the entire corpus or the entire set of documents.
+
+12
+00:59:43,131 --> 00:59:46,184
+And then you just multiply the 2 terms and you get your TF-IDF matrix.
+
+13
+00:59:47,469 --> 00:59:50,763
+OK, so, and as I said,
+
+14
+00:59:50,779 --> 00:59:54,297
+right, we were talking about post-processing that we can do on the top of bag
+
+15
+00:59:54,797 --> 00:59:57,510
+of word matrix so that we can actually have a better feature representation,
+
+16
+00:59:57,735 --> 01:00:02,442
+right? So we already talked about one post-processing, which is computing,
+
+17
+01:00:02,651 --> 01:00:05,045
+like taking the raw counts and changing it to TF-IDF.
+
+18
+01:00:05,720 --> 01:00:08,223
+Representations, which has its own advantages as we discussed.
+
+19
+01:00:09,950 --> 01:00:13,784
+But then there are other aspects that can also be done, right? Think about row
+
+20
+01:00:14,284 --> 01:00:17,959
+normalization. And let's try to understand what do we mean by this and
+
+21
+01:00:18,153 --> 01:00:22,763
+why do we need to do this, right? So first, let's think about what
+
+22
+01:00:23,263 --> 01:00:26,240
+do we have in each row. Each row is a document, right? So, and if
+
+23
+01:00:26,740 --> 01:00:28,197
+we do a standard classical bag of words representation,
+
+24
+01:00:29,810 --> 01:00:33,470
+the docs that are longer will have more non-zero entries, right?
+
+25
+01:00:33,520 --> 01:00:37,216
+Because longer docs will have more words, and more words means that they will
+
+26
+01:00:37,716 --> 01:00:40,925
+have— because each, the size of this or the
+
+27
+01:00:41,425 --> 01:00:44,682
+length of this row is the total number of words in the vocabulary,
+
+28
+01:00:44,938 --> 01:00:48,390
+right? So the documents that are longer will have more words, and naturally
+
+29
+01:00:48,890 --> 01:00:52,082
+it means that they will have more non-zero words, which means that— which is what
+
+30
+01:00:52,582 --> 01:00:56,064
+we are just alluding to, right? And what can happen now in this case is
+
+31
+01:00:56,160 --> 01:00:59,226
+that this can literally— is a signal that we don't want our machine
+
+32
+01:00:59,726 --> 01:01:03,160
+learning algorithms to actually capture, right? What will happen in this
+
+33
+01:01:03,660 --> 01:01:07,398
+case is that docs that are longer will just be more farther from shorter documents
+
+34
+01:01:07,898 --> 01:01:11,845
+because they have just more non-zero entries, right? So this is why we
+
+35
+01:01:12,345 --> 01:01:15,923
+need some sort of normalization. What do we mean by this normalization
+
+36
+01:01:16,423 --> 01:01:20,097
+is that we can try to actually make sure that we do
+
+37
+01:01:20,597 --> 01:01:24,480
+not distinguish, like we do not treat longer docs different from
+
+38
+01:01:24,608 --> 01:01:28,654
+smaller docs, right? And to do this is the standard trick because now we actually
+
+39
+01:01:28,686 --> 01:01:32,215
+gave you an intuition. What does it mean? To have more non-zero entries. But then
+
+40
+01:01:32,715 --> 01:01:35,727
+since everything is a vector, going back to how we think of normalization in
+
+41
+01:01:35,984 --> 01:01:39,832
+classical linear algebra, when we talk about 2 normalization
+
+42
+01:01:40,332 --> 01:01:43,408
+techniques that come to mind are L2 normalization and L1. What they are called is
+
+43
+01:01:43,440 --> 01:01:47,193
+basically in L2 normalization, all rows have a Euclidean distance of 1 from
+
+44
+01:01:47,693 --> 01:01:50,528
+the origin, and all data points lie on a unit sphere. On the other hand,
+
+45
+01:01:50,576 --> 01:01:54,698
+on L1 normalization, we can say that all rows of the
+
+46
+01:01:55,948 --> 01:01:59,651
+entries, like, so basically, each row vector here,
+
+47
+01:01:59,859 --> 01:02:03,064
+which is each document, the entries there will sum to 1. And this is how
+
+48
+01:02:03,564 --> 01:02:06,926
+you compute anything to differentiate anything to a probability distribution as well,
+
+49
+01:02:07,167 --> 01:02:10,692
+right? Just to tell you intuitively how it looks like, think about a 2D
+
+50
+01:02:11,192 --> 01:02:15,003
+space, right? So an L2 normalization, what it will do
+
+51
+01:02:15,564 --> 01:02:18,785
+is basically take all your vectors, which is the original
+
+52
+01:02:19,285 --> 01:02:21,141
+vector, and normalize it to this unit sphere.
+
+53
+01:02:23,016 --> 01:02:26,517
+What an L1 normalization will do is normalize it to this
+
+54
+01:02:27,529 --> 01:02:30,532
+diagonal diamond shape, or as we said,
+
+55
+01:02:30,885 --> 01:02:34,916
+right? So this is how an actual L2
+
+56
+01:02:35,416 --> 01:02:38,015
+or L1 normalization looks like if you think about it from,
+
+57
+01:02:38,770 --> 01:02:41,821
+if you want to visualize this in 2D. Okay.
+
+58
+01:02:42,335 --> 01:02:45,852
+Can anyone tell me which normalization is better?
+
+59
+01:02:46,463 --> 01:02:49,899
+Is there a way to decide whether L1 normalization is better or L2 is better?
+
+60
+01:02:50,666 --> 01:02:51,369
+Any wild ideas?
+
+61
+01:03:08,018 --> 01:03:11,397
+Come on, you know many things from all the lectures
+
+62
+01:03:11,414 --> 01:03:14,211
+that you've done in the past. Yes.
+
+63
+01:03:18,964 --> 01:03:22,241
+Yes, which one? But that's not the
+
+64
+01:03:22,273 --> 01:03:25,938
+answer here, but you're right. I mean, one of them actually encourages
+
+65
+01:03:26,438 --> 01:03:30,257
+sparse vectors. I think it's L1 which does that, but that's not the
+
+66
+01:03:30,338 --> 01:03:34,141
+answer that I'm looking for. Any wild ideas?
+
+67
+01:03:36,497 --> 01:03:39,644
+It's very simple and there's no wrong answer.
+
+68
+01:03:46,076 --> 01:03:49,342
+Sure. You're still thinking from the aspect that you have L2 and L1
+
+69
+01:03:49,842 --> 01:03:53,739
+as the choices. Let's say you have Pazinga normalization,
+
+70
+01:03:53,772 --> 01:03:56,758
+right? Give you anything, right? I can give you any choice.
+
+71
+01:03:57,869 --> 01:04:00,945
+If you have 6 choices, you want to choose one, how would you do that?
+
+72
+01:04:04,101 --> 01:04:06,450
+Exactly. Thanks for that. So basically,
+
+73
+01:04:07,032 --> 01:04:09,759
+It will literally depend on what you want to do with it, right?
+
+74
+01:04:10,882 --> 01:04:14,556
+Because this is a post-processing step. You want to see that
+
+75
+01:04:14,636 --> 01:04:18,069
+in some cases L2 normalization might work better, in some cases L1 normalization
+
+76
+01:04:18,101 --> 01:04:21,357
+might work better, right? So the case is we're talking about
+
+77
+01:04:21,373 --> 01:04:25,095
+general machine learning here because in the end you have actually— what
+
+78
+01:04:25,595 --> 01:04:29,346
+is this? We are actually converting a piece of data
+
+79
+01:04:29,731 --> 01:04:33,116
+into some features. And this is one way of representing,
+
+80
+01:04:33,325 --> 01:04:36,745
+like, doing this feature vector extraction, right? Now,
+
+81
+01:04:37,018 --> 01:04:39,861
+you eventually want to feed it to a machine learning algorithm which will actually do
+
+82
+01:04:40,361 --> 01:04:43,973
+some tasks. So eventually, what you want to do is you want your
+
+83
+01:04:44,021 --> 01:04:47,121
+task to be— your accuracy or whatever, however you
+
+84
+01:04:47,699 --> 01:04:51,249
+measure performance on that task to be good, right? So what you need to
+
+85
+01:04:51,749 --> 01:04:54,911
+do here is to literally see which normalization leads
+
+86
+01:04:55,007 --> 01:04:58,364
+to a better task performance. Depends on however
+
+87
+01:04:58,380 --> 01:05:01,930
+you judge it, but that's— If you don't know any information than what was given
+
+88
+01:05:02,430 --> 01:05:05,800
+to you right now, right? So that's more or less
+
+89
+01:05:05,864 --> 01:05:09,446
+the high-level answer. Okay. Then let's talk about column normalization,
+
+90
+01:05:09,478 --> 01:05:11,807
+right? We have already looked into IDF scaling, right?
+
+91
+01:05:12,593 --> 01:05:15,821
+IDF scaling can already be seen as some sort of column normalization.
+
+92
+01:05:16,223 --> 01:05:19,885
+Can anyone tell me why? Again, recall that in
+
+93
+01:05:19,981 --> 01:05:23,900
+this representation, documents are rows
+
+94
+01:05:24,012 --> 01:05:28,075
+and words are columns, and IDF applies something to
+
+95
+01:05:29,399 --> 01:05:33,031
+what? IDF is computed for each word. So now, can anyone
+
+96
+01:05:33,531 --> 01:05:36,866
+tell me IDF scaling, why can IDF scaling be seen as
+
+97
+01:05:37,366 --> 01:05:37,542
+a column normalization?
+
+98
+01:05:42,636 --> 01:05:45,142
+So let's try to break it down. What is IDF scaling?
+
+99
+01:05:48,562 --> 01:05:51,494
+What is IDF? It's basically just, ignore the term scaling.
+
+100
+01:05:51,558 --> 01:05:53,259
+What do you do when you compute an IDF?
+
+101
+01:05:55,835 --> 01:05:58,559
+I will literally not move forward because we just looked at what IDF is.
+
+102
+01:05:59,061 --> 01:06:02,646
+Yes? And what do you do it on?
+
+103
+01:06:03,473 --> 01:06:06,327
+You compute IDF for each word,
+
+104
+01:06:07,830 --> 01:06:10,381
+which is a— we saw that. What is it?
+
+105
+01:06:11,096 --> 01:06:14,884
+It's a— yes, but do you do it for—
+
+106
+01:06:18,423 --> 01:06:18,488
+yes?
+
+107
+01:06:22,134 --> 01:06:25,164
+No. So IDF is done for the whole corpus.
+
+108
+01:06:25,567 --> 01:06:28,872
+For one word, you do it— what do you do?
+
+109
+01:06:29,194 --> 01:06:33,192
+What is IDF? IDF is literally you're counting how many times a word
+
+110
+01:06:33,627 --> 01:06:35,884
+appears in each document.
+
+111
+01:06:37,400 --> 01:06:40,974
+Sorry, no, you're counting the number of documents in which a word appears in,
+
+112
+01:06:41,153 --> 01:06:44,532
+right? So you're basically, for each word, you are accessing the whole
+
+113
+01:06:44,808 --> 01:06:48,224
+corpus and and you're getting one number for each word,
+
+114
+01:06:49,209 --> 01:06:52,489
+right? Now, what do you do when you compute IDF?
+
+115
+01:06:53,620 --> 01:06:57,291
+You are actually what
+
+116
+01:06:57,791 --> 01:07:01,703
+you now said about columns, which is why I said recall
+
+117
+01:07:02,203 --> 01:07:05,889
+that this bag of words representation, rows are
+
+118
+01:07:06,004 --> 01:07:08,107
+docs, words are columns.
+
+119
+01:07:10,564 --> 01:07:13,733
+So for each word, When I compute
+
+120
+01:07:14,233 --> 01:07:17,285
+an IDF, what will it be?
+
+121
+01:07:20,760 --> 01:07:28,583
+So what, what would a column be here in
+
+122
+01:07:28,632 --> 01:07:38,639
+terms of IDF? Yes. So each cell here here
+
+123
+01:07:39,106 --> 01:07:43,342
+would be? The frequency of a specific word in
+
+124
+01:07:43,391 --> 01:07:46,193
+a specific column, right? So,
+
+125
+01:07:46,660 --> 01:07:50,417
+but what are you doing? The word is fixed in the column, right? And what
+
+126
+01:07:50,917 --> 01:07:54,390
+you're doing is you're checking how many times that word
+
+127
+01:07:54,890 --> 01:07:58,371
+appears in that document, right? So what you're doing
+
+128
+01:07:58,419 --> 01:08:01,623
+is for each word, you're applying a single
+
+129
+01:08:02,123 --> 01:08:05,389
+transformation on the whole, like you're keeping the word constant and you're
+
+130
+01:08:05,405 --> 01:08:09,456
+applying a single transformation that applies to all the documents. So this is how— why
+
+131
+01:08:09,585 --> 01:08:12,903
+you— what I say is that when you're doing this IDF scaling,
+
+132
+01:08:13,496 --> 01:08:17,007
+you are actually applying some sort of normalization on the column space.
+
+133
+01:08:17,600 --> 01:08:20,950
+When we talked about row normalization, we looked at something— how can we
+
+134
+01:08:20,966 --> 01:08:24,268
+actually look at— because then what we were doing is we were keeping the document
+
+135
+01:08:24,768 --> 01:08:27,859
+fixed and there were different words in the document and we're doing something in that
+
+136
+01:08:28,359 --> 01:08:31,771
+representation. Now we are looking for each word and
+
+137
+01:08:32,271 --> 01:08:35,851
+we are trying to see how can we perform an operation that does not impact
+
+138
+01:08:35,883 --> 01:08:40,627
+that word at that level. Okay, so what
+
+139
+01:08:41,127 --> 01:08:43,950
+you can do besides this is that besides IDF, which already gives you a way
+
+140
+01:08:44,450 --> 01:08:48,409
+to do column normalization, you can also do some sort of other normalizations
+
+141
+01:08:48,909 --> 01:08:53,564
+that you might have seen in your machine learning class or even in basic linear
+
+142
+01:08:54,064 --> 01:08:57,003
+algebra or, you know, Analysis 1,
+
+143
+01:08:57,357 --> 01:09:00,250
+2, whenever you read it back 2 or 3 years ago.
+
+144
+01:09:00,792 --> 01:09:04,743
+Right? But you can do some things like min-max scaling, which is something as simple
+
+145
+01:09:04,871 --> 01:09:09,223
+as that you look at the minimum value of a
+
+146
+01:09:09,723 --> 01:09:14,121
+specific vector, you look at the maximum value, and then you transform it to— like
+
+147
+01:09:14,621 --> 01:09:18,505
+you change everything so that you normalize things based on their minimum and maximum
+
+148
+01:09:18,537 --> 01:09:22,439
+values. You can also do some sort of something what we call standardization,
+
+149
+01:09:23,097 --> 01:09:26,694
+which basically where it's a specific operation, it's called
+
+150
+01:09:26,726 --> 01:09:29,790
+standardization, but it's also can be called as mean
+
+151
+01:09:30,290 --> 01:09:33,772
+normalization where you subtract each entry from
+
+152
+01:09:33,821 --> 01:09:37,203
+its mean and divide it by the standard deviation.
+
+153
+01:09:37,559 --> 01:09:41,137
+And that's called standardization. These are classical operations that
+
+154
+01:09:41,637 --> 01:09:43,727
+are performed in machine learning. I see very weird faces. Have you not done a
+
+155
+01:09:44,227 --> 01:09:46,204
+machine learning class? Who has not done a machine learning class so far?
+
+156
+01:09:49,128 --> 01:09:52,295
+Okay, 2, 3. Rest have done a machine learning class,
+
+157
+01:09:52,441 --> 01:09:56,028
+right? Should I actually ask Casper what did he teach or should I ask you
+
+158
+01:09:56,061 --> 01:09:59,106
+guys if you learned it or not? Was this things not covered in a machine
+
+159
+01:09:59,606 --> 01:10:01,613
+learning class? So why the long face?
+
+160
+01:10:08,639 --> 01:10:13,059
+Anyway, so you can apply these kind of different normalizations so
+
+161
+01:10:13,559 --> 01:10:16,415
+that you can just actually,
+
+162
+01:10:17,415 --> 01:10:20,802
+you can also apply this min-max scaling and standardization to also a row vector,
+
+163
+01:10:20,882 --> 01:10:24,712
+right? But these are all the ways that you can use to perform
+
+164
+01:10:25,019 --> 01:10:28,415
+certain normalization on these vectors. Again, the same question that I'll ask,
+
+165
+01:10:28,900 --> 01:10:32,022
+can anyone tell me now how can we decide
+
+166
+01:10:32,281 --> 01:10:36,018
+whether we should do standardization or min-max scaling or just leave IDF
+
+167
+01:10:36,116 --> 01:10:36,685
+as it is?
+
+168
+01:10:43,673 --> 01:10:47,223
+Exactly. The answer remains the same, right? Without more information, what you have to do
+
+169
+01:10:47,513 --> 01:10:50,726
+is you always have to rely on your underlying task performance and you have to
+
+170
+01:10:50,730 --> 01:10:53,092
+see which one works better on your underlying tasks.
+
+171
+01:10:54,858 --> 01:10:58,149
+Okay. Quick polling. Let's take out your phones
+
+172
+01:10:58,230 --> 01:11:00,860
+or type this link out, or if you have the PDF of the slide,
+
+173
+01:11:00,892 --> 01:11:05,004
+just click on the link. Let's try to understand what—
+
+174
+01:11:07,527 --> 01:11:11,800
+I'm basically
+
+175
+01:11:12,300 --> 01:11:12,684
+asking the same question.
+
+176
+01:11:39,123 --> 01:11:42,025
+Okay, good. So I think I'm just wanting to kind of make sure that this
+
+177
+01:11:42,525 --> 01:11:45,087
+point gets hammered in. Without more information, this is the only thing that you can
+
+178
+01:11:45,587 --> 01:11:47,881
+do. You have to rely on your task, you have to rely on what you
+
+179
+01:11:48,381 --> 01:11:51,993
+can observe. The data scientist way of doing things is that you have your data
+
+180
+01:11:52,459 --> 01:11:56,442
+and you have some way to measure what's good and bad, and then you basically
+
+181
+01:11:57,020 --> 01:12:00,939
+use that information to decide what strategy is better.
+
+182
+01:12:01,758 --> 01:12:05,292
+Okay. Then, okay, let's now switch to this, right? So what we have talked about
+
+183
+01:12:05,308 --> 01:12:08,922
+is that we have looked at 4 different tasks of classical NLP,
+
+184
+01:12:09,002 --> 01:12:13,065
+and these tasks also remain in modern NLP as well. And we've talked about one—
+
+185
+01:12:13,579 --> 01:12:16,773
+the secret sauce here to actually do everything was to come up with a
+
+186
+01:12:17,273 --> 01:12:21,043
+feature vector representation, which we also— just
+
+187
+01:12:21,543 --> 01:12:25,298
+a moment— which we also refer to as a TF-IDF matrix representation,
+
+188
+01:12:25,378 --> 01:12:27,963
+right? And we discussed what kind of transformation we can perform on it.
+
+189
+01:12:29,295 --> 01:12:33,180
+But the important thing to now discuss is that while
+
+190
+01:12:33,228 --> 01:12:36,856
+we can actually think of these more classical approaches of representing or
+
+191
+01:12:37,356 --> 01:12:41,237
+extracting features from text data, In the modern world, we actually mostly,
+
+192
+01:12:41,590 --> 01:12:45,376
+more often than not, rely on neural networks, right? And we pose all
+
+193
+01:12:45,424 --> 01:12:49,275
+of these as a neural NLP problem, as you can say it,
+
+194
+01:12:49,612 --> 01:12:52,740
+right? And we look at certain aspects which I'll walk you through today,
+
+195
+01:12:52,965 --> 01:12:56,109
+right? We will take a bit different route to this,
+
+196
+01:12:56,446 --> 01:12:59,687
+right? So there are 3 important aspects that we'll cover today. Embeddings,
+
+197
+01:13:00,104 --> 01:13:03,987
+where we say how do we actually represent sequence of discrete words into
+
+198
+01:13:04,292 --> 01:13:07,387
+vectors, right? Then we'll look into how can we
+
+199
+01:13:07,419 --> 01:13:11,829
+actually use neural networks to model certain NLP tasks
+
+200
+01:13:11,893 --> 01:13:15,517
+also. Basically, what it means is that how can you compute these representations
+
+201
+01:13:16,017 --> 01:13:19,783
+that we have observed, or how you can actually change or transform these representations
+
+202
+01:13:20,283 --> 01:13:23,696
+that you have already seen in the embeddings to a higher-level
+
+203
+01:13:24,196 --> 01:13:27,914
+representation that can be used for your task. And then how can we use these
+
+204
+01:13:28,010 --> 01:13:32,004
+higher-level representations to actually do some meaningful predictions.
+
+205
+01:13:32,743 --> 01:13:35,599
+So these are the 3 things that we look into: embeddings, model, and prediction.
+
+206
+01:13:35,953 --> 01:13:38,681
+But we will first look into how do we model things, how do we predict
+
+207
+01:13:39,181 --> 01:13:42,437
+things, and then we will go back to see how do we learn embeddings.
+
+208
+01:13:42,710 --> 01:13:46,497
+We'll just take this slightly, I would say,
+
+209
+01:13:46,786 --> 01:13:50,494
+counterintuitive route to understanding what it is. Okay, so let's now try
+
+210
+01:13:50,994 --> 01:13:54,442
+to go back to our, again, certain example tasks and think about what is an
+
+211
+01:13:54,811 --> 01:13:57,700
+NLP model when we think from a neural perspective.
+
+212
+01:13:58,358 --> 01:14:01,953
+And don't worry if you don't know certain operations, you will also have a
+
+213
+01:14:02,453 --> 01:14:05,804
+practical exercise this week which actually tells you all of this, right? How do you
+
+214
+01:14:05,820 --> 01:14:09,511
+actually perform these tasks using Python
+
+215
+01:14:10,011 --> 01:14:13,346
+and PyTorch on actual data? Okay. So the first thing,
+
+216
+01:14:13,362 --> 01:14:16,716
+let's try to understand a basic task like sentiment analysis. We also already looked
+
+217
+01:14:17,216 --> 01:14:20,648
+at it in the first lecture. When we say, okay, our task is to actually
+
+218
+01:14:21,148 --> 01:14:25,319
+convert a sentence describing a movie review to a sentiment or a restaurant
+
+219
+01:14:25,819 --> 01:14:29,493
+review to actually whether that restaurant is worth going to or not,
+
+220
+01:14:29,574 --> 01:14:33,010
+right? And let's just take this example. Okay. The fact is, okay,
+
+221
+01:14:33,251 --> 01:14:36,671
+it says, I really enjoyed the movie we watched on Saturday, right? So the goal
+
+222
+01:14:36,719 --> 01:14:40,492
+of this model is that the model will ingest that piece of text and
+
+223
+01:14:40,992 --> 01:14:43,639
+it will output either a plus or minus, right? Let's consider a very simple task
+
+224
+01:14:44,139 --> 01:14:47,236
+of binary classification where you just want to say positive or negative. That's,
+
+225
+01:14:47,316 --> 01:14:51,683
+that's that. Okay. So what do we do in a neural
+
+226
+01:14:52,454 --> 01:14:55,456
+model or an NLP model, which is a neural NLP model, is that,
+
+227
+01:14:55,585 --> 01:14:58,956
+as I said, we have a way to actually take this
+
+228
+01:14:59,456 --> 01:15:03,098
+piece of text and represent it as a sequence of
+
+229
+01:15:04,174 --> 01:15:07,337
+vectors. Right. And before,
+
+230
+01:15:07,530 --> 01:15:11,608
+what we used to do is that we used to represent these text
+
+231
+01:15:11,865 --> 01:15:15,268
+as when we talked about bag of words or TF-IDF. Right?
+
+232
+01:15:15,815 --> 01:15:24,218
+What was that? Each sentence was represented as a— yes,
+
+233
+01:15:24,558 --> 01:15:27,098
+but it's a vector, but what kind of a vector is it?
+
+234
+01:15:29,440 --> 01:15:29,958
+Dense or sparse?
+
+235
+01:15:33,292 --> 01:15:37,149
+Guessing or— okay. So it is a sparse
+
+236
+01:15:37,649 --> 01:15:40,877
+representation. Why? Because we were just
+
+237
+01:15:41,377 --> 01:15:44,639
+literally representing it by the counts or a more
+
+238
+01:15:44,687 --> 01:15:48,232
+fancy representation of how many times this word is
+
+239
+01:15:48,732 --> 01:15:53,078
+appearing in this document. And the dimensionality
+
+240
+01:15:53,334 --> 01:15:56,880
+or the size of this vector is the number of words in the vocabulary.
+
+241
+01:15:57,281 --> 01:16:00,795
+That's why it's a sparse vector because every word does not appear in— every
+
+242
+01:16:00,811 --> 01:16:03,442
+word in the vocabulary does not appear in every document.
+
+243
+01:16:04,741 --> 01:16:07,838
+And that's why it's a sparse vector because there are very few non-zero entries,
+
+244
+01:16:08,014 --> 01:16:12,076
+right? Again, saying all the terms that we saw. In neural NLP
+
+245
+01:16:12,125 --> 01:16:15,496
+instead, every word is a vector, but it's a dense
+
+246
+01:16:16,042 --> 01:16:19,237
+vector. And I'll just tell you why and how that happens.
+
+247
+01:16:20,554 --> 01:16:24,231
+So because again, going back to this, as I said, so we
+
+248
+01:16:24,731 --> 01:16:28,100
+used to represent things using simple counts. If you see, I really enjoyed
+
+249
+01:16:28,600 --> 01:16:31,922
+the movie, it will have 1s at places where we have these
+
+250
+01:16:32,034 --> 01:16:36,032
+words, and every place else will be 0. Right? And if
+
+251
+01:16:36,532 --> 01:16:39,788
+you compute it using some sort of TF-IDF, you will have the same things.
+
+252
+01:16:40,141 --> 01:16:44,796
+I mean, it will not be a discrete count. It will just be something more
+
+253
+01:16:45,296 --> 01:16:48,504
+fancy, real-valued numbers, which captures
+
+254
+01:16:48,632 --> 01:16:52,388
+all different aspects that we want them to capture. But there will still be this
+
+255
+01:16:53,223 --> 01:16:57,172
+sparse representations. The problem in this space
+
+256
+01:16:57,300 --> 01:17:00,575
+is that what we are doing
+
+257
+01:17:00,671 --> 01:17:04,379
+is we are actually representing everything as a function
+
+258
+01:17:04,879 --> 01:17:08,504
+of common words, right? So if you recall, when we want to do something
+
+259
+01:17:08,616 --> 01:17:12,372
+with these bag of words representations, right, what we do, we can
+
+260
+01:17:12,468 --> 01:17:16,015
+actually look at similarity where we can actually see, we'll compute some
+
+261
+01:17:16,515 --> 01:17:19,739
+sort of a distance, right? And the distance function here could be something as how
+
+262
+01:17:20,239 --> 01:17:23,013
+many words are common, right? You can say that, okay, these are vectors,
+
+263
+01:17:23,463 --> 01:17:26,849
+these are very nicely vectors representing real-valued
+
+264
+01:17:27,349 --> 01:17:29,417
+numbers. We can also do some sort of a cosine distance, we can do some
+
+265
+01:17:29,917 --> 01:17:33,340
+sort of an angle as you said, But the point is it still eventually
+
+266
+01:17:33,840 --> 01:17:37,683
+will capture only something as commonality.
+
+267
+01:17:38,040 --> 01:17:41,433
+It will capture, okay, between 2 sentences like,
+
+268
+01:17:41,900 --> 01:17:45,300
+I really enjoyed the movie versus I really
+
+269
+01:17:45,445 --> 01:17:49,150
+loved the movie. The fact is that
+
+270
+01:17:49,215 --> 01:17:52,732
+while they are semantically very similar, if I
+
+271
+01:17:52,829 --> 01:17:55,749
+ask you and if I tell you these sentences, you will say, yeah, these sentences
+
+272
+01:17:56,249 --> 01:17:58,692
+are largely the same. So I would give a very high similarity score. Score.
+
+273
+01:17:59,173 --> 01:18:02,714
+But a bag of words representation may not give that high of a score
+
+274
+01:18:03,083 --> 01:18:07,041
+because of the difference between enjoyed and loved, because it does not know that
+
+275
+01:18:07,169 --> 01:18:11,111
+enjoyed and loved are semantically similar things, right? It will still give a high score
+
+276
+01:18:11,611 --> 01:18:15,342
+because large part of the sentence is similar. But if you replace each
+
+277
+01:18:15,358 --> 01:18:19,252
+word here, as you see, with something which is similar
+
+278
+01:18:19,268 --> 01:18:23,338
+in meaning but not exactly the same thing, the distance will suffer because
+
+279
+01:18:23,675 --> 01:18:27,302
+they are not trained, they are not actually designed to capture these kind of aspects,
+
+280
+01:18:27,463 --> 01:18:30,786
+right? So, and if you just go back to understanding
+
+281
+01:18:30,835 --> 01:18:34,190
+the most simplest thing, right? How do we actually measure the similarity between
+
+282
+01:18:34,206 --> 01:18:37,626
+words? Think about this word like enjoyed and loved. The similarity,
+
+283
+01:18:37,723 --> 01:18:41,320
+if you look at the bag of words representation, will be 0 because there's
+
+284
+01:18:41,336 --> 01:18:44,386
+nothing common here. No matter what kind of transformations you do,
+
+285
+01:18:44,402 --> 01:18:47,694
+TF-IDF, any fancy normalization that you do, it will always be 0
+
+286
+01:18:48,194 --> 01:18:51,901
+because these are not the same words. What we
+
+287
+01:18:52,029 --> 01:18:55,449
+do with word embeddings is that the goal here was to really
+
+288
+01:18:55,562 --> 01:18:58,853
+be able to understand the semantics as we say it. What do we mean by
+
+289
+01:18:59,353 --> 01:19:02,996
+semantics? To really understand what is the relationship of the word man
+
+290
+01:19:03,028 --> 01:19:06,047
+to the word woman, or the relationship between a king and a queen.
+
+291
+01:19:06,544 --> 01:19:10,109
+Or if you think about verb tenses, is walked and walking,
+
+292
+01:19:10,334 --> 01:19:13,995
+is there a relationship between them? Similarly, swimming and swam. Similarly, country,
+
+293
+01:19:14,027 --> 01:19:17,527
+capital, do they have relationships? Ottawa, Canada, Madrid,
+
+294
+01:19:17,559 --> 01:19:20,818
+Spain, Rome, Italy, right? So do these things,
+
+295
+01:19:21,396 --> 01:19:24,816
+words, have any relationship? And this is what when we say,
+
+296
+01:19:25,186 --> 01:19:28,316
+when I use the term, I use the term meaning because that's
+
+297
+01:19:28,381 --> 01:19:32,170
+what semantic means, right? So semantic
+
+298
+01:19:32,892 --> 01:19:36,521
+embeddings, that's why we call them as semantic embeddings because these word
+
+299
+01:19:37,021 --> 01:19:40,197
+embeddings actually allow us to capture meaning of these words. Okay, let's try to understand
+
+300
+01:19:40,663 --> 01:19:44,437
+how do we actually use this information.
+
+301
+01:19:45,051 --> 01:19:48,974
+Okay, so what I was saying is that in modern or neural NLP,
+
+302
+01:19:49,738 --> 01:19:52,852
+again, now it's clear, right? When I talk to you about classical NLP, bag of
+
+303
+01:19:52,868 --> 01:19:56,952
+words, the vectors are sparse. Okay, sparse. When we talk
+
+304
+01:19:57,032 --> 01:20:00,897
+about modern neural NLP, the vectors are dense.
+
+305
+01:20:01,219 --> 01:20:04,471
+They capture semantics, the meaning. We'll see how do they do that, but it's important
+
+306
+01:20:04,971 --> 01:20:08,133
+to understand this is more very basic level. The point that we are trying to
+
+307
+01:20:08,633 --> 01:20:11,979
+also say is that the word vector
+
+308
+01:20:12,479 --> 01:20:15,552
+representations are also high-dimensional, but the vocabulary size is not in millions.
+
+309
+01:20:16,049 --> 01:20:19,365
+Their dimensionality will still be of the order of thousands. If you—
+
+310
+01:20:19,734 --> 01:20:22,618
+if some of you have played with some of the large language models of today,
+
+311
+01:20:23,019 --> 01:20:25,518
+right, if you have read about them,
+
+312
+01:20:25,999 --> 01:20:29,572
+some of these large models still have a dimensionality of
+
+313
+01:20:30,550 --> 01:20:34,027
+9,000— sorry, 8,192. They're always in multiples
+
+314
+01:20:34,527 --> 01:20:37,880
+of 2. So, or 16,000 as well, right?
+
+315
+01:20:38,121 --> 01:20:41,831
+So they are still— the dimensionality of word vectors are still in
+
+316
+01:20:42,024 --> 01:20:45,638
+a very, you know, they are not— I would not call
+
+317
+01:20:46,138 --> 01:20:49,750
+them low dimensional. They are still high dimensional, but not in millions and they are
+
+318
+01:20:50,250 --> 01:20:53,814
+not sparse. Okay. So basically what we are now doing is
+
+319
+01:20:53,862 --> 01:20:56,946
+that we are taking each of these words. I really enjoyed
+
+320
+01:20:57,043 --> 01:21:00,512
+the movie! Even, right? We are taking these words or
+
+321
+01:21:01,012 --> 01:21:04,524
+tokens and we are actually transforming them into something called a
+
+322
+01:21:05,024 --> 01:21:08,498
+word vector, a word embedding, a neural embedding, a dense embedding.
+
+323
+01:21:08,594 --> 01:21:12,424
+These are all the synonyms for the same thing. And eventually it's a representation
+
+324
+01:21:12,520 --> 01:21:16,478
+for each word which is dense and which is lower
+
+325
+01:21:16,978 --> 01:21:19,827
+in dimension when compared to your bag of words, but it is still high dimension.
+
+326
+01:21:20,228 --> 01:21:24,378
+Okay, with that settled, let's try to actually now see once
+
+327
+01:21:24,878 --> 01:21:28,288
+you have such a representation, what could you do? Now what you can do is
+
+328
+01:21:28,336 --> 01:21:32,095
+you can use your favorite operations of a cosine similarity or
+
+329
+01:21:32,595 --> 01:21:35,879
+a cosine distance to actually measure the similarity of words because these
+
+330
+01:21:35,993 --> 01:21:39,150
+vectors were trained to actually capture that.
+
+331
+01:21:39,473 --> 01:21:43,501
+It will now not give you enjoyed and love being the similarity
+
+332
+01:21:43,582 --> 01:21:46,708
+of these 2 terms is 0. It's not because the vectors were trained to
+
+333
+01:21:47,208 --> 01:21:50,433
+capture this similarity. And based on this,
+
+334
+01:21:50,449 --> 01:21:53,821
+so how does a simple NLP model look like? So as I said, so if
+
+335
+01:21:54,321 --> 01:21:57,386
+you have a sentence, I really enjoyed the movie we watched on Saturday. It will
+
+336
+01:21:57,886 --> 01:22:02,230
+basically convert each sequence
+
+337
+01:22:02,730 --> 01:22:06,483
+to a sequence of embeddings. And how do we do this is basically the
+
+338
+01:22:06,983 --> 01:22:10,435
+embeddings are actually—
+
+339
+01:22:10,629 --> 01:22:14,260
+what we do is that for each unique word, we learn a vector
+
+340
+01:22:14,760 --> 01:22:18,468
+representation, and that's what we call as an embedding. So what will happen here
+
+341
+01:22:18,534 --> 01:22:22,354
+is that if you see these 2 sentences, sentence 1, I really enjoyed the
+
+342
+01:22:22,854 --> 01:22:26,311
+movie we watched on Saturday. And sentence 2, which says, we really loved the film
+
+343
+01:22:26,343 --> 01:22:30,167
+we saw last Sunday. In these cases, the terms
+
+344
+01:22:30,441 --> 01:22:34,474
+really and we will have the same embeddings, the same unique
+
+345
+01:22:34,974 --> 01:22:38,266
+embeddings. So what I'm trying to say is that now every word,
+
+346
+01:22:38,796 --> 01:22:42,781
+no matter where it appears, it will still have one entry
+
+347
+01:22:43,215 --> 01:22:47,360
+in a dictionary, which is our vocabulary. Right. And that's a dense vector representation
+
+348
+01:22:47,457 --> 01:22:49,321
+that we are learning. Okay.
+
+349
+01:22:51,220 --> 01:22:54,638
+Um, now we have— what we have done is
+
+350
+01:22:54,670 --> 01:22:57,894
+that we have taken the sentence and we have represented it using a
+
+351
+01:22:58,475 --> 01:23:01,535
+sequence of embeddings,
+
+352
+01:23:01,841 --> 01:23:05,062
+right? Which we refer to as this matrix X. Okay.
+
+353
+01:23:05,690 --> 01:23:09,078
+Let's say we have done that. Now we have our word embeddings.
+
+354
+01:23:09,672 --> 01:23:13,786
+We can feed it to a
+
+355
+01:23:14,286 --> 01:23:17,513
+model which we— which some of you might have naturally guessed because we're talking about
+
+356
+01:23:18,013 --> 01:23:19,843
+a neural model. It will be some sort of a neural network.
+
+357
+01:23:21,280 --> 01:23:25,022
+But what do we do now? What do we do here is basically
+
+358
+01:23:26,023 --> 01:23:29,785
+we have to have a model that can actually take these vectors,
+
+359
+01:23:30,463 --> 01:23:34,378
+these sequence of embeddings, and can do some transformation so
+
+360
+01:23:34,410 --> 01:23:38,075
+that we can actually do some meaningful prediction tasks
+
+361
+01:23:38,091 --> 01:23:41,870
+on top of it. So the model actually takes these
+
+362
+01:23:43,718 --> 01:23:45,858
+embeddings as input. So these vectors,
+
+363
+01:23:47,003 --> 01:23:50,776
+embeddings and vectors are the same thing here. So these takes these vectors as
+
+364
+01:23:50,809 --> 01:23:52,919
+input from x0 to xt,
+
+365
+01:23:54,173 --> 01:23:58,077
+and it actually does some sort of transformation on
+
+366
+01:23:58,206 --> 01:24:02,464
+these vectors so that then we can actually make
+
+367
+01:24:02,964 --> 01:24:06,697
+a prediction out of it. Can someone tell me what can
+
+368
+01:24:06,729 --> 01:24:10,539
+be this model? How do
+
+369
+01:24:11,039 --> 01:24:14,168
+we perform this transformation? Anything that you have heard of,
+
+370
+01:24:14,345 --> 01:24:18,104
+used? I'm sure I see many familiar faces who
+
+371
+01:24:18,314 --> 01:24:22,718
+have actually also worked with LLMs, right? Or Transformers. So anything
+
+372
+01:24:22,750 --> 01:24:23,093
+that you know,
+
+373
+01:24:25,933 --> 01:24:29,541
+and it could also be something simple. The goal is basically you
+
+374
+01:24:29,558 --> 01:24:33,506
+have a series of vectors, right? And then you have
+
+375
+01:24:33,684 --> 01:24:37,542
+a block here, which is this gray box. Which should do something
+
+376
+01:24:37,913 --> 01:24:41,220
+so that you can then do a prediction which just tells you
+
+377
+01:24:41,285 --> 01:24:41,898
+a plus or minus.
+
+378
+01:24:44,974 --> 01:24:48,960
+Sorry? But that will actually do— that will— okay.
+
+379
+01:24:49,201 --> 01:24:52,431
+So the answer was logistic regression, but let me just tell
+
+380
+01:24:52,931 --> 01:24:56,094
+you that will actually perform the— that will perform the plus or minus.
+
+381
+01:24:57,341 --> 01:24:58,700
+But there's one step before that.
+
+382
+01:25:01,620 --> 01:25:03,813
+Can you pass all these vectors to a logistic regression?
+
+383
+01:25:05,500 --> 01:25:06,101
+No, right?
+
+384
+01:25:11,210 --> 01:25:13,294
+Cosine similarity. Um,
+
+385
+01:25:15,005 --> 01:25:18,474
+sure, but that's a way to understand how these vectors are related.
+
+386
+01:25:26,529 --> 01:25:30,081
+So what do you need to do on this vector? Like, you cannot pass 10
+
+387
+01:25:30,581 --> 01:25:31,535
+vectors to a logistic regression model.
+
+388
+01:25:40,100 --> 01:25:44,314
+Right? Yes? Not just reducing
+
+389
+01:25:44,346 --> 01:25:47,793
+the dimension. You are on the right track, but you're not— the goal is not
+
+390
+01:25:48,293 --> 01:25:51,322
+just to reduce the dimension. The goal is— so what would actually do a plus
+
+391
+01:25:51,419 --> 01:25:54,761
+or minus? The answer was a logistic regression, which is a classifier. Let's say
+
+392
+01:25:54,842 --> 01:25:57,819
+a classifier will actually allow you to do a plus or minus. But can you
+
+393
+01:25:57,868 --> 01:26:00,583
+feed all of these vectors directly to a classifier? Would it make sense?
+
+394
+01:26:01,295 --> 01:26:04,479
+Maybe you can just add all of them. Okay.
+
+395
+01:26:04,819 --> 01:26:08,277
+Yes. Why? Okay. What we can do is we can add all of them.
+
+396
+01:26:08,681 --> 01:26:12,217
+What is adding is actually some sort of a transformation which
+
+397
+01:26:12,234 --> 01:26:16,621
+takes all of these vectors and combines them into a representation which
+
+398
+01:26:17,121 --> 01:26:21,393
+somehow says, okay, I can take information from I really
+
+399
+01:26:21,746 --> 01:26:25,329
+enjoyed and just I'm putting them together and then I'll pass it to a classifier.
+
+400
+01:26:26,496 --> 01:26:29,896
+Right? That's a dumb transformation, but that is one transformation,
+
+401
+01:26:30,204 --> 01:26:33,604
+right? So have you heard of things like a recurrent neural network?
+
+402
+01:26:34,106 --> 01:26:36,696
+Who has heard of the term recurrent neural network? Okay.
+
+403
+01:26:37,247 --> 01:26:39,902
+Because I said I see many familiar faces, you have worked with these,
+
+404
+01:26:40,242 --> 01:26:44,355
+with some of them also with me on some projects. You have heard LSTMs,
+
+405
+01:26:46,430 --> 01:26:49,993
+GRUs, or called GRU, not the guy
+
+406
+01:26:50,123 --> 01:26:53,760
+in the Despicable Me movie, but Yeah,
+
+407
+01:26:54,483 --> 01:26:57,470
+okay. Then Transformers, right?
+
+408
+01:26:57,711 --> 01:27:01,454
+Self-attention Transformers, which we'll cover in week 4. State-space models,
+
+409
+01:27:01,486 --> 01:27:05,630
+which we'll not cover. These are all the operations
+
+410
+01:27:05,823 --> 01:27:09,597
+that can be used. Their job is just to actually fill
+
+411
+01:27:10,097 --> 01:27:13,902
+this gray box that takes these sequence of embeddings
+
+412
+01:27:13,998 --> 01:27:18,014
+and transforms them somehow. We'll see how in future
+
+413
+01:27:18,514 --> 01:27:22,409
+lectures. But transform them somehow so that they can be fed eventually to
+
+414
+01:27:22,441 --> 01:27:26,291
+a classifier, right? And as was already shared,
+
+415
+01:27:27,269 --> 01:27:30,686
+okay, I'll skip this because I don't have time. So as was
+
+416
+01:27:31,186 --> 01:27:34,198
+already shared is that there could be something as simple as,
+
+417
+01:27:34,535 --> 01:27:37,647
+which is also, I mean, it sounds like a fancy term called Sum-pool.
+
+418
+01:27:38,561 --> 01:27:42,250
+It basically means pooling these vectors together and by a sum
+
+419
+01:27:42,750 --> 01:27:46,148
+operation, which is what was discussed, right? Which we say, okay, we just add these
+
+420
+01:27:46,164 --> 01:27:49,774
+vectors up, to get one single vector representation which
+
+421
+01:27:49,952 --> 01:27:53,615
+we will pass along to the machine learning model or a classifier.
+
+422
+01:27:54,148 --> 01:27:56,586
+But you cannot just only do a sum, you can also do an average,
+
+423
+01:27:57,474 --> 01:28:00,382
+right? You can also do a max pool. Like,
+
+424
+01:28:00,899 --> 01:28:04,419
+do you understand what a max pool in a vector would be? Can anyone tell
+
+425
+01:28:04,452 --> 01:28:07,831
+me what a max pool in a vector would be? Yes?
+
+426
+01:28:10,366 --> 01:28:13,892
+Of what, what does it mean to take a maximum value of
+
+427
+01:28:14,392 --> 01:28:18,150
+a vector? You have n vectors and you have to take the
+
+428
+01:28:23,800 --> 01:28:26,677
+Let's give someone else also the chance to talk, but I'll get back to you.
+
+429
+01:28:30,956 --> 01:28:34,221
+Again, linear algebra 101.
+
+430
+01:28:35,846 --> 01:28:37,438
+You have n vectors, how do you take a max?
+
+431
+01:28:47,854 --> 01:28:51,611
+But okay, you don't have to actually decide which
+
+432
+01:28:51,724 --> 01:28:54,726
+vector is the maximum. Like you did in
+
+433
+01:28:54,774 --> 01:28:58,515
+the sum, you are kind of collating information from all vectors and doing
+
+434
+01:28:58,564 --> 01:29:01,743
+a sum operation. Here you will do a max operation to collate
+
+435
+01:29:02,243 --> 01:29:02,995
+information from all of them.
+
+436
+01:29:06,334 --> 01:29:09,271
+So you do some sort of what is called as an element-wise maximum,
+
+437
+01:29:10,106 --> 01:29:13,764
+right? Which basically means is that you take each
+
+438
+01:29:13,861 --> 01:29:16,813
+vector and the first entry in each.
+
+439
+01:29:17,487 --> 01:29:20,199
+So each vector has, let's say, 10 entries, right?
+
+440
+01:29:20,472 --> 01:29:24,163
+So, and you have 5 vectors. So you take the first entry on each
+
+441
+01:29:24,227 --> 01:29:27,116
+of those 5 and you pick the maximum. Then you take the second entry in
+
+442
+01:29:27,616 --> 01:29:30,213
+each of those 5, pick the maximum, and you do the element-wise maximum operation.
+
+443
+01:29:30,566 --> 01:29:33,854
+Guys, you really need to brush up your linear algebra. Otherwise, things are not
+
+444
+01:29:34,354 --> 01:29:38,260
+going to work out. Just saying. Okay. So this
+
+445
+01:29:38,760 --> 01:29:42,475
+is how you can do a Max-pool, right? But these are very simple operations.
+
+446
+01:29:42,763 --> 01:29:46,561
+So let's look at the Sum-pool operation. What you do is you have these vectors,
+
+447
+01:29:46,753 --> 01:29:50,183
+right? And you just add them up. You get one representation,
+
+448
+01:29:50,199 --> 01:29:53,612
+what we call as ht. I just want to now set up some terminology
+
+449
+01:29:53,660 --> 01:29:58,019
+as well, is that we will actually use this term h,
+
+450
+01:29:58,676 --> 01:30:02,780
+to actually represent to the output of a model
+
+451
+01:30:02,860 --> 01:30:05,361
+in the course, or we can also use the term O for that, right?
+
+452
+01:30:05,409 --> 01:30:09,032
+So whenever we talk about a neural network representation, we'll say h
+
+453
+01:30:09,256 --> 01:30:12,559
+is the output of this model. h is not the output
+
+454
+01:30:13,059 --> 01:30:16,150
+of the whole neural network. h is just the output of this internal thing that
+
+455
+01:30:16,650 --> 01:30:19,292
+we are referring to as a model. Some of you have actually taken a class
+
+456
+01:30:19,792 --> 01:30:23,075
+on neural networks. h is sometimes also referred to as the hidden representations, right?
+
+457
+01:30:23,620 --> 01:30:27,211
+Basically, which is something that you get at the pre-final layer before
+
+458
+01:30:27,711 --> 01:30:30,946
+you apply a classifier or the eventual thing. Which will actually give you the output
+
+459
+01:30:31,446 --> 01:30:34,262
+of plus-minus in this case. If it's something else, it gives you something else,
+
+460
+01:30:34,310 --> 01:30:38,208
+right? And so basically what this is doing is this
+
+461
+01:30:38,708 --> 01:30:41,749
+model is actually composing our embeddings into a different representation.
+
+462
+01:30:42,315 --> 01:30:47,973
+And that representation is then passed along to our classifier
+
+463
+01:30:47,989 --> 01:30:52,083
+in this case, which actually performs the eventual task of you predicting it as either
+
+464
+01:30:52,164 --> 01:30:55,195
+a plus or minus. Okay. Okay,
+
+465
+01:30:55,870 --> 01:30:59,405
+um, then can anyone tell me how do we convert the output
+
+466
+01:30:59,905 --> 01:31:03,647
+of our model to a prediction? Now what we have done is that we have
+
+467
+01:31:03,663 --> 01:31:07,053
+taken this sequence of embeddings and we have converted
+
+468
+01:31:07,553 --> 01:31:12,436
+into a representation which is one vector, right? And that we
+
+469
+01:31:12,936 --> 01:31:16,260
+need to pass it along to a classifier which gives
+
+470
+01:31:16,372 --> 01:31:20,389
+me a plus or minus. Can anyone tell me how does it— how can
+
+471
+01:31:29,477 --> 01:31:33,123
+Yes. Okay. Yes. So basically what you do is you use some
+
+472
+01:31:33,623 --> 01:31:37,365
+sort of activation function here. I mean, don't get lost into
+
+473
+01:31:37,865 --> 01:31:41,924
+the term. What do we mean by an activation function? It's basically a mathematical operation,
+
+474
+01:31:42,279 --> 01:31:45,812
+right, that will allow us to transform the outputs
+
+475
+01:31:46,312 --> 01:31:49,145
+once again. Right. But there are more steps to that and I'll go through all
+
+476
+01:31:49,645 --> 01:31:52,853
+of this. But thanks for sharing that. So what we'll now
+
+477
+01:31:52,901 --> 01:31:57,041
+do is let's try to again understand that we have this representation
+
+478
+01:31:57,154 --> 01:31:59,722
+called ht. This ht is still a vector. Okay.
+
+479
+01:32:00,685 --> 01:32:04,103
+What we can do is, you know, we can again,
+
+480
+01:32:04,215 --> 01:32:07,586
+logistic regression is just applying the sigmoid activation function, if you will, right?
+
+481
+01:32:08,227 --> 01:32:11,598
+Eventually, right? So you're right on that count, but also logistic
+
+482
+01:32:12,098 --> 01:32:15,417
+regression term was thrown away. And logistic regression is one of the simplest classifiers
+
+483
+01:32:15,530 --> 01:32:18,722
+that we that all of you would have
+
+484
+01:32:19,222 --> 01:32:22,412
+learned in your machine learning class, right? That's the first thing that anyone teaches you
+
+485
+01:32:22,508 --> 01:32:25,860
+in a machine learning class. Of course, I mean, okay, linear regression, but then logistic
+
+486
+01:32:26,360 --> 01:32:30,095
+regression, right? And not to again get lost with the terminology
+
+487
+01:32:30,127 --> 01:32:33,897
+here, right? The operation is very, very simple. What you need to
+
+488
+01:32:34,397 --> 01:32:38,854
+do so is you need this new guy here, which was W0,
+
+489
+01:32:39,255 --> 01:32:42,463
+which we have introduced here, right? Or Wo if you wanna call it,
+
+490
+01:32:42,559 --> 01:32:44,806
+and you have h. So you already had this ht,
+
+491
+01:32:45,529 --> 01:32:48,885
+which was as simple as taking these representations and summing them
+
+492
+01:32:49,385 --> 01:32:52,931
+up, right? That gives you a vector which is ht. Now, what you
+
+493
+01:32:53,431 --> 01:32:56,560
+need is that there was a mention of activation functions, right? So this guy
+
+494
+01:32:56,672 --> 01:32:59,546
+here, sigma, is your sigmoid activation function.
+
+495
+01:32:59,803 --> 01:33:03,320
+It can be a tanh, it can be— you will hear these
+
+496
+01:33:03,416 --> 01:33:07,109
+terms later on, but these are all mathematical functions, right? You will hear these terms
+
+497
+01:33:07,609 --> 01:33:10,900
+like ReLU, there is There are so many different terms out there today.
+
+498
+01:33:11,044 --> 01:33:14,676
+Activation functions is like, okay, you might find thousands of activation functions, but these
+
+499
+01:33:15,176 --> 01:33:18,613
+are all mathematical operators, right? So what you are doing is you're taking ht,
+
+500
+01:33:19,255 --> 01:33:22,485
+you are multiplying this with a matrix called w, right?
+
+501
+01:33:23,433 --> 01:33:26,855
+What this actually gives you, since it's a binary classification,
+
+502
+01:33:26,952 --> 01:33:30,165
+this should give you a real-valued number.
+
+503
+01:33:31,628 --> 01:33:35,644
+And on that real-valued number, you apply an operator
+
+504
+01:33:35,804 --> 01:33:41,098
+called a sigmoid function, which transforms it to a probability,
+
+505
+01:33:41,980 --> 01:33:45,109
+right, of 0 and 1, in this case for plus or
+
+506
+01:33:45,609 --> 01:33:48,879
+minus, right? Now, how does it do that? I will leave that up for you
+
+507
+01:33:49,379 --> 01:33:52,617
+to read. But the key point here is you need
+
+508
+01:33:52,649 --> 01:33:55,793
+these key elements for a neural classifier to work. You need an activation function,
+
+509
+01:33:56,643 --> 01:34:00,574
+which is this, right, which takes up a real-valued
+
+510
+01:34:01,074 --> 01:34:05,065
+number, One entry, it is not a vector. It takes one entry and transforms
+
+511
+01:34:05,565 --> 01:34:08,608
+it into a distribution over your class labels.
+
+512
+01:34:10,883 --> 01:34:15,396
+And you need a weight matrix which we can learn
+
+513
+01:34:15,751 --> 01:34:19,358
+or which we can actually get inspired from different— if we have from
+
+514
+01:34:19,406 --> 01:34:23,216
+a separate model that can also be supplying that. So, what do
+
+515
+01:34:23,716 --> 01:34:27,523
+we have here? So, what we need here
+
+516
+01:34:27,686 --> 01:34:31,857
+is that, we need a way to actually either—
+
+517
+01:34:31,970 --> 01:34:34,892
+so one simple way is that either you are given with all these embeddings,
+
+518
+01:34:34,956 --> 01:34:38,842
+right? So you, you had someone nice who had actually trained
+
+519
+01:34:39,342 --> 01:34:42,150
+all these word embeddings and they just gave it to you. Okay. So then this
+
+520
+01:34:42,650 --> 01:34:46,051
+is all learned, right? And then what you just need to do is you have
+
+521
+01:34:46,084 --> 01:34:49,295
+to— and someone also said that, okay, Sum-pool is the best operation that will work
+
+522
+01:34:49,795 --> 01:34:52,988
+for you. That's also settled, right? And then what you just need to do is
+
+523
+01:34:53,488 --> 01:34:57,566
+you have to learn this W, this weight matrix,
+
+524
+01:34:57,952 --> 01:35:02,049
+which allows you to kind of take this vector and then convert
+
+525
+01:35:02,549 --> 01:35:06,018
+it into a scalar, which eventually allows you to do prediction. How will all
+
+526
+01:35:06,518 --> 01:35:10,228
+of this happen? This is all done using a concept called backpropagation
+
+527
+01:35:10,260 --> 01:35:14,116
+in neural networks, where basically you have your training data where
+
+528
+01:35:14,616 --> 01:35:18,438
+you actually know this was your movie review and this
+
+529
+01:35:18,938 --> 01:35:22,835
+was labeled positive or negative. And what you do is based on
+
+530
+01:35:22,868 --> 01:35:23,274
+that,
+
+531
+01:35:26,121 --> 01:35:30,384
+you actually compute the loss at each step, which actually tells you whether you
+
+532
+01:35:30,804 --> 01:35:34,293
+actually let the whole— so for the training data, what you have is that you
+
+533
+01:35:34,793 --> 01:35:38,128
+know what the answer should be, right? And you let the neural network compute the
+
+534
+01:35:38,160 --> 01:35:41,428
+answer for you, right? And then you see the difference between the
+
+535
+01:35:41,444 --> 01:35:44,632
+actual answer and the answer that you obtained, and you try
+
+536
+01:35:44,681 --> 01:35:48,564
+to minimize that difference. Right? And this is eventually how
+
+537
+01:35:50,964 --> 01:35:54,915
+you train a neural network. This is done through backpropagation, which we will
+
+538
+01:35:55,044 --> 01:35:58,227
+actually go in deep in the next lecture when we talk about language models.
+
+539
+01:35:58,615 --> 01:36:02,218
+But you will also try this out empirically in this
+
+540
+01:36:02,332 --> 01:36:06,410
+week's exercise session. Okay. So can
+
+541
+01:36:06,910 --> 01:36:09,464
+anyone tell me how can we use these models beyond classification?
+
+542
+01:36:12,504 --> 01:36:16,174
+So we saw how we can do classification here. How can we go beyond classification?
+
+543
+01:36:19,500 --> 01:36:22,733
+Okay. Let's have a look at certain tasks like sequence labeling,
+
+544
+01:36:23,008 --> 01:36:26,160
+right? So here, what do we need is that in classification, we wanted
+
+545
+01:36:26,660 --> 01:36:29,960
+to actually perform, like literally assign a label to a sequence of text,
+
+546
+01:36:30,267 --> 01:36:33,648
+right? But in sequence labeling, what we want is that we literally
+
+547
+01:36:33,664 --> 01:36:36,738
+want to understand which words actually correspond to sentimental
+
+548
+01:36:36,819 --> 01:36:39,783
+words. So we really want to understand that, Okay, really,
+
+549
+01:36:40,040 --> 01:36:43,522
+or enjoyed, enjoyed actually contributes to the positive sentiment,
+
+550
+01:36:43,972 --> 01:36:46,154
+and watched is maybe,
+
+551
+01:36:47,117 --> 01:36:50,600
+doesn't matter in this setup, and there could also be
+
+552
+01:36:51,130 --> 01:36:54,387
+a negative sentiment word here. And what we want to do is
+
+553
+01:36:54,420 --> 01:36:57,950
+that instead of coming up with one label for the whole sentence,
+
+554
+01:36:58,095 --> 01:37:01,497
+we want to actually come up with a label for each of
+
+555
+01:37:01,545 --> 01:37:05,659
+these words, right? So what we really want here is that Instead
+
+556
+01:37:06,159 --> 01:37:08,944
+of having the model give us just one representation,
+
+557
+01:37:09,688 --> 01:37:15,108
+right, we want something that applies certain
+
+558
+01:37:15,608 --> 01:37:19,606
+operations so that we can obtain certain sequences of representations
+
+559
+01:37:19,655 --> 01:37:22,638
+because we now want to perform labeling. You know,
+
+560
+01:37:22,702 --> 01:37:26,172
+the word says it, sequence labeling. We don't want one label,
+
+561
+01:37:26,188 --> 01:37:29,883
+we don't want one class label for the whole text, we want a
+
+562
+01:37:30,383 --> 01:37:33,859
+sequence of labels. So something that actually tells us that, okay,
+
+563
+01:37:34,532 --> 01:37:38,123
+each word might have its own meaning towards
+
+564
+01:37:38,155 --> 01:37:42,163
+the eventual task, right? And this, this is where certain aspects
+
+565
+01:37:42,307 --> 01:37:45,738
+of, you know, these blocks, these models need to be more powerful,
+
+566
+01:37:45,770 --> 01:37:49,521
+which we'll again learn in the following 4 or 5 lectures, is that
+
+567
+01:37:49,842 --> 01:37:53,849
+you need RNNs or a self-attention or transformer block which actually
+
+568
+01:37:53,929 --> 01:37:58,963
+allows you to get representations which have some aspect
+
+569
+01:37:59,463 --> 01:38:02,997
+which actually can encode the sequential information, which can encode certain information about sequence
+
+570
+01:38:03,062 --> 01:38:08,385
+or time into it, right? And that's where we actually have
+
+571
+01:38:08,433 --> 01:38:11,862
+these, instead of one stupid representation of this sum
+
+572
+01:38:11,894 --> 01:38:15,420
+pool or an average pool, we do something more fancy to get more
+
+573
+01:38:15,920 --> 01:38:18,831
+powerful representations that allows us to model sequences, okay?
+
+574
+01:38:21,068 --> 01:38:24,237
+There could also be, you know, the task that all of you want to
+
+575
+01:38:24,737 --> 01:38:27,304
+actually learn more about, which is text generation, which is what LLMs actually do,
+
+576
+01:38:27,705 --> 01:38:31,318
+right? And here, basically, the whole goal is to actually see,
+
+577
+01:38:31,848 --> 01:38:35,669
+can we generate text rather than just labeling text, or either
+
+578
+01:38:35,958 --> 01:38:39,266
+at a whole— at a higher level or at a
+
+579
+01:38:39,766 --> 01:38:43,409
+sequential of words level, right? So can anyone
+
+580
+01:38:43,909 --> 01:38:46,684
+tell me, how can we do text generation given what we have seen so far?
+
+581
+01:38:53,743 --> 01:38:54,549
+Lookup on what?
+
+582
+01:39:05,969 --> 01:39:08,920
+Okay. Okay. Okay, fair. I mean,
+
+583
+01:39:09,130 --> 01:39:12,549
+so, so the, the point was that, so you're saying we can do the reverse.
+
+584
+01:39:14,460 --> 01:39:17,288
+Okay. So eventually, what you want to say is that, can we do some sort
+
+585
+01:39:17,788 --> 01:39:20,747
+of a lookup in our vocabulary, right? Okay.
+
+586
+01:39:21,313 --> 01:39:25,138
+That's nice. Has anyone— does anyone else have
+
+587
+01:39:25,638 --> 01:39:25,864
+any other ideas?
+
+588
+01:39:29,529 --> 01:39:33,662
+That's very close. I mean, we'll discuss what actually
+
+589
+01:39:33,727 --> 01:39:34,926
+would really allow you to do things.
+
+590
+01:39:52,046 --> 01:39:55,765
+Yes. Okay. Okay. Okay. You said a lot here. I'll try
+
+591
+01:39:55,846 --> 01:39:58,435
+to unpack it, but it's the right answer. So basically,
+
+592
+01:39:59,502 --> 01:40:03,461
+what you need here is that how does actually a text
+
+593
+01:40:03,961 --> 01:40:07,049
+generator work? Let's first try to understand this, right? It takes a sequence
+
+594
+01:40:07,549 --> 01:40:10,371
+of words as input, right? And it generates the next word,
+
+595
+01:40:11,158 --> 01:40:14,416
+right? That's a dumb way to do a text generator, right? You feed
+
+596
+01:40:14,592 --> 01:40:17,946
+all the words that you want, then you generate one, the next word,
+
+597
+01:40:18,139 --> 01:40:21,397
+then you generate one more word, another word, and you keep going
+
+598
+01:40:21,493 --> 01:40:25,233
+like this, right? Iteratively, recursively, you keep going one
+
+599
+01:40:25,345 --> 01:40:28,057
+word at a time. That's the dumbest way to do it.
+
+600
+01:40:28,571 --> 01:40:31,941
+But many models do it that way still.
+
+601
+01:40:32,166 --> 01:40:35,633
+Right. So what happens here is that, but what do you need for
+
+602
+01:40:36,133 --> 01:40:40,625
+that, right? If you want to generate instead of assigning a label or,
+
+603
+01:40:40,995 --> 01:40:45,264
+uh, you know, a label to each word as we saw in the sentiment
+
+604
+01:40:45,764 --> 01:40:49,550
+classification or sequence labeling, and this is where your lookup argument comes in
+
+605
+01:40:50,080 --> 01:40:53,387
+place, is that now what you want to generate is you want to generate
+
+606
+01:40:53,836 --> 01:40:57,881
+a word from your vocabulary. A model should predict actually
+
+607
+01:40:57,946 --> 01:41:01,076
+a word from our existing vocabulary. Right. And for this,
+
+608
+01:41:01,542 --> 01:41:04,817
+we don't need actually now a logistic regression
+
+609
+01:41:04,914 --> 01:41:08,623
+which can just, you know, do binary
+
+610
+01:41:09,123 --> 01:41:12,396
+class classification. We need a multi-class logistic regression. What I
+
+611
+01:41:12,476 --> 01:41:15,848
+mean by that here is that I want a class,
+
+612
+01:41:16,426 --> 01:41:20,023
+something that can handle multiple classes. But can anyone tell me right
+
+613
+01:41:20,523 --> 01:41:22,865
+now, I have gave already some hints, what will be my classes here?
+
+614
+01:41:26,278 --> 01:41:26,980
+Anyone else, please?
+
+615
+01:41:32,986 --> 01:41:35,771
+It has to generate a word. And now I say the answer is to do
+
+616
+01:41:36,271 --> 01:41:38,492
+that is to do multi-class classification. What will be our classes?
+
+617
+01:41:48,350 --> 01:42:02,647
+Yes, close. Which labels?
+
+618
+01:42:14,642 --> 01:42:18,341
+Okay, so, so basically each word in the vocabulary is a class
+
+619
+01:42:19,416 --> 01:42:22,644
+because you want to predict the word. So what you really want
+
+620
+01:42:23,144 --> 01:42:26,192
+is that if you have a million words in your vocabulary, you have a million
+
+621
+01:42:26,256 --> 01:42:29,757
+classes. So you literally want to see which
+
+622
+01:42:30,495 --> 01:42:33,931
+word should come in next. But that's what your classification does, right? It actually tells
+
+623
+01:42:33,948 --> 01:42:36,388
+you which is the most likely thing that will happen, right? So you want to
+
+624
+01:42:36,436 --> 01:42:40,226
+predict the most likely word, but you actually want to actually have all
+
+625
+01:42:40,726 --> 01:42:43,805
+the class, all the vocabulary words will become your class labels, right?
+
+626
+01:42:44,142 --> 01:42:47,336
+Because you want to really see which word comes next. So what happens is that
+
+627
+01:42:47,673 --> 01:42:50,674
+your— and as you said, now coming back to this, as I said, you said
+
+628
+01:42:51,174 --> 01:42:54,397
+a lot. To do that, you cannot rely just on a sigmoid activation function.
+
+629
+01:42:54,975 --> 01:42:58,715
+You need a softmax, which actually converts a vector into
+
+630
+01:42:58,827 --> 01:43:01,812
+a probability distribution over that vector,
+
+631
+01:43:02,117 --> 01:43:05,086
+right? So here, just to kind of tell you,
+
+632
+01:43:05,487 --> 01:43:09,273
+your weight matrix will not
+
+633
+01:43:09,773 --> 01:43:13,505
+transform this into a single real-valued number, but it
+
+634
+01:43:14,005 --> 01:43:17,497
+will transform it to a vector. And that vector will
+
+635
+01:43:17,513 --> 01:43:20,863
+have the size as the size of your vocabulary.
+
+636
+01:43:22,354 --> 01:43:25,512
+So this will produce— if your vocabulary has a million words
+
+637
+01:43:26,089 --> 01:43:29,680
+and if the dimensionality here is 1,000, as we said,
+
+638
+01:43:30,177 --> 01:43:34,008
+right? So this weight vector, what it should— this weight matrix, what it should
+
+639
+01:43:34,104 --> 01:43:37,634
+do is take take that 1,000-dimensional thing and convert
+
+640
+01:43:38,134 --> 01:43:42,110
+it into a million-row vector. And then you apply a
+
+641
+01:43:42,126 --> 01:43:45,848
+softmax on top of it, which will give you a probability
+
+642
+01:43:45,896 --> 01:43:48,767
+distribution over all words in your vocabulary.
+
+643
+01:43:49,923 --> 01:43:53,292
+And that will tell you what should be the next word. So the most likely
+
+644
+01:43:53,792 --> 01:43:56,949
+next word will be it in this case. You feed it back and then you
+
+645
+01:43:56,981 --> 01:44:00,351
+keep doing it again. It will be was. And this is how it will keep
+
+646
+01:44:00,851 --> 01:44:04,589
+going. Right? So can anyone
+
+647
+01:44:04,702 --> 01:44:08,025
+tell me— and again, take out your phones please— can anyone tell me what are
+
+648
+01:44:08,525 --> 01:44:09,647
+the learnable parameters in this system?
+
+649
+01:44:22,847 --> 01:44:32,149
+Okay, I think this is all. Just move it to the Yeah.
+
+650
+01:44:32,649 --> 01:44:35,396
+So I'll just again put this. Uh,
+
+651
+01:44:38,766 --> 01:44:41,647
+so you have this system, right, where you have the embeddings,
+
+652
+01:44:42,812 --> 01:44:45,952
+where you have this logistic regression. So can
+
+653
+01:44:46,452 --> 01:44:48,400
+anyone suggest the learnable parameters?
+
+654
+01:45:12,604 --> 01:45:16,510
+Okay. So can anyone tell
+
+655
+01:45:16,575 --> 01:45:18,658
+me why hidden states are not the learnable parameters?
+
+656
+01:45:26,488 --> 01:45:29,882
+Yes. Okay. So the hidden states are not learnable parameters
+
+657
+01:45:30,142 --> 01:45:33,650
+because what we are doing is we are calculating them
+
+658
+01:45:33,892 --> 01:45:38,563
+based on— we are
+
+659
+01:45:39,063 --> 01:45:41,913
+calculating them. These are the hidden parameters, right? So what we are doing is we
+
+660
+01:45:42,413 --> 01:45:46,355
+are calculating them based on these embeddings. Right?
+
+661
+01:45:46,772 --> 01:45:49,900
+So they are not learnable parameters.
+
+662
+01:45:49,964 --> 01:45:53,621
+They are derived parameters along the way, but we don't learn them explicitly
+
+663
+01:45:54,535 --> 01:45:57,920
+in this case, right? In this system. In certain cases,
+
+664
+01:45:58,048 --> 01:46:00,791
+yes, you do it, but in this case, you don't,
+
+665
+01:46:01,288 --> 01:46:04,400
+right? So the learnable parameters
+
+666
+01:46:04,900 --> 01:46:09,260
+in this system are actually the weight matrix that we learn
+
+667
+01:46:09,533 --> 01:46:13,159
+for the specific task at hand and also the embeddings that we learn for
+
+668
+01:46:13,659 --> 01:46:16,284
+this specific task at hand, right?
+
+669
+01:46:21,086 --> 01:46:24,642
+Okay. Can anyone also tell me how many unique embeddings
+
+670
+01:46:24,837 --> 01:46:28,589
+will exist in X for
+
+671
+01:46:28,654 --> 01:46:30,419
+the specific sentences? Yes.
+
+672
+01:46:42,112 --> 01:46:45,606
+Um, I mean, that's just how I would phrase it. Can you say
+
+673
+01:46:46,106 --> 01:46:50,195
+that again? So the hidden states, I would usually see
+
+674
+01:46:50,211 --> 01:46:55,059
+as intuitive because, right, you don't tune them. You tune the parameters
+
+675
+01:46:55,060 --> 01:46:58,228
+that are used to calculate them.
+
+676
+01:47:00,798 --> 01:47:05,613
+Yes. So is it not— would you not say that the parameters Yeah,
+
+677
+01:47:06,865 --> 01:47:10,942
+I think the point that I was trying to make is that it depends.
+
+678
+01:47:11,760 --> 01:47:15,131
+Yeah, I mean, so because I said, right, I defined this terminology when I said
+
+679
+01:47:15,631 --> 01:47:19,048
+this is an output and not a hidden state, right? But it depends
+
+680
+01:47:19,144 --> 01:47:23,895
+when we talk about more complex models because
+
+681
+01:47:24,136 --> 01:47:27,603
+we would see this, right, when we actually define what actually goes into the model
+
+682
+01:47:27,731 --> 01:47:31,086
+versus what comes out of it. And there you can see that,
+
+683
+01:47:31,199 --> 01:47:34,489
+okay, the, In certain cases, you can think of
+
+684
+01:47:34,989 --> 01:47:38,503
+these hidden states as learnable. Well, we'll look into this when we come back to
+
+685
+01:47:39,003 --> 01:47:42,693
+more powerful models. Okay. Can anyone tell? Oh, sorry.
+
+686
+01:47:42,902 --> 01:47:46,867
+Yeah. So I think the point that I wanted to make here is that the—
+
+687
+01:47:47,574 --> 01:47:50,752
+this is again saying that there are only as
+
+688
+01:47:50,800 --> 01:47:54,380
+many embeddings as the number of unique words still, right? So in
+
+689
+01:47:54,880 --> 01:47:58,474
+this sentence, we had the I was repeated, right? So you only
+
+690
+01:47:58,974 --> 01:48:04,305
+have 7 unique words. So you only learn 7 unique embeddings and not 8.
+
+691
+01:48:04,485 --> 01:48:07,909
+Okay, with this, why not let's take a break and then we'll be back to
+
+692
+01:48:08,366 --> 01:48:09,328
+study word representations.
+
+693
+01:58:14,148 --> 01:58:17,580
+Okay, let's, let's resume.
+
+694
+01:58:17,660 --> 01:58:19,825
+We have last 45 minutes.
+
+695
+01:58:20,915 --> 01:58:22,873
+To finish word embeddings.
+
+696
+01:58:32,216 --> 01:58:35,536
+Great. Okay. So I
+
+697
+01:58:36,036 --> 01:58:38,129
+flashed this slide also previously when we said, okay,
+
+698
+01:58:41,133 --> 01:58:45,127
+we have a simple NLP model
+
+699
+01:58:45,176 --> 01:58:48,989
+or a classifier. If you wanna see, it takes as input a piece of text,
+
+700
+01:58:49,539 --> 01:58:53,017
+right? And we have to convert this piece of text into a sequence
+
+701
+01:58:53,517 --> 01:58:56,584
+of embeddings. Then we pass it along to a model which will do some transformations.
+
+702
+01:58:58,888 --> 01:59:02,607
+And then that will have a predictor that can take that
+
+703
+01:59:02,623 --> 01:59:06,390
+transformed output and turn it around into a prediction,
+
+704
+01:59:06,811 --> 01:59:09,982
+right? But what do we need is like the basic recipe into this is that
+
+705
+01:59:10,482 --> 01:59:14,541
+we have seen how can we actually model things. Using simplistic settings and more model
+
+706
+01:59:15,041 --> 01:59:18,151
+powerful things that will come in later weeks. Like we can do Sum-pool,
+
+707
+01:59:18,167 --> 01:59:22,450
+Avg-pool to compose these vectors together into
+
+708
+01:59:22,482 --> 01:59:25,722
+something more meaningful that can be passed along to a predictor. But you can also
+
+709
+01:59:25,787 --> 01:59:29,348
+do something more fancy like a recurrent neural network
+
+710
+01:59:29,460 --> 01:59:32,909
+or an LSTM or a Transformer, which will all come in in the
+
+711
+01:59:33,409 --> 01:59:37,257
+future classes. And then we also saw that what do
+
+712
+01:59:37,757 --> 01:59:41,635
+we need once we have this composed output, how do
+
+713
+01:59:41,667 --> 01:59:45,996
+we convert this into a prediction, right? We saw that you can apply a
+
+714
+01:59:46,140 --> 01:59:49,844
+logistic regression to actually, which gives you, which is
+
+715
+01:59:50,389 --> 01:59:53,452
+able to do some sort of a binary classification, but you can also do some
+
+716
+01:59:53,952 --> 01:59:58,278
+sort of a multi-class logistic regression that can then allow you to do
+
+717
+01:59:58,486 --> 02:00:02,158
+a multi-label classification, and you can then use it to generate
+
+718
+02:00:02,270 --> 02:00:05,718
+text. I mean, you already saw how you can just take this simple
+
+719
+02:00:06,218 --> 02:00:09,070
+pipeline and already generate text. Which is what LLMs do today,
+
+720
+02:00:09,086 --> 02:00:12,198
+right? And this is a dumb approach, but it's still an approach that can be
+
+721
+02:00:12,698 --> 02:00:15,198
+used. And it was also one of the first approaches that was actually used to
+
+722
+02:00:15,698 --> 02:00:19,193
+train these models, albeit with some more powerful modeling. The gray box was
+
+723
+02:00:19,693 --> 02:00:23,172
+a bit more powerful. Okay, but at the heart of it is
+
+724
+02:00:23,364 --> 02:00:27,295
+where we started all of this, is that we need a vector
+
+725
+02:00:27,795 --> 02:00:30,472
+representation for words. And let's try to see how do we get that,
+
+726
+02:00:30,744 --> 02:00:33,956
+right? Can anyone
+
+727
+02:00:34,456 --> 02:00:37,470
+tell me based on what you have seen so far, how can you actually learn
+
+728
+02:00:37,502 --> 02:00:41,289
+these embeddings? We started that these embeddings, and we already discussed
+
+729
+02:00:41,789 --> 02:00:44,922
+it in the break, so, but you started from
+
+730
+02:00:45,774 --> 02:00:49,791
+this nice model. Can you use whatever you have to actually
+
+731
+02:00:49,871 --> 02:00:54,173
+learn these embeddings? Like learn these nice
+
+732
+02:00:55,767 --> 02:00:57,068
+vectors that you see below.
+
+733
+02:01:13,342 --> 02:01:15,626
+Yes.
+
+734
+02:01:16,047 --> 02:01:19,366
+Exactly, right? So, I'll say this again, but now with an example on
+
+735
+02:01:19,866 --> 02:01:22,250
+the slide, right? We saw that already, and I think I also mentioned this,
+
+736
+02:01:22,266 --> 02:01:25,597
+right? That what you can do is you already have your training data,
+
+737
+02:01:25,662 --> 02:01:28,457
+which is in the end which says plus or minus, right? In this case,
+
+738
+02:01:29,002 --> 02:01:32,931
+And you have your input. So what you can do is you can
+
+739
+02:01:33,431 --> 02:01:37,790
+just initialize these words with some random vectors,
+
+740
+02:01:39,089 --> 02:01:42,392
+compute the output by performing a sum-pool,
+
+741
+02:01:42,937 --> 02:01:46,369
+then perform a logistic regression on top of it, get a prediction,
+
+742
+02:01:46,866 --> 02:01:50,314
+and see how far is it from your ground truth correct
+
+743
+02:01:50,814 --> 02:01:54,018
+prediction, 0 or 1. And based on that, as the new
+
+744
+02:01:54,098 --> 02:01:57,273
+term was introduced, which is called a loss. But as I said, a loss is
+
+745
+02:01:57,369 --> 02:02:00,993
+basically— what it means intuitively is that how far is it from the current
+
+746
+02:02:01,493 --> 02:02:04,506
+prediction. If your prediction should be 1 and if you get, I mean, you'll not
+
+747
+02:02:05,006 --> 02:02:08,180
+get a single value, you'll probably get the likelihood of this prediction,
+
+748
+02:02:08,212 --> 02:02:11,420
+so you have to minimize that. But that's more details which you will
+
+749
+02:02:11,920 --> 02:02:14,548
+see in the lab session. But what I'm trying to say is that let's forget
+
+750
+02:02:15,048 --> 02:02:18,445
+about the likelihood or the probability. If the prediction was 1
+
+751
+02:02:18,478 --> 02:02:21,734
+and you got 0.1, right? So then what you need to do is
+
+752
+02:02:21,766 --> 02:02:25,872
+that you have to take that 0.1 closer to 1. And this is what your
+
+753
+02:02:26,372 --> 02:02:29,512
+neural network does for you is that which is done using gradient descent and
+
+754
+02:02:29,544 --> 02:02:33,600
+backpropagation, where you will basically propagate all the information
+
+755
+02:02:33,696 --> 02:02:36,758
+back to the start, layer by layer, right?
+
+756
+02:02:37,159 --> 02:02:41,006
+And you will change these weights so that eventually they
+
+757
+02:02:41,506 --> 02:02:44,709
+take you closer to the ground truth. And this is how we learn these embeddings,
+
+758
+02:02:44,790 --> 02:02:48,028
+right? You will see more of this into practically in
+
+759
+02:02:48,124 --> 02:02:51,843
+this week's lecture, but we'll also look into how backpropagation is done, but in a
+
+760
+02:02:51,907 --> 02:02:55,563
+context of a more powerful model which is an RNN
+
+761
+02:02:55,756 --> 02:02:58,419
+or also an LSTM in the coming lectures.
+
+762
+02:02:59,109 --> 02:03:02,847
+Okay. As you said, we can actually do backpropagation and
+
+763
+02:03:02,976 --> 02:03:06,024
+backpropagate it all the way through the embeddings so that we can also learn the
+
+764
+02:03:06,524 --> 02:03:09,730
+embeddings. The only problem in this case is that these embeddings will
+
+765
+02:03:09,746 --> 02:03:13,259
+not be generic. They will not be learned for
+
+766
+02:03:13,324 --> 02:03:16,693
+anything and everything. They will just be learned specifically for
+
+767
+02:03:17,193 --> 02:03:19,869
+this task because you have learned this using supervised learning.
+
+768
+02:03:21,330 --> 02:03:25,184
+And this is where it comes, because you are actually using the signal,
+
+769
+02:03:25,200 --> 02:03:28,909
+right? You are actually using the output on the task to predict,
+
+770
+02:03:29,374 --> 02:03:32,906
+to actually learn these embeddings. These embeddings are only compatible
+
+771
+02:03:33,406 --> 02:03:36,663
+with the task. So, if you train these embeddings for a movie prediction, it will
+
+772
+02:03:36,744 --> 02:03:40,292
+only be— these embeddings will only capture information to actually
+
+773
+02:03:40,792 --> 02:03:43,969
+detect whether a piece of review is positive or negative. It will not
+
+774
+02:03:44,469 --> 02:03:48,240
+be able to tell you whether which words are more positive or negative,
+
+775
+02:03:48,320 --> 02:03:51,611
+or it will not be able to even tell you whether, you know,
+
+776
+02:03:51,756 --> 02:03:55,465
+what's the relationship between Ankara and Turkey, right? Just saying, because you
+
+777
+02:03:55,965 --> 02:04:00,009
+have not learned it for a more general way of learning
+
+778
+02:04:00,041 --> 02:04:03,766
+the meaning of the representations, right? And then the other
+
+779
+02:04:03,879 --> 02:04:07,235
+aspect, what I did not refer to here, is that it can
+
+780
+02:04:07,251 --> 02:04:10,301
+also be a victim of data scarcity, right? Let's say you do not have a
+
+781
+02:04:10,801 --> 02:04:14,255
+lot of training data, you will not be able to learn high-quality embeddings.
+
+782
+02:04:15,590 --> 02:04:18,987
+Again, if I said this on the first lecture, I'll show
+
+783
+02:04:19,487 --> 02:04:23,286
+you also how it is done now. But the first word embedding methods, word2vec,
+
+784
+02:04:25,090 --> 02:04:29,465
+was actually learned on— what was performed on a
+
+785
+02:04:29,965 --> 02:04:34,033
+big corpus from the internet. Large language models today actually are learned on the whole
+
+786
+02:04:34,066 --> 02:04:37,750
+internet, right? So the embeddings that they have underlying, that they
+
+787
+02:04:38,250 --> 02:04:41,870
+have learned actually have a lot of information, and it's not tied
+
+788
+02:04:42,370 --> 02:04:46,050
+to 1,000 data points that you can collect for movie reviews that
+
+789
+02:04:46,550 --> 02:04:49,950
+you have annotated yourself, right? Because there's always a limit to a supervised setup
+
+790
+02:04:50,990 --> 02:04:53,870
+which depends on how much training data that you can get.
+
+791
+02:04:54,490 --> 02:04:57,050
+But there is no limit to the data that you can see on the web,
+
+792
+02:04:57,550 --> 02:05:01,190
+right? So that's the problem. And as I said already, the embeddings,
+
+793
+02:05:01,690 --> 02:05:03,610
+if you learn it from a task-specific, they are learned for a specific task.
+
+794
+02:05:03,660 --> 02:05:06,596
+Task and they may not generalize to other different tasks.
+
+795
+02:05:07,423 --> 02:05:11,105
+So, what can we do in this setup? I'll go back to this
+
+796
+02:05:13,992 --> 02:05:18,467
+classical quote from a British linguist whose name
+
+797
+02:05:18,967 --> 02:05:22,589
+is John Rupert Firth, also J. R. Firth. He actually said this, you shall know
+
+798
+02:05:22,718 --> 02:05:26,220
+a word by the company it keeps. Who has heard of this previously?
+
+799
+02:05:26,688 --> 02:05:27,786
+Okay, one.
+
+800
+02:05:29,607 --> 02:05:33,139
+Or in any other context, sometimes when your parents or
+
+801
+02:05:33,639 --> 02:05:37,089
+grandparents are annoyed at you, okay, you keep
+
+802
+02:05:37,589 --> 02:05:40,317
+bad company, and that's why you are doing wrong things in life and not the
+
+803
+02:05:40,817 --> 02:05:44,283
+right things. Anyway, so a bad joke. But okay, the point was
+
+804
+02:05:44,636 --> 02:05:47,735
+basically this is what is called as self-supervised learning,
+
+805
+02:05:47,831 --> 02:05:51,026
+right? So this is the principle with which actually
+
+806
+02:05:51,139 --> 02:05:53,804
+word embeddings were conceived, right?
+
+807
+02:05:55,384 --> 02:05:58,104
+This guy was a linguist, right? He knows what he was saying, right?
+
+808
+02:06:00,460 --> 02:06:03,809
+This is basically literally the birth of also distributional
+
+809
+02:06:04,309 --> 02:06:07,851
+semantics, which actually led to how we learn word embeddings today,
+
+810
+02:06:08,302 --> 02:06:12,232
+right? So, and we have all heard the term context because
+
+811
+02:06:12,732 --> 02:06:15,372
+it got so popular by the rise of language models. But let's try to understand
+
+812
+02:06:15,872 --> 02:06:17,982
+what this means here, right? It's an English word. It has a meaning, right?
+
+813
+02:06:18,432 --> 02:06:22,219
+And basically, it literally— the word context started by the setup
+
+814
+02:06:22,719 --> 02:06:25,349
+is context is the set of words that occur nearby,
+
+815
+02:06:26,214 --> 02:06:29,340
+like the surrounding words, or the, the, you are known by the company that you
+
+816
+02:06:29,840 --> 02:06:33,059
+keep, right? Or this is exactly what's the basic principle here, right?
+
+817
+02:06:33,428 --> 02:06:36,955
+So if you look at these sentences, right, I really enjoyed the blank we watched
+
+818
+02:06:37,455 --> 02:06:40,642
+on Saturday, the blank growled at me making me run away,
+
+819
+02:06:41,027 --> 02:06:43,463
+or I need to go to the blank to pick up some dinner, right?
+
+820
+02:06:43,912 --> 02:06:47,038
+You can easily predict what's here in between because of context.
+
+821
+02:06:47,118 --> 02:06:50,613
+You know that the first could be, it could be a movie, it could be
+
+822
+02:06:51,206 --> 02:06:55,317
+a theater, you know, show. You could also be in opera.
+
+823
+02:06:55,638 --> 02:06:58,994
+The next could be, you know, really someone that growls at you. Could be a
+
+824
+02:06:59,494 --> 02:07:02,719
+dog, could be a wolf, depending on how adventurous you are in life, right?
+
+825
+02:07:03,168 --> 02:07:06,974
+And in the end, it could be also you can go to the supermarket or
+
+826
+02:07:07,022 --> 02:07:10,217
+also a fancy, you know, restaurant, depending on how much you want
+
+827
+02:07:10,717 --> 02:07:14,039
+to spend on a dinner, right? So you can actually choose based on the context.
+
+828
+02:07:14,087 --> 02:07:17,841
+You actually can tell what these words should be, right? And similarly,
+
+829
+02:07:18,578 --> 02:07:22,264
+word embeddings can also be learned to understand the meaning because based on the context,
+
+830
+02:07:22,296 --> 02:07:26,125
+you can actually predict what the word is in between. And by doing that,
+
+831
+02:07:26,286 --> 02:07:30,788
+you can actually learn what is the meaning employed by that specific
+
+832
+02:07:31,157 --> 02:07:34,874
+word that is missing, right? And this was basically the
+
+833
+02:07:35,403 --> 02:07:39,152
+underlying idea behind word2vec, which is also called
+
+834
+02:07:39,248 --> 02:07:42,469
+as the— there are 2 ways to learn. There are 2 ways proposed
+
+835
+02:07:42,969 --> 02:07:47,100
+in that paper, which was called word2vec. Title is very simple. It's called word2vec,
+
+836
+02:07:47,116 --> 02:07:50,593
+means you're converting a word to a vector representation.
+
+837
+02:07:50,641 --> 02:07:53,973
+That's why it's called word2vec, right? And there are 2 approaches, which is called
+
+838
+02:07:54,005 --> 02:07:57,931
+Continuous Bag of Words, also called as CBOW, which was basically where
+
+839
+02:07:58,431 --> 02:08:01,664
+the goal is to literally learn to predict the missing word from surrounding window of
+
+840
+02:08:01,680 --> 02:08:04,196
+words, which you already saw, right, in this slide.
+
+841
+02:08:04,805 --> 02:08:08,074
+And there's another approach called Skip-gram, which is the opposite,
+
+842
+02:08:08,170 --> 02:08:11,679
+right, where you have to— the task is to predict the surrounding
+
+843
+02:08:11,711 --> 02:08:15,211
+words when you are given the word in between,
+
+844
+02:08:15,468 --> 02:08:18,632
+right, or the middle words or the target word, right.
+
+845
+02:08:18,953 --> 02:08:22,037
+So this is a harder task, but in both cases
+
+846
+02:08:22,149 --> 02:08:25,410
+things worked out. And this was basically,
+
+847
+02:08:25,603 --> 02:08:28,687
+if you can see, this was a proxy. The task was to actually do
+
+848
+02:08:28,799 --> 02:08:32,879
+this, but eventually that allowed us to learn word embeddings
+
+849
+02:08:33,152 --> 02:08:37,167
+based on the principle that we saw from the
+
+850
+02:08:37,667 --> 02:08:41,111
+British language that we saw the code what we saw from previously. There's also other
+
+851
+02:08:41,611 --> 02:08:45,043
+approaches to do word embeddings. GloVe is one other famous approach. There are many
+
+852
+02:08:45,059 --> 02:08:48,921
+others. We'll not go through GloVe today, but I've dropped in the paper link if
+
+853
+02:08:49,421 --> 02:08:51,218
+you want to read about it. You can also read some blogs about it,
+
+854
+02:08:51,459 --> 02:08:54,881
+but you will not lose much if you don't know how GloVe
+
+855
+02:08:54,913 --> 02:08:57,810
+is done. You should still know about it, but if you're interested, you can also—
+
+856
+02:08:58,551 --> 02:09:04,106
+you're welcome to read more about it. So how
+
+857
+02:09:04,606 --> 02:09:07,945
+does CBOW work? Right. So as I said, the goal is to literally
+
+858
+02:09:08,445 --> 02:09:10,963
+predict the missing word from a window of surrounding words. Right. And this— let's try
+
+859
+02:09:11,011 --> 02:09:13,740
+to see how this is set up based on, again, the model that we saw
+
+860
+02:09:13,804 --> 02:09:17,481
+previously. So we say context was enjoyed
+
+861
+02:09:17,577 --> 02:09:21,654
+the blank we watched. Right. And think about, again, the stupid
+
+862
+02:09:21,911 --> 02:09:24,737
+pooling operator that we saw, which was a sum. Right. Just take a sum of
+
+863
+02:09:25,237 --> 02:09:29,312
+all of this. Right. Which is our model in this case. And then you need
+
+864
+02:09:29,812 --> 02:09:32,089
+something more, which we call as a projection. I'll tell you what this means.
+
+865
+02:09:32,362 --> 02:09:36,103
+And then eventually your task is to predict the missing
+
+866
+02:09:36,119 --> 02:09:39,427
+word, which you know because you know from this, which you know
+
+867
+02:09:39,812 --> 02:09:43,168
+in a document this word will be given. You have made that as a missing
+
+868
+02:09:43,264 --> 02:09:46,861
+word. If you read documents on the web, if you read all Wikipedia articles,
+
+869
+02:09:47,359 --> 02:09:50,763
+you will have sentences which will have words in between. The way it was
+
+870
+02:09:51,263 --> 02:09:54,729
+trained is that you just keep masking words and
+
+871
+02:09:55,387 --> 02:09:58,549
+training your model to predict those words which you masked. And that was how
+
+872
+02:09:58,999 --> 02:10:02,127
+word2vec was trained. Let's try to understand what's the learning objective here.
+
+873
+02:10:02,624 --> 02:10:06,923
+So the objective was literally you want to maximize the probability
+
+874
+02:10:07,099 --> 02:10:10,500
+of the word movie given the context,
+
+875
+02:10:10,628 --> 02:10:13,852
+which is enjoyed, comma, the, comma, we,
+
+876
+02:10:13,933 --> 02:10:17,205
+comma, watched. This is literally how you write it down in this mathematical
+
+877
+02:10:17,705 --> 02:10:21,552
+formulation. And what then it boils down to is if we change it,
+
+878
+02:10:21,777 --> 02:10:25,514
+change the notation to more abstract notation, you just say I
+
+879
+02:10:25,562 --> 02:10:29,591
+want to maximize the probability of my target word given the context,
+
+880
+02:10:29,977 --> 02:10:32,978
+which is t-2, t-1, t+1, and t+2.
+
+881
+02:10:33,749 --> 02:10:37,088
+In this case, the size of the context is 2
+
+882
+02:10:37,120 --> 02:10:41,053
+words on either side. You can also have 5, 10, and that's a parameter
+
+883
+02:10:41,553 --> 02:10:44,648
+that can be anything. And the goal is literally, in a more compact notation,
+
+884
+02:10:44,729 --> 02:10:48,164
+is to maximize the probability of observing xt given
+
+885
+02:10:49,223 --> 02:10:52,578
+the xs, which is again, the s means surrounding words here, and you can define
+
+886
+02:10:52,610 --> 02:10:54,186
+what the subscript s means here.
+
+887
+02:10:55,892 --> 02:10:59,885
+Okay. How is this done? As I said, you literally need—
+
+888
+02:11:01,914 --> 02:11:05,683
+you have 2 elements here, right? What you have
+
+889
+02:11:05,780 --> 02:11:09,029
+is each surrounding word, right,
+
+890
+02:11:09,659 --> 02:11:13,313
+for which you perform a sum pool, right? And you have a
+
+891
+02:11:13,458 --> 02:11:16,401
+projection matrix here which we refer to as U,
+
+892
+02:11:16,853 --> 02:11:20,023
+right? What this gives you, as I said, if you have— if
+
+893
+02:11:20,523 --> 02:11:24,188
+you might not If you might have now guessed this from now, is that if
+
+894
+02:11:24,688 --> 02:11:28,783
+you're seeing a softmax, it means that it gives you— what
+
+895
+02:11:29,283 --> 02:11:33,411
+does it give you? If you're applying softmax, what should be the output of u.xs?
+
+896
+02:11:42,044 --> 02:11:43,699
+Just wait for someone else to share.
+
+897
+02:11:46,650 --> 02:11:51,653
+You want
+
+898
+02:11:52,153 --> 02:11:52,684
+to share?
+
+899
+02:11:57,969 --> 02:12:01,358
+The back?
+
+900
+02:12:02,290 --> 02:12:05,703
+Half right, half wrong. The softmax actually
+
+901
+02:12:05,767 --> 02:12:09,084
+gives you a probability distribution, but the input to
+
+902
+02:12:09,584 --> 02:12:12,884
+softmax is a vector. Can anyone tell me what will be the size of this
+
+903
+02:12:19,426 --> 02:12:22,878
+Yes. So the size of the vector will be the size of the vocabulary,
+
+904
+02:12:22,894 --> 02:12:26,025
+right? So what we are trying to now basically do is we
+
+905
+02:12:26,525 --> 02:12:30,023
+have some surrounding words, right? And we have not learned anything right now so
+
+906
+02:12:30,523 --> 02:12:33,796
+far. I'm just trying to say you have these surrounding words and you have— let's
+
+907
+02:12:34,296 --> 02:12:37,794
+say you have initialized them to some random— you
+
+908
+02:12:37,826 --> 02:12:41,728
+have just initialized them using some random function,
+
+909
+02:12:41,920 --> 02:12:45,014
+right? So you have for each of these surrounding
+
+910
+02:12:45,046 --> 02:12:49,020
+words, you will have some vector representation as you
+
+911
+02:12:49,052 --> 02:12:52,737
+will have for all the words in your vocabulary. What now
+
+912
+02:12:52,801 --> 02:12:56,631
+you need to do is you need to maximize the probability
+
+913
+02:12:56,727 --> 02:13:00,909
+of observing the word movie, which is your target word, given what
+
+914
+02:13:01,409 --> 02:13:04,659
+you have, given what the surrounding words are. So,
+
+915
+02:13:04,835 --> 02:13:07,768
+and what I said is that for that you already can compute this.
+
+916
+02:13:07,960 --> 02:13:10,959
+You have all these 4 vectors, you can sum it up,
+
+917
+02:13:11,488 --> 02:13:15,113
+which will give you 1 vector, right? Because you can just sum it up.
+
+918
+02:13:15,659 --> 02:13:19,428
+And then I say that you have— you need 1 more element,
+
+919
+02:13:19,910 --> 02:13:22,637
+which is a projection matrix here. If you recall,
+
+920
+02:13:23,358 --> 02:13:27,000
+in blue I said there are 2 components, right? So you have these each vectors,
+
+921
+02:13:27,112 --> 02:13:30,641
+you do a sum, you— there's nothing fancy here, and you need a projection
+
+922
+02:13:31,138 --> 02:13:34,539
+operation, right? So the projection operation is performed by this
+
+923
+02:13:34,732 --> 02:13:38,775
+projection matrix called u, right? And this task
+
+924
+02:13:38,824 --> 02:13:44,587
+is to actually take your vector,
+
+925
+02:13:45,700 --> 02:13:49,087
+which will be of dimensionality d, and d is
+
+926
+02:13:49,200 --> 02:13:52,910
+the size of your— the cardinality of your
+
+927
+02:13:53,410 --> 02:13:57,080
+embeddings, right? How big your embeddings are. Let's say it's 1,000 or 2,000,
+
+928
+02:13:57,096 --> 02:14:00,549
+right? And what you want to do is, of all
+
+929
+02:14:00,678 --> 02:14:03,864
+the possible words Which is the vocabulary,
+
+930
+02:14:04,201 --> 02:14:08,405
+as was mentioned. Of all the possible words in your corpus, you want
+
+931
+02:14:08,905 --> 02:14:12,544
+to say the chance that movie comes up should be the highest.
+
+932
+02:14:12,640 --> 02:14:15,576
+This is what you want to maximize, right? So naturally,
+
+933
+02:14:16,009 --> 02:14:19,394
+your softmax needs to be able to take all of
+
+934
+02:14:19,894 --> 02:14:23,630
+this and gives you a distribution over all probability—
+
+935
+02:14:23,790 --> 02:14:27,544
+all, all of the words in your, uh, in your documents,
+
+936
+02:14:27,561 --> 02:14:31,084
+right? And some of you might be confused because
+
+937
+02:14:31,682 --> 02:14:35,172
+I don't know if you saw this, you cannot multiply these matrices, right?
+
+938
+02:14:35,803 --> 02:14:39,686
+This is more abstract linear algebra notation. But if you want to literally think
+
+939
+02:14:40,186 --> 02:14:43,687
+about how you want to do this, because you actually
+
+940
+02:14:44,187 --> 02:14:48,021
+have to say you want to do a transform of the projection matrix and
+
+941
+02:14:48,521 --> 02:14:51,315
+you want to do a transform of the, the, the,
+
+942
+02:14:53,312 --> 02:14:57,017
+the surrounding word vector pooled operation,
+
+943
+02:14:57,258 --> 02:15:00,952
+or how do you do this in your PyTorch code, is how you
+
+944
+02:15:01,048 --> 02:15:04,903
+basically do this operation, right? So you'll all see this when
+
+945
+02:15:05,403 --> 02:15:08,132
+you kind of try to do this in the practical exercise. But that's a small
+
+946
+02:15:08,196 --> 02:15:11,617
+caveat. But the notation is not wrong. This is how you write it in this
+
+947
+02:15:11,713 --> 02:15:14,556
+specific notation. Just wanted to mention, if you're wondering about dimensions,
+
+948
+02:15:15,279 --> 02:15:18,812
+if you do— because if this is like U is D times V,
+
+949
+02:15:19,118 --> 02:15:22,345
+V is the vocabulary. Like the size of the vocabulary, and d
+
+950
+02:15:22,845 --> 02:15:26,229
+is the dimensionality of the embeddings. And this xs is 1 times d,
+
+951
+02:15:26,261 --> 02:15:30,162
+right? So you can only multiply— you can only multiply this if you take transforms,
+
+952
+02:15:30,194 --> 02:15:33,404
+then it will become v times d. And if you take a transform of x,
+
+953
+02:15:33,420 --> 02:15:36,775
+it will become d times 1. So if you multiply it or take a
+
+954
+02:15:37,275 --> 02:15:39,969
+dot product of something which is v times d times d times 1, it will
+
+955
+02:15:40,469 --> 02:15:43,596
+give you v times 1, which will give you a— as I said, which will
+
+956
+02:15:44,096 --> 02:15:47,754
+give you a vector where you have as many entries as the size
+
+957
+02:15:47,770 --> 02:15:51,210
+of your vocabulary. And this is what I
+
+958
+02:15:51,710 --> 02:15:55,603
+was telling you previously. What it does is that it gives
+
+959
+02:15:55,635 --> 02:16:00,101
+me literally a
+
+960
+02:16:01,605 --> 02:16:05,245
+distribution over all possible words in my vocabulary.
+
+961
+02:16:05,957 --> 02:16:09,853
+And what I want to really do is once the learning process starts,
+
+962
+02:16:10,256 --> 02:16:13,859
+of course, it will not start where the word movie has the highest likelihood.
+
+963
+02:16:14,303 --> 02:16:18,005
+But what the eventual distribution should
+
+964
+02:16:18,505 --> 02:16:23,404
+look like is that movie should be the highest probability word,
+
+965
+02:16:23,598 --> 02:16:27,685
+right? It could be film, can also be a word here, which can
+
+966
+02:16:27,718 --> 02:16:31,351
+be somewhere here. It could also be a show, right?
+
+967
+02:16:31,690 --> 02:16:35,174
+So this is how after the model is
+
+968
+02:16:35,529 --> 02:16:39,158
+learning a bit or has converged a bit or has actually reached a case
+
+969
+02:16:39,658 --> 02:16:41,812
+where it is picking up on the signal from the data, This is how a
+
+970
+02:16:41,892 --> 02:16:45,228
+distribution should look like. But overall, this is nothing
+
+971
+02:16:45,260 --> 02:16:49,446
+fancy here, right? You have some vectors for
+
+972
+02:16:49,494 --> 02:16:53,166
+which, which you have initialized, right? You have a projection that
+
+973
+02:16:53,278 --> 02:16:56,983
+takes you from a d-dimensional vector to
+
+974
+02:16:57,929 --> 02:17:00,736
+transforms it to a v-dimensional vector,
+
+975
+02:17:00,896 --> 02:17:04,392
+and v being all the possible words in your vocabulary.
+
+976
+02:17:04,985 --> 02:17:08,844
+And then you want to, what you want to maximize is What's the likelihood
+
+977
+02:17:08,957 --> 02:17:12,810
+of observing the word that I want, which is
+
+978
+02:17:13,004 --> 02:17:16,890
+the word t here, right? xt. Because I want the likelihood of t
+
+979
+02:17:17,390 --> 02:17:20,314
+to be maximized, right? So after I've done all of this transformation,
+
+980
+02:17:20,507 --> 02:17:25,505
+the only thing that needs is that I want to basically do
+
+981
+02:17:26,067 --> 02:17:29,761
+a backpropagation, like using gradient descent. What I need to do is basically
+
+982
+02:17:29,777 --> 02:17:33,224
+just adjust the weights so that my distribution should
+
+983
+02:17:33,272 --> 02:17:37,014
+look like the ground truth distribution, which is what— which
+
+984
+02:17:37,046 --> 02:17:41,076
+will be a 1 at the word movie and 0
+
+985
+02:17:41,576 --> 02:17:44,897
+at other places. But if there are more choices, it will be, let's say,
+
+986
+02:17:45,299 --> 02:17:48,446
+0.8 at the word movie and 0.2 at show and so
+
+987
+02:17:48,946 --> 02:17:52,043
+on and so forth. So basically what you want to do is that this is
+
+988
+02:17:52,543 --> 02:17:56,137
+all the same thing of what we saw previously with the sentiment classification, where you
+
+989
+02:17:56,637 --> 02:18:00,170
+can actually perform this backpropagation. To actually learn the weights. The same
+
+990
+02:18:00,670 --> 02:18:03,430
+thing you do here is just that you need one specific operation. Yes, you have
+
+991
+02:18:03,930 --> 02:18:07,770
+a question. Is there any reason why you don't have
+
+992
+02:18:08,270 --> 02:18:11,870
+more parameters? For example, you type the sum, you could set your weight to sum.
+
+993
+02:18:12,470 --> 02:18:16,450
+Would it generalize the sparsity to the weights?
+
+994
+02:18:16,950 --> 02:18:22,170
+Yeah. So this is the most basic way to do this. You can do—
+
+995
+02:18:22,670 --> 02:18:26,936
+you literally knock yourself out here. You can literally do whatever you want. But the
+
+996
+02:18:27,257 --> 02:18:31,432
+paper literally showed that this basic setup actually worked with
+
+997
+02:18:31,932 --> 02:18:34,001
+more data. And just, you know,
+
+998
+02:18:34,948 --> 02:18:38,336
+this is like literally a single layer hidden net, a single hidden layer
+
+999
+02:18:38,836 --> 02:18:41,917
+neural network, right? If you think about there's a projection, that's what you're learning only.
+
+1000
+02:18:42,591 --> 02:18:45,963
+And that was enough. But you can always do more fancy
+
+1001
+02:19:04,685 --> 02:19:17,327
+So can you say that again? If you But
+
+1002
+02:19:18,963 --> 02:19:22,669
+if the sum is weighted, will it deteriorate the semantic
+
+1003
+02:19:23,490 --> 02:19:27,547
+dimensions? I think it depends on many different things, right? So if
+
+1004
+02:19:28,047 --> 02:19:31,075
+you weight it, like people have tried, you can actually weight it using TF-IDF.
+
+1005
+02:19:32,476 --> 02:19:36,455
+It doesn't deteriorate, it makes the learning faster. But if you deteriorate
+
+1006
+02:19:36,648 --> 02:19:39,306
+using something which actually destroys semantics,
+
+1007
+02:19:39,950 --> 02:19:41,239
+yeah, I mean, it can have that impact.
+
+1008
+02:19:42,869 --> 02:19:46,039
+TF-IDF does not destroy the semantic relationship
+
+1009
+02:19:46,539 --> 02:19:48,871
+between words. It just allows you to tell which words are more important and which
+
+1010
+02:19:48,919 --> 02:19:51,526
+words are not. So it actually makes the learning faster.
+
+1011
+02:19:53,261 --> 02:19:56,477
+Okay, great question. Okay,
+
+1012
+02:19:56,864 --> 02:20:00,333
+so then let's just look at an example. How is this happening? So let's say
+
+1013
+02:20:00,833 --> 02:20:05,013
+basically you have only 4 words in your corpus.
+
+1014
+02:20:05,093 --> 02:20:08,200
+You only have 4 words in your vocabulary which says movie, show, book,
+
+1015
+02:20:08,430 --> 02:20:11,365
+and shelf. And you have your input.
+
+1016
+02:20:11,916 --> 02:20:16,240
+And what we do is basically we
+
+1017
+02:20:16,288 --> 02:20:19,669
+literally want a probability distribution over these 4 words, right, as I said
+
+1018
+02:20:19,702 --> 02:20:23,866
+previously. Because what we want is movie is the word which
+
+1019
+02:20:23,979 --> 02:20:27,497
+we want to predict, so that's the highest likelihood, and the others
+
+1020
+02:20:27,610 --> 02:20:30,975
+are kind of as it goes. And since it's a probability distribution,
+
+1021
+02:20:31,428 --> 02:20:34,778
+some of you might have observed that this sums to a 1, this whole thing.
+
+1022
+02:20:34,998 --> 02:20:38,563
+Sums to 1, which is the property of a probability distribution.
+
+1023
+02:20:39,816 --> 02:20:43,173
+So, what we usually do is, if you see, this is what I'm
+
+1024
+02:20:43,673 --> 02:20:47,927
+representing to you as what this thing should look like when we are
+
+1025
+02:20:47,975 --> 02:20:52,135
+training this model. So, basically, you have,
+
+1026
+02:20:52,232 --> 02:20:55,942
+let's say, in certain point in time when you are training this model,
+
+1027
+02:20:56,649 --> 02:21:00,118
+you have an ht which looks like this, which is
+
+1028
+02:21:00,618 --> 02:21:04,369
+a 3-dimensional prefix vector and you have your projection matrix here which looks
+
+1029
+02:21:04,869 --> 02:21:08,346
+like this, where basically again each word—
+
+1030
+02:21:09,356 --> 02:21:13,349
+so the dimensionality of the projection matrix is again the same, right? You have all
+
+1031
+02:21:13,849 --> 02:21:17,598
+possible vocabulary
+
+1032
+02:21:17,663 --> 02:21:21,367
+words here and then each of them will also have a representation, right?
+
+1033
+02:21:21,768 --> 02:21:25,857
+So the key intuition here is that the
+
+1034
+02:21:26,097 --> 02:21:29,610
+ht is somehow capturing the feature
+
+1035
+02:21:29,690 --> 02:21:33,959
+of the context, right? So what we did is we took— let's take
+
+1036
+02:21:34,459 --> 02:21:37,649
+a step back and try to understand this why, right? So we took enjoy the
+
+1037
+02:21:38,149 --> 02:21:42,302
+we watched, it's a context, right? What we did is that we did some basic
+
+1038
+02:21:42,802 --> 02:21:46,121
+operation which was like summing it all up, right? So what we are doing
+
+1039
+02:21:46,137 --> 02:21:49,667
+is we are doing the same thing that we did in the sentiment classifier example
+
+1040
+02:21:50,167 --> 02:21:53,695
+that we saw in the previous slot of the lecture where we are taking all
+
+1041
+02:21:54,195 --> 02:21:58,349
+the contextual information and we are applying some transformation to represent
+
+1042
+02:21:58,849 --> 02:22:01,335
+it as a feature. So, right, it's a very simple, it's a very dumb transformation,
+
+1043
+02:22:01,399 --> 02:22:04,963
+but it's bringing all of this together, right? So this
+
+1044
+02:22:05,477 --> 02:22:09,009
+ht just represents the feature of the context,
+
+1045
+02:22:09,105 --> 02:22:12,524
+right? And the U here is basically— literally
+
+1046
+02:22:12,540 --> 02:22:16,217
+contains feature weights of a corresponding word in the vocabulary,
+
+1047
+02:22:16,570 --> 02:22:20,070
+because literally the, the number of rows here is each
+
+1048
+02:22:20,102 --> 02:22:24,114
+word in the vocabulary, and the column is again the feature space. And now
+
+1049
+02:22:24,675 --> 02:22:28,733
+what happens is that we just take a dot product between
+
+1050
+02:22:29,310 --> 02:22:32,774
+the projection matrix U and the representation ht.
+
+1051
+02:22:33,415 --> 02:22:38,066
+What happens here is that we simply just— we can simply multiply the
+
+1052
+02:22:38,627 --> 02:22:41,931
+row of U matrix with the column. I mean, it's a vector,
+
+1053
+02:22:41,979 --> 02:22:45,491
+right? So you can just take a dot product and you can compute the entry
+
+1054
+02:22:45,908 --> 02:22:49,772
+1 of Uht. And if you keep doing like this, you will get
+
+1055
+02:22:50,272 --> 02:22:53,458
+the entries of each of these. Like you will get all the 4 entries of
+
+1056
+02:22:53,958 --> 02:22:57,640
+u_h_t. You multiply the first row with this row vector again, you get 1.8.
+
+1057
+02:22:57,944 --> 02:23:03,120
+You multiply the second row and again with h_t, you will get -11.9
+
+1058
+02:23:03,296 --> 02:23:07,158
+and so on and so forth. Okay. Now what softmax
+
+1059
+02:23:07,658 --> 02:23:11,147
+does, which we have already seen, like which we have seen, like we discussed
+
+1060
+02:23:11,163 --> 02:23:14,544
+a bit intuitively, but let's also now see a bit more mathematically.
+
+1061
+02:23:14,849 --> 02:23:18,800
+What softmax actually does is again, it gives you a probability distribution
+
+1062
+02:23:19,300 --> 02:23:22,540
+from the elements of the vector it is given as input. So this is
+
+1063
+02:23:23,040 --> 02:23:27,100
+how we mathematically write softmax. It's an exponentiation of the entries
+
+1064
+02:23:27,600 --> 02:23:31,500
+of a vector. So let's say a is this vector and a_i is
+
+1065
+02:23:32,000 --> 02:23:35,380
+the specific dimension i of a. So a vector, let's say with 10
+
+1066
+02:23:35,880 --> 02:23:39,160
+entries, and a_i, and let's say i
+
+1067
+02:23:39,660 --> 02:23:42,800
+is equal to 5 here. So a_5 will be the 5th entry of that vector.
+
+1068
+02:23:43,172 --> 02:23:46,785
+Of the 5th element of that vector. And in this case,
+
+1069
+02:23:47,106 --> 02:23:50,847
+when we do— so when we perform this softmax operation,
+
+1070
+02:23:51,425 --> 02:23:54,701
+the dimension i of the output, right? So basically,
+
+1071
+02:23:54,958 --> 02:23:58,313
+after we have performed the softmax, we will again get as
+
+1072
+02:23:58,362 --> 02:24:02,584
+many entries in the vector as the vector as we had provided
+
+1073
+02:24:03,084 --> 02:24:07,016
+as input, but it will just— would have transformed it into the
+
+1074
+02:24:07,516 --> 02:24:11,363
+probability of that specific class i.
+
+1075
+02:24:12,319 --> 02:24:15,803
+So this is what softmax does to this setup. So basically in
+
+1076
+02:24:15,851 --> 02:24:19,112
+this case, when we do a softmax of uht
+
+1077
+02:24:19,337 --> 02:24:22,398
+here, it will just give me again 4 entries, but each entry
+
+1078
+02:24:22,898 --> 02:24:26,484
+will now represent the likelihood of this word
+
+1079
+02:24:26,583 --> 02:24:29,079
+being the missing word.
+
+1080
+02:24:31,621 --> 02:24:34,616
+Yeah, so that— and since it's a distribution, it will sum up to 1.
+
+1081
+02:24:36,877 --> 02:24:40,419
+Okay, so again, softmax in this course
+
+1082
+02:24:40,436 --> 02:24:43,366
+will keep popping up, so be sure you understand what it does. You can also
+
+1083
+02:24:43,414 --> 02:24:46,474
+try it out by hand by computing it for a vector,
+
+1084
+02:24:46,942 --> 02:24:49,895
+but you can also try it out in code, which you will do on the
+
+1085
+02:24:49,927 --> 02:24:53,557
+Friday lecture. So again, as you saw, it just gives us a
+
+1086
+02:24:54,057 --> 02:24:58,108
+probability distribution over the same entries
+
+1087
+02:24:58,301 --> 02:25:01,810
+in the vector, and in this case again this all sums
+
+1088
+02:25:02,310 --> 02:25:05,929
+up to 1 as well. Okay, so this is what CBOW is,
+
+1089
+02:25:06,186 --> 02:25:09,776
+right? And just to kind of mention is that how is
+
+1090
+02:25:09,824 --> 02:25:13,223
+it trained? As I kind of also explained this a bit previously,
+
+1091
+02:25:13,736 --> 02:25:17,423
+is that the idea is that we want to maximize the probability of
+
+1092
+02:25:17,923 --> 02:25:21,638
+the missing word, right? And how do we actually usually train machine learning
+
+1093
+02:25:21,671 --> 02:25:25,005
+models is for computational reasons is that we also, instead of
+
+1094
+02:25:25,037 --> 02:25:28,179
+maximizing the probability of the missing word, we try to minimize the
+
+1095
+02:25:28,679 --> 02:25:32,096
+negative log probability of the missing word, which is the same thing. It's just
+
+1096
+02:25:32,192 --> 02:25:36,125
+saying the same things in different ways. And in what
+
+1097
+02:25:36,173 --> 02:25:39,287
+we saw, in the example that we see, we are actually using the context
+
+1098
+02:25:39,303 --> 02:25:43,171
+window size n= 2. But this is a hyperparameter. This you
+
+1099
+02:25:43,671 --> 02:25:47,024
+can also literally set. So as we discussed,
+
+1100
+02:25:47,168 --> 02:25:50,764
+which scaling to use, column normalization versus row normalization,
+
+1101
+02:25:51,197 --> 02:25:54,343
+that was also a hyperparameter. Now I can say that word because now we
+
+1102
+02:25:54,843 --> 02:25:58,181
+are seeing this. Like all hyperparameters can be just tuned
+
+1103
+02:25:58,681 --> 02:26:01,795
+based on a standard approach in machine learning. If you don't
+
+1104
+02:26:02,295 --> 02:26:05,136
+know this, I can say this also. You usually divide your data into training,
+
+1105
+02:26:05,233 --> 02:26:08,798
+validation, and test, right? Training data is used to train the model.
+
+1106
+02:26:09,264 --> 02:26:12,846
+Validation is usually used to validate these hyperparameters,
+
+1107
+02:26:12,943 --> 02:26:16,653
+right? So you basically try to see
+
+1108
+02:26:16,733 --> 02:26:20,074
+the output of the model on the validation set
+
+1109
+02:26:20,572 --> 02:26:23,926
+and you see How is it performing? Based on that, you can train all these
+
+1110
+02:26:23,958 --> 02:26:27,952
+parameters, be it scaling or be it the size of the context
+
+1111
+02:26:28,452 --> 02:26:31,417
+window. This is all that can be set using the validation set. And the test
+
+1112
+02:26:31,917 --> 02:26:35,010
+set is as sacred as your Bible or Quran or Gita, whatever you want,
+
+1113
+02:26:35,042 --> 02:26:37,753
+right? So basically, you don't touch your test set ever.
+
+1114
+02:26:38,860 --> 02:26:42,132
+You always do all the tuning that you want to do on your validation
+
+1115
+02:26:42,229 --> 02:26:46,977
+set. And you just measure
+
+1116
+02:26:47,041 --> 02:26:49,929
+the performance of your model on the test set. I know I'm giving some machine
+
+1117
+02:26:50,429 --> 02:26:54,278
+learning advice, but this is important to also understand. And sometimes people
+
+1118
+02:26:54,778 --> 02:26:57,312
+don't realize this. I've also seen PhDs make mistakes over it, so I wanted to
+
+1119
+02:26:57,812 --> 02:27:01,324
+mention this quite out loud. OK, some of you might have heard
+
+1120
+02:27:01,824 --> 02:27:05,818
+of this term, but again, this is not that important from the technical
+
+1121
+02:27:06,318 --> 02:27:10,039
+aspects of this lecture. You can also use a hierarchical softmax
+
+1122
+02:27:10,088 --> 02:27:13,715
+to make the training of this model faster. And hierarchical softmax
+
+1123
+02:27:14,215 --> 02:27:16,474
+is something that you I, I would invite you to read if you're interested,
+
+1124
+02:27:16,907 --> 02:27:20,531
+but again, not that relevant, uh, to understand the basic concepts.
+
+1125
+02:27:21,221 --> 02:27:24,974
+Okay, now we'll move on to Skip-gram, which is as very simple because
+
+1126
+02:27:24,990 --> 02:27:29,015
+now we have understood CBOW, right? The only difference in Skip-gram
+
+1127
+02:27:29,095 --> 02:27:32,687
+is that, uh, how we model, how we actually frame the
+
+1128
+02:27:33,187 --> 02:27:37,146
+mathematical objective, right? So instead of now predicting the
+
+1129
+02:27:37,515 --> 02:27:40,786
+missing word or the middle word, what we are doing is we
+
+1130
+02:27:40,802 --> 02:27:44,076
+are actually using the middle word and we are
+
+1131
+02:27:44,576 --> 02:27:48,233
+predicting the surrounding context from that single word. So we know that the word is
+
+1132
+02:27:48,345 --> 02:27:52,566
+movie and we want to predict what does it surround, what surrounds
+
+1133
+02:27:52,598 --> 02:27:55,952
+it, right? So is it watched, we, the, enjoyed, right? That's what
+
+1134
+02:27:56,452 --> 02:27:59,418
+we want to predict. So if you want to pose this as again in a
+
+1135
+02:27:59,918 --> 02:28:04,522
+mathematical way, what we'll say is that we want to maximize the probability of seeing
+
+1136
+02:28:04,634 --> 02:28:07,507
+the words enjoyed, the, we, watched given the word movie. Right.
+
+1137
+02:28:08,069 --> 02:28:11,057
+And if you break it down into more abstract notation, how we want to do
+
+1138
+02:28:11,557 --> 02:28:15,056
+it is that maximize the probability of x sub t minus 2, t minus
+
+1139
+02:28:15,556 --> 02:28:18,831
+1, t plus 1, t plus 2, given the target word x_t.
+
+1140
+02:28:19,489 --> 02:28:23,392
+Right. So we will do some sort of assumptions here that will assume
+
+1141
+02:28:23,408 --> 02:28:28,147
+that these are all— we'll assume certain concepts
+
+1142
+02:28:28,647 --> 02:28:32,628
+called conditional independence. We'll assume that they are only
+
+1143
+02:28:33,030 --> 02:28:36,643
+there's no— we cannot model joint probability distributions here. So we'll say that
+
+1144
+02:28:37,061 --> 02:28:40,883
+we will just look at what's the dependence of each of these words on
+
+1145
+02:28:41,638 --> 02:28:45,910
+given the target, right? So we'll say we try to maximize the logarithmic
+
+1146
+02:28:46,055 --> 02:28:49,669
+of the probability of observing x sub t minus 2 given xt,
+
+1147
+02:28:50,086 --> 02:28:53,668
+xt minus 1 given xt, xt plus 1 given xt independently,
+
+1148
+02:28:53,700 --> 02:28:57,522
+right? And this allows us to then again phrase
+
+1149
+02:28:57,555 --> 02:29:01,555
+this problem as maximizing the sum of the logarithmic
+
+1150
+02:29:01,635 --> 02:29:05,154
+of observing the probability— observing the surrounding
+
+1151
+02:29:05,266 --> 02:29:09,187
+words, which is again the same objective that you saw in the CBOW,
+
+1152
+02:29:09,428 --> 02:29:11,950
+but probed in a reverse manner.
+
+1153
+02:29:13,204 --> 02:29:16,144
+OK, and now comes our, again, friendly function that we saw.
+
+1154
+02:29:16,738 --> 02:29:20,177
+Given that we now have a way to construct xt, we again
+
+1155
+02:29:20,434 --> 02:29:23,985
+just want one projection matrix, U, which can then just
+
+1156
+02:29:24,485 --> 02:29:27,771
+allow us to do the same objective. The whole difference here is that
+
+1157
+02:29:28,139 --> 02:29:31,729
+we just train it to minimize the log probability of the surrounding words
+
+1158
+02:29:31,825 --> 02:29:35,110
+and not the probability of the target word that we
+
+1159
+02:29:35,610 --> 02:29:39,500
+observe. And how is it done usually is that
+
+1160
+02:29:40,077 --> 02:29:44,340
+basically instead of doing— you
+
+1161
+02:29:44,404 --> 02:29:49,435
+already saw this, right? So instead of— so for each of these context
+
+1162
+02:29:50,749 --> 02:29:54,819
+words given a target word, You actually, for each of these, you train an independent
+
+1163
+02:29:55,319 --> 02:29:59,449
+softmax, right? So you maximize the probability of
+
+1164
+02:29:59,786 --> 02:30:02,926
+each of them independently and just take a sum of it. That's how it
+
+1165
+02:30:03,426 --> 02:30:06,979
+is done in real life computationally. And there is an assumption
+
+1166
+02:30:07,011 --> 02:30:10,392
+that you need here. You cannot model joint probability distributions, not with
+
+1167
+02:30:10,892 --> 02:30:14,301
+such a simple model. Okay, so this
+
+1168
+02:30:14,801 --> 02:30:18,147
+is what Skip-gram is. And with this, I'd just like to say
+
+1169
+02:30:18,211 --> 02:30:22,232
+you have actually now seen 2 basic approaches to do word
+
+1170
+02:30:22,732 --> 02:30:26,481
+embeddings, right? The— they are all part of the same paper.
+
+1171
+02:30:26,545 --> 02:30:30,360
+It's called Word2Vec. It's a revolutionary paper which came in 2013 or 2014.
+
+1172
+02:30:30,424 --> 02:30:33,999
+I don't remember the exact date. Uh, and this was one of
+
+1173
+02:30:34,499 --> 02:30:38,071
+the most famous papers which gave us dense vector representations. And it actually was
+
+1174
+02:30:38,183 --> 02:30:41,806
+trained on a large corpus of text extracted
+
+1175
+02:30:42,306 --> 02:30:45,509
+from the internet— not the whole internet, but a big enough corpus. Okay,
+
+1176
+02:30:46,135 --> 02:30:49,730
+so now I'll take Uh, quick detour
+
+1177
+02:30:50,230 --> 02:30:53,940
+to something what we looked in the first lecture, right? I told you different tasks,
+
+1178
+02:30:54,149 --> 02:30:57,314
+and I also said topic detection is one of those. I'll tell you why.
+
+1179
+02:30:57,989 --> 02:31:01,620
+I have a, you know, secret reveal that I'll show you how this is equivalent
+
+1180
+02:31:02,120 --> 02:31:05,524
+to actually learning Word2Vec. So that's a nice thing that I learned,
+
+1181
+02:31:05,781 --> 02:31:08,480
+uh, from, uh, from my own reading.
+
+1182
+02:31:09,171 --> 02:31:12,224
+I mean, it's not new, there's a lot of blogs you can find about it,
+
+1183
+02:31:12,288 --> 02:31:15,886
+but I wanted to teach you guys this. So that you know something interesting.
+
+1184
+02:31:16,400 --> 02:31:20,591
+OK, so we looked at TF-IDF matrix,
+
+1185
+02:31:20,639 --> 02:31:24,171
+right? Let's go back to that where we say the rows are documents and the
+
+1186
+02:31:24,671 --> 02:31:28,587
+columns are words, right? And we wanted to do something like topic detection or
+
+1187
+02:31:29,087 --> 02:31:32,826
+topic labeling, right? And I told you, right, you can do something basic as clustering
+
+1188
+02:31:32,922 --> 02:31:36,535
+to understand this, right? Who knows at a very high level what
+
+1189
+02:31:37,035 --> 02:31:40,797
+clustering is? I think everyone should know
+
+1190
+02:31:40,814 --> 02:31:44,971
+what clustering is. People who don't,
+
+1191
+02:31:45,052 --> 02:31:48,265
+you have not read it in any class
+
+1192
+02:31:48,345 --> 02:31:51,558
+or just want to revise it? Sorry, I just want to understand so
+
+1193
+02:31:52,058 --> 02:31:53,662
+that if not, then I can send you some materials.
+
+1194
+02:31:56,285 --> 02:31:59,690
+Has all of you taken a basic machine learning or,
+
+1195
+02:32:00,948 --> 02:32:03,353
+uh, data mining or similar class?
+
+1196
+02:32:05,064 --> 02:32:08,857
+Yes, no? No. You're taking machine
+
+1197
+02:32:09,357 --> 02:32:12,564
+learning class this semester. OK. So again, we will not assume
+
+1198
+02:32:12,644 --> 02:32:15,919
+any knowledge of these things. But I mean,
+
+1199
+02:32:16,882 --> 02:32:19,851
+so you will not lose anything. But it's just that you may not be able
+
+1200
+02:32:20,351 --> 02:32:22,820
+to kind of be that happy that I know it, right? So we'll not assume
+
+1201
+02:32:22,836 --> 02:32:26,223
+that you know all of these concepts. And so far,
+
+1202
+02:32:26,351 --> 02:32:30,347
+I'm also literally going into very basics. I'm not saying
+
+1203
+02:32:30,364 --> 02:32:34,041
+that. You should pick up some of these concepts as mentioned as
+
+1204
+02:32:34,153 --> 02:32:37,429
+prerequisites, or learn it from the course that you're
+
+1205
+02:32:37,929 --> 02:32:41,107
+already taking. Okay. So what you can do is if you
+
+1206
+02:32:41,123 --> 02:32:44,334
+want to do some sort of like, let's go back to this very high-level task,
+
+1207
+02:32:44,350 --> 02:32:46,984
+right? So we wanted to say that, okay, we are given a set of documents
+
+1208
+02:32:47,000 --> 02:32:51,481
+and we want to group them into news-related documents or sports-related
+
+1209
+02:32:51,981 --> 02:32:55,479
+documents. We saw this example in lecture 1, right? And one way to
+
+1210
+02:32:55,495 --> 02:32:58,867
+do this is something like clustering, right? Also, I mean, If you don't know
+
+1211
+02:32:58,883 --> 02:33:02,206
+what this is, just think about what it means in English.
+
+1212
+02:33:02,382 --> 02:33:06,234
+You're basically grouping things together. How do you group things
+
+1213
+02:33:06,266 --> 02:33:10,215
+together? Once we have— now after this, with this
+
+1214
+02:33:10,715 --> 02:33:13,954
+TF-IDF representation, you literally have represented each of
+
+1215
+02:33:14,454 --> 02:33:18,208
+your documents mathematically. So now what you can do is you can use your favorite
+
+1216
+02:33:18,708 --> 02:33:23,328
+clustering algorithm, which will just group these data points together somehow. And whether
+
+1217
+02:33:23,986 --> 02:33:27,019
+all these data points that are grouped together, whether you call them news or sports,
+
+1218
+02:33:27,372 --> 02:33:29,831
+That's a separate point. And for that, you need some NLP knowledge.
+
+1219
+02:33:30,409 --> 02:33:34,843
+But— and that's not relevant here. But what I'm trying to say is that you,
+
+1220
+02:33:34,908 --> 02:33:38,046
+at least with any clustering algorithm, you can at least group these data points together.
+
+1221
+02:33:38,385 --> 02:33:40,337
+Right? OK.
+
+1222
+02:33:41,547 --> 02:33:45,129
+So the issue here is that if you apply your standard
+
+1223
+02:33:45,161 --> 02:33:48,808
+clustering algorithm, the biggest issue here is that there is a curse
+
+1224
+02:33:49,308 --> 02:33:52,891
+of dimensionality, which we saw. Right? Because when we look at these TF-IDF representations of
+
+1225
+02:33:53,391 --> 02:33:56,335
+these documents, they can be huge in terms of dimensionality,
+
+1226
+02:33:56,399 --> 02:34:00,490
+right? And curse of dimensionality plays a role here also. There was a reference about
+
+1227
+02:34:00,570 --> 02:34:04,163
+outliers here earlier today which we talked about. If you have read about
+
+1228
+02:34:04,663 --> 02:34:07,580
+clustering, and some of you will, you all know that clustering can be really thrown
+
+1229
+02:34:07,693 --> 02:34:10,901
+off by outliers if you use a terrible distance function, right?
+
+1230
+02:34:11,639 --> 02:34:14,414
+If there are outliers in the data and if you use Euclidean distance, you're doomed,
+
+1231
+02:34:14,527 --> 02:34:18,040
+right? You will never have very good clustering. There are many ideas to actually get
+
+1232
+02:34:18,540 --> 02:34:21,811
+that, like circumvent that, problem, but again,
+
+1233
+02:34:21,827 --> 02:34:24,878
+not the focus of this class. Just wanted to mention that these are issues.
+
+1234
+02:34:25,504 --> 02:34:28,796
+Okay, so these are some basic ideas that we can do.
+
+1235
+02:34:29,518 --> 02:34:32,473
+I actually mentioned a bit briefly in the first lecture, I don't know if anyone
+
+1236
+02:34:32,569 --> 02:34:35,861
+recalls, but now based on your basic linear
+
+1237
+02:34:36,361 --> 02:34:39,056
+algebra knowledge, you have this TF-IDF representation.
+
+1238
+02:34:39,714 --> 02:34:43,391
+Can you think you can do something more smarter for clustering? You have
+
+1239
+02:34:43,423 --> 02:34:45,639
+a matrix, what can you do to a matrix?
+
+1240
+02:34:55,310 --> 02:34:58,567
+Yeah, okay, you can do factorization. Has anyone— has
+
+1241
+02:34:59,151 --> 02:35:02,636
+any— does anyone not know the term matrix factorization, or what does it
+
+1242
+02:35:03,136 --> 02:35:06,335
+mean? So everyone
+
+1243
+02:35:06,367 --> 02:35:07,432
+knows matrix factorization.
+
+1244
+02:35:09,663 --> 02:35:12,861
+Okay, matrix factorization is Basically,
+
+1245
+02:35:13,439 --> 02:35:16,904
+what is a factorization of a number? It's basically you're trying to represent
+
+1246
+02:35:17,404 --> 02:35:21,204
+it into smaller factors. So you're trying to
+
+1247
+02:35:21,493 --> 02:35:24,493
+say 10 can be represented as 5 times 2.
+
+1248
+02:35:25,407 --> 02:35:28,712
+So 5 and 2 are factors. The same operations can be performed on
+
+1249
+02:35:29,212 --> 02:35:33,141
+a matrix as well, where you're breaking down the matrix into smaller parts. But now
+
+1250
+02:35:33,333 --> 02:35:36,221
+that all of you know what matrix factorization is, can you tell me why do
+
+1251
+02:35:36,721 --> 02:35:38,292
+you think matrix factorization will allow you to do Good question.
+
+1252
+02:35:52,646 --> 02:35:55,940
+Okay, great. So good, you're on the right track, but let's try to
+
+1253
+02:35:56,440 --> 02:36:00,182
+understand why this works, right? So you can do matrix factorization,
+
+1254
+02:36:00,278 --> 02:36:03,501
+and as I said, right, you can just take your TF-IDF matrix and you
+
+1255
+02:36:03,599 --> 02:36:06,165
+can break it down into 2 matrices,
+
+1256
+02:36:06,870 --> 02:36:10,571
+A and B, where, as you said,
+
+1257
+02:36:10,651 --> 02:36:13,295
+the properties are different. So what we're trying to do is that how does it
+
+1258
+02:36:13,795 --> 02:36:17,798
+allow us to do some sort of clustering is that we
+
+1259
+02:36:17,862 --> 02:36:21,035
+assume that documents have some representation
+
+1260
+02:36:21,147 --> 02:36:23,839
+in the topic space and also in the word space.
+
+1261
+02:36:24,849 --> 02:36:28,326
+So literally, this is what this matrix is giving us. We say we break this
+
+1262
+02:36:28,438 --> 02:36:32,176
+matrix or decompose this matrix which has rows
+
+1263
+02:36:32,272 --> 02:36:35,693
+as docs and words as columns into
+
+1264
+02:36:35,742 --> 02:36:39,179
+something which is A, which has rows
+
+1265
+02:36:39,679 --> 02:36:43,532
+as docs and there is a latent column which is called
+
+1266
+02:36:44,032 --> 02:36:47,194
+topics, right? Latent means hidden, which you don't know, but you're trying to kind of
+
+1267
+02:36:47,306 --> 02:36:51,258
+uncover this, right? And the same applies to this B
+
+1268
+02:36:51,758 --> 02:36:55,225
+matrix where you say the columns are word but the rows are topics. So what
+
+1269
+02:36:55,257 --> 02:36:59,321
+this factorization then allows you is to represent your documents
+
+1270
+02:36:59,417 --> 02:37:03,046
+as some function over topics and also
+
+1271
+02:37:03,110 --> 02:37:06,579
+your words as some function over words. Sorry,
+
+1272
+02:37:06,723 --> 02:37:10,159
+words as some function over topics, right? So the topic, the latent factor
+
+1273
+02:37:10,191 --> 02:37:13,820
+here, or the latent or the hidden dimension here, allows you to kind of
+
+1274
+02:37:14,320 --> 02:37:17,706
+represent both documents and words. And that's your clustering in the end,
+
+1275
+02:37:17,802 --> 02:37:21,335
+right? Because topics is what you wanted these things to be
+
+1276
+02:37:21,835 --> 02:37:25,525
+clustered into, right? With this, if you know your topics, these columns are good,
+
+1277
+02:37:26,071 --> 02:37:29,700
+and you can then easily say which documents corresponds to which topics,
+
+1278
+02:37:29,861 --> 02:37:33,618
+right? Or which words then can actually lead
+
+1279
+02:37:34,118 --> 02:37:37,327
+to which topic labels, right? So you can use both of this information
+
+1280
+02:37:37,827 --> 02:37:41,421
+to actually perform this topic classification in some way, or clustering if you will,
+
+1281
+02:37:41,566 --> 02:37:44,729
+right? So this is how you can do it. But why does it work?
+
+1282
+02:37:45,098 --> 02:37:48,791
+Because you actually pose this again as a mathematical objective
+
+1283
+02:37:49,291 --> 02:37:52,583
+here is to literally see that can we assume
+
+1284
+02:37:53,083 --> 02:37:56,793
+that, okay, there is an actual representation and we don't actually learn an exact factorization.
+
+1285
+02:37:56,841 --> 02:38:00,659
+What we do is we want to approximate this matrix using 2
+
+1286
+02:38:02,957 --> 02:38:06,355
+matrices, A and B. And this is the objective that we try to
+
+1287
+02:38:06,855 --> 02:38:10,341
+minimize, that we're trying to actually minimize the— so
+
+1288
+02:38:10,841 --> 02:38:12,982
+we're literally trying to say that, okay, we break this down into 2 parts.
+
+1289
+02:38:13,449 --> 02:38:16,724
+And what we want to say is that the distance between each cell here,
+
+1290
+02:38:17,206 --> 02:38:20,320
+right, each cell here and the one that you
+
+1291
+02:38:20,353 --> 02:38:23,387
+obtain after multiplying this should be minimum,
+
+1292
+02:38:23,612 --> 02:38:27,546
+right? So you're literally trying to kind of reconstruct the original matrix but
+
+1293
+02:38:28,108 --> 02:38:31,544
+trying to kind of decompose them into 2 smaller matrices,
+
+1294
+02:38:31,801 --> 02:38:35,092
+right? And what you meant, like you might have read
+
+1295
+02:38:35,592 --> 02:38:38,127
+in the slides and someone said we don't know what latent semantic analysis is,
+
+1296
+02:38:38,175 --> 02:38:40,487
+so now you know. This is what is latent semantic analysis,
+
+1297
+02:38:41,563 --> 02:38:45,507
+right? So, and you
+
+1298
+02:38:45,539 --> 02:38:48,972
+already know how factorization can be done. Again, going back to linear algebra,
+
+1299
+02:38:49,766 --> 02:38:53,409
+you have all read what a singular value decomposition is or
+
+1300
+02:38:53,474 --> 02:38:57,282
+what eigendecomposition is, right? So this is how we actually
+
+1301
+02:38:57,782 --> 02:39:01,042
+factorize this matrix, right? You saw this optimization function, but this is how we factorize
+
+1302
+02:39:01,074 --> 02:39:04,404
+this matrix into— we perform an SVD on
+
+1303
+02:39:04,904 --> 02:39:08,553
+top of the TF-IDF matrix. It will give us U, S, and V. And V
+
+1304
+02:39:09,053 --> 02:39:12,868
+transpose, which are basically
+
+1305
+02:39:13,206 --> 02:39:16,668
+how we can construct your A and B matrices, right? So what you want
+
+1306
+02:39:16,684 --> 02:39:20,189
+is that if you literally want K topics, what you do is you
+
+1307
+02:39:20,285 --> 02:39:23,900
+keep only the K columns of your U and V matrices, and you keep
+
+1308
+02:39:24,400 --> 02:39:27,210
+the full— because S is a square matrix,
+
+1309
+02:39:27,467 --> 02:39:30,640
+so you keep the K rows and K columns of the S matrix.
+
+1310
+02:39:31,097 --> 02:39:34,532
+And then based on that, you can reconstruct A. Which could
+
+1311
+02:39:34,628 --> 02:39:37,972
+either be U prime and B can be S prime V prime
+
+1312
+02:39:38,472 --> 02:39:42,087
+transpose, or you can actually construct A as U prime S prime and B being
+
+1313
+02:39:42,183 --> 02:39:46,540
+V prime transpose. So this is literally how you get those 2
+
+1314
+02:39:47,772 --> 02:39:51,533
+matrices to represent your topic spaces.
+
+1315
+02:39:52,732 --> 02:39:52,894
+Okay.
+
+1316
+02:39:58,427 --> 02:40:03,397
+So yeah, I just— I don't think this is— yeah,
+
+1317
+02:40:05,796 --> 02:40:09,018
+I think this is— I don't think this is super interesting. But yeah, I just
+
+1318
+02:40:09,518 --> 02:40:12,639
+wanted to kind of also mention that the— I wanted to mention the
+
+1319
+02:40:12,720 --> 02:40:16,117
+connection, right? How does this connection of TF-IDF matrix
+
+1320
+02:40:16,617 --> 02:40:20,062
+factorization leads to the word embeddings,
+
+1321
+02:40:20,418 --> 02:40:23,778
+right? Because literally what this— if
+
+1322
+02:40:23,810 --> 02:40:28,162
+you remember this, right, you are actually also learning
+
+1323
+02:40:28,274 --> 02:40:32,285
+these representations, right? You're literally with
+
+1324
+02:40:32,785 --> 02:40:35,958
+this B matrix. What does this B matrix give you? It gives you for
+
+1325
+02:40:36,039 --> 02:40:39,648
+each word this, these other factors of topics,
+
+1326
+02:40:39,728 --> 02:40:43,017
+right? And these topics is your dimensionality. These topics are your
+
+1327
+02:40:43,517 --> 02:40:47,301
+word embeddings. This matrix actually gives you your word embeddings. And the
+
+1328
+02:40:47,801 --> 02:40:51,504
+top, you can actually control. You can say that with k is equal to 100,
+
+1329
+02:40:52,001 --> 02:40:55,734
+you will learn 100-dimensional word embeddings. If you do k is equal to 1,000,
+
+1330
+02:40:55,863 --> 02:40:59,396
+you will learn 1,000-dimensional word embeddings, right? And this is what you are actually
+
+1331
+02:40:59,509 --> 02:41:02,724
+doing in this setup, which allows you to learn your word embeddings. This is a
+
+1332
+02:41:03,224 --> 02:41:06,355
+very neat transformation and also a neat connection which shows you
+
+1333
+02:41:06,855 --> 02:41:10,002
+that you can also still use your classical NLP ideas to actually just learn word
+
+1334
+02:41:10,502 --> 02:41:13,836
+embeddings of the future or the current phrase, right?
+
+1335
+02:41:16,004 --> 02:41:19,240
+But in this case, there is one small problem, right?
+
+1336
+02:41:19,796 --> 02:41:23,677
+Or one small transformation that you need to do before you can learn your
+
+1337
+02:41:23,886 --> 02:41:27,189
+word embeddings in a proper way. You need to— what you need to
+
+1338
+02:41:27,689 --> 02:41:31,407
+do is a standard TF-IDF won't work. What you would need to do is something
+
+1339
+02:41:31,503 --> 02:41:34,951
+called PMI transformation, which is also called pointwise mutual
+
+1340
+02:41:35,451 --> 02:41:38,992
+information. I welcome you to read what pointwise mutual information is. It's very
+
+1341
+02:41:39,492 --> 02:41:43,258
+simple. And I'm not actually connecting this
+
+1342
+02:41:43,546 --> 02:41:46,803
+proof to you that why PMI actually gives
+
+1343
+02:41:46,819 --> 02:41:50,046
+you word vectors, for which I will point you to this paper that
+
+1344
+02:41:50,546 --> 02:41:53,931
+you can read. But again, this is optional. Since I said this is a connection
+
+1345
+02:41:53,979 --> 02:41:57,078
+that I'm showing to you, you don't have to kind of know this,
+
+1346
+02:41:57,431 --> 02:42:00,401
+but this is a new, I would say, aha moment. Like this was for me
+
+1347
+02:42:00,901 --> 02:42:04,752
+when I read this paper that, look, we can still do matrix factorization over
+
+1348
+02:42:05,252 --> 02:42:08,911
+TF-IDF matrices with some transformation to actually get word embeddings instead
+
+1349
+02:42:09,411 --> 02:42:12,737
+of training a neural network, right? So that transformation still holds. And this is
+
+1350
+02:42:12,915 --> 02:42:17,333
+the suggested reading that I've already given in this specific
+
+1351
+02:42:17,833 --> 02:42:21,780
+slide. You can have a look. There's a paper,
+
+1352
+02:42:22,314 --> 02:42:25,161
+but there's also blogs that actually explain it to you.
+
+1353
+02:42:25,727 --> 02:42:29,075
+So it's a 3-part blog with code and with also some proofs.
+
+1354
+02:42:29,139 --> 02:42:32,652
+It actually shows you why if you do a PMI over a TF-IDF
+
+1355
+02:42:33,152 --> 02:42:36,616
+matrix, it actually gives you word embeddings, which is similar
+
+1356
+02:42:37,116 --> 02:42:39,080
+to Word2Vec. Okay.
+
+1357
+02:42:40,941 --> 02:42:45,060
+I just wanted to give you some teasers about what do we do beyond
+
+1358
+02:42:45,255 --> 02:42:48,463
+bag of words and neural word embeddings, right? These are just 2 slides,
+
+1359
+02:42:49,042 --> 02:42:52,697
+promise. So basically, we now looked at
+
+1360
+02:42:52,987 --> 02:42:56,126
+literally the TF-IDF gives you this bag of
+
+1361
+02:42:56,626 --> 02:42:59,665
+words representation, and we look at neural word embeddings. They all allow us to represent
+
+1362
+02:43:00,165 --> 02:43:03,587
+words as vectors, right? But what you need
+
+1363
+02:43:03,779 --> 02:43:08,436
+right now is that we have documents, we have sentences, we have huge paragraphs,
+
+1364
+02:43:08,468 --> 02:43:12,081
+right? So how do we represent them as vectors? There are many techniques
+
+1365
+02:43:12,581 --> 02:43:16,015
+that actually can allow you to embed a sentence directly or
+
+1366
+02:43:16,515 --> 02:43:19,965
+also a document directly. There was something called also as doc2vec, which was published as
+
+1367
+02:43:20,465 --> 02:43:23,738
+a paper right after word2vec, which actually just gave you embeddings for docs. But a
+
+1368
+02:43:24,238 --> 02:43:26,372
+simple thing is also that you can take all the words in your document and
+
+1369
+02:43:26,872 --> 02:43:30,514
+then average them or sum them. Then that will also give you a document representation.
+
+1370
+02:43:30,707 --> 02:43:34,235
+Not a nice one. By the way, I mean, it's a simple one which
+
+1371
+02:43:34,735 --> 02:43:38,095
+we saw. A sum pooling you can also still do, but there are more ways
+
+1372
+02:43:38,111 --> 02:43:41,361
+that you will learn. Like an LSTM can be used to combine this together.
+
+1373
+02:43:41,915 --> 02:43:45,451
+You might have heard the term BERT, right? Who has heard of the model
+
+1374
+02:43:45,500 --> 02:43:48,712
+BERT? Who has heard of the
+
+1375
+02:43:48,745 --> 02:43:52,391
+character BERT from the anime or cartoon, as you say?
+
+1376
+02:43:52,876 --> 02:43:55,909
+Okay, so BERT is the— was
+
+1377
+02:43:55,925 --> 02:44:00,639
+the most— one of the most famous Transformer models That was used to learn vector
+
+1378
+02:44:00,687 --> 02:44:04,831
+embeddings of words. The only difference is that if you recall today,
+
+1379
+02:44:04,912 --> 02:44:08,301
+I said that the word embeddings are unique,
+
+1380
+02:44:08,542 --> 02:44:11,754
+which I said that I, no matter where it appears, will have only one and
+
+1381
+02:44:11,819 --> 02:44:15,898
+one meaning. It will be like a dictionary where we'll have the word really will
+
+1382
+02:44:15,915 --> 02:44:19,529
+have an entry. It is like a lookup table. That's the thing that changed
+
+1383
+02:44:20,029 --> 02:44:23,592
+with these transformer models or BERT models where we brought in context
+
+1384
+02:44:23,882 --> 02:44:27,168
+or context into the word vectors. That's why they were
+
+1385
+02:44:27,668 --> 02:44:31,271
+called contextualized word vectors, where we actually just trying to say that the
+
+1386
+02:44:31,336 --> 02:44:34,830
+bat flew into the cave versus he swung the bat and hit a home run
+
+1387
+02:44:34,926 --> 02:44:39,030
+will mean different things. This cannot happen in your classical word embeddings because,
+
+1388
+02:44:39,254 --> 02:44:42,140
+as we said, by design we force them to be like a lookup table,
+
+1389
+02:44:42,156 --> 02:44:45,458
+like a dictionary. But this can happen with transformer
+
+1390
+02:44:45,958 --> 02:44:49,225
+models like BERT, and which is again what we see in week 5 and 6.
+
+1391
+02:44:49,289 --> 02:44:53,102
+But just wanted to give you that mention
+
+1392
+02:44:53,135 --> 02:44:56,551
+here that there is something also called a contextualized word vector, which we
+
+1393
+02:44:57,051 --> 02:44:59,810
+will read in super detail in week 5.
+
+1394
+02:45:01,202 --> 02:45:04,583
+Okay. And yeah, this is your classical NLP pipeline.
+
+1395
+02:45:04,681 --> 02:45:08,442
+Now you know most of this. And now from next week, we'll start into language
+
+1396
+02:45:08,942 --> 02:45:12,530
+modeling. Yeah, I mean, again, these are more motivational texts. This is
+
+1397
+02:45:12,563 --> 02:45:16,446
+not something that covers the meat of the concepts that
+
+1398
+02:45:16,946 --> 02:45:19,572
+we learned today. This is just to kind of mention, again, this is some of
+
+1399
+02:45:20,072 --> 02:45:23,313
+the motivation that we covered in the first week, giving it back. What do we
+
+1400
+02:45:23,813 --> 02:45:27,536
+do and how do we do things today? This is a question that I'll leave
+
+1401
+02:45:27,793 --> 02:45:30,394
+you guys with, and we will discuss it the first thing next time we meet.
+
+1402
+02:45:30,924 --> 02:45:34,730
+You saw CBOW and Skip-gram methods. Think about
+
+1403
+02:45:34,938 --> 02:45:38,696
+what are the differences between these. What could be the difference between
+
+1404
+02:45:38,872 --> 02:45:42,196
+the embeddings that you learn from these models? I didn't answer that.
+
+1405
+02:45:42,726 --> 02:45:46,130
+But that's a fun thing to think about. Again, if you can think about
+
+1406
+02:45:46,630 --> 02:45:49,165
+it, think about it. If you cannot, we'll see this in the next lecture.
+
+1407
+02:45:49,967 --> 02:45:54,447
+And then, as always, feel free to leave feedback. And thanks for your attention.
+

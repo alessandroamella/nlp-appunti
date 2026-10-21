@@ -1,0 +1,7496 @@
+1
+00:04:05,792 --> 00:04:09,825
+The, uh, as I promised previously,
+
+2
+00:04:10,343 --> 00:04:14,599
+we have put out an office hour for you to ask questions
+
+3
+00:04:15,019 --> 00:04:18,313
+that's dedicated, uh, next week in the, in the
+
+4
+00:04:18,442 --> 00:04:21,990
+exercise sessions. But what you can also do is you can also ask
+
+5
+00:04:22,490 --> 00:04:26,759
+questions this week, right? There's nothing stopping you from asking questions this week. Just saying,
+
+6
+00:04:27,096 --> 00:04:30,805
+uh, there will also be a dedicated office hour, uh, next week.
+
+7
+00:04:31,046 --> 00:04:35,349
+Okay. Um, and thanks everyone who— whoever was
+
+8
+00:04:35,398 --> 00:04:38,336
+not in any group. Now you, uh, I think all of you are in groups
+
+9
+00:04:38,836 --> 00:04:42,189
+except for some very special circumstances, uh, you know, people who
+
+10
+00:04:42,689 --> 00:04:45,755
+have some personal issues. So, Apart from that, okay, so the group situation is sorted.
+
+11
+00:04:45,980 --> 00:04:49,593
+Everyone is in a, you know, the projects should be moving further.
+
+12
+00:04:49,930 --> 00:04:53,735
+Some of you have already reached out to us by email or in
+
+13
+00:04:53,767 --> 00:04:57,300
+the lab sessions to TAs asking questions. So we encourage that,
+
+14
+00:04:57,364 --> 00:05:00,367
+feel free to do, like keep doing that because then it will make more clear
+
+15
+00:05:00,832 --> 00:05:04,622
+about what should you do in the projects. I also had a question last
+
+16
+00:05:05,713 --> 00:05:09,101
+week after the class, like,
+
+17
+00:05:10,179 --> 00:05:13,350
+what's expected in the project, right? And how should we go about this?
+
+18
+00:05:13,981 --> 00:05:16,601
+I mean, it was more than that. We discussed a lot. But the point,
+
+19
+00:05:16,650 --> 00:05:20,263
+the key point that I would like to mention here is that you have
+
+20
+00:05:20,295 --> 00:05:24,063
+access to the milestones from the last year, right? So that should give you
+
+21
+00:05:24,079 --> 00:05:26,864
+a very good idea of how should it be designed.
+
+22
+00:05:27,363 --> 00:05:31,235
+You also have access to, you know, we also gave
+
+23
+00:05:31,735 --> 00:05:34,785
+you insights about which projects were found to be good, right?
+
+24
+00:05:35,612 --> 00:05:39,025
+I mean, it doesn't mean that everything else was crap, right? But still saying that
+
+25
+00:05:39,041 --> 00:05:42,694
+good ones should give you an idea of what is an
+
+26
+00:05:42,806 --> 00:05:45,946
+ideal project, how should you do it? And we gave you good projects
+
+27
+00:05:46,446 --> 00:05:49,647
+for both milestone 1 and 2, right? So you can also assess.
+
+28
+00:05:49,711 --> 00:05:52,883
+And I also told you that there was, I mean, there was,
+
+29
+00:05:53,460 --> 00:05:56,440
+I mean, they were not the same. There were differences like the, the set,
+
+30
+00:05:56,840 --> 00:06:00,092
+the intersection was not the, you know, they were not the whole, I mean,
+
+31
+00:06:00,108 --> 00:06:02,944
+it was not basically an intersection, right? You cannot say that, okay, they were exactly
+
+32
+00:06:03,444 --> 00:06:06,262
+the same. There were certain things which were different in both. Uh, milestones.
+
+33
+00:06:06,855 --> 00:06:09,454
+So have a look on those cases so that you can,
+
+34
+00:06:10,288 --> 00:06:13,481
+uh, design what your project should look like. But again,
+
+35
+00:06:13,513 --> 00:06:16,208
+the other aspect is that we have given you templates, we have given you ideas,
+
+36
+00:06:16,304 --> 00:06:19,930
+we have given you datasets. Now you need to think about ideas, but it's not
+
+37
+00:06:20,430 --> 00:06:23,796
+that you cannot ask us to get your idea validated, right?
+
+38
+00:06:23,844 --> 00:06:26,619
+So you're not, I mean, we are not leaving you alone. We are,
+
+39
+00:06:26,828 --> 00:06:30,149
+we have provided all the guidance that should exist. So now
+
+40
+00:06:30,197 --> 00:06:32,925
+it's up to you to reach out to us and ask. If you're stuck somewhere,
+
+41
+00:06:33,471 --> 00:06:35,960
+even though if you think that you're not stuck, if you want to get your
+
+42
+00:06:36,460 --> 00:06:39,269
+idea validated, please talk to TAs, right? It's very important.
+
+43
+00:06:40,553 --> 00:06:43,524
+Or feel free to send emails. Usually talking is better, but feel free to send
+
+44
+00:06:44,024 --> 00:06:47,668
+emails as well if you prefer that. Okay. We actually casted also
+
+45
+00:06:47,684 --> 00:06:51,265
+a poll last week or 2 weeks before. We wanted to discuss
+
+46
+00:06:52,020 --> 00:06:55,023
+when should be the project milestone P2. The class has spoken.
+
+47
+00:06:55,071 --> 00:06:58,460
+73% of you voted that it should be Monday, 21st December. So we went with
+
+48
+00:06:58,960 --> 00:07:01,571
+that. We had to kind of inform them last week, so we did that.
+
+49
+00:07:02,789 --> 00:07:06,556
+Then Friday's lab session will again be similar. Now you know
+
+50
+00:07:06,572 --> 00:07:10,292
+the drill. It will have more exercises now on sequence-to-sequence models,
+
+51
+00:07:10,324 --> 00:07:14,171
+attention, and Transformers. What we have done is that we have also added some
+
+52
+00:07:14,671 --> 00:07:18,115
+practical exercises so that you can understand better why LSTMs and
+
+53
+00:07:18,243 --> 00:07:22,267
+GRUs are different. I told you, right, there are— I mean, GRUs are more
+
+54
+00:07:22,767 --> 00:07:25,650
+practical. They have less parameters, so it's easier to train as well.
+
+55
+00:07:26,259 --> 00:07:30,333
+They're less complex. But then I promised last time that we will add exercises
+
+56
+00:07:30,430 --> 00:07:33,349
+for you to kind of see the difference in a, in a practical setting.
+
+57
+00:07:33,397 --> 00:07:36,220
+So we have now added that so you can see that. Okay.
+
+58
+00:07:36,765 --> 00:07:40,118
+Then quickly going through the feedback, you know, again, thanks for sharing
+
+59
+00:07:40,166 --> 00:07:42,668
+your thoughts. They're really helpful. They help us adapt. Uh,
+
+60
+00:07:43,903 --> 00:07:47,448
+uh, so yeah. Uh, and mostly, you know, there were some nice parts, but there
+
+61
+00:07:47,948 --> 00:07:51,057
+were also some suggestions which we'll go through. Actually, I also liked the last lecture
+
+62
+00:07:51,557 --> 00:07:55,263
+a lot because we did a lot of discussions. Right. And I
+
+63
+00:07:55,312 --> 00:07:58,782
+think we all learned something from those discussions. So that's a very nice
+
+64
+00:07:59,282 --> 00:08:02,639
+thing. And I think I would like— we should keep this cadence, right? We should
+
+65
+00:08:02,687 --> 00:08:04,968
+keep interacting the way we did last time. So that was very nice.
+
+66
+00:08:05,675 --> 00:08:09,275
+Yeah, I'm also a fan of Gru from the Minions. So thanks, we like
+
+67
+00:08:09,775 --> 00:08:13,951
+minds. Yeah, and I think there were some nice— I think,
+
+68
+00:08:14,272 --> 00:08:16,939
+you know, it's good that you like this approach. We will keep following this approach.
+
+69
+00:08:17,003 --> 00:08:20,185
+We— I mean, we have been doing this for some time now, but it's good
+
+70
+00:08:20,217 --> 00:08:23,399
+that this is resonating with you. Okay. There were some
+
+71
+00:08:23,447 --> 00:08:26,580
+suggestions about you should hide the Menti answers until everyone has answered.
+
+72
+00:08:27,191 --> 00:08:30,806
+Uh, okay, sure. Feedback well taken. But I have a follow-up question here,
+
+73
+00:08:30,823 --> 00:08:34,358
+whoever said this, but the whole class can participate now. We don't— I
+
+74
+00:08:34,858 --> 00:08:37,009
+mean, I never showed the correct answer before everyone has answered, right? So I,
+
+75
+00:08:37,154 --> 00:08:40,560
+I really like how to show that things are evolving, how people are
+
+76
+00:08:40,689 --> 00:08:44,224
+sharing answers. But if this is distracting or unwelcome, I can also
+
+77
+00:08:44,724 --> 00:08:49,129
+hide that. So quick show of hands that if I should not show while
+
+78
+00:08:49,629 --> 00:08:53,286
+people like show the, the, the bar chart or the
+
+79
+00:08:53,820 --> 00:08:57,524
+thing when people are interacting. So not people who
+
+80
+00:08:58,024 --> 00:08:59,456
+don't want this, show of hands.
+
+81
+00:09:01,936 --> 00:09:03,160
+Okay. And people who want this.
+
+82
+00:09:06,294 --> 00:09:10,061
+Okay. I would say again, the majority doesn't want it. So sorry. I mean,
+
+83
+00:09:10,158 --> 00:09:13,533
+4 or 5 here wanted and there are many who abstained. I don't know
+
+84
+00:09:14,033 --> 00:09:16,898
+if this was clear. I told you no abstentions, but okay, it can also be
+
+85
+00:09:17,398 --> 00:09:21,510
+the case. So most people don't want this. So I will now— let
+
+86
+00:09:22,010 --> 00:09:25,981
+me just do this right away because then I would move this
+
+87
+00:09:27,315 --> 00:09:30,657
+window out and keep it on
+
+88
+00:09:30,690 --> 00:09:32,017
+my personal screen.
+
+89
+00:09:35,762 --> 00:09:36,984
+Okay, good.
+
+90
+00:09:49,715 --> 00:09:53,326
+Great. Okay. Then there was also some comment about, I just saw the video
+
+91
+00:09:53,826 --> 00:09:57,274
+of the last lecture. Great. Great to know that people are also watching videos who
+
+92
+00:09:57,774 --> 00:10:00,563
+are not coming to the lecture. And there was some suggestion about, you know,
+
+93
+00:10:00,692 --> 00:10:04,158
+hints. We discussed that everyone was fine with the hints. Someone said, okay, can you
+
+94
+00:10:04,658 --> 00:10:08,623
+put hints in comments? And expand the markdown. In my opinion, it's too much fine-tuning.
+
+95
+00:10:08,769 --> 00:10:10,785
+I mean, if you don't want to watch the hint, don't watch it, right?
+
+96
+00:10:11,495 --> 00:10:14,818
+But again, you know, as I said, we are here to adapt based
+
+97
+00:10:15,318 --> 00:10:17,643
+on your interest. Do you guys really want this?
+
+98
+00:10:18,580 --> 00:10:22,057
+I mean, it's one suggestion, right? If, again, quick show of hands, who literally wants
+
+99
+00:10:22,557 --> 00:10:26,255
+this? It's added complexity. I can also have a worry that someone can just say
+
+100
+00:10:26,755 --> 00:10:30,024
+that now, you know, it's very hard to find where
+
+101
+00:10:30,524 --> 00:10:33,634
+are the hints, right? So you cannot always, I mean, it's like you cannot always
+
+102
+00:10:33,666 --> 00:10:36,848
+fine-tune things to everything. I mean, we all know from machine learning as well,
+
+103
+00:10:38,173 --> 00:10:42,402
+you know, it's also overfitting. So who wants
+
+104
+00:10:42,434 --> 00:10:45,247
+this solution? Who does not want this solution?
+
+105
+00:10:47,553 --> 00:10:51,014
+No abstentions, please. I mean, this is a simple thing, right? You should have an
+
+106
+00:10:51,514 --> 00:10:52,564
+opinion. Either it should be a yes or no, right?
+
+107
+00:10:55,891 --> 00:10:58,900
+I would still then go by majority, right? Because I think I saw 7 hands
+
+108
+00:10:59,400 --> 00:11:02,165
+who said they don't want this. And I see some nods.
+
+109
+00:11:03,065 --> 00:11:06,617
+Okay, good. So then, sorry, whoever watched the video, and I'm still— if
+
+110
+00:11:07,117 --> 00:11:09,623
+you're still watching the video, the class has spoken, right? Uh, I think you can
+
+111
+00:11:10,258 --> 00:11:13,264
+just, you know, adapt yourself.
+
+112
+00:11:14,244 --> 00:11:17,836
+But thanks for the comment. Okay, then, uh, there was also some
+
+113
+00:11:17,964 --> 00:11:22,307
+feedback. I, I'm— I marked this dislikes also because it was mentioned
+
+114
+00:11:22,807 --> 00:11:26,174
+in the dislike section. But yeah, I also see them as suggestions. Uh,
+
+115
+00:11:26,463 --> 00:11:30,698
+someone said that, okay, the first backpropagation part really went well, uh, really went
+
+116
+00:11:31,198 --> 00:11:34,628
+very fast, right? It became a bit overwhelming. Just to kind of add
+
+117
+00:11:35,128 --> 00:11:38,222
+an explanation, it was a review, right? I mean, we, we don't teach backpropagation in
+
+118
+00:11:38,318 --> 00:11:41,142
+this lecture, but still, I, I can understand that,
+
+119
+00:11:41,446 --> 00:11:45,200
+uh, it went fast. What I can do from the future instances
+
+120
+00:11:45,232 --> 00:11:48,216
+when we have such complex operations, I can take it a bit slower so that
+
+121
+00:11:48,716 --> 00:11:52,291
+it's easier, right? But then also sometimes I have to go a bit fast because
+
+122
+00:11:52,612 --> 00:11:56,141
+You know, you can see that some lectures are more dense because I want
+
+123
+00:11:56,641 --> 00:12:00,248
+to cover the same topics together, right? Some literally have more material and some
+
+124
+00:12:00,296 --> 00:12:03,569
+have less material. So last time we did also could do more discussions because,
+
+125
+00:12:04,387 --> 00:12:08,782
+you know, we, we had slightly lesser content to discuss in those 3 hours than
+
+126
+00:12:08,895 --> 00:12:12,103
+what we have at different times, right? So I'm just saying, but okay,
+
+127
+00:12:12,568 --> 00:12:15,953
+feedback well taken. I will try to do this. But also, I mean, whoever had
+
+128
+00:12:16,453 --> 00:12:20,364
+this issue, there was a small suggestion that I wanted to give. That the
+
+129
+00:12:20,864 --> 00:12:23,410
+color coding and the math is still out there, right? If you just do a
+
+130
+00:12:23,910 --> 00:12:27,690
+review yourself slowly, you would understand what's going on,
+
+131
+00:12:27,818 --> 00:12:31,634
+right? And the goal was to give an intuition. And I also said
+
+132
+00:12:31,666 --> 00:12:35,690
+this, right? We will not ask you to compute this big, you know,
+
+133
+00:12:36,235 --> 00:12:39,249
+backpropagation in an exam, right? We're just saying,
+
+134
+00:12:39,441 --> 00:12:41,685
+I mean, you should still know this. I'm not saying that you should not know
+
+135
+00:12:42,185 --> 00:12:45,710
+this, but it should be clear because I've added those animations and
+
+136
+00:12:46,210 --> 00:12:48,906
+everything just to make sure that it becomes clear. But again, thanks for the feedback.
+
+137
+00:12:50,190 --> 00:12:53,402
+Then there was also a bit comment about, you know, it was
+
+138
+00:12:53,902 --> 00:12:57,335
+unclear about what the cell state of an LSTM could track.
+
+139
+00:12:57,881 --> 00:13:00,804
+Can we have more concrete example about that, right? Again, for this one, I'm a
+
+140
+00:13:00,868 --> 00:13:04,401
+bit confused because what we discussed was an example. And the point is that
+
+141
+00:13:04,901 --> 00:13:07,451
+if I make it more explicit than what it is, then it's not a question
+
+142
+00:13:07,951 --> 00:13:11,161
+anymore, right? The key point is that now you know what it looked like.
+
+143
+00:13:11,546 --> 00:13:14,500
+Again, wanted to show this example, right? I mean, where we clearly said that the
+
+144
+00:13:15,000 --> 00:13:19,077
+cell state is a score. That you now have overlaid on top of this example,
+
+145
+00:13:19,495 --> 00:13:22,610
+and it ranges from -1 to 1. All of this information I already gave you
+
+146
+00:13:23,092 --> 00:13:26,368
+when I told you what this is, right? And then
+
+147
+00:13:26,401 --> 00:13:29,757
+the blue part is more cold regions. It's like a heatmap, right? So the blue
+
+148
+00:13:29,773 --> 00:13:33,162
+parts are colder regions, the red parts are hotter regions. So it means that blue
+
+149
+00:13:33,290 --> 00:13:36,888
+corresponds to -1. The more blue it is, the more close to -1 it is,
+
+150
+00:13:37,321 --> 00:13:39,827
+and the more red it is, the more close to 1 it is, right?
+
+151
+00:13:40,276 --> 00:13:42,589
+And then we wanted to say that what is the tracking, right? And it was
+
+152
+00:13:43,119 --> 00:13:46,670
+Some of you got it right. I think I saw the Menti again,
+
+153
+00:13:46,718 --> 00:13:50,125
+and I think around 8 or 9 people got it right, which I understand again.
+
+154
+00:13:50,478 --> 00:13:53,997
+But the point was eventually, right, again, you know, in,
+
+155
+00:13:54,190 --> 00:13:56,809
+in the exam, you will not be asked such,
+
+156
+00:13:57,870 --> 00:14:01,115
+you know, questions in a way which are not clearly defined, right?
+
+157
+00:14:01,164 --> 00:14:04,361
+I mean, the point is that, of course, if you have
+
+158
+00:14:04,538 --> 00:14:07,494
+such kind of a question, you will have also more information,
+
+159
+00:14:07,607 --> 00:14:10,576
+right, to answer this. And then we will be there in the room. You can
+
+160
+00:14:11,076 --> 00:14:14,072
+also ask clarification questions from us. And if there is a clarification question that applies
+
+161
+00:14:14,104 --> 00:14:17,424
+to everyone, we will also put this on the whiteboard or the projector or whatever
+
+162
+00:14:18,129 --> 00:14:21,289
+mode that we have in those rooms. Just saying that you should not worry
+
+163
+00:14:21,305 --> 00:14:24,993
+about this in a class. This is a bit different because it's important that we—
+
+164
+00:14:25,090 --> 00:14:28,794
+you get a time to think about this and then we discuss. And sometimes
+
+165
+00:14:29,294 --> 00:14:32,435
+it may not be immediately clear, but these aha moments are important because then
+
+166
+00:14:32,467 --> 00:14:35,818
+this is what sticks with you for the future. Right. Just wanted to say,
+
+167
+00:14:36,379 --> 00:14:40,467
+uh, this aspect again, feedback well taken, but I was a bit confused because we
+
+168
+00:14:40,967 --> 00:14:44,171
+literally saw an example, right? Maybe you can give another feedback exactly
+
+169
+00:14:44,671 --> 00:14:48,002
+about this, saying that what would you have, whoever gave this feedback,
+
+170
+00:14:48,018 --> 00:14:51,545
+what would you have wanted to, uh, see as an example in this
+
+171
+00:14:52,045 --> 00:14:55,185
+case, uh, as opposed to what was shown already. Okay.
+
+172
+00:14:55,954 --> 00:14:59,016
+Then, uh, there was also aspect about, there was some confusion about the,
+
+173
+00:14:59,706 --> 00:15:03,970
+uh, LSTM forget gate, output gate, and also skip connections were mentioned
+
+174
+00:15:04,470 --> 00:15:07,915
+last time. We also— someone also mentioned about residual connections,
+
+175
+00:15:07,963 --> 00:15:11,764
+residual blocks, ResNets. And these are all people who have taken a deep learning
+
+176
+00:15:11,812 --> 00:15:14,410
+course, I'm assuming. So they know a bit about all of this.
+
+177
+00:15:15,180 --> 00:15:18,884
+And just to make sure this is easier to understand, what I have done
+
+178
+00:15:19,384 --> 00:15:23,294
+is that I have added some reviews today which connects what
+
+179
+00:15:23,794 --> 00:15:27,047
+we saw, right? I still maintain that what we discussed last time, that LSTM,
+
+180
+00:15:27,127 --> 00:15:30,912
+RNNs, the way we talked about them, were a fix. To the
+
+181
+00:15:31,412 --> 00:15:34,759
+vanishing gradient problem. This all started from that, right? But there is also a
+
+182
+00:15:35,259 --> 00:15:38,751
+connection which I was able to draw, uh, and I said, which I promised that
+
+183
+00:15:39,251 --> 00:15:42,678
+we will show in the next week. So today I will show them not exactly
+
+184
+00:15:43,178 --> 00:15:47,054
+in recap, but basically as a precursor or an additional material
+
+185
+00:15:47,102 --> 00:15:50,533
+before we dive into today's topics. Okay. So with
+
+186
+00:15:51,033 --> 00:15:54,845
+this, again, thanks again for all of this important feedback. So keep sharing that
+
+187
+00:15:54,957 --> 00:15:57,618
+with us. Uh, as you can all see, this is helpful. Uh,
+
+188
+00:15:58,388 --> 00:16:01,869
+for the course, but also helpful for your understanding as well. Uh, okay.
+
+189
+00:16:02,399 --> 00:16:04,981
+So then a quick recap of what we saw last time, right? So we looked
+
+190
+00:16:05,481 --> 00:16:08,831
+into RNNs, right? Uh, which was language modeling part 2, where we discussed that,
+
+191
+00:16:08,895 --> 00:16:12,713
+okay, RNNs is a machinery, you can call it, or an architecture or a model
+
+192
+00:16:13,082 --> 00:16:16,563
+that allows literally, uh, us to theoretically, uh,
+
+193
+00:16:17,237 --> 00:16:21,312
+you know, model, uh, long-range dependencies or infinitely long-range
+
+194
+00:16:21,328 --> 00:16:24,167
+dependencies because it can learn to model text which is unbounded.
+
+195
+00:16:24,938 --> 00:16:28,102
+Of unbounded length, right? But this is again, the key part is here is also
+
+196
+00:16:28,150 --> 00:16:31,748
+theoretically. Why this— why we say this is theoretically?
+
+197
+00:16:32,005 --> 00:16:35,555
+Because we saw that there's a problem that when you have these gradient
+
+198
+00:16:36,055 --> 00:16:39,828
+computations, so multiple steps of state actually can overwrite the
+
+199
+00:16:40,133 --> 00:16:43,233
+value of the current hidden state. And this makes it really challenging
+
+200
+00:16:43,330 --> 00:16:46,494
+to model long-range dependencies. So theoretically, it's possible. Why?
+
+201
+00:16:46,638 --> 00:16:50,333
+Because there is no increase in model size. So computationally, it's very efficient. And the
+
+202
+00:16:50,833 --> 00:16:53,962
+weights are also shared, which allows us to learn this information. But there is also
+
+203
+00:16:54,010 --> 00:16:57,463
+this problem of overwriting states as we go over
+
+204
+00:16:57,963 --> 00:17:01,252
+time. So from when you are, let's say,
+
+205
+00:17:01,558 --> 00:17:05,476
+at 150th time instance, like 150th token
+
+206
+00:17:05,974 --> 00:17:10,133
+in time, you can see that if the information depends on
+
+207
+00:17:10,165 --> 00:17:14,645
+the first token, you can see that you are far too ahead in time or
+
+208
+00:17:14,725 --> 00:17:18,197
+length of the document to be able to learn anything meaningful. Which we saw,
+
+209
+00:17:18,697 --> 00:17:22,053
+right? And why this happens is that we looked into this concept
+
+210
+00:17:22,553 --> 00:17:28,171
+of vanishing gradients. And the reason this happens is because we are recurrently applying,
+
+211
+00:17:29,239 --> 00:17:33,433
+you know, a matrix— not a matrix, but yeah, we are recurrently applying a multiplication
+
+212
+00:17:33,870 --> 00:17:37,484
+of something which is less than 1, right? And if that happens, this basically
+
+213
+00:17:37,984 --> 00:17:42,028
+just decays exponentially, right? Just to kind of give
+
+214
+00:17:42,528 --> 00:17:45,432
+you an actual example, right? If you see, Even if you have a value which
+
+215
+00:17:45,932 --> 00:17:49,886
+is 0.9, if you multiply that, if you exponentiate this literally, if you multiply that
+
+216
+00:17:50,386 --> 00:17:54,318
+literally 100 times, what you can see that this value becomes
+
+217
+00:17:54,382 --> 00:17:57,167
+really, really small. So just saying that if it's not clear, I mean, you can
+
+218
+00:17:57,216 --> 00:17:59,950
+also just put any number which is even much, much smaller than 1,
+
+219
+00:18:00,529 --> 00:18:04,593
+or even, sorry, not much, much, even slightly smaller than 1. If you just recurrently
+
+220
+00:18:04,802 --> 00:18:08,305
+multiply it with itself multiple times, what will happen is
+
+221
+00:18:08,401 --> 00:18:11,596
+that it will become a very, very small number. So this is the reason why
+
+222
+00:18:12,096 --> 00:18:15,979
+this shrinking happens. And as you can also see, this basically applies
+
+223
+00:18:16,172 --> 00:18:19,784
+when you go much further back in time. And here, time is basically
+
+224
+00:18:20,284 --> 00:18:22,818
+the length of the document, right? So the key aspect to take away from this
+
+225
+00:18:23,318 --> 00:18:27,571
+slide is that the small terms times many steps actually is
+
+226
+00:18:28,071 --> 00:18:31,440
+the reason of the vanishing gradient problem, right? So what—
+
+227
+00:18:31,584 --> 00:18:35,534
+and this is impact what you were saying, that theoretically these models can learn long-range
+
+228
+00:18:36,034 --> 00:18:39,291
+dependencies, but this vanishing gradient actually stops
+
+229
+00:18:39,612 --> 00:18:43,031
+vanilla RNNs from learning useful long-range dependencies.
+
+230
+00:18:43,786 --> 00:18:46,869
+Okay, for this, a fix was discussed.
+
+231
+00:18:46,917 --> 00:18:50,465
+We looked at 2 adaptations of, or 2 variants
+
+232
+00:18:50,594 --> 00:18:53,949
+of RNNs, which were called LSTMs and GRUs, right?
+
+233
+00:18:54,383 --> 00:18:57,899
+And we looked at why this actually— are they able to
+
+234
+00:18:58,399 --> 00:19:01,126
+learn long-range dependencies? Because they don't have this vanishing gradient problem, right?
+
+235
+00:19:01,447 --> 00:19:04,984
+Because they introduce these different or modified updates
+
+236
+00:19:05,338 --> 00:19:09,231
+to the memory. LSTMs literally track
+
+237
+00:19:09,296 --> 00:19:13,397
+it as a separate memory, and GRUs actually perform
+
+238
+00:19:13,897 --> 00:19:17,803
+this using a modified update, which actually allows you to kind
+
+239
+00:19:18,303 --> 00:19:20,795
+of make sure the gradient doesn't get quashed.
+
+240
+00:19:22,412 --> 00:19:25,919
+Again, one aspect that we also looked at, the gradient can still vanish if,
+
+241
+00:19:26,857 --> 00:19:29,896
+in this case, if the forget gate closes, because then the forget gate closes,
+
+242
+00:19:29,912 --> 00:19:33,459
+its value is 0. And then the gradient will just completely vanish.
+
+243
+00:19:33,898 --> 00:19:36,594
+But this is one extreme of the forget gate.
+
+244
+00:19:36,967 --> 00:19:40,551
+And I mean, these gates are also learned based on what's
+
+245
+00:19:41,051 --> 00:19:45,600
+there in the data. Okay. So then
+
+246
+00:19:45,858 --> 00:19:48,342
+I think we discussed skip connections a bit, right? I would like to kind of
+
+247
+00:19:48,374 --> 00:19:51,004
+visually show you, and a bit with also the update rules,
+
+248
+00:19:51,521 --> 00:19:54,877
+that why skip connections could be seen
+
+249
+00:19:55,216 --> 00:19:58,301
+as a fix to and to the
+
+250
+00:19:58,992 --> 00:20:02,287
+vanishing gradient problem. So you can see this skip
+
+251
+00:20:02,787 --> 00:20:06,436
+connection as simply like if you have a shortcut that you can add from
+
+252
+00:20:06,774 --> 00:20:10,189
+the token that appeared 5
+
+253
+00:20:10,672 --> 00:20:14,409
+steps before the current token that we're using, you can have
+
+254
+00:20:14,764 --> 00:20:17,967
+a weighted skip connection which will then change the
+
+255
+00:20:17,983 --> 00:20:21,444
+update rule to be— which will basically
+
+256
+00:20:21,638 --> 00:20:24,517
+allow shortcut to the model.
+
+257
+00:20:24,982 --> 00:20:28,496
+And basically the information flows, when they will happen, is that we will
+
+258
+00:20:28,512 --> 00:20:32,186
+have a combination of also the gradient through the actual chain,
+
+259
+00:20:32,458 --> 00:20:36,084
+which will have this vanishing gradient problem, but also the
+
+260
+00:20:36,584 --> 00:20:40,207
+gradient through the skip, which will then not have as adverse
+
+261
+00:20:40,544 --> 00:20:44,170
+as a problem that you will see with the whole chain, right? So what
+
+262
+00:20:44,670 --> 00:20:48,566
+happens here is that it literally allows us to actually have It
+
+263
+00:20:49,066 --> 00:20:52,816
+basically shortens the gradient path and improves the flow of information. But just
+
+264
+00:20:53,316 --> 00:20:56,648
+to kind of mention here is that the shortcut is still weighted, right? So if
+
+265
+00:20:56,680 --> 00:21:00,529
+you just look at this one, right, the example
+
+266
+00:21:01,029 --> 00:21:04,506
+that is being shown here is that when the gradient flows through this shortcut,
+
+267
+00:21:04,619 --> 00:21:08,756
+it will still be weighted by W5, right? So overall,
+
+268
+00:21:09,253 --> 00:21:13,294
+this is one way to actually reduce the
+
+269
+00:21:13,439 --> 00:21:17,658
+vanishing gradient problem. But it can still occur, right? So this is one solution.
+
+270
+00:21:17,995 --> 00:21:20,289
+I just wanted to kind of make sure we discussed this a bit, but I
+
+271
+00:21:20,321 --> 00:21:24,508
+wanted to give you with a visual representation and the exact weight update
+
+272
+00:21:25,008 --> 00:21:28,198
+rules so that this sticks. Okay. Then there
+
+273
+00:21:28,698 --> 00:21:31,920
+were some points that were also mentioned about the residual blocks. It's important to
+
+274
+00:21:31,969 --> 00:21:35,209
+mention here is that residual blocks mostly come from the,
+
+275
+00:21:35,803 --> 00:21:39,605
+you know, a model which was called ResNets, which was more popular in computer vision,
+
+276
+00:21:40,135 --> 00:21:43,330
+right? And the key aspect was to actually
+
+277
+00:21:43,426 --> 00:21:47,135
+allow the training of extremely deep
+
+278
+00:21:48,018 --> 00:21:51,920
+feed-forward neural networks, right? So this was basically—
+
+279
+00:21:52,193 --> 00:21:55,613
+that's why it's more prevalent when you see it in a class of deep learning,
+
+280
+00:21:56,111 --> 00:21:59,274
+right? And the goal is to literally have an identity shortcut, right?
+
+281
+00:21:59,338 --> 00:22:02,710
+So previously, which you saw, this was a weighted shortcut, right? So it still
+
+282
+00:22:03,210 --> 00:22:06,915
+depends on the weight, but here it's like literally having an
+
+283
+00:22:07,027 --> 00:22:10,552
+identity shortcut, which basically allows you
+
+284
+00:22:11,052 --> 00:22:14,589
+to actually make the— when you look at the derivatives,
+
+285
+00:22:14,989 --> 00:22:18,146
+so it literally gives you a very easy
+
+286
+00:22:19,299 --> 00:22:22,824
+way to update, right? So the— and you
+
+287
+00:22:23,324 --> 00:22:25,691
+can also see there are many ways. I mean, there are many terms which were
+
+288
+00:22:26,191 --> 00:22:29,360
+also popular in the literature. People used to call them as
+
+289
+00:22:29,456 --> 00:22:33,366
+highway networks. There was also some networks which was called as highway RNNs because
+
+290
+00:22:33,382 --> 00:22:37,775
+the aspect is that they provide you a shortcut or a highway In
+
+291
+00:22:37,919 --> 00:22:41,146
+residual blocks, the key idea was to provide a highway through the depth,
+
+292
+00:22:41,741 --> 00:22:45,096
+right? Because as I said, right, they were introduced because they allowed us
+
+293
+00:22:45,596 --> 00:22:49,030
+to better train deep neural networks,
+
+294
+00:22:49,046 --> 00:22:52,434
+right? The similar idea was also applied to RNNs,
+
+295
+00:22:52,980 --> 00:22:56,416
+but LSTMs and, you know, GRUs were much
+
+296
+00:22:56,432 --> 00:23:00,575
+more popular and much more better than a simple idea of allowing
+
+297
+00:23:00,607 --> 00:23:04,427
+these residual blocks. Uh, to RNNs. There were still one or two papers
+
+298
+00:23:04,684 --> 00:23:07,990
+literally which talked about highway RNNs, which was exactly based on this idea.
+
+299
+00:23:08,552 --> 00:23:11,521
+But still LSTMs and GRUs were much more,
+
+300
+00:23:11,746 --> 00:23:14,089
+uh, much more, I would say, effective.
+
+301
+00:23:15,277 --> 00:23:18,149
+Okay. So then wanted to also give you one summary,
+
+302
+00:23:18,486 --> 00:23:21,439
+right, of what this means, right? So basically, as I was saying,
+
+303
+00:23:22,097 --> 00:23:26,254
+is that, uh, you can, you can also see there is some equivalence of
+
+304
+00:23:26,350 --> 00:23:30,976
+LSTM and GRUs. With a residual
+
+305
+00:23:31,104 --> 00:23:35,282
+block that we saw previously or a residual-style training of a deep
+
+306
+00:23:35,782 --> 00:23:38,978
+neural network. Because you can see, let's look at the
+
+307
+00:23:39,620 --> 00:23:43,862
+topmost or the leftmost equation. So this would be a pure residual
+
+308
+00:23:43,942 --> 00:23:47,076
+RNN. So basically what you are doing here is that
+
+309
+00:23:47,734 --> 00:23:51,591
+just like we had the identity shortcut here in the
+
+310
+00:23:52,091 --> 00:23:55,685
+feed-forward network, we add a similar shortcut when you talk about
+
+311
+00:23:55,990 --> 00:23:59,503
+the aspect of, okay, the previous state can just be passed fully,
+
+312
+00:23:59,776 --> 00:24:03,032
+right? But also as a function of the input and
+
+313
+00:24:03,305 --> 00:24:07,042
+the transformations that we perform in the update
+
+314
+00:24:07,139 --> 00:24:10,331
+for an RNN, right? So this was, you can see this
+
+315
+00:24:10,379 --> 00:24:13,732
+is, again, this is exactly not the Highway RNN paper, but you
+
+316
+00:24:14,232 --> 00:24:17,870
+can see this is the template on which Highway RNN method was
+
+317
+00:24:17,902 --> 00:24:21,046
+defined. But what you can see also, the LSTM and GRU,
+
+318
+00:24:21,576 --> 00:24:25,124
+is a slightly more, I would say,
+
+319
+00:24:25,445 --> 00:24:28,993
+more involved way of doing the same thing where you have
+
+320
+00:24:29,603 --> 00:24:33,633
+a residual-like path in both cases. But what it gives you is that
+
+321
+00:24:33,810 --> 00:24:37,230
+it has these learned gates that you can learn, right? So if you set forget
+
+322
+00:24:37,730 --> 00:24:41,420
+gate to, let's say, this gate to 1 in an LSTM, you can see that
+
+323
+00:24:41,920 --> 00:24:45,771
+this is exactly like what we saw here, right? Similarly, if you basically
+
+324
+00:24:46,271 --> 00:24:49,444
+set the update gate here to 0, right?
+
+325
+00:24:49,685 --> 00:24:52,008
+What you can do is that you can think of this as that this is
+
+326
+00:24:52,508 --> 00:24:55,694
+exactly what you saw in a pure residual RNN. But these gates are actually learnable.
+
+327
+00:24:56,110 --> 00:25:01,030
+So this gives you a better way of actually still
+
+328
+00:25:01,142 --> 00:25:04,411
+addressing the vanishing gradient problem through— by
+
+329
+00:25:04,911 --> 00:25:08,482
+making the information flow better and
+
+330
+00:25:08,578 --> 00:25:12,167
+by making the gradient updates more easier by
+
+331
+00:25:12,183 --> 00:25:15,521
+adding through those shortcuts. But the thing that they bring
+
+332
+00:25:15,634 --> 00:25:18,878
+in is because they also allow you to kind of learn, right?
+
+333
+00:25:18,943 --> 00:25:22,653
+Because here it's not just that we don't— the whole game
+
+334
+00:25:23,153 --> 00:25:27,102
+is not to only allow gradients to flow easily,
+
+335
+00:25:27,857 --> 00:25:31,278
+but you also have to learn the relationships between the tokens,
+
+336
+00:25:31,343 --> 00:25:34,523
+right? So you also have to make sure, like, if you— let's say if you
+
+337
+00:25:35,023 --> 00:25:38,378
+set forget gate to 1 always, right? You would have solved the— I mean,
+
+338
+00:25:38,619 --> 00:25:42,537
+it will look exactly like a residual block. But what
+
+339
+00:25:43,037 --> 00:25:46,309
+will go away is that you will always literally pass
+
+340
+00:25:46,325 --> 00:25:49,791
+everything from the previous state, right? But you may not, right? I mean, it depends
+
+341
+00:25:49,920 --> 00:25:53,194
+on when you're modeling this, uh, how much information can
+
+342
+00:25:53,226 --> 00:25:57,029
+go from the previous token to the next token. Sometimes you may want to
+
+343
+00:25:57,078 --> 00:26:00,608
+forget that, or sometimes you may want to, you know, just take half of it,
+
+344
+00:26:00,705 --> 00:26:04,990
+right? So the overall aspect is that because these LSTMs and GRU
+
+345
+00:26:05,006 --> 00:26:08,119
+updates allow you to kind of make sure these gates are learnable,
+
+346
+00:26:08,552 --> 00:26:11,966
+Right? That gives you a better update rule than simply performing
+
+347
+00:26:12,079 --> 00:26:15,798
+a residual-style training of an RNN. Okay.
+
+348
+00:26:16,263 --> 00:26:19,789
+So with this, I'm assuming, you know, I just wanted to kind of give a
+
+349
+00:26:20,289 --> 00:26:24,069
+very nice, let's say, connection between what you—
+
+350
+00:26:24,246 --> 00:26:27,548
+what some of you know from your deep learning class. But also since
+
+351
+00:26:28,048 --> 00:26:31,556
+this was brought up in the discussion and some of you were confused about this,
+
+352
+00:26:31,892 --> 00:26:35,485
+so I think this will now give you a nice connection between how these concepts
+
+353
+00:26:35,985 --> 00:26:38,939
+are related. Okay, great. So then with this,
+
+354
+00:26:39,083 --> 00:26:42,601
+let's jump into today's lecture. We'll talk about, as I promised,
+
+355
+00:26:42,617 --> 00:26:46,392
+we'll talk about encoder-decoder models. We'll talk about attention and Transformer
+
+356
+00:26:46,892 --> 00:26:49,701
+and self-attention, right? And there's a slight, I would say,
+
+357
+00:26:49,878 --> 00:26:53,155
+surprise at the end. I will also bring in everything that we'll
+
+358
+00:26:53,655 --> 00:26:57,171
+discuss today in the same paradigm what you see in this slide. There I
+
+359
+00:26:57,671 --> 00:27:01,476
+will just give you the whole aspect of vanishing gradients, long-range dependencies,
+
+360
+00:27:01,589 --> 00:27:04,509
+and how you know, even Transformers handle this, right?
+
+361
+00:27:04,557 --> 00:27:07,782
+So you will see the whole thing of like literally one summary
+
+362
+00:27:08,282 --> 00:27:10,894
+slide that gives you a takeaway of all the things that we have discussed so
+
+363
+00:27:10,958 --> 00:27:14,824
+far, also combining the aspect of Transformers, right? So then it will become extremely
+
+364
+00:27:15,324 --> 00:27:18,722
+clear with what we will see. Okay. So then,
+
+365
+00:27:19,059 --> 00:27:22,411
+uh, you know, enough of me talking
+
+366
+00:27:22,604 --> 00:27:26,293
+in terms of a seminar style, uh, setup. Let's go back to the interactive mode,
+
+367
+00:27:26,341 --> 00:27:30,304
+right? So the question that I would like to ask is, We mentioned
+
+368
+00:27:30,320 --> 00:27:33,128
+something called an encoder-decoder model. If this was not clear to you,
+
+369
+00:27:34,155 --> 00:27:38,857
+what it means that you will have some representation
+
+370
+00:27:39,435 --> 00:27:43,207
+that you will derive from the encoder and you will use that and you
+
+371
+00:27:43,707 --> 00:27:47,122
+will then decode it somehow. So basically, I'll tell you how this is done.
+
+372
+00:27:47,716 --> 00:27:50,380
+But the core idea is that there will be 2 models that will be tied
+
+373
+00:27:50,605 --> 00:27:53,670
+with each other and they will do some transformation, gives you
+
+374
+00:27:54,170 --> 00:27:57,435
+some representation, and then it will go further. So given this context,
+
+375
+00:27:57,516 --> 00:28:00,912
+right, um, I ask a
+
+376
+00:28:01,412 --> 00:28:05,101
+slightly open-ended question, but think about it, right? So what could we do if the
+
+377
+00:28:05,601 --> 00:28:08,387
+sequence that we are decoding and the sequence we want to generate have different properties,
+
+378
+00:28:09,224 --> 00:28:09,466
+right?
+
+379
+00:28:14,119 --> 00:28:16,872
+Actually, sorry, did it say decoding? It should be encoding. Sorry.
+
+380
+00:28:17,356 --> 00:28:20,190
+So what, what could we do if the sequence that we are encoding, right?
+
+381
+00:28:20,286 --> 00:28:23,435
+So for which, which is our input, and the sequence that we want to generate,
+
+382
+00:28:23,596 --> 00:28:27,701
+which is basically what we are decoding. Do you understand, right? This encoding decoding aspect
+
+383
+00:28:28,201 --> 00:28:31,293
+is something like this. Think about what you have done with an RNN or an
+
+384
+00:28:31,793 --> 00:28:35,270
+LSTM, right? So you take an input sequence, right? And you kind
+
+385
+00:28:35,286 --> 00:28:38,958
+of get some representation. So all these h hidden
+
+386
+00:28:38,990 --> 00:28:42,165
+state representations that we were seeing in an RNN or LSTM,
+
+387
+00:28:42,983 --> 00:28:46,543
+that is an encoding, right? And we said that we will look at the
+
+388
+00:28:47,650 --> 00:28:51,099
+hidden state from the last recurrent unit block or
+
+389
+00:28:51,599 --> 00:28:54,468
+an LSTM block, which will pass along to a classifier, which we saw, which we
+
+390
+00:28:54,484 --> 00:28:57,949
+discussed multiple times in the previous 2 lectures. So now think
+
+391
+00:28:57,997 --> 00:29:02,217
+about that is like that will give you one encoding, encoded representation,
+
+392
+00:29:02,634 --> 00:29:06,003
+and from that you will generate something. So when you ask a question to
+
+393
+00:29:06,503 --> 00:29:10,046
+your language model today or your LLM, that basically what it does is when
+
+394
+00:29:10,546 --> 00:29:14,089
+it gives you a response, when it generates something, that's what it's called as decoding.
+
+395
+00:29:14,522 --> 00:29:17,636
+In the modern, uh, this terminology,
+
+396
+00:29:17,652 --> 00:29:21,248
+right? And encoding is when you give that LLM your
+
+397
+00:29:21,264 --> 00:29:25,581
+prompt or you put your question, it basically takes your question and
+
+398
+00:29:25,678 --> 00:29:28,872
+gets a representation internally from which it
+
+399
+00:29:28,888 --> 00:29:32,018
+basically decides what to do next, right? So I hope these phases are
+
+400
+00:29:32,518 --> 00:29:36,432
+clear. But now going back to this question, uh, so basically
+
+401
+00:29:36,932 --> 00:29:40,541
+the thing is what you're trying to do is that the sequence that you want
+
+402
+00:29:40,589 --> 00:29:43,975
+to actually— the sequence that you are given as input, versus the sequence that you
+
+403
+00:29:44,475 --> 00:29:47,890
+want to generate have different properties. So, what could we do in this setup?
+
+404
+00:29:48,702 --> 00:29:49,563
+Any wild thoughts?
+
+405
+00:29:54,093 --> 00:29:57,700
+So, let me give you an example for this also. Think about machine translation,
+
+406
+00:29:58,703 --> 00:30:01,987
+right? So, what I mean by this is that machine translation is,
+
+407
+00:30:03,413 --> 00:30:07,458
+why does this fit in this template what I described? Because the input
+
+408
+00:30:07,844 --> 00:30:10,933
+could be in Uh, you know, the, the source
+
+409
+00:30:11,433 --> 00:30:15,284
+language, which is in this case French, but the output is in
+
+410
+00:30:15,784 --> 00:30:17,981
+English. It could be Danish, it could be Spanish, it could be anything which is
+
+411
+00:30:17,998 --> 00:30:21,915
+the target language, right? And these 2 sequences
+
+412
+00:30:22,333 --> 00:30:25,624
+have different properties. Quick show of hands who agree with this
+
+413
+00:30:26,124 --> 00:30:28,820
+claim that these sequences have different properties.
+
+414
+00:30:29,639 --> 00:30:33,043
+Okay, why do they have different properties? Can someone like
+
+415
+00:30:33,091 --> 00:30:38,784
+to Add.
+
+416
+00:30:38,929 --> 00:30:39,123
+Yeah.
+
+417
+00:30:48,460 --> 00:30:52,107
+Sure, different grammatical structure. Would anyone like to add any other point?
+
+418
+00:30:52,963 --> 00:30:56,741
+Yeah. You first, then we'll go. Sorry,
+
+419
+00:30:57,968 --> 00:31:01,427
+different alphabet. Different vocabulary, yes.
+
+420
+00:31:02,118 --> 00:31:05,352
+So basically, they are different languages and they have different rules that
+
+421
+00:31:05,480 --> 00:31:08,681
+govern how words are formed,
+
+422
+00:31:08,697 --> 00:31:10,581
+how sentences are formed.
+
+423
+00:31:12,390 --> 00:31:15,704
+And sometimes they also have different syntax because of course there are different
+
+424
+00:31:15,752 --> 00:31:19,536
+scripts, right? Also, there are so many different things. So, but they have
+
+425
+00:31:20,036 --> 00:31:21,638
+different properties. So that's pretty much clear.
+
+426
+00:31:23,395 --> 00:31:25,536
+So, and to basically,
+
+427
+00:31:26,963 --> 00:31:30,831
+literally be able to perform this kind of a task
+
+428
+00:31:30,977 --> 00:31:34,925
+using a model, right? Using a— think
+
+429
+00:31:35,425 --> 00:31:37,783
+of a language model or a recurrent model that we have seen so far.
+
+430
+00:31:38,091 --> 00:31:40,566
+If you want to actually see, if you want to do machine translation,
+
+431
+00:31:41,488 --> 00:31:45,047
+this is why we need encoder-decoder models, right? Because you cannot
+
+432
+00:31:45,547 --> 00:31:48,371
+just do with— you cannot solve this task with a single,
+
+433
+00:31:49,064 --> 00:31:52,467
+uh, you know, single block, like a single LSTM or a single
+
+434
+00:31:52,967 --> 00:31:56,639
+RNN block. Because what the RNN will give you is,
+
+435
+00:31:57,297 --> 00:32:00,923
+it will just give you, think about this, right? So forget
+
+436
+00:32:01,423 --> 00:32:04,773
+about the pink part on the right, right? Think about only the green
+
+437
+00:32:05,273 --> 00:32:08,832
+parts that you see on the left. So what an RNN would actually
+
+438
+00:32:08,864 --> 00:32:11,993
+give you, this is your RNN that we saw so far,
+
+439
+00:32:12,073 --> 00:32:15,811
+right? I've divided this into 2 parts as encoder and decoder,
+
+440
+00:32:16,084 --> 00:32:17,608
+but if you just have the left half,
+
+441
+00:32:19,213 --> 00:32:23,031
+What you can solve a classification problem, right, by using
+
+442
+00:32:23,063 --> 00:32:26,256
+this representation that you get from the last step.
+
+443
+00:32:26,897 --> 00:32:31,149
+You can actually get a representation from each of these. For that
+
+444
+00:32:31,229 --> 00:32:34,245
+also, you can actually— using that, you can,
+
+445
+00:32:34,598 --> 00:32:37,726
+you know, put some part of speech tagging. We all saw that, right? You can
+
+446
+00:32:37,807 --> 00:32:40,678
+do sequence labeling, you can do all of that with this. But the point is,
+
+447
+00:32:41,192 --> 00:32:44,641
+now your output sequence actually is different.
+
+448
+00:32:44,882 --> 00:32:48,193
+In properties from your input sequence. So you
+
+449
+00:32:48,693 --> 00:32:52,554
+need another block or another, let's say, model that
+
+450
+00:32:53,054 --> 00:32:57,066
+is trained to actually take your input sequence. And it should
+
+451
+00:32:57,146 --> 00:33:00,883
+also have some representation of the sequence
+
+452
+00:33:01,288 --> 00:33:03,400
+because it all depends, right? I mean,
+
+453
+00:33:05,258 --> 00:33:09,133
+you cannot say that you can just have a normal feed-forward
+
+454
+00:33:09,633 --> 00:33:13,426
+neural network. Do some sort of a representation and then pass
+
+455
+00:33:13,926 --> 00:33:17,085
+it along to a decoder because it will not have that information of the
+
+456
+00:33:17,422 --> 00:33:21,595
+dependencies across tokens, right? So you definitely need a recurrent
+
+457
+00:33:22,157 --> 00:33:25,945
+model, but you also need this nice
+
+458
+00:33:26,651 --> 00:33:29,604
+encoder-decoder block, which basically each of them play a different role.
+
+459
+00:33:30,102 --> 00:33:33,360
+Okay, so what happens here is that in these cases,
+
+460
+00:33:33,857 --> 00:33:36,361
+you have an encoder that actually, you know,
+
+461
+00:33:38,431 --> 00:33:42,283
+as we can say, right, that encodes the input sequence into a fixed
+
+462
+00:33:42,783 --> 00:33:46,536
+representation. And this, you can see that as this hidden
+
+463
+00:33:47,036 --> 00:33:50,163
+representation, which is like the bridge between these 2 blocks,
+
+464
+00:33:50,468 --> 00:33:55,025
+you can see this as a seed to a second model, right? Which basically decodes
+
+465
+00:33:55,362 --> 00:33:59,166
+the different sequence that is seen, that we expect as our output,
+
+466
+00:34:00,578 --> 00:34:04,432
+and which we call as decoder. And the point
+
+467
+00:34:04,932 --> 00:34:08,674
+that we have to mention here is that decoder is an autoregressive model, which what
+
+468
+00:34:08,690 --> 00:34:11,903
+we mean by that is that it actually generates one word
+
+469
+00:34:12,403 --> 00:34:15,535
+at a time like a language model, right? So basically what you can see here
+
+470
+00:34:16,035 --> 00:34:19,086
+is that you have your input sequence, right? You pass it along to an encoder.
+
+471
+00:34:19,455 --> 00:34:22,749
+You can get representations from each of these timestamps as well.
+
+472
+00:34:23,167 --> 00:34:26,300
+But the idea is that we use the representation that you get
+
+473
+00:34:26,800 --> 00:34:30,157
+from the last encoder unit. And then you
+
+474
+00:34:30,657 --> 00:34:34,560
+pass it along to a decoder. But now what happens is that you— let's
+
+475
+00:34:35,060 --> 00:34:37,934
+say you have a start of sequence or some special token that you want to
+
+476
+00:34:38,434 --> 00:34:41,550
+seed the decoder with. You pass it along and then you get
+
+477
+00:34:42,050 --> 00:34:45,310
+your first sequence generation. You append it to the second decoder state,
+
+478
+00:34:45,663 --> 00:34:49,664
+then you get your second token. Then you append
+
+479
+00:34:50,164 --> 00:34:53,055
+it to the third decoder state, you get the third output. And this is how
+
+480
+00:34:53,151 --> 00:34:57,435
+it keeps on going. This is why Recall that here the decoder is autoregressive.
+
+481
+00:34:57,691 --> 00:35:01,090
+The encoder may or may not be an autoregressive model.
+
+482
+00:35:01,298 --> 00:35:04,120
+Okay, so this is clear. As I said, right,
+
+483
+00:35:04,440 --> 00:35:07,663
+these models are applicable when the input and output sequence have different properties,
+
+484
+00:35:07,983 --> 00:35:11,318
+right? So one example, as we saw, is machine translation. Let's say
+
+485
+00:35:11,818 --> 00:35:15,967
+we have the sentence called jama bhal akhil, and the translation for this is I
+
+486
+00:35:16,047 --> 00:35:19,365
+am Akhil, right? So what happens is that it will take the whole
+
+487
+00:35:19,654 --> 00:35:23,135
+input sequence and represented here as input. It will get
+
+488
+00:35:23,635 --> 00:35:26,921
+us some hidden representation. As you'll see in the decoder, we will have some
+
+489
+00:35:27,065 --> 00:35:31,028
+start token. You can say start, you can say anything.
+
+490
+00:35:31,284 --> 00:35:34,349
+I mean, you can define this token and you define this at the time you're
+
+491
+00:35:34,849 --> 00:35:38,119
+training the model. And once the model is trained, when you kind of use this
+
+492
+00:35:38,619 --> 00:35:42,707
+for inference, then basically you pass this, the same token
+
+493
+00:35:43,207 --> 00:35:46,959
+along on the trained model, and then it's a cue for this model to basically
+
+494
+00:35:47,459 --> 00:35:50,878
+start the generation process, right? So you will have the start
+
+495
+00:35:51,378 --> 00:35:55,103
+token, and from this it will generate this word I. Then you have—
+
+496
+00:35:55,279 --> 00:35:58,733
+you pass along the word I again, it will generate the token am. Then you
+
+497
+00:35:59,233 --> 00:36:02,411
+pass it along back to the model, and then it will keep generating. And in
+
+498
+00:36:02,443 --> 00:36:05,784
+the end, we also have an end token, right? So usually
+
+499
+00:36:06,121 --> 00:36:09,880
+for these models, you have special tokens that you attach to the training
+
+500
+00:36:10,169 --> 00:36:13,574
+step, which is called start of sequence, end of sequence.
+
+501
+00:36:13,655 --> 00:36:16,530
+You can also call it start, end. You can just name anything. You can also
+
+502
+00:36:16,643 --> 00:36:20,097
+call it T1 and T2, that doesn't matter. There is
+
+503
+00:36:20,597 --> 00:36:23,680
+no semantics to it, but you use the same thing while you're learning the model
+
+504
+00:36:23,728 --> 00:36:27,327
+so that— or training the model so that these aspects are learned and so that
+
+505
+00:36:27,827 --> 00:36:31,199
+you can use this for inference. Okay, you can also apply this
+
+506
+00:36:31,699 --> 00:36:35,650
+for code generation, right? Because here also, the prop— this
+
+507
+00:36:35,859 --> 00:36:39,602
+is the same template, right? In code generation, when you think about this, the first
+
+508
+00:36:40,100 --> 00:36:43,550
+input you can see is that is my prompt, right? It could be also the
+
+509
+00:36:44,050 --> 00:36:46,430
+description of the function that I want the model to generate. It could be like,
+
+510
+00:36:46,930 --> 00:36:50,390
+okay, write the hello world function, right? And then the model output would
+
+511
+00:36:50,890 --> 00:36:53,270
+be literally stating something like, okay,
+
+512
+00:36:53,770 --> 00:36:57,490
+print, left parenthesis, quotes, hello, and then
+
+513
+00:36:57,990 --> 00:37:01,410
+so on and so forth, right? So basically, code generation can also be
+
+514
+00:37:01,910 --> 00:37:05,230
+seen as a task where the input and output properties differ because the input is
+
+515
+00:37:05,730 --> 00:37:07,810
+more like a description of a function that we want this model to Model generate.
+
+516
+00:37:07,946 --> 00:37:11,783
+to generate the code for, and the output is literally
+
+517
+00:37:12,120 --> 00:37:15,347
+the code. Just a quick piece of
+
+518
+00:37:15,847 --> 00:37:19,216
+warning, this is not how your current code generation models work, right? It's not
+
+519
+00:37:19,716 --> 00:37:23,278
+how Cursor, Copilot, or Codex, PlotCode— I mean, none of these
+
+520
+00:37:23,778 --> 00:37:27,693
+models work like that, right? We will see that in the next lecture, and in
+
+521
+00:37:28,193 --> 00:37:32,188
+the next 2 lectures we will see how they are different. Okay, another aspect
+
+522
+00:37:32,269 --> 00:37:36,056
+of looking at this, you encoder-decoder model. Another application
+
+523
+00:37:36,556 --> 00:37:40,035
+is also you can think of something like an image captioning, right? Because,
+
+524
+00:37:40,613 --> 00:37:44,046
+you know, image captioning, what you can see is that the input would
+
+525
+00:37:44,062 --> 00:37:47,913
+most likely be an image and the output will be the
+
+526
+00:37:48,413 --> 00:37:52,581
+caption that defines that image, right? It could be something like, you know, literally the—
+
+527
+00:37:52,726 --> 00:37:56,351
+here the encoder would be like a CNN or a diffusion model
+
+528
+00:37:56,851 --> 00:38:00,900
+as well. I mean, it depends on how— what is used to actually model images.
+
+529
+00:38:01,370 --> 00:38:04,674
+But then once you have this hidden representation, then you
+
+530
+00:38:04,690 --> 00:38:08,496
+can have an autoregressive LSTM or an
+
+531
+00:38:08,996 --> 00:38:13,641
+RNN or a Transformer basically then generates the caption of
+
+532
+00:38:13,657 --> 00:38:17,152
+this image. Okay, and you guys tell
+
+533
+00:38:17,652 --> 00:38:20,573
+me, are there other examples where this template applies?
+
+534
+00:38:23,848 --> 00:38:28,287
+I've given you some examples, but can you also share some some other examples,
+
+535
+00:38:28,626 --> 00:38:32,087
+other applications where this style of— these
+
+536
+00:38:32,119 --> 00:38:32,782
+properties hold?
+
+537
+00:38:37,890 --> 00:38:40,703
+We saw code generation, we saw image captioning,
+
+538
+00:38:40,880 --> 00:38:43,661
+we saw machine translation.
+
+539
+00:38:43,902 --> 00:38:46,249
+Can you think of other applications? There are many.
+
+540
+00:38:47,208 --> 00:38:50,361
+Yeah. Audio. Audio from
+
+541
+00:38:50,394 --> 00:38:53,632
+what? Audio to text. Audio to text, yeah, sure.
+
+542
+00:38:54,023 --> 00:38:55,748
+Okay, great.
+
+543
+00:38:57,425 --> 00:38:58,223
+Any other examples?
+
+544
+00:39:03,840 --> 00:39:03,953
+Yeah.
+
+545
+00:39:07,577 --> 00:39:10,505
+Yeah, I mean, you can think about all different modalities now, right? You can say
+
+546
+00:39:11,005 --> 00:39:14,839
+from image to video, image to text, audio to text,
+
+547
+00:39:14,936 --> 00:39:18,163
+and so on and so forth. But there are some more examples that now will
+
+548
+00:39:18,663 --> 00:39:21,810
+become immediately clear. Think about summarization. I think we saw
+
+549
+00:39:22,310 --> 00:39:25,630
+that in the first lecture when we talked about examples, applications of NLP,
+
+550
+00:39:26,130 --> 00:39:30,010
+right? Summarization is basically you have your input big document and your output is
+
+551
+00:39:30,510 --> 00:39:33,870
+you want a summary of that, right? So this is still different properties because,
+
+552
+00:39:34,430 --> 00:39:36,610
+I mean, it might be in the same language, but it's a different property,
+
+553
+00:39:37,110 --> 00:39:40,720
+right? Because you're compressing the information, you want to present this in a simple manner,
+
+554
+00:39:40,990 --> 00:39:44,170
+or I mean, whatever is your objective of the summary that you want, you just
+
+555
+00:39:44,670 --> 00:39:48,130
+may want it in 50 characters instead of 500 characters. So there are different objectives,
+
+556
+00:39:48,890 --> 00:39:51,870
+or you may want it simpler. You may want it to be something like that's
+
+557
+00:39:52,370 --> 00:39:55,290
+understandable by a 5-year-old or a 10-year-old, whatever, right? You can think of different objectives,
+
+558
+00:39:55,470 --> 00:39:58,650
+but the properties will be different. It could also be style
+
+559
+00:39:59,150 --> 00:40:02,710
+change or transfer, right? Which is, you know, looks like, you know,
+
+560
+00:40:03,210 --> 00:40:06,970
+a more broader template. You can say summarization is one type of one specific
+
+561
+00:40:07,470 --> 00:40:10,830
+example of style change, right? But style change is a more broader template.
+
+562
+00:40:11,190 --> 00:40:14,050
+You can think of many, many more, and some of you already shared some very
+
+563
+00:40:14,550 --> 00:40:17,847
+nice examples. Okay, then I'd like to actually also
+
+564
+00:40:18,347 --> 00:40:22,717
+talk about a bit about bidirectional encoders here, because as we saw when
+
+565
+00:40:22,750 --> 00:40:27,642
+we talked about RNNs last time, we said, okay, these models
+
+566
+00:40:27,674 --> 00:40:31,131
+will get more information if we can actually look
+
+567
+00:40:31,212 --> 00:40:35,094
+at this sequence of information. Like, if you have longer documents,
+
+568
+00:40:35,432 --> 00:40:38,890
+it will help if we actually look at the sequence from both sides, right?
+
+569
+00:40:39,131 --> 00:40:42,846
+So bidirectional encoders are again the same idea as we looked at,
+
+570
+00:40:43,135 --> 00:40:46,137
+as we discussed about in bidirectional RNNs. Here,
+
+571
+00:40:46,908 --> 00:40:50,232
+now we have just replaced everything with an LSTM because this is what
+
+572
+00:40:50,617 --> 00:40:54,294
+the modern world uses in these classes of setup. Well, of course,
+
+573
+00:40:54,310 --> 00:40:57,104
+I mean, it's not right now we use Transformers for everything,
+
+574
+00:40:57,506 --> 00:41:00,861
+but this was more when you're thinking still about these models,
+
+575
+00:41:00,910 --> 00:41:05,518
+LSTMs are much more a popular choice than RNN.
+
+576
+00:41:07,461 --> 00:41:10,544
+What happened? Sorry. Okay.
+
+577
+00:41:10,865 --> 00:41:14,349
+So as I said, we saw this bidirectional RNN example previously.
+
+578
+00:41:14,927 --> 00:41:18,781
+And most of you, I mean, of course, I think the point is some of
+
+579
+00:41:19,281 --> 00:41:22,393
+you had the right idea, but we also went a bit literal with the aspect
+
+580
+00:41:22,474 --> 00:41:26,054
+of whether it can or cannot do something.
+
+581
+00:41:26,584 --> 00:41:28,993
+But the point was to literally explain that.
+
+582
+00:41:30,261 --> 00:41:33,907
+And I would like to kind of state this point again in this specific
+
+583
+00:41:34,407 --> 00:41:37,789
+aspect here as well. Previously, we talked about only encoder models because we were
+
+584
+00:41:38,289 --> 00:41:41,329
+talking about a single RNN. And then there was a point that can it be
+
+585
+00:41:41,345 --> 00:41:43,663
+used or not? I mean, of course it can be used, but will it be
+
+586
+00:41:44,163 --> 00:41:47,961
+useful? And here the same point comes again is that
+
+587
+00:41:48,428 --> 00:41:51,752
+the decoder here, you now see an encoder and decoder.
+
+588
+00:41:52,157 --> 00:41:57,486
+So what you can say that encoder
+
+589
+00:41:57,986 --> 00:42:01,909
+can be bidirectional here. But the decoder cannot because the decoder is autoregressive
+
+590
+00:42:02,408 --> 00:42:04,598
+and decoder is what cannot see the future.
+
+591
+00:42:05,530 --> 00:42:08,497
+So I told you last time also, it will become more clear when we discuss
+
+592
+00:42:10,157 --> 00:42:13,221
+a different class of models in the next week. Basically,
+
+593
+00:42:14,429 --> 00:42:17,817
+when we were talking about RNNs last time and we took this example,
+
+594
+00:42:20,352 --> 00:42:23,928
+the generation part and the
+
+595
+00:42:24,428 --> 00:42:28,118
+decoding part and the encoding part were basically tightly coupled. They were the same model
+
+596
+00:42:28,618 --> 00:42:32,085
+that were doing both. Right now, if you talk about encoder-decoder
+
+597
+00:42:32,585 --> 00:42:36,162
+model, what we have done is that the encoder is decoupled
+
+598
+00:42:36,210 --> 00:42:39,789
+from the decoder. So now what we can do is we still want
+
+599
+00:42:40,289 --> 00:42:43,898
+to have this very nice representation of our input document, right?
+
+600
+00:42:44,283 --> 00:42:47,958
+And that's why we can now easily apply bidirectional encoders,
+
+601
+00:42:48,231 --> 00:42:51,537
+because we can then get a better representation from
+
+602
+00:42:51,586 --> 00:42:55,054
+both sides, looking at the sequence from both sides. But then when
+
+603
+00:42:55,554 --> 00:42:59,258
+we apply the generation step, since it's
+
+604
+00:42:59,758 --> 00:43:03,139
+decoupled, we get the benefits of both worlds. We can still
+
+605
+00:43:03,639 --> 00:43:06,840
+do a bidirectional representation, but what we can then do
+
+606
+00:43:07,132 --> 00:43:11,284
+is, since we cannot see the future because our task is to generate a
+
+607
+00:43:11,754 --> 00:43:15,968
+new sequence, the decoder has to be unidirectional
+
+608
+00:43:16,468 --> 00:43:20,666
+and not bidirectional. I am assuming whoever had even the slightest of doubt about why
+
+609
+00:43:21,166 --> 00:43:24,583
+we cannot bidirectional versus in RNNs will
+
+610
+00:43:25,083 --> 00:43:28,613
+now become clear with this application. Because now you get even the power of representing
+
+611
+00:43:28,759 --> 00:43:32,802
+things properly, right? With a bidirectional encoder, you get a higher
+
+612
+00:43:33,302 --> 00:43:36,650
+model capacity. You're doing this properly, but you are also not relying
+
+613
+00:43:36,682 --> 00:43:39,580
+on the fact that you will have to see the future, right? There is no
+
+614
+00:43:40,080 --> 00:43:43,471
+data leakage as well. Okay. So the key thing to
+
+615
+00:43:43,971 --> 00:43:47,967
+take away here is that autoregressive models cannot
+
+616
+00:43:48,467 --> 00:43:51,997
+or should not see the future, right? Because then that— some of
+
+617
+00:43:52,497 --> 00:43:54,996
+you also use the term cheating. You can also think about the term as data
+
+618
+00:43:55,496 --> 00:43:58,741
+leakage, and that's a problem. Okay.
+
+619
+00:43:59,336 --> 00:44:02,584
+So then we also looked at this nice thing when we looked at a bidirectional
+
+620
+00:44:02,680 --> 00:44:07,617
+RNN. The same thing is done here as well, is that you
+
+621
+00:44:08,117 --> 00:44:13,053
+have 2 representations now. You have one representation from the backward units,
+
+622
+00:44:13,199 --> 00:44:16,804
+and you have one from the forward units. So we again stack them and
+
+623
+00:44:16,949 --> 00:44:20,128
+pass it along to a decoder LSTM to work further.
+
+624
+00:44:22,187 --> 00:44:25,816
+So since we are stacking these 2 together, can anyone tell me,
+
+625
+00:44:26,380 --> 00:44:29,993
+does the dimensionality of the decoder have to be twice of the encoder?
+
+626
+00:44:34,443 --> 00:44:37,963
+I'm making a claim because now you have— you're stacking
+
+627
+00:44:38,060 --> 00:44:41,449
+2 things together. And now you will pass it
+
+628
+00:44:41,949 --> 00:44:45,279
+along to the decoder. So will the decoder need
+
+629
+00:44:45,779 --> 00:44:48,216
+to be twice of the dimensionality of the encoder?
+
+630
+00:44:51,640 --> 00:44:51,720
+Yes,
+
+631
+00:44:54,964 --> 00:44:58,903
+exactly. What we have seen recurrently in
+
+632
+00:44:59,177 --> 00:45:03,127
+starting from lecture 2, right, when we looked at Word2Vec or word
+
+633
+00:45:03,627 --> 00:45:07,410
+vector representations, we look at language modeling, we looked at also how
+
+634
+00:45:07,459 --> 00:45:10,694
+will we do classification from different models? The key aspect is that we can
+
+635
+00:45:10,759 --> 00:45:13,865
+also— and your answer is right, of course, you can always do some sort of
+
+636
+00:45:14,365 --> 00:45:18,812
+a transformation that takes this stacked
+
+637
+00:45:18,940 --> 00:45:22,748
+representation as input, apply a transformation,
+
+638
+00:45:23,182 --> 00:45:26,366
+and basically gets back to the same dimensionality as
+
+639
+00:45:26,383 --> 00:45:30,078
+the encoder. So the answer is always in deep learning or in
+
+640
+00:45:30,578 --> 00:45:35,303
+neural networks, the answer is always you can always have one
+
+641
+00:45:35,351 --> 00:45:38,723
+operator or one transformation layer that just allows
+
+642
+00:45:39,223 --> 00:45:40,633
+you to kind of make sure things are nice.
+
+643
+00:45:41,516 --> 00:45:45,274
+Okay. So let's think a bit about how can we train
+
+644
+00:45:45,707 --> 00:45:50,219
+encoder-decoder models. And so now we have seen what these models are and what
+
+645
+00:45:50,719 --> 00:45:53,815
+they look like. And let's think a bit about what are the recipes of training
+
+646
+00:45:54,315 --> 00:45:57,910
+an encoder-decoder model. So when we were talking about language models, we literally
+
+647
+00:45:57,974 --> 00:46:01,680
+had unlimited data. What I mean by that is that this is the
+
+648
+00:46:02,180 --> 00:46:05,180
+goal, right? We started from lecture 3 or lecture 2 already when we talked about
+
+649
+00:46:05,680 --> 00:46:09,040
+word embeddings. We said that we don't need labeled data, right? We just can use
+
+650
+00:46:09,540 --> 00:46:12,960
+the whole internet, right? The same holds true for language models because there was no
+
+651
+00:46:13,460 --> 00:46:16,800
+labeled data to train them. We can adapt them, we can fine-tune them for,
+
+652
+00:46:17,300 --> 00:46:20,780
+let's say, an emotion classification or sentiment classification. There we will need labeled
+
+653
+00:46:21,280 --> 00:46:24,600
+data. But for training these models, for modeling
+
+654
+00:46:25,100 --> 00:46:28,177
+the language, you don't need labeled data. Label data. But for these kind of,
+
+655
+00:46:30,388 --> 00:46:33,487
+you know, for the encoder-decoder model, the problem is a bit different, right?
+
+656
+00:46:33,551 --> 00:46:37,150
+Because we are trying to see— we literally need an input
+
+657
+00:46:37,182 --> 00:46:40,623
+sequence and an output sequence because when we do English to French translation,
+
+658
+00:46:41,044 --> 00:46:44,634
+we are trying to see what aspects of the English language or what
+
+659
+00:46:45,134 --> 00:46:48,564
+tokens in the English language align or map to certain tokens of the
+
+660
+00:46:49,064 --> 00:46:52,119
+French language and then how they are constructed together. So we need a way to
+
+661
+00:46:52,619 --> 00:46:56,194
+model language But we also need that mapping, right? Code generation, the same
+
+662
+00:46:56,307 --> 00:46:59,480
+thing applies. Caption generation, the same thing applies. You cannot train these
+
+663
+00:46:59,496 --> 00:47:03,165
+models without having literally training data of images
+
+664
+00:47:03,502 --> 00:47:07,123
+and their captions or training data of English and its French
+
+665
+00:47:07,623 --> 00:47:10,457
+translation, right? So basically you need,
+
+666
+00:47:10,953 --> 00:47:13,934
+as I said, you need some sort of what we call paired data,
+
+667
+00:47:14,159 --> 00:47:17,588
+right? So for machine translation, you literally need pairs of
+
+668
+00:47:17,780 --> 00:47:22,274
+translations. For image captioning, again, you need paired image and text data for
+
+669
+00:47:22,774 --> 00:47:25,887
+code generation and so on and so forth. We talked about audio, we talked about
+
+670
+00:47:26,272 --> 00:47:29,580
+video to text transformation.
+
+671
+00:47:29,901 --> 00:47:33,883
+For all these cases, you need actual labeled data. So basically,
+
+672
+00:47:33,915 --> 00:47:37,110
+the key thing to understand here is that for training these models, you need some
+
+673
+00:47:37,610 --> 00:47:40,658
+sort of paired data so that you can train your encoder-decoder and then you can
+
+674
+00:47:41,158 --> 00:47:45,153
+apply it as things went forward. One aspect
+
+675
+00:47:45,653 --> 00:47:48,181
+too, and I know I have one or two slides before we go for a
+
+676
+00:47:48,681 --> 00:47:51,242
+break. So just bear with me so that we can close this properly.
+
+677
+00:47:51,963 --> 00:47:55,120
+Okay. So one aspect here is that, just wanted to mention,
+
+678
+00:47:55,633 --> 00:47:59,175
+is that the training of these models is similar
+
+679
+00:47:59,675 --> 00:48:02,876
+to what we have seen in the past. It's basically applying the
+
+680
+00:48:02,941 --> 00:48:06,514
+same concepts. We basically again
+
+681
+00:48:07,363 --> 00:48:10,152
+minimize the cross-entropy loss here. Right.
+
+682
+00:48:10,616 --> 00:48:13,805
+And what we do is basically instead,
+
+683
+00:48:13,917 --> 00:48:17,106
+previously it was just when we were training a language model, it was
+
+684
+00:48:17,606 --> 00:48:22,074
+just looking at the input. But here now also we have the outputs
+
+685
+00:48:22,574 --> 00:48:26,080
+that we can generate from the decoder, right? So basically what you can
+
+686
+00:48:26,580 --> 00:48:31,031
+see is literally we now have to minimize the likelihood
+
+687
+00:48:31,448 --> 00:48:35,454
+of generating— so minimize the log likelihood of generating the token
+
+688
+00:48:35,954 --> 00:48:39,850
+at timestep t. Given the outputs that we have generated so far and
+
+689
+00:48:39,882 --> 00:48:42,450
+the input document. Okay.
+
+690
+00:48:43,156 --> 00:48:46,463
+And just one small point also, just to mention that we
+
+691
+00:48:46,963 --> 00:48:50,587
+have— you just look at the change in notation. The input is represented by n
+
+692
+00:48:50,860 --> 00:48:53,444
+and the outputs are represented by the times of t.
+
+693
+00:48:54,472 --> 00:48:57,906
+Okay. And the same thing can be done, what we saw with RNNs,
+
+694
+00:48:58,019 --> 00:49:01,919
+right? We can literally backpropagate gradients. Previously, we were just doing
+
+695
+00:49:02,160 --> 00:49:05,869
+backpropagating things through the encoder because there
+
+696
+00:49:06,369 --> 00:49:09,032
+was no encoder-decoder. There was just one unit, right?
+
+697
+00:49:09,401 --> 00:49:13,158
+Now we have an encoder-decoder. What we can do is literally, we know
+
+698
+00:49:13,174 --> 00:49:17,028
+the output, right? We know while training these models, we actually know what should
+
+699
+00:49:17,044 --> 00:49:19,661
+be the output, what should the output be at this time step. So we can
+
+700
+00:49:19,709 --> 00:49:23,178
+use that to literally backpropagate the gradients through both the encoder
+
+701
+00:49:23,290 --> 00:49:25,329
+and the decoder. Okay.
+
+702
+00:49:29,635 --> 00:49:32,881
+Sorry, what do you
+
+703
+00:49:33,381 --> 00:49:33,497
+mean what happens?
+
+704
+00:49:38,965 --> 00:49:42,116
+So just to kind of remind, I kind of shared this
+
+705
+00:49:42,616 --> 00:49:46,109
+right in this part. You, you have
+
+706
+00:49:46,238 --> 00:49:48,479
+start and end tokens while you're training the model.
+
+707
+00:49:49,372 --> 00:49:52,391
+These are special tokens. You can just put any tokens, you can just call them
+
+708
+00:49:52,891 --> 00:49:55,590
+T1 or T2. And that the model just learns how to stop. Uh,
+
+709
+00:49:56,761 --> 00:49:59,585
+basically it learns to generate that token, right?
+
+710
+00:50:01,077 --> 00:50:04,783
+Okay. With this, I would say let's take a break because I
+
+711
+00:50:05,283 --> 00:50:08,890
+think I just wanted— like, this part is clear and now we will discuss about,
+
+712
+00:50:09,179 --> 00:50:12,677
+uh, other challenges and then we'll go into attention as we
+
+713
+00:50:13,350 --> 00:50:15,693
+come back from the break. Okay. Thank you.
+
+714
+01:02:34,888 --> 01:02:36,868
+Okay, let's,
+
+715
+01:02:38,199 --> 01:02:40,876
+let's start. Okay.
+
+716
+01:02:41,053 --> 01:02:44,478
+So we saw that how can we train encoder-decoder models.
+
+717
+01:02:44,818 --> 01:02:48,242
+And as I was saying, right, the key
+
+718
+01:02:48,742 --> 01:02:52,034
+practical challenge for training— like these models can be trained exactly like— so
+
+719
+01:02:52,760 --> 01:02:55,987
+sorry, these models can be trained exactly like any recurrent
+
+720
+01:02:56,487 --> 01:02:58,849
+model that we have seen so far. But the key practical challenge for training these
+
+721
+01:02:58,881 --> 01:03:02,577
+models is that we need paired data.
+
+722
+01:03:02,738 --> 01:03:05,871
+That's one. The other is, you know, it's very hard to find
+
+723
+01:03:06,371 --> 01:03:09,744
+such paired data. And then the other point is also to be discussed is
+
+724
+01:03:09,857 --> 01:03:11,148
+that, you know, uh,
+
+725
+01:03:13,230 --> 01:03:17,166
+what, what we were discussing during the break with one of, uh, your colleagues is
+
+726
+01:03:17,198 --> 01:03:20,532
+that the paired data can
+
+727
+01:03:20,806 --> 01:03:24,011
+also, you know, uh, I mean, it might be harder to kind of
+
+728
+01:03:24,043 --> 01:03:26,917
+get, uh, to, for this model to generalize,
+
+729
+01:03:27,742 --> 01:03:30,396
+uh, you know, for specific examples, for instance,
+
+730
+01:03:31,221 --> 01:03:34,872
+um, You know, what if you have— what
+
+731
+01:03:35,372 --> 01:03:39,525
+if you saw one pair of translation of
+
+732
+01:03:40,038 --> 01:03:43,712
+English to French, but there are more possible pairs for a specific sentence?
+
+733
+01:03:44,338 --> 01:03:48,397
+Or what if when you ask to write a specific function for,
+
+734
+01:03:48,926 --> 01:03:52,391
+you know, for a, you know, a lot for an algorithm that you
+
+735
+01:03:52,891 --> 01:03:56,274
+need, but there are multiple ways to write them, right? So you will be training
+
+736
+01:03:56,306 --> 01:03:59,836
+them only with one of them or 2 of them, the point is that the
+
+737
+01:04:00,336 --> 01:04:04,204
+model will generalize if it can actually see all possible or at least one
+
+738
+01:04:04,637 --> 01:04:08,186
+from each type of the solution, right? For the— if
+
+739
+01:04:08,686 --> 01:04:12,216
+you think about the function to generate the specific
+
+740
+01:04:12,521 --> 01:04:17,145
+function for a specific algorithm or a translation,
+
+741
+01:04:17,242 --> 01:04:20,533
+right? So in these cases, you have to actually find different types of paired
+
+742
+01:04:21,033 --> 01:04:24,565
+training data, which makes it even harder in the real world. You can do
+
+743
+01:04:25,065 --> 01:04:28,088
+this, of course. I mean, this is what people have been doing before Transformers and
+
+744
+01:04:28,168 --> 01:04:31,885
+LLMs were around. When I used to work at
+
+745
+01:04:32,385 --> 01:04:35,292
+American Express 9, 10 years ago,
+
+746
+01:04:35,697 --> 01:04:39,237
+then we also trained a model which was based on exactly this logic to
+
+747
+01:04:39,334 --> 01:04:43,246
+actually convert— take textual queries to
+
+748
+01:04:43,311 --> 01:04:47,745
+SQL queries for the analysts, right? So that they can just
+
+749
+01:04:48,245 --> 01:04:51,969
+use these models to get SQL queries on how will they
+
+750
+01:04:52,499 --> 01:04:56,530
+look at, do some analysis. So yeah,
+
+751
+01:04:56,610 --> 01:04:59,790
+I mean, they were still— it's still possible to work around with all of these,
+
+752
+01:05:00,208 --> 01:05:04,110
+but there are some challenges. Okay. There was one more challenge and I
+
+753
+01:05:04,223 --> 01:05:07,579
+quote this famous professor of natural language processing.
+
+754
+01:05:08,414 --> 01:05:12,461
+He has been like a prolific career,
+
+755
+01:05:12,911 --> 01:05:16,075
+illustrious career. He's one of the top voices in the field. Now,
+
+756
+01:05:16,284 --> 01:05:19,798
+I think he's emeritus if I'm not wrong. So,
+
+757
+01:05:19,814 --> 01:05:23,420
+but what he says is that you can't cram the meaning of a whole
+
+758
+01:05:24,767 --> 01:05:28,325
+sentence into a single vector. You know
+
+759
+01:05:28,453 --> 01:05:31,675
+what this person meant, right? And I mean, since it's
+
+760
+01:05:32,175 --> 01:05:35,858
+being recorded, I wouldn't say that. Otherwise, I don't refrain from swearing, but I'm just
+
+761
+01:05:36,358 --> 01:05:39,785
+saying, this is what literally this person said. I'm just quoting him, right?
+
+762
+01:05:40,330 --> 01:05:43,552
+And this is another challenge when we think about all these
+
+763
+01:05:43,600 --> 01:05:47,817
+models, right? Because literally what we are doing, encoder is literally trying to compress
+
+764
+01:05:47,929 --> 01:05:51,443
+the meaning of a whole sentence into one representation.
+
+765
+01:05:51,957 --> 01:05:55,551
+And that's what, according to this guy, is not what we should do. And he's
+
+766
+01:05:56,051 --> 01:06:00,124
+not wrong, right? So, and then again, I would like to kind of give
+
+767
+01:06:00,624 --> 01:06:03,029
+you a quick recap of what we saw with RNNs, right? We saw this problem
+
+768
+01:06:03,529 --> 01:06:08,453
+exactly, right? What we said that RNNs actually struggle to learn
+
+769
+01:06:08,645 --> 01:06:12,528
+extremely long-range dependencies because the tokens
+
+770
+01:06:12,576 --> 01:06:16,075
+can just be too far in the future. That we need too
+
+771
+01:06:16,091 --> 01:06:19,606
+far in the history, which we need right now while performing
+
+772
+01:06:19,638 --> 01:06:22,768
+certain decisions. It could be classification, it could be generation and whatnot.
+
+773
+01:06:23,731 --> 01:06:27,342
+So overall, what we are seeing is there is a massive compression of information by
+
+774
+01:06:27,358 --> 01:06:30,392
+following this approach, which is not good, right?
+
+775
+01:06:31,098 --> 01:06:34,982
+Let's basically look at also this toy example when we talk about this encoder-decoder model,
+
+776
+01:06:35,046 --> 01:06:39,059
+right? So basically, when we have to translate, right, when we have to generate
+
+777
+01:06:39,559 --> 01:06:42,876
+the word je, which actually corresponds to the word
+
+778
+01:06:43,053 --> 01:06:46,789
+I in the input, you can see that the model
+
+779
+01:06:46,821 --> 01:06:50,750
+literally has to look at 4 extra tokens before it starts to actually generate
+
+780
+01:06:51,250 --> 01:06:54,375
+this word, which is basically noise at that point. I mean, those 4 tokens are
+
+781
+01:06:54,875 --> 01:06:59,346
+not required for the model to actually generate je or
+
+782
+01:06:59,846 --> 01:07:02,409
+generate I corresponding to the token je.
+
+783
+01:07:03,291 --> 01:07:06,933
+So basically, this is a Simple
+
+784
+01:07:06,965 --> 01:07:10,851
+example here, it might not even matter. But when— just imagine when
+
+785
+01:07:10,899 --> 01:07:14,865
+this becomes too long documents and this will always be a problem. Or imagine now
+
+786
+01:07:14,977 --> 01:07:18,686
+you put a prompt using your LLM and then it gives you literally,
+
+787
+01:07:18,751 --> 01:07:22,299
+you know, you— we all know, right? Cursor and the applications
+
+788
+01:07:22,799 --> 01:07:26,008
+that we see today, they can just create whole apps out of thin air,
+
+789
+01:07:26,056 --> 01:07:29,910
+right? So the point is, in these cases, you know, such things would never have
+
+790
+01:07:29,990 --> 01:07:33,666
+worked. Because why? Because a single hidden
+
+791
+01:07:34,444 --> 01:07:37,493
+state represents the entire input for the decoder, right? And that's a big
+
+792
+01:07:37,993 --> 01:07:40,883
+problem. Can anyone tell me,
+
+793
+01:07:41,270 --> 01:07:44,764
+is there a way, or what you can think of, is there
+
+794
+01:07:45,264 --> 01:07:46,825
+a way to mitigate this temporal bottleneck?
+
+795
+01:07:55,090 --> 01:07:58,335
+You can take out your phones, you can scan the QR code.
+
+796
+01:08:00,943 --> 01:08:01,907
+You can use the link.
+
+797
+01:08:30,343 --> 01:08:32,752
+There's a small hint. I mean, it's, it's one of the things that we will
+
+798
+01:08:33,252 --> 01:08:35,738
+discuss or said we will discuss today.
+
+799
+01:08:55,120 --> 01:08:57,624
+I'll give 30 more seconds and then I'll move on.
+
+800
+01:09:11,660 --> 01:09:15,036
+Okay, so now this is a
+
+801
+01:09:15,536 --> 01:09:19,331
+problem, right? Because I have to move this to the screen
+
+802
+01:09:19,460 --> 01:09:21,859
+so that everyone can see this. And as you can see,
+
+803
+01:09:23,727 --> 01:09:26,928
+some of you got it right. The answer is indeed attention, which we'll
+
+804
+01:09:27,428 --> 01:09:30,867
+see now. Just let me tell you why skip
+
+805
+01:09:31,367 --> 01:09:36,433
+connection is not a proper answer here, because if you can recall
+
+806
+01:09:37,609 --> 01:09:41,103
+what we are seeing here, these are already
+
+807
+01:09:41,168 --> 01:09:44,996
+LSTMs. And as I kind of shared
+
+808
+01:09:45,817 --> 01:09:48,698
+already with this nice example and slides, LSTMs are already,
+
+809
+01:09:50,253 --> 01:09:54,227
+they already have this nice residual
+
+810
+01:09:54,292 --> 01:09:57,798
+block style learning already involved in it, right? So they're much stronger than a
+
+811
+01:09:57,830 --> 01:10:01,474
+skip connection. And the point is, I mean, of course you can always
+
+812
+01:10:01,732 --> 01:10:05,306
+add a skip connection between these blocks, but the,
+
+813
+01:10:08,479 --> 01:10:12,452
+Yeah, I mean, it will not work the desired way because the
+
+814
+01:10:12,952 --> 01:10:16,603
+individual blocks are already able to solve the
+
+815
+01:10:16,893 --> 01:10:20,195
+problem that we saw, right? They will, yes,
+
+816
+01:10:20,227 --> 01:10:23,530
+skip connection will still help. You can just add it again on top of this,
+
+817
+01:10:23,838 --> 01:10:25,878
+but it will not be as useful.
+
+818
+01:10:27,970 --> 01:10:31,345
+Okay. Then let's get back to this. Yes,
+
+819
+01:10:31,475 --> 01:10:34,737
+the answer is attention, and which goes, takes us to the
+
+820
+01:10:35,125 --> 01:10:38,839
+second half of today's lecture. Where we'll talk about why is this the answer.
+
+821
+01:10:38,936 --> 01:10:41,981
+So let's look at this specific thing.
+
+822
+01:10:43,706 --> 01:10:46,920
+What was the problem that we said? What we said the problem
+
+823
+01:10:47,034 --> 01:10:50,231
+was that we are trying to cram,
+
+824
+01:10:50,894 --> 01:10:54,680
+just quoting Ray Mooney again. So we're trying to cram the
+
+825
+01:10:54,712 --> 01:10:59,778
+entire meaning of a sentence into one freaking
+
+826
+01:10:59,875 --> 01:11:03,604
+vector. So that's
+
+827
+01:11:04,104 --> 01:11:07,766
+the problem, and that's what we can That's what we
+
+828
+01:11:08,266 --> 01:11:12,509
+need to solve. And the way we solve is that we
+
+829
+01:11:13,009 --> 01:11:16,316
+train something called an attentive encoder-decoder model. And with
+
+830
+01:11:16,816 --> 01:11:19,874
+this, I would be able to tell you what actually attention is, right?
+
+831
+01:11:20,618 --> 01:11:23,886
+So basically, think about this
+
+832
+01:11:23,983 --> 01:11:27,663
+fact that you all know when we looked at RNNs, even starting
+
+833
+01:11:28,362 --> 01:11:32,151
+lecture 3, the last few minutes.
+
+834
+01:11:32,340 --> 01:11:35,596
+And then lecture 4 also, we discussed completely about RNNs and LSTMs.
+
+835
+01:11:36,302 --> 01:11:40,489
+These models also give us a representation at each timestep,
+
+836
+01:11:40,778 --> 01:11:44,516
+right? So basically, we don't need to only rely on
+
+837
+01:11:44,564 --> 01:11:48,014
+the final representation, but what we can do is we can
+
+838
+01:11:48,094 --> 01:11:51,720
+just use the representation that we got from each timestep, right? And that
+
+839
+01:11:52,730 --> 01:11:56,532
+will prevent us from relying on just
+
+840
+01:11:56,581 --> 01:11:59,883
+one vector, right? And that's what we will do in
+
+841
+01:12:00,383 --> 01:12:03,914
+this, in the idea of attention. The goal is to
+
+842
+01:12:09,174 --> 01:12:12,740
+literally learn associations between the hidden representations
+
+843
+01:12:13,240 --> 01:12:17,770
+that you get at each timestep using an attention operation with
+
+844
+01:12:17,883 --> 01:12:21,434
+the output. So basically, what you can do is you
+
+845
+01:12:21,934 --> 01:12:25,143
+can literally use the output of the decoder, LSTM,
+
+846
+01:12:25,657 --> 01:12:29,045
+and then we compute an attention, which is basically just a mixture
+
+847
+01:12:29,415 --> 01:12:32,530
+of over all the outputs that we have
+
+848
+01:12:32,883 --> 01:12:36,159
+obtained from the encoder at different time steps.
+
+849
+01:12:37,043 --> 01:12:40,559
+And what it basically does is that, and if you think about an intuition,
+
+850
+01:12:40,608 --> 01:12:44,462
+it's basically just trying to allow us which
+
+851
+01:12:44,911 --> 01:12:47,914
+parts of the input document or the sequence shall we focus on,
+
+852
+01:12:49,103 --> 01:12:52,732
+which is what we needed when we were modeling When we were
+
+853
+01:12:52,940 --> 01:12:55,621
+literally— that's what the whole goal of a language model is, right?
+
+854
+01:12:56,247 --> 01:12:59,779
+I mean, not completely, but the main goal of a language model is literally
+
+855
+01:13:00,279 --> 01:13:03,728
+to understand when we are using it as an application, right? When you're
+
+856
+01:13:04,228 --> 01:13:07,773
+using it to do machine translation or generate something, you need to know which
+
+857
+01:13:07,886 --> 01:13:11,337
+part, which token of your input sequence is actually the
+
+858
+01:13:11,837 --> 01:13:15,415
+most— carries the most amount of signal to
+
+859
+01:13:15,816 --> 01:13:18,497
+use it for a specific generation at a specific time step, right?
+
+860
+01:13:19,299 --> 01:13:23,258
+So this is what attention gives us. And in
+
+861
+01:13:23,355 --> 01:13:26,352
+terms of how we compute this, you can literally see this as a weighted average
+
+862
+01:13:26,481 --> 01:13:29,591
+over the set of input representations that we obtain from the encoder.
+
+863
+01:13:30,504 --> 01:13:34,416
+Right. So can anyone tell me how can we compute this weighted
+
+864
+01:13:34,916 --> 01:13:38,247
+average? Now you have these input
+
+865
+01:13:38,343 --> 01:13:42,463
+vectors and you have the hidden representation from
+
+866
+01:13:42,528 --> 01:13:44,403
+the decoder LSTM at timestep 1.
+
+867
+01:13:56,085 --> 01:13:59,939
+Yeah. If you— okay, so the answer was we can sum them and
+
+868
+01:13:59,971 --> 01:14:02,081
+then we can do a dot product, right?
+
+869
+01:14:02,951 --> 01:14:07,489
+Sort of. Or— right?
+
+870
+01:14:08,526 --> 01:14:10,666
+So can anyone tell me what's wrong with this?
+
+871
+01:14:14,389 --> 01:14:17,695
+I can tell you it's wrong, but it's— yeah.
+
+872
+01:14:17,953 --> 01:14:21,082
+But can anyone tell me what's wrong with this summing and then taking a dot
+
+873
+01:14:26,032 --> 01:14:26,322
+Sorry?
+
+874
+01:14:30,525 --> 01:14:34,035
+There are weights that the network learns. Okay. So what you mean by sum
+
+875
+01:14:34,325 --> 01:14:38,008
+is basically you're literally saying what I said, right? You're saying we should
+
+876
+01:14:38,508 --> 01:14:41,920
+do a weighted average. Right. Okay. But let me tell you,
+
+877
+01:14:41,936 --> 01:14:45,451
+since you raised an important point, if you— if the idea was that
+
+878
+01:14:45,951 --> 01:14:50,249
+you sum them first, then you've already lost the information,
+
+879
+01:14:50,330 --> 01:14:53,892
+right? You've just come again, quashed them into a single representation somehow,
+
+880
+01:14:54,197 --> 01:14:57,567
+right? But yes. Okay. So the idea is that, yeah, we do some sort
+
+881
+01:14:58,067 --> 01:15:00,632
+of a weighted average computation.
+
+882
+01:15:01,483 --> 01:15:05,720
+And now let me introduce some terminology which will basically be useful
+
+883
+01:15:05,752 --> 01:15:10,251
+as things follow. Right. So we literally
+
+884
+01:15:10,751 --> 01:15:13,513
+say is that, as I said, right. So you compute some sort of a pairwise
+
+885
+01:15:13,545 --> 01:15:17,109
+similarity between each encoder hidden state and the decoder hidden
+
+886
+01:15:17,609 --> 01:15:20,860
+state. Right. So which basically tells us idea of what
+
+887
+01:15:20,957 --> 01:15:24,676
+the decoder has to decode. Right. The terminology here
+
+888
+01:15:25,176 --> 01:15:28,138
+is that the encoder hidden states are actually called as keys.
+
+889
+01:15:28,591 --> 01:15:31,795
+Right. And the decoder hidden state is called as a query.
+
+890
+01:15:32,698 --> 01:15:36,212
+Right. I mean, you know, it makes a bit of
+
+891
+01:15:36,726 --> 01:15:40,626
+sense in a way that, okay, the decoder hidden state literally is a query because
+
+892
+01:15:40,658 --> 01:15:43,707
+we need to understand what is from the input that we
+
+893
+01:15:44,207 --> 01:15:47,848
+should learn, that we should use to actually generate something
+
+894
+01:15:47,880 --> 01:15:51,330
+at this state. Right. So it's a query. And why
+
+895
+01:15:51,716 --> 01:15:56,113
+the term keys was used is again coming a bit from databases.
+
+896
+01:15:56,225 --> 01:15:59,151
+Right. I mean, again, there's no solid reason.
+
+897
+01:15:59,668 --> 01:16:02,797
+But yes, I mean, it gives a sort of intuition
+
+898
+01:16:03,313 --> 01:16:06,846
+of why these can be used, right? So basically what's
+
+899
+01:16:06,927 --> 01:16:12,366
+happening here is that we are computing a score for each—
+
+900
+01:16:14,044 --> 01:16:17,127
+like, basically the attention eventually gives us a
+
+901
+01:16:17,160 --> 01:16:20,428
+vector, right? But what happens
+
+902
+01:16:20,928 --> 01:16:24,425
+is that each component of that, or each entry in that vector, is like a
+
+903
+01:16:25,696 --> 01:16:30,080
+a score which actually tells us what's the association
+
+904
+01:16:30,433 --> 01:16:33,661
+right now between the key,
+
+905
+01:16:34,752 --> 01:16:38,494
+different, like that key, right? Which is the specific hidden state at this
+
+906
+01:16:38,702 --> 01:16:42,042
+specific timestamp and the query,
+
+907
+01:16:42,379 --> 01:16:46,169
+which is the decoder state that we use, right? So eventually we
+
+908
+01:16:46,669 --> 01:16:50,215
+will have these 4 scores if we have 4
+
+909
+01:16:51,468 --> 01:16:54,971
+hidden states and 1 decoder
+
+910
+01:16:55,147 --> 01:16:58,666
+hidden state. Okay. And how this is done
+
+911
+01:16:58,714 --> 01:17:01,992
+usually in practice is that there are different functions that are
+
+912
+01:17:02,492 --> 01:17:06,105
+prevalent. There's a multiplicative function. You can also call it
+
+913
+01:17:06,731 --> 01:17:09,302
+the one— it's like, don't confuse it with the linear. I mean, it's more like
+
+914
+01:17:09,802 --> 01:17:13,527
+you can think of it as like an additive or MLP-style
+
+915
+01:17:13,945 --> 01:17:17,544
+function. And then there's also a scaled dot product. So you can,
+
+916
+01:17:17,881 --> 01:17:21,063
+again, I just wanted to show you the different functions that exist out there,
+
+917
+01:17:21,593 --> 01:17:24,935
+but the ones that is mostly used,
+
+918
+01:17:25,032 --> 01:17:28,852
+not even mostly, the ones that is prevalently used in modern-day architectures
+
+919
+01:17:28,885 --> 01:17:32,100
+is the scaled dot product. Because it's
+
+920
+01:17:32,600 --> 01:17:36,078
+like, one, it's like the standard computation that is used
+
+921
+01:17:36,578 --> 01:17:40,089
+in Transformers. The reason is that because it allows for
+
+922
+01:17:40,589 --> 01:17:44,623
+efficient computation and also it actually
+
+923
+01:17:44,639 --> 01:17:48,662
+allows us to scale with dimensionality very well because,
+
+924
+01:17:48,999 --> 01:17:53,881
+uh, you know, how, how we scale it anyway. So this is largely,
+
+925
+01:17:54,299 --> 01:17:57,736
+you know, I was like more for FYI. It doesn't actually
+
+926
+01:17:58,715 --> 01:18:02,586
+have any technical bearing on what we will see. Just wanted to mention that
+
+927
+01:18:02,666 --> 01:18:05,156
+there are different ways to compute this attention function.
+
+928
+01:18:05,718 --> 01:18:09,074
+But the, the important aspect here is to also think about that
+
+929
+01:18:09,958 --> 01:18:13,651
+the attention vector that we have computed was just a vector
+
+930
+01:18:14,151 --> 01:18:18,179
+of scores, right? But we need to convert this into a probability
+
+931
+01:18:18,679 --> 01:18:21,712
+distribution, right? And that we use using softmax.
+
+932
+01:18:21,776 --> 01:18:25,356
+Again, we have discussed this multiple times in the previous lectures that softmax allows
+
+933
+01:18:25,405 --> 01:18:28,696
+us to kind of perform this transformation that takes any vector and converts
+
+934
+01:18:29,196 --> 01:18:32,855
+it into a probability distribution. And it basically gives us the distribution over
+
+935
+01:18:33,096 --> 01:18:36,725
+encoder hidden states and the computed weight average,
+
+936
+01:18:36,789 --> 01:18:40,260
+right? So basically, the attention vector
+
+937
+01:18:40,485 --> 01:18:44,231
+now is a probability distribution that looks literally like this,
+
+938
+01:18:44,344 --> 01:18:47,896
+which basically tells us which parts— if you think about
+
+939
+01:18:47,944 --> 01:18:51,640
+the intuition, it tells us which token in the input sequence
+
+940
+01:18:51,881 --> 01:18:55,963
+actually— not even which, how much does
+
+941
+01:18:56,156 --> 01:19:00,594
+a token in the input sequence matter at specific
+
+942
+01:19:00,803 --> 01:19:04,093
+decoding timestep when we are actually generating certain outputs,
+
+943
+01:19:04,110 --> 01:19:07,929
+right? So it's basically computed as— and then we
+
+944
+01:19:08,429 --> 01:19:12,197
+basically use that to actually obtain a transformed
+
+945
+01:19:12,697 --> 01:19:16,594
+decoder hidden state, which is just again a weighted
+
+946
+01:19:17,094 --> 01:19:19,883
+average of— I mean, not a weighted— I mean, you can say it's a weighted
+
+947
+01:19:19,963 --> 01:19:23,670
+average of the attention vector that you've learned and again the encoder
+
+948
+01:19:24,170 --> 01:19:27,698
+hidden states, right? Things might be confusing a bit because you already used this
+
+949
+01:19:28,147 --> 01:19:32,222
+and there are 2 different operations, right? When you One is you
+
+950
+01:19:32,238 --> 01:19:35,941
+want to actually understand how much does the
+
+951
+01:19:36,441 --> 01:19:40,333
+input tokens matter. Then using that, you have to actually
+
+952
+01:19:40,833 --> 01:19:44,741
+still compute a new hidden state that can actually be used to compute
+
+953
+01:19:45,241 --> 01:19:48,973
+something generation, right? And when you use it at the second time, it's called as
+
+954
+01:19:49,470 --> 01:19:53,077
+values, right? So recall when we looked at the encoder
+
+955
+01:19:53,577 --> 01:19:56,747
+hidden states, they were called as keys when we were computing
+
+956
+01:19:56,844 --> 01:20:01,338
+the attention vector. And when we use
+
+957
+01:20:01,370 --> 01:20:05,374
+them to actually compute this modified hidden representation
+
+958
+01:20:05,423 --> 01:20:09,074
+at the decoder, then they are actually called
+
+959
+01:20:09,574 --> 01:20:13,047
+as the value. Let's try to understand why this is a difference.
+
+960
+01:20:13,433 --> 01:20:16,065
+Because think about literally as,
+
+961
+01:20:17,641 --> 01:20:21,231
+think about literally the keys and values as aspects of,
+
+962
+01:20:24,203 --> 01:20:27,425
+one thing that gives you, like, this thing that actually,
+
+963
+01:20:27,684 --> 01:20:30,000
+I mean, the key takeaway here is that the,
+
+964
+01:20:32,085 --> 01:20:35,361
+as I was telling you, right, the attention distribution tells us which
+
+965
+01:20:35,474 --> 01:20:39,057
+parts to focus on, right? Which parts are informative from the
+
+966
+01:20:39,105 --> 01:20:43,423
+hidden encoder state. And the actual value
+
+967
+01:20:43,455 --> 01:20:46,918
+actually tells us about what actually we, how much should we,
+
+968
+01:20:46,999 --> 01:20:51,693
+like, literally, then we use it to compute the, actual representation
+
+969
+01:20:52,191 --> 01:20:55,784
+that we pass along for the generation step. So basically,
+
+970
+01:20:56,298 --> 01:21:00,148
+they are literally the— I mean, these hidden states
+
+971
+01:21:01,014 --> 01:21:04,399
+actually tells us, like, the encoder hidden states will be
+
+972
+01:21:04,899 --> 01:21:08,779
+needed at 2 times. Once to actually understand
+
+973
+01:21:09,196 --> 01:21:12,725
+how much each token matters. And then once
+
+974
+01:21:13,225 --> 01:21:16,962
+we know how much each of these tokens matters, we then combine them with
+
+975
+01:21:16,994 --> 01:21:20,695
+the encoder hidden states again to actually compute
+
+976
+01:21:20,760 --> 01:21:23,334
+the representation that we need at the decoding timestep.
+
+977
+01:21:24,728 --> 01:21:28,413
+Okay. So once we have done that, now what we
+
+978
+01:21:28,913 --> 01:21:32,599
+have obtained is that we have actually computed literally
+
+979
+01:21:35,030 --> 01:21:38,978
+the— what we have done is that we have
+
+980
+01:21:39,252 --> 01:21:42,913
+the encoder hidden states, which basically tells us the
+
+981
+01:21:43,413 --> 01:21:45,933
+representation at each specific time step from the input.
+
+982
+01:21:46,404 --> 01:21:50,269
+And we had a decoder hidden state. Using them, we were actually able to
+
+983
+01:21:50,769 --> 01:21:54,741
+compute a decoder
+
+984
+01:21:55,241 --> 01:21:58,403
+state, which basically is
+
+985
+01:21:59,000 --> 01:22:02,710
+combining the encoder hidden
+
+986
+01:22:02,775 --> 01:22:06,340
+states with the current output of the decoder based
+
+987
+01:22:06,840 --> 01:22:10,178
+on how much should they matter at this specific time step when we are generating
+
+988
+01:22:10,275 --> 01:22:13,727
+this. Recall that when we are doing this specific operation,
+
+989
+01:22:14,460 --> 01:22:17,714
+we are not relying on this green vector here.
+
+990
+01:22:18,101 --> 01:22:21,384
+We are not relying on a crammed up vector. We are basically
+
+991
+01:22:21,819 --> 01:22:25,798
+first computing, you know, literally what
+
+992
+01:22:25,992 --> 01:22:29,439
+is the association between each
+
+993
+01:22:31,797 --> 01:22:36,468
+of the input tokens With,
+
+994
+01:22:36,597 --> 01:22:39,328
+I mean, so basically, okay, let me take a step back. So what you are
+
+995
+01:22:39,828 --> 01:22:43,061
+doing here is that at a given timestep, when you want
+
+996
+01:22:43,561 --> 01:22:47,288
+to generate the token y1-hat here, right? What you
+
+997
+01:22:47,788 --> 01:22:51,170
+need here is to try to understand first, how much
+
+998
+01:22:51,509 --> 01:22:55,375
+should the tokens in your input sequence play
+
+999
+01:22:55,875 --> 01:22:59,226
+a role, which is what we actually compute in
+
+1000
+01:22:59,338 --> 01:23:01,326
+this, attention probability distribution.
+
+1001
+01:23:02,416 --> 01:23:05,879
+And then we need to actually see that once we have this, then we actually
+
+1002
+01:23:05,927 --> 01:23:09,870
+have to compute what is the representation that we
+
+1003
+01:23:10,370 --> 01:23:13,541
+should pass along for the output generation. Because then we need to
+
+1004
+01:23:14,041 --> 01:23:17,116
+know— we know how much each of these tokens matter. And then
+
+1005
+01:23:17,148 --> 01:23:20,514
+we need to tell the model, OK, based on this information, I have now computed
+
+1006
+01:23:21,014 --> 01:23:24,489
+a new representation. And now you generate something for me using this
+
+1007
+01:23:24,954 --> 01:23:28,593
+representation that we have got. What we usually do here is
+
+1008
+01:23:28,625 --> 01:23:32,777
+also one thing that I wanted to mention, is that before
+
+1009
+01:23:33,277 --> 01:23:37,730
+we actually generate the output, we actually concatenate the representation,
+
+1010
+01:23:38,147 --> 01:23:41,369
+the original decoder state with the modified or the composed
+
+1011
+01:23:41,869 --> 01:23:45,585
+decoder state that we obtain from the attention. I wanted to mention
+
+1012
+01:23:45,858 --> 01:23:49,641
+why is this done is because these 2 things
+
+1013
+01:23:49,689 --> 01:23:52,719
+gives us different information. The first thing actually,
+
+1014
+01:23:54,179 --> 01:23:57,934
+The current decoder hidden state actually tells us literally
+
+1015
+01:23:58,110 --> 01:24:01,336
+what have I generated so far. It tells us
+
+1016
+01:24:02,684 --> 01:24:05,492
+what has already been done and what do I need to do next.
+
+1017
+01:24:06,391 --> 01:24:10,194
+On the other hand, this modified representation that we obtain after
+
+1018
+01:24:10,226 --> 01:24:14,158
+composing the— using the attention scores that we have obtained, it tells
+
+1019
+01:24:14,658 --> 01:24:18,282
+us which actually information from our source
+
+1020
+01:24:18,362 --> 01:24:22,834
+or the input document is relevant. For this specific token,
+
+1021
+01:24:22,931 --> 01:24:26,723
+like to generate the token at this specific time step. So we literally need
+
+1022
+01:24:26,820 --> 01:24:31,887
+both of this information to perform the— to
+
+1023
+01:24:31,903 --> 01:24:36,347
+get the output at this standpoint. So can
+
+1024
+01:24:37,061 --> 01:24:40,305
+someone tell me that— okay, I mean, I already put the answer here,
+
+1025
+01:24:40,759 --> 01:24:43,992
+but okay, what I wanted to mention is that you can also add,
+
+1026
+01:24:44,500 --> 01:24:47,543
+but if you do an addition here, you're again doing the same thing
+
+1027
+01:24:47,576 --> 01:24:51,329
+what we discussed previously. You are mixing this information too early, right? But when
+
+1028
+01:24:51,829 --> 01:24:56,154
+you concatenate them and allow the softmax
+
+1029
+01:24:56,170 --> 01:24:59,688
+and the tanh, how you combine them, to learn how should these
+
+1030
+01:24:59,720 --> 01:25:03,668
+be composed rather than just mixing this before you have generated the
+
+1031
+01:25:04,168 --> 01:25:07,661
+output. So overall, the aspect is that when you're concatenating
+
+1032
+01:25:07,694 --> 01:25:10,997
+these things, it actually allows the next layer to
+
+1033
+01:25:11,497 --> 01:25:15,048
+give more information about what has been generated so
+
+1034
+01:25:15,548 --> 01:25:19,290
+far. And based on this, based on the input and
+
+1035
+01:25:19,371 --> 01:25:22,842
+this current state, what should I actually use to actually generate
+
+1036
+01:25:23,342 --> 01:25:26,667
+the output at this specific timestep? Okay. So,
+
+1037
+01:25:26,764 --> 01:25:30,364
+but then what happens is that once you have actually computed this attention
+
+1038
+01:25:30,943 --> 01:25:34,418
+and once you have actually concatenated them,
+
+1039
+01:25:34,804 --> 01:25:37,958
+you got an output. And then what you do is at
+
+1040
+01:25:38,458 --> 01:25:41,120
+the second timestep when you have to generate the next token, you keep doing the
+
+1041
+01:25:41,620 --> 01:25:45,327
+same thing again and again. But what happens is that now the attention
+
+1042
+01:25:45,359 --> 01:25:49,758
+distribution will change at the next timestep because the
+
+1043
+01:25:49,838 --> 01:25:53,387
+tokens that were important at timestep 1 may
+
+1044
+01:25:53,887 --> 01:25:57,513
+not be important at timestep 2. And this is exactly why
+
+1045
+01:25:58,043 --> 01:26:01,543
+this attentive encoder-decoder models or the concept of attention is
+
+1046
+01:26:01,639 --> 01:26:05,187
+better. Because recall again, what you did with a classical
+
+1047
+01:26:05,687 --> 01:26:09,171
+encoder-decoder model, you were always using this green guy here. You were always
+
+1048
+01:26:10,007 --> 01:26:14,955
+using this crammed representation,
+
+1049
+01:26:15,308 --> 01:26:18,388
+which was the output of the encoder, and you were using that to generate.
+
+1050
+01:26:18,775 --> 01:26:22,423
+Of course, you had some information from the decoder as well. You had the output
+
+1051
+01:26:22,923 --> 01:26:26,731
+of the decoder, but that's that. What's more powerful here is that you were able
+
+1052
+01:26:26,827 --> 01:26:30,471
+to get the representations from the encoder
+
+1053
+01:26:31,019 --> 01:26:35,009
+and you were able to actually compose them in a way that
+
+1054
+01:26:35,509 --> 01:26:39,401
+gives you insights into what is relevant at a specific time step at
+
+1055
+01:26:39,513 --> 01:26:43,104
+the generation or as the output, what you want at specific time step.
+
+1056
+01:26:43,441 --> 01:26:47,112
+So overall, these attention scores keep changing over
+
+1057
+01:26:47,528 --> 01:26:51,616
+time because they give you more information on how this is actually
+
+1058
+01:26:52,116 --> 01:26:54,742
+information is being used in this specific, in each time step.
+
+1059
+01:26:55,848 --> 01:26:59,359
+And this is how it keeps going. So then basically what you do is,
+
+1060
+01:26:59,760 --> 01:27:03,506
+you actually, as I said, right? So you basically
+
+1061
+01:27:04,006 --> 01:27:08,075
+generate the output at timestep 1. It's still autoregressive.
+
+1062
+01:27:08,124 --> 01:27:11,292
+You pass it along to the next step, but you
+
+1063
+01:27:11,404 --> 01:27:14,699
+get a different decoder
+
+1064
+01:27:14,763 --> 01:27:18,365
+hidden state because the attention function actually learns to actually compose
+
+1065
+01:27:18,559 --> 01:27:21,586
+the encoder hidden states in a different way every time.
+
+1066
+01:27:22,182 --> 01:27:25,967
+And that actually tells you how much of this information is required
+
+1067
+01:27:26,467 --> 01:27:30,104
+at each timestep. And you keep going like this and you obtain the outputs.
+
+1068
+01:27:30,795 --> 01:27:34,395
+So the key aspect
+
+1069
+01:27:34,895 --> 01:27:38,318
+here is also to tell you is that attention can be literally,
+
+1070
+01:27:39,727 --> 01:27:43,867
+in addition to actually giving us this higher-order ability to compose
+
+1071
+01:27:44,142 --> 01:27:47,933
+information from different time steps in a better manner, it also gives
+
+1072
+01:27:48,433 --> 01:27:52,242
+us some sort of an interpretability because the attention can actually be
+
+1073
+01:27:52,538 --> 01:27:55,388
+the attention scores that you have seen, this can actually be visualized.
+
+1074
+01:27:57,276 --> 01:28:00,553
+And you can visualize it using a heatmap or different orders,
+
+1075
+01:28:00,971 --> 01:28:04,264
+which actually tells you at the time, like when you generate
+
+1076
+01:28:04,764 --> 01:28:08,684
+something, it tells you what part of the input was important
+
+1077
+01:28:09,184 --> 01:28:11,981
+or what part was used to actually do the generation at this timestep.
+
+1078
+01:28:12,496 --> 01:28:16,356
+So it actually gives you some sort of
+
+1079
+01:28:16,701 --> 01:28:19,770
+interpretability that you can map. You will see,
+
+1080
+01:28:20,385 --> 01:28:23,732
+we'll show you also in the next week lecture
+
+1081
+01:28:23,926 --> 01:28:28,341
+that many of these styles
+
+1082
+01:28:28,616 --> 01:28:31,952
+of heatmaps were used to understand the first
+
+1083
+01:28:32,098 --> 01:28:35,678
+large language models that were developed. I mean, people sometimes don't call it
+
+1084
+01:28:36,178 --> 01:28:39,368
+large language models, but the models, if you've heard the name, who has heard the
+
+1085
+01:28:39,868 --> 01:28:42,664
+name BERT? Okay,
+
+1086
+01:28:43,556 --> 01:28:47,515
+not about the cartoon, but yes, okay. So BERT was one
+
+1087
+01:28:47,939 --> 01:28:50,667
+of the first models that came from Google,
+
+1088
+01:28:53,050 --> 01:28:55,412
+which is also, I mean, you will see more in the next week's lecture,
+
+1089
+01:28:55,879 --> 01:28:59,078
+but to understand the output representations from BERT, there was
+
+1090
+01:28:59,110 --> 01:29:02,376
+this whole nice project which was called
+
+1091
+01:29:03,215 --> 01:29:06,974
+BERTology, literally to understand what's happening under the hood
+
+1092
+01:29:07,087 --> 01:29:11,250
+in BERT, which was mostly a good way of literally visualizing
+
+1093
+01:29:11,750 --> 01:29:16,668
+these attention maps. So that you can understand how is
+
+1094
+01:29:16,717 --> 01:29:20,220
+the input being used to— and
+
+1095
+01:29:20,236 --> 01:29:23,553
+which part of the input is being used to actually create your output.
+
+1096
+01:29:23,617 --> 01:29:27,195
+So in other words, which part of your input informs the
+
+1097
+01:29:27,244 --> 01:29:29,178
+output generation at a specific timestep.
+
+1098
+01:29:32,195 --> 01:29:35,669
+Okay. So now going back from this, can anyone tell me, now you've
+
+1099
+01:29:36,169 --> 01:29:39,707
+seen this, how does the attention actually address
+
+1100
+01:29:40,207 --> 01:29:42,507
+the temporal bottleneck in the sequence-to-sequence models.
+
+1101
+01:29:43,916 --> 01:29:47,186
+So we started with a claim that sequence-to-sequence models that we have seen so
+
+1102
+01:29:47,234 --> 01:29:51,215
+far, or the encoder-decoder models, they have a temporal
+
+1103
+01:29:51,715 --> 01:29:52,467
+bottleneck, which we just saw.
+
+1104
+01:29:55,103 --> 01:29:57,444
+Going back to this, we said there is a temporal bottleneck.
+
+1105
+01:29:57,508 --> 01:30:00,705
+And we asked this question, how can
+
+1106
+01:30:00,737 --> 01:30:04,210
+we mitigate this? And the answer was attention. And then we looked at
+
+1107
+01:30:04,737 --> 01:30:07,700
+attention. How we compute this and how we solve this.
+
+1108
+01:30:09,230 --> 01:30:12,532
+So now I have a question. What's the
+
+1109
+01:30:13,032 --> 01:30:16,253
+key idea here? How are we solving the temporal bottleneck using attention,
+
+1110
+01:30:16,854 --> 01:30:18,966
+which previous models were not able to solve?
+
+1111
+01:30:23,700 --> 01:30:23,904
+Yeah.
+
+1112
+01:30:37,154 --> 01:30:41,041
+Okay, I'll repeat this. So the, the answer was when
+
+1113
+01:30:41,073 --> 01:30:45,025
+we looked at the previous encoder-decoder model, we were somehow looking at
+
+1114
+01:30:45,525 --> 01:30:48,237
+the summary, as you said. So basically what you meant probably is that you were
+
+1115
+01:30:48,301 --> 01:30:52,397
+looking at one, uh, compressed representation that
+
+1116
+01:30:52,897 --> 01:30:56,268
+we obtained from the encoder, which, I mean, you can say it's some
+
+1117
+01:30:56,768 --> 01:31:00,021
+sort of a summary. Representation of that input, and we were using that
+
+1118
+01:31:00,521 --> 01:31:04,205
+to generate the output. But in this case, what you are
+
+1119
+01:31:04,705 --> 01:31:08,549
+doing is we are actually trying to— the model can look at each time step
+
+1120
+01:31:08,998 --> 01:31:12,461
+which part of the input is more important and which part is not.
+
+1121
+01:31:13,278 --> 01:31:16,628
+So to say this is basically what we
+
+1122
+01:31:17,128 --> 01:31:21,245
+are doing is we have now somehow established a direct connection between
+
+1123
+01:31:21,277 --> 01:31:25,364
+the decoder states and the encoder hidden states. This is exactly what
+
+1124
+01:31:25,864 --> 01:31:29,274
+we saw here. We have literally made
+
+1125
+01:31:29,774 --> 01:31:33,136
+these connections between the encoder hidden states and the decoder hidden state, right?
+
+1126
+01:31:33,777 --> 01:31:37,526
+And then we use them in a much more powerful way
+
+1127
+01:31:37,927 --> 01:31:41,532
+than just cramming them into a single vector. So that's the
+
+1128
+01:31:42,032 --> 01:31:44,657
+key idea of why attention works. Okay,
+
+1129
+01:31:45,378 --> 01:31:47,990
+um, can anyone tell me now,
+
+1130
+01:31:48,903 --> 01:31:52,494
+uh, in What range will
+
+1131
+01:31:52,542 --> 01:31:56,268
+the attention weights fall given what is present
+
+1132
+01:31:56,768 --> 01:32:00,236
+in this slide? You can again take out your phones,
+
+1133
+01:32:01,782 --> 01:32:05,338
+or if you have already scanned it previously, it's the same, same update.
+
+1134
+01:32:11,792 --> 01:32:13,534
+Okay, I need to also move this.
+
+1135
+01:32:55,607 --> 01:32:59,097
+Okay, I think around 15 people have answered. No,
+
+1136
+01:32:59,388 --> 01:33:02,087
+sorry, 13 people have answered. So I'll just put this here.
+
+1137
+01:33:05,730 --> 01:33:09,013
+And yeah, most of you are correct. It lies between
+
+1138
+01:33:09,045 --> 01:33:12,281
+0 to 1. Can anyone tell
+
+1139
+01:33:21,507 --> 01:33:25,360
+Yeah. Yeah. Okay. Because we are eventually performing
+
+1140
+01:33:25,860 --> 01:33:30,077
+a softmax, right? So it's a bit—
+
+1141
+01:33:30,544 --> 01:33:34,554
+okay. I have another trick question here, or maybe not, a more subtle
+
+1142
+01:33:35,054 --> 01:33:37,560
+question. They can still lie between 0 and 1 individually,
+
+1143
+01:33:38,219 --> 01:33:41,352
+right? But what does softmax give
+
+1144
+01:33:41,852 --> 01:33:45,712
+you on top of that? Maybe someone
+
+1145
+01:33:46,212 --> 01:33:48,744
+else as well, since both of you are also— I'll come back to you if
+
+1146
+01:33:48,874 --> 01:33:52,284
+no one else. Yeah.
+
+1147
+01:33:52,574 --> 01:33:56,067
+Okay. Yeah, because it's a probability distribution, right? So it gives you
+
+1148
+01:33:56,567 --> 01:34:00,076
+something which is beyond just— so each individual entries in that vector
+
+1149
+01:34:00,140 --> 01:34:03,556
+can also be between 0 and 1, right? Which is what we said. The attention
+
+1150
+01:34:04,056 --> 01:34:07,356
+weights can actually fall between 0 and 1 individually. But since it's
+
+1151
+01:34:07,856 --> 01:34:10,527
+a probability distribution which softmax gives you, they also sum up to 1.
+
+1152
+01:34:11,606 --> 01:34:14,700
+Okay. So there is, I mean, when you do a weighted average with this,
+
+1153
+01:34:14,828 --> 01:34:18,261
+you already have normalized things because these vectors,
+
+1154
+01:34:19,325 --> 01:34:22,296
+they sum up to 1. Okay. Very nice.
+
+1155
+01:34:25,241 --> 01:34:28,608
+So yeah, with this, I think we have looked at the concept of attention,
+
+1156
+01:34:28,721 --> 01:34:32,656
+right? So basically, I'd like to kind of give a summary of what
+
+1157
+01:34:33,156 --> 01:34:37,293
+we do here is that the main idea of attention is literally
+
+1158
+01:34:37,872 --> 01:34:44,212
+we compute some sort of a weighted sum between
+
+1159
+01:34:44,244 --> 01:34:48,024
+the decoder state at every timestep and all the encoder outputs,
+
+1160
+01:34:48,088 --> 01:34:51,287
+right? And then how we do this is
+
+1161
+01:34:51,335 --> 01:34:55,112
+that we compute a pairwise score between each encoder hidden state and the
+
+1162
+01:34:55,256 --> 01:34:58,191
+initial decoder hidden state. Which basically tells us,
+
+1163
+01:34:58,791 --> 01:35:02,175
+as I said, this initial decoder hidden state is the idea
+
+1164
+01:35:02,191 --> 01:35:05,445
+of what to decode at specific timestep. And there are many
+
+1165
+01:35:05,945 --> 01:35:09,713
+possible functions we saw. You can look at dot product, you can look at
+
+1166
+01:35:10,723 --> 01:35:14,406
+additive or MLP-style way of computing this attention
+
+1167
+01:35:14,906 --> 01:35:17,374
+function. The most popular one is the scaled dot product.
+
+1168
+01:35:17,940 --> 01:35:21,722
+And what you actually also see here is that the key aspect is
+
+1169
+01:35:21,819 --> 01:35:25,677
+that it allows you to get rid of the temporal bottleneck. Right? Why?
+
+1170
+01:35:26,111 --> 01:35:29,724
+Because it gives us a direct link between the decoder
+
+1171
+01:35:29,740 --> 01:35:32,983
+and the encoder states. And this,
+
+1172
+01:35:34,139 --> 01:35:37,495
+beyond the fact that it allows us to model long-range dependencies,
+
+1173
+01:35:37,752 --> 01:35:42,216
+because we are literally— we have gotten rid of every information
+
+1174
+01:35:42,328 --> 01:35:45,845
+compression that we saw so far, right? We are not compressing information in
+
+1175
+01:35:46,182 --> 01:35:50,276
+any manner. We are literally, at each time step, we are
+
+1176
+01:35:50,776 --> 01:35:54,771
+using all the information that was present in the input and the information that
+
+1177
+01:35:54,884 --> 01:35:57,890
+we need right now, and we are combining it in a way so that we
+
+1178
+01:35:58,390 --> 01:36:01,769
+can take full utilization of
+
+1179
+01:36:01,899 --> 01:36:05,687
+everything that we needed at this specific time. So,
+
+1180
+01:36:05,768 --> 01:36:09,314
+it allows us to model long-range dependencies but also helps
+
+1181
+01:36:09,814 --> 01:36:12,944
+with vanishing gradients because we don't have that problem anymore.
+
+1182
+01:36:14,320 --> 01:36:17,581
+Then on top of all of this, it also gives us some sort of interpretability
+
+1183
+01:36:17,662 --> 01:36:21,945
+as I showed previously with those attention maps. You can literally try to understand
+
+1184
+01:36:22,263 --> 01:36:25,772
+which part of the input is being used
+
+1185
+01:36:25,884 --> 01:36:29,151
+and why, right? And then you can make some sense out of it based on
+
+1186
+01:36:29,811 --> 01:36:33,652
+what is obtained. And then the aspect
+
+1187
+01:36:34,152 --> 01:36:37,431
+is that here we saw certain type of application of attention,
+
+1188
+01:36:37,932 --> 01:36:41,550
+but attention literally is agnostic to the type of RNN that
+
+1189
+01:36:42,050 --> 01:36:46,092
+you use in an encoder and decoder, right? It's a— if you
+
+1190
+01:36:46,592 --> 01:36:48,841
+understand the meaning of the term agnostic, it's like it really doesn't depend if you
+
+1191
+01:36:49,341 --> 01:36:52,606
+use an vanilla RNN or an LSTM or a GRU,
+
+1192
+01:36:53,296 --> 01:36:56,424
+or I mean something else eventually, right?
+
+1193
+01:36:56,520 --> 01:37:01,012
+But the point is the attention is a concept that applies to almost
+
+1194
+01:37:01,092 --> 01:37:04,830
+all types of recurrent neural networks that you can see while training these
+
+1195
+01:37:04,926 --> 01:37:08,279
+models. Okay, with this we have,
+
+1196
+01:37:08,616 --> 01:37:12,001
+uh, the, the chance to move to the
+
+1197
+01:37:12,501 --> 01:37:15,915
+final topic of today's lecture, which will focus on Transformer and self-attention.
+
+1198
+01:37:16,718 --> 01:37:20,025
+Um, but before that, I'd like to kind of ask,
+
+1199
+01:37:21,053 --> 01:37:24,216
+do you think— and you can again take out your phone or stay on
+
+1200
+01:37:24,264 --> 01:37:28,583
+the same thing— do you think there are any other inefficiencies that remain
+
+1201
+01:37:29,017 --> 01:37:33,176
+in our sequence-to-sequence pipelines? They have solved a lot, right? They have solved the
+
+1202
+01:37:33,676 --> 01:37:37,270
+vanishing gradient problem. They have actually solved the better
+
+1203
+01:37:37,770 --> 01:37:40,786
+modeling of long-range dependencies. But is there anything else that remains?
+
+1204
+01:37:42,970 --> 01:37:44,881
+Let me just also move this along.
+
+1205
+02:02:48,695 --> 02:02:52,400
+Okay, shall we slowly start? I think
+
+1206
+02:02:52,900 --> 02:02:58,310
+everyone is back.
+
+1207
+02:02:58,358 --> 02:03:01,920
+Okay, good. So, so before, uh,
+
+1208
+02:03:02,162 --> 02:03:05,708
+I mean, before the break, we said, okay, the issues, uh,
+
+1209
+02:03:05,869 --> 02:03:09,875
+were also— I mean, since many of you also answered this properly, that the
+
+1210
+02:03:10,375 --> 02:03:13,747
+issues with the encoder-decoder models is that, okay, they are slow,
+
+1211
+02:03:13,972 --> 02:03:17,170
+compute-heavy, not parallelizable. And I said
+
+1212
+02:03:17,670 --> 02:03:21,446
+the solution to this will be Transformers. Uh, let's try to understand what—
+
+1213
+02:03:21,815 --> 02:03:25,444
+first, let's try to understand, like, see what a full Transformer
+
+1214
+02:03:25,944 --> 02:03:29,924
+block looks like, and then we'll look into specific
+
+1215
+02:03:30,004 --> 02:03:32,959
+aspects and, uh, go through them one by one.
+
+1216
+02:03:34,035 --> 02:03:38,787
+Okay, so this was the, the, you know, Transformer architecture
+
+1217
+02:03:38,916 --> 02:03:43,315
+that was proposed in this, uh, I would say, the game-changing
+
+1218
+02:03:43,428 --> 02:03:47,171
+paper from people who were at Google then moved to OpenAI. I don't know
+
+1219
+02:03:47,671 --> 02:03:51,232
+where the hell they are right now. But this was called Attention Is
+
+1220
+02:03:51,732 --> 02:03:55,828
+All You Need. This paper was literally called Attention
+
+1221
+02:03:55,876 --> 02:04:00,394
+Is All You Need, which actually revealed
+
+1222
+02:04:00,894 --> 02:04:04,304
+the Transformer architecture, which is the base for most modern
+
+1223
+02:04:04,498 --> 02:04:08,238
+LLMs today. Okay. And it
+
+1224
+02:04:08,738 --> 02:04:12,575
+is also made up of an encoder and a decoder. The left
+
+1225
+02:04:13,075 --> 02:04:16,414
+half that you see is an encoder, and the right half
+
+1226
+02:04:16,914 --> 02:04:19,820
+that you see is a decoder. It is much more complex than what we have
+
+1227
+02:04:20,320 --> 02:04:24,012
+seen so far in terms of— I mean, there are many individual
+
+1228
+02:04:24,044 --> 02:04:27,514
+components, but if you try to understand it block
+
+1229
+02:04:28,014 --> 02:04:31,465
+by block, it will not be as much of a mystery as
+
+1230
+02:04:31,965 --> 02:04:33,441
+it looks right now.
+
+1231
+02:04:34,341 --> 02:04:37,810
+Okay. And the encoder and decoder are
+
+1232
+02:04:37,939 --> 02:04:41,729
+actually made of multiple Uh, cascaded Transformer blocks,
+
+1233
+02:04:41,857 --> 02:04:45,005
+right? As we said, the— in the encoder-decoder architecture
+
+1234
+02:04:45,505 --> 02:04:49,020
+previously, we said it can be made with RNNs or LSTMs. And if you remember,
+
+1235
+02:04:49,100 --> 02:04:53,018
+LSTM itself is a block, right? It has much, much more things
+
+1236
+02:04:53,050 --> 02:04:56,503
+going on under the hood. Similarly, uh, you know, in this
+
+1237
+02:04:57,003 --> 02:05:00,550
+case, we can have more cascaded blocks of encoder and decoder—
+
+1238
+02:05:00,598 --> 02:05:03,296
+uh, sorry, uh, more cascaded Transformer blocks within,
+
+1239
+02:05:04,035 --> 02:05:07,406
+uh, within an encoder and a decoder. Right.
+
+1240
+02:05:08,048 --> 02:05:11,238
+Um, and the architecture, as you might have noticed already,
+
+1241
+02:05:11,414 --> 02:05:14,155
+is slightly different between the encoder and decoder.
+
+1242
+02:05:15,021 --> 02:05:18,403
+Uh, we will also go through it, why this is different and what,
+
+1243
+02:05:18,948 --> 02:05:22,475
+uh, differences it captures. There are some things that you can already see.
+
+1244
+02:05:23,052 --> 02:05:26,435
+The— I mean, this is an encoder, and which you
+
+1245
+02:05:26,935 --> 02:05:31,067
+see it's also here, but you have certain aspects here which is called a masked,
+
+1246
+02:05:31,773 --> 02:05:34,979
+uh, multi-headed self-attention, which you will see as we go
+
+1247
+02:05:35,479 --> 02:05:39,532
+further. But I'm just showing you the differences that exist. Uh, and naturally,
+
+1248
+02:05:39,565 --> 02:05:43,239
+of course, there are certain, uh, layers that you can add on top, and then
+
+1249
+02:05:43,739 --> 02:05:46,785
+you need, uh, output layer as well to perform certain outputs.
+
+1250
+02:05:48,004 --> 02:05:51,278
+So there are certain differences, uh, and the
+
+1251
+02:05:51,778 --> 02:05:55,482
+key concept here is something what we call as a multi-headed attention
+
+1252
+02:05:55,530 --> 02:05:59,204
+layers, or also called as a self-attention, and feed-forward
+
+1253
+02:05:59,704 --> 02:06:03,552
+layers, which are also colored accordingly, right? The multi-headed attention layer is colored
+
+1254
+02:06:04,052 --> 02:06:06,649
+in orange boxes, and the blue boxes represent the feed-forward layers.
+
+1255
+02:06:07,916 --> 02:06:11,475
+Right. And the key thing that we said previously, what is the issue that
+
+1256
+02:06:11,975 --> 02:06:16,005
+it solves from the architectures that we have seen so far, is that it
+
+1257
+02:06:16,069 --> 02:06:19,453
+is— it does not have
+
+1258
+02:06:19,485 --> 02:06:22,254
+any recurrent or sequential computations, right?
+
+1259
+02:06:22,950 --> 02:06:26,194
+Uh, the key idea here is that it encodes, uh,
+
+1260
+02:06:26,452 --> 02:06:30,140
+sequences with self-attention and something that can be parallelized,
+
+1261
+02:06:30,624 --> 02:06:33,265
+which we'll see how, but something that can be parallelized.
+
+1262
+02:06:34,044 --> 02:06:37,095
+And this is why it actually utilizes the GPU architectures better.
+
+1263
+02:06:37,818 --> 02:06:40,982
+This is what made NVIDIA so rich. So all of this
+
+1264
+02:06:41,175 --> 02:06:44,307
+is tied to this guy that you see here, right? I mean,
+
+1265
+02:06:44,339 --> 02:06:48,242
+it's all tied to this small chart, small, small graphic
+
+1266
+02:06:48,322 --> 02:06:51,743
+that you see on this slide. Okay, so the
+
+1267
+02:06:51,968 --> 02:06:55,565
+original idea of self-attention is, I mean, the name reveals a bit,
+
+1268
+02:06:55,806 --> 02:06:59,967
+is that we are doing, uh, I mean, the the
+
+1269
+02:07:00,145 --> 02:07:03,542
+encoder-decoder models, right, the attention was done between an encoder and decoder.
+
+1270
+02:07:04,092 --> 02:07:09,254
+Here we do attention within the encoder itself,
+
+1271
+02:07:09,511 --> 02:07:12,452
+right? So what we do is that previously what we used to do is,
+
+1272
+02:07:12,790 --> 02:07:16,180
+as I said, we used to use the decoder hidden states to compute attention distribution
+
+1273
+02:07:16,261 --> 02:07:20,384
+over the encoder hidden states, right? But the
+
+1274
+02:07:20,884 --> 02:07:24,315
+question that was asked is that could we just use the encoder hidden states to
+
+1275
+02:07:24,332 --> 02:07:28,116
+compute the attention distribution over itself or themselves? Right?
+
+1276
+02:07:28,278 --> 02:07:32,736
+And that's what is meant by self-attention. So the idea is that
+
+1277
+02:07:33,285 --> 02:07:36,886
+previously, if you recall, we had this key and queries where the query
+
+1278
+02:07:36,999 --> 02:07:40,529
+was the decoder's hidden state and the keys were
+
+1279
+02:07:41,029 --> 02:07:45,444
+the encoder hidden states. Now what we can do is literally we
+
+1280
+02:07:45,944 --> 02:07:49,758
+can make each encoder
+
+1281
+02:07:50,258 --> 02:07:51,208
+hidden state as a query.
+
+1282
+02:07:54,739 --> 02:07:58,678
+Right? And the rest of them as keys. So that's what
+
+1283
+02:07:59,178 --> 02:08:02,786
+you mean by computing the attention. That's why, that's why we said self-attention,
+
+1284
+02:08:02,866 --> 02:08:06,749
+because we are trying to obtain an attention distribution over the
+
+1285
+02:08:07,249 --> 02:08:10,654
+encoder hidden states themselves and not tied to
+
+1286
+02:08:10,962 --> 02:08:13,928
+a specific decoder hidden state, right? That's why it's called self-attention.
+
+1287
+02:08:14,922 --> 02:08:19,091
+And the only difference here is that the, the Each
+
+1288
+02:08:19,284 --> 02:08:23,359
+encoder hidden state will serve as a query for one specific
+
+1289
+02:08:23,859 --> 02:08:27,915
+computation. And we'll see how it goes, right? And one specific notation
+
+1290
+02:08:28,011 --> 02:08:31,204
+change, again, is also to inform here is that
+
+1291
+02:08:31,573 --> 02:08:34,846
+now the subscripts of the encoder have moved back to
+
+1292
+02:08:35,346 --> 02:08:39,386
+t because we are not differentiating them using input and output because we previously did,
+
+1293
+02:08:39,483 --> 02:08:43,638
+right? In the encoder-decoder model, we said, okay, there are n encoder hidden states
+
+1294
+02:08:43,670 --> 02:08:47,158
+and there are t decoder hidden states, but we are now using the same
+
+1295
+02:08:47,646 --> 02:08:49,532
+subscript to represent them both.
+
+1296
+02:08:50,668 --> 02:08:53,005
+Okay, good.
+
+1297
+02:08:53,698 --> 02:08:57,420
+And then the idea is that because of this, we could ditch recurrence,
+
+1298
+02:08:57,645 --> 02:09:01,186
+right? And we could compute encoder representations in parallel.
+
+1299
+02:09:02,823 --> 02:09:07,019
+Okay, so let's see how we actually computed attention with
+
+1300
+02:09:07,020 --> 02:09:10,711
+this, the encoder-decoder models that we
+
+1301
+02:09:10,939 --> 02:09:13,794
+just saw in the second half of the class,
+
+1302
+02:09:14,275 --> 02:09:17,528
+right? What we did was we actually computed pairwise similarity,
+
+1303
+02:09:17,784 --> 02:09:21,806
+right, between the encoder hidden state representations and a specific
+
+1304
+02:09:22,306 --> 02:09:25,941
+decoder hidden state representation, right? We got these individual scores,
+
+1305
+02:09:26,037 --> 02:09:30,091
+which converted them into a probability distribution using a softmax
+
+1306
+02:09:30,591 --> 02:09:34,114
+transformation, and then applied this attention distribution
+
+1307
+02:09:35,572 --> 02:09:39,779
+that we have learned to actually compute a weighted average over
+
+1308
+02:09:40,330 --> 02:09:44,029
+the encoder hidden states for a specific decoder,
+
+1309
+02:09:45,498 --> 02:09:48,800
+for a specific timestep in the decoder. And that's what
+
+1310
+02:09:49,300 --> 02:09:52,944
+the whole thing that we did. So we first computed this vector of similarity
+
+1311
+02:09:53,444 --> 02:09:57,061
+scores, transformed them into this attention distribution, and then use
+
+1312
+02:09:57,561 --> 02:10:01,623
+it to compute a weighted average over the existing encoder
+
+1313
+02:10:01,997 --> 02:10:06,931
+hidden states. And that's what gave us the
+
+1314
+02:10:07,674 --> 02:10:10,966
+state at a given time step at the decoder.
+
+1315
+02:10:11,531 --> 02:10:14,727
+Okay, this is what we have seen so far. Very simple. There are 2 operations
+
+1316
+02:10:14,824 --> 02:10:18,633
+that we performed and it works. Okay, so as
+
+1317
+02:10:19,133 --> 02:10:22,316
+I said, right, in self-attention, what we can do is we will not have
+
+1318
+02:10:23,310 --> 02:10:27,256
+a query which comes from the decoder, but we will— let's say we put
+
+1319
+02:10:27,794 --> 02:10:30,890
+the you know, the encoder hidden
+
+1320
+02:10:31,390 --> 02:10:33,907
+state at timestep 3 as the,
+
+1321
+02:10:34,582 --> 02:10:37,743
+uh, as the query, and everything else is the key,
+
+1322
+02:10:38,129 --> 02:10:41,756
+right? So what we will do here is that we will again do the
+
+1323
+02:10:42,256 --> 02:10:45,239
+same thing what we said previously, right? So we will again compute these attention scores,
+
+1324
+02:10:45,415 --> 02:10:48,770
+which is basically a similarity between a key
+
+1325
+02:10:48,786 --> 02:10:52,862
+and a query. So here what we are saying, if we compute the similarity between
+
+1326
+02:10:53,537 --> 02:10:57,450
+timestep 3 and timestep 1, we will call it as a31,
+
+1327
+02:10:57,627 --> 02:11:00,742
+right, which gives us a score. And then this can generalize to,
+
+1328
+02:11:01,419 --> 02:11:05,146
+uh, you know, computation between S and T, where S will
+
+1329
+02:11:05,646 --> 02:11:09,171
+be, you know, uh, the subscript of the query
+
+1330
+02:11:09,718 --> 02:11:12,391
+and T the subscript of the key,
+
+1331
+02:11:12,616 --> 02:11:15,828
+right? And with this, what we can do is we can actually compute pairwise scores.
+
+1332
+02:11:16,006 --> 02:11:19,047
+As I said, right, this is the same scaled dot product, uh,
+
+1333
+02:11:19,435 --> 02:11:23,184
+that we showed you previously as the attention function computation.
+
+1334
+02:11:24,163 --> 02:11:27,678
+With this, you apply a softmax on top of it, you get the attention distribution.
+
+1335
+02:11:28,336 --> 02:11:31,674
+And with this, what you can say is that using this, you can obtain
+
+1336
+02:11:32,108 --> 02:11:35,574
+the hidden state at
+
+1337
+02:11:35,719 --> 02:11:39,635
+a specific layer for the query at
+
+1338
+02:11:39,940 --> 02:11:43,423
+timestep s or the step
+
+1339
+02:11:43,439 --> 02:11:48,173
+s, right? So basically, this is exactly what we did for
+
+1340
+02:11:48,673 --> 02:11:52,268
+the attention with RNNs. The only thing that has changed is that now we just
+
+1341
+02:11:52,894 --> 02:11:56,571
+use— we are using one specific entry
+
+1342
+02:11:57,230 --> 02:12:00,312
+in the— like one specific encoder hidden state as the query
+
+1343
+02:12:00,377 --> 02:12:03,411
+and rest of them as keys. Right? Yeah.
+
+1344
+02:12:03,668 --> 02:12:05,049
+How come we have the W matrix here?
+
+1345
+02:12:17,244 --> 02:12:20,989
+No, no, it's— there's no— I mean, this is how again it was done using
+
+1346
+02:12:21,264 --> 02:12:24,766
+a Transformer block because it also allows us to kind of get
+
+1347
+02:12:25,266 --> 02:12:28,870
+some, you know, it adds parameters, allows us to learn better
+
+1348
+02:12:29,370 --> 02:12:32,923
+ways to combine them. That's that, right? I mean, previously I was just giving the—
+
+1349
+02:12:33,698 --> 02:12:37,052
+how should I say this— I was giving the— I was explaining the concept.
+
+1350
+02:12:37,117 --> 02:12:40,185
+I'm now explaining the actual Transformer architecture the way it was implemented.
+
+1351
+02:12:41,212 --> 02:12:44,394
+Okay, good. And basically,
+
+1352
+02:12:45,230 --> 02:12:48,445
+this is, as I said, this is what self-attention is, right?
+
+1353
+02:12:48,927 --> 02:12:53,288
+Literally what you can do is that you can actually compute
+
+1354
+02:12:53,788 --> 02:12:56,201
+this for, let's say,
+
+1355
+02:12:57,074 --> 02:13:00,390
+right now I'm also now showing you different colors. So it
+
+1356
+02:13:00,890 --> 02:13:04,140
+says that these purple ones or the pink ones, however you wanna see it,
+
+1357
+02:13:04,350 --> 02:13:07,357
+you can also define it as different gradients of pink. I'm not going into that,
+
+1358
+02:13:07,761 --> 02:13:11,146
+right? Or magenta or whatever you wanna call it. Right? You can basically use
+
+1359
+02:13:11,242 --> 02:13:14,857
+them to— so this defines the key in
+
+1360
+02:13:15,357 --> 02:13:18,520
+our computation, right? And then the,
+
+1361
+02:13:19,693 --> 02:13:23,082
+I would say, sea green or turquoise, whatever you want to call it,
+
+1362
+02:13:23,693 --> 02:13:26,761
+is showing you the query here, right?
+
+1363
+02:13:27,709 --> 02:13:31,581
+And the way we do this is literally— so
+
+1364
+02:13:32,081 --> 02:13:35,244
+I've just highlighted everything in the computation so that you can track which
+
+1365
+02:13:35,356 --> 02:13:39,254
+part corresponds to key and which part corresponds to the query in this computation.
+
+1366
+02:13:39,912 --> 02:13:43,214
+And the operation is exactly the same that we saw with the
+
+1367
+02:13:43,374 --> 02:13:46,597
+encoder-decoder architectures that we saw previously. The same things are
+
+1368
+02:13:47,097 --> 02:13:50,813
+going on. You still have the same attention computation function. You still have the same
+
+1369
+02:13:51,711 --> 02:13:55,141
+softmax to transform this into a probability distribution. And then you
+
+1370
+02:13:55,622 --> 02:13:58,764
+have the same weighted average to basically just
+
+1371
+02:13:59,264 --> 02:14:02,740
+compute the hidden representation at that specific
+
+1372
+02:14:02,804 --> 02:14:05,918
+time step, right? So what happens is that one thing that needs to be
+
+1373
+02:14:06,418 --> 02:14:09,593
+also added is that now the, uh,
+
+1374
+02:14:10,155 --> 02:14:13,927
+because when we compute this, right, so we also had this term called value,
+
+1375
+02:14:14,152 --> 02:14:17,329
+right? So just if you recall from what we saw,
+
+1376
+02:14:18,325 --> 02:14:21,888
+uh, where is it? Yeah, sorry. If you recall from what you saw
+
+1377
+02:14:21,952 --> 02:14:25,162
+previously, right, that when we computed the,
+
+1378
+02:14:25,467 --> 02:14:28,987
+the alpha, which is the distribution here, right, the alpha vector,
+
+1379
+02:14:29,470 --> 02:14:33,299
+it actually at that point in time, we use the terminology for
+
+1380
+02:14:33,443 --> 02:14:37,449
+the decoder hidden state was the query and the encoder hidden state
+
+1381
+02:14:37,949 --> 02:14:41,930
+was the key, right? And when we actually computed the weighted average
+
+1382
+02:14:42,672 --> 02:14:47,595
+to compute, to actually obtain the representation at
+
+1383
+02:14:48,095 --> 02:14:51,493
+the decoder, like the decoder representation at this specific time
+
+1384
+02:14:51,993 --> 02:14:55,889
+step with using the attention vectors that we learned, the alpha,
+
+1385
+02:14:55,906 --> 02:14:59,681
+we call these encoder hidden state as the value. And I explained
+
+1386
+02:15:00,181 --> 02:15:04,052
+that why we need both of them, because at one point in time we are
+
+1387
+02:15:04,552 --> 02:15:07,263
+trying to learn the associations,
+
+1388
+02:15:07,360 --> 02:15:11,210
+we're trying to learn which specific token in the input
+
+1389
+02:15:13,026 --> 02:15:16,581
+is important and how much importance does it carry. And then we
+
+1390
+02:15:16,614 --> 02:15:20,298
+are using that learned— imagine that
+
+1391
+02:15:20,798 --> 02:15:24,583
+that just gives you a way to combine the encoder hidden states that tells
+
+1392
+02:15:24,680 --> 02:15:28,748
+you literally which encoder hidden state is important
+
+1393
+02:15:28,876 --> 02:15:33,225
+or how much of this, how much is it important. So it tells you the
+
+1394
+02:15:33,725 --> 02:15:37,718
+quantification of the importance of that encoder hidden state at this specific decoder
+
+1395
+02:15:37,734 --> 02:15:40,927
+timestep, which we discussed previously already. I'm just repeating so that it kind
+
+1396
+02:15:41,427 --> 02:15:46,078
+of is literally hammered into your brains because it's important.
+
+1397
+02:15:46,848 --> 02:15:49,913
+And the reason we call it as value is because once we have learned this
+
+1398
+02:15:49,993 --> 02:15:53,494
+importance, we actually have to compute the new hidden state. At the decoder.
+
+1399
+02:15:53,687 --> 02:15:57,197
+And that's why we actually use those weights to combine them
+
+1400
+02:15:57,294 --> 02:16:01,078
+with the encoder hidden state to actually learn the representation at that decoder
+
+1401
+02:16:01,578 --> 02:16:05,388
+timestep. This was true for encoder-decoder architectures in
+
+1402
+02:16:05,888 --> 02:16:09,734
+the classical RNN space that we saw previously. But the same thing holds here
+
+1403
+02:16:10,234 --> 02:16:12,058
+as well. Because as I said, the only thing that you need to change is
+
+1404
+02:16:12,090 --> 02:16:16,985
+that one of the encoder hidden
+
+1405
+02:16:17,485 --> 02:16:20,625
+states will be seen as a key. Right. Sorry, will be seen as a query.
+
+1406
+02:16:20,689 --> 02:16:24,061
+Just imagine that one of them is a query. And I already revealed the
+
+1407
+02:16:24,561 --> 02:16:28,412
+answer to you that we will do this for every possible encoder hidden
+
+1408
+02:16:28,912 --> 02:16:32,153
+state, right? Which I said, right? We will do every time. What will happen is
+
+1409
+02:16:32,653 --> 02:16:36,327
+that h10 will be query once, then h20
+
+1410
+02:16:36,343 --> 02:16:40,196
+will be query once, h30 will be query once, and similarly h40 will
+
+1411
+02:16:40,696 --> 02:16:45,864
+also be query once. So when we want to obtain the representation
+
+1412
+02:16:46,201 --> 02:16:49,444
+at h3, which is— and you see the difference between the layers now, right?
+
+1413
+02:16:49,509 --> 02:16:52,575
+So this was the input, that's why we're calling it layer
+
+1414
+02:16:53,075 --> 02:16:56,621
+0. And when we attach the subscript 1, we say it's the next—
+
+1415
+02:16:56,958 --> 02:17:00,667
+the input to the next— sorry, the input to the next layer and the output
+
+1416
+02:17:01,167 --> 02:17:04,440
+of this current layer. And we call it h3 subscript 1— sorry,
+
+1417
+02:17:04,521 --> 02:17:07,940
+superscript 1, which basically means that here is
+
+1418
+02:17:09,080 --> 02:17:13,256
+when we treat this specific encoder hidden state as a query, we obtain
+
+1419
+02:17:13,838 --> 02:17:18,042
+this. When you treat the other encoder
+
+1420
+02:17:18,542 --> 02:17:21,662
+hidden state as the query, you obtain the representation for that specific encoder hidden state.
+
+1421
+02:17:21,839 --> 02:17:24,955
+And this is how we keep doing it. And I'll also show you this in
+
+1422
+02:17:25,003 --> 02:17:28,310
+the animation. I just wanted to mention what's happening under
+
+1423
+02:17:28,810 --> 02:17:32,079
+the hood. Okay. So, and this
+
+1424
+02:17:32,579 --> 02:17:35,349
+is again coming back to this, like I've marked this clearly.
+
+1425
+02:17:36,965 --> 02:17:40,106
+You know, the— I marked the vectors clearly in this computation so
+
+1426
+02:17:40,606 --> 02:17:43,920
+that you can see what means what in, in the computation,
+
+1427
+02:17:44,497 --> 02:17:47,718
+right? And just to now add this eventually, right?
+
+1428
+02:17:47,862 --> 02:17:50,858
+This is where we started. And I rolled back to kind of explain where all
+
+1429
+02:17:51,358 --> 02:17:54,640
+of this is coming from, because the same concept applies which applied in the
+
+1430
+02:17:54,752 --> 02:17:58,374
+attentive encoder-decoder architecture, because the encoder
+
+1431
+02:17:58,390 --> 02:18:01,867
+hidden states were used as both key and value. They were used as
+
+1432
+02:18:01,979 --> 02:18:05,800
+keys when you wanted to compute the attention distribution,
+
+1433
+02:18:05,832 --> 02:18:09,732
+the alphas, right? And they were used as values when you actually had to
+
+1434
+02:18:09,748 --> 02:18:13,825
+compose them to compute the representation
+
+1435
+02:18:13,938 --> 02:18:17,630
+at this specific timestep. So it's clear that all the magenta
+
+1436
+02:18:18,130 --> 02:18:22,172
+color— let's settle on magenta, right? So it's clear that all the magenta colored nodes
+
+1437
+02:18:22,285 --> 02:18:26,266
+will be used as both key and values depending on what— at what specific time
+
+1438
+02:18:26,298 --> 02:18:29,524
+that we are looking at it. When we are computing this attention distribution,
+
+1439
+02:18:29,588 --> 02:18:33,811
+we call them as keys. When we are computing the weighted averages
+
+1440
+02:18:33,907 --> 02:18:37,343
+here, we call them as values. The query is
+
+1441
+02:18:38,162 --> 02:18:41,534
+also something now, it's not coming from the decoder, it's all in the
+
+1442
+02:18:42,034 --> 02:18:46,576
+encoder here. The query is, what will happen is that for every computation,
+
+1443
+02:18:47,716 --> 02:18:50,879
+every element is, as I said, is a key and a value, and one element
+
+1444
+02:18:50,943 --> 02:18:54,299
+will become as a query, which is what we are seeing here in this specific
+
+1445
+02:18:55,600 --> 02:18:59,273
+slide. You can see that H30 is serving
+
+1446
+02:18:59,954 --> 02:19:02,596
+as a query, first of all,
+
+1447
+02:19:03,864 --> 02:19:08,361
+right? Okay. It's serving as a query because we want to compute the representation
+
+1448
+02:19:08,539 --> 02:19:11,402
+at this specific encoder hidden state, right?
+
+1449
+02:19:12,098 --> 02:19:17,164
+And it serves as the
+
+1450
+02:19:17,664 --> 02:19:21,503
+key as well because we actually computed over
+
+1451
+02:19:21,664 --> 02:19:25,553
+all possible combinations. And it also serves as the value because we need This,
+
+1452
+02:19:25,586 --> 02:19:29,731
+right? So everything else remains. So the key-value terminology still remains
+
+1453
+02:19:30,231 --> 02:19:34,068
+because the same thing carries over what you saw from the encoder-decoder
+
+1454
+02:19:34,568 --> 02:19:38,230
+architectures. The only addition is that one of these entries
+
+1455
+02:19:38,342 --> 02:19:41,556
+can also serve as a key at this specific point in time because
+
+1456
+02:19:42,056 --> 02:19:44,698
+there is no decoder hidden state here. Is that clear?
+
+1457
+02:19:46,362 --> 02:19:50,366
+Okay, good. Then as I said, right, what we'll keep doing is that
+
+1458
+02:19:50,560 --> 02:19:54,289
+we will look at each of these states, right? So this was just for
+
+1459
+02:19:54,789 --> 02:19:58,183
+ease of exposition. We started with H3. We also can do it with H2,
+
+1460
+02:19:59,210 --> 02:20:01,746
+H4, H1. And basically,
+
+1461
+02:20:02,404 --> 02:20:06,240
+this is what we have as the self-attention exercise,
+
+1462
+02:20:06,272 --> 02:20:10,686
+right? So you have the encoder hidden states, you mark
+
+1463
+02:20:10,830 --> 02:20:14,762
+each of them as key and query both, but rest everything
+
+1464
+02:20:14,843 --> 02:20:18,582
+is a query, and you compute the attention distributions and the
+
+1465
+02:20:18,630 --> 02:20:22,530
+representation at each state using the same concept which we saw in,
+
+1466
+02:20:22,947 --> 02:20:26,425
+uh, in the second half of the lecture, but now you apply it on itself.
+
+1467
+02:20:26,569 --> 02:20:29,823
+That's why it's called a self-attention. And with that, you obtain
+
+1468
+02:20:30,000 --> 02:20:32,821
+a representation that you pass along to the next layer. And as I said,
+
+1469
+02:20:32,837 --> 02:20:35,402
+right, a Transformer block is like cascaded,
+
+1470
+02:20:36,011 --> 02:20:39,794
+uh, blocks of, uh, such encoder-decoder blocks.
+
+1471
+02:20:40,130 --> 02:20:43,336
+So basically what will happen is that you don't just compute this once, right?
+
+1472
+02:20:43,384 --> 02:20:47,135
+I mean, you might have heard that you have a Transformer block with 512 attention
+
+1473
+02:20:47,232 --> 02:20:50,123
+heads or something like that. You might have heard that term. But this is what
+
+1474
+02:20:50,623 --> 02:20:54,752
+it means, right? You basically have 512 such cascades
+
+1475
+02:20:54,865 --> 02:20:58,252
+of blocks and you keep doing them one by one. Eventually you get the output
+
+1476
+02:20:58,752 --> 02:21:02,303
+after the 512th block that you use when you, when you
+
+1477
+02:21:02,352 --> 02:21:05,844
+do some prediction or something like that. Okay, so let's
+
+1478
+02:21:06,344 --> 02:21:09,752
+try to take a look at it also from an example,
+
+1479
+02:21:10,914 --> 02:21:14,649
+you know, sentence and how this is done, right? So basically you have
+
+1480
+02:21:15,149 --> 02:21:18,296
+this sentence called Nobel Committee awards Strickland who advanced optics. Right?
+
+1481
+02:21:19,018 --> 02:21:22,450
+This is a specific layer. We are looking at it at a specific given layer.
+
+1482
+02:21:22,867 --> 02:21:26,541
+What will happen is that because you now need everything to be a query,
+
+1483
+02:21:26,573 --> 02:21:29,749
+key, and value, because each of them will be used as
+
+1484
+02:21:30,246 --> 02:21:34,000
+query once and each of them will be used as keys
+
+1485
+02:21:34,352 --> 02:21:38,122
+and values every time, right? So just basically make sure that
+
+1486
+02:21:38,622 --> 02:21:41,458
+you— what happens is that at each time you have just make copies of them.
+
+1487
+02:21:42,068 --> 02:21:45,116
+You refer to them as queries, keys, and values, queries, keys, and values. And this
+
+1488
+02:21:45,616 --> 02:21:48,835
+is how you I mean, of course, I'm not saying— I'm just showing
+
+1489
+02:21:48,883 --> 02:21:51,112
+this to you how this will be done. Of course, I mean, if you are
+
+1490
+02:21:51,176 --> 02:21:54,478
+wondering how this is implemented or how the storage is handled properly,
+
+1491
+02:21:54,542 --> 02:21:57,909
+you can think about, you know, certain optimizations. But these are the
+
+1492
+02:21:58,409 --> 02:22:01,612
+3 things that we literally copy the representation at
+
+1493
+02:22:02,112 --> 02:22:05,139
+a layer L, and we just designate is at query, key, and value,
+
+1494
+02:22:05,283 --> 02:22:08,649
+right? Uh, with— now again, these are— these colors
+
+1495
+02:22:09,149 --> 02:22:12,065
+are simple. I know these are not colorblind friendly, but okay, I'll say blue,
+
+1496
+02:22:12,594 --> 02:22:15,870
+red, and green. Okay. Now what you need
+
+1497
+02:22:15,886 --> 02:22:19,579
+is for the first attention, uh, distribution, uh,
+
+1498
+02:22:19,804 --> 02:22:23,561
+like computing the attention distribution, right? You need the query and
+
+1499
+02:22:23,593 --> 02:22:27,206
+the keys, right? Because this is how you compute the, uh,
+
+1500
+02:22:27,367 --> 02:22:31,557
+attention distributions. Then what you get from that is that you get your,
+
+1501
+02:22:32,248 --> 02:22:36,406
+uh, you know, the attention distributions, the alphas, which tell you which
+
+1502
+02:22:36,583 --> 02:22:40,597
+words I mean, just trying to again make it
+
+1503
+02:22:40,693 --> 02:22:43,943
+easy for the ease of stating what, what's happening under the hood
+
+1504
+02:22:44,443 --> 02:22:48,027
+is that which just tells you which of these tokens are more important at a
+
+1505
+02:22:48,527 --> 02:22:52,575
+given step in the, in the representation,
+
+1506
+02:22:52,849 --> 02:22:56,145
+right? So in this case, you will have different probability distributions that you have learned,
+
+1507
+02:22:56,307 --> 02:22:59,994
+right? Let's call it A, right? And then what will happen is
+
+1508
+02:23:00,010 --> 02:23:03,390
+that you will compute the weighted average
+
+1509
+02:23:03,926 --> 02:23:07,429
+of the values using this
+
+1510
+02:23:08,344 --> 02:23:11,798
+A as weights. And that gives you, let's say,
+
+1511
+02:23:12,361 --> 02:23:14,867
+the representation at that layer. Let's call it M.
+
+1512
+02:23:16,329 --> 02:23:20,088
+Okay. Now, this will become clear why we were using them as keys
+
+1513
+02:23:20,588 --> 02:23:23,221
+or values or so on and so forth. But this basically gives you a very
+
+1514
+02:23:23,721 --> 02:23:26,932
+nice visual representation of what's happening. And what happens
+
+1515
+02:23:27,077 --> 02:23:30,194
+in Transformers is that this is one, as I said, right?
+
+1516
+02:23:31,542 --> 02:23:34,981
+Uh, we, we saw that layer as a multi-headed self-attention, right? When you— if
+
+1517
+02:23:35,030 --> 02:23:37,545
+you recall, when you look at the Transformer block,
+
+1518
+02:23:39,873 --> 02:23:42,722
+this was called as multi-headed attention, right?
+
+1519
+02:23:43,256 --> 02:23:47,012
+So basically what's happening here is that this
+
+1520
+02:23:47,886 --> 02:23:51,120
+operation that we saw, this M
+
+1521
+02:23:51,620 --> 02:23:55,516
+that you see, is what you obtain from a single self-attention,
+
+1522
+02:23:56,130 --> 02:24:00,310
+uh, computation, right? But then you have multiple
+
+1523
+02:24:00,406 --> 02:24:04,113
+attention heads and you compute multiple representations that
+
+1524
+02:24:04,613 --> 02:24:08,302
+you obtain, right? Because each of them will learn something different about
+
+1525
+02:24:08,526 --> 02:24:12,346
+the sequence, right? And then, I mean, of course it will
+
+1526
+02:24:12,378 --> 02:24:15,154
+depend on your task, it will depend on what you're trying to model using these
+
+1527
+02:24:15,170 --> 02:24:18,925
+Transformers, but each of these attention heads will learn something different. And then
+
+1528
+02:24:18,957 --> 02:24:22,969
+eventually you perform another transformation with which you kind
+
+1529
+02:24:23,469 --> 02:24:26,630
+of obtain a final representation that you pass it along to the next
+
+1530
+02:24:26,823 --> 02:24:29,055
+Transformer layer. Okay.
+
+1531
+02:24:29,955 --> 02:24:33,295
+I'm assuming this visual representation gives a nice idea of all that has
+
+1532
+02:24:33,392 --> 02:24:37,037
+happened, right? So you have this input sequence at a specific layer and all
+
+1533
+02:24:37,537 --> 02:24:40,795
+these transformations that are being done. And this is why
+
+1534
+02:24:41,295 --> 02:24:44,859
+we call it as a multi-headed self-attention, because you have different attention
+
+1535
+02:24:44,875 --> 02:24:48,312
+heads that can learn different— I mean,
+
+1536
+02:24:48,328 --> 02:24:52,702
+you will learn different probability distributions at given at
+
+1537
+02:24:52,831 --> 02:24:56,519
+each token
+
+1538
+02:24:57,115 --> 02:25:01,025
+of the encoder, right? Because they will learn different aspects and then
+
+1539
+02:25:01,362 --> 02:25:05,717
+you compose them using different representations. Eventually you get one output
+
+1540
+02:25:06,217 --> 02:25:09,155
+from this layer L, which you can either use as an output if you— if
+
+1541
+02:25:09,171 --> 02:25:12,318
+this is your last layer of the Transformer block, or if you have multiple further
+
+1542
+02:25:12,818 --> 02:25:15,061
+layers, you just pass it along to the next layer and this keeps on going.
+
+1543
+02:25:15,483 --> 02:25:18,470
+So as you can see that this is also a deep neural network in one
+
+1544
+02:25:18,567 --> 02:25:22,027
+way, right? Because you can also stack multiple layers of Transformers together.
+
+1545
+02:25:22,463 --> 02:25:25,287
+And this is also what's done in practice. Okay.
+
+1546
+02:25:26,331 --> 02:25:30,124
+Now, I mean, again, let's go back to certain, uh, you know,
+
+1547
+02:25:30,140 --> 02:25:34,113
+some comprehension questions. Can, can anyone tell me what are the 2
+
+1548
+02:25:34,211 --> 02:25:37,054
+advantages of self-attention over recurrent models?
+
+1549
+02:25:41,708 --> 02:25:44,755
+You want to answer or? But Menti, yeah, sorry.
+
+1550
+02:25:45,242 --> 02:25:48,244
+I should have said, please take out your phone, scan, or if you have already
+
+1551
+02:25:48,309 --> 02:25:53,445
+opened this, you can— I
+
+1552
+02:25:53,477 --> 02:25:55,802
+know, this is why I used to present this.
+
+1553
+02:25:56,690 --> 02:26:02,558
+So I have to come bring it back so that I— yes.
+
+1554
+02:27:08,960 --> 02:27:14,480
+Okay, around 9 people
+
+1555
+02:27:14,980 --> 02:27:15,078
+have answered, I think. There are more answers,
+
+1556
+02:27:21,240 --> 02:27:24,181
+I suppose. Can I reveal the answers? And then we have a discussion.
+
+1557
+02:27:33,093 --> 02:27:36,846
+So what we see is we have parallelism,
+
+1558
+02:27:38,422 --> 02:27:38,875
+parallelization.
+
+1559
+02:27:42,871 --> 02:27:46,398
+Sorry, random detour from this. Shouldn't Menti just combine
+
+1560
+02:27:46,430 --> 02:27:50,657
+things that are semantically similar? I mean, they do it on the word
+
+1561
+02:27:51,157 --> 02:27:55,214
+maps. Sometimes I actually go for this because then more things are represented.
+
+1562
+02:27:56,327 --> 02:28:00,762
+But yeah, anyway, maybe it's a— maybe
+
+1563
+02:28:01,262 --> 02:28:05,359
+I should use word clouds for that. Okay, so we see parallelism,
+
+1564
+02:28:05,375 --> 02:28:06,795
+parallelization, parallelizable.
+
+1565
+02:28:07,780 --> 02:28:10,410
+Parallelizable is the star of the show today,
+
+1566
+02:28:11,087 --> 02:28:14,141
+right? But I said 2 advantages, right? So one is parallelization,
+
+1567
+02:28:14,805 --> 02:28:18,957
+the other is— so Let's
+
+1568
+02:28:19,457 --> 02:28:23,163
+see. Not sequential interpretable. I would not
+
+1569
+02:28:23,663 --> 02:28:24,017
+agree with this fully.
+
+1570
+02:28:27,480 --> 02:28:30,966
+Well, yes, sure. I mean, the attention gives you some sort of an interpretation.
+
+1571
+02:28:31,485 --> 02:28:33,139
+Fair. Um,
+
+1572
+02:28:34,728 --> 02:28:36,735
+no loss gradients. Okay.
+
+1573
+02:28:38,516 --> 02:28:41,981
+Works better with big documents. We don't— the decoder when
+
+1574
+02:28:42,095 --> 02:28:45,678
+computing attention, long-range dependencies are reduced,
+
+1575
+02:28:45,695 --> 02:28:48,868
+computation complexity. Yeah. So I think the— yeah, I mean,
+
+1576
+02:28:48,997 --> 02:28:52,493
+most of these answers are correct. In fact, I think all of them are correct.
+
+1577
+02:28:52,558 --> 02:28:55,585
+They are not wrong. So basically you got it right.
+
+1578
+02:28:55,795 --> 02:28:59,355
+One big advantage that we are getting is we now have parallelization, right?
+
+1579
+02:28:59,420 --> 02:29:03,135
+Because we can just— if I
+
+1580
+02:29:03,635 --> 02:29:08,365
+just look at this thing, all of these individual
+
+1581
+02:29:08,865 --> 02:29:12,689
+attentions, like these heads, can just be computed in parallel.
+
+1582
+02:29:13,086 --> 02:29:17,583
+You don't need this to be done together. But another aspect is also that
+
+1583
+02:29:18,243 --> 02:29:23,274
+when you treat each— like
+
+1584
+02:29:23,774 --> 02:29:27,853
+when you put— like when you treat each token in your input
+
+1585
+02:29:28,032 --> 02:29:31,372
+as a key, right, you can also do that in parallel.
+
+1586
+02:29:32,589 --> 02:29:35,450
+In an RNN, when we say because it has to be done in sequence,
+
+1587
+02:29:35,516 --> 02:29:38,143
+right? Is that part clear?
+
+1588
+02:29:39,271 --> 02:29:42,668
+So these 4 things can also be done in parallel,
+
+1589
+02:29:43,992 --> 02:29:45,485
+right? Is this clear to everyone?
+
+1590
+02:29:47,680 --> 02:29:51,123
+This is not possible in an RNN, right? Because it will always go through one
+
+1591
+02:29:51,172 --> 02:29:54,470
+sequence. But here what you can do is you can compute the self-attention,
+
+1592
+02:29:54,567 --> 02:29:59,107
+and these 4 representations can be computed completely
+
+1593
+02:29:59,607 --> 02:30:03,804
+in parallel. So you can just process your whole input sequence
+
+1594
+02:30:04,304 --> 02:30:07,944
+in parallel. Without, you know, which is
+
+1595
+02:30:08,217 --> 02:30:12,073
+completely different from what we did in RNNs, right? Because it was sequentially
+
+1596
+02:30:12,619 --> 02:30:15,768
+how it was done, right? With this idea
+
+1597
+02:30:16,268 --> 02:30:19,447
+of self-attention, you can literally do this. You can process the whole input sequence.
+
+1598
+02:30:19,511 --> 02:30:22,965
+You just push this as, you know, as input, put everyone as
+
+1599
+02:30:23,078 --> 02:30:26,612
+a key, and remaining things are queries. And then you
+
+1600
+02:30:27,112 --> 02:30:30,789
+just can parallelize all these operations because you don't— you're not dependent on anything else,
+
+1601
+02:30:30,870 --> 02:30:35,099
+right? So this is why this architecture was very
+
+1602
+02:30:35,212 --> 02:30:38,445
+useful for GPUs, or GPUs were useful for this
+
+1603
+02:30:38,509 --> 02:30:42,771
+architecture both ways, actually. People think GPUs were not designed to train
+
+1604
+02:30:43,209 --> 02:30:45,781
+models. They were designed to play games, of course,
+
+1605
+02:30:45,959 --> 02:30:49,899
+because you need these kind of operations for rendering
+
+1606
+02:30:49,931 --> 02:30:55,034
+graphics. But this is one
+
+1607
+02:30:55,131 --> 02:30:58,474
+major reason why GPUs became valuable, right? So they
+
+1608
+02:30:58,974 --> 02:31:02,081
+are basically— they kind of helped each other, I would say.
+
+1609
+02:31:02,562 --> 02:31:06,138
+Without GPUs, you wouldn't have even thought of training these models. But because
+
+1610
+02:31:06,154 --> 02:31:09,377
+these models can be trained better than GPUs, GPUs became
+
+1611
+02:31:09,877 --> 02:31:14,395
+more and more popular. Okay, and then you can also parallelize these multiple-headed computations
+
+1612
+02:31:14,587 --> 02:31:18,676
+as well. So this is, I would say, a massively and an embarrassingly
+
+1613
+02:31:19,176 --> 02:31:22,844
+parallel architecture, as opposed to— embarrassingly parallel
+
+1614
+02:31:23,344 --> 02:31:26,953
+is a term used in the field of parallel computing or distributed computing. I don't
+
+1615
+02:31:27,453 --> 02:31:29,794
+know if you might have heard of this or not, but we used to call
+
+1616
+02:31:29,843 --> 02:31:35,874
+it— this is embarrassingly parallel. It's like it's easily— it's very easy to parallelize
+
+1617
+02:31:36,781 --> 02:31:40,103
+this operation or this algorithm. That's why it's
+
+1618
+02:31:40,603 --> 02:31:41,058
+called embarrassingly parallel.
+
+1619
+02:31:42,462 --> 02:31:45,558
+Anyway, so yes,
+
+1620
+02:31:45,640 --> 02:31:48,768
+exactly. So this was— the parallelization is a major advantage.
+
+1621
+02:31:49,416 --> 02:31:52,956
+The other advantage is that some of you said about better modeling
+
+1622
+02:31:53,215 --> 02:31:55,106
+long-range dependencies. That also becomes true.
+
+1623
+02:31:57,064 --> 02:32:00,626
+Because you have— you are
+
+1624
+02:32:01,126 --> 02:32:03,978
+not relying on these recurrent computations. Like, primarily at the encoder,
+
+1625
+02:32:04,059 --> 02:32:07,506
+this becomes true because the key logic that was applied—
+
+1626
+02:32:08,165 --> 02:32:12,315
+let me go back to kind of show this, right? So the key novelty in
+
+1627
+02:32:12,668 --> 02:32:20,325
+an encoder-decoder architecture was that
+
+1628
+02:32:20,825 --> 02:32:23,453
+we could compute these attentions between.
+
+1629
+02:32:23,805 --> 02:32:27,378
+So we did not quash everything into a single representation,
+
+1630
+02:32:28,067 --> 02:32:32,137
+right? We were using this when we
+
+1631
+02:32:32,637 --> 02:32:35,470
+generate the outputs. We were using these representations properly,
+
+1632
+02:32:35,806 --> 02:32:39,395
+right? But imagine if an input document is
+
+1633
+02:32:39,667 --> 02:32:44,025
+extremely huge, or imagine that your
+
+1634
+02:32:44,154 --> 02:32:47,887
+generation task also relies on a huge—
+
+1635
+02:32:47,999 --> 02:32:51,654
+like your generation also becomes long, You have to generate 1,000
+
+1636
+02:32:51,670 --> 02:32:54,863
+lines of code, right? The same problems will happen because
+
+1637
+02:32:54,959 --> 02:32:58,713
+here you are not basically— so this computation,
+
+1638
+02:32:59,066 --> 02:33:03,285
+this computation of this hidden state will still be relying
+
+1639
+02:33:03,318 --> 02:33:07,360
+on this recurrent architecture, right? Which is not literally reliant,
+
+1640
+02:33:07,473 --> 02:33:11,098
+which is not somehow using these long-range
+
+1641
+02:33:11,598 --> 02:33:14,949
+dependencies or associations in a better way. The only thing that this encoder-decoder
+
+1642
+02:33:15,449 --> 02:33:19,011
+architecture gave us is this attention idea to associate the input
+
+1643
+02:33:19,188 --> 02:33:23,026
+and output in a better way. But individually, they still struggle
+
+1644
+02:33:23,460 --> 02:33:26,591
+with the issues of, you know, extremely long documents
+
+1645
+02:33:27,091 --> 02:33:31,137
+can hamper this. But if we bring the same idea to compute this self-attention,
+
+1646
+02:33:31,795 --> 02:33:35,923
+we are basically literally getting rid of— literally,
+
+1647
+02:33:35,971 --> 02:33:39,970
+we are getting rid of this LSTM block as a whole. We don't need anything
+
+1648
+02:33:40,066 --> 02:33:43,663
+to track memory over time or hidden states over time.
+
+1649
+02:33:44,017 --> 02:33:47,356
+We are just basically bringing that exact operation
+
+1650
+02:33:47,453 --> 02:33:51,387
+of attention and we are replacing that with everything else. The attention operation is
+
+1651
+02:33:51,887 --> 02:33:55,465
+actually capturing everything that we need for modeling
+
+1652
+02:33:55,497 --> 02:33:58,965
+the representations, right? And that's why we replaced this,
+
+1653
+02:34:00,073 --> 02:34:03,766
+this with actually lots of attention computations, right? So that's
+
+1654
+02:34:04,266 --> 02:34:09,176
+why we said we replaced it with something which looks like this,
+
+1655
+02:34:09,769 --> 02:34:13,680
+right? So basically this attention computation then actually captures
+
+1656
+02:34:13,937 --> 02:34:17,736
+the time information, how they are related, and we get multiple
+
+1657
+02:34:17,800 --> 02:34:21,791
+views of this as well through different attention heads, right? So all
+
+1658
+02:34:22,291 --> 02:34:25,879
+of this actually then allows us to get rid of any limitations that
+
+1659
+02:34:26,379 --> 02:34:30,063
+we saw in the recurrent architectures because we can now apply it at both encoder
+
+1660
+02:34:30,207 --> 02:34:33,461
+and also decoder individually. So we are not dependent on
+
+1661
+02:34:33,573 --> 02:34:36,881
+any of that. So Great answers, everyone. So I think
+
+1662
+02:34:37,381 --> 02:34:41,253
+we actually kind of COVID the major issues, right? And I asked
+
+1663
+02:34:41,753 --> 02:34:45,268
+2, and I think some of you also gave some more examples
+
+1664
+02:34:45,768 --> 02:34:48,238
+as well. So all of these answers which you said are right, in my opinion.
+
+1665
+02:34:49,920 --> 02:34:54,710
+Okay. So then let's get back to the Transformer
+
+1666
+02:34:55,210 --> 02:34:57,259
+block and try to understand some aspects of it, right?
+
+1667
+02:34:58,454 --> 02:35:01,868
+So as I was saying, right? So multi-head innovation is literally the main innovation of
+
+1668
+02:35:01,900 --> 02:35:05,776
+the Transformer model. Which is seen in this specific block of
+
+1669
+02:35:05,792 --> 02:35:09,257
+the encoder. Right. And in addition to this, each block is
+
+1670
+02:35:09,757 --> 02:35:13,958
+also composed of certain practical tricks, layer normalization to normalize
+
+1671
+02:35:14,006 --> 02:35:17,310
+the outputs for stability. It has a feed-forward neural
+
+1672
+02:35:17,810 --> 02:35:21,770
+network, and then it has residual connections, which we already saw in the start
+
+1673
+02:35:22,270 --> 02:35:25,556
+of the class. Right. Why residual connections could be helpful
+
+1674
+02:35:26,085 --> 02:35:30,304
+to provide a shortcut and to allow the gradients to flow in
+
+1675
+02:35:30,353 --> 02:35:33,755
+a better way, right? Which we already saw how this can handle the problem.
+
+1676
+02:35:33,803 --> 02:35:37,463
+So this exact same things are kind of now coming together in
+
+1677
+02:35:37,559 --> 02:35:39,918
+this whole Transformer block.
+
+1678
+02:35:40,769 --> 02:35:43,818
+Okay. Also wanted to mention here, I told
+
+1679
+02:35:44,318 --> 02:35:46,033
+you there was a— there will be a surprise at the end where I'll just
+
+1680
+02:35:46,161 --> 02:35:49,917
+tell you why Transformers actually handle vanishing gradients better
+
+1681
+02:35:50,094 --> 02:35:53,287
+with the same idea that we discussed when we
+
+1682
+02:35:53,787 --> 02:35:57,123
+looked at skip connections, when we looked at residual blocks. And when we looked at
+
+1683
+02:35:57,461 --> 02:36:01,072
+how gating is a fancy way of residual,
+
+1684
+02:36:01,554 --> 02:36:04,829
+like putting in residual blocks, the same idea I would like to kind of bring
+
+1685
+02:36:04,925 --> 02:36:08,216
+it here as well. Like the same concepts, I'm just bringing it back.
+
+1686
+02:36:08,697 --> 02:36:12,117
+How Transformers actually handle these issues is
+
+1687
+02:36:12,165 --> 02:36:15,664
+that the self-attention, first of all, think of this as
+
+1688
+02:36:15,937 --> 02:36:19,918
+kind of like a skip connection, but you have
+
+1689
+02:36:20,175 --> 02:36:24,526
+lots of skip connections. Like it's basically a fully connected Because
+
+1690
+02:36:24,543 --> 02:36:27,644
+this is what Transformer is, right? So you are literally connecting.
+
+1691
+02:36:27,773 --> 02:36:31,444
+If you look at this specific diagram, you're literally connecting
+
+1692
+02:36:31,786 --> 02:36:33,982
+each token with everyone else.
+
+1693
+02:36:35,869 --> 02:36:40,516
+So this is literally a fully connected— I
+
+1694
+02:36:41,050 --> 02:36:44,739
+mean, you can see this as you are literally connecting each input token
+
+1695
+02:36:44,771 --> 02:36:48,452
+with everyone else using a direct connection, right? And this
+
+1696
+02:36:48,952 --> 02:36:53,281
+is what actually brings the,
+
+1697
+02:36:53,346 --> 02:36:56,777
+you know, you're literally direct, which brings in the direct interaction parts.
+
+1698
+02:36:56,826 --> 02:37:00,144
+So which is, you can see this as some sort of a skip
+
+1699
+02:37:00,644 --> 02:37:04,505
+connection which allows for the gradients to flow better. But there's also residual blocks
+
+1700
+02:37:04,522 --> 02:37:07,957
+in the architecture, right? Which we saw here, which then allows us to actually,
+
+1701
+02:37:09,050 --> 02:37:12,793
+you know, so overall a Transformer block then combines both of these
+
+1702
+02:37:12,890 --> 02:37:16,607
+ideas with the addition of better modeling
+
+1703
+02:37:16,704 --> 02:37:20,820
+these input tokens using the idea
+
+1704
+02:37:21,320 --> 02:37:25,256
+of self-attention. It just combines all of this together to actually address
+
+1705
+02:37:25,756 --> 02:37:29,661
+the aspects of handling long-range dependencies better, mitigating the vanishing
+
+1706
+02:37:29,709 --> 02:37:33,294
+gradient problem, and all these practical challenges that we have seen so far.
+
+1707
+02:37:35,482 --> 02:37:38,679
+Okay. And then as I said, right, I'll bring everything together. So this you can
+
+1708
+02:37:38,728 --> 02:37:42,975
+see is as a summary of how we fought
+
+1709
+02:37:42,991 --> 02:37:46,225
+vanishing gradients. Right. And what you can see is that the first idea
+
+1710
+02:37:46,725 --> 02:37:50,511
+that I gave towards last week
+
+1711
+02:37:51,011 --> 02:37:53,434
+when I said, okay, the simplest way is to change the activation function, right?
+
+1712
+02:37:54,129 --> 02:37:57,454
+You can use things like— and these are diagrams
+
+1713
+02:37:57,954 --> 02:38:00,037
+which show you, right? You can use instead of a sigmoid or a tanh,
+
+1714
+02:38:00,118 --> 02:38:03,333
+you can use ReLU, right? You can use skip
+
+1715
+02:38:03,397 --> 02:38:06,916
+connections, which we discussed in detail today. And these are all individual
+
+1716
+02:38:06,948 --> 02:38:09,952
+graphics that actually just show you, right? So this basically, if you look at this
+
+1717
+02:38:10,452 --> 02:38:13,555
+slide, it will be a good recap or a revision of what
+
+1718
+02:38:14,055 --> 02:38:17,427
+we have seen so far, right? Um, you have residual blocks which have their own
+
+1719
+02:38:17,927 --> 02:38:21,396
+advantages. You can look at LSTM and GRUs also has a learned
+
+1720
+02:38:21,669 --> 02:38:25,188
+way of looking at some sort of residual blocks. And then you
+
+1721
+02:38:25,688 --> 02:38:28,483
+have Transformers that brings in attention and residual blocks together,
+
+1722
+02:38:29,125 --> 02:38:32,644
+uh, which actually, uh, helps us to train
+
+1723
+02:38:32,837 --> 02:38:38,860
+deeper models and also allow us to process long-range long-range
+
+1724
+02:38:38,876 --> 02:38:42,062
+dependencies or longer documents. Okay.
+
+1725
+02:38:42,709 --> 02:38:46,041
+So with this, we actually move on
+
+1726
+02:38:47,567 --> 02:38:50,979
+to the full Transformer block again. I explained
+
+1727
+02:38:51,479 --> 02:38:53,465
+to you the concept, the key concept, which is the multi-head self-attention.
+
+1728
+02:38:54,697 --> 02:38:59,061
+Also broken down the different engineering optimizations
+
+1729
+02:38:59,561 --> 02:39:02,817
+that were added to the encoder block. Now look at Now let's
+
+1730
+02:39:03,317 --> 02:39:06,976
+look at what are the other parts of the full Transformer block that
+
+1731
+02:39:07,088 --> 02:39:10,524
+we need to understand, right? So we looked
+
+1732
+02:39:11,024 --> 02:39:14,137
+at the encoder, but it's also important to look at now the decoder,
+
+1733
+02:39:14,153 --> 02:39:17,990
+right? And try to understand how is the decoder different from the encoder,
+
+1734
+02:39:18,071 --> 02:39:21,154
+right? So the decoder is similar in many ways to encoder,
+
+1735
+02:39:21,362 --> 02:39:24,798
+right? The key differences are that the first,
+
+1736
+02:39:24,991 --> 02:39:28,414
+as you see, I told you there are certain differences. The first
+
+1737
+02:39:28,511 --> 02:39:31,610
+is a masked multi-headed attention instead
+
+1738
+02:39:32,110 --> 02:39:35,516
+of a simple, what we call as a multi-headed attention. And the second
+
+1739
+02:39:35,613 --> 02:39:39,348
+aspect is literally the multi-headed attention over
+
+1740
+02:39:39,429 --> 02:39:43,391
+final layer encoder. So it's basically, you can think of, you are literally,
+
+1741
+02:39:44,309 --> 02:39:47,892
+you just think of a decoder as something like
+
+1742
+02:39:48,422 --> 02:39:52,101
+you take this, you move it here at the top, and then you add
+
+1743
+02:39:52,198 --> 02:39:55,333
+a masked multi-headed self-attention. Below it, right?
+
+1744
+02:39:55,830 --> 02:39:59,361
+And what this top block actually captures is that it's called
+
+1745
+02:39:59,377 --> 02:40:02,587
+as a cross-attention layer because it's exactly the same that we
+
+1746
+02:40:03,087 --> 02:40:06,502
+saw as in the encoder-decoder architecture,
+
+1747
+02:40:06,518 --> 02:40:09,856
+because now it learns the association between the encoder and decoder.
+
+1748
+02:40:09,905 --> 02:40:13,195
+So that's why it's called as a cross-attention layer as well. So we had one
+
+1749
+02:40:13,243 --> 02:40:17,094
+self-attention layer that we apply on encoders. We have also
+
+1750
+02:40:17,191 --> 02:40:20,480
+a masked multi-headed self-attention layer that we apply at the decoder, but we also have
+
+1751
+02:40:20,980 --> 02:40:24,343
+a cross-attention attention layer. And then you have a feed-forward network like you had
+
+1752
+02:40:24,843 --> 02:40:29,061
+in the encoder block, and then you have some output layers
+
+1753
+02:40:29,335 --> 02:40:31,827
+for obtaining whatever your task is in the end.
+
+1754
+02:40:32,711 --> 02:40:35,924
+Okay. So can anyone tell me with this
+
+1755
+02:40:36,424 --> 02:40:39,781
+specific— now you have seen this
+
+1756
+02:40:40,281 --> 02:40:43,454
+full Transformer block, we have also went through this one by one. Just again,
+
+1757
+02:40:43,711 --> 02:40:47,095
+look at— go over Menti and tell me what is a potential issue
+
+1758
+02:40:47,111 --> 02:40:48,529
+with self-attention for the decoder?
+
+1759
+02:40:52,199 --> 02:40:55,559
+Or what could be a potential issue, uh, with self-attention?
+
+1760
+02:41:01,251 --> 02:41:03,997
+Okay, I will take this back.
+
+1761
+02:41:11,055 --> 02:41:11,796
+Ah, wait.
+
+1762
+02:41:20,202 --> 02:41:23,491
+Ah, sorry, I think I missed one.
+
+1763
+02:41:26,895 --> 02:41:28,422
+Yeah, this question is not present.
+
+1764
+02:41:30,911 --> 02:41:34,467
+Yeah, sorry, I think I deleted one Menti slide. We can
+
+1765
+02:41:34,516 --> 02:41:37,325
+discuss this. Yeah. Um,
+
+1766
+02:41:44,637 --> 02:41:48,776
+Can anyone tell me what could be the issues
+
+1767
+02:41:48,808 --> 02:41:52,626
+with self-attention? It's primarily for
+
+1768
+02:41:58,132 --> 02:42:01,536
+Yeah. Okay. So the answer is in the decoder, we don't have the
+
+1769
+02:42:02,036 --> 02:42:02,168
+future. Can you elaborate?
+
+1770
+02:42:17,008 --> 02:42:21,081
+Okay. So what you're trying to say is that the, the power that Transformer gave
+
+1771
+02:42:21,581 --> 02:42:24,144
+us, the self-attention gave us, is that we can do it in parallel, right?
+
+1772
+02:42:24,866 --> 02:42:27,993
+When we say we can do things in parallel, we have to have the whole
+
+1773
+02:42:28,493 --> 02:42:31,329
+sequence, right? But when we are doing a decoder decoding,
+
+1774
+02:42:31,682 --> 02:42:34,750
+or when we are basically generating things, right? So this is what we understood,
+
+1775
+02:42:34,815 --> 02:42:38,173
+right? When we looked at the previous encoder-decoder architecture,
+
+1776
+02:42:38,494 --> 02:42:41,890
+the input is given to us so we can do everything in parallel
+
+1777
+02:42:42,390 --> 02:42:46,072
+in the input, but the output we don't know, right? And this is again
+
+1778
+02:42:46,104 --> 02:42:49,394
+the same thing we discussed last week when I said,
+
+1779
+02:42:50,330 --> 02:42:53,656
+can you use a bidirectional RNN
+
+1780
+02:42:53,932 --> 02:42:57,226
+for text generation? Some of you said, yes, we can,
+
+1781
+02:42:57,340 --> 02:43:02,120
+but You know, we were talking about the same thing also today, is that whenever
+
+1782
+02:43:02,620 --> 02:43:06,448
+we have, uh, uh, you know, when we were talking about,
+
+1783
+02:43:07,811 --> 02:43:11,482
+you know, some things that have to perform, like we have to kind
+
+1784
+02:43:11,982 --> 02:43:15,665
+of generate something which we don't have, right? For instance, we cannot look at
+
+1785
+02:43:16,165 --> 02:43:19,657
+the future when we want to generate something. So that's the exact problem that
+
+1786
+02:43:20,157 --> 02:43:23,360
+will happen when we try to use a Transformer for doing machine
+
+1787
+02:43:23,860 --> 02:43:26,951
+translation, for instance. Right? Because when we want to use it, right, at train time,
+
+1788
+02:43:26,967 --> 02:43:30,742
+we can say that we have this parallel English-French translation,
+
+1789
+02:43:30,935 --> 02:43:34,323
+Danish-English translation, but at prediction time,
+
+1790
+02:43:34,387 --> 02:43:38,128
+we won't have it, right? So the point is also when we are
+
+1791
+02:43:38,176 --> 02:43:41,014
+training this model, we have to train this in a fair way. We cannot say
+
+1792
+02:43:41,514 --> 02:43:42,352
+that we can train it to actually,
+
+1793
+02:43:44,726 --> 02:43:48,440
+you know, see the future because otherwise it will overfit on the
+
+1794
+02:43:48,940 --> 02:43:52,118
+training data. But at the test time, it will not generalize well in a better
+
+1795
+02:43:52,618 --> 02:43:56,243
+way because you have to kind of Uh, you know, it has to actually predict
+
+1796
+02:43:56,743 --> 02:43:59,866
+the outputs without looking at anything, right? It's basically if I tell
+
+1797
+02:43:59,898 --> 02:44:03,248
+you what we were discussing with the hints, right? If I tell you the question
+
+1798
+02:44:03,521 --> 02:44:06,599
+and the answer, if you can look at the answer, then,
+
+1799
+02:44:07,048 --> 02:44:10,222
+you know, we— you may not learn things
+
+1800
+02:44:10,478 --> 02:44:13,732
+as well as if you did not have access to the answer, right? So that's
+
+1801
+02:44:13,781 --> 02:44:17,420
+why the whole aspect of masked multi-head
+
+1802
+02:44:17,468 --> 02:44:21,235
+attention was introduced in the decoder. So the overall aspect
+
+1803
+02:44:21,735 --> 02:44:24,970
+is that you literally don't want to attend to future tokens because you
+
+1804
+02:44:25,002 --> 02:44:27,631
+won't have them based on the task, right?
+
+1805
+02:44:28,224 --> 02:44:31,654
+So, but you also want to not, you also don't want
+
+1806
+02:44:32,154 --> 02:44:34,780
+to get rid of your parallelism, right? Which is a very nice thing that we
+
+1807
+02:44:34,844 --> 02:44:38,226
+got from Transformers, right? So the idea is to basically think
+
+1808
+02:44:38,291 --> 02:44:42,122
+of literally putting a mask which just
+
+1809
+02:44:42,555 --> 02:44:46,899
+puts, uh, which basically makes sure that the attention scores
+
+1810
+02:44:47,107 --> 02:44:51,195
+of future tokens become 0. A simple
+
+1811
+02:44:51,695 --> 02:44:55,700
+idea like that, right? Basically, you make sure you put a mask so that
+
+1812
+02:44:56,200 --> 02:44:59,034
+when you're computing the attention scores,
+
+1813
+02:44:59,547 --> 02:45:03,266
+you will just make sure that the attention scores of the
+
+1814
+02:45:04,036 --> 02:45:07,242
+future tokens just go to 0 when you compute the self-attention at the
+
+1815
+02:45:07,742 --> 02:45:11,218
+decoding time. Something literally as simple as that. This masking
+
+1816
+02:45:11,330 --> 02:45:14,777
+is an idea, I mean, it's something which we use a lot during deep
+
+1817
+02:45:15,277 --> 02:45:18,558
+learning, but also, I mean, this is a classical mathematical construct, right? You're just trying
+
+1818
+02:45:18,590 --> 02:45:21,139
+to say that you want to get rid of certain tokens.
+
+1819
+02:45:23,630 --> 02:45:27,036
+Like, so overall, when you apply this mask on— when you— I mean, I'm just
+
+1820
+02:45:27,536 --> 02:45:30,088
+using some terms which some of you will be familiar with— which you convolve this
+
+1821
+02:45:30,588 --> 02:45:34,203
+mask with the input, or if you just multiply this mask with the input,
+
+1822
+02:45:34,252 --> 02:45:37,568
+what will happen is that you can still parallelize the operation because you are not
+
+1823
+02:45:38,068 --> 02:45:41,288
+getting rid of the parallelization in any way. It will just make sure that
+
+1824
+02:45:41,658 --> 02:45:44,948
+you don't cheat. You're not using that signal when you're
+
+1825
+02:45:45,448 --> 02:45:48,106
+training the model, something as simple as that. Okay.
+
+1826
+02:45:50,055 --> 02:45:53,473
+So this is basically done by just putting
+
+1827
+02:45:53,731 --> 02:45:57,346
+a large negative value on each of the scores. And then
+
+1828
+02:45:57,701 --> 02:46:01,674
+when you compute the distribution, these scores will be masked to 0
+
+1829
+02:46:02,174 --> 02:46:06,203
+when you do the softmax transformation, right? And the final aspect of the Transformer
+
+1830
+02:46:06,703 --> 02:46:09,635
+block is literally this cross-attention layer, Which basically,
+
+1831
+02:46:11,235 --> 02:46:14,065
+literally, as I said, right, which is the same as what you saw in the
+
+1832
+02:46:14,565 --> 02:46:18,188
+attention— attentive encoder-decoder model, because it actually— what
+
+1833
+02:46:18,688 --> 02:46:23,170
+we saw in the second half, right? It's basically trying to literally now compute
+
+1834
+02:46:23,202 --> 02:46:26,324
+an attention between the decoder and the encoder, right? So it's exactly
+
+1835
+02:46:26,583 --> 02:46:30,215
+the way what we have seen already, right? So it's just that we put
+
+1836
+02:46:30,715 --> 02:46:33,748
+this in a block. Okay. With this, like, this is
+
+1837
+02:46:33,845 --> 02:46:37,168
+coming back to the full Transformer block. As I said, right, we will look at
+
+1838
+02:46:37,668 --> 02:46:40,440
+the whole thing. And I'll go through each of these units one by one.
+
+1839
+02:46:40,681 --> 02:46:44,406
+And then, you know, you already have taken,
+
+1840
+02:46:45,081 --> 02:46:48,469
+uh, you know, you have already gotten a full understanding of what Transformer now
+
+1841
+02:46:48,969 --> 02:46:52,435
+looks like. So with this, now you can literally say, yeah, you know, the key
+
+1842
+02:46:52,884 --> 02:46:56,690
+concept of, uh, you know, key machinery that drives all
+
+1843
+02:46:56,802 --> 02:47:00,383
+the language models or everything that exists out today. Uh,
+
+1844
+02:47:01,057 --> 02:47:04,879
+I'll just take one more minute to just say that, There is some
+
+1845
+02:47:04,927 --> 02:47:10,916
+important information to also mention is that I'll
+
+1846
+02:47:10,948 --> 02:47:14,416
+give— I'll make a claim and then I'll ask you a specific question, right?
+
+1847
+02:47:14,480 --> 02:47:18,061
+So I say that recurrent models actually provide word order information,
+
+1848
+02:47:18,173 --> 02:47:22,027
+right? So basically you can say which words appear first
+
+1849
+02:47:22,527 --> 02:47:25,640
+and whatnot. Does self-attention provide word order information?
+
+1850
+02:47:32,741 --> 02:47:33,433
+Yeah. No. Why?
+
+1851
+02:47:41,580 --> 02:47:42,222
+Yeah. So,
+
+1852
+02:47:44,986 --> 02:47:48,408
+yeah. So, so basically it's, it's just computing,
+
+1853
+02:47:49,308 --> 02:47:52,165
+uh, you know, a fancy weighted average as you can think of it, right?
+
+1854
+02:47:52,214 --> 02:47:55,782
+So there's no position information. It doesn't tell you anything
+
+1855
+02:47:56,407 --> 02:47:59,648
+which position means, you know, if position carries
+
+1856
+02:48:00,148 --> 02:48:04,121
+a meaning. And for that, why there was this aspect in the Transformer
+
+1857
+02:48:04,621 --> 02:48:07,881
+which we kind of easily scraped away in the end is that there is something
+
+1858
+02:48:07,897 --> 02:48:11,287
+called a positional encoding that was attached to the Transformer so that
+
+1859
+02:48:11,787 --> 02:48:14,988
+it can bring that aspect of the recurrent models that it can handle
+
+1860
+02:48:15,265 --> 02:48:18,951
+word order information. We will look into position
+
+1861
+02:48:19,451 --> 02:48:21,829
+encodings. I mean, this is just 1 or 2 slides. I will start it I'll
+
+1862
+02:48:22,329 --> 02:48:24,896
+start with this when we start the next week's lecture so that we can understand
+
+1863
+02:48:24,928 --> 02:48:28,124
+this better. But I'll not take more time from you today. And this
+
+1864
+02:48:28,236 --> 02:48:30,790
+also we can do next time.
+
+1865
+02:48:31,994 --> 02:48:35,816
+I have put some resources in the slides which actually tells you
+
+1866
+02:48:36,250 --> 02:48:39,414
+which, if you want to read a bit more in detail, what are different aspects
+
+1867
+02:48:39,914 --> 02:48:42,658
+of the Transformer. There is the Annotated Transformer that you can look at. There is
+
+1868
+02:48:42,690 --> 02:48:46,560
+the Illustrated Transformer. This gives us very nice representations or visual,
+
+1869
+02:48:46,769 --> 02:48:48,535
+visual explanations as well beyond what we have discussed.
+
+1870
+02:48:49,740 --> 02:48:53,224
+And this, I'll also put the feedback here.
+
+1871
+02:48:53,786 --> 02:48:57,286
+So as always, please share your thoughts, and then we
+
+1872
+02:48:57,382 --> 02:49:01,316
+will just do the positional encoding next time in the first 5 minutes,
+
+1873
+02:49:01,718 --> 02:49:04,528
+and then we will go back to the usual course.
+
+1874
+02:49:05,973 --> 02:49:07,418
+Okay, thanks a lot for your attention.
+

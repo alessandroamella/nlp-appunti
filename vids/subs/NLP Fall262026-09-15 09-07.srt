@@ -1,0 +1,7524 @@
+1
+00:07:31,878 --> 00:07:34,783
+Okay, good morning everyone. Uh,
+
+2
+00:07:35,458 --> 00:07:39,423
+let's jump to the next part of the language
+
+3
+00:07:39,487 --> 00:07:43,145
+modeling, um, topic that we discussed briefly
+
+4
+00:07:43,883 --> 00:07:47,636
+last week and we'll try to finish this week. So this
+
+5
+00:07:47,684 --> 00:07:51,869
+is the part 2 of the language modeling lecture that we saw last
+
+6
+00:07:51,902 --> 00:07:55,125
+week. Okay, for that, bunch of announcements.
+
+7
+00:07:55,911 --> 00:07:59,712
+I mean, the deadline to register your groups was Friday,
+
+8
+00:07:59,920 --> 00:08:03,689
+11th September, and we still see 6 students
+
+9
+00:08:04,189 --> 00:08:06,319
+who have not initiated this process.
+
+10
+00:08:07,234 --> 00:08:10,447
+7 students who are in groups of size 3,
+
+11
+00:08:10,752 --> 00:08:14,704
+less than 3, because there are many solo groups. Uh, you have
+
+12
+00:08:15,204 --> 00:08:19,330
+received personalized reminders, and I don't think there should be any confusion because
+
+13
+00:08:19,427 --> 00:08:23,282
+we have announced this multiple times also
+
+14
+00:08:23,442 --> 00:08:27,233
+on the Brightspace page, which was available to you since 17th August
+
+15
+00:08:27,733 --> 00:08:30,318
+before even the lecture started. And, uh,
+
+16
+00:08:31,651 --> 00:08:34,109
+yeah, I think this was super clear. I made it clear every time.
+
+17
+00:08:34,703 --> 00:08:38,266
+Until unless you had exceptionally valid justification why
+
+18
+00:08:38,314 --> 00:08:42,022
+you could not work in a group of 3, group of 3 is the default,
+
+19
+00:08:42,070 --> 00:08:45,457
+right? And I think this was said multiple times. We have received— we have sent
+
+20
+00:08:45,859 --> 00:08:48,957
+personalized reminders. If some of you are there in this class, feel free to catch
+
+21
+00:08:48,989 --> 00:08:52,777
+me up after the break. But if you're not,
+
+22
+00:08:52,905 --> 00:08:56,517
+then you're good. And but also we received some responses to
+
+23
+00:08:57,017 --> 00:08:59,615
+these reminders that this was not clear. It was like, okay, if this is not
+
+24
+00:08:59,663 --> 00:09:02,055
+clear, then I don't know how to make this even more clearer.
+
+25
+00:09:02,792 --> 00:09:06,189
+Because I think, yeah, this is how it has been set. Okay,
+
+26
+00:09:07,359 --> 00:09:10,563
+so with this, this is very important. So whoever has not done this, please do
+
+27
+00:09:11,063 --> 00:09:13,992
+it. If you're watching the recording, if you're— or if you will watch the recording
+
+28
+00:09:14,008 --> 00:09:17,181
+later on, please adhere to this important thing. This has
+
+29
+00:09:17,213 --> 00:09:20,626
+to be done. Without this, you cannot do a project. This is a mandatory thing
+
+30
+00:09:20,658 --> 00:09:23,702
+to be done. And in the reminders that we have sent, we have messaged that,
+
+31
+00:09:23,718 --> 00:09:27,228
+okay, this has to be done within 2 days because this is already— I
+
+32
+00:09:27,728 --> 00:09:29,759
+mean, we have given you enough time to do this. Now we have to finalize
+
+33
+00:09:29,791 --> 00:09:33,204
+the groups. Okay, we have now also a location for the midterm exam,
+
+34
+00:09:33,381 --> 00:09:37,210
+right? As I said, it will be on Friday, 6th November. It will be done
+
+35
+00:09:37,387 --> 00:09:40,560
+in parallel with the lab sessions. It will be done from 9 to 12.
+
+36
+00:09:40,608 --> 00:09:44,197
+It will be a 3-hour exam. The rooms are here, which will
+
+37
+00:09:44,293 --> 00:09:48,043
+also be updated on Brightspace with the location, but I'm also announcing it
+
+38
+00:09:48,543 --> 00:09:52,097
+here. These are rooms numbers 5344-101,
+
+39
+00:09:52,225 --> 00:09:55,959
+which is Benjamin Hall, which is right behind this building.
+
+40
+00:09:56,858 --> 00:10:00,216
+Next to the Department of Computer Science and also the exercise
+
+41
+00:10:00,313 --> 00:10:03,382
+room that you usually go to for lab sessions, right? So since it's a big
+
+42
+00:10:03,882 --> 00:10:07,415
+class, there are, I think, 70, 72 students. So we'll like to
+
+43
+00:10:07,915 --> 00:10:11,560
+just use both rooms. And yeah, I mean, you will get
+
+44
+00:10:12,060 --> 00:10:15,160
+more details about the midterm exam in terms of other rules,
+
+45
+00:10:15,336 --> 00:10:18,389
+logistics, and whatnot soon. I mean, it's too early to kind of give you any
+
+46
+00:10:18,889 --> 00:10:21,619
+details on that. You know already the format of the exam. Now you know the
+
+47
+00:10:22,119 --> 00:10:25,453
+location. So I think you have all the information. Okay. And then the Friday's
+
+48
+00:10:25,953 --> 00:10:29,238
+lab session will be on, uh, you'll have more exercises on language models. Uh,
+
+49
+00:10:29,478 --> 00:10:32,574
+we'll look into, you know, uh, RNNs,
+
+50
+00:10:32,686 --> 00:10:36,358
+LSTMs, and other types of recurrent neural networks. So you can play with them and
+
+51
+00:10:36,858 --> 00:10:39,935
+you can learn how to train them. Okay, good.
+
+52
+00:10:40,464 --> 00:10:43,976
+So feedback on the lecture slides. Okay, great. Thanks a lot always for
+
+53
+00:10:44,476 --> 00:10:48,370
+giving nice feedback. Uh, and I did not receive any new suggestions. So it
+
+54
+00:10:48,402 --> 00:10:51,753
+basically means that things are
+
+55
+00:10:51,769 --> 00:10:55,153
+good, but okay, I mean, if they're not, still feel free to give suggestions.
+
+56
+00:10:55,265 --> 00:10:59,369
+We're always adapting the course continuously for your sake,
+
+57
+00:10:59,450 --> 00:11:02,961
+as we have always said. Okay. On the lab session, we received some nice suggestions.
+
+58
+00:11:04,196 --> 00:11:08,861
+There was one suggestion which was more logistical that, okay, one can only review the—
+
+59
+00:11:09,150 --> 00:11:12,581
+like, take the— provide feedback once. I think this was
+
+60
+00:11:12,677 --> 00:11:17,279
+an oversight based on how the feedback form was set. This has now been changed
+
+61
+00:11:17,779 --> 00:11:20,228
+or will be changed soon that you will now be able to edit your response
+
+62
+00:11:20,728 --> 00:11:23,915
+if you want to. Right. Okay. And then there were some aspects
+
+63
+00:11:24,415 --> 00:11:26,945
+about the content of the lab sessions. So yeah, I mean, you guys really liked
+
+64
+00:11:27,445 --> 00:11:31,016
+how you could check your progress as you are making through the lab session.
+
+65
+00:11:31,064 --> 00:11:34,831
+So that's nice. We'll keep up the cadence so that you keep enjoying these.
+
+66
+00:11:35,681 --> 00:11:38,358
+Um, also, I mean, there was a nice comment that, okay,
+
+67
+00:11:38,663 --> 00:11:42,462
+the questions are nice, but they are sometimes too easy. And last time all
+
+68
+00:11:42,510 --> 00:11:45,848
+the answers were B. Of course, I mean, it was a chance. This can happen.
+
+69
+00:11:46,442 --> 00:11:50,135
+But this won't happen in the midterm, mind you. But I'm just
+
+70
+00:11:50,151 --> 00:11:53,956
+saying, I mean, of course, the exercise difficulties can change from time to
+
+71
+00:11:53,988 --> 00:11:56,798
+time. There was also one more suggestion that, okay,
+
+72
+00:11:57,183 --> 00:12:00,812
+if you can provide type declarations next
+
+73
+00:12:01,312 --> 00:12:04,649
+to when we're calling certain functions. I think this is
+
+74
+00:12:05,149 --> 00:12:09,337
+a nice suggestion, but this is used primarily for when you're defining the functions.
+
+75
+00:12:09,450 --> 00:12:12,740
+When you're defining the function signature, used when defining
+
+76
+00:12:12,772 --> 00:12:16,463
+the arguments of a function, when you're defining the return types and
+
+77
+00:12:16,963 --> 00:12:20,572
+class attributes. But it's redundant for every other thing. So I mean, if you keep
+
+78
+00:12:20,636 --> 00:12:24,232
+overdoing this, then it just becomes not
+
+79
+00:12:24,732 --> 00:12:27,490
+relevant. So that's the industry standard. We also want to teach you that.
+
+80
+00:12:28,100 --> 00:12:30,940
+But just wanted to suggest. So good suggestion, good eye,
+
+81
+00:12:31,374 --> 00:12:35,065
+but just saying that it's not the convention to apply it to every specific call.
+
+82
+00:12:36,670 --> 00:12:39,286
+Okay, and then there was also aspects, okay, the hints are nice,
+
+83
+00:12:39,479 --> 00:12:42,689
+okay, sometimes it makes it too easy. Also,
+
+84
+00:12:43,122 --> 00:12:46,605
+sometimes it also helps you progress without getting stuck. So,
+
+85
+00:12:47,279 --> 00:12:50,730
+and this was, I mean, all of this feedback was from a very nice
+
+86
+00:12:51,230 --> 00:12:54,726
+colleague or classmate of yours, which is great. We are really happy
+
+87
+00:12:54,742 --> 00:12:57,968
+you guys are providing us feedback. I just wanted to also mention that,
+
+88
+00:12:58,096 --> 00:13:01,628
+okay, We can reduce
+
+89
+00:13:01,644 --> 00:13:04,582
+the hints if you want, but this was designed for the majority of the class,
+
+90
+00:13:04,694 --> 00:13:08,275
+right? So, I mean, not a specific individual. So I may actually
+
+91
+00:13:08,452 --> 00:13:11,518
+ask you, I mean, there's not everyone in this class and I don't like to
+
+92
+00:13:12,018 --> 00:13:14,890
+do polls for everything, but let's say a quick show of hands. If you like
+
+93
+00:13:15,390 --> 00:13:19,001
+less hints in the exercises, or is it okay the way they are
+
+94
+00:13:19,065 --> 00:13:22,854
+already set up? So I see some nodding heads, but okay,
+
+95
+00:13:22,903 --> 00:13:24,829
+let me just ask formally, who wants more hints?
+
+96
+00:13:27,026 --> 00:13:30,613
+Who wants less hints? Lesser hints? Okay,
+
+97
+00:13:30,823 --> 00:13:34,297
+one. Who wants this to
+
+98
+00:13:34,797 --> 00:13:37,969
+remain the same way it exists right now? Okay, I mean, the class has spoken.
+
+99
+00:13:38,338 --> 00:13:41,873
+So I'm really sorry whoever has given this feedback. The point
+
+100
+00:13:42,373 --> 00:13:45,653
+is, yeah, as I said, right, it has to be designed for the majority
+
+101
+00:13:46,153 --> 00:13:49,643
+of the class. But of course, I mean, you will still do
+
+102
+00:13:49,691 --> 00:13:52,595
+a lot of things yourself and you will learn as an outcome of this.
+
+103
+00:13:52,712 --> 00:13:57,031
+Course, right? So don't worry about that. Okay, then let's quickly do
+
+104
+00:13:57,272 --> 00:14:00,772
+a quick recap of what we saw last time, right? So we looked into
+
+105
+00:14:01,141 --> 00:14:04,497
+the grandpa style of language models, as we say it,
+
+106
+00:14:04,513 --> 00:14:07,757
+right? So language models which were conceived back in the,
+
+107
+00:14:08,126 --> 00:14:11,337
+you know, based on the concepts derived from the '90s, which we
+
+108
+00:14:11,837 --> 00:14:15,801
+also called as n-gram language models or n-1 order Markov models. You can
+
+109
+00:14:15,994 --> 00:14:19,443
+talk about them in different aspects. Right. And we looked at,
+
+110
+00:14:19,988 --> 00:14:23,577
+you know, what are language models, what are their key goals, right? You actually—
+
+111
+00:14:23,786 --> 00:14:26,654
+it's a probabilistic model that allows you to model a sequence of tokens,
+
+112
+00:14:27,134 --> 00:14:30,900
+right? We looked into count-based language models, which actually estimates these probabilities by
+
+113
+00:14:31,400 --> 00:14:35,226
+counting, right? As simple as counting by looking at the occurrence of sequences
+
+114
+00:14:35,726 --> 00:14:39,680
+in a corpus of text, right? And we looked at some of the disadvantages
+
+115
+00:14:39,713 --> 00:14:43,654
+of these type of models because it's very hard to handle long-range dependencies
+
+116
+00:14:43,798 --> 00:14:45,769
+and why long-range dependencies are important because,
+
+117
+00:14:46,925 --> 00:14:50,345
+documents can be huge. And when you're trying to kind of use this information,
+
+118
+00:14:50,778 --> 00:14:53,765
+be it for classification or be it for generation, you may have to go back
+
+119
+00:14:54,265 --> 00:14:57,361
+in time so that there are words or cues that will be important for a
+
+120
+00:14:57,861 --> 00:15:01,375
+specific task can actually be much further away from your current token.
+
+121
+00:15:01,536 --> 00:15:05,469
+Right. But we saw that n-gram language models suffer modeling
+
+122
+00:15:05,969 --> 00:15:09,322
+these dependencies because there is a computation problem. There could also be a
+
+123
+00:15:09,339 --> 00:15:12,584
+sparsity issue because, you know, you would
+
+124
+00:15:13,018 --> 00:15:16,882
+just not have enough information to count sequences of longer lengths. And then you
+
+125
+00:15:17,382 --> 00:15:20,908
+also will be— it will be hard to kind of look for datasets that
+
+126
+00:15:21,408 --> 00:15:24,685
+you cannot see at test time. So sorry, data points
+
+127
+00:15:25,185 --> 00:15:28,460
+that you could not have seen during train time. So there are datasets,
+
+128
+00:15:28,701 --> 00:15:31,295
+data points that can occur at test time which you have not been able to
+
+129
+00:15:31,368 --> 00:15:35,052
+model. And we also looked at how we can actually
+
+130
+00:15:35,101 --> 00:15:39,131
+evaluate language models, which applies to all types of language models. We looked at perplexity
+
+131
+00:15:39,631 --> 00:15:43,884
+as a way to evaluate the goodness or the fit
+
+132
+00:15:44,012 --> 00:15:47,257
+of a specific language model. And we also saw
+
+133
+00:15:47,305 --> 00:15:50,502
+a very nice intuition of perplexity. We say that it's kind of related to
+
+134
+00:15:50,518 --> 00:15:54,469
+cross-entropy. In fact, it was the exponential exponentiation of the
+
+135
+00:15:54,969 --> 00:15:58,935
+cross-entropy. So overall, the key takeaway is that we can
+
+136
+00:15:58,967 --> 00:16:02,388
+train language models by minimizing perplexity, which is the same as
+
+137
+00:16:02,501 --> 00:16:05,199
+maximizing the probability of the underlying corpus.
+
+138
+00:16:06,023 --> 00:16:09,472
+Okay, so this was language models. We also looked at what is the other
+
+139
+00:16:09,972 --> 00:16:13,211
+way of improving the limitations that we saw in
+
+140
+00:16:14,549 --> 00:16:18,317
+count-based language models or n-gram language models. We looked at fixed-context
+
+141
+00:16:18,736 --> 00:16:23,180
+neural language models, which was basically more like where
+
+142
+00:16:23,680 --> 00:16:27,864
+you have— where we use neural networks to actually model these representations.
+
+143
+00:16:27,961 --> 00:16:31,324
+So basically we say, okay, we have a sequence of input tokens and the model
+
+144
+00:16:31,372 --> 00:16:34,953
+actually cuts comes up with a representation for the sequence of tokens.
+
+145
+00:16:35,391 --> 00:16:39,033
+What we saw that this was able to get
+
+146
+00:16:39,533 --> 00:16:43,180
+rid of the disadvantages of count-based LLMs, count-based language models basically,
+
+147
+00:16:43,228 --> 00:16:46,648
+which means that, okay, these sparsity issues were fixed, but it was still difficult
+
+148
+00:16:47,148 --> 00:16:50,773
+to model long-range dependencies. Why? Because since it says it's
+
+149
+00:16:51,273 --> 00:16:54,065
+fixed-context, the name actually already says that. Why is this a difficulty?
+
+150
+00:16:55,160 --> 00:16:58,457
+Because it's very hard to— I mean, as soon as you model larger and larger
+
+151
+00:16:58,957 --> 00:17:02,209
+windows of text, the context size increases, your weight matrices will increase in
+
+152
+00:17:02,307 --> 00:17:05,387
+size. That's why there will be a computational bottleneck. But we
+
+153
+00:17:05,887 --> 00:17:10,111
+also saw that the weights of these matrices are not shared
+
+154
+00:17:11,108 --> 00:17:14,242
+across embeddings in the window. What do we mean by that? Let's take an example
+
+155
+00:17:14,742 --> 00:17:18,788
+of this. But let's take an example. Let's look at the— just a moment.
+
+156
+00:17:20,070 --> 00:17:22,808
+Yeah. So that's easy for me to see. Yeah. So basically,
+
+157
+00:17:24,611 --> 00:17:28,203
+this is how you can visualize a fixed-context
+
+158
+00:17:28,251 --> 00:17:31,807
+neural language model. What you can see here is that, You know, there are— the
+
+159
+00:17:32,307 --> 00:17:35,476
+context is 5 and you do some sort of transformation. So you get some representation
+
+160
+00:17:35,588 --> 00:17:38,985
+and then you perform your prediction based on that, right? The problem,
+
+161
+00:17:39,033 --> 00:17:41,580
+what I said, is that the weights are not shared. What I mean by this
+
+162
+00:17:41,596 --> 00:17:44,929
+is that look at this word, the, right? So the word the appears twice,
+
+163
+00:17:45,201 --> 00:17:48,550
+right? First at position 1 and then at position number 5, right? So what
+
+164
+00:17:49,050 --> 00:17:52,251
+happens in this setup is that if you think about what is the actual transformation
+
+165
+00:17:52,751 --> 00:17:55,776
+that is happening, right? So you have this weight matrix. You can actually split it
+
+166
+00:17:56,276 --> 00:17:59,173
+by the individual words because this is how it is applied, right? So you can
+
+167
+00:17:59,526 --> 00:18:02,957
+break it down, this operation that you see, you can
+
+168
+00:18:03,053 --> 00:18:06,741
+break it down by literally as a product of this W1
+
+169
+00:18:07,241 --> 00:18:10,445
+weight vector with the embedding of the first word the, and then so on and
+
+170
+00:18:10,461 --> 00:18:14,422
+so forth. But as you can already see that W1, you have
+
+171
+00:18:14,438 --> 00:18:18,062
+2 different weight vectors for the same word the
+
+172
+00:18:18,222 --> 00:18:22,407
+at 2 different positions. So it means that you're actually learning different
+
+173
+00:18:22,696 --> 00:18:26,095
+weight vectors or different projections for the same word which will
+
+174
+00:18:26,143 --> 00:18:29,737
+have the same meaning. But depending on which
+
+175
+00:18:29,769 --> 00:18:32,978
+position this word occurred, right? So it's basically what— this
+
+176
+00:18:33,478 --> 00:18:36,074
+is what actually what I said when I meant that, okay, you do not have
+
+177
+00:18:36,571 --> 00:18:39,700
+weights that are not shared across different embeddings in
+
+178
+00:18:40,200 --> 00:18:44,529
+the window. And this was a big limitation for fixed-context language models. And for
+
+179
+00:18:45,029 --> 00:18:48,364
+that, we actually gave you a quick introduction to what
+
+180
+00:18:48,444 --> 00:18:51,589
+are recurrent neural networks. We saw what does this mean, and now we'll go in
+
+181
+00:18:52,089 --> 00:18:55,622
+detail into this lecture. But then let's try to also understand that at a
+
+182
+00:18:56,122 --> 00:18:59,420
+high level why recurrent neural networks are able to get rid
+
+183
+00:18:59,920 --> 00:19:03,232
+of this problem, right? So this was what we saw as a recurrent neural network.
+
+184
+00:19:03,313 --> 00:19:06,887
+It was basically, you know, which can be seen as,
+
+185
+00:19:08,593 --> 00:19:12,296
+you know, we represent this as, you know,
+
+186
+00:19:12,377 --> 00:19:16,321
+an operation that you can perform recursively on the same
+
+187
+00:19:16,821 --> 00:19:19,996
+input, which means that, okay, there's this feedback loop in this
+
+188
+00:19:20,496 --> 00:19:24,170
+specific network. And how we actually look at this network when
+
+189
+00:19:24,670 --> 00:19:28,393
+we unroll this is something like this, where basically you can unroll this through time.
+
+190
+00:19:28,730 --> 00:19:32,183
+What it means that it's at each time step, let's say focus at the
+
+191
+00:19:32,683 --> 00:19:36,052
+specific time step t, you have the input at that time step,
+
+192
+00:19:36,454 --> 00:19:39,264
+and then you have some representation that is coming from the previous time step.
+
+193
+00:19:39,649 --> 00:19:43,117
+And combining all of this, what you can do is generate a representation for the
+
+194
+00:19:43,438 --> 00:19:46,586
+following time step. But also you can generate an output at this time step.
+
+195
+00:19:46,650 --> 00:19:50,666
+So this is how this recurrent neural network works, and it basically allows you
+
+196
+00:19:50,971 --> 00:19:54,120
+to literally learn from the entire sequence history regardless
+
+197
+00:19:54,620 --> 00:19:58,890
+of length. So it's a very good way to model
+
+198
+00:19:59,276 --> 00:20:02,697
+sequences of any specific length, right? And I'll make
+
+199
+00:20:03,197 --> 00:20:06,600
+a claim here which will become very clear as we go further. It's basically RNNs
+
+200
+00:20:06,713 --> 00:20:10,872
+actually allow us to theoretically— I'm just saying theoretically— learn
+
+201
+00:20:11,369 --> 00:20:15,202
+any, you know, learn to model any sequence of unbounded length.
+
+202
+00:20:16,260 --> 00:20:20,125
+And there is no increase in model size because the weights are shared across
+
+203
+00:20:20,625 --> 00:20:23,173
+time steps. What do we mean by that? It's basically just have a look at
+
+204
+00:20:23,673 --> 00:20:26,925
+this specific, right? So this is your classical recurrent neural network where
+
+205
+00:20:27,425 --> 00:20:31,689
+you have an input at time step t and you have the representation
+
+206
+00:20:32,189 --> 00:20:35,073
+at time step t. And then you can actually do this.
+
+207
+00:20:35,522 --> 00:20:38,874
+As we said, you saw the feedback loop and then using this you can get
+
+208
+00:20:39,374 --> 00:20:41,824
+your output. But what you can see is that if you unroll this, it's exactly
+
+209
+00:20:41,840 --> 00:20:45,545
+what you saw previously. But you see the thing that is staying constant
+
+210
+00:20:46,045 --> 00:20:49,602
+through time is these 3 matrices, the U, V, W matrices, which basically
+
+211
+00:20:49,955 --> 00:20:53,066
+means that— don't get lost in the notation. The point that I'm trying to convey
+
+212
+00:20:53,566 --> 00:20:56,658
+intuitively here is that the weight matrices are shared across time steps.
+
+213
+00:20:57,011 --> 00:21:01,309
+This is the exact same thing which was not existent in your fixed-context
+
+214
+00:21:01,325 --> 00:21:04,709
+neural language models, which is why it was a problem both computationally
+
+215
+00:21:05,209 --> 00:21:08,640
+but also to model long-range dependencies. But in this case, since the weights
+
+216
+00:21:09,140 --> 00:21:12,445
+are shared, so what you can say is that the model size actually doesn't increase
+
+217
+00:21:13,440 --> 00:21:16,843
+when the sequence length increases or the time steps
+
+218
+00:21:17,343 --> 00:21:21,466
+actually increase. And that's why these neural
+
+219
+00:21:21,966 --> 00:21:26,105
+networks, also called recurrent neural networks, are theoretically able to capture long-range dependencies
+
+220
+00:21:26,458 --> 00:21:29,845
+without actually making the computation too comp—
+
+221
+00:21:29,990 --> 00:21:33,457
+too, you know, as heavy as the fixed-context neural language models.
+
+222
+00:21:33,682 --> 00:21:37,258
+But also at the same time, you know, literally giving a modeling representation
+
+223
+00:21:37,691 --> 00:21:40,514
+for understanding long-range dependencies. Okay.
+
+224
+00:21:40,819 --> 00:21:44,251
+So with this, we set a very nice tone to what
+
+225
+00:21:44,751 --> 00:21:47,218
+we are going to look at in the rest of the lecture. And let's start
+
+226
+00:21:47,718 --> 00:21:50,907
+with recurrent neural networks in more detail. Okay. So as I said,
+
+227
+00:21:50,923 --> 00:21:54,884
+right, so we looked into this classical recurrent
+
+228
+00:21:55,384 --> 00:21:58,397
+neural network, also called an Elman recurrent neural network.
+
+229
+00:21:59,006 --> 00:22:02,149
+And what you can see here is that this neural network can be defined by
+
+230
+00:22:02,230 --> 00:22:06,372
+these 2 equations. Right? And these 2 equations are as simple as you have
+
+231
+00:22:07,207 --> 00:22:10,563
+the— as we said, let's now break it down based on trying
+
+232
+00:22:11,063 --> 00:22:14,336
+to see what kind of matrix-vector products will actually happen to actually get
+
+233
+00:22:14,836 --> 00:22:18,849
+your output, right? So you have this weight matrix Whx,
+
+234
+00:22:19,234 --> 00:22:22,606
+which is applied to this input at time t,
+
+235
+00:22:22,686 --> 00:22:26,765
+xt. And then you have a hidden state
+
+236
+00:22:27,199 --> 00:22:30,683
+weight matrix which is called Whh, which is then applied to
+
+237
+00:22:30,972 --> 00:22:33,893
+the representation that you're getting from the previous time step,
+
+238
+00:22:33,941 --> 00:22:37,712
+ht minus 1, and you have a bias for
+
+239
+00:22:38,212 --> 00:22:42,173
+specifically this neuron, right? Then what you also have to
+
+240
+00:22:42,189 --> 00:22:46,266
+compute the output at z of t, which is z of
+
+241
+00:22:46,298 --> 00:22:49,587
+t, where you apply this— there's also
+
+242
+00:22:50,087 --> 00:22:54,402
+a weight matrix at this state, which basically you can represent as Wzh,
+
+243
+00:22:54,803 --> 00:22:59,152
+which you can then use to do a projection of your the
+
+244
+00:22:59,297 --> 00:23:02,667
+hidden state that you compute at time step t, and as well
+
+245
+00:23:03,167 --> 00:23:06,968
+as a specific bias. So using these 2 operations, what you're doing is
+
+246
+00:23:07,401 --> 00:23:10,964
+you are then basically utilizing first your
+
+247
+00:23:11,077 --> 00:23:14,623
+current input and your previous representation, which you
+
+248
+00:23:15,123 --> 00:23:18,315
+are actually— in which you are aggregating information through time. You use that to
+
+249
+00:23:18,815 --> 00:23:22,247
+actually get the current representation at specific— at this time step,
+
+250
+00:23:22,632 --> 00:23:25,823
+and then you use this specific representation at this time
+
+251
+00:23:25,839 --> 00:23:29,428
+step to actually compute the output at this time step. So basically what's happening is
+
+252
+00:23:29,524 --> 00:23:32,649
+that the output at every time step is a
+
+253
+00:23:33,149 --> 00:23:36,479
+function of the information that you get from
+
+254
+00:23:36,591 --> 00:23:39,860
+previous time steps, but also the current input, right? So this
+
+255
+00:23:40,360 --> 00:23:44,860
+is how you actually compute. And you also get the representation
+
+256
+00:23:45,360 --> 00:23:47,440
+at this time step, which you pass along to the next step. And this,
+
+257
+00:23:47,632 --> 00:23:50,538
+as you can see, this is a recursive function. This keeps going. And then it
+
+258
+00:23:51,038 --> 00:23:54,589
+allows you to model these long-range dependencies or
+
+259
+00:23:54,719 --> 00:23:58,657
+literally model sequence of tokens. Okay. So some
+
+260
+00:23:58,754 --> 00:24:02,511
+of you asked, and let's actually try to understand, because we started
+
+261
+00:24:02,543 --> 00:24:05,623
+from this, okay, we looked at this network at a specific time
+
+262
+00:24:06,123 --> 00:24:08,493
+step, but what would be h_0? Any ideas?
+
+263
+00:24:13,348 --> 00:24:16,574
+So h_0 has to be some sort of an initialization, right? Because you don't know
+
+264
+00:24:17,074 --> 00:24:20,706
+anything. About that? What could it be? Yes. Okay.
+
+265
+00:24:21,028 --> 00:24:24,190
+Yeah, it can be 0. Can anyone disagree? Agree?
+
+266
+00:24:37,764 --> 00:24:41,109
+Yes. We can have some initial pre-trained values. Yes. And I think both answers
+
+267
+00:24:41,609 --> 00:24:44,163
+are right, right? So because the point is you can just initialize them to 0
+
+268
+00:24:44,663 --> 00:24:47,531
+because, you know, Intuitively, it's right because you have not seen anything so far.
+
+269
+00:24:47,675 --> 00:24:50,816
+So basically, there's no previous history, so you say it's 0. What you
+
+270
+00:24:51,316 --> 00:24:54,982
+can also do is you can initialize them to be based on— it depends
+
+271
+00:24:55,482 --> 00:24:58,171
+on the task. If you can have some pre-trained initialization, you can also do that.
+
+272
+00:24:58,491 --> 00:25:01,488
+But what you can also do is you can also make them learnable. You can
+
+273
+00:25:01,520 --> 00:25:05,974
+just initialize them randomly, and then since you do backpropagation, you can also just
+
+274
+00:25:06,022 --> 00:25:09,932
+backpropagate through one more step to say that, OK, we initialize them randomly
+
+275
+00:25:09,948 --> 00:25:12,850
+and then learn from it. So all 3 answers are valid. It depends from task
+
+276
+00:25:13,350 --> 00:25:17,635
+to task. Great. Thanks. OK. So then let's actually try to understand
+
+277
+00:25:18,135 --> 00:25:22,452
+this a bit better from different standpoints. Right. So we looked
+
+278
+00:25:22,952 --> 00:25:25,727
+at— now we actually looked at how these computations happen.
+
+279
+00:25:26,064 --> 00:25:30,014
+I'll probably ask another question right now is that can you tell me what part
+
+280
+00:25:30,514 --> 00:25:34,446
+of this formulation actually allows the model to maintain a state of previously
+
+281
+00:25:34,946 --> 00:25:35,200
+seen input tokens?
+
+282
+00:25:39,429 --> 00:25:42,627
+Anyone? Yeah, I don't know. If not, okay,
+
+283
+00:25:42,643 --> 00:25:45,812
+please. Yes.
+
+284
+00:25:50,721 --> 00:25:55,871
+Okay. Yes, right answer, right? So basically, the memory,
+
+285
+00:25:56,065 --> 00:25:59,802
+as we call it, right, of this specific recurrent neural network is what we
+
+286
+00:26:00,189 --> 00:26:02,813
+see using these h vectors,
+
+287
+00:26:03,780 --> 00:26:07,584
+which actually store information from previous steps, right? And it actually keeps passing
+
+288
+00:26:07,600 --> 00:26:10,175
+along to the next time steps as things go on.
+
+289
+00:26:10,612 --> 00:26:13,941
+Okay, then you also
+
+290
+00:26:13,990 --> 00:26:18,055
+have other parameter matrices as we saw, right? So you have these WHx,
+
+291
+00:26:18,104 --> 00:26:21,427
+WHh, Wch, and the 2 bias terms that allow
+
+292
+00:26:21,508 --> 00:26:25,145
+you to actually literally model these sequences. And as we saw,
+
+293
+00:26:25,937 --> 00:26:29,300
+these now, I mean, I told you these are shared through time, but also now
+
+294
+00:26:29,414 --> 00:26:32,341
+let's look at a visual representation that these are actually shared through time,
+
+295
+00:26:32,358 --> 00:26:36,194
+right? So we looked at You know, more like I kind of gave
+
+296
+00:26:36,694 --> 00:26:39,483
+you a nice representation where it looked like with U, V, and W matrices.
+
+297
+00:26:39,612 --> 00:26:43,462
+Now you can actually see for this Elman network
+
+298
+00:26:43,944 --> 00:26:47,634
+is that the weight matrices are also shared through time, right? So what
+
+299
+00:26:48,134 --> 00:26:52,142
+you can see is that these WHX, WZH, and WHH are
+
+300
+00:26:52,642 --> 00:26:56,506
+exactly the same matrices which you keep applying recursively on the
+
+301
+00:26:56,875 --> 00:27:00,724
+sequence of tokens. The only thing that changes is the input that
+
+302
+00:27:01,224 --> 00:27:04,410
+you receive at every timestep t and the ht-1, which you get from the
+
+303
+00:27:04,910 --> 00:27:08,592
+previous timestep. And this is how you keep going forward with this specific
+
+304
+00:27:08,816 --> 00:27:12,630
+computation. So as you can see, the neat trick here is that
+
+305
+00:27:12,999 --> 00:27:17,117
+the matrices are shared. And with that, you can just theoretically
+
+306
+00:27:17,230 --> 00:27:20,547
+just keep going as long as you want to.
+
+307
+00:27:21,316 --> 00:27:25,227
+So the key objective in a classical language model recurrent neural
+
+308
+00:27:25,727 --> 00:27:28,741
+network is to literally learn these parameter matrices.
+
+309
+00:27:28,998 --> 00:27:32,754
+So of course, the bias terms as well, but these 3 weight
+
+310
+00:27:32,850 --> 00:27:36,974
+matrices which actually allow us to actually represent these textual sequences.
+
+311
+00:27:37,360 --> 00:27:40,698
+So let's try to actually look at how these matrices are actually learned.
+
+312
+00:27:41,548 --> 00:27:44,999
+So for that, just wanted to give you one specific
+
+313
+00:27:45,499 --> 00:27:47,663
+reminder before I tell you how this is learned.
+
+314
+00:27:48,578 --> 00:27:51,900
+So the reminder again is that— and And I know we have
+
+315
+00:27:52,400 --> 00:27:55,946
+seen this multiple times, but the key reminder for you to take through is
+
+316
+00:27:56,460 --> 00:28:00,522
+the recurrent neural network is literally a feedforward network with
+
+317
+00:28:00,554 --> 00:28:03,990
+dynamic depth. What I mean by that, although we use this shorthand
+
+318
+00:28:04,490 --> 00:28:07,490
+notation to show a recurrent neural network which looks like this,
+
+319
+00:28:08,566 --> 00:28:12,034
+but when we unroll it, it literally is a feedforward neural
+
+320
+00:28:12,534 --> 00:28:16,353
+network. You can see literally what's happening is that the information is flowing from
+
+321
+00:28:16,369 --> 00:28:19,919
+left to right. And it's literally how it
+
+322
+00:28:20,419 --> 00:28:23,492
+would happen in a feedforward neural network. Any questions or any doubts at this point?
+
+323
+00:28:27,248 --> 00:28:30,959
+So it's no different from your classical MLP or a classical deep neural
+
+324
+00:28:31,459 --> 00:28:35,068
+network, right? It's literally a feedforward network. The only difference
+
+325
+00:28:35,148 --> 00:28:38,929
+is that here the depth is dynamic, which what I
+
+326
+00:28:38,945 --> 00:28:42,451
+mean by that is that how deep this
+
+327
+00:28:42,951 --> 00:28:46,200
+network will be It literally depends on the length of the input sequence. So if
+
+328
+00:28:46,700 --> 00:28:50,860
+you're at a specific time step, if you're training an input which
+
+329
+00:28:51,360 --> 00:28:54,900
+has 10 tokens, it will have 10 unrollings. If you have
+
+330
+00:28:55,400 --> 00:28:58,480
+input of 5 tokens, it will be unrolled 5 times, and so on
+
+331
+00:28:58,980 --> 00:29:01,490
+and so forth. So the depth will dynamically change. Yes? In a normal feedforward network,
+
+332
+00:29:02,000 --> 00:29:03,780
+each layer has separate weights.
+
+333
+00:29:05,300 --> 00:29:08,580
+Sure. I mean, yeah. But I mean, you get the idea, right? I mean,
+
+334
+00:29:09,080 --> 00:29:11,940
+that's a very specific difference. Yes, the point that was raised is that in a
+
+335
+00:29:12,440 --> 00:29:15,981
+normal feedforward neural network, Every layer will have different weights because you
+
+336
+00:29:16,481 --> 00:29:19,722
+are trying to actually, by stacking these layers, you're trying to actually
+
+337
+00:29:19,754 --> 00:29:24,105
+learn more complex functions, which is a transformation of, which is literally transformations
+
+338
+00:29:24,605 --> 00:29:27,108
+and projections that you apply as you keep going forward. But in this case,
+
+339
+00:29:28,248 --> 00:29:31,379
+you keep this shared because you are actually learning through time.
+
+340
+00:29:32,053 --> 00:29:35,859
+So you want to keep this information shared as
+
+341
+00:29:35,891 --> 00:29:38,588
+you go. Okay, any other comments, questions?
+
+342
+00:29:40,882 --> 00:29:45,244
+Okay, so with that, then how do we actually learn
+
+343
+00:29:45,677 --> 00:29:49,157
+the parameters of a feedforward neural network is something that we
+
+344
+00:29:49,991 --> 00:29:53,823
+term as backpropagation, right? So to understand how we can actually
+
+345
+00:29:53,920 --> 00:29:57,448
+learn the parameters of a recurrent neural network, it is very important
+
+346
+00:29:57,948 --> 00:30:00,751
+to understand how we can learn the parameters of a simple feedforward neural network,
+
+347
+00:30:01,136 --> 00:30:04,696
+and then it will just be a simple generalization,
+
+348
+00:30:04,744 --> 00:30:07,825
+as I say, which we can do on top of this. So let's first review
+
+349
+00:30:08,274 --> 00:30:12,366
+how backpropagation is done for feedforward neural networks. So for that,
+
+350
+00:30:12,382 --> 00:30:15,383
+let's first define what are the operations that actually are performed in a feedforward neural
+
+351
+00:30:15,883 --> 00:30:19,427
+network. So let's see this specific, very simple feedforward neural network,
+
+352
+00:30:19,443 --> 00:30:22,122
+which I'm literally showing you at the neuron level now,
+
+353
+00:30:22,893 --> 00:30:26,214
+is that you have the input, which is x, which has 3
+
+354
+00:30:26,584 --> 00:30:30,659
+dimensions here, so which we can see x1, x2, x3. Then what
+
+355
+00:30:31,159 --> 00:30:33,979
+you can— then you can see layer by layer is that you have the first
+
+356
+00:30:34,027 --> 00:30:38,113
+layer h1, the second layer h2, and then you will have the
+
+357
+00:30:38,193 --> 00:30:41,686
+output that is computed at the final layer. And what you can
+
+358
+00:30:41,718 --> 00:30:45,500
+see is that these terms inside
+
+359
+00:30:46,000 --> 00:30:49,490
+these neurons at each layer termed phi 11,
+
+360
+00:30:49,506 --> 00:30:53,191
+phi 21, and all these different phis are actually the activation functions
+
+361
+00:30:53,691 --> 00:30:57,197
+as we call it in a neural network. It basically applies some sort
+
+362
+00:30:57,261 --> 00:31:01,370
+of— I mean, these activation functions can be linear or also nonlinear, But eventually they
+
+363
+00:31:01,451 --> 00:31:05,230
+apply some sort of transformation that takes the
+
+364
+00:31:05,246 --> 00:31:09,058
+input that comes into this specific cell, and then it transforms
+
+365
+00:31:09,749 --> 00:31:12,820
+to produce the output at this step. So what you can see is that,
+
+366
+00:31:13,061 --> 00:31:16,244
+let's try to look at phi 1, 1. What happens is that it will receive
+
+367
+00:31:17,450 --> 00:31:22,819
+literally a combination
+
+368
+00:31:23,013 --> 00:31:26,234
+of the input and the weight vectors here, or the weight
+
+369
+00:31:26,347 --> 00:31:29,661
+terms here, as we can say. So what will happen here
+
+370
+00:31:30,161 --> 00:31:33,218
+is that it will actually perform the operations like x1
+
+371
+00:31:33,250 --> 00:31:37,705
+times w11, then plus x2 times w21,
+
+372
+00:31:37,977 --> 00:31:41,358
+and then x3 times w31. And that will be the sum
+
+373
+00:31:41,406 --> 00:31:45,557
+that will go into this specific neuron. And then you apply this phi function,
+
+374
+00:31:45,829 --> 00:31:49,659
+which is the activation on top of it, to get the output of this specific
+
+375
+00:31:50,380 --> 00:31:54,130
+neuron. And then you keep doing this operation until unless you reach
+
+376
+00:31:54,630 --> 00:31:58,322
+reach the specific prediction. So, and how do we actually get
+
+377
+00:31:58,822 --> 00:32:03,220
+the prediction of this is that we again perform a cross-entropy loss
+
+378
+00:32:03,720 --> 00:32:07,700
+function where basically we know what should be the label of
+
+379
+00:32:07,716 --> 00:32:10,880
+this specific input because this is how we know this information
+
+380
+00:32:10,928 --> 00:32:14,718
+from our training data. And then we actually compute
+
+381
+00:32:15,218 --> 00:32:18,556
+a cross-entropy from the label, the ground truth that
+
+382
+00:32:19,056 --> 00:32:22,640
+we know, and the prediction which is basically the probability
+
+383
+00:32:23,139 --> 00:32:27,037
+of different— what we obtain for
+
+384
+00:32:27,085 --> 00:32:30,210
+the probability over different class labels that we
+
+385
+00:32:30,710 --> 00:32:34,515
+have, so that we can actually then compute the cross-entropy and see how close
+
+386
+00:32:34,774 --> 00:32:38,057
+this specific prediction is to the
+
+387
+00:32:38,350 --> 00:32:41,779
+underlying ground truth that we have. In this case,
+
+388
+00:32:42,496 --> 00:32:45,799
+it's basically— this is why we call it as a
+
+389
+00:32:46,299 --> 00:32:49,343
+loss function. So, these are the elements to define your neural network, and then let's
+
+390
+00:32:49,843 --> 00:32:53,271
+see how we perform the next steps. Okay, so to go
+
+391
+00:32:53,771 --> 00:32:57,759
+a bit into detail what these different numbers
+
+392
+00:32:57,839 --> 00:33:01,589
+are at these different layers is that at this
+
+393
+00:33:01,653 --> 00:33:05,067
+specific layer, let's call it layer 0, what you can see
+
+394
+00:33:05,567 --> 00:33:09,026
+is that the weight matrix is actually termed W0,
+
+395
+00:33:09,314 --> 00:33:13,417
+which is basically W11 is literally the
+
+396
+00:33:13,802 --> 00:33:16,655
+weight entry that you see at row 1 and column 1,
+
+397
+00:33:16,831 --> 00:33:20,440
+right? And as you can see, there are 3 times 3 connections that can
+
+398
+00:33:20,520 --> 00:33:24,103
+happen here. So you will have 9 entries here, right? And similarly, you can define
+
+399
+00:33:24,152 --> 00:33:27,735
+W1, which is the weight matrix at layer 1. And then the
+
+400
+00:33:27,767 --> 00:33:31,751
+operations, as I said, as usually are performed, is that H1,
+
+401
+00:33:32,089 --> 00:33:35,768
+you can represent it as Phi 1, which is again a weight vector
+
+402
+00:33:36,025 --> 00:33:39,175
+or an activation. You can consider this as a vector, right, which you
+
+403
+00:33:39,675 --> 00:33:43,915
+apply on the outputs that you get from Phi
+
+404
+00:33:44,415 --> 00:33:48,343
+0— sorry, weight weight matrix 0 at
+
+405
+00:33:48,471 --> 00:33:51,806
+layer 0 multiplied by the input, and then you keep going like this
+
+406
+00:33:52,078 --> 00:33:55,990
+to get your specific outputs. Okay. So then let's look at literally
+
+407
+00:33:56,343 --> 00:33:59,998
+what happens at the output layer is that you can compute
+
+408
+00:34:00,110 --> 00:34:03,252
+the— you can represent the final
+
+409
+00:34:03,316 --> 00:34:07,164
+weight vector which you can consider for the output layer.
+
+410
+00:34:07,228 --> 00:34:10,017
+You can call it w_out, and then it will have 3 entries, w_10,
+
+411
+00:34:10,290 --> 00:34:13,160
+w_11, W1O, W2O, and W3O.
+
+412
+00:34:13,722 --> 00:34:16,948
+And basically, let's see how we actually compute the loss
+
+413
+00:34:17,448 --> 00:34:21,650
+and how you actually get the gradients from this. So basically,
+
+414
+00:34:22,244 --> 00:34:26,384
+we defined this loss function previously. It's defined as a cross-entropy between
+
+415
+00:34:26,834 --> 00:34:30,477
+the ground truth label and the prediction that we obtain
+
+416
+00:34:30,573 --> 00:34:34,345
+from the neural network. And what you can see is that the prediction here
+
+417
+00:34:34,666 --> 00:34:38,510
+can be seen as phi 0 times And
+
+418
+00:34:38,527 --> 00:34:42,490
+what is u? u is basically what we get by composing
+
+419
+00:34:42,912 --> 00:34:47,546
+the outputs that you get from here with the weight
+
+420
+00:34:48,014 --> 00:34:51,791
+vector that we see at the output layer. So basically, u is literally
+
+421
+00:34:52,227 --> 00:34:55,991
+w_out times h_2, which basically can be seen as w_10
+
+422
+00:34:56,266 --> 00:34:59,377
+times phi_12, because this is the output of this specific neuron.
+
+423
+00:34:59,815 --> 00:35:04,203
+Then you can look at this as w_21 times
+
+424
+00:35:04,781 --> 00:35:08,458
+phi 22, which is the output of this specific neuron. And then
+
+425
+00:35:08,811 --> 00:35:12,424
+you can see this as w30 times phi 32, which is the output
+
+426
+00:35:12,488 --> 00:35:15,811
+of this 3rd neuron. So clear so far?
+
+427
+00:35:16,438 --> 00:35:20,195
+This is how we compute u. And then what you can say is that let's
+
+428
+00:35:20,695 --> 00:35:24,915
+try to define how we actually compute the gradient
+
+429
+00:35:25,012 --> 00:35:28,335
+with respect to— gradient of the loss function with respect to phi
+
+430
+00:35:28,835 --> 00:35:31,831
+12. Because this is how we actually do backpropagation.
+
+431
+00:35:32,766 --> 00:35:36,312
+So what you can do is you can actually think
+
+432
+00:35:36,812 --> 00:35:40,516
+of this as applying chain rule. Again, if you remember your
+
+433
+00:35:42,481 --> 00:35:45,524
+classical analysis lectures or maybe what you've studied
+
+434
+00:35:45,943 --> 00:35:49,094
+maybe in high school, but also in the first few
+
+435
+00:35:49,175 --> 00:35:53,055
+years of engineering or your degree. And then
+
+436
+00:35:53,555 --> 00:35:57,094
+what you can see is that You can literally break this down as the
+
+437
+00:35:57,303 --> 00:36:01,480
+gradient of the loss function with respect to the prediction or what
+
+438
+00:36:01,980 --> 00:36:06,347
+you obtain from the model. Then you can keep going,
+
+439
+00:36:06,540 --> 00:36:11,633
+keep expanding the computation as the gradient of the prediction with
+
+440
+00:36:13,046 --> 00:36:17,400
+respect to your u vector, which is basically the input that
+
+441
+00:36:17,900 --> 00:36:21,368
+you observe here. Then you can see it as the partial derivative of
+
+442
+00:36:21,722 --> 00:36:25,270
+the output u with respect to the
+
+443
+00:36:25,800 --> 00:36:28,208
+activation phi 1, 2.
+
+444
+00:36:29,493 --> 00:36:33,090
+And what you can see is that this is how we break this computation down.
+
+445
+00:36:33,604 --> 00:36:36,574
+But let's try to then understand how do we actually compute this.
+
+446
+00:36:37,056 --> 00:36:41,150
+So this specific partial derivative is clear that it will be w
+
+447
+00:36:41,650 --> 00:36:45,084
+1, 0. Because what this is, we are actually taking the partial
+
+448
+00:36:45,584 --> 00:36:49,660
+derivative of u with respect to phi 1, 2. And then this should
+
+449
+00:36:50,160 --> 00:36:53,305
+be immediately clear that it only depends— this basically is w_1,
+
+450
+00:36:53,498 --> 00:36:57,464
+o because every other term is independent of 5,
+
+451
+00:36:57,512 --> 00:37:01,253
+1, 2. So this is what basically we get by
+
+452
+00:37:02,104 --> 00:37:05,652
+compute— this is how we compute the loss with respect to this specific
+
+453
+00:37:06,022 --> 00:37:09,329
+neuron 5, 1, 2. And then let's try to understand
+
+454
+00:37:09,829 --> 00:37:13,974
+the other terms that you can see in this specific in this specific computation.
+
+455
+00:37:14,554 --> 00:37:17,761
+So the first term actually can be
+
+456
+00:37:18,261 --> 00:37:22,181
+seen as something that depends on the label y, but also then depends
+
+457
+00:37:22,359 --> 00:37:25,693
+on the nonlinearity or the activation function that we use at the
+
+458
+00:37:26,193 --> 00:37:29,254
+output layer. So usually we use a sigmoid function, which you have seen in the
+
+459
+00:37:29,754 --> 00:37:33,472
+past, or a softmax. So basically, this computation depends
+
+460
+00:37:33,568 --> 00:37:37,212
+literally on the label y and the derivative of
+
+461
+00:37:37,712 --> 00:37:40,686
+the sigmoid function. The activation function at the output.
+
+462
+00:37:41,729 --> 00:37:46,026
+The other one basically depends only on the nonlinearity
+
+463
+00:37:46,539 --> 00:37:50,131
+or the activation function phi 0 here, which will also be some sort
+
+464
+00:37:50,631 --> 00:37:53,916
+of a sigmoid or a ReLU or different types of activation function that you use.
+
+465
+00:37:54,140 --> 00:37:57,491
+So overall, these are all easy— or I mean,
+
+466
+00:37:58,005 --> 00:38:02,158
+not easy on paper, but these are all computations
+
+467
+00:38:02,658 --> 00:38:05,525
+that can be made because you can use different libraries to actually make this computation.
+
+468
+00:38:05,702 --> 00:38:09,310
+Of course, you can also make this by hand, or you can also find out
+
+469
+00:38:09,810 --> 00:38:13,544
+how to do this, but that's not the focus of this specific course.
+
+470
+00:38:13,800 --> 00:38:17,425
+We are not actually going to test you on how you can compute gradients.
+
+471
+00:38:17,569 --> 00:38:21,177
+Of course, I mean, you have done this in a machine learning class
+
+472
+00:38:21,723 --> 00:38:25,571
+or in a specific class
+
+473
+00:38:26,071 --> 00:38:29,356
+on analysis in the past. So we will not
+
+474
+00:38:29,856 --> 00:38:32,889
+actually ask you to actually compute derivatives. Anywhere in the exam,
+
+475
+00:38:33,114 --> 00:38:37,009
+but I'm just saying you need to understand how you compute this so that you
+
+476
+00:38:37,154 --> 00:38:39,697
+get to know the idea of how backpropagation actually works.
+
+477
+00:38:41,091 --> 00:38:44,206
+Okay. So then I think the important part, if some of you have not observed
+
+478
+00:38:44,239 --> 00:38:47,871
+this, let's actually try to kind of play this color game here, right? So what
+
+479
+00:38:48,371 --> 00:38:51,013
+you see is there's a difference between these 2 slides, right? So when we look
+
+480
+00:38:51,174 --> 00:38:55,999
+at the derivative of the loss
+
+481
+00:38:56,499 --> 00:39:00,149
+function with respect to the first activation phi 1, 2, what you see is that
+
+482
+00:39:00,454 --> 00:39:03,153
+you see this term here. It's basically,
+
+483
+00:39:03,667 --> 00:39:08,517
+it's actually w1o, which basically depends on the
+
+484
+00:39:08,630 --> 00:39:11,842
+derivative of the output u with respect to phi 1, 2,
+
+485
+00:39:12,244 --> 00:39:16,452
+and then 2 terms which are constant. Why I say they are constant
+
+486
+00:39:16,500 --> 00:39:20,420
+with respect to this specific operation, because when you then compute
+
+487
+00:39:20,853 --> 00:39:24,291
+the derivative of the loss function with
+
+488
+00:39:24,791 --> 00:39:28,642
+respect to phi 2, 2, The same 2 terms will appear. The only thing that
+
+489
+00:39:29,142 --> 00:39:32,821
+will change is w2— basically the derivative that you have to compute
+
+490
+00:39:33,079 --> 00:39:35,838
+of u with respect to phi22, which will be w2o.
+
+491
+00:39:36,257 --> 00:39:40,141
+So the point here is that when you do backpropagation,
+
+492
+00:39:40,270 --> 00:39:44,575
+you can literally cache the computation that you have performed already for
+
+493
+00:39:46,173 --> 00:39:49,513
+certain things that will recur. So you don't need to recompute
+
+494
+00:39:49,529 --> 00:39:53,351
+them. And this is why backpropagation works. Otherwise, it would have been a super expensive
+
+495
+00:39:53,851 --> 00:39:58,243
+operation and not worked at all computationally. So this is what makes backpropagation practical,
+
+496
+00:39:58,291 --> 00:40:01,722
+the chain rule and how we compute it from the back. I mean,
+
+497
+00:40:01,754 --> 00:40:04,864
+this is why it's also called backpropagation, because you literally start at the end
+
+498
+00:40:04,960 --> 00:40:08,359
+of your neural network and you keep going back layer
+
+499
+00:40:08,407 --> 00:40:11,918
+by layer and one by one. Okay, and then it will— the
+
+500
+00:40:12,418 --> 00:40:15,269
+same thing will happen again when you compute phi 3, 2. What will happen is
+
+501
+00:40:15,285 --> 00:40:18,683
+that instead of now having w2, 0, you will have w3,
+
+502
+00:40:18,699 --> 00:40:22,284
+0, but the other terms will remain the same. Okay, clear so
+
+503
+00:40:22,300 --> 00:40:25,787
+far how we are computing this backpropagation?
+
+504
+00:40:25,933 --> 00:40:29,404
+Okay, good. So then let's try to literally understand how
+
+505
+00:40:29,469 --> 00:40:32,906
+we can actually keep going to the previous layers.
+
+506
+00:40:33,325 --> 00:40:37,101
+So basically now what we have done is that we have computed the gradient
+
+507
+00:40:37,214 --> 00:40:40,931
+literally of the loss function, which we want eventually with respect
+
+508
+00:40:41,012 --> 00:40:44,577
+to the outputs that we get from the
+
+509
+00:40:45,077 --> 00:40:48,297
+first layer. But we actually then have to keep going. So that— and we have
+
+510
+00:40:48,797 --> 00:40:52,143
+to keep going up to the end so that we can actually learn the weight
+
+511
+00:40:52,643 --> 00:40:55,204
+matrices of the entire neural network. Right.
+
+512
+00:40:56,069 --> 00:41:00,524
+Okay. So then let's try to look at the previous—
+
+513
+00:41:00,893 --> 00:41:04,178
+like, so basically we look at what comes into
+
+514
+00:41:04,963 --> 00:41:08,408
+this specific layer, which basically means that we now are looking at— going to look
+
+515
+00:41:08,489 --> 00:41:11,565
+at the weight matrix W1 at
+
+516
+00:41:11,629 --> 00:41:15,243
+layer 1. Right. And let's try to actually again use the
+
+517
+00:41:15,743 --> 00:41:19,092
+same chain rule and define how the computation will happen. So you already have
+
+518
+00:41:19,592 --> 00:41:22,994
+that. So you already have computed the partial derivative of the loss with
+
+519
+00:41:23,494 --> 00:41:27,068
+respect to phi 1, 2. Let's try to
+
+520
+00:41:27,149 --> 00:41:31,070
+represent the input that comes into this phi 1, 2 as
+
+521
+00:41:31,506 --> 00:41:34,836
+v, which will basically be the output that you get
+
+522
+00:41:35,051 --> 00:41:38,497
+from this specific layer which goes into phi 1, 2.
+
+523
+00:41:39,059 --> 00:41:42,475
+So you can simply compute this again by hand, is that v will
+
+524
+00:41:42,975 --> 00:41:46,549
+be literally w11 times phi11, then w21
+
+525
+00:41:46,774 --> 00:41:50,254
+times phi21, and then w31 times phi31. So it's
+
+526
+00:41:50,754 --> 00:41:54,489
+exactly what we saw. So we just compute phi11 times w11,
+
+527
+00:41:54,585 --> 00:41:58,034
+phi21 times w21, and phi31 times w31. So let's define
+
+528
+00:41:58,534 --> 00:42:02,140
+this as v. And then what
+
+529
+00:42:02,640 --> 00:42:05,765
+you can again see is if you compute the partial derivative
+
+530
+00:42:05,829 --> 00:42:09,166
+with respect to now phi_11 instead of phi_12,
+
+531
+00:42:09,422 --> 00:42:12,775
+as you have seen in the past, you can again break it down using chain
+
+532
+00:42:12,871 --> 00:42:16,769
+rule with something like this. So what you do is you compute the loss
+
+533
+00:42:16,882 --> 00:42:20,283
+with respect to— again, you compute the partial derivative of the loss with respect to
+
+534
+00:42:20,783 --> 00:42:24,518
+the prediction, prediction with respect to u, u with respect to phi_12 of v.
+
+535
+00:42:25,143 --> 00:42:28,528
+Now v is that input that we are getting. As you're seeing that previously we
+
+536
+00:42:29,028 --> 00:42:32,298
+said it was— we made it undefined. Now we are literally
+
+537
+00:42:32,798 --> 00:42:36,194
+defining it as we go. Further, right? So we say it
+
+538
+00:42:36,290 --> 00:42:39,911
+as v. Then what we need is that we
+
+539
+00:42:39,991 --> 00:42:43,821
+need the partial derivative of phi 1, 2 v with respect
+
+540
+00:42:44,321 --> 00:42:48,116
+to v, and then eventually we need the partial derivative of v
+
+541
+00:42:48,228 --> 00:42:51,337
+with respect to phi 1, 1, right? And as you can see that all of
+
+542
+00:42:51,369 --> 00:42:54,735
+these terms, you have already seen this term in the past,
+
+543
+00:42:55,039 --> 00:42:58,661
+right? The 2 added terms that are added is the partial derivative
+
+544
+00:42:58,805 --> 00:43:02,596
+of this phi_12 v with respect to v and v
+
+545
+00:43:03,096 --> 00:43:06,951
+with respect to phi_11, which will basically again be w_11 L
+
+546
+00:43:07,451 --> 00:43:10,665
+is equal to 1. So basically, the whole pattern, the whole recurring pattern will keep—
+
+547
+00:43:11,038 --> 00:43:13,614
+as you see, the same pattern will keep recurring as you keep going.
+
+548
+00:43:14,682 --> 00:43:17,915
+So again, what we saw
+
+549
+00:43:18,061 --> 00:43:21,747
+previously, this first term is what you have seen already. And this term
+
+550
+00:43:21,893 --> 00:43:24,906
+depends on only phi_12, which is basically the nonlinearity.
+
+551
+00:43:24,955 --> 00:43:27,438
+So it will have some sort of a derivative that you can compute of the
+
+552
+00:43:27,938 --> 00:43:31,442
+sigmoid or whatever activation function that you're using at this level. And the
+
+553
+00:43:31,942 --> 00:43:34,570
+final term is simply w_11. OK,
+
+554
+00:43:35,275 --> 00:43:39,140
+good. And then, as I said, as I promised,
+
+555
+00:43:39,284 --> 00:43:42,524
+and I think this will keep happening again and again, if you keep also change
+
+556
+00:43:43,085 --> 00:43:46,517
+from phi_11 to phi_21, the whole pattern will
+
+557
+00:43:47,017 --> 00:43:51,056
+recur. Now you will change it to instead of w_11, L is equal to 1.
+
+558
+00:43:51,248 --> 00:43:53,862
+At the end, you will have w_21, L is equal to 1.
+
+559
+00:43:55,177 --> 00:43:59,077
+So this is how you keep going. While computing backpropagation.
+
+560
+00:43:59,656 --> 00:44:02,836
+I'm assuming this review was helpful if you have not done a deep learning course
+
+561
+00:44:03,366 --> 00:44:07,607
+in the past. So it gives you an idea of how backpropagation is performed and
+
+562
+00:44:07,623 --> 00:44:11,365
+how it can be done efficiently, because most of these
+
+563
+00:44:11,381 --> 00:44:16,264
+things recur as you keep computing the derivatives
+
+564
+00:44:16,280 --> 00:44:19,927
+with respect to each previous input. So overall,
+
+565
+00:44:20,537 --> 00:44:23,537
+just to also give you a practical sense that this works. You will also see
+
+566
+00:44:24,037 --> 00:44:27,514
+this in practice in the exercise sessions where you will be doing this using the
+
+567
+00:44:30,256 --> 00:44:34,047
+libraries PyTorch and how this is done in practice. OK,
+
+568
+00:44:34,485 --> 00:44:39,005
+so now we have seen how backpropagation works for a
+
+569
+00:44:39,505 --> 00:44:43,254
+feedforward neural network. And I made a claim that a recurrent
+
+570
+00:44:43,754 --> 00:44:46,675
+neural network is just a feedforward neural network with dynamic depth.
+
+571
+00:44:48,317 --> 00:44:51,866
+Can someone tell me, or has anyone— can
+
+572
+00:44:51,915 --> 00:44:55,156
+someone give me some ideas how can we extend this to a recurrent neural network?
+
+573
+00:45:01,235 --> 00:45:01,364
+Yes.
+
+574
+00:45:08,265 --> 00:45:12,598
+Yeah, I mean, this is what will happen, right? Exactly. So basically, since it's literally—
+
+575
+00:45:13,514 --> 00:45:16,651
+we saw how we compute backpropagation for a feedforward neural network.
+
+576
+00:45:17,167 --> 00:45:20,556
+And we literally say it's like this feedforward neural network which is unrolled
+
+577
+00:45:21,056 --> 00:45:24,993
+through time. And as we saw, right, it's basically each of these can
+
+578
+00:45:25,493 --> 00:45:29,334
+be seen as one feedforward neural network, right? And we basically
+
+579
+00:45:29,366 --> 00:45:32,206
+keep applying the same thing again and again. Let's see how it happens, right?
+
+580
+00:45:33,104 --> 00:45:36,546
+So, okay, I already said all of that.
+
+581
+00:45:37,029 --> 00:45:40,198
+So let's literally walk— let's try to walk through
+
+582
+00:45:41,018 --> 00:45:45,146
+with the whole operation that is performed here, right? So recall
+
+583
+00:45:45,195 --> 00:45:49,100
+again that this is how we define a recurrent neural network or
+
+584
+00:45:49,600 --> 00:45:53,574
+a classical recurrent neural network that you have z_t here, which basically is
+
+585
+00:45:54,312 --> 00:45:57,599
+a sigmoid of w_zh h_t plus b_z.
+
+586
+00:45:58,658 --> 00:46:01,994
+And then you have the h_t here, which is computed using again a sigmoid of
+
+587
+00:46:02,058 --> 00:46:05,041
+w_hx times x_t plus w_hh h_t minus 1 plus b_h,
+
+588
+00:46:05,297 --> 00:46:08,649
+right? Which, which is basically all the terms that you already
+
+589
+00:46:08,665 --> 00:46:12,450
+have at this level, right? So the first layer would be to basically
+
+590
+00:46:12,950 --> 00:46:16,625
+you have the output from this specific neuron at
+
+591
+00:46:17,125 --> 00:46:20,576
+time, or this specific recurrent neural network unit. Let's not call it a neuron because
+
+592
+00:46:21,076 --> 00:46:24,575
+it's a complex operation internally. But let's say that this is the—
+
+593
+00:46:25,683 --> 00:46:29,554
+like you have this output at a specific
+
+594
+00:46:29,827 --> 00:46:33,135
+time step t, right? So the first thing that you need to do is basically
+
+595
+00:46:33,231 --> 00:46:37,937
+you need to actually compute the gradient or
+
+596
+00:46:37,985 --> 00:46:42,197
+the derivative of the output
+
+597
+00:46:42,390 --> 00:46:45,623
+at this time step. So what you need is that you have the partial derivative
+
+598
+00:46:46,123 --> 00:46:48,197
+of z_t with respect to h_t.
+
+599
+00:46:50,556 --> 00:46:53,667
+So how do we do that is that we can simply look at this specific
+
+600
+00:46:54,167 --> 00:46:57,978
+equation because this is how we obtain z_t.
+
+601
+00:46:59,852 --> 00:47:03,756
+Because z_t is nothing but it's the sigmoid of v, where v is
+
+602
+00:47:04,173 --> 00:47:08,913
+the input to this specific sigmoid
+
+603
+00:47:09,413 --> 00:47:12,879
+activation. But v is the output of this
+
+604
+00:47:13,379 --> 00:47:16,524
+specific operation that happens here. So what you do is you again break it down
+
+605
+00:47:16,716 --> 00:47:20,233
+using as a partial derivative of the sigmoid of v with
+
+606
+00:47:20,265 --> 00:47:22,978
+respect to v, and then v with respect to ht.
+
+607
+00:47:23,637 --> 00:47:27,025
+And when we say, what's the partial derivative of v with respect to ht,
+
+608
+00:47:27,490 --> 00:47:30,702
+you look at this specific equation. It's the same thing what we saw previously.
+
+609
+00:47:30,766 --> 00:47:33,865
+We're just applying it to how the computation is performed in
+
+610
+00:47:33,913 --> 00:47:37,125
+a recurrent neural network. And you see it depends
+
+611
+00:47:37,205 --> 00:47:41,203
+on this weight matrix Wzh. Then what
+
+612
+00:47:41,703 --> 00:47:45,297
+you do is once you have actually come through this level,
+
+613
+00:47:45,457 --> 00:47:48,203
+what you do is then now you have to backpropagate through time,
+
+614
+00:47:48,588 --> 00:47:52,409
+right? Because you have to now go back in history. And what you now
+
+615
+00:47:52,522 --> 00:47:56,311
+do is for that is that you compute the partial derivative of ht with
+
+616
+00:47:56,811 --> 00:48:00,035
+respect to ht minus 1. And how you do that is again break it down
+
+617
+00:48:00,469 --> 00:48:03,905
+using the partial derivative of
+
+618
+00:48:04,001 --> 00:48:07,164
+the sigmoid of u with respect to u, and then u with
+
+619
+00:48:07,664 --> 00:48:10,745
+respect to ht minus 1. And as you can see, that if you look at
+
+620
+00:48:11,245 --> 00:48:14,261
+the partial derivative of u with respect to ht minus 1, this will basically again
+
+621
+00:48:14,357 --> 00:48:18,404
+be this weight matrix, Whh, because everything else
+
+622
+00:48:18,904 --> 00:48:22,289
+is independent of ht minus 1. So with these
+
+623
+00:48:22,402 --> 00:48:26,319
+2, what you can actually do is you can actually compute
+
+624
+00:48:26,657 --> 00:48:31,137
+the partial derivative of the output at time t,
+
+625
+00:48:31,153 --> 00:48:37,802
+which was z_t, with respect to the previous
+
+626
+00:48:37,899 --> 00:48:41,344
+input that actually came into this, which was h_t minus 1, as a product of
+
+627
+00:48:41,618 --> 00:48:44,838
+the partial derivative of the output with respect to the
+
+628
+00:48:45,338 --> 00:48:48,557
+current state h_t and the partial derivative of the current state
+
+629
+00:48:49,057 --> 00:48:52,150
+h_t with respect to the previous state h_t minus 1. And that just boils
+
+630
+00:48:52,182 --> 00:48:56,099
+down to this product. And as you can see, these are
+
+631
+00:48:56,599 --> 00:48:59,714
+the This will literally
+
+632
+00:49:00,214 --> 00:49:04,490
+depend on the outputs V and U and derivative
+
+633
+00:49:04,586 --> 00:49:08,672
+of the activation function, which was sigmoid in this case. And but
+
+634
+00:49:08,688 --> 00:49:11,861
+at this state, you can see that it boils down to a product of these
+
+635
+00:49:11,973 --> 00:49:15,307
+2 weight matrices, Wzh and Whh.
+
+636
+00:49:16,124 --> 00:49:19,313
+Right. And you can also keep going. Right. So basically, this is how we did
+
+637
+00:49:19,489 --> 00:49:22,694
+it for a feedforward neural network. We actually started from the
+
+638
+00:49:23,194 --> 00:49:26,306
+last step. We keep going one by one. And here also the same thing happened.
+
+639
+00:49:26,884 --> 00:49:29,454
+So now you have these 2 entries. What you can now do is also you
+
+640
+00:49:29,954 --> 00:49:33,405
+can go one step further back in time, which will be literally partial derivative
+
+641
+00:49:33,905 --> 00:49:37,919
+of ht-1 with respect to the previous state ht-2. And the whole
+
+642
+00:49:37,967 --> 00:49:41,468
+operation then again boils down to the output being literally
+
+643
+00:49:41,998 --> 00:49:45,259
+the— which is the partial derivative of the sigmoid
+
+644
+00:49:45,339 --> 00:49:49,338
+of the output at time step t-1, which is ut-1,
+
+645
+00:49:49,660 --> 00:49:52,786
+with respect to the ut-1. And eventually,
+
+646
+00:49:52,818 --> 00:49:56,106
+this will again be WHH. So if you look at the product here,
+
+647
+00:49:56,490 --> 00:50:00,323
+what you keep seeing is that you're basically just
+
+648
+00:50:00,419 --> 00:50:04,412
+multiplying the weight matrix WHH,
+
+649
+00:50:04,524 --> 00:50:08,084
+which actually performs the operation of how
+
+650
+00:50:08,132 --> 00:50:11,884
+to actually take information from previous time steps
+
+651
+00:50:11,964 --> 00:50:15,588
+into the next hidden state for the next time step. You're basically
+
+652
+00:50:16,088 --> 00:50:20,097
+just applying the same operation over and over to actually get your specific
+
+653
+00:50:20,482 --> 00:50:23,932
+gradient at each time step. And as
+
+654
+00:50:24,432 --> 00:50:28,426
+I said, if you see that these 2, the pink and blue colored
+
+655
+00:50:28,926 --> 00:50:32,471
+matrices, are exactly the same. So this is what we meant also by
+
+656
+00:50:32,599 --> 00:50:35,889
+when you realize this is another proof to say that weight matrices are
+
+657
+00:50:36,389 --> 00:50:38,633
+shared. Of course, they are shared because you defined them to be shared, but also
+
+658
+00:50:39,133 --> 00:50:42,598
+in the gradient computation. Again, because they are shared, you can actually reuse these
+
+659
+00:50:42,630 --> 00:50:47,119
+computations. Again and again. Okay, so now let's—
+
+660
+00:50:47,619 --> 00:50:50,309
+we have actually defined how you can do this, but how this looks at a
+
+661
+00:50:50,809 --> 00:50:54,252
+high level is basically if you have literally an RNN which
+
+662
+00:50:54,752 --> 00:50:58,259
+is defined like this, you actually can take— you
+
+663
+00:50:58,759 --> 00:51:02,026
+can compute backpropagation easily by going, you know,
+
+664
+00:51:02,651 --> 00:51:06,082
+looking at the output at the last step, which is
+
+665
+00:51:06,098 --> 00:51:09,720
+basically the output of the last specific recurrent neural network unit,
+
+666
+00:51:09,736 --> 00:51:13,150
+and And then you can actually backpropagate through time,
+
+667
+00:51:13,326 --> 00:51:16,852
+as you can see using these horizontal arrows and
+
+668
+00:51:16,932 --> 00:51:21,948
+also the vertical arrows, if you will. So this is how you literally backpropagate.
+
+669
+00:51:22,300 --> 00:51:25,569
+It's like literally it's very complex to again compute by hand.
+
+670
+00:51:25,665 --> 00:51:28,694
+But as you can see that, okay, if you break it down level by level,
+
+671
+00:51:29,031 --> 00:51:33,117
+it's no different than actually performing a backpropagation over a
+
+672
+00:51:34,079 --> 00:51:37,287
+feedforward neural network. Okay, so as I said,
+
+673
+00:51:37,447 --> 00:51:40,257
+computing gradients is literally very, very hard if you do it by hand.
+
+674
+00:51:40,723 --> 00:51:44,240
+But you should know how to do this, and if you just compute
+
+675
+00:51:44,272 --> 00:51:47,018
+this one by one, I promise you, you will be able to do it.
+
+676
+00:51:47,146 --> 00:51:50,583
+It's just a bit tiring, right? It's just a bit—
+
+677
+00:51:51,562 --> 00:51:55,143
+you need to be very careful about the operations that you perform. But if
+
+678
+00:51:55,192 --> 00:51:58,805
+you literally do it, if you just follow the chain rule,
+
+679
+00:51:58,901 --> 00:52:02,338
+it will happen. Okay, but in this course, as I said,
+
+680
+00:52:02,562 --> 00:52:06,047
+you will be relying on operations that you get from your deep learning packages.
+
+681
+00:52:06,497 --> 00:52:09,905
+And specifically the choice of deep learning package in this course is PyTorch. So you
+
+682
+00:52:10,405 --> 00:52:14,599
+will basically use that to perform your— compute
+
+683
+00:52:15,099 --> 00:52:18,401
+your gradients. Okay. And just wanted to mention one more thing
+
+684
+00:52:18,417 --> 00:52:21,685
+before we go for the break is that literally if you think about recurrent neural
+
+685
+00:52:21,701 --> 00:52:23,610
+networks, right, recurrent neural networks, as I said,
+
+686
+00:52:25,052 --> 00:52:29,051
+are— we saw one
+
+687
+00:52:29,326 --> 00:52:33,228
+instantiation of a recurrent neural network, right? Basically, which means here, is that
+
+688
+00:52:33,549 --> 00:52:37,227
+you have a sequence and then you were going horizontally in one direction,
+
+689
+00:52:37,324 --> 00:52:40,600
+right? Which we unrolled the recurrent neural network is that because it was able to
+
+690
+00:52:40,632 --> 00:52:46,383
+capture information through time, right? But nobody is actually forcing
+
+691
+00:52:46,479 --> 00:52:50,447
+us to actually just move in one direction. You can also stack recurrent
+
+692
+00:52:50,947 --> 00:52:54,302
+neural networks one by one. And this is what we are showing here as
+
+693
+00:52:54,366 --> 00:52:57,739
+a vertical operation here. Just like you create
+
+694
+00:52:58,239 --> 00:53:02,044
+a classical deep neural network where you stack layers one by one, Right here,
+
+695
+00:53:02,060 --> 00:53:05,996
+what you can see is that when you stack multiple recurrent neural network units,
+
+696
+00:53:06,012 --> 00:53:09,771
+you can also do that, right? Which will just increase the depth, right? So as
+
+697
+00:53:10,271 --> 00:53:13,969
+you can see, what's happening here is that you have the input cat fanatically chased
+
+698
+00:53:14,469 --> 00:53:17,527
+the elusive, right? So these are inputs at different time steps. And what you can
+
+699
+00:53:18,027 --> 00:53:20,587
+see is that this is the first layer of the recurrent neural network unit,
+
+700
+00:53:20,946 --> 00:53:26,937
+which is basically— which captures— which takes the information
+
+701
+00:53:27,017 --> 00:53:31,207
+from the previous time step in the hidden state, and it actually computes the output
+
+702
+00:53:31,472 --> 00:53:34,677
+at this specific time step and also the hidden state
+
+703
+00:53:35,177 --> 00:53:38,234
+for the next time step. But what you can do is if you stack one
+
+704
+00:53:38,282 --> 00:53:42,031
+more recurrent neural network layer on top of it, what it will basically
+
+705
+00:53:42,531 --> 00:53:45,540
+do is you can pass along this output to the next recurrent neural network unit
+
+706
+00:53:45,716 --> 00:53:49,017
+and you have again the same operation. So you'll just have 2 different
+
+707
+00:53:49,517 --> 00:53:53,471
+operations. The only difference being is that the depth in
+
+708
+00:53:53,808 --> 00:53:56,724
+horizontal, as you can see, I mean, there is nothing horizontal or vertical here.
+
+709
+00:53:56,852 --> 00:53:59,593
+This is just for ease of exposition so that you can visualize this. Right?
+
+710
+00:53:59,914 --> 00:54:03,738
+But the depth that you see at the horizontal side is
+
+711
+00:54:03,835 --> 00:54:07,611
+basically dynamic because that depends on your input length, right? It depends
+
+712
+00:54:07,691 --> 00:54:12,030
+on how much— how many tokens exist in your input sequence
+
+713
+00:54:12,769 --> 00:54:16,192
+or input sentence. And the vertical depth is
+
+714
+00:54:16,224 --> 00:54:19,325
+literally dependent on how many recurrent neural network layers
+
+715
+00:54:19,422 --> 00:54:22,314
+you decide to stack yourself. Okay,
+
+716
+00:54:22,732 --> 00:54:26,151
+so that's fixed, but the horizontal is variable
+
+717
+00:54:26,327 --> 00:54:30,493
+which depends on your input. Okay. And I said, right, you can apply multiple recurrent
+
+718
+00:54:30,542 --> 00:54:34,804
+neural network layers as we go. But backpropagation is still
+
+719
+00:54:34,900 --> 00:54:38,265
+the same, right? You saw how you can do backpropagation through one
+
+720
+00:54:38,281 --> 00:54:41,165
+layer, right? As you— as we see, if you just look at— if you just
+
+721
+00:54:41,665 --> 00:54:44,898
+forget about the top 2 layers, and if you look at only the bottom one,
+
+722
+00:54:45,331 --> 00:54:48,440
+you already saw this can be done, right? So you basically imagine this was the
+
+723
+00:54:48,940 --> 00:54:52,365
+output. You can just then do a backpropagation from this step.
+
+724
+00:54:52,686 --> 00:54:56,283
+And then you keep going back in time.
+
+725
+00:54:56,621 --> 00:55:00,507
+But then there's nobody stopping you actually from also stacking recurrent
+
+726
+00:55:00,523 --> 00:55:04,248
+neural network layers on top and then literally starting here and then performing
+
+727
+00:55:04,748 --> 00:55:07,476
+the same operation. Of course, it just looks complex and it will also be complex
+
+728
+00:55:07,976 --> 00:55:12,021
+in terms of computing, but the same operation can be performed recursively
+
+729
+00:55:12,198 --> 00:55:15,859
+as we go step by step. Okay. So then I think let's
+
+730
+00:55:15,907 --> 00:55:19,424
+take a break and then we will start from this specific
+
+731
+00:55:19,924 --> 00:55:23,555
+place. When we come back. Okay, thanks for your attention. We'll resume
+
+732
+00:55:23,751 --> 00:55:24,483
+in 15 minutes.
+
+733
+01:08:45,615 --> 01:08:49,175
+Okay, let's resume from where we left off.
+
+734
+01:08:51,911 --> 01:08:55,793
+Great, so who all understood this aspect
+
+735
+01:08:56,293 --> 01:08:59,752
+of dynamic depth and static depth? Or static, I mean you can say depth or
+
+736
+01:09:00,252 --> 01:09:01,076
+height, whatever you wanna say here.
+
+737
+01:09:03,442 --> 01:09:04,653
+Everyone understood that?
+
+738
+01:09:08,016 --> 01:09:11,628
+Okay, I see some heads nodding. Who did not understand this? I can
+
+739
+01:09:11,644 --> 01:09:13,215
+go again also briefly.
+
+740
+01:09:15,080 --> 01:09:17,608
+Come on, I need some feedback, right?
+
+741
+01:09:20,190 --> 01:09:22,209
+You want me to go through this again?
+
+742
+01:09:35,517 --> 01:09:38,755
+Backpropagation order definitely matters, right? So we can,
+
+743
+01:09:38,947 --> 01:09:41,769
+we can look through that just in a minute, right? So,
+
+744
+01:09:41,833 --> 01:09:45,343
+but you understood how recurrent neural network layers
+
+745
+01:09:45,455 --> 01:09:49,062
+are stacked, right? So basically horizontally, as you see,
+
+746
+01:09:49,463 --> 01:09:53,053
+this is dynamic depth. What I mean by dynamic is that it
+
+747
+01:09:53,553 --> 01:09:57,397
+really depends on your input. If your input has 15 tokens, it will
+
+748
+01:09:57,897 --> 01:10:00,959
+have 15. You can literally see 15 times you will unroll this.
+
+749
+01:10:01,992 --> 01:10:05,667
+If you have 5, you will have 5 neurons, right? This is how it will
+
+750
+01:10:05,861 --> 01:10:07,772
+be represented. But now,
+
+751
+01:10:10,071 --> 01:10:14,226
+how many layers you wanna use it, stack, how many recurrent
+
+752
+01:10:14,355 --> 01:10:16,958
+layers you wanna stack, that's up to you, right?
+
+753
+01:10:17,265 --> 01:10:20,794
+This is about how deep of a neural network do you train for a
+
+754
+01:10:21,294 --> 01:10:24,724
+standard task. This is the same thing we did It's basically deep
+
+755
+01:10:24,932 --> 01:10:28,288
+RNNs are basically you choose the number of RNN
+
+756
+01:10:28,320 --> 01:10:32,431
+layers that you want to add, right? In this case, you're seeing an RNN with
+
+757
+01:10:32,479 --> 01:10:36,011
+2 layers, right? So you have 1 layer at the bottom
+
+758
+01:10:36,511 --> 01:10:39,881
+and then you have the second here, right? This is one where you have
+
+759
+01:10:40,381 --> 01:10:43,414
+3 layers, right? So this is how things we would visualize this.
+
+760
+01:10:44,297 --> 01:10:47,492
+And the backpropagation, the way it works is that you will literally start at the
+
+761
+01:10:47,992 --> 01:10:51,538
+top. And you ask the question about what's the order, right? You will literally start
+
+762
+01:10:52,038 --> 01:10:55,071
+at the top. You will start at the last layer, right?
+
+763
+01:10:55,922 --> 01:11:00,032
+And then what you would do is you would compute the
+
+764
+01:11:00,532 --> 01:11:04,287
+gradient with respect to the output here, with respect to the, of the output
+
+765
+01:11:04,787 --> 01:11:08,414
+here with respect to the hidden state here. And then you will
+
+766
+01:11:08,462 --> 01:11:12,604
+go one step back here, right? So you can basically compute
+
+767
+01:11:12,781 --> 01:11:16,609
+all of this. Which will be a function of the
+
+768
+01:11:17,109 --> 01:11:20,821
+previous. So instead, okay, if you saw this, let me just show
+
+769
+01:11:21,321 --> 01:11:24,684
+you this. So here, what you saw is that
+
+770
+01:11:26,185 --> 01:11:30,414
+you can keep going back in time, and the
+
+771
+01:11:30,560 --> 01:11:33,874
+only computation then it impacted was based on the input.
+
+772
+01:11:34,505 --> 01:11:38,110
+But then what you would do here is that it will depend on the
+
+773
+01:11:38,304 --> 01:11:41,700
+outputs that are coming from the previous layers. So that's the
+
+774
+01:11:42,200 --> 01:11:46,258
+only difference that will happen is that you will first compute this. You will then
+
+775
+01:11:46,466 --> 01:11:49,960
+keep going back in time. And then based on those,
+
+776
+01:11:50,377 --> 01:11:54,545
+you will also keep going down as the way you saw for
+
+777
+01:11:55,045 --> 01:11:58,376
+the first step. So that's how you would actually
+
+778
+01:11:58,408 --> 01:12:01,807
+compute this. But the point is that you don't have to do this by hand
+
+779
+01:12:01,999 --> 01:12:05,526
+yourself. In the end, if you have defined a recurrent neural network and
+
+780
+01:12:06,026 --> 01:12:09,533
+you just call a function in PyTorch, that will just do the
+
+781
+01:12:10,033 --> 01:12:13,512
+whole gradient computation for you. For you, right? Okay,
+
+782
+01:12:13,964 --> 01:12:17,822
+good. So as I was saying, right, so usually
+
+783
+01:12:18,081 --> 01:12:21,572
+recurrent neural networks are not used today in this world, right?
+
+784
+01:12:21,976 --> 01:12:25,196
+But when they were used, you know, you would usually stack
+
+785
+01:12:25,293 --> 01:12:28,949
+3 to 4 layers of RNN units to train your
+
+786
+01:12:28,998 --> 01:12:32,401
+models. Okay, then just wanted
+
+787
+01:12:32,901 --> 01:12:36,566
+to introduce one more concept before we start looking at the other aspects of RNNs.
+
+788
+01:12:36,796 --> 01:12:41,888
+Is that so far we have only modeled
+
+789
+01:12:42,388 --> 01:12:45,807
+text or any input that we passed through this recurrent neural network
+
+790
+01:12:46,273 --> 01:12:49,984
+from left to right. Because we have just seen the
+
+791
+01:12:50,484 --> 01:12:53,662
+whole flow of information has always been— just look at the bottom
+
+792
+01:12:54,162 --> 01:12:57,598
+layer here. We start at the input here. We have the previous time
+
+793
+01:12:58,098 --> 01:13:01,550
+step hidden state. And then we compute the next time
+
+794
+01:13:02,050 --> 01:13:04,120
+step hidden state and the output at this layer. And we keep going from left
+
+795
+01:13:04,620 --> 01:13:08,449
+to right like this. But in some
+
+796
+01:13:08,949 --> 01:13:12,458
+cases, of course, I mean, you can also think about this, is that depending on
+
+797
+01:13:12,572 --> 01:13:15,928
+the type of task that you want, and also maybe
+
+798
+01:13:16,204 --> 01:13:19,611
+a different language, for instance. If you think about,
+
+799
+01:13:19,692 --> 01:13:21,639
+not all languages flow from left to right.
+
+800
+01:13:23,877 --> 01:13:27,839
+And also, if you have a very long sequence, then what
+
+801
+01:13:28,339 --> 01:13:31,606
+can happen is that the information that you saw
+
+802
+01:13:31,655 --> 01:13:36,720
+at the start, could just be forgot— I mean,
+
+803
+01:13:36,833 --> 01:13:39,816
+the amount of that that you will retain in the time step,
+
+804
+01:13:40,362 --> 01:13:44,420
+the hidden state at the last time step would
+
+805
+01:13:44,452 --> 01:13:47,516
+be much smaller than what you will retain from the recent ones, right?
+
+806
+01:13:47,580 --> 01:13:50,852
+Because this is how the computation keeps happening. I'll also show you mathematically why this
+
+807
+01:13:51,352 --> 01:13:54,959
+happens, but this is how things happen. So basically, one way
+
+808
+01:13:55,459 --> 01:13:58,648
+to think of this is that you actually can think of bidirectional
+
+809
+01:13:59,148 --> 01:14:03,030
+recurrent neural network units, where you can actually— the simple thing is that
+
+810
+01:14:03,769 --> 01:14:07,366
+you just go in the reverse direction. It's as
+
+811
+01:14:07,462 --> 01:14:10,931
+simple as that. You have one layer which actually processes the
+
+812
+01:14:11,431 --> 01:14:15,427
+information from left to right, and the other layer which processes the information from
+
+813
+01:14:15,748 --> 01:14:19,313
+right to left. And you get 2 specific outputs.
+
+814
+01:14:20,550 --> 01:14:23,745
+And if you have already understood what this means, is that you simply stack them.
+
+815
+01:14:25,142 --> 01:14:27,310
+That's the output, classical output representation.
+
+816
+01:14:28,578 --> 01:14:32,431
+You eventually simply stack the output representations
+
+817
+01:14:32,931 --> 01:14:36,396
+that you got from the forward recurrent neural network unit and from
+
+818
+01:14:36,896 --> 01:14:40,473
+the backward, and that's your representation. Of course, you can do, I mean, as we
+
+819
+01:14:40,973 --> 01:14:44,165
+saw when we were looking at word vector embeddings, when we also were looking at
+
+820
+01:14:44,665 --> 01:14:48,660
+the fixed-context neural networks language models, we saw that eventually you do perform
+
+821
+01:14:48,676 --> 01:14:51,999
+some sort of an operation on top of these
+
+822
+01:14:52,015 --> 01:14:55,370
+outputs, but that's that. Stacking is
+
+823
+01:14:55,402 --> 01:14:59,220
+something that works. So why does stacking work well? I mean,
+
+824
+01:14:59,332 --> 01:15:02,396
+this is what was tried in the past, and I think
+
+825
+01:15:02,896 --> 01:15:05,155
+it worked well. But what you can also do is you can also think of
+
+826
+01:15:05,187 --> 01:15:08,475
+doing some sort of, you know, you can do some averaging. You can also take
+
+827
+01:15:08,975 --> 01:15:12,662
+the maximum representation. You can do any sorts of different
+
+828
+01:15:13,162 --> 01:15:16,463
+styles that work here. One thing to notice here is
+
+829
+01:15:16,495 --> 01:15:19,848
+that there will be separate parameters for forward and backward
+
+830
+01:15:20,348 --> 01:15:24,421
+recurrent neural network units. So the parameters are shared, within a specific
+
+831
+01:15:24,921 --> 01:15:28,485
+recurrent neural network unit, which is why it works. But when you define
+
+832
+01:15:28,517 --> 01:15:31,472
+these 2 forward and backward recurrent neural network layers,
+
+833
+01:15:32,051 --> 01:15:35,247
+you will have different parameters for these 2 layers because they are literally modeling 2
+
+834
+01:15:35,279 --> 01:15:39,327
+different things. Okay. One thing
+
+835
+01:15:39,375 --> 01:15:43,198
+that is important to think about here is that you can only
+
+836
+01:15:43,310 --> 01:15:46,780
+use this style of bidirectional RNN where
+
+837
+01:15:47,551 --> 01:15:51,187
+you can use the future text for the task,
+
+838
+01:15:51,751 --> 01:15:55,262
+right? It will become a bit clearer when
+
+839
+01:15:55,359 --> 01:15:58,329
+we look at this specific Menti,
+
+840
+01:15:59,084 --> 01:16:01,708
+and then we will discuss why did I say what I said.
+
+841
+01:16:06,840 --> 01:16:10,572
+Okay, I think this should be visible, so you can take
+
+842
+01:16:11,072 --> 01:16:14,369
+your phones, scan this, or click this link from the slide
+
+843
+01:16:14,869 --> 01:16:17,660
+that you already have. Or type this mentally.
+
+844
+01:16:19,297 --> 01:16:19,881
+Link out.
+
+845
+01:16:21,470 --> 01:16:23,899
+Sorry.
+
+846
+01:17:08,050 --> 01:17:11,224
+Okay, I think many people have already
+
+847
+01:17:11,257 --> 01:17:11,664
+answered.
+
+848
+01:17:15,631 --> 01:17:18,745
+Great. I'm sorry to say all of you are wrong.
+
+849
+01:17:25,261 --> 01:17:28,504
+Let's now try to understand why. Okay, was the
+
+850
+01:17:29,004 --> 01:17:29,150
+question clear?
+
+851
+01:17:34,731 --> 01:17:38,168
+The question posed that we saw
+
+852
+01:17:38,281 --> 01:17:41,977
+what a bidirectional recurrent neural network is,
+
+853
+01:17:43,279 --> 01:17:46,598
+and the question was, for which kind of tasks can we
+
+854
+01:17:46,679 --> 01:17:49,934
+even use it? And it is tied
+
+855
+01:17:50,434 --> 01:17:51,844
+to this sentence.
+
+856
+01:17:53,408 --> 01:17:57,232
+And this is why I said, sometimes it's also important to kind of— it's
+
+857
+01:17:57,264 --> 01:18:00,975
+not that you get the answer right or not. The point is you understand why
+
+858
+01:18:01,475 --> 01:18:04,844
+this is important. This is why I placed this specifically at this point. Let's read
+
+859
+01:18:05,344 --> 01:18:06,750
+the important note once again together. Yeah.
+
+860
+01:18:14,863 --> 01:18:16,602
+Sorry, then I should fix the Menti.
+
+861
+01:18:18,568 --> 01:18:22,192
+But okay, it did not
+
+862
+01:18:22,692 --> 01:18:25,350
+allow you to choose multiple things. Okay, but that's on me.
+
+863
+01:18:28,043 --> 01:18:31,791
+But I mean, that's because—
+
+864
+01:18:31,967 --> 01:18:35,216
+I mean, that still doesn't qualify because most of
+
+865
+01:18:35,264 --> 01:18:37,936
+these people, most of people chose the wrong thing, right?
+
+866
+01:18:39,630 --> 01:18:42,324
+So let's try to read this important note once again.
+
+867
+01:18:42,533 --> 01:18:44,614
+Read it yourself and then we will discuss this.
+
+868
+01:18:49,680 --> 01:18:52,947
+So what do you understand from this important note?
+
+869
+01:18:55,546 --> 01:19:06,459
+Come on,
+
+870
+01:19:06,998 --> 01:19:09,007
+it's basic English, right? I mean, yeah.
+
+871
+01:19:10,936 --> 01:19:14,508
+Can you speak
+
+872
+01:19:15,008 --> 01:19:16,626
+slowly and then I'll repeat it for you?
+
+873
+01:19:26,124 --> 01:19:29,795
+No, I'll— okay, so I'll first repeat what you said and then I'll repeat
+
+874
+01:19:30,295 --> 01:19:33,160
+how I understand it, right? So what you said is that we have to use
+
+875
+01:19:33,660 --> 01:19:36,434
+it where you can use the future information, right? Is that what I— did I
+
+876
+01:19:36,710 --> 01:19:40,609
+understand it correctly? Yeah. Okay. Did anyone
+
+877
+01:19:41,109 --> 01:19:41,275
+want to comment? Yes.
+
+878
+01:19:47,332 --> 01:19:48,313
+Sorry, can you say?
+
+879
+01:19:52,710 --> 01:19:55,244
+For what? Are you saying this is what you understand from this?
+
+880
+01:20:05,138 --> 01:20:08,719
+No. Yeah, at any given point in time, bidirectional RNN knows both the future
+
+881
+01:20:09,219 --> 01:20:12,658
+and the past, right? But the claim here is that, I'll repeat
+
+882
+01:20:13,158 --> 01:20:17,221
+it again, that we can only use bidirectional RNN
+
+883
+01:20:18,459 --> 01:20:22,172
+for applications where we can use the
+
+884
+01:20:22,672 --> 01:20:26,007
+future text without
+
+885
+01:20:26,507 --> 01:20:30,662
+violating the underlying
+
+886
+01:20:30,694 --> 01:20:33,894
+definitions of the task. So basically, I mean,
+
+887
+01:20:33,910 --> 01:20:36,901
+of course, it's not— all of this is not written, but the point is it
+
+888
+01:20:37,401 --> 01:20:40,947
+says, let's break it down. It says useful for applications where you
+
+889
+01:20:41,158 --> 01:20:44,221
+can use the future text for the task.
+
+890
+01:20:45,390 --> 01:20:49,328
+Now let's try to understand this a bit. Can we use the future for text
+
+891
+01:20:53,067 --> 01:20:53,537
+Yeah.
+
+892
+01:20:58,723 --> 01:21:01,720
+Speak slowly again. Sorry. Yeah.
+
+893
+01:21:02,530 --> 01:21:06,107
+Okay. So Okay, so let's say— let's forget about
+
+894
+01:21:06,607 --> 01:21:09,620
+the why. So you are— now you understand from this statement, right, that this says
+
+895
+01:21:09,733 --> 01:21:14,578
+that bidirectional RNNs can only be used where future
+
+896
+01:21:14,787 --> 01:21:18,679
+text can be used, right? You understand this part? Does everyone
+
+897
+01:21:19,179 --> 01:21:22,166
+understand this part? This is what the statement means. Assume the statement is true.
+
+898
+01:21:22,247 --> 01:21:25,338
+We will go back into why this— assume the statement is true. Now let's try
+
+899
+01:21:25,838 --> 01:21:28,963
+to answer this question again. Can you use it
+
+900
+01:21:29,463 --> 01:21:29,701
+for text generation?
+
+901
+01:21:32,927 --> 01:21:36,623
+Yes. No, it's like cheating if you know the next
+
+902
+01:21:37,123 --> 01:21:40,528
+word rather than find the next word. Yeah. So basically in text
+
+903
+01:21:40,560 --> 01:21:44,304
+generation, your goal is to predict the future, right? So you cannot use the future
+
+904
+01:21:45,236 --> 01:21:48,706
+to literally— and
+
+905
+01:21:48,755 --> 01:21:52,193
+thus you cannot use bidirectional RNNs for text generation.
+
+906
+01:21:52,788 --> 01:21:57,650
+But why can you use it for sequence labeling and Classification.
+
+907
+01:21:58,150 --> 01:21:58,710
+Let's take them one by one.
+
+908
+01:22:02,190 --> 01:22:05,750
+Yes. For example, then if you have a
+
+909
+01:22:06,250 --> 01:22:08,370
+book and you want to know what kind of book it is, then you have
+
+910
+01:22:08,610 --> 01:22:12,100
+the whole book in front of you. You can scan the whole thing.
+
+911
+01:22:12,230 --> 01:22:15,430
+Yeah. Fair enough.
+
+912
+01:22:15,930 --> 01:22:19,260
+Yeah. Okay. I'll let both of you also speak. Like, I think you first.
+
+913
+01:22:19,290 --> 01:22:22,698
+You said— yeah. I was about to say
+
+914
+01:22:23,198 --> 01:22:26,487
+because you have the whole text. Okay. Yeah.
+
+915
+01:22:29,829 --> 01:22:30,841
+Sorry, speak louder, please.
+
+916
+01:22:33,669 --> 01:22:36,988
+Yeah. So I think in all these cases, the point is when
+
+917
+01:22:37,488 --> 01:22:41,280
+you have sentiment analysis or even you have a classification or
+
+918
+01:22:41,780 --> 01:22:45,150
+sequence labeling, which we saw as the task of labeling each token, right?
+
+919
+01:22:45,232 --> 01:22:48,823
+It could be part of speech tagging. It could be You can literally
+
+920
+01:22:48,839 --> 01:22:52,275
+label each token's sentiment, whether this token is
+
+921
+01:22:52,387 --> 01:22:55,647
+positive or negative. You can just attach a label to each token
+
+922
+01:22:55,679 --> 01:22:59,420
+as well, which is sequence labeling. But you can also do one token,
+
+923
+01:22:59,597 --> 01:23:02,921
+one label for the whole document, which is like knowing what this book
+
+924
+01:23:02,969 --> 01:23:07,176
+is. Yeah, you have a point. I just think I could easily implement
+
+925
+01:23:07,676 --> 01:23:11,928
+a text generation model using a bidirectional
+
+926
+01:23:12,428 --> 01:23:15,470
+network or an RNN. I don't think I would argue that it would be a
+
+927
+01:23:15,970 --> 01:23:19,450
+smart choice, but I think you could just do it. You could just pass the
+
+928
+01:23:19,950 --> 01:23:23,630
+unfinished sentence into your network and then force
+
+929
+01:23:24,130 --> 01:23:26,590
+it to pick the next word that would come after what you fed it.
+
+930
+01:23:26,850 --> 01:23:30,830
+Yeah, but what— how would you do the bidirectional part? Like, bidirectional means that
+
+931
+01:23:31,330 --> 01:23:34,490
+you need to go back. I just feed an unfinished sentence.
+
+932
+01:23:34,890 --> 01:23:38,050
+Yes. So I have some sentence and I want to predict the word that comes
+
+933
+01:23:38,550 --> 01:23:42,010
+after it. Yes. Unfinished sentence into the bidirectional
+
+934
+01:23:42,510 --> 01:23:46,150
+RNN, and then I take at least
+
+935
+01:23:46,650 --> 01:23:51,350
+some of the hidden states after that it produces and then aggregate them and
+
+936
+01:23:51,850 --> 01:23:55,430
+process with some projection. I mean,
+
+937
+01:23:55,930 --> 01:23:59,430
+all of that what you said is true, but how would you start from the
+
+938
+01:23:59,930 --> 01:24:03,110
+end? Because you don't have— I would just start from the end of the
+
+939
+01:24:03,610 --> 01:24:07,290
+unfinished sentence. So you will assign some specific end-of-sequence token to it,
+
+940
+01:24:07,790 --> 01:24:10,777
+right? You need to, right? Because otherwise,
+
+941
+01:24:10,793 --> 01:24:14,620
+what's the end? The starting point is literally what you don't
+
+942
+01:24:19,145 --> 01:24:22,908
+It's not about implementing.
+
+943
+01:24:23,748 --> 01:24:27,157
+Is that what I'm saying is true or not? Do you know what will be
+
+944
+01:24:27,657 --> 01:24:32,445
+the starting token that you will feed to a bidirectional, to the backward
+
+945
+01:24:32,640 --> 01:24:35,205
+RNN? Of this implementation?
+
+946
+01:24:36,480 --> 01:24:38,420
+The second to last word.
+
+947
+01:24:39,540 --> 01:24:42,740
+But then the second to last word will go back. It will— like,
+
+948
+01:24:43,240 --> 01:24:46,460
+your goal is to predict the next token. How will it be useful? That's my
+
+949
+01:24:46,960 --> 01:24:49,920
+point. It won't be useful, but you could do it. I mean, you could do
+
+950
+01:24:50,420 --> 01:24:53,620
+it, but then it's basically— the question is, can you do it? And yes,
+
+951
+01:24:54,120 --> 01:24:58,120
+you can, but it would not be smart. It's okay. It's about— so
+
+952
+01:24:58,620 --> 01:25:01,000
+there are 2 ways to do it, right? How you say you will do it
+
+953
+01:25:01,500 --> 01:25:05,220
+is like, is It's not about even being smart. It's— there is no use
+
+954
+01:25:05,720 --> 01:25:09,133
+for it, right? When I say can, it means mostly, of course, I mean,
+
+955
+01:25:09,149 --> 01:25:12,605
+you have to— and then you can also say, right, okay, I can implement something
+
+956
+01:25:12,784 --> 01:25:16,019
+which does not make me— which does not do anything, right? Here it does
+
+957
+01:25:16,068 --> 01:25:18,296
+not do anything. But the point is to say is,
+
+958
+01:25:20,167 --> 01:25:23,613
+yeah, I mean, can you use it? It means that will it— if
+
+959
+01:25:23,985 --> 01:25:27,042
+like the point is the only way it will be useful is that if you
+
+960
+01:25:27,542 --> 01:25:30,500
+feed it the future, but you cannot feed the future. Right?
+
+961
+01:25:30,835 --> 01:25:33,052
+Is that point clear? Okay,
+
+962
+01:25:33,615 --> 01:25:37,590
+so this part is clear.
+
+963
+01:25:37,800 --> 01:25:39,602
+Now coming back to your point about why.
+
+964
+01:25:42,416 --> 01:25:51,288
+Now is it clear, or does that question still hold, or is it still just
+
+965
+01:25:51,788 --> 01:26:03,272
+the way your friend described here, right? No. So if you What
+
+966
+01:26:03,772 --> 01:26:06,868
+do you mean by classifying the next word? Sorry, it's very nice because we are
+
+967
+01:26:07,368 --> 01:26:10,417
+discussing. So if you want those to be offline, I can also do this offline.
+
+968
+01:26:10,802 --> 01:26:14,126
+But no, I'm just asking the whole class. I don't mind. I love discussions.
+
+969
+01:26:14,335 --> 01:26:17,610
+We have the time to do it. So is it okay if we keep discussing?
+
+970
+01:26:17,707 --> 01:26:19,794
+Are you all learning something? Okay. Yeah.
+
+971
+01:26:27,727 --> 01:26:31,262
+But how would you— what would be the signal at the start? I'm now literally
+
+972
+01:26:31,762 --> 01:26:35,764
+talking about this backward LLM, backward RNN
+
+973
+01:26:35,861 --> 01:26:39,518
+here. So what would you feed here?
+
+974
+01:26:39,566 --> 01:26:42,160
+You don't know what is x8.
+
+975
+01:26:43,030 --> 01:26:46,086
+This is what you have to predict. So what would you feed? What would be
+
+976
+01:26:46,586 --> 01:26:47,056
+the starting point here?
+
+977
+01:26:54,927 --> 01:26:55,201
+What?
+
+978
+01:27:02,267 --> 01:27:03,153
+You don't have H2B.
+
+979
+01:27:08,227 --> 01:27:11,853
+No. So the whole point is first you need to train this, right? I mean,
+
+980
+01:27:12,095 --> 01:27:15,173
+you're assuming that you have trained it and then you can use it to predict.
+
+981
+01:27:15,222 --> 01:27:15,737
+I think what we discussed that,
+
+982
+01:27:18,509 --> 01:27:21,886
+You cannot show what is— what comes after the word
+
+983
+01:27:21,983 --> 01:27:25,689
+elusive. Can you show it? You cannot show it to the model,
+
+984
+01:27:25,938 --> 01:27:26,186
+right?
+
+985
+01:27:31,904 --> 01:27:33,937
+H7b should be 0. Okay.
+
+986
+01:27:34,357 --> 01:27:36,115
+Mm-hmm.
+
+987
+01:27:37,099 --> 01:27:40,126
+Exactly the same way. Exactly the same way. But then,
+
+988
+01:27:40,580 --> 01:27:44,196
+so the point is this representation will not give you any information
+
+989
+01:27:45,417 --> 01:27:48,736
+for why it should be the word cat that comes after, or the
+
+990
+01:27:49,236 --> 01:27:54,026
+mouse that comes after it. You can do it. The LMs would be capable
+
+991
+01:27:54,526 --> 01:27:58,274
+of containing more information
+
+992
+01:27:58,774 --> 01:28:02,425
+about the sentence you currently know. But it would have,
+
+993
+01:28:02,505 --> 01:28:05,535
+but it would allow you to go in the other direction, right?
+
+994
+01:28:06,016 --> 01:28:09,495
+Because the overall point is, you like, okay,
+
+995
+01:28:09,639 --> 01:28:13,021
+I think the word maybe can threw most of you off
+
+996
+01:28:13,246 --> 01:28:15,249
+in a way that you can. I mean, I guess I said, right, if you
+
+997
+01:28:15,314 --> 01:28:18,996
+want to do something, just something which is nonsensical, which can
+
+998
+01:28:19,028 --> 01:28:22,361
+be done. The point, okay, don't focus on this word nonsensical. I mean,
+
+999
+01:28:22,393 --> 01:28:25,082
+no offense, but I'm just saying if you want to do something just for the
+
+1000
+01:28:25,582 --> 01:28:28,048
+sake of it, we can always do it, but will it give any information?
+
+1001
+01:28:33,455 --> 01:28:36,867
+Yes, exactly my point. It will perform as good as a one-way RNN if you
+
+1002
+01:28:37,367 --> 01:28:40,674
+steal this. But what would you
+
+1003
+01:28:40,739 --> 01:28:44,367
+do with more capacity if it doesn't give you anything? The capacity will always
+
+1004
+01:28:44,400 --> 01:28:46,254
+be needed in tasks like classification. It will perform better.
+
+1005
+01:28:49,243 --> 01:28:52,977
+Because you have more capacity and that capacity is being used,
+
+1006
+01:28:53,409 --> 01:28:56,117
+right? Because you are literally modeling the sequence on both sides and it will be
+
+1007
+01:28:56,134 --> 01:28:59,643
+useful for your end task, right? But in something like a text
+
+1008
+01:29:00,143 --> 01:29:03,585
+generation, okay, I will also present a scenario where
+
+1009
+01:29:04,085 --> 01:29:07,815
+you can do this in later classes where we discuss
+
+1010
+01:29:08,315 --> 01:29:12,142
+about different types of language models. But there's
+
+1011
+01:29:12,642 --> 01:29:16,297
+a difference, right? I mean, in this setup, The overall aspect is that
+
+1012
+01:29:17,389 --> 01:29:21,182
+since you don't have information for the future, you can
+
+1013
+01:29:21,230 --> 01:29:24,750
+do it, but it will not lead to— I mean, you are basically just
+
+1014
+01:29:25,250 --> 01:29:28,944
+throwing compute or capacity at things without any expected
+
+1015
+01:29:29,444 --> 01:29:32,400
+gain. Are we in agreement on that?
+
+1016
+01:29:33,370 --> 01:29:36,871
+Yeah. Okay. But yeah, I mean, you will see in maybe 3 weeks
+
+1017
+01:29:37,371 --> 01:29:40,630
+from now where we will see that sometimes you can also do it without violating
+
+1018
+01:29:41,222 --> 01:29:44,539
+without cheating, as someone said, right? So without violating the
+
+1019
+01:29:45,052 --> 01:29:48,561
+task, right? Specifically, machine translation is still
+
+1020
+01:29:48,994 --> 01:29:52,278
+done like this, and we will see how it is done like this. Okay,
+
+1021
+01:29:52,759 --> 01:29:56,044
+but good, interesting, nice to have this discussion.
+
+1022
+01:29:56,925 --> 01:30:00,258
+Okay, then, so let's quickly wrap this up and then
+
+1023
+01:30:00,290 --> 01:30:03,943
+we'll go back to the other aspects, right? So we said,
+
+1024
+01:30:03,976 --> 01:30:07,180
+okay, RNNs actually can, as I said, theoretically allow
+
+1025
+01:30:07,276 --> 01:30:10,677
+us to model unbounded context length, which is still possible, right?
+
+1026
+01:30:10,725 --> 01:30:14,736
+Because we can just keep dynamically increasing the depth of this unrolled
+
+1027
+01:30:15,236 --> 01:30:18,779
+neural network. And the point is that because this does not come at any added
+
+1028
+01:30:18,811 --> 01:30:22,822
+computational cost, because what we saw is that you can just— the
+
+1029
+01:30:23,322 --> 01:30:26,993
+weights are shared, so you can just keep doing this for
+
+1030
+01:30:27,493 --> 01:30:31,967
+infinitely long sentences. But we also saw that there
+
+1031
+01:30:32,467 --> 01:30:36,528
+is one problem, is that when we keep doing this, what will happen
+
+1032
+01:30:37,028 --> 01:30:39,215
+is that— I mean, I don't know if you observed this. This is why I'm
+
+1033
+01:30:39,715 --> 01:30:43,398
+stating this explicitly. When you do this for infinitely long
+
+1034
+01:30:43,447 --> 01:30:47,880
+sentences, or when you do this for multiple steps, what will keep happening is you
+
+1035
+01:30:48,380 --> 01:30:52,136
+will keep multiplying the same terms
+
+1036
+01:30:52,216 --> 01:30:56,377
+again and again, right? This H H, as we say, which tracks the hidden
+
+1037
+01:30:56,877 --> 01:31:00,404
+state weight matrix, you will keep multiplying this over and
+
+1038
+01:31:00,904 --> 01:31:04,196
+over and over as you keep doing this. And what it means that it will
+
+1039
+01:31:04,696 --> 01:31:08,663
+do some overwriting on the state, which will make it,
+
+1040
+01:31:09,000 --> 01:31:12,149
+as I said, theoretically it is possible to model long-range
+
+1041
+01:31:12,198 --> 01:31:15,266
+dependencies using RNNs, and this is why they were designed for it.
+
+1042
+01:31:15,668 --> 01:31:19,380
+But this blessing, which is like
+
+1043
+01:31:20,392 --> 01:31:23,557
+shared weight matrices, compute is not a problem
+
+1044
+01:31:24,057 --> 01:31:27,886
+anymore, you can just go as long as you want. This thing which was
+
+1045
+01:31:28,080 --> 01:31:32,976
+shown as an advantage becomes now a curse here because
+
+1046
+01:31:33,073 --> 01:31:36,176
+of what happens when we compute the gradient. Right.
+
+1047
+01:31:36,548 --> 01:31:40,024
+Let's try to understand why this happens and what happens in this case. Okay.
+
+1048
+01:31:40,364 --> 01:31:44,163
+Sorry, there was no break here. It was basically, we wanted to cover this previously,
+
+1049
+01:31:44,244 --> 01:31:48,022
+but we have time to finish the remaining lecture in what we
+
+1050
+01:31:48,522 --> 01:31:52,234
+have. Okay. So let's try to understand this problem a bit
+
+1051
+01:31:52,734 --> 01:31:56,252
+better. Right. So why do I say this? This repetitive multiplication is
+
+1052
+01:31:56,300 --> 01:31:59,714
+a problem, right? So technically what should happen
+
+1053
+01:31:59,810 --> 01:32:03,256
+is, again, what happens in
+
+1054
+01:32:03,369 --> 01:32:06,377
+this case is that since we are multiplying this over and over,
+
+1055
+01:32:06,685 --> 01:32:10,731
+what would happen is that these nearby terms would have more effect
+
+1056
+01:32:11,686 --> 01:32:15,818
+on the current state than what the terms that
+
+1057
+01:32:16,318 --> 01:32:19,239
+we, or the tokens that we observed in the past will have, right? Because this
+
+1058
+01:32:19,303 --> 01:32:22,655
+is how we keep overwriting the information from the state because we are
+
+1059
+01:32:23,155 --> 01:32:26,637
+literally multiplying the same thing over and over. And what would happen is that this
+
+1060
+01:32:26,926 --> 01:32:30,748
+prevents from modeling long-range dependencies because what
+
+1061
+01:32:31,248 --> 01:32:35,067
+happens is that the token that came on the first position will now
+
+1062
+01:32:35,260 --> 01:32:38,294
+have completely, I would not say completely be forgotten,
+
+1063
+01:32:38,391 --> 01:32:42,100
+but the contribution of that token to the state at
+
+1064
+01:32:42,600 --> 01:32:45,664
+let's say 10 tokens from the first token I mean,
+
+1065
+01:32:45,712 --> 01:32:49,758
+let's say we are currently at 10th token, right? So the contribution
+
+1066
+01:32:49,790 --> 01:32:53,386
+of the first token to the 10th token hidden state will be actually much,
+
+1067
+01:32:53,482 --> 01:32:56,838
+much lower when compared to the 9th token that is
+
+1068
+01:32:57,014 --> 01:33:01,156
+fed into this hidden state, right? That becomes a problem because now the contribution that
+
+1069
+01:33:01,204 --> 01:33:04,945
+will come in this ht's at time step, any time step which
+
+1070
+01:33:04,993 --> 01:33:08,830
+is much further away becomes lower, right? And that
+
+1071
+01:33:08,910 --> 01:33:12,201
+basically makes the long-range dependency modeling a bit harder.
+
+1072
+01:33:12,779 --> 01:33:16,103
+Okay, and let's actually also see why this can happen
+
+1073
+01:33:16,135 --> 01:33:18,993
+in an example, right? So if you see, okay, they tuned, discussed for a moment,
+
+1074
+01:33:19,025 --> 01:33:21,963
+then struck up a lively jig. Everyone joined in,
+
+1075
+01:33:22,622 --> 01:33:25,945
+turning the courtyard, blah blah blah. And eventually, you know,
+
+1076
+01:33:26,090 --> 01:33:30,184
+it's, it's this particular sentence ends with, aside from writing, I've always loved
+
+1077
+01:33:30,684 --> 01:33:34,375
+dancing, right? So if basically our goal was to actually predict
+
+1078
+01:33:34,423 --> 01:33:37,859
+the word, okay, if it was aside from writing, I've always loved dancing.
+
+1079
+01:33:38,848 --> 01:33:42,146
+And dancing was something that we wanted to predict. What we need
+
+1080
+01:33:42,646 --> 01:33:46,650
+here is that the terms before that
+
+1081
+01:33:47,150 --> 01:33:50,464
+come in this specific paragraph that allow us to predict the
+
+1082
+01:33:50,593 --> 01:33:54,119
+word dancing literally depends on terms like dancing, spinning, dance steps,
+
+1083
+01:33:54,135 --> 01:33:57,274
+swinging, jig, and so on and so forth, right? And as you can see that
+
+1084
+01:33:57,774 --> 01:34:00,791
+most of these words are quite far off from this current step,
+
+1085
+01:34:00,985 --> 01:34:04,051
+right? And if we keep doing what we
+
+1086
+01:34:04,551 --> 01:34:09,046
+are doing, like what happens eventually in an RNN, this basically will
+
+1087
+01:34:09,546 --> 01:34:12,847
+be a problem. At this particular time step, the contributions
+
+1088
+01:34:12,895 --> 01:34:16,505
+of these tokens will almost be very, very negligible
+
+1089
+01:34:17,005 --> 01:34:20,864
+at this current state. And this is what a current problem in
+
+1090
+01:34:21,122 --> 01:34:24,919
+all RNNs are. And basically, just again, I would like
+
+1091
+01:34:24,968 --> 01:34:27,667
+to kind of show you to, I mean, just tell you why this happens,
+
+1092
+01:34:27,716 --> 01:34:31,595
+right? Because we keep going through time like this, right? When we
+
+1093
+01:34:32,095 --> 01:34:35,263
+keep computing the gradient. And this will become
+
+1094
+01:34:35,763 --> 01:34:39,391
+eventually a problem. Okay. So basically,
+
+1095
+01:34:39,665 --> 01:34:42,540
+if we just try to kind of look at this, like how severe can this
+
+1096
+01:34:43,040 --> 01:34:45,319
+problem be, right? So we looked at, you know, here also I showed you,
+
+1097
+01:34:45,367 --> 01:34:48,981
+okay, the partial derivative of the output
+
+1098
+01:34:49,481 --> 01:34:53,093
+at timestep t with respect to the hidden state at timestep t
+
+1099
+01:34:53,593 --> 01:34:57,542
+minus 2 can be written like this. But you can actually literally generalize
+
+1100
+01:34:57,574 --> 01:35:01,429
+this to something Which is an equation like this where you say
+
+1101
+01:35:01,750 --> 01:35:05,218
+the partial derivative of hidden step at time t with
+
+1102
+01:35:05,718 --> 01:35:09,264
+respect to some hidden state at time t minus capital T is literally
+
+1103
+01:35:09,361 --> 01:35:13,455
+a product of all these terms, right? And basically what
+
+1104
+01:35:13,955 --> 01:35:18,288
+this means is that you are basically multiplying this matrix
+
+1105
+01:35:18,788 --> 01:35:22,977
+WHH literally as many times as the
+
+1106
+01:35:23,121 --> 01:35:27,068
+number of time steps that you have actually performed. Okay. Now,
+
+1107
+01:35:27,918 --> 01:35:31,783
+the problem that comes because is that if you see
+
+1108
+01:35:32,168 --> 01:35:35,985
+the derivative of the activation function here,
+
+1109
+01:35:36,017 --> 01:35:39,722
+right, which is the output here, which is basically the activation
+
+1110
+01:35:39,770 --> 01:35:43,186
+function applied to u, which is the
+
+1111
+01:35:43,234 --> 01:35:47,612
+input that comes at this layer, with respect to the del
+
+1112
+01:35:47,804 --> 01:35:51,813
+ui is basically less than 1, right? Because this is how It
+
+1113
+01:35:52,214 --> 01:35:55,627
+literally depends on the activation function, and in this case it's sigmoid.
+
+1114
+01:35:55,963 --> 01:35:59,393
+So this term is less than 1, right?
+
+1115
+01:36:00,050 --> 01:36:03,159
+And these weight matrices will typically be small
+
+1116
+01:36:03,495 --> 01:36:06,716
+because how we train these networks are done using some sort of
+
+1117
+01:36:07,216 --> 01:36:10,610
+regularization. Here, most common regularization is
+
+1118
+01:36:10,722 --> 01:36:14,216
+L2, but usually these
+
+1119
+01:36:14,248 --> 01:36:18,017
+terms eventually turn up being too small. Right, so now if
+
+1120
+01:36:18,517 --> 01:36:21,729
+you know by simple math is that,
+
+1121
+01:36:21,777 --> 01:36:25,729
+okay, if you have a term which is small, right, and if you keep
+
+1122
+01:36:25,810 --> 01:36:29,352
+multiplying it over and over and over again, there will be
+
+1123
+01:36:29,899 --> 01:36:33,475
+a huge reduction in actual values, right? Because you're just multiplying small
+
+1124
+01:36:33,491 --> 01:36:36,150
+numbers and if you keep multiplying this, it will just exponentially decay.
+
+1125
+01:36:37,664 --> 01:36:40,394
+So the decay will be quite fast. So,
+
+1126
+01:36:41,762 --> 01:36:44,466
+and just to kind of show you why this happens, right, if you look at
+
+1127
+01:36:44,966 --> 01:36:49,470
+this, Eventually what you can say is that the culprit here is the
+
+1128
+01:36:49,551 --> 01:36:52,933
+activation function, which is the derivative
+
+1129
+01:36:53,433 --> 01:36:57,903
+of the activation function, which we see here is sigmoid, right? And the
+
+1130
+01:36:58,143 --> 01:37:01,205
+sigmoid activation function, if you look at it, it looks like this.
+
+1131
+01:37:01,799 --> 01:37:04,636
+But the derivative of the sigmoid activation function looks something like this, right? So the
+
+1132
+01:37:05,136 --> 01:37:07,586
+maximum value here is around 0.25, right?
+
+1133
+01:37:08,067 --> 01:37:11,443
+So what happens is that When you
+
+1134
+01:37:11,943 --> 01:37:16,890
+keep doing this operation over and over, you are literally quashing,
+
+1135
+01:37:17,019 --> 01:37:23,512
+as we say, or reducing your gradients
+
+1136
+01:37:23,609 --> 01:37:28,072
+in something that actually, in a rate
+
+1137
+01:37:28,572 --> 01:37:31,630
+that actually becomes exponential as we keep going. And this is why it
+
+1138
+01:37:32,130 --> 01:37:35,236
+leads to this problem as we call as vanishing gradients.
+
+1139
+01:37:35,657 --> 01:37:39,619
+Who has actually heard of this term vanishing gradients before? Okay,
+
+1140
+01:37:39,924 --> 01:37:43,370
+was it in a deep learning class or, okay, who hasn't?
+
+1141
+01:37:43,835 --> 01:37:47,024
+And if you have not taken a deep learning class, don't worry.
+
+1142
+01:37:47,617 --> 01:37:51,721
+I think with the exercises that we actually already provide in this lecture and
+
+1143
+01:37:51,769 --> 01:37:55,840
+with the material, you would basically be able to. I mean, this is what basically
+
+1144
+01:37:55,872 --> 01:37:59,126
+vanishing gradient is, right? So you know from this specific exercise.
+
+1145
+01:38:00,023 --> 01:38:03,982
+Okay, so this basically is a problem for
+
+1146
+01:38:04,383 --> 01:38:07,574
+many recurrent neural networks and especially for the
+
+1147
+01:38:08,074 --> 01:38:12,214
+vanilla RNNs that we saw or the Elman networks due to the sigmoid
+
+1148
+01:38:12,714 --> 01:38:16,613
+activation function. Okay. So can anyone
+
+1149
+01:38:16,710 --> 01:38:20,274
+tell me how can we fix this vanishing gradient problem, right?
+
+1150
+01:38:20,339 --> 01:38:23,678
+So this basically, this is how it is defined. You can again,
+
+1151
+01:38:24,096 --> 01:38:26,520
+I mean, you don't need to scan this again and again if you have done
+
+1152
+01:38:27,020 --> 01:38:29,459
+this once, you know, it's the same mentee. You just keep going.
+
+1153
+01:38:35,687 --> 01:38:38,594
+If you want, you can again scan this if you have not done so in
+
+1154
+01:38:38,610 --> 01:38:42,193
+the past. But just saying, right, I just use the same Menti, so you can
+
+1155
+01:39:25,421 --> 01:39:28,768
+Okay, so we have received many interesting responses ranging
+
+1156
+01:39:28,881 --> 01:39:32,160
+from skip connections to
+
+1157
+01:39:32,660 --> 01:39:35,844
+use logarithms, normalization layers,
+
+1158
+01:39:36,281 --> 01:39:38,255
+another activation function, ReLU,
+
+1159
+01:39:39,857 --> 01:39:43,401
+skip-gram. Okay. I don't know why,
+
+1160
+01:39:43,563 --> 01:39:46,425
+I don't think this is relevant, but okay. Uh,
+
+1161
+01:39:47,282 --> 01:39:49,998
+use skip connections, residual connections.
+
+1162
+01:39:50,677 --> 01:39:53,926
+Okay, good. So I think largely we, we, the responses are,
+
+1163
+01:39:54,468 --> 01:39:58,078
+along the facts of using a different activation
+
+1164
+01:39:58,127 --> 01:40:01,817
+function, using ReLU, which is also a different activation
+
+1165
+01:40:01,850 --> 01:40:05,259
+function. If you don't know what this is, it's called a recurrent linear unit,
+
+1166
+01:40:05,732 --> 01:40:09,387
+which is— sorry, what is it called again?
+
+1167
+01:40:09,452 --> 01:40:11,558
+What's the full form? I keep forgetting.
+
+1168
+01:40:14,820 --> 01:40:18,050
+Yeah, rectified. Yes, exactly. Sorry. Yeah, as I
+
+1169
+01:40:18,277 --> 01:40:21,735
+said too many times recurrent today. So it's basically called a rectified linear unit.
+
+1170
+01:40:22,225 --> 01:40:25,946
+Where basically, it's just,
+
+1171
+01:40:26,027 --> 01:40:29,424
+I mean, it's not a completely linear layer.
+
+1172
+01:40:29,651 --> 01:40:32,719
+It's defined something like, I think,
+
+1173
+01:40:35,251 --> 01:40:38,199
+something like this, right? Where basically,
+
+1174
+01:40:42,775 --> 01:40:46,354
+so this part is still linear, but the negative part
+
+1175
+01:40:46,854 --> 01:40:50,736
+is restricted to 0, right? So, So it's
+
+1176
+01:40:50,800 --> 01:40:54,113
+also a nonlinear activation function. Okay. So overall, I think
+
+1177
+01:40:54,613 --> 01:40:57,958
+the ideas are there, but this is mostly coming from people who have done a
+
+1178
+01:40:58,458 --> 01:41:00,453
+deep learning class. So people who have not done it, let's discuss a bit,
+
+1179
+01:41:00,469 --> 01:41:03,223
+right? So let's first discuss,
+
+1180
+01:41:06,187 --> 01:41:09,341
+I think, the simplest thing, which is saying,
+
+1181
+01:41:09,486 --> 01:41:10,804
+okay,
+
+1182
+01:41:14,371 --> 01:41:17,697
+use a different activation function, right? Which is a good answer because I think,
+
+1183
+01:41:18,173 --> 01:41:21,919
+If you use a different activation function, this aspect
+
+1184
+01:41:22,032 --> 01:41:24,829
+can easily go away.
+
+1185
+01:41:26,100 --> 01:41:29,532
+Sorry, where did it— nope.
+
+1186
+01:41:45,740 --> 01:41:47,495
+Yeah, somehow it was not working.
+
+1187
+01:41:51,800 --> 01:41:55,405
+Okay. So using a different activation function can help. And as
+
+1188
+01:41:55,905 --> 01:42:00,982
+you can see, the derivative of the ReLU function will not force
+
+1189
+01:42:01,482 --> 01:42:05,189
+it to kind of become— force it to become a value
+
+1190
+01:42:05,689 --> 01:42:09,347
+less than 1. So that will be helpful. Now I would like to ask,
+
+1191
+01:42:09,442 --> 01:42:12,637
+Whoever says interesting suggestions like using
+
+1192
+01:42:12,669 --> 01:42:16,300
+skip connections. So I'm, again, I assume this is coming from
+
+1193
+01:42:16,800 --> 01:42:20,470
+a deep learning lecture. Can whoever said that, or many people said that, can anyone
+
+1194
+01:42:20,567 --> 01:42:21,786
+tell me what a skip connection is? Yes.
+
+1195
+01:42:56,776 --> 01:43:00,223
+Okay. So you're saying you're selectively passing information. Uh,
+
+1196
+01:43:00,480 --> 01:43:03,125
+so how would, how would this help? Okay. I'm sorry, you also wanted to say
+
+1197
+01:43:03,625 --> 01:43:06,459
+something about— And, and how would this help?
+
+1198
+01:43:21,768 --> 01:43:23,266
+Okay, you wanted to say something?
+
+1199
+01:43:31,417 --> 01:43:34,918
+So basically what you're doing in this specific,
+
+1200
+01:43:35,210 --> 01:43:38,759
+ah, I hate this. So in
+
+1201
+01:43:38,856 --> 01:43:39,505
+this specific,
+
+1202
+01:43:43,415 --> 01:43:46,527
+let's look at this specific network. What you're saying is
+
+1203
+01:43:46,624 --> 01:43:50,575
+that, how would you, where would you insert these skip?
+
+1204
+01:43:52,293 --> 01:43:53,545
+What kind of connection would you skip?
+
+1205
+01:43:58,078 --> 01:44:00,118
+Let's say we are here, right? Yeah.
+
+1206
+01:44:23,235 --> 01:44:26,592
+Not sure. Do you want to share
+
+1207
+01:44:27,092 --> 01:44:29,254
+insights? How would you do it?
+
+1208
+01:44:38,760 --> 01:44:46,227
+So you're saying we add from here to— okay,
+
+1209
+01:44:46,453 --> 01:44:51,142
+so just a later node. So then what will happen in backpropagation
+
+1210
+01:44:51,239 --> 01:44:54,942
+is that you would not backpropagate through these 2, you will backpropagate
+
+1211
+01:44:55,442 --> 01:44:57,467
+through this skip connection then. Is it what you're saying?
+
+1212
+01:44:59,442 --> 01:45:02,294
+Mm-hmm. But if you do both, how would it solve the problem?
+
+1213
+01:45:08,748 --> 01:45:11,338
+So I think everyone got the idea, right? Just to kind of say that,
+
+1214
+01:45:11,354 --> 01:45:14,676
+okay, skip connections just allow you to kind of I mean, the name says
+
+1215
+01:45:15,176 --> 01:45:18,433
+it all, right? Basically, you add a skip connection where
+
+1216
+01:45:18,933 --> 01:45:21,548
+you say, okay, you don't have to go through all neurons, you can just also
+
+1217
+01:45:21,724 --> 01:45:24,615
+jump from here to here, right? But you do both, right?
+
+1218
+01:45:25,016 --> 01:45:29,094
+So if you do both, how would you solve the vanishing
+
+1219
+01:45:29,127 --> 01:45:33,060
+gradient problem? Because you will still compute the gradient which will come through
+
+1220
+01:45:33,560 --> 01:45:35,806
+this backpropagation. Yeah.
+
+1221
+01:45:50,620 --> 01:45:54,457
+Yes, okay, you sum them. But I think
+
+1222
+01:45:54,538 --> 01:46:00,625
+if you go— keep going, if you have a very long— I
+
+1223
+01:46:00,641 --> 01:46:02,017
+mean, if you have a very long sequence,
+
+1224
+01:46:05,590 --> 01:46:08,829
+Sure, I think, okay, what can happen is that when you sum them,
+
+1225
+01:46:09,278 --> 01:46:12,710
+it could be the case that you will still retain a nonzero value
+
+1226
+01:46:13,210 --> 01:46:16,447
+from your skip connections, which will just boost the gradient
+
+1227
+01:46:17,361 --> 01:46:20,408
+a bit, right? Okay, I think the overall point is that you
+
+1228
+01:46:20,908 --> 01:46:24,481
+can use these smart tricks like skip connections to actually get
+
+1229
+01:46:24,981 --> 01:46:28,250
+rid of your vanishing gradient problem. But I think what
+
+1230
+01:46:28,330 --> 01:46:31,763
+I would basically show you today is an idea that is
+
+1231
+01:46:32,293 --> 01:46:35,615
+similar to skip connections, but what's actually
+
+1232
+01:46:35,647 --> 01:46:39,066
+used while modeling. I mean, skip connections is
+
+1233
+01:46:39,114 --> 01:46:43,560
+not the way we solve this problem in
+
+1234
+01:46:43,657 --> 01:46:47,653
+language models or in recurrent neural networks or other types of
+
+1235
+01:46:47,669 --> 01:46:51,056
+networks, but the idea is very similar. Okay. So thanks. I think this
+
+1236
+01:46:51,072 --> 01:46:53,977
+again was very nice that we kind of looked into different aspects.
+
+1237
+01:46:54,523 --> 01:46:57,877
+So let's try to think about something called
+
+1238
+01:46:58,377 --> 01:47:01,811
+gating. Or a gating function, which defined the
+
+1239
+01:47:02,311 --> 01:47:05,473
+terms called gated recurrent neural networks, which allow you to just basically
+
+1240
+01:47:06,052 --> 01:47:09,810
+do something similar as we discussed with skip connections. So it basically allows
+
+1241
+01:47:09,987 --> 01:47:14,275
+us to avoid dampening the gradient signal
+
+1242
+01:47:14,403 --> 01:47:18,001
+at every time step. How this happens is that just contrast these 2 equations.
+
+1243
+01:47:18,451 --> 01:47:21,663
+So in one case, what you are doing is that you are computing the
+
+1244
+01:47:22,209 --> 01:47:25,759
+hidden state at time step t by performing a sigmoid on top
+
+1245
+01:47:25,887 --> 01:47:27,975
+of— which utilizes the previous hidden state.
+
+1246
+01:47:29,260 --> 01:47:33,533
+Also the input at this time step, right? And what, what actually you
+
+1247
+01:47:34,033 --> 01:47:37,227
+can do is you can take out the— because the problem was basically you're
+
+1248
+01:47:37,307 --> 01:47:41,290
+applying this WHH, or you're using basically the ht-1
+
+1249
+01:47:42,431 --> 01:47:45,418
+at every time step to compute ht.
+
+1250
+01:47:45,723 --> 01:47:49,385
+What you can do is you can— and then you are feeding
+
+1251
+01:47:49,433 --> 01:47:52,485
+that inside a sigmoid, right, which basically just squashes that gradient,
+
+1252
+01:47:52,549 --> 01:47:56,033
+right? So what you can do is you can actually take this thing out.
+
+1253
+01:47:56,499 --> 01:47:59,934
+You can take out ht minus 1 from this function, right?
+
+1254
+01:48:00,447 --> 01:48:03,866
+So here it's your activation function, which still, you know,
+
+1255
+01:48:04,187 --> 01:48:07,942
+you apply to actually get your hidden state at time step t. But you only
+
+1256
+01:48:08,296 --> 01:48:11,730
+perform this on the input, right? Or some transformation of
+
+1257
+01:48:12,230 --> 01:48:16,722
+the input. And then for how you actually cascade
+
+1258
+01:48:17,222 --> 01:48:20,975
+the information into the future or retain it, that only is retained
+
+1259
+01:48:21,475 --> 01:48:23,847
+by this specific function f,
+
+1260
+01:48:24,585 --> 01:48:27,681
+which is what we call as a gating function, which just controls
+
+1261
+01:48:27,777 --> 01:48:30,922
+how much information from the previous state will be
+
+1262
+01:48:31,422 --> 01:48:34,772
+passed along to the current state.
+
+1263
+01:48:35,109 --> 01:48:38,623
+So naturally, if you see, if you set— if
+
+1264
+01:48:38,687 --> 01:48:42,570
+basically f is something between 0 and 1, and if f is to the one
+
+1265
+01:48:42,618 --> 01:48:46,084
+extreme of being 1, it will basically pass all the information
+
+1266
+01:48:46,584 --> 01:48:50,005
+along to the current state. If f is 0,
+
+1267
+01:48:50,423 --> 01:48:54,327
+it will pass no information along. So it basically works something
+
+1268
+01:48:54,423 --> 01:48:57,621
+like a skip connection, but maybe stronger in my opinion in
+
+1269
+01:48:57,653 --> 01:49:00,674
+this case. Because you can selectively also,
+
+1270
+01:49:00,690 --> 01:49:05,044
+and this is trained, so you can selectively see for which specific,
+
+1271
+01:49:05,671 --> 01:49:08,033
+I mean, this will also be learned when you train your recurrent neural network.
+
+1272
+01:49:08,177 --> 01:49:11,471
+So you can actually see that for a certain sequence,
+
+1273
+01:49:11,856 --> 01:49:15,470
+which of those current tokens or which of the previous tokens should
+
+1274
+01:49:15,970 --> 01:49:19,982
+actually play a role in predicting a specific— if you're
+
+1275
+01:49:20,482 --> 01:49:23,242
+doing a text generation or if you're doing a classification, like what plays the role
+
+1276
+01:49:23,274 --> 01:49:26,967
+at timestep t. You can actually learn from this based
+
+1277
+01:49:27,467 --> 01:49:30,050
+on this when you train your network. Okay.
+
+1278
+01:49:30,982 --> 01:49:34,210
+So, and the point that I'm trying to— the claim that I'm trying to
+
+1279
+01:49:34,710 --> 01:49:38,674
+make is that now since ht-1 is not actually inside the activation function, which can
+
+1280
+01:49:39,174 --> 01:49:42,676
+actually quash the gradient at that time, it means that we
+
+1281
+01:49:43,176 --> 01:49:46,322
+are not constrained, and that's why there is no reducing vanishing gradient problem.
+
+1282
+01:49:49,139 --> 01:49:52,152
+It's the element-by-element operations.
+
+1283
+01:49:52,200 --> 01:49:56,720
+Let's say you have 2 vectors, you actually— it's like you basically multiply element-wise
+
+1284
+01:49:57,075 --> 01:50:00,680
+or item-wise multiplication, right? It's also called the Hadamard product
+
+1285
+01:50:00,793 --> 01:50:03,137
+if you want to know that. Okay, good.
+
+1286
+01:50:05,407 --> 01:50:09,209
+So the answers to this, we'll look at 2 types of gated—
+
+1287
+01:50:09,354 --> 01:50:13,204
+sorry, this diagram is like, wow. But the answer
+
+1288
+01:50:13,704 --> 01:50:17,215
+to this was basically looking at 2 types of gated recurrent neural network units.
+
+1289
+01:50:17,680 --> 01:50:21,579
+One was called long short-term
+
+1290
+01:50:21,627 --> 01:50:25,124
+memory network, or in short LSTM. And the other was called
+
+1291
+01:50:25,397 --> 01:50:27,868
+literally as simple as gated recurrent unit, or GRU.
+
+1292
+01:50:28,509 --> 01:50:32,296
+Not the one from the movie, but Despicable
+
+1293
+01:50:32,796 --> 01:50:37,094
+Me and other movies. Over the millions. So we'll
+
+1294
+01:50:37,594 --> 01:50:40,866
+look at both of these. And first, let's try to understand how these
+
+1295
+01:50:41,060 --> 01:50:44,010
+things look like. And then after the break, I promise, like, we'll take a break
+
+1296
+01:50:44,510 --> 01:50:47,418
+now and then we'll look at this later. But after the break, we'll look into
+
+1297
+01:50:47,435 --> 01:50:51,071
+how these networks work, right? So the key to any
+
+1298
+01:50:51,509 --> 01:50:55,679
+recurrent neural network model,
+
+1299
+01:50:55,695 --> 01:51:00,322
+right, is the ability to track previous information
+
+1300
+01:51:00,354 --> 01:51:03,937
+from the previous tokens, right, or maintain information
+
+1301
+01:51:04,437 --> 01:51:09,207
+through time. And how it is done in this specific long
+
+1302
+01:51:09,239 --> 01:51:13,079
+short-term memory network is using this cell state defined
+
+1303
+01:51:13,159 --> 01:51:16,614
+as ct. The cell state maintains all the information.
+
+1304
+01:51:17,031 --> 01:51:20,646
+And you have different gates, which is called the F is for forget
+
+1305
+01:51:21,146 --> 01:51:24,197
+gate, I is for the input gate, and O is for the output gate.
+
+1306
+01:51:24,647 --> 01:51:27,683
+And these are all basically how we define them, which is again,
+
+1307
+01:51:29,387 --> 01:51:32,520
+how this whole thing was defined. And if you look at this, this is one
+
+1308
+01:51:33,747 --> 01:51:37,073
+neuron, literally. This is one neuron of the whole LSTM, right? You saw
+
+1309
+01:51:37,089 --> 01:51:38,826
+for the RNN, it was a simple operation.
+
+1310
+01:51:40,804 --> 01:51:44,749
+This whole block literally
+
+1311
+01:51:44,830 --> 01:51:48,775
+is one LSTM unit. And you actually can apply different—
+
+1312
+01:51:49,081 --> 01:51:52,368
+you can also stack them. You can actually literally apply layers of LSTM
+
+1313
+01:51:52,400 --> 01:51:55,706
+units to solve the problem, right? The blue
+
+1314
+01:51:55,818 --> 01:51:59,347
+arrows are literally here showing us what we talk about as the feedback.
+
+1315
+01:51:59,748 --> 01:52:03,534
+So basically, you'll see that how this defines the recursive
+
+1316
+01:52:04,034 --> 01:52:07,946
+operations. So how you actually use this for
+
+1317
+01:52:08,446 --> 01:52:11,972
+how the previous state information is now used to compute the information at
+
+1318
+01:52:12,036 --> 01:52:15,164
+the current time step. So you will see all the— in the blue arrows,
+
+1319
+01:52:15,180 --> 01:52:19,432
+you will see information coming from previous time step. So ht-1 here
+
+1320
+01:52:19,560 --> 01:52:22,303
+and also ct-1, which is the previous cell state.
+
+1321
+01:52:23,121 --> 01:52:25,911
+Okay, right. And to look at this,
+
+1322
+01:52:26,456 --> 01:52:30,481
+if you see the, the cell state computation at timestep
+
+1323
+01:52:30,981 --> 01:52:34,859
+t is literally a combination of using
+
+1324
+01:52:34,971 --> 01:52:38,243
+the input gate, applying it to
+
+1325
+01:52:38,579 --> 01:52:42,492
+the intermediary cell state that we compute, and the forget
+
+1326
+01:52:42,508 --> 01:52:45,956
+gate, right? So this is how we actually compute the current cell
+
+1327
+01:52:46,456 --> 01:52:50,092
+state, and the current cell state then is applied to the output gate to actually
+
+1328
+01:52:50,589 --> 01:52:53,570
+obtain the hidden state at a specific time step.
+
+1329
+01:52:53,970 --> 01:52:58,810
+So this is basically— I mean, it looks alarmingly huge,
+
+1330
+01:52:59,483 --> 01:53:02,992
+but this is just a sequence of operations that is performed to obtain
+
+1331
+01:53:03,569 --> 01:53:07,527
+the LSTM output. So I think we can basically take
+
+1332
+01:53:08,027 --> 01:53:11,710
+a break here, and then we'll just try to expand this in
+
+1333
+01:53:11,742 --> 01:53:14,563
+the last 45 minutes and the other aspects. Good.
+
+1334
+02:08:42,451 --> 02:08:44,536
+We can start again.
+
+1335
+02:08:45,900 --> 02:08:49,622
+We'll discuss LSTMs now in a
+
+1336
+02:08:49,686 --> 02:08:50,761
+bit more detail.
+
+1337
+02:08:59,633 --> 02:09:02,727
+Before that, I just wanted to also mention, right, I think one or two of
+
+1338
+02:09:02,759 --> 02:09:06,318
+you wanted to know also a bit more about how should you do
+
+1339
+02:09:06,366 --> 02:09:09,092
+the project, right? Like some tips.
+
+1340
+02:09:09,749 --> 02:09:12,779
+So I think we'll be able to finish a bit earlier today.
+
+1341
+02:09:13,981 --> 02:09:16,867
+I mean, we went a bit— I mean, our pace was very good in the
+
+1342
+02:09:17,367 --> 02:09:20,394
+first half, so we could actually cover most of these things. I'm willing to stay
+
+1343
+02:09:20,894 --> 02:09:24,113
+back and answer questions about projects if you have, right? So after,
+
+1344
+02:09:24,321 --> 02:09:28,057
+I mean, maybe we can spend the last 15 minutes asking
+
+1345
+02:09:28,089 --> 02:09:32,824
+or answering any questions about projects. Okay. So we
+
+1346
+02:09:33,324 --> 02:09:38,126
+looked at this mammoth of fix to
+
+1347
+02:09:38,399 --> 02:09:41,954
+the vanishing gradient problem, which is called the Long Short-Term
+
+1348
+02:09:42,454 --> 02:09:46,430
+Memory Network, right? Which is basically defining,
+
+1349
+02:09:47,918 --> 02:09:53,140
+using certain gates, how you actually retain
+
+1350
+02:09:53,480 --> 02:09:57,119
+the information in each time step. Hidden state,
+
+1351
+02:09:57,167 --> 02:10:02,046
+right? So basically, the cell state actually controls how
+
+1352
+02:10:02,546 --> 02:10:05,668
+much of the previous information is retained, how much is it forgotten,
+
+1353
+02:10:07,250 --> 02:10:11,214
+which is implemented using the forget gate. We'll look into this one by
+
+1354
+02:10:11,230 --> 02:10:15,146
+one. But then also there is ways
+
+1355
+02:10:15,258 --> 02:10:18,312
+in which you can actually— bless you— and there's also ways in which you can
+
+1356
+02:10:18,812 --> 02:10:21,863
+actually check how how much of the information
+
+1357
+02:10:22,363 --> 02:10:26,036
+is actually read from the previous input, which is why it's called—
+
+1358
+02:10:26,651 --> 02:10:30,015
+sorry, how much of the information is written from the previous input, which is controlled
+
+1359
+02:10:30,515 --> 02:10:34,454
+by the input gate. And then also how much of the information in the output
+
+1360
+02:10:34,777 --> 02:10:39,394
+is actually used to pass along to the next hidden
+
+1361
+02:10:39,894 --> 02:10:42,364
+state. So these are different gates that control this information.
+
+1362
+02:10:42,819 --> 02:10:46,890
+Eventually, we are doing the same thing what we did in an RNN. Which is
+
+1363
+02:10:46,906 --> 02:10:50,434
+basically we are just tracking information through time, which was being done using the
+
+1364
+02:10:50,450 --> 02:10:54,427
+hidden states in the RNN. Here, this is primarily done using
+
+1365
+02:10:54,603 --> 02:10:58,612
+the cell state, actually done in the cell state, but controlled
+
+1366
+02:10:59,112 --> 02:11:02,236
+via different gates. And the idea is again the same thing which we said,
+
+1367
+02:11:02,300 --> 02:11:05,989
+that this is the high-level idea of any gated network,
+
+1368
+02:11:06,646 --> 02:11:10,430
+gated recurrent network. Basically, when you say that
+
+1369
+02:11:10,930 --> 02:11:15,065
+you somehow make sure that you have a way which is orchestrated
+
+1370
+02:11:15,565 --> 02:11:19,363
+or implemented or operationalized, whatever term that you like, using certain gating
+
+1371
+02:11:19,459 --> 02:11:23,356
+functions, which just tells you how much of this information
+
+1372
+02:11:23,949 --> 02:11:27,782
+do you keep or you get rid of when you are moving
+
+1373
+02:11:28,119 --> 02:11:30,621
+through time when you are training this network, right?
+
+1374
+02:11:31,888 --> 02:11:35,352
+And the one way to do this is this long short-term memory
+
+1375
+02:11:35,852 --> 02:11:39,217
+network. The other is to do it using a gated recurrent unit.
+
+1376
+02:11:39,669 --> 02:11:43,262
+But they are both very similar and we will look into what they actually
+
+1377
+02:11:43,311 --> 02:11:47,293
+mean here. Okay. So, so basically, as I was saying, right, let's first
+
+1378
+02:11:47,793 --> 02:11:51,952
+look at the key or the— okay, I actually
+
+1379
+02:11:52,452 --> 02:11:55,732
+also wanted to give one quick anecdote. LSTMs were actually developed
+
+1380
+02:11:56,232 --> 02:12:00,215
+in 1997, but it took almost 13 years to actually
+
+1381
+02:12:00,490 --> 02:12:03,942
+implement them in practice and use them meaningfully,
+
+1382
+02:12:04,056 --> 02:12:08,017
+right? I mean, implementing them was not that hard. Of course, it was hard back
+
+1383
+02:12:08,081 --> 02:12:12,523
+then. You did not have tools like PyTorch, right? I mean, even until 2016
+
+1384
+02:12:13,023 --> 02:12:16,244
+or '17, PyTorch was not even existent. So implementing these
+
+1385
+02:12:16,276 --> 02:12:18,890
+neural networks were really, really hard. But the point was,
+
+1386
+02:12:19,964 --> 02:12:23,284
+even for those 13 years, people were not able to use this.
+
+1387
+02:12:23,572 --> 02:12:27,181
+I mean, theoretically, the concept looked very nice, but people were not able to use
+
+1388
+02:12:27,681 --> 02:12:30,677
+it for any— I mean, it was as we were discussing, right? You can always
+
+1389
+02:12:30,773 --> 02:12:34,125
+train a bidirectional recurrent neural network, but will it be useful? So the point is,
+
+1390
+02:12:34,141 --> 02:12:37,302
+people were not able to make use out of this.
+
+1391
+02:12:37,751 --> 02:12:41,527
+As a concept, this worked well, but it was a bit unusable for almost
+
+1392
+02:12:42,027 --> 02:12:45,624
+13 years. Some anecdote if you want to take that away. Okay. Coming back
+
+1393
+02:12:46,124 --> 02:12:49,383
+to the cell state. So, the cell state is,
+
+1394
+02:12:49,640 --> 02:12:53,448
+as I say, the star of the LSTM or the poster
+
+1395
+02:12:53,592 --> 02:12:56,484
+child, if you will. This is the key concept in the LSTM.
+
+1396
+02:12:56,870 --> 02:13:00,629
+It basically is governed using 2 equations,
+
+1397
+02:13:00,822 --> 02:13:03,921
+as we say. As I said, we'll break it down. So one
+
+1398
+02:13:04,097 --> 02:13:07,768
+is the update of the cell state, which is basically defined
+
+1399
+02:13:07,800 --> 02:13:11,904
+using some— an equation which looks very similar to an Elman recurrent
+
+1400
+02:13:11,920 --> 02:13:15,175
+neural network, right, where you have the input at time step t,
+
+1401
+02:13:15,672 --> 02:13:18,910
+right? And you have the weight matrix, which is learnable again,
+
+1402
+02:13:18,942 --> 02:13:23,094
+which is learned using when you train the network. You have the previous hidden
+
+1403
+02:13:23,126 --> 02:13:26,284
+state. And again, you have a projection matrix that is learned and you
+
+1404
+02:13:26,300 --> 02:13:30,342
+have some bias, right? So this is pretty much the equation
+
+1405
+02:13:30,390 --> 02:13:33,183
+that you saw in an Elman recurrent neural network. So this is, let's say this
+
+1406
+02:13:33,216 --> 02:13:37,117
+is the update rule of the cell state. But the key impact that comes
+
+1407
+02:13:37,149 --> 02:13:39,846
+in is that when you decide how much of this,
+
+1408
+02:13:40,585 --> 02:13:43,972
+how do you compute the actual cell state at time
+
+1409
+02:13:44,472 --> 02:13:48,066
+step t, right? Which is basically the it here is the
+
+1410
+02:13:48,566 --> 02:13:52,593
+input gate, which actually controls how much of this
+
+1411
+02:13:52,802 --> 02:13:56,270
+information, how much of this update is written to the current cell
+
+1412
+02:13:56,770 --> 02:14:00,172
+state. And the ft is the forget
+
+1413
+02:14:00,672 --> 02:14:04,250
+gate, which actually tells you how much of this information
+
+1414
+02:14:04,587 --> 02:14:07,799
+is actually retained from the
+
+1415
+02:14:08,299 --> 02:14:10,865
+previous cell state, right? I'll go over this again.
+
+1416
+02:14:11,508 --> 02:14:15,136
+So the first equation tells you the update rule for the cell
+
+1417
+02:14:15,636 --> 02:14:19,054
+state, right? So how would you get this ct tilde,
+
+1418
+02:14:19,279 --> 02:14:23,556
+which actually just tells you the update rule? But the cell state update in
+
+1419
+02:14:24,056 --> 02:14:27,624
+this case is actually performed using a simple weighted average of 2 gates.
+
+1420
+02:14:27,915 --> 02:14:31,214
+Yeah, you have a question? Where's the connection from? I'm just
+
+1421
+02:14:31,714 --> 02:14:35,749
+looking at the picture trying to— where's the ht minus 1 going
+
+1422
+02:14:35,765 --> 02:14:40,754
+to the—
+
+1423
+02:14:40,883 --> 02:14:43,186
+That's the first update rule. So basically,
+
+1424
+02:14:45,810 --> 02:14:48,109
+so here I'm just depicting this part.
+
+1425
+02:14:50,761 --> 02:14:53,974
+Okay, but if you look
+
+1426
+02:14:54,474 --> 02:14:57,734
+at the cell state
+
+1427
+02:14:57,799 --> 02:14:59,245
+and the input gate and the forget gate.
+
+1428
+02:15:01,466 --> 02:15:04,713
+Yeah, that's the first update that you perform, right?
+
+1429
+02:15:08,750 --> 02:15:12,178
+Yeah, because I mean that— so as I said, what I'm
+
+1430
+02:15:12,211 --> 02:15:15,824
+depicting here is this. This actual final update
+
+1431
+02:15:16,324 --> 02:15:19,872
+rule. But you can see that, again, I mean, you have this information from the
+
+1432
+02:15:20,097 --> 02:15:23,310
+input. And I mean, that is not relevant to the figure.
+
+1433
+02:15:23,776 --> 02:15:26,813
+Yeah, just to say, that's not relevant to the figure, right? But the point is,
+
+1434
+02:15:27,391 --> 02:15:30,219
+the figure will look at each of these things, which will just show how this
+
+1435
+02:15:30,719 --> 02:15:33,255
+is done. But you have this information at each time step, right? I mean,
+
+1436
+02:15:33,271 --> 02:15:36,726
+this is very exactly what you saw in the Elman recurrent neural network,
+
+1437
+02:15:36,790 --> 02:15:40,437
+right? So you apply some nonlinearity here.
+
+1438
+02:15:40,742 --> 02:15:43,793
+To obtain literally the ct tilde,
+
+1439
+02:15:44,098 --> 02:15:47,406
+which— and basically this is what we also saw in this abstraction, right? So you're
+
+1440
+02:15:47,906 --> 02:15:51,548
+trying to somehow make sure that you, you don't use all of
+
+1441
+02:15:51,564 --> 02:15:55,049
+the ht minus 1 in the final update that you perform, right?
+
+1442
+02:15:55,370 --> 02:15:59,111
+So here what you do is, again, it's very intuitive
+
+1443
+02:15:59,611 --> 02:16:02,467
+to understand, right? I mean, it's— the point is to get the intuition rather than
+
+1444
+02:16:02,563 --> 02:16:05,919
+actual computation, because this is again defined here, right? You can literally
+
+1445
+02:16:06,273 --> 02:16:10,301
+see how these forget input and output gates are defined. But that's not— we're gonna—
+
+1446
+02:16:10,607 --> 02:16:12,653
+I mean, that's not the key thing that I'm trying to convey here, right?
+
+1447
+02:16:12,702 --> 02:16:17,951
+What I'm trying to convey here is that what actually— what
+
+1448
+02:16:18,451 --> 02:16:22,336
+is the concept? And the concept here is the cell state that is computed at
+
+1449
+02:16:22,836 --> 02:16:26,690
+timestep t. There are 2 things that control the computation
+
+1450
+02:16:27,190 --> 02:16:30,398
+of that cell state. One is the input gate, which tells us how much
+
+1451
+02:16:31,626 --> 02:16:35,411
+from this update that we have obtained
+
+1452
+02:16:35,928 --> 02:16:38,258
+is actually written into the new cell state.
+
+1453
+02:16:39,662 --> 02:16:43,795
+And this is dependent on the current input
+
+1454
+02:16:43,812 --> 02:16:47,112
+and the past hidden state. And the forget gate tells us how
+
+1455
+02:16:47,177 --> 02:16:49,487
+much from the previous cell state should we retain.
+
+1456
+02:16:51,345 --> 02:16:53,833
+Something as simple as that. And the meaning also conveys it.
+
+1457
+02:16:54,272 --> 02:16:58,716
+Input tells us how much should we Right,
+
+1458
+02:16:58,732 --> 02:17:02,895
+right, from the update. And the
+
+1459
+02:17:03,121 --> 02:17:06,268
+forget gate tells us how much should be retained from the previous cell state.
+
+1460
+02:17:06,349 --> 02:17:10,092
+Because right now here, I would say the
+
+1461
+02:17:10,382 --> 02:17:14,303
+main thing that's tracking
+
+1462
+02:17:14,658 --> 02:17:17,732
+the information is the cell state and not the hidden state, right? The hidden state
+
+1463
+02:17:18,232 --> 02:17:22,094
+is just being used. So here, the key
+
+1464
+02:17:22,110 --> 02:17:25,323
+actor here is the ct. Ct minus 1, which we are updating.
+
+1465
+02:17:26,221 --> 02:17:29,365
+OK, so basically, if you
+
+1466
+02:17:29,865 --> 02:17:32,830
+understand it in a different way, the hidden states should be seen as some sort
+
+1467
+02:17:33,330 --> 02:17:37,546
+of a short-term memory, which we are basically using just to update the
+
+1468
+02:17:38,268 --> 02:17:41,813
+initial information for the cell state. And the
+
+1469
+02:17:42,313 --> 02:17:45,582
+cell state ct actually tracks the long-term dependencies. So that's
+
+1470
+02:17:46,082 --> 02:17:49,544
+why it's called a long short-term memory, because the hidden state still keeps the short-term
+
+1471
+02:17:49,640 --> 02:17:52,721
+memory, but the ct actually tracks the long-range dependencies.
+
+1472
+02:17:53,106 --> 02:17:56,553
+And that's why you have 2 different types of memories that are orchestrated
+
+1473
+02:17:57,053 --> 02:18:00,481
+by this. OK, can we then— let's
+
+1474
+02:18:00,981 --> 02:18:04,570
+try to basically say I'll give you some facts and then we'll try to go
+
+1475
+02:18:05,070 --> 02:18:08,659
+through some exercises and then we'll go back to understanding why
+
+1476
+02:18:09,159 --> 02:18:12,587
+this happens. OK, so I'm giving you an understanding that, OK,
+
+1477
+02:18:12,748 --> 02:18:15,891
+the cell state tracks something in the sequence, right? And the
+
+1478
+02:18:16,391 --> 02:18:19,786
+cell state is literally like a vector, right? You can say it's a dimension— It
+
+1479
+02:18:20,286 --> 02:18:23,857
+can be of dimensionality 1,024 or 5,000 based on however you choose
+
+1480
+02:18:23,873 --> 02:18:28,458
+it. But cell state is a vector. And the claim
+
+1481
+02:18:28,522 --> 02:18:32,113
+is that the cell state actually tracks certain
+
+1482
+02:18:32,529 --> 02:18:36,393
+dimensions. Like the dimensions of the cell state actually has some semantic
+
+1483
+02:18:36,893 --> 02:18:40,240
+behavior. So this was a very nice blog post.
+
+1484
+02:18:40,384 --> 02:18:43,782
+And also, I think if I find the link to this— I don't know,
+
+1485
+02:18:43,798 --> 02:18:47,279
+Stack Overflow is something of the past. When I was studying, I used to use
+
+1486
+02:18:47,779 --> 02:18:50,891
+it. I don't think you kids today actually even— who
+
+1487
+02:18:50,971 --> 02:18:54,148
+knows of Stack Overflow? That's another question. OK, you guys know it. OK, at least
+
+1488
+02:18:54,518 --> 02:18:57,583
+it's not been forgotten. But we used to use it heavily. Now I don't think
+
+1489
+02:18:58,083 --> 02:19:01,098
+anyone uses it that much. So this was a very nice blog post which just
+
+1490
+02:19:01,598 --> 02:19:05,447
+says that the LSTM, when you look at one particular dimension of a
+
+1491
+02:19:05,947 --> 02:19:09,844
+cell state of a trained LSTM, it basically— if
+
+1492
+02:19:10,344 --> 02:19:14,623
+you overlaid it on the input, it basically This was the representation,
+
+1493
+02:19:14,719 --> 02:19:18,983
+right? And just to tell you, the cell state is actually obtained, the activation
+
+1494
+02:19:19,483 --> 02:19:22,879
+function in here is like some sort of a tanh activation function,
+
+1495
+02:19:23,215 --> 02:19:26,389
+which is basically bounded between -1 and 1. So blue
+
+1496
+02:19:27,142 --> 02:19:30,717
+being, let's say, -1 and red being 1,
+
+1497
+02:19:30,925 --> 02:19:34,308
+right? So if I'm telling you all of this information, right? So this is what
+
+1498
+02:19:35,077 --> 02:19:38,556
+one dimension of a cell state was tracking. Can you tell
+
+1499
+02:19:38,604 --> 02:19:43,375
+me What exactly is this tracking? What's the semantics of this output?
+
+1500
+02:19:43,699 --> 02:19:47,243
+Like, if this— I told you the lowest value is -1,
+
+1501
+02:19:47,259 --> 02:19:49,997
+the highest value is 1. It's tracking something.
+
+1502
+02:19:50,580 --> 02:19:54,209
+And this is why you have this Menti. Just share your ideas with
+
+1503
+02:19:54,242 --> 02:19:54,938
+me, and then we'll discuss.
+
+1504
+02:19:59,570 --> 02:20:02,976
+Come on. Yeah. I'll show
+
+1505
+02:20:03,476 --> 02:20:06,777
+you the example again. Again, I mean, if you have already— as
+
+1506
+02:20:07,277 --> 02:20:13,630
+I said, if you have this Menti open, you can just look
+
+1507
+02:20:14,130 --> 02:20:18,199
+at this, stare hard at this example, and tell me or put
+
+1508
+02:20:18,699 --> 02:20:19,247
+it here, what does it track?
+
+1509
+02:20:32,208 --> 02:20:33,730
+Okay, I'll show this again.
+
+1510
+02:21:00,622 --> 02:21:05,445
+I'm blind,
+
+1511
+02:21:05,461 --> 02:21:07,627
+literally. It's only 3. Okay, good.
+
+1512
+02:21:12,448 --> 02:21:16,116
+Okay, so I think we have had
+
+1513
+02:21:16,616 --> 02:21:19,574
+some responses. Let's discuss them one by one.
+
+1514
+02:21:20,370 --> 02:21:22,522
+So someone says, okay, hidden state, I mean, duh.
+
+1515
+02:21:23,408 --> 02:21:27,466
+So you said scope and indentation,
+
+1516
+02:21:27,562 --> 02:21:30,831
+right? So scope and indentation, I think they mean the same thing.
+
+1517
+02:21:33,820 --> 02:21:37,101
+And one person says, or maybe more, says semantics of a for
+
+1518
+02:21:37,601 --> 02:21:40,958
+loop. So I think maybe it's
+
+1519
+02:21:41,574 --> 02:21:45,204
+now once you see this, you know this, right? So who thinks it's
+
+1520
+02:21:45,269 --> 02:21:46,468
+actually tracking indentation?
+
+1521
+02:21:53,396 --> 02:21:56,536
+One? I mean, okay. Okay, maybe I should reverse
+
+1522
+02:21:57,036 --> 02:22:00,739
+this. Like, who does not think this is tracking indentation? And then maybe also give
+
+1523
+02:22:01,239 --> 02:22:01,947
+your thoughts why.
+
+1524
+02:22:05,147 --> 02:22:05,425
+Yeah.
+
+1525
+02:22:21,130 --> 02:22:22,108
+I never said only, right?
+
+1526
+02:22:24,500 --> 02:22:26,786
+Yeah, I think, and also, I mean, it's the same thing that, okay,
+
+1527
+02:22:29,121 --> 02:22:32,552
+being too literal about things sometimes is wrong, like sometimes
+
+1528
+02:22:33,228 --> 02:22:36,119
+may be a problem, right? So as we discussed in the scan part and this,
+
+1529
+02:22:36,523 --> 02:22:40,320
+yeah. So overall, this is, I mean, if you kind of allow yourself
+
+1530
+02:22:40,820 --> 02:22:44,396
+to be a bit more flexible, Here it tracks the scoping
+
+1531
+02:22:44,573 --> 02:22:47,798
+or indentation, as people say it, right? Because you literally can see
+
+1532
+02:22:49,146 --> 02:22:53,046
+the things are becoming— going from -1
+
+1533
+02:22:53,800 --> 02:22:57,074
+towards 1 as you
+
+1534
+02:22:57,668 --> 02:23:01,198
+indent towards or you go deeper into the function
+
+1535
+02:23:01,698 --> 02:23:05,034
+explanation, right? So someone said also semantics for a for loop.
+
+1536
+02:23:05,788 --> 02:23:08,725
+I'm happy to discuss why or what was meant by this.
+
+1537
+02:23:09,208 --> 02:23:12,433
+If you want to, but if you don't want to, I also won't force you
+
+1538
+02:23:12,997 --> 02:23:13,481
+to engage.
+
+1539
+02:23:16,032 --> 02:23:19,698
+1, 2,
+
+1540
+02:23:20,311 --> 02:23:23,121
+3, last chance to dance if you want. Okay, good. So yeah, I mean,
+
+1541
+02:23:23,314 --> 02:23:26,705
+overall this tracks some sort of a scoping or indentation. Next,
+
+1542
+02:23:26,947 --> 02:23:30,694
+again, let's look at this one. Now you know the game. So can anyone say
+
+1543
+02:23:31,291 --> 02:23:34,996
+what is this tracking? Again, this blue and
+
+1544
+02:23:35,496 --> 02:23:38,768
+red. You can see there are 2 clear demarcations that you see in this piece
+
+1545
+02:24:04,980 --> 02:24:15,387
+All right.
+
+1546
+02:24:16,525 --> 02:24:18,274
+I mean, you've got the hang of it, right?
+
+1547
+02:24:20,894 --> 02:24:24,032
+So it's basically saying it's tracking quotes
+
+1548
+02:24:24,241 --> 02:24:26,543
+or quotation or scope by quotes.
+
+1549
+02:24:27,945 --> 02:24:31,602
+Right? I don't understand when you say who. So someone said
+
+1550
+02:24:32,102 --> 02:24:35,226
+speaker and someone said who said— who is saying what?
+
+1551
+02:24:36,910 --> 02:24:38,808
+Care to throw some light on this?
+
+1552
+02:24:40,750 --> 02:24:44,651
+How does it track the speaker? Yeah,
+
+1553
+02:24:44,667 --> 02:24:47,520
+I mean, quotes should be clear by now, right? It's literally— you can see that
+
+1554
+02:24:47,987 --> 02:24:51,501
+it's like the blue part actually literally says
+
+1555
+02:24:51,936 --> 02:24:55,936
+what is in quotes. And the remaining remainder part is the
+
+1556
+02:24:56,436 --> 02:24:58,593
+other side of the extreme, which basically says not course.
+
+1557
+02:25:01,382 --> 02:25:04,585
+Care to explain? Right, who you know? How can you say it's
+
+1558
+02:25:05,085 --> 02:25:08,486
+tracking speaker? I mean, if it was
+
+1559
+02:25:08,518 --> 02:25:12,174
+tracking speaker, then it would have. You could have. You should have something very specific
+
+1560
+02:25:12,239 --> 02:25:16,122
+on the actual speaker, which is you know. I don't want to butcher
+
+1561
+02:25:16,622 --> 02:25:18,112
+the pronunciation here, but yes, should be something.
+
+1562
+02:25:21,930 --> 02:25:25,311
+Anyway, okay, I think, okay, but largely you got the idea, right? That's tracking
+
+1563
+02:25:25,424 --> 02:25:28,547
+some sort of course. Of course, I mean, this is, this is more intuition and
+
+1564
+02:25:29,368 --> 02:25:32,966
+interpretation development here. Again, you would not have—
+
+1565
+02:25:33,548 --> 02:25:37,170
+if you're worried about this, you would not have such underspecified questions
+
+1566
+02:25:37,202 --> 02:25:40,921
+in the exam, right? I'm just saying. So this is more to discuss, to kind
+
+1567
+02:25:41,421 --> 02:25:44,714
+of have intuition development. And I think I've said it already, if there is any
+
+1568
+02:25:45,214 --> 02:25:48,342
+underspecified question, we will be there in the exam. Room. But if there is something,
+
+1569
+02:25:48,759 --> 02:25:51,179
+we will also remove it, right? So you don't have to worry about that.
+
+1570
+02:25:51,484 --> 02:25:54,706
+Usually it shouldn't happen. Okay. Now coming back to
+
+1571
+02:25:55,206 --> 02:25:58,954
+again, trying to see how actually the long short-term memory network actually works, right?
+
+1572
+02:25:59,611 --> 02:26:02,785
+So now let's look at the different gates. So now we have understood what the
+
+1573
+02:26:03,285 --> 02:26:06,247
+cell state can do and what is it doing. Let's look at the different gates,
+
+1574
+02:26:06,471 --> 02:26:10,254
+how they are kind of, you know, what do they track, right? So let's
+
+1575
+02:26:10,754 --> 02:26:13,877
+look at this specific sentence. I went to the lecture, right?
+
+1576
+02:26:14,326 --> 02:26:18,051
+And basically, what my claim is here is that
+
+1577
+02:26:18,180 --> 02:26:22,611
+you can literally see the arrows actually also tell you the blue one is coming
+
+1578
+02:26:23,111 --> 02:26:25,196
+from the previous information, which is the word the here.
+
+1579
+02:26:25,887 --> 02:26:30,078
+And the lecture is the current word that you are trying to kind of— for
+
+1580
+02:26:30,142 --> 02:26:33,690
+which you are trying to update your cell state for. And the forget gate actually
+
+1581
+02:26:34,190 --> 02:26:37,464
+just tells you, as I said previously, it tells you how much would
+
+1582
+02:26:37,964 --> 02:26:41,719
+you retain from the previous cell state. And it's a
+
+1583
+02:26:41,783 --> 02:26:45,412
+bit of a different type of definition. I mean,
+
+1584
+02:26:45,508 --> 02:26:49,153
+it's an inverted definition. It's a bit ironic, which says that
+
+1585
+02:26:49,651 --> 02:26:53,890
+if the forget gate is set to 1, you remember everything
+
+1586
+02:26:54,066 --> 02:26:57,358
+from the previous state. And if the forget gate is set to 0,
+
+1587
+02:26:57,840 --> 02:27:00,007
+you just forget everything up to now.
+
+1588
+02:27:01,244 --> 02:27:04,005
+Is that clear? Any questions on that?
+
+1589
+02:27:06,875 --> 02:27:09,301
+Because this is clearly, as you can see in this equation, right? So if you
+
+1590
+02:27:09,801 --> 02:27:13,429
+set forget gate to 1, it will
+
+1591
+02:27:13,929 --> 02:27:17,026
+just basically retain the whole of ct minus 1,
+
+1592
+02:27:17,058 --> 02:27:20,753
+which is the previous cell state. If the forget gate is set to 0,
+
+1593
+02:27:21,253 --> 02:27:23,753
+it will just forget everything that you've seen so far.
+
+1594
+02:27:25,060 --> 02:27:28,724
+I'm assuming this is clear, right? OK, so this is
+
+1595
+02:27:28,740 --> 02:27:32,162
+what forget gate does. It basically tells you how much should be retained from
+
+1596
+02:27:32,662 --> 02:27:36,228
+the previous cell state, which is in the long-term memory of these things.
+
+1597
+02:27:36,405 --> 02:27:40,342
+Can anyone tell me if the word was— if
+
+1598
+02:27:40,842 --> 02:27:46,724
+you are basically in this specific example, if you see your
+
+1599
+02:27:46,756 --> 02:27:52,164
+previous cell state should be tracking— OK,
+
+1600
+02:27:52,390 --> 02:27:54,891
+I think this doesn't make that much sense. It makes sense for the other one.
+
+1601
+02:27:55,246 --> 02:27:58,669
+OK, forget about that. OK, let's look at the other gate,
+
+1602
+02:27:58,880 --> 02:28:01,625
+which is basically the input gate. And now this will make sense what I was
+
+1603
+02:28:02,125 --> 02:28:05,921
+trying to say. So the input gate, on the other hand, tells us, as I
+
+1604
+02:28:06,018 --> 02:28:09,963
+explained previously in the intuition,
+
+1605
+02:28:10,594 --> 02:28:14,447
+it actually tells us how much should we be reading
+
+1606
+02:28:14,704 --> 02:28:19,277
+from the update that we obtained from
+
+1607
+02:28:19,373 --> 02:28:22,770
+the short-term memory of the hidden state st-1 and the current
+
+1608
+02:28:23,270 --> 02:28:26,923
+input. How much of that should we be reading and feeding it
+
+1609
+02:28:27,019 --> 02:28:30,199
+to the current cell state? This is what it tells us.
+
+1610
+02:28:30,601 --> 02:28:34,103
+So how much of this information that we obtained at this specific state
+
+1611
+02:28:34,295 --> 02:28:37,717
+should we add to the cell state or to the long-term memory?
+
+1612
+02:28:39,098 --> 02:28:42,295
+And if you look at this, basically it's quite intuitive. If you set this
+
+1613
+02:28:42,343 --> 02:28:46,037
+to 0, you will just ignore everything in the current time step. And if
+
+1614
+02:28:46,537 --> 02:28:49,635
+you set this to 1, you basically take everything from the current time step.
+
+1615
+02:28:49,973 --> 02:28:53,667
+So let's say if basically you are literally looking at this specific
+
+1616
+02:28:54,434 --> 02:28:58,275
+word, right? If you're looking at the thing
+
+1617
+02:28:58,388 --> 02:29:00,938
+lecture. So the question is,
+
+1618
+02:29:01,616 --> 02:29:04,935
+if you want to look at the word the instead, right,
+
+1619
+02:29:05,747 --> 02:29:09,402
+would you think you should set the input gate to 0
+
+1620
+02:29:09,902 --> 02:29:10,831
+here or to 1?
+
+1621
+02:29:16,669 --> 02:29:19,297
+I mean, thinking about what does the word the carry?
+
+1622
+02:29:21,343 --> 02:29:23,954
+Yeah. Okay, so the one answer is that you should set it to 0.
+
+1623
+02:29:24,165 --> 02:29:25,544
+Can you care to explain why?
+
+1624
+02:29:30,664 --> 02:29:33,068
+So the word the, I mean, also, I mean, it's also very,
+
+1625
+02:29:33,519 --> 02:29:36,649
+it's a very small sentence, I went to the lecture, but generally saying the
+
+1626
+02:29:37,149 --> 02:29:39,634
+word the, if you recall the first lecture, is also usually one of the stop
+
+1627
+02:29:40,134 --> 02:29:43,761
+words, and it's also not one of the negating stop words, so it doesn't
+
+1628
+02:29:44,261 --> 02:29:48,423
+carry too much of a meaning. So the semantics of the word the is almost
+
+1629
+02:29:48,923 --> 02:29:51,793
+nothing for any kind of a task in this case.
+
+1630
+02:29:53,634 --> 02:29:56,582
+So one way— I mean, again, this is more intuition. I'm not saying it will
+
+1631
+02:29:57,082 --> 02:30:00,028
+be done like this, but I'm just saying if you had to, it could be
+
+1632
+02:30:00,528 --> 02:30:03,996
+that the input gate setting for this word the would be set to 0
+
+1633
+02:30:04,496 --> 02:30:08,203
+because it doesn't carry enough semantic information. Now, what will be
+
+1634
+02:30:08,703 --> 02:30:12,556
+done when you train this LSTM Of course, for words like the,
+
+1635
+02:30:12,604 --> 02:30:16,418
+it will— you will see how will it actually,
+
+1636
+02:30:17,411 --> 02:30:20,681
+when you're training the network, what is your eventual weights
+
+1637
+02:30:21,181 --> 02:30:24,703
+that you obtain. But usually, for these words,
+
+1638
+02:30:24,719 --> 02:30:28,356
+it will be set to a very low value and not a very high value.
+
+1639
+02:30:29,030 --> 02:30:32,459
+Okay, then the final gate which comes is the output
+
+1640
+02:30:32,959 --> 02:30:36,529
+gate, which basically tells us how much of the information actually
+
+1641
+02:30:37,846 --> 02:30:42,985
+that we have obtained by computing these updates, we actually pass
+
+1642
+02:30:43,485 --> 02:30:47,337
+along and write to the new cell state.
+
+1643
+02:30:47,722 --> 02:30:51,336
+So basically, which basically explains how much of this will actually go
+
+1644
+02:30:51,836 --> 02:30:56,122
+to the next step. So input gate actually tells us how much of
+
+1645
+02:30:56,539 --> 02:30:59,960
+the information we will read and pass
+
+1646
+02:31:00,072 --> 02:31:03,220
+along to the new cell state. The forget gate tells us how much of the
+
+1647
+02:31:03,720 --> 02:31:06,175
+previous cell state information will be retained or will be let go.
+
+1648
+02:31:06,737 --> 02:31:11,295
+And the output gate actually tells us that how much of the information,
+
+1649
+02:31:11,632 --> 02:31:14,922
+how much of this information that we have computed in this hidden state will
+
+1650
+02:31:15,422 --> 02:31:18,565
+influence the next step. So how much of this will we write to
+
+1651
+02:31:19,993 --> 02:31:23,508
+the next step's output so that we then again, because it's
+
+1652
+02:31:24,008 --> 02:31:27,263
+again a recurrent unit, right? The only thing that has changed is that these gating
+
+1653
+02:31:27,295 --> 02:31:32,013
+functions have been employed, but it's still again a recurrent
+
+1654
+02:31:32,254 --> 02:31:35,920
+operation. So this basically is literally the
+
+1655
+02:31:36,420 --> 02:31:39,867
+whole of LSTM. So if you bring all of this together with these update matrices,
+
+1656
+02:31:40,621 --> 02:31:43,711
+you know how LSTM performs these operations.
+
+1657
+02:31:51,060 --> 02:31:51,157
+Yes.
+
+1658
+02:31:57,833 --> 02:32:00,999
+No, they are. Okay. Which specific operation
+
+1659
+02:32:01,097 --> 02:32:01,914
+are you talking about here?
+
+1660
+02:32:10,803 --> 02:32:11,712
+These are numbers, right?
+
+1661
+02:32:15,853 --> 02:32:18,988
+Yeah, because this is what we said, right? So for instance, the input gate is
+
+1662
+02:32:19,263 --> 02:32:21,685
+a number, 0, or yeah.
+
+1663
+02:32:26,061 --> 02:32:29,633
+So it will follow if— I mean, okay, if you think
+
+1664
+02:32:30,133 --> 02:32:32,472
+about this, right, that That was the abstraction.
+
+1665
+02:32:33,964 --> 02:32:37,928
+Because literally on this cell state t, you still have different dimensions.
+
+1666
+02:32:38,955 --> 02:32:41,924
+So you're still doing it, but in this equation, no.
+
+1667
+02:32:42,390 --> 02:32:46,610
+Because these are individual numbers. But if you implement it, you will
+
+1668
+02:32:46,739 --> 02:32:50,189
+probably have this Hadamard product.
+
+1669
+02:32:50,831 --> 02:32:54,346
+Because you will have to perform this operation on a
+
+1670
+02:32:54,846 --> 02:32:57,443
+batch. And so overall, this will happen when you invert.
+
+1671
+02:32:58,419 --> 02:33:02,484
+Okay, good. So now
+
+1672
+02:33:02,533 --> 02:33:06,175
+let's look at certain very quick comprehension questions about LSTMs,
+
+1673
+02:33:06,272 --> 02:33:06,983
+right?
+
+1674
+02:33:10,443 --> 02:33:13,418
+Let's try to look at the first one.
+
+1675
+02:33:14,566 --> 02:33:16,896
+And let me know if the question is clear or not, right? So the question
+
+1676
+02:33:16,912 --> 02:33:20,554
+is, for what type of input might the model learn to make
+
+1677
+02:33:21,054 --> 02:33:24,065
+the input gate to be 0? Okay,
+
+1678
+02:33:24,370 --> 02:33:25,638
+and I'll just change this.
+
+1679
+02:34:03,933 --> 02:34:06,952
+Yeah, I think you guys are spot on, right? So words that don't carry any
+
+1680
+02:34:07,452 --> 02:34:10,388
+major semantic meaning, stop words are also one way to represent them.
+
+1681
+02:34:11,030 --> 02:34:14,989
+The, uh, in these cases, the model will learn to have
+
+1682
+02:34:15,489 --> 02:34:18,916
+the input gate to be 0. Can you guys tell me what happens
+
+1683
+02:34:18,949 --> 02:34:20,264
+if the forget gate is set to 0?
+
+1684
+02:34:23,270 --> 02:34:25,155
+I think it's the same entry, we just keep going.
+
+1685
+02:34:58,298 --> 02:35:02,689
+Okay, yeah, so basically we don't retain any information from the previous cell
+
+1686
+02:35:03,189 --> 02:35:06,569
+state. Okay. Then what
+
+1687
+02:35:07,069 --> 02:35:08,978
+happens if both the forget and the input gate are 0?
+
+1688
+02:35:49,704 --> 02:35:52,900
+Okay, I think this one is a bit interesting, right? So let's go through
+
+1689
+02:35:53,400 --> 02:35:56,129
+some answers. So what do you mean by like, okay, drop all tables? Is this
+
+1690
+02:35:56,629 --> 02:35:59,739
+a database class? I don't know. Yeah.
+
+1691
+02:36:02,070 --> 02:36:05,702
+Okay. Could anyone— let's discuss. Would anyone like to
+
+1692
+02:36:06,202 --> 02:36:10,199
+comment when you say we get a non-RNN? What does that mean?
+
+1693
+02:36:10,736 --> 02:36:15,192
+So basically, we lose the recurrent
+
+1694
+02:36:15,692 --> 02:36:19,065
+ability? Yes? No? Why?
+
+1695
+02:37:02,710 --> 02:37:06,509
+Anyone would like to share some thoughts about what do
+
+1696
+02:37:07,009 --> 02:37:10,438
+we mean by non-RNN here?
+
+1697
+02:37:14,330 --> 02:37:17,360
+Yeah, I mean, skip connections. There are some interesting points. I would like to discuss
+
+1698
+02:37:17,586 --> 02:37:20,556
+these things a bit with everyone. Yeah.
+
+1699
+02:37:40,660 --> 02:37:44,621
+Essentially your base output, right, which is determined by the
+
+1700
+02:37:45,121 --> 02:37:50,411
+bias in
+
+1701
+02:37:50,990 --> 02:37:54,437
+your— but it's still determined by— it would actually
+
+1702
+02:37:54,840 --> 02:37:58,331
+be 0, wouldn't it? Because it's just nonlinearity. The output would just be 0,
+
+1703
+02:37:58,347 --> 02:38:02,356
+and then you would begin
+
+1704
+02:38:03,924 --> 02:38:04,635
+the next state.
+
+1705
+02:38:09,941 --> 02:38:14,143
+So is it— so basically
+
+1706
+02:38:14,175 --> 02:38:20,679
+what we say is that we just kind of— it's
+
+1707
+02:38:21,179 --> 02:38:24,544
+like starting from scratch again. So you basically, whatever you
+
+1708
+02:38:25,044 --> 02:38:27,779
+have done so far, it's completely lost and you start from scratch.
+
+1709
+02:38:28,567 --> 02:38:31,609
+Okay, fair. Yeah. Last one, I promise.
+
+1710
+02:38:32,190 --> 02:38:36,029
+Ah, sorry, this kind of puts— let
+
+1711
+02:38:36,094 --> 02:38:37,179
+me just see what was this.
+
+1712
+02:38:42,030 --> 02:38:46,334
+Yeah, but I'll just make this so that people watching the video— yeah.
+
+1713
+02:38:48,696 --> 02:38:52,837
+Okay. Yeah. So what happens if
+
+1714
+02:38:52,901 --> 02:38:54,728
+both the forget gate and the input gate are 1?
+
+1715
+02:38:58,134 --> 02:39:01,474
+So we go— and this is the last one,
+
+1716
+02:39:01,907 --> 02:39:02,277
+I promise.
+
+1717
+02:40:01,903 --> 02:40:05,945
+I see a response which says it's a standard RNN. Who all
+
+1718
+02:40:05,994 --> 02:40:06,628
+will agree with this?
+
+1719
+02:40:10,588 --> 02:40:13,096
+Is there any corner case where it will not be a standard RNN?
+
+1720
+02:40:37,335 --> 02:40:40,824
+Thoughts? I mean, it's an interesting observation. Like, all other things are also correct.
+
+1721
+02:40:42,630 --> 02:40:46,714
+Because, yeah, I mean, this is what we have discussed. But this is
+
+1722
+02:40:46,763 --> 02:40:49,551
+the reason I picked it up because this looks most interesting here.
+
+1723
+02:40:50,784 --> 02:40:55,167
+So let's discuss why can it be a standard RNN and
+
+1724
+02:40:55,973 --> 02:40:59,115
+why can it not be a standard RNN. Maybe it's like both perspectives.
+
+1725
+02:41:02,357 --> 02:41:06,068
+So it is a standard RNN because we
+
+1726
+02:41:06,149 --> 02:41:11,232
+are, We don't discount
+
+1727
+02:41:11,732 --> 02:41:14,094
+any information from the previous hidden state, right?
+
+1728
+02:41:14,972 --> 02:41:16,791
+And we also, uh,
+
+1729
+02:41:19,571 --> 02:41:22,384
+like, take everything from the input is also passed along, right?
+
+1730
+02:41:22,883 --> 02:41:26,717
+It's kind of like an RNN, but I think we're forgetting about the output
+
+1731
+02:41:26,750 --> 02:41:31,373
+gate here, right? Because the output gate can still choose not to
+
+1732
+02:41:31,873 --> 02:41:35,053
+selectively pass along things. Which is something that
+
+1733
+02:41:35,553 --> 02:41:36,613
+is not present in an RNN,
+
+1734
+02:41:39,086 --> 02:41:41,010
+right? Do we agree with this? Yeah.
+
+1735
+02:42:09,371 --> 02:42:12,121
+Yeah, you're right, you're right, you're right, you're right. I think yes, yes.
+
+1736
+02:42:20,056 --> 02:42:23,533
+Yeah, I'll add that note to the, to the, to these
+
+1737
+02:42:23,566 --> 02:42:27,127
+slides. But yeah, so why is it not a classical
+
+1738
+02:42:27,627 --> 02:42:30,832
+RNN? Because a classical RNN doesn't have an output gate.
+
+1739
+02:42:32,322 --> 02:42:36,051
+With the output gate, you can still selectively choose how much of the information
+
+1740
+02:42:36,551 --> 02:42:40,048
+is passed along to the next state. So you're right,
+
+1741
+02:42:40,129 --> 02:42:43,977
+the cell state computation looks exactly like an RNN, but the output—
+
+1742
+02:42:44,332 --> 02:42:47,825
+the hidden state computation, which requires also the output gate,
+
+1743
+02:42:48,229 --> 02:42:51,779
+is not exactly like an RNN. That's the differentiation factor that still exists.
+
+1744
+02:42:52,486 --> 02:42:53,321
+Yeah.
+
+1745
+02:43:19,520 --> 02:43:22,919
+Yes, it can be seen as a skip connection. But the
+
+1746
+02:43:23,419 --> 02:43:26,367
+point also is, right, so like if you set both of these things to 1,
+
+1747
+02:43:28,805 --> 02:43:31,553
+then will that skip connection matter?
+
+1748
+02:43:49,426 --> 02:43:57,117
+So you're saying that it's not a classical RNN even if you set both— everything
+
+1749
+02:43:57,133 --> 02:43:59,322
+is set to 1, it's still not an RNN.
+
+1750
+02:44:06,656 --> 02:44:19,449
+1 times the previous cell state,
+
+1751
+02:44:19,949 --> 02:44:22,298
+yes, skip connection. 1 times previous cell state will be a previous skip connection.
+
+1752
+02:44:22,636 --> 02:44:24,581
+Yeah, that's an interesting perspective. I never thought of that.
+
+1753
+02:44:26,378 --> 02:44:29,672
+Okay. So I think I'll add when we do a recap of this next week,
+
+1754
+02:44:30,029 --> 02:44:32,008
+we'll focus on these 2 points.
+
+1755
+02:44:33,070 --> 02:44:37,195
+One, I'll put the dimensionality of these vectors,
+
+1756
+02:44:38,642 --> 02:44:41,792
+or I mean these forget gates, all these 3 gates,
+
+1757
+02:44:41,937 --> 02:44:44,667
+and I'll also put a perspective about skip connections.
+
+1758
+02:44:45,330 --> 02:44:48,656
+So, okay, good. I mean, that's an interesting discussion. I mean, today's lecture
+
+1759
+02:44:49,156 --> 02:44:52,387
+was very nice from the way we interacted a bit. But I think,
+
+1760
+02:44:52,548 --> 02:44:56,484
+don't worry, I mean, as I said, right? So I think we kind of have
+
+1761
+02:44:56,906 --> 02:45:00,543
+put into perspective all these things. And these new points
+
+1762
+02:45:01,043 --> 02:45:03,210
+that we discussed about skip connections, I'll just put it in the recap next week
+
+1763
+02:45:03,710 --> 02:45:06,696
+so that we all know what we know. Okay. Now, going back to this,
+
+1764
+02:45:06,761 --> 02:45:10,249
+right? So, I said there are 2 types of recurrent,
+
+1765
+02:45:13,137 --> 02:45:16,667
+like 2 types of ways to obtain a gated network abstraction.
+
+1766
+02:45:17,151 --> 02:45:20,553
+The other is called the gated recurrent unit and not this guy,
+
+1767
+02:45:20,635 --> 02:45:24,958
+right? Basically, here we try to avoid
+
+1768
+02:45:25,458 --> 02:45:28,166
+again the same idea that we try to avoid the dampening of gradients at every
+
+1769
+02:45:28,666 --> 02:45:31,600
+time step, but it's done in a slightly different way, right? So where you basically
+
+1770
+02:45:32,338 --> 02:45:35,851
+apply a weighted average
+
+1771
+02:45:36,108 --> 02:45:39,541
+of a vector z that you learn, where you see that
+
+1772
+02:45:39,557 --> 02:45:42,669
+how much of this— again, how much of the information from the hidden state is
+
+1773
+02:45:42,701 --> 02:45:46,151
+passed along. Very, very similar. The only subtle difference
+
+1774
+02:45:46,651 --> 02:45:50,500
+here in this case is that you are still using the
+
+1775
+02:45:51,276 --> 02:45:55,137
+previous states in computing
+
+1776
+02:45:55,557 --> 02:45:59,167
+the activation as you were doing in RNN,
+
+1777
+02:45:59,869 --> 02:46:03,392
+then you don't do that in LSTM. So that's the only difference.
+
+1778
+02:46:06,102 --> 02:46:09,652
+And basically, the basic insight was that usually it
+
+1779
+02:46:10,152 --> 02:46:14,109
+was a much simpler network, right? It did not have these mammoth
+
+1780
+02:46:14,175 --> 02:46:17,729
+different types of gates. So it was actually faster to
+
+1781
+02:46:18,229 --> 02:46:21,786
+train, and also sometimes it sometimes worked better than LSTMs. Uh,
+
+1782
+02:46:22,476 --> 02:46:25,603
+but the overall idea is also since it did not have that much complexity,
+
+1783
+02:46:26,004 --> 02:46:29,180
+so it was theoretically less powerful than an LSTM.
+
+1784
+02:46:29,773 --> 02:46:33,028
+But, uh, the, the point was
+
+1785
+02:46:33,301 --> 02:46:37,519
+in for practical purposes, gated recurrent units actually worked similarly
+
+1786
+02:46:37,711 --> 02:46:40,774
+to LSTMs, but also at times they were also
+
+1787
+02:46:40,838 --> 02:46:44,706
+better because of think about the Occam's razor concept.
+
+1788
+02:46:44,754 --> 02:46:47,660
+I mean, every time the most complex thing is not the best thing to do.
+
+1789
+02:46:47,917 --> 02:46:50,919
+So gated recurrent units also had certain advantages.
+
+1790
+02:46:51,738 --> 02:46:55,527
+And to basically think of this, it's like a more simpler unit.
+
+1791
+02:46:56,394 --> 02:47:00,135
+And as you can see is that there were 2 types of gates
+
+1792
+02:47:00,183 --> 02:47:03,281
+that were used here, very similar to LSTM.
+
+1793
+02:47:03,795 --> 02:47:07,327
+There were 3 gates here. There are 2 gates. One thinks about the update,
+
+1794
+02:47:07,632 --> 02:47:11,022
+which is called the update gate. Which is used to update the hidden state,
+
+1795
+02:47:11,166 --> 02:47:14,396
+and there's the other called the reset gate, which is basically just used
+
+1796
+02:47:14,896 --> 02:47:18,124
+to reset the hidden state, right? So which is similar to what we saw,
+
+1797
+02:47:18,879 --> 02:47:22,125
+uh, you know, in these operations when we discussed, okay, when we set
+
+1798
+02:47:22,173 --> 02:47:25,001
+both of these things to 0, what happens is that we were resetting the network
+
+1799
+02:47:25,467 --> 02:47:28,536
+at that point in time, right? So something similar can be achieved also in a
+
+1800
+02:47:28,600 --> 02:47:31,637
+gated recurrent unit. And, uh, you know, this is how these
+
+1801
+02:47:32,087 --> 02:47:35,493
+gates are operationalized, but eventually The computation of hidden
+
+1802
+02:47:35,525 --> 02:47:39,828
+state is as was described previously, where you actually,
+
+1803
+02:47:40,085 --> 02:47:43,409
+you know, use the update gate to
+
+1804
+02:47:43,909 --> 02:47:47,005
+see how much of this information actually from the hidden state of the previous time
+
+1805
+02:47:47,505 --> 02:47:51,292
+step is passed along. And then you also kind of see
+
+1806
+02:47:51,485 --> 02:47:54,809
+how much of the hidden state actually you have to reset, which you
+
+1807
+02:47:55,114 --> 02:47:59,321
+use while computing the activation
+
+1808
+02:47:59,449 --> 02:48:02,438
+that you obtain. From the current hidden state and the current input.
+
+1809
+02:48:03,182 --> 02:48:06,322
+So it's a slightly different update function, but— and it's
+
+1810
+02:48:06,822 --> 02:48:11,148
+slightly simpler than an LSTM, but generally it's in a similar ballpark.
+
+1811
+02:48:11,791 --> 02:48:14,623
+So just giving you some perspective on which one is better,
+
+1812
+02:48:15,009 --> 02:48:19,202
+right? As you can see in different kind
+
+1813
+02:48:19,702 --> 02:48:23,416
+of examples, let's go through one of them. So if you
+
+1814
+02:48:23,916 --> 02:48:27,283
+can see that in some cases GRU is better
+
+1815
+02:48:27,461 --> 02:48:30,982
+than LSTM, in some cases LSTM is better than GRU. It also depends on
+
+1816
+02:48:31,482 --> 02:48:34,866
+the activation function used, but this is something that you have to actually try out
+
+1817
+02:48:34,931 --> 02:48:38,090
+on different data before you can decide which
+
+1818
+02:48:38,590 --> 02:48:41,874
+one is better. Uh, let's— and I think this—
+
+1819
+02:48:42,374 --> 02:48:44,721
+we are nearing the end of today's lecture. Just wanted to quickly ask,
+
+1820
+02:48:45,480 --> 02:48:49,585
+can you think— I mean, now we have looked into classical RNNs,
+
+1821
+02:48:49,859 --> 02:48:53,643
+LSTMs, and GRUs. Uh, I mean, this is not a Menti,
+
+1822
+02:48:53,804 --> 02:48:57,013
+but just generally asking, Uh, what are
+
+1823
+02:48:57,513 --> 02:49:01,169
+the key advantages of using an LSTM and GRU over, uh,
+
+1824
+02:49:01,590 --> 02:49:03,796
+Elman network? Thoughts?
+
+1825
+02:49:10,061 --> 02:49:10,190
+Yeah.
+
+1826
+02:49:20,319 --> 02:49:26,510
+No, but you also have the reset. So that's
+
+1827
+02:49:27,010 --> 02:49:30,122
+not gonna happen to the same level
+
+1828
+02:49:30,622 --> 02:49:39,199
+as it will happen. I mean, that's not gonna happen, right? You have— yeah.
+
+1829
+02:49:41,288 --> 02:49:43,956
+So you were— were you contrasting LSTM and GRUs? Yeah,
+
+1830
+02:49:45,532 --> 02:49:46,223
+yeah. Okay.
+
+1831
+02:49:50,407 --> 02:49:54,143
+But you can, again, I mean, you can always control that with how expensively
+
+1832
+02:49:54,239 --> 02:49:57,461
+you want to reset the state before you compute
+
+1833
+02:49:57,685 --> 02:50:00,940
+the outputs. Okay, so looking at the,
+
+1834
+02:50:01,052 --> 02:50:04,434
+I mean, the key difference is that, okay, LSTMs and GRUs give you something more
+
+1835
+02:50:04,934 --> 02:50:08,282
+than an RNN, the classical RNN, right? There are subtle differences between an LSTM and
+
+1836
+02:50:08,782 --> 02:50:11,408
+GRU as well, which you will actually also get to see when you do the
+
+1837
+02:50:11,908 --> 02:50:15,283
+exercises this time. But generally saying,
+
+1838
+02:50:15,733 --> 02:50:19,481
+the RNNs is what we saw that they suffer from
+
+1839
+02:50:19,513 --> 02:50:23,196
+this vanishing gradient problem. We actually
+
+1840
+02:50:23,696 --> 02:50:27,970
+looked very deeply into why this happens, right? And LSTMs or
+
+1841
+02:50:28,018 --> 02:50:31,329
+GRUs actually allow you to actually get rid of that
+
+1842
+02:50:31,893 --> 02:50:35,642
+by giving different
+
+1843
+02:50:35,674 --> 02:50:39,392
+gating mechanisms to actually control how much of the information is passed along and how
+
+1844
+02:50:39,408 --> 02:50:43,035
+much of this is retained. And the difference is
+
+1845
+02:50:43,068 --> 02:50:46,805
+that in one case, the state is maintained by only solely on hidden state feedback.
+
+1846
+02:50:47,194 --> 02:50:50,347
+And the other case, the states are maintained— the
+
+1847
+02:50:50,964 --> 02:50:54,181
+time information is maintained using cell values rather than
+
+1848
+02:50:54,295 --> 02:50:55,595
+just relying on the hidden states.
+
+1849
+02:50:58,788 --> 02:51:02,426
+And the disadvantage of using an LSTM or GRU is that, as we discussed,
+
+1850
+02:51:02,490 --> 02:51:06,034
+this is a very complex network. It has a lot of capacity. But then what
+
+1851
+02:51:06,534 --> 02:51:09,505
+it also adds is that it has a huge amount of parameters when compared to
+
+1852
+02:51:09,971 --> 02:51:13,394
+a simple RNN, right? Which we saw that an RNN just has
+
+1853
+02:51:13,410 --> 02:51:17,558
+these many parameters. On the other hand, an LSTM can have these many massive parameters,
+
+1854
+02:51:17,574 --> 02:51:21,503
+right? Because you have parameters for each gate. Yes? These are also shared across time.
+
+1855
+02:51:21,826 --> 02:51:25,156
+They are shared across time, but every— like, you literally see that
+
+1856
+02:51:25,656 --> 02:51:28,900
+in an LSTM, you— in an RNN, you have one such
+
+1857
+02:51:28,932 --> 02:51:33,206
+parameter. In an LSTM, you have literally 4 times. That many parameters
+
+1858
+02:51:33,222 --> 02:51:34,826
+because there are that many gates that you have to learn.
+
+1859
+02:51:37,764 --> 02:51:41,185
+Across gates, it doesn't make sense to share them, right? Just saying. Across time,
+
+1860
+02:51:41,785 --> 02:51:45,433
+the sharing happens across time, but across gates they are not shared, right? Yeah.
+
+1861
+02:51:49,167 --> 02:51:52,218
+Exactly. So forget gates and an i gate will have different parameters.
+
+1862
+02:51:53,301 --> 02:51:56,410
+Yeah. Okay. Are there better
+
+1863
+02:51:56,491 --> 02:52:00,228
+architectures? Yes, I mean, there are many different architectures that
+
+1864
+02:52:00,728 --> 02:52:04,078
+people have tried. So I'm just sharing some of these with you
+
+1865
+02:52:04,239 --> 02:52:07,607
+just for your basic knowledge. But this, at one point in time,
+
+1866
+02:52:07,623 --> 02:52:11,136
+this also started becoming more like a hack or an engineering exercise where
+
+1867
+02:52:11,636 --> 02:52:15,146
+people were just coming up with different abstractions. So, but they're still interesting.
+
+1868
+02:52:15,692 --> 02:52:19,285
+More than, you know, you are more than welcome to try these out
+
+1869
+02:52:19,333 --> 02:52:23,086
+if you want. That's that. Okay. So today
+
+1870
+02:52:23,150 --> 02:52:27,626
+I just wanted to say that we looked at RNNs, which are actually theoretically can
+
+1871
+02:52:27,658 --> 02:52:31,397
+model sequences of unbounded length. We looked at the problems in RNN,
+
+1872
+02:52:31,494 --> 02:52:34,817
+which is that it can still— they can still not track long-range
+
+1873
+02:52:34,866 --> 02:52:39,667
+dependencies because of many reasons. And we looked at LSTMs and GRUs as
+
+1874
+02:52:39,699 --> 02:52:43,440
+variants of the recurrent networks that have abilities to mitigate vanishing
+
+1875
+02:52:43,472 --> 02:52:47,342
+gradient problems. This— please share your feedback
+
+1876
+02:52:47,550 --> 02:52:51,918
+as always, and then we will meet next week to discuss about
+
+1877
+02:52:52,367 --> 02:52:55,268
+Transformers and attention. Okay,
+
+1878
+02:52:56,513 --> 02:53:01,024
+and I think I promised, but I think there were some discussions about
+
+1879
+02:53:01,395 --> 02:53:05,003
+some things that took some time. So whoever has a question about a project,
+
+1880
+02:53:05,019 --> 02:53:07,989
+I'm more than happy to answer it outside because the next lecture will start here,
+
+1881
+02:53:08,102 --> 02:53:10,098
+but I'm happy to stay outside and answer questions.
+

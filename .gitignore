@@ -5,6 +5,14 @@ appunti_nlp/.obsidian/plugins/*/embeddings/
 .DS_Store
 
 # le registrazioni video non stanno in git: sono GB. I sottotitoli sì.
-vids/
+vids/videos/
+vids/audio/
+vids/slides/
+vids/logs/
+vids/cookies/
+vids/.env
 *.mp4
 *.m4a
+
+ta_sessions
+__pycache__/

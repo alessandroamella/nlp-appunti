@@ -1,0 +1,2076 @@
+1
+00:00:02,376 --> 00:00:05,267
+Super cool. So yeah, first, thanks for being here.
+
+2
+00:00:06,440 --> 00:00:10,471
+Uh, I think you already know the team. You've met Akhil on Tuesday.
+
+3
+00:00:10,937 --> 00:00:14,101
+My name is Nearchos. I'm Tenney. Yeah,
+
+4
+00:00:14,406 --> 00:00:18,517
+we're very happy to be here. So like,
+
+5
+00:00:18,726 --> 00:00:22,083
+one of the purposes of these meetings is to give you some behind the scenes
+
+6
+00:00:22,516 --> 00:00:25,825
+of how this course is structured and how it's going to roll out until the
+
+7
+00:00:26,325 --> 00:00:29,985
+semester. So, uh, each aspect
+
+8
+00:00:30,485 --> 00:00:33,358
+of the course a TA is relevant for. So,
+
+9
+00:00:34,000 --> 00:00:38,016
+Tenney is relevant for the midterm exam, um, for the projects,
+
+10
+00:00:38,562 --> 00:00:42,128
+uh, group formation, lab sessions is always one TA responsible.
+
+11
+00:00:42,754 --> 00:00:45,790
+So when you have a problem, for example, with projects,
+
+12
+00:00:46,288 --> 00:00:49,372
+you can have a look at this slide, look who TA knows more,
+
+13
+00:00:50,046 --> 00:00:52,166
+and address to him for your issues.
+
+14
+00:00:53,772 --> 00:00:57,495
+So lab sessions are 9:15 to 11.
+
+15
+00:00:57,607 --> 00:01:01,202
+They're on all Fridays. The purpose of them is to—
+
+16
+00:01:01,283 --> 00:01:05,279
+you work on the exercises and we're there to support you. But some
+
+17
+00:01:05,391 --> 00:01:09,291
+weeks we will hold office hours for the projects. Office hours
+
+18
+00:01:09,403 --> 00:01:14,106
+means that each group will have a time period
+
+19
+00:01:14,298 --> 00:01:18,391
+within which you will talk with one of the TAs about your project and see
+
+20
+00:01:18,712 --> 00:01:22,018
+How it's going, like a general update, maybe ask your questions.
+
+21
+00:01:22,564 --> 00:01:26,159
+There's gonna be a follow-up announcement about the project office
+
+22
+00:01:26,659 --> 00:01:29,851
+hours, uh, yeah, in the upcoming weeks.
+
+23
+00:01:31,311 --> 00:01:34,489
+So, uh, communication. We will communicate through
+
+24
+00:01:34,505 --> 00:01:38,341
+Brightspace. Um, we have course discussions
+
+25
+00:01:38,453 --> 00:01:42,273
+for everything. We have also communication guidelines
+
+26
+00:01:42,370 --> 00:01:47,054
+in the Brightspace contents page. That you can see how to address
+
+27
+00:01:47,118 --> 00:01:51,255
+each issue. So please remember to enable your notifications
+
+28
+00:01:51,464 --> 00:01:54,687
+so you get all the announcements. Uh,
+
+29
+00:01:54,895 --> 00:01:58,263
+use your real names, no nicknames, please, and add your
+
+30
+00:01:58,343 --> 00:02:00,749
+best picture. And yeah, please stay respectful.
+
+31
+00:02:01,775 --> 00:02:05,976
+Um, we have dedicated forums for essentially
+
+32
+00:02:06,476 --> 00:02:10,017
+everything. So we have for staff, lectures, tech issues,
+
+33
+00:02:10,130 --> 00:02:13,458
+lab session. Project milestone P1, P2.
+
+34
+00:02:14,376 --> 00:02:18,208
+And same as before, every— each TA
+
+35
+00:02:18,820 --> 00:02:21,340
+is responsible for one of these topics.
+
+36
+00:02:23,338 --> 00:02:27,221
+And he will go through your stuff as well whenever you have a question.
+
+37
+00:02:28,399 --> 00:02:31,772
+So just a quick tip for all of these
+
+38
+00:02:32,142 --> 00:02:35,355
+discussion topics, please subscribe to
+
+39
+00:02:35,419 --> 00:02:38,996
+the topic that you're interested in. For example,
+
+40
+00:02:39,269 --> 00:02:43,039
+I'm responsible for the projects, right? So I will
+
+41
+00:02:43,539 --> 00:02:47,130
+go to the discussions page. I will choose project milestone
+
+42
+00:02:47,146 --> 00:02:50,515
+1. I will do the same for project milestone 2, open the page.
+
+43
+00:02:50,996 --> 00:02:54,830
+Then you can click on the subscribe button, and then you
+
+44
+00:02:55,330 --> 00:02:59,354
+can select what kind of notifications you want. You can get an instant notification
+
+45
+00:02:59,418 --> 00:03:03,060
+for anything that goes on there. This is what I will
+
+46
+00:03:03,172 --> 00:03:06,461
+do. But for example, if you're not super interested in a specific topic,
+
+47
+00:03:06,782 --> 00:03:10,405
+you can also get a summary. And just subscribe to that. This will
+
+48
+00:03:10,905 --> 00:03:14,634
+make sure you're updated about everything that goes on in the areas you're interested in.
+
+49
+00:03:16,530 --> 00:03:19,913
+Uh, GitHub, we assume you're all familiar with GitHub. This is what
+
+50
+00:03:19,945 --> 00:03:22,120
+we're going to use for, uh,
+
+51
+00:03:22,845 --> 00:03:26,997
+version history. Like, this is where your lectures—
+
+52
+00:03:27,592 --> 00:03:30,340
+oh no, just the exercises will be shared.
+
+53
+00:03:31,111 --> 00:03:35,124
+Um, we have here links for everything, by the way. All these slides,
+
+54
+00:03:35,223 --> 00:03:39,477
+there's links, right? But, and you can find the slides to the Brightspace content
+
+55
+00:03:39,977 --> 00:03:43,426
+page already. So here's now there's links
+
+56
+00:03:43,926 --> 00:03:47,264
+to create an account, check out for student benefits, and also
+
+57
+00:03:47,764 --> 00:03:51,053
+like a tutorial if you're— this is the first time you're using GitHub.
+
+58
+00:03:51,920 --> 00:03:55,501
+Um, uv, we're going to use uv
+
+59
+00:03:55,629 --> 00:03:59,419
+for package management. Maybe some of you are
+
+60
+00:03:59,483 --> 00:04:03,609
+familiar with Conda or maybe
+
+61
+00:04:03,722 --> 00:04:08,269
+pip install. We're gonna use uv. This is like the modern standard.
+
+62
+00:04:08,737 --> 00:04:11,918
+It's just faster and makes things easier for both of us.
+
+63
+00:04:13,710 --> 00:04:15,981
+And also keeps you ready for your next job.
+
+64
+00:04:17,730 --> 00:04:21,288
+Jupyter notebooks, essentially most of the exercises will
+
+65
+00:04:21,304 --> 00:04:24,652
+be in Jupyter notebooks. And also when you
+
+66
+00:04:25,152 --> 00:04:29,051
+submit your projects, we expect the Jupyter notebook that will contain
+
+67
+00:04:29,148 --> 00:04:30,765
+like the main logic of your projects.
+
+68
+00:04:32,641 --> 00:04:35,808
+And in terms of IDEs, you can use whatever you want.
+
+69
+00:04:36,374 --> 00:04:39,913
+Visual Studio Code, Google Colab. You can also
+
+70
+00:04:40,413 --> 00:04:43,798
+use an AI-powered one. There's no problem with us. It's all up
+
+71
+00:04:44,298 --> 00:04:48,199
+to you. And we will give you time
+
+72
+00:04:48,313 --> 00:04:52,113
+to install all these packages
+
+73
+00:04:52,178 --> 00:04:55,477
+and software today. So don't worry. So if you have questions,
+
+74
+00:04:55,574 --> 00:04:56,425
+you can reach out.
+
+75
+00:05:00,042 --> 00:05:02,586
+Midterm, maybe do you want to talk a bit about the midterm?
+
+76
+00:05:04,343 --> 00:05:08,064
+Yeah, so we will have the midterm at the
+
+77
+00:05:08,080 --> 00:05:11,995
+6th of November this year, and midterm
+
+78
+00:05:12,028 --> 00:05:15,763
+will be a closed-book exam that
+
+79
+00:05:15,828 --> 00:05:19,191
+you will— you cannot bring any electronic things
+
+80
+00:05:19,789 --> 00:05:23,996
+like your mobile phones or laptop to the to
+
+81
+00:05:24,496 --> 00:05:29,055
+the exam, but what you can is you can bring an A4
+
+82
+00:05:29,199 --> 00:05:34,002
+cheat sheet, and you can also bring calculators
+
+83
+00:05:34,194 --> 00:05:38,707
+that result like this AI
+
+84
+00:05:38,852 --> 00:05:43,221
+or something similar to that. So we,
+
+85
+00:05:43,670 --> 00:05:47,156
+we prepared a mock exam just for
+
+86
+00:05:47,188 --> 00:05:51,377
+you to understand the like the format
+
+87
+00:05:51,877 --> 00:05:55,677
+of this exam. So this exam will— all these
+
+88
+00:05:55,709 --> 00:05:59,527
+questions will be multiple choice questions,
+
+89
+00:05:59,704 --> 00:06:03,426
+and for all these questions, there is
+
+90
+00:06:03,570 --> 00:06:07,099
+only one correct answer. And you
+
+91
+00:06:07,599 --> 00:06:11,976
+can check the link that we will share it on the
+
+92
+00:06:12,476 --> 00:06:15,811
+Brightspace later, and it was the exam
+
+93
+00:06:15,923 --> 00:06:19,755
+in the last year, so it's only an example. It's not
+
+94
+00:06:20,255 --> 00:06:24,822
+the same as this year because this year we only have multiple choice
+
+95
+00:06:25,322 --> 00:06:29,280
+questions, so there will be expected to have more questions
+
+96
+00:06:29,456 --> 00:06:33,016
+and you have 3 hours to finish
+
+97
+00:06:33,240 --> 00:06:36,928
+the exam. The exam will include
+
+98
+00:06:37,072 --> 00:06:40,824
+from the content in
+
+99
+00:06:40,856 --> 00:06:44,498
+the labs and the lectures, so Pay
+
+100
+00:06:44,546 --> 00:06:48,207
+attention to that. We will not only cover the things in
+
+101
+00:06:48,239 --> 00:06:52,783
+the lecture, but also in the lab session. So please
+
+102
+00:06:53,281 --> 00:06:57,407
+also prepare yourself for familiar about
+
+103
+00:06:57,472 --> 00:07:01,582
+the materials in our lab session, and it will be
+
+104
+00:07:01,791 --> 00:07:05,404
+until week 10, that is 1 week before the
+
+105
+00:07:05,904 --> 00:07:07,491
+exam. Thank you.
+
+106
+00:07:09,770 --> 00:07:13,012
+Yes. So for the project, it's gonna be 50% of your
+
+107
+00:07:13,512 --> 00:07:16,512
+grade, and a TA will be assigned to your group.
+
+108
+00:07:16,576 --> 00:07:20,226
+So each group will have their own mentor, and during the
+
+109
+00:07:20,275 --> 00:07:23,898
+office hours, you will talk with that mentor. So the idea is that the same
+
+110
+00:07:24,012 --> 00:07:27,700
+person will guide you through both milestones. So he knows what
+
+111
+00:07:28,200 --> 00:07:31,855
+you're up— he knows the context and can follow and grade you correctly.
+
+112
+00:07:33,821 --> 00:07:37,847
+There's 3 steps for the project. The first deadline
+
+113
+00:07:37,959 --> 00:07:42,221
+is on September 11th. At that point, you should form
+
+114
+00:07:42,721 --> 00:07:45,824
+your group and select the dataset that you're gonna work with.
+
+115
+00:07:47,460 --> 00:07:51,021
+This, and then the first milestone is gonna be the project
+
+116
+00:07:51,521 --> 00:07:54,711
+proposal and proof of concept for your project. That is on
+
+117
+00:07:55,049 --> 00:07:58,852
+October 9th, and it accounts for 30% of
+
+118
+00:07:59,352 --> 00:08:03,471
+the project. And then, uh, the final milestone is on
+
+119
+00:08:03,648 --> 00:08:07,666
+December 19th. We expect the whole complete project
+
+120
+00:08:07,762 --> 00:08:10,825
+by then, and everything is done in groups.
+
+121
+00:08:11,851 --> 00:08:15,395
+And finally, so 11th of September, you're going to form your group.
+
+122
+00:08:15,459 --> 00:08:19,164
+You're going to select a dataset. By then you have a
+
+123
+00:08:19,664 --> 00:08:23,974
+2-week grace period within which you can work
+
+124
+00:08:24,474 --> 00:08:28,016
+with that dataset. And if you find some issues, you can reach out
+
+125
+00:08:28,048 --> 00:08:31,447
+to your mentor and say, we have a problem. We want to switch datasets.
+
+126
+00:08:32,552 --> 00:08:36,930
+Uh, but after 25th September, we won't accept
+
+127
+00:08:37,430 --> 00:08:39,103
+any changes essentially to the dataset.
+
+128
+00:08:40,941 --> 00:08:44,503
+Now, uh, there's 3 types of project contributions.
+
+129
+00:08:45,007 --> 00:08:48,226
+The first one is a method contribution. The second one is
+
+130
+00:08:48,323 --> 00:08:50,888
+experiment analysis and benchmark contribution.
+
+131
+00:08:51,791 --> 00:08:53,872
+And the final one is negative results.
+
+132
+00:08:54,775 --> 00:08:58,300
+Essentially, all these types are exhaustive
+
+133
+00:08:58,800 --> 00:09:02,181
+in the NLP/ML domain. There's also
+
+134
+00:09:02,681 --> 00:09:06,774
+surveys, but we're not interested in that in this course. But apart
+
+135
+00:09:07,274 --> 00:09:10,714
+from that, that covers everything. Hello. No worries.
+
+136
+00:09:11,376 --> 00:09:15,074
+And in all cases, you will be the ones that will
+
+137
+00:09:15,348 --> 00:09:18,330
+formulate the project. You will come up with the ideas,
+
+138
+00:09:18,444 --> 00:09:20,973
+the experiments. Everything is up to you.
+
+139
+00:09:23,377 --> 00:09:26,720
+Now I will go through all these method contributions and
+
+140
+00:09:27,220 --> 00:09:30,907
+try to explain them a bit. But if there's any confusion, of course,
+
+141
+00:09:30,971 --> 00:09:34,562
+do you know, do your own research, and but also please reach
+
+142
+00:09:34,658 --> 00:09:38,665
+out to one of the TAs and talk with him. See if there's like
+
+143
+00:09:39,165 --> 00:09:43,106
+some common ground you can find. So, for the method, the point is
+
+144
+00:09:43,170 --> 00:09:47,178
+to come up with a new methodological contribution and not
+
+145
+00:09:47,242 --> 00:09:51,234
+just a replication. So you can't get an old paper and just replicate
+
+146
+00:09:51,250 --> 00:09:57,767
+it. Some kind of ideas would be You
+
+147
+00:09:58,267 --> 00:10:01,523
+can have maybe a new training procedure for more efficient training,
+
+148
+00:10:02,184 --> 00:10:04,665
+or you can come up with a new prompting strategy,
+
+149
+00:10:05,099 --> 00:10:08,669
+agentic pipeline, harness engineering, whatever people
+
+150
+00:10:08,718 --> 00:10:10,615
+call it these days.
+
+151
+00:10:14,016 --> 00:10:17,281
+And yeah, the general goal is to propose a new
+
+152
+00:10:17,781 --> 00:10:18,962
+method, even if it's new. I think very often we are not the first ones
+
+153
+00:10:18,994 --> 00:10:23,153
+to propose a new method. That's interesting, but it's even better if
+
+154
+00:10:23,589 --> 00:10:27,453
+it has some actual benefits in terms of effectiveness,
+
+155
+00:10:27,582 --> 00:10:31,112
+quality, performance, latency. You can find a metric that you want
+
+156
+00:10:31,612 --> 00:10:35,024
+to improve on. Next is the experiment analysis
+
+157
+00:10:35,524 --> 00:10:39,130
+and benchmark contribution. So, like, some possible directions is like
+
+158
+00:10:39,630 --> 00:10:43,161
+experimental survey. So compare existing solutions to a problem
+
+159
+00:10:43,632 --> 00:10:47,350
+and do different experiments and then analyze those experiments
+
+160
+00:10:47,529 --> 00:10:50,136
+to see Uh, how well-rounded each, uh,
+
+161
+00:10:51,795 --> 00:10:55,322
+method is. You can do an analysis to study, like,
+
+162
+00:10:55,402 --> 00:10:59,103
+relevant phenomena or uncover things, insights in
+
+163
+00:10:59,603 --> 00:11:03,008
+language or different aspects of machine learning.
+
+164
+00:11:03,844 --> 00:11:06,982
+And also you can propose a new benchmark of your own. So,
+
+165
+00:11:07,402 --> 00:11:11,026
+you know, right, like different benchmarks as, like, math benchmarks,
+
+166
+00:11:11,107 --> 00:11:15,135
+code benchmarks. Maybe you have a new idea for, like, a cultural
+
+167
+00:11:15,248 --> 00:11:19,300
+benchmark or a music benchmark, something new. Something that
+
+168
+00:11:19,800 --> 00:11:23,570
+doesn't exist anymore, maybe something that you would like your agent to
+
+169
+00:11:24,070 --> 00:11:26,115
+do and you can't find somewhere to test it on.
+
+170
+00:11:31,057 --> 00:11:34,950
+Uh, yeah, and the last type of contribution is negative results.
+
+171
+00:11:35,580 --> 00:11:39,669
+So negative results, essentially, you take a method from before
+
+172
+00:11:40,057 --> 00:11:43,355
+and prove that somewhere it doesn't work.
+
+173
+00:11:43,942 --> 00:11:47,729
+The point of this is essentially to learn something, why a
+
+174
+00:11:47,873 --> 00:11:51,483
+plausible idea might not work either in general or
+
+175
+00:11:51,983 --> 00:11:55,333
+in a specific scenario. So you can check for failed methods,
+
+176
+00:11:55,718 --> 00:11:59,167
+you can check for boundary conditions. So it doesn't have to mean that,
+
+177
+00:11:59,183 --> 00:12:02,440
+like, a method doesn't work at all. Maybe it doesn't work under
+
+178
+00:12:02,536 --> 00:12:05,889
+a specific circumstance. Maybe you find some
+
+179
+00:12:05,921 --> 00:12:08,006
+way to hack that method so it doesn't work.
+
+180
+00:12:10,481 --> 00:12:14,516
+And yeah, in all of both cases, basically the point is to take
+
+181
+00:12:15,016 --> 00:12:19,134
+a failure and turn it into useful guidance for, like, the next
+
+182
+00:12:19,634 --> 00:12:20,273
+researchers after you.
+
+183
+00:12:23,520 --> 00:12:26,960
+So before that, does anyone have any questions
+
+184
+00:12:27,460 --> 00:12:29,754
+about any particular project?
+
+185
+00:12:35,800 --> 00:12:39,470
+You mentioned the assignments, I guess, of the projects
+
+186
+00:12:39,970 --> 00:12:43,156
+with the main links that we have using a book online.
+
+187
+00:12:44,099 --> 00:13:11,601
+So should I always do by the— Perfect.
+
+188
+00:13:11,763 --> 00:13:15,432
+I will just repeat this because the mic is here, so probably the recording
+
+189
+00:13:15,480 --> 00:13:18,718
+didn't catch any of that. So for your
+
+190
+00:13:18,831 --> 00:13:22,487
+project submissions, yes, you can have extra files apart from the main
+
+191
+00:13:22,987 --> 00:13:27,744
+notebook. All of this essentially is detailed in the Content,
+
+192
+00:13:28,068 --> 00:13:31,319
+Brightspace content page. But yeah, perfect.
+
+193
+00:13:32,516 --> 00:13:35,945
+Datasets, we will provide datasets for you. You can choose one
+
+194
+00:13:35,994 --> 00:13:36,301
+of them.
+
+195
+00:13:39,300 --> 00:13:41,861
+Do you, do you want to go over the datasets? Okay,
+
+196
+00:13:42,396 --> 00:13:43,757
+perfect. So yeah, the stage is yours.
+
+197
+00:13:45,568 --> 00:13:48,902
+So we provide some datasets for your
+
+198
+00:13:49,015 --> 00:13:52,526
+references, and you can also have your own idea.
+
+199
+00:13:53,113 --> 00:13:57,117
+But you should pay attention to that. Some datasets
+
+200
+00:13:57,230 --> 00:14:00,782
+might be too challenging, or it might be not
+
+201
+00:14:01,282 --> 00:14:04,844
+in good quality. So if you choose your own one, and you
+
+202
+00:14:04,941 --> 00:14:08,990
+will take your own risk. And also, we recommend
+
+203
+00:14:09,071 --> 00:14:13,563
+you, you can get connected
+
+204
+00:14:13,595 --> 00:14:17,999
+with one of our TAs if you want to continue
+
+205
+00:14:18,031 --> 00:14:21,893
+with your own dataset. But here, like, we provide
+
+206
+00:14:21,941 --> 00:14:26,051
+some datasets that we think that is quite common
+
+207
+00:14:26,195 --> 00:14:29,438
+in this NLP field, and just for your reference.
+
+208
+00:14:29,614 --> 00:14:33,884
+So the first one is called the Too Long; Don't Read dataset.
+
+209
+00:14:34,687 --> 00:14:38,829
+It's basically— the task is to do the summarization.
+
+210
+00:14:38,957 --> 00:14:42,633
+So you can use it to train or to evaluate.
+
+211
+00:14:42,794 --> 00:14:47,112
+So it's mainly like some paragraph
+
+212
+00:14:47,192 --> 00:14:51,879
+from this social media called Reddit, and You
+
+213
+00:14:52,088 --> 00:14:55,923
+also have these ground truth, is some real
+
+214
+00:14:55,955 --> 00:14:59,502
+human beings write some summary about that, but it
+
+215
+00:14:59,550 --> 00:15:02,695
+might not be the only way to summarize. As you see,
+
+216
+00:15:03,161 --> 00:15:06,643
+it's quite a subjective task. It has multi-ways,
+
+217
+00:15:07,333 --> 00:15:11,490
+uh, item multi-summarized level to do the summarization.
+
+218
+00:15:11,602 --> 00:15:14,747
+So, uh, you can, like, think about, uh,
+
+219
+00:15:15,935 --> 00:15:19,690
+different kinds of analysis, and also
+
+220
+00:15:20,190 --> 00:15:23,799
+you can train in some model for Summarization for
+
+221
+00:15:24,299 --> 00:15:28,135
+this task. And here we also list some, like,
+
+222
+00:15:28,215 --> 00:15:31,828
+this work is from last
+
+223
+00:15:32,328 --> 00:15:35,891
+year's students. No, no, these are papers. These are papers.
+
+224
+00:15:35,987 --> 00:15:39,937
+So there are some papers to deal
+
+225
+00:15:40,437 --> 00:15:44,080
+with this idea, deal with this dataset,
+
+226
+00:15:44,192 --> 00:15:47,773
+but you should have your own idea. That means
+
+227
+00:15:47,869 --> 00:15:51,588
+this is only for you. For your reference, you cannot
+
+228
+00:15:51,734 --> 00:15:55,365
+just copy this idea, but it can— might give
+
+229
+00:15:55,865 --> 00:15:59,417
+you some inspiration. And the 2nd
+
+230
+00:15:59,917 --> 00:16:03,573
+dataset is called MathArena. Dataset is about
+
+231
+00:16:03,605 --> 00:16:05,667
+some mathematical questions.
+
+232
+00:16:06,672 --> 00:16:10,626
+So it's a dynamic benchmark
+
+233
+00:16:11,126 --> 00:16:14,174
+of recent math problems, and it has
+
+234
+00:16:15,506 --> 00:16:18,781
+2 different tasks. The first is
+
+235
+00:16:18,877 --> 00:16:22,312
+give you a question, your task is to have
+
+236
+00:16:22,328 --> 00:16:26,309
+a short answer. The other is you need to prove something,
+
+237
+00:16:26,582 --> 00:16:30,178
+just like you do these mathematical things
+
+238
+00:16:30,997 --> 00:16:35,845
+in your class. And so you can also
+
+239
+00:16:36,345 --> 00:16:39,970
+think about, like, for this benchmarking,
+
+240
+00:16:40,083 --> 00:16:44,098
+you can also, like, design some maybe Harness or
+
+241
+00:16:44,598 --> 00:16:47,683
+some agents to, like, solve these questions,
+
+242
+00:16:48,343 --> 00:16:50,787
+like, in a better accuracy.
+
+243
+00:16:53,293 --> 00:16:57,013
+So the 3rd one is about Wikipedia, is also
+
+244
+00:16:57,513 --> 00:17:00,302
+one of the most famous, like,
+
+245
+00:17:00,318 --> 00:17:04,507
+platform about knowledge in the world.
+
+246
+00:17:05,087 --> 00:17:09,252
+So, like, this is about the like
+
+247
+00:17:09,476 --> 00:17:12,777
+how this human investigates, like,
+
+248
+00:17:12,857 --> 00:17:15,677
+this knowledge in Wikipedia. So, for example, you,
+
+249
+00:17:16,382 --> 00:17:19,843
+you can click from one entity and then you can find
+
+250
+00:17:20,343 --> 00:17:23,801
+another one. And so, because there is always
+
+251
+00:17:23,945 --> 00:17:27,631
+some links in Wikipedia, so it's also joined
+
+252
+00:17:27,663 --> 00:17:31,108
+with not only text
+
+253
+00:17:31,204 --> 00:17:34,633
+but also graph. So if you click from some
+
+254
+00:17:35,133 --> 00:17:38,735
+entity from the page 1, you can click,
+
+255
+00:17:38,912 --> 00:17:42,778
+you can turn into page 2. So it's
+
+256
+00:17:43,278 --> 00:17:46,934
+also about, you can combine some of your ideas
+
+257
+00:17:47,111 --> 00:17:50,993
+in the graph and also together with
+
+258
+00:17:51,493 --> 00:17:54,684
+NLP that if you are interested with this, for example, you can
+
+259
+00:17:55,345 --> 00:17:59,055
+predict the, like, what will be the next
+
+260
+00:17:59,136 --> 00:18:02,426
+link from the current page,
+
+261
+00:18:02,507 --> 00:18:06,310
+and you can also Maybe identifying there is a
+
+262
+00:18:06,390 --> 00:18:10,782
+missed link from 2 entities. They should be linked by one
+
+263
+00:18:10,798 --> 00:18:14,309
+Wikipedia page, but actually now we don't
+
+264
+00:18:14,325 --> 00:18:18,012
+have this link. So you can have multiple
+
+265
+00:18:18,512 --> 00:18:23,285
+ideas on that. And this is another mathematical
+
+266
+00:18:23,398 --> 00:18:27,165
+reasoning benchmarks, but this
+
+267
+00:18:27,665 --> 00:18:30,900
+is also special because it's multilingual. So this
+
+268
+00:18:31,798 --> 00:18:34,621
+Like, these questions are not only in English.
+
+269
+00:18:35,488 --> 00:18:38,039
+It's also containing the very,
+
+270
+00:18:39,178 --> 00:18:43,493
+like, computation-level math problems.
+
+271
+00:18:44,151 --> 00:18:47,777
+And also you can do the analysis
+
+272
+00:18:47,841 --> 00:18:51,435
+not only on, like, this reasoning in
+
+273
+00:18:51,531 --> 00:18:55,413
+English, but you can also, like, research on how this
+
+274
+00:18:55,461 --> 00:18:59,410
+reasoning performs between, like, English and other
+
+275
+00:18:59,892 --> 00:19:03,425
+languages, for example, like Danish. So if you're
+
+276
+00:19:03,925 --> 00:19:07,247
+using Danish and English to ask the same math questions,
+
+277
+00:19:07,359 --> 00:19:10,667
+would the performance be the same or different?
+
+278
+00:19:11,197 --> 00:19:15,067
+And so, and what kind of question could be more challenging for,
+
+279
+00:19:16,031 --> 00:19:19,451
+like, mid-source or low-source languages?
+
+280
+00:19:19,965 --> 00:19:23,514
+And you can also study, like, the mathematical reasoning.
+
+281
+00:19:23,658 --> 00:19:26,964
+So, You can have different ideas about
+
+282
+00:19:27,189 --> 00:19:30,462
+this dataset. And this
+
+283
+00:19:30,962 --> 00:19:35,853
+is also maybe one of these most popular benchmarks
+
+284
+00:19:36,353 --> 00:19:39,302
+now. It's called the Software Engineering Benchmark.
+
+285
+00:19:40,200 --> 00:19:43,730
+It is some build from some real GitHub
+
+286
+00:19:44,230 --> 00:19:48,078
+issues and how did these human engineers fix
+
+287
+00:19:48,190 --> 00:19:52,325
+these issues. So, The main purpose for this benchmark
+
+288
+00:19:52,825 --> 00:19:56,227
+is to testing whether these, like, language models
+
+289
+00:19:56,485 --> 00:20:00,084
+or these agents can have this good
+
+290
+00:20:00,456 --> 00:20:02,055
+coding ability.
+
+291
+00:20:03,853 --> 00:20:08,548
+So it's also, like, have this unit
+
+292
+00:20:09,048 --> 00:20:12,748
+test, so you can also automatic to test whether
+
+293
+00:20:13,248 --> 00:20:17,270
+you are— code agent have do
+
+294
+00:20:17,770 --> 00:20:21,557
+this work in a good way. You can design actually
+
+295
+00:20:21,589 --> 00:20:24,431
+different, like, for example, agents,
+
+296
+00:20:24,623 --> 00:20:28,172
+or like, you can also do this test-time
+
+297
+00:20:28,252 --> 00:20:32,314
+scaling to, like, solve these kinds of issues.
+
+298
+00:20:32,426 --> 00:20:35,814
+You can also study the failure modes, like,
+
+299
+00:20:35,958 --> 00:20:39,972
+for example, for some GitHub issues, there are maybe
+
+300
+00:20:40,472 --> 00:20:44,118
+2 training for this model, or they might have—
+
+301
+00:20:44,376 --> 00:20:47,870
+they are not clear. So, uh, there will be
+
+302
+00:20:48,031 --> 00:20:51,639
+some misunderstanding for it. So, for example, you can
+
+303
+00:20:52,139 --> 00:20:56,107
+do some analysis on it about how does this language model
+
+304
+00:20:56,607 --> 00:20:59,136
+feel on these code tasks.
+
+305
+00:21:01,887 --> 00:21:06,478
+And this is another benchmark
+
+306
+00:21:06,558 --> 00:21:10,366
+called, like, GPQA is
+
+307
+00:21:10,463 --> 00:21:14,395
+like multi-choice questions in these sciences, for example,
+
+308
+00:21:14,411 --> 00:21:18,729
+physics, chemistry, biology, and it's like
+
+309
+00:21:19,147 --> 00:21:22,854
+at this PhD level. So it should be
+
+310
+00:21:22,919 --> 00:21:26,723
+challenging for even the most frontier large language model
+
+311
+00:21:26,851 --> 00:21:30,319
+today. So they have some multi-choice
+
+312
+00:21:30,383 --> 00:21:34,219
+science questions for this large language
+
+313
+00:21:34,380 --> 00:21:37,798
+model and also Uh, it needs
+
+314
+00:21:37,975 --> 00:21:41,741
+a lot of reasoning to do it. So it's also one
+
+315
+00:21:41,773 --> 00:21:44,492
+of these topics covered by our lecture.
+
+316
+00:21:45,567 --> 00:21:50,157
+And you can see that you can also do this study
+
+317
+00:21:50,173 --> 00:21:52,209
+about, like,
+
+318
+00:21:53,984 --> 00:21:57,825
+this analysis. And also, maybe you
+
+319
+00:21:58,325 --> 00:22:01,458
+can have your own method to deal
+
+320
+00:22:01,958 --> 00:22:05,136
+with this. Benchmark.
+
+321
+00:22:05,200 --> 00:22:08,645
+And now let's go to another part. I think it's more
+
+322
+00:22:10,512 --> 00:22:13,948
+related to social science, all these
+
+323
+00:22:14,465 --> 00:22:18,440
+kinds of benchmarks. The first is called BLEnD.
+
+324
+00:22:18,747 --> 00:22:22,691
+It's a benchmark that for everyday knowledge
+
+325
+00:22:22,772 --> 00:22:26,033
+across different cultures and languages.
+
+326
+00:22:26,643 --> 00:22:30,631
+So it's basically benchmarking these like,
+
+327
+00:22:30,647 --> 00:22:34,005
+language models' ability about knowledge, but it's
+
+328
+00:22:34,443 --> 00:22:39,528
+across many different countries and cultures.
+
+329
+00:22:41,240 --> 00:22:44,890
+So you can also study these. For example,
+
+330
+00:22:45,213 --> 00:22:49,060
+if you are familiar with retrieval argument generation,
+
+331
+00:22:49,093 --> 00:22:52,537
+you can use some retrieval things
+
+332
+00:22:52,650 --> 00:22:56,214
+like this Google search. For example, you can see
+
+333
+00:22:56,296 --> 00:23:00,420
+that whether this can help, like, the model to understand
+
+334
+00:23:00,517 --> 00:23:02,775
+these cultural things better.
+
+335
+00:23:05,857 --> 00:23:09,384
+And this is a benchmark called HealthBench.
+
+336
+00:23:09,561 --> 00:23:13,057
+It's one of the most well-used,
+
+337
+00:23:13,524 --> 00:23:17,469
+like, benchmark for healthcare.
+
+338
+00:23:17,550 --> 00:23:20,773
+It's like a simulated conversation between
+
+339
+00:23:21,356 --> 00:23:25,202
+a model, like, And the user
+
+340
+00:23:26,293 --> 00:23:29,023
+or healthcare, like,
+
+341
+00:23:29,842 --> 00:23:33,278
+like a doctor or something. So, for this
+
+342
+00:23:33,778 --> 00:23:37,212
+task, it's not only like this mathematics. For mathematics,
+
+343
+00:23:37,228 --> 00:23:40,504
+it's very easy to say what is right,
+
+344
+00:23:40,584 --> 00:23:43,394
+what is wrong. But this is a conversation, like,
+
+345
+00:23:43,747 --> 00:23:47,279
+simulate you are seeing a doctor. So it's harder to
+
+346
+00:23:47,779 --> 00:23:51,644
+say, like, just right
+
+347
+00:23:52,144 --> 00:23:55,918
+or wrong. So sometimes, for example, some misinformation
+
+348
+00:23:56,418 --> 00:23:59,712
+in healthcare that can be very horrible, that can
+
+349
+00:23:59,812 --> 00:24:03,808
+kill people. And also sometimes
+
+350
+00:24:03,936 --> 00:24:07,235
+it's also needed, like this, like a model to
+
+351
+00:24:07,284 --> 00:24:11,033
+act as a doctor to read correct and good questions.
+
+352
+00:24:11,860 --> 00:24:16,066
+So it can help, like, this mock
+
+353
+00:24:16,162 --> 00:24:19,657
+users to deal with this question.
+
+354
+00:24:19,705 --> 00:24:23,937
+So for this task, you have more space for evaluation.
+
+355
+00:24:24,114 --> 00:24:27,753
+So how to evaluate, like, a large language
+
+356
+00:24:27,801 --> 00:24:31,327
+model to do this task is more
+
+357
+00:24:31,827 --> 00:24:35,896
+like an open question. So we are very welcome
+
+358
+00:24:35,944 --> 00:24:39,135
+you can research on these kinds of
+
+359
+00:24:39,167 --> 00:24:41,187
+tasks. So, like,
+
+360
+00:24:42,456 --> 00:24:46,128
+For example, you can design some different metrics to
+
+361
+00:24:46,160 --> 00:24:50,090
+evaluate whether the large language model performs good
+
+362
+00:24:50,251 --> 00:24:51,692
+or not in the task.
+
+363
+00:24:54,216 --> 00:24:57,962
+And this one is about fact-checking or
+
+364
+00:24:58,462 --> 00:25:01,740
+fact-seeking questions in this web search.
+
+365
+00:25:02,385 --> 00:25:07,142
+So there are some questions that need retrieval
+
+366
+00:25:07,240 --> 00:25:11,155
+because it's usually related
+
+367
+00:25:11,252 --> 00:25:13,790
+with something. For example,
+
+368
+00:25:14,470 --> 00:25:17,865
+I want to know which is the most— this is
+
+369
+00:25:18,365 --> 00:25:21,569
+the most recent company who have like $1 billion
+
+370
+00:25:23,138 --> 00:25:26,856
+price in the market in
+
+371
+00:25:27,356 --> 00:25:30,895
+2026. That is the question that the language model may
+
+372
+00:25:31,395 --> 00:25:34,844
+not have this enough knowledge now. But they need
+
+373
+00:25:34,876 --> 00:25:38,573
+to search in the web to find out
+
+374
+00:25:39,073 --> 00:25:43,123
+this question. And also, there will be a lot of conflicting,
+
+375
+00:25:43,235 --> 00:25:46,850
+noisy results on the web page. So it's also
+
+376
+00:25:46,995 --> 00:25:50,063
+about how can you use, like,
+
+377
+00:25:50,208 --> 00:25:54,331
+reasoning models to deal with these noisy questions.
+
+378
+00:25:57,612 --> 00:26:01,605
+And this dataset is about— this moral reasoning
+
+379
+00:26:01,653 --> 00:26:05,791
+is about you give this AI or this
+
+380
+00:26:06,291 --> 00:26:09,525
+large model some moral considerations, and you want it to
+
+381
+00:26:09,590 --> 00:26:13,586
+give you some actionable recommendation. You want
+
+382
+00:26:13,858 --> 00:26:18,520
+it to, like, help humans, but not violate these moral
+
+383
+00:26:18,680 --> 00:26:22,461
+rules that is shared with
+
+384
+00:26:22,961 --> 00:26:26,566
+humans. So this is also another interesting
+
+385
+00:26:27,067 --> 00:26:29,588
+dataset that you can explore.
+
+386
+00:26:30,366 --> 00:26:34,113
+And for the last one, I think we call
+
+387
+00:26:34,613 --> 00:26:39,038
+it SimBench for this simulation
+
+388
+00:26:39,249 --> 00:26:43,041
+of these. You can use large language
+
+389
+00:26:43,057 --> 00:26:46,356
+model to simulate that
+
+390
+00:26:46,856 --> 00:26:50,369
+people do some social choice. For example, there is some
+
+391
+00:26:50,401 --> 00:26:54,975
+question that are not actually open-ended. So maybe 60%
+
+392
+00:26:55,073 --> 00:26:58,761
+of people will choose choice
+
+393
+00:26:59,261 --> 00:27:03,107
+A, and the other 40% will choose choice
+
+394
+00:27:03,285 --> 00:27:06,512
+B. So your task is to simulate this
+
+395
+00:27:07,494 --> 00:27:09,989
+distribution of this choice,
+
+396
+00:27:10,214 --> 00:27:13,111
+and you want it to align with human.
+
+397
+00:27:16,090 --> 00:27:19,669
+So, yeah, so I know there is a lot
+
+398
+00:27:20,169 --> 00:27:24,768
+of datasets that you can Maybe you cannot understand
+
+399
+00:27:25,268 --> 00:27:29,699
+it quite well now, but we will share this Google
+
+400
+00:27:30,199 --> 00:27:34,373
+Sheet and also these slides in the Brightspace. You can
+
+401
+00:27:34,405 --> 00:27:37,537
+also have a look when you are free.
+
+402
+00:27:37,618 --> 00:27:41,135
+And I know there is involved maybe too many technology
+
+403
+00:27:41,408 --> 00:27:44,926
+words or like concepts. So because you are
+
+404
+00:27:45,426 --> 00:27:49,369
+only in the first class, so I think that might
+
+405
+00:27:49,433 --> 00:27:52,936
+have a little bit challenging for you to understand all these
+
+406
+00:27:54,291 --> 00:27:57,651
+datasets, but in our Google Sheet, we will have some
+
+407
+00:27:59,123 --> 00:28:02,585
+more details, and we will also reference to some
+
+408
+00:28:02,941 --> 00:28:07,227
+like these benchmark papers that you can find more
+
+409
+00:28:07,938 --> 00:28:08,794
+information there.
+
+410
+00:28:10,847 --> 00:28:13,207
+And now we are saying, like,
+
+411
+00:28:14,755 --> 00:28:20,009
+your risks of pick your own dataset. So maybe
+
+412
+00:28:20,138 --> 00:28:23,882
+you will need, because for this benchmarking
+
+413
+00:28:23,978 --> 00:28:28,092
+that in last year that some of your groups wants
+
+414
+00:28:28,592 --> 00:28:32,366
+to do the benchmarking work, but we also told you there will be some
+
+415
+00:28:32,430 --> 00:28:35,322
+risks, just as I mentioned earlier.
+
+416
+00:28:35,885 --> 00:28:39,243
+Well, first is you, for sometimes you
+
+417
+00:28:39,743 --> 00:28:43,558
+need to collect the data, it will be time-consuming,
+
+418
+00:28:44,151 --> 00:28:47,503
+and our timeline of our course is quite dense.
+
+419
+00:28:47,935 --> 00:28:51,928
+So you may— might have the risk of not having enough
+
+420
+00:28:52,428 --> 00:28:56,146
+data before you submitting the project. And also,
+
+421
+00:28:56,980 --> 00:28:59,241
+you need to deal with this quality,
+
+422
+00:29:00,588 --> 00:29:04,260
+all this consistency between these data points.
+
+423
+00:29:04,420 --> 00:29:08,110
+So this is also another point. And also,
+
+424
+00:29:08,126 --> 00:29:10,870
+you need to maybe do some,
+
+425
+00:29:11,256 --> 00:29:14,835
+like, preprocessing work for the data.
+
+426
+00:29:14,883 --> 00:29:19,698
+So these are some risks, but you
+
+427
+00:29:19,763 --> 00:29:23,727
+can also— but you are welcome to using your own
+
+428
+00:29:24,241 --> 00:29:27,595
+dataset, but you need to be careful with that.
+
+429
+00:29:28,912 --> 00:29:32,507
+So if you have more questions, you can, like,
+
+430
+00:29:32,667 --> 00:29:36,691
+reach one of our TAs who seek more information
+
+431
+00:29:37,191 --> 00:29:39,069
+about your own dataset.
+
+432
+00:29:43,660 --> 00:29:47,226
+Thank you. Thanks a lot. So, does anyone
+
+433
+00:29:47,726 --> 00:29:51,647
+have questions about the dataset picking or
+
+434
+00:29:52,147 --> 00:29:55,594
+any question related to that? Maybe let's take all questions again. So we're up there
+
+435
+00:29:56,094 --> 00:29:58,880
+recording. Perfect. Just one thing about choosing your own datasets.
+
+436
+00:29:59,959 --> 00:30:03,497
+Before you decide to reach out to your TAs and reach an agreement with them.
+
+437
+00:30:03,900 --> 00:30:07,226
+Like, it's a soft agreement, but let's, like, decide together on it.
+
+438
+00:30:08,126 --> 00:30:12,900
+Okay, so you'll do everything in groups of 3. You have to register
+
+439
+00:30:13,400 --> 00:30:15,122
+on Brightspace by 11th of September.
+
+440
+00:30:17,240 --> 00:30:20,403
+Milestone 1 will be expected by 9th October.
+
+441
+00:30:20,984 --> 00:30:26,115
+We expect essentially, you will find the instructions
+
+442
+00:30:26,293 --> 00:30:30,414
+in the Brightspace, but it's a GitHub repo in our organization,
+
+443
+00:30:31,080 --> 00:30:34,973
+and we expect 2 things. First, a README. Up to 1,000 pages
+
+444
+00:30:35,006 --> 00:30:39,030
+explaining your idea. There's like specific things that we would like
+
+445
+00:30:39,530 --> 00:30:43,197
+you to include. So, team up organization, what you plan to
+
+446
+00:30:43,697 --> 00:30:47,853
+do, you have to prove that what you're thinking is a nice idea.
+
+447
+00:30:48,901 --> 00:30:54,064
+And also an initial notebook that shows your data
+
+448
+00:30:54,564 --> 00:30:58,402
+pipelines, some initial analysis. Show us that you understand
+
+449
+00:30:58,902 --> 00:31:01,810
+the project, you understand the benchmarks, that you understand what's about to happen.
+
+450
+00:31:02,717 --> 00:31:06,790
+Um, you can also find last year's milestones
+
+451
+00:31:07,367 --> 00:31:10,462
+are available from last year's students. Just one thing,
+
+452
+00:31:10,574 --> 00:31:14,230
+last year we used to have 3 milestones. Uh, we used
+
+453
+00:31:14,730 --> 00:31:18,495
+to have like a 1 easy milestone in the beginning. This is
+
+454
+00:31:18,528 --> 00:31:22,729
+not there this year. So essentially this year's P1
+
+455
+00:31:22,937 --> 00:31:26,224
+is last year's P2, but they're exactly the same, just different name.
+
+456
+00:31:26,866 --> 00:31:30,644
+Just having a memo here so that There's no confusion.
+
+457
+00:31:32,428 --> 00:31:36,461
+Same thing about the memo for milestone B2. Milestone B2
+
+458
+00:31:36,494 --> 00:31:40,479
+will be done again as a team. It's expected by 19 December.
+
+459
+00:31:41,235 --> 00:31:45,018
+And in this case, once more, you have to upload
+
+460
+00:31:45,212 --> 00:31:49,175
+all your data and code in the GitHub. You have to update the README
+
+461
+00:31:49,675 --> 00:31:53,073
+based on P1, but also you will have to submit
+
+462
+00:31:53,573 --> 00:31:56,773
+a 6-page NeurIPS-style report. So, NeurIPS is
+
+463
+00:31:56,869 --> 00:32:00,062
+a machine learning conference. It has its own
+
+464
+00:32:00,094 --> 00:32:02,790
+template. So, NeurIPS style,
+
+465
+00:32:02,822 --> 00:32:05,597
+that's what it means. It's in a template from NeurIPS.
+
+466
+00:32:06,175 --> 00:32:08,902
+And all of this is uploaded on Brightspace.
+
+467
+00:32:09,544 --> 00:32:13,026
+It's— you can use LaTeX to do it. And yeah,
+
+468
+00:32:13,106 --> 00:32:17,005
+super easy. Um, free compute
+
+469
+00:32:17,505 --> 00:32:21,658
+resources. So you might need some resources for your projects, how to access
+
+470
+00:32:21,674 --> 00:32:24,788
+LLMs or GPUs. We have a
+
+471
+00:32:25,288 --> 00:32:27,854
+complete guide on Brightspace— oh no, on GitHub,
+
+472
+00:32:28,416 --> 00:32:32,799
+where we show you how to access each of these responses. So we have UCloud
+
+473
+00:32:32,815 --> 00:32:37,085
+HPC. This is the national HPC
+
+474
+00:32:37,230 --> 00:32:41,002
+in Odense. You can use GPU notebooks such as Google
+
+475
+00:32:41,502 --> 00:32:45,048
+Colab. You can use Kaggle. There's also all sorts of different ones.
+
+476
+00:32:46,541 --> 00:32:50,265
+You can use large language model APIs. So you make a request
+
+477
+00:32:50,313 --> 00:32:53,763
+to the web. Uh, and the response from the
+
+478
+00:32:54,263 --> 00:32:56,779
+API comes in. There's a lot of free, uh,
+
+479
+00:32:57,212 --> 00:33:01,527
+resources that you can access either from Groq or Google
+
+480
+00:33:01,864 --> 00:33:05,425
+has free accesses, and all of this is detailed in the instructions.
+
+481
+00:33:05,890 --> 00:33:09,419
+And there's also like cloud infrastructure. So if you
+
+482
+00:33:09,919 --> 00:33:13,077
+want something very niche for your project, say you want to set up your own
+
+483
+00:33:13,173 --> 00:33:17,167
+VM that you need for specific reasons, you can access
+
+484
+00:33:17,280 --> 00:33:20,516
+either Google Cloud Platform or Azure,
+
+485
+00:33:20,984 --> 00:33:24,739
+they all have like some student packages
+
+486
+00:33:24,997 --> 00:33:28,614
+or some first-time user packages
+
+487
+00:33:28,647 --> 00:33:31,814
+that you can use and develop for your project.
+
+488
+00:33:34,299 --> 00:33:37,817
+So today we're officially launching like P1. As I said,
+
+489
+00:33:37,930 --> 00:33:41,302
+9th of October is the deadline.
+
+490
+00:33:41,740 --> 00:33:45,032
+So the first thing to do is to register in Brightspace.
+
+491
+00:33:45,820 --> 00:33:48,756
+Then you have to join our GitHub Classroom.
+
+492
+00:33:49,386 --> 00:33:53,484
+So one of the members of the group will initiate
+
+493
+00:33:53,984 --> 00:33:57,766
+this first, and he will create— he or she will create a team in
+
+494
+00:33:58,266 --> 00:34:02,027
+the GitHub Classroom, and then the 2 remaining members will join that
+
+495
+00:34:02,527 --> 00:34:06,213
+team. So please coordinate this between the members of your group.
+
+496
+00:34:06,294 --> 00:34:09,752
+There's literally detailed instructions if you follow this.
+
+497
+00:34:11,459 --> 00:34:14,265
+Then goals is to hone in on a project topic.
+
+498
+00:34:16,182 --> 00:34:20,271
+Get familiar with the data and ensure that the idea
+
+499
+00:34:20,771 --> 00:34:24,473
+you have in your head can become reality by December.
+
+500
+00:34:25,788 --> 00:34:28,915
+Um, and yeah, the deliverables, README,
+
+501
+00:34:29,492 --> 00:34:33,084
+notebook, um, more details on Brightspace.
+
+502
+00:34:34,158 --> 00:34:37,429
+So what's the agenda for today? Essentially get you
+
+503
+00:34:37,929 --> 00:34:41,454
+started. So anyone who hasn't set up GitHub or UV,
+
+504
+00:34:41,983 --> 00:34:45,349
+you should set it up. Then we have some descriptive walkthroughs.
+
+505
+00:34:45,785 --> 00:34:48,624
+So there's introductions to Python, NumPy,
+
+506
+00:34:49,157 --> 00:34:52,449
+PyTorch. These are expected knowledge. We're happy to
+
+507
+00:34:52,949 --> 00:34:56,946
+answer questions and help you, but you will see that in today's exercises about
+
+508
+00:34:56,994 --> 00:35:00,804
+this, it's just a walkthrough. They show you the basics, but we're
+
+509
+00:35:00,820 --> 00:35:03,671
+not going to teach you PyTorch from the beginning.
+
+510
+00:35:05,322 --> 00:35:08,595
+And then, uh, there's the actual NLP intro.
+
+511
+00:35:09,042 --> 00:35:12,315
+Where you will find exercises based on the course from Tuesday.
+
+512
+00:35:13,069 --> 00:35:16,101
+So I think that's all. Yes, that's all.
+
+513
+00:35:16,599 --> 00:35:19,840
+So thanks a lot for your attention. This took a bit more than we expected.
+
+514
+00:35:20,578 --> 00:35:23,722
+Please feel free to give us feedback. You can, like,
+
+515
+00:35:24,107 --> 00:35:27,990
+scan the QR code or click on the link. We really appreciate the
+
+516
+00:35:28,054 --> 00:35:31,199
+feedback, and you'll see that, like, we,
+
+517
+00:35:32,049 --> 00:35:35,372
+we hear you. You say something, You might even see
+
+518
+00:35:35,872 --> 00:35:39,602
+the change by next week. So yeah, that's all. Thank you,
+
+519
+00:35:39,618 --> 00:35:40,727
+thank you so much. Thank you.
+

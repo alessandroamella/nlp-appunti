@@ -7,17 +7,22 @@ This is an Obsidian vault of personal study notes for a university NLP course �
 - `appunti_nlp/` — the Obsidian vault. This is where all notes live.
   - `appunti_nlp/assets/YYYY-MM-DD/` — images (mostly slide screenshots) cropped out of lecture PDFs, one subfolder per session date.
   - `appunti_nlp/.obsidian/` — vault config, don't touch.
-- `docs/` — source material per lecture: the slide deck PDF, and sometimes an auto-downloaded Panopto subtitle file (`.srt`) with the same base name plus `-subtitles`.
-- `subtitles/` — raw Panopto-exported `.srt` files not yet matched/renamed to a lecture PDF (named after the Panopto recording, e.g. `NLP Fall262026-09-08 08-52.srt`). When working on a lecture, check here for a subtitle file covering that date if none is paired in `docs/` yet. Each `.srt` has a `.json` sidecar next to it with the recording's identity (`viewerUrl`, title, duration) — that's what makes timestamp links possible, see below.
+- `docs/` — the slide deck PDF of each lecture.
+- `vids/` — the lecture recordings and their transcripts, produced by `vids/get_vids.py` (the user runs it; it downloads every `[Video]` on the Brightspace course page and transcribes it with AssemblyAI, prompted with that lecture's slides).
+  - `vids/subs/` — one `.srt` per recording, named after it (e.g. `NLP Fall262026-09-08 08-52.srt`), each with a `.json` sidecar holding the recording's identity (`viewerUrl`, title, duration, `lecture`, `slides`) — that's what makes timestamp links possible, see below.
+  - `vids/index.json` — maps each recording to its date, lecture title and slide deck: the quickest way to find the transcript for a lecture.
+  - `vids/prompts/` — the context each transcription was prompted with. `vids/videos/` holds the `.mp4`s (gitignored, GBs).
 - `lab/` — lab session PDFs.
+- `ta_sessions/` — **symlink** to a separate git clone of the TA's course repo (`../webdev_projects/nlp-2026`). `Exercises/NN - Topic/` holds the lab notebooks by topic, `Exam/mock_exam.ipynb` a mock exam, `Project/` the project specs. It's someone else's repo: read it, never edit or commit into it (pull to update). Treat it as one more source when gathering a topic; the mock exam counts alongside `exams/`.
+- `exams/` — past exam papers with solutions (e.g. `exam_2025_with_solutions.md`: 10 MCQs, one correct option each, with per-option explanations). Per the note at its top, the **2026 exam is MCQ-only, and longer**. Use these to gauge what gets asked and at what depth: when writing a note on a topic a past question covers, make sure the note answers it and put the trap in `## Da ricordare`.
 
 The repo root is a git repo; PDFs and images are tracked with **git LFS** by extension (see `.gitattributes`), transcripts and sidecars stay plain text. Drop new files in and they're handled automatically. Note the vault root is `appunti_nlp/`, one level below the repo root.
 
-The user will keep dropping new PDFs/subtitles into `docs/`, `subtitles/`, or `lab/` and ask for notes to be written or extended in `appunti_nlp/`.
+The user will keep dropping new PDFs/subtitles/exams into `docs/`, `lab/`, or `exams/` and ask for notes to be written or extended in `appunti_nlp/`.
 
 ## Before writing anything
 
-**A topic is not a file.** One topic is often spread over more than one deck and more than one recording, and the numbering doesn't line up across sources. Before writing, gather *everything* that touches it — `ls docs/ | grep -i <topic>`, `ls subtitles/`, `ls lab/` — and match by **topic, not by number or date**. Don't assume the first match is the whole story.
+**A topic is not a file.** One topic is often spread over more than one deck and more than one recording, and the numbering doesn't line up across sources. Before writing, gather *everything* that touches it — `ls docs/ | grep -i <topic>`, `cat vids/index.json`, `ls lab/`, `ls ta_sessions/Exercises/`, `grep -il <topic> exams/* ta_sessions/Exam/*` — and match by **topic, not by number or date**. Don't assume the first match is the whole story.
 
 **Check what already exists.** `ls appunti_nlp/` and grep for the topic before starting a new note. If it's already covered, extend that note. Two notes that each half-cover the same thing are worse than one that covers it.
 
@@ -71,7 +76,7 @@ For a pointer inside the text, a bare link at the end of the sentence: `… (see
 1. Convert relevant slide pages to images with `pdftoppm` (e.g. `pdftoppm -png -r 150 -f <page> -l <page> "docs/NN - Title.pdf" appunti_nlp/assets/YYYY-MM-DD/prefix`).
 2. Trim whitespace borders with ImageMagick: `convert in.png -trim +repage out.png` (or `mogrify -trim` in place). Use a short, descriptive prefix per lecture (e.g. `nn-primer-024.png`); append `-crop` for a further-cropped variant of the same page when only part of a slide is relevant.
 3. Only save/embed images that add real value (diagrams, tables, formulas) — don't screenshot pure bullet-text slides that are easily transcribed.
-4. If a matching `-subtitles.srt` exists, `grep` it for the surrounding timestamp/topic to catch things the lecturer said but that aren't on the slide (asides, extra examples, emphasis, things glossed over quickly) — fold those into the note as prose or bullets, not just slide transcription. `grep -i -n -B2 -A4 '<term>' docs/*.srt subtitles/*.srt`; the `-B2` keeps the cue's timestamp in view, which is what you need for a timestamped link.
+4. If the lecture's transcript exists in `vids/subs/` (look it up in `vids/index.json`), `grep` it for the surrounding timestamp/topic to catch things the lecturer said but that aren't on the slide (asides, extra examples, emphasis, things glossed over quickly) — fold those into the note as prose or bullets, not just slide transcription. `grep -i -n -B2 -A4 '<term>' vids/subs/*.srt`; the `-B2` keeps the cue's timestamp in view, which is what you need for a timestamped link.
 5. `cat` the matching `.json` sidecar for the `viewerUrl` when you're going to link a moment.
 6. Write/extend the note in `appunti_nlp/`, following the conventions above.
 
