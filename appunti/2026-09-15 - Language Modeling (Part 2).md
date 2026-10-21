@@ -8,7 +8,7 @@ One loose end from Part 1 was closed in this lecture: **what should $h_0$ be?** 
 
 ## 1. An RNN is a feedforward network with dynamic depth
 
-![[assets/2026-09-15/lm-pt2-021.png]]
+![[appunti/assets/2026-09-15/lm-pt2-021.png]]
 _Unrolling the RNN across all time steps gives the full computation graph._
 
 > **RNN is a FFN with dynamic depth. Depth = length of the input sequence.**
@@ -39,7 +39,7 @@ One layer further back, the same pattern repeats with one more factor. With $v =
 
 $$\frac{\partial \mathcal{L}}{\partial \phi_{11}} = \underbrace{\frac{\partial \mathcal{L}}{\partial \hat y}\frac{\partial \phi_o(u)}{\partial u}w^o_1}_{\text{already computed}}\ \frac{\partial \phi_{12}(v)}{\partial v}\ w^{1}_{11}$$
 
-![[assets/2026-09-15/lm-pt2-038.png]]
+![[appunti/assets/2026-09-15/lm-pt2-038.png]]
 _The "colour game". The green block is identical to the one already computed one layer up. Only the last factors change._
 
 **The point of the colour-coding.** Compare the derivative for $\phi_{12}$ with the one for $\phi_{22}$, or the one for $\phi_{11}$ with the one for $\phi_{21}$. Most factors are **the same**. Only the last one or two differ. So backprop **caches** the shared upstream part and reuses it, instead of recomputing the whole chain for every weight. That is why it's cheap. Done naively, it would be enormously expensive. Hence "backward": you start at the loss and walk back one layer at a time, and each layer reuses what the layer above computed (see [38:37](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=2317)).
@@ -64,7 +64,7 @@ Step by step:
 
 $$\frac{\partial z_t}{\partial h_{t-2}} = \frac{\partial z_t}{\partial h_t}\,\frac{\partial h_t}{\partial h_{t-1}}\,\frac{\partial h_{t-1}}{\partial h_{t-2}} = \frac{\partial\sigma(v_t)}{\partial v_t}W_{zh}\;\frac{\partial\sigma(u_t)}{\partial u_t}W_{hh}\;\frac{\partial\sigma(u_{t-1})}{\partial u_{t-1}}W_{hh}$$
 
-![[assets/2026-09-15/lm-pt2-047.png]]
+![[appunti/assets/2026-09-15/lm-pt2-047.png]]
 _"Note that these are actually the same matrix". Every step back in time multiplies by the same $W_{hh}$._
 
 **Keep that red note in mind.** Weight sharing is what makes RNNs cheap (the model doesn't grow with length). But it also means that going $T$ steps back multiplies by **the same matrix $T$ times**. That is the root cause of §6.
@@ -84,7 +84,7 @@ At full scale, the gradient flows back from each output $z_t$, horizontally thro
 
 ## 4. Deep (stacked) RNNs
 
-![[assets/2026-09-15/lm-pt2-052.png]]
+![[appunti/assets/2026-09-15/lm-pt2-052.png]]
 _Three stacked recurrent layers. The output $z^1_t$ of layer 1 is the input to layer 2 at the same time step. Dashed arrows show the gradient flowing back both through time and down through layers._
 
 Nothing forces you to go only horizontally. You can also **stack** recurrent layers vertically, like adding layers to an MLP. The output sequence of layer $\ell$ becomes the input sequence of layer $\ell+1$.
@@ -107,7 +107,7 @@ A left-to-right RNN has a blind spot. The state at step $t$ has seen only the **
 
 The fix is to run **two** RNNs, one left→right ($h^f$) and one right→left ($h^b$). Then combine them at each step:
 
-![[assets/2026-09-15/lm-pt2-055.png]]
+![[appunti/assets/2026-09-15/lm-pt2-055.png]]
 
 - **Concatenate** the output states at each step, $[z^f_t; z^b_t]$. You can also take the mean or max.
 - **Separate parameters** for the forward and backward RNNs.
@@ -132,7 +132,7 @@ There was a long discussion in class about the ❌ case. The key refinement is "
 
 ### The symptom
 
-![[assets/2026-09-15/lm-pt2-063.png]]
+![[appunti/assets/2026-09-15/lm-pt2-063.png]]
 
 > Nearby words should affect each other more than farther ones, but RNNs make it challenging to learn **any** long-range interactions.
 
@@ -151,7 +151,7 @@ Both factors tend to be small:
 - $\dfrac{\partial\sigma(u)}{\partial u}$ is **< 1 for many activation functions**. For the sigmoid it is **at most 0.25**, and it's close to 0 whenever the unit saturates.
 - $W_{hh}$ is **typically small** because of **regularisation**.
 
-![[assets/2026-09-15/lm-pt2-064.png]]
+![[appunti/assets/2026-09-15/lm-pt2-064.png]]
 _The sigmoid (blue) and its derivative (dashed red). The derivative peaks at 0.25 and vanishes in both tails._
 
 A product of $T$ numbers below 1 shrinks **exponentially** in $T$. The 22 Sep recap put a number on it: $0.9^{100} \approx 0.000027$. **Small terms × many steps = vanishing gradient.** The gradient signal from a distant output barely reaches the early tokens, so the network gets almost no signal telling it to learn long-range dependencies.
@@ -180,7 +180,7 @@ The class suggested **skip/residual connections**, **ReLU** (or other activation
 
 ## 7. Gated RNNs: the idea
 
-![[assets/2026-09-15/lm-pt2-068.png]]
+![[appunti/assets/2026-09-15/lm-pt2-068.png]]
 
 $$\underbrace{h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1} + b_h)}_{\text{Elman}} \qquad \underbrace{h_t = h_{t-1}\odot f + \text{func}(x_t)}_{\text{gated network (abstraction)}}$$
 
@@ -194,7 +194,7 @@ Intuition from the lecturer: this works "something like a skip connection, but m
 
 ## 8. Long Short-Term Memory (LSTM)
 
-![[assets/2026-09-15/lm-pt2-069.png]]
+![[appunti/assets/2026-09-15/lm-pt2-069.png]]
 
 **Gates**, each a sigmoid so each lies in $(0,1)$, each computed from the current input and the previous hidden state:
 
@@ -255,7 +255,7 @@ Worked out from $c_t = i_t\tilde c_t + f_t c_{t-1}$:
 
 ## 9. Gated Recurrent Unit (GRU)
 
-![[assets/2026-09-15/lm-pt2-080.png]]
+![[appunti/assets/2026-09-15/lm-pt2-080.png]]
 
 The same goal as the LSTM (a gated path that doesn't damp the gradient every step), but a lighter architecture:
 
@@ -285,7 +285,7 @@ $$h_t = (1-z_t)\circ h_{t-1} + z_t \circ \tanh\!\big(W_h x_t + U_h(r_t \circ h_{
 
 ### RNN vs LSTM/GRU
 
-![[assets/2026-09-15/lm-pt2-083.png]]
+![[appunti/assets/2026-09-15/lm-pt2-083.png]]
 
 | | Vanilla RNN | LSTM |
 |---|---|---|
@@ -355,15 +355,15 @@ Jozefowicz et al. (2015) searched automatically over thousands of recurrent cell
 
 The "both gates = 1 → skip connection?" question from §8 was left open. The next lecture opened by settling it, with three slides that tie the vanishing-gradient fixes together (see [19:38](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=1178)).
 
-![[assets/2026-09-22/transformers-014.png]]
+![[appunti/assets/2026-09-22/transformers-014.png]]
 
 **Skip connection in an RNN.** Add a shortcut from a few steps back, e.g. $h_t = \sigma(W_1h_{t-1} + W_5h_{t-5} + W_xx_t)$. During backprop the gradient uses **both** routes, and the contributions add. The shortcut crosses fewer multiplications, so it shrinks less. But the shortcut is **still weighted** ($W_5$), so it can still attenuate the gradient. It helps but doesn't solve the problem.
 
-![[assets/2026-09-22/transformers-015.png]]
+![[appunti/assets/2026-09-22/transformers-015.png]]
 
 **Residual block** (from computer vision, ResNets, used to train very deep FFNs): $x_{l+1} = x_l + \mathcal F(x_l)$, so $\dfrac{\partial x_{l+1}}{\partial x_l} = I + \dfrac{\partial \mathcal F}{\partial x_l}$. The shortcut is the **identity**, not a weight matrix. It always contributes an exact $I$ to the gradient, and nothing can shrink that term. It creates a **gradient highway through depth**. Highway networks are the gated version of the same idea.
 
-![[assets/2026-09-22/transformers-016.png]]
+![[appunti/assets/2026-09-22/transformers-016.png]]
 
 **LSTM and GRU are the residual idea with learned gates:**
 

@@ -17,7 +17,7 @@ $$
 
 > Moltiplicare per $idf(w)$ equivale a riscalare **l'intera colonna** $w$ per una costante → l'IDF è già di fatto una normalizzazione di colonna (torna utile a pag. 28).
 
-![[assets/2026-09-01/nn-primer-024.png]]
+![[appunti/assets/2026-09-01/nn-primer-024.png]]
 
 ## Pag. 25–27 — Normalizzazione per riga (row normalization)
 
@@ -25,7 +25,7 @@ $$
 
 **Soluzione**: normalizzare ogni riga (ogni documento).
 
-![[assets/2026-09-01/nn-primer-025.png]]
+![[appunti/assets/2026-09-01/nn-primer-025.png]]
 
 ### L2-normalization
 
@@ -51,11 +51,11 @@ Esempio dal grafico:
 - L2: $(-1.2,\ 0.9) \to (-0.8,\ 0.6)$ — stessa direzione, lunghezza 1
 - L1: $(-1.2,\ 0.4) \to (-0.75,\ 0.25)$ — stessa direzione, $|-0.75|+|0.25|=1$
 
-![[assets/2026-09-01/nn-primer-026-crop.png]]
+![[appunti/assets/2026-09-01/nn-primer-026-crop.png]]
 
 **Domanda aperta (pag. 27)**: quale usare? Non c'è una risposta universale — dipende dall'algoritmo a valle. Se serve interpretare le righe come probabilità → L1 è più naturale. Se si userà cosine similarity → L2 è lo standard (è anche il default di `TfidfVectorizer` in scikit-learn).
 
-![[assets/2026-09-01/nn-primer-027.png]]
+![[appunti/assets/2026-09-01/nn-primer-027.png]]
 
 ## Pag. 28 — Normalizzazione per colonna (column normalization)
 
@@ -77,7 +77,7 @@ $$
 
 **Domanda aperta**: anche qui, quale (se una) usare va valutato empiricamente per il task.
 
-![[assets/2026-09-01/nn-primer-028.png]]
+![[appunti/assets/2026-09-01/nn-primer-028.png]]
 
 ---
 

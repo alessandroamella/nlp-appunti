@@ -4,9 +4,11 @@ This is an Obsidian vault of personal study notes for a university NLP course �
 
 ## Layout
 
-- `appunti_nlp/` — the Obsidian vault. This is where all notes live.
-  - `appunti_nlp/assets/YYYY-MM-DD/` — images (mostly slide screenshots) cropped out of lecture PDFs, one subfolder per session date.
-  - `appunti_nlp/.obsidian/` — vault config, don't touch.
+The **repo root is the Obsidian vault**, so the notes can link the slides, exams and labs directly.
+
+- `appunti/` — where all notes live.
+  - `appunti/assets/YYYY-MM-DD/` — images (mostly slide screenshots) cropped out of lecture PDFs, one subfolder per session date.
+- `.obsidian/` — vault config, don't touch.
 - `docs/` — the slide deck PDF of each lecture.
 - `vids/` — the lecture recordings and their transcripts, produced by `vids/get_vids.py` (the user runs it; it downloads every `[Video]` on the Brightspace course page and transcribes it with AssemblyAI, prompted with that lecture's slides).
   - `vids/subs/` — one `.srt` per recording, named after it (e.g. `NLP Fall262026-09-08 08-52.srt`), each with a `.json` sidecar holding the recording's identity (`viewerUrl`, title, duration, `lecture`, `slides`) — that's what makes timestamp links possible, see below.
@@ -16,21 +18,21 @@ This is an Obsidian vault of personal study notes for a university NLP course �
 - `ta_sessions/` — **symlink** to a separate git clone of the TA's course repo (`../webdev_projects/nlp-2026`). `Exercises/NN - Topic/` holds the lab notebooks by topic, `Exam/mock_exam.ipynb` a mock exam, `Project/` the project specs. It's someone else's repo: read it, never edit or commit into it (pull to update). Treat it as one more source when gathering a topic; the mock exam counts alongside `exams/`.
 - `exams/` — past exam papers with solutions (e.g. `exam_2025_with_solutions.md`: 10 MCQs, one correct option each, with per-option explanations). Per the note at its top, the **2026 exam is MCQ-only, and longer**. Use these to gauge what gets asked and at what depth: when writing a note on a topic a past question covers, make sure the note answers it and put the trap in `## Da ricordare`.
 
-The repo root is a git repo; PDFs and images are tracked with **git LFS** by extension (see `.gitattributes`), transcripts and sidecars stay plain text. Drop new files in and they're handled automatically. Note the vault root is `appunti_nlp/`, one level below the repo root.
+The repo root is a git repo; PDFs and images are tracked with **git LFS** by extension (see `.gitattributes`), transcripts and sidecars stay plain text. Drop new files in and they're handled automatically.
 
-The user will keep dropping new PDFs/subtitles/exams into `docs/`, `lab/`, or `exams/` and ask for notes to be written or extended in `appunti_nlp/`.
+The user will keep dropping new PDFs/subtitles/exams into `docs/`, `lab/`, or `exams/` and ask for notes to be written or extended in `appunti/`.
 
 ## Before writing anything
 
 **A topic is not a file.** One topic is often spread over more than one deck and more than one recording, and the numbering doesn't line up across sources. Before writing, gather *everything* that touches it — `ls docs/ | grep -i <topic>`, `cat vids/index.json`, `ls lab/`, `ls ta_sessions/Exercises/`, `grep -il <topic> exams/* ta_sessions/Exam/*` — and match by **topic, not by number or date**. Don't assume the first match is the whole story.
 
-**Check what already exists.** `ls appunti_nlp/` and grep for the topic before starting a new note. If it's already covered, extend that note. Two notes that each half-cover the same thing are worse than one that covers it.
+**Check what already exists.** `ls appunti/` and grep for the topic before starting a new note. If it's already covered, extend that note. Two notes that each half-cover the same thing are worse than one that covers it.
 
-`appunti_nlp/000 - Indice.md` is the map of the course — one line per topic. Add the note to it when you create one.
+`appunti/000 - Indice.md` is the map of the course — one line per topic. Add the note to it when you create one.
 
 ## Note conventions (match existing files exactly)
 
-- Filename: `YYYY-MM-DD - Title.md`, placed directly in `appunti_nlp/`.
+- Filename: `YYYY-MM-DD - Title.md`, placed directly in `appunti/`.
 - **Language: lecture notes are in English.** That's what the substantial ones use (`Introduction to NLP`, `Neural Networks and Word Embeddings`), and the exam is in English, so terminology is English regardless. Don't switch an existing note's language — when extending one, match what's already in the file.
   - The Italian files are a different kind of thing: `Robe miste` is scratch, `Sessione gruppo progetto` is personal project notes. Lecture conventions don't apply to them; leave them in Italian and don't reformat them.
   - When a note is genuinely new and unrelated to any existing one, default to English.
@@ -38,7 +40,7 @@ The user will keep dropping new PDFs/subtitles/exams into `docs/`, `lab/`, or `e
 - Heavy use of **bold** for key terms, `-` bullet lists, and Markdown tables for side-by-side comparisons.
 - Blockquotes (`>`) for verbatim definitions/quotes from slides or the lecturer.
 - Math in LaTeX: inline `$...$`, display `$$...$$` — Obsidian renders both natively.
-- Images embedded with Obsidian wikilink syntax: `![[assets/YYYY-MM-DD/filename.png]]`.
+- Images embedded with Obsidian wikilink syntax, path from the vault (= repo) root: `![[appunti/assets/YYYY-MM-DD/filename.png]]`.
 - **Links between notes**: `[[2026-08-25 - Introduction to NLP]]` whenever a concept is properly defined in another note. Don't redefine it — link it. This is a vault, not a stack of PDFs, and at revision time the connections are half the value.
 - Don't invent structure/sections beyond what's needed to capture the material — no filler, no restating the obvious.
 
@@ -73,12 +75,12 @@ For a pointer inside the text, a bare link at the end of the sentence: `… (see
 
 ## Workflow for turning a PDF into notes
 
-1. Convert relevant slide pages to images with `pdftoppm` (e.g. `pdftoppm -png -r 150 -f <page> -l <page> "docs/NN - Title.pdf" appunti_nlp/assets/YYYY-MM-DD/prefix`).
+1. Convert relevant slide pages to images with `pdftoppm` (e.g. `pdftoppm -png -r 150 -f <page> -l <page> "docs/NN - Title.pdf" appunti/assets/YYYY-MM-DD/prefix`).
 2. Trim whitespace borders with ImageMagick: `convert in.png -trim +repage out.png` (or `mogrify -trim` in place). Use a short, descriptive prefix per lecture (e.g. `nn-primer-024.png`); append `-crop` for a further-cropped variant of the same page when only part of a slide is relevant.
 3. Only save/embed images that add real value (diagrams, tables, formulas) — don't screenshot pure bullet-text slides that are easily transcribed.
 4. If the lecture's transcript exists in `vids/subs/` (look it up in `vids/index.json`), `grep` it for the surrounding timestamp/topic to catch things the lecturer said but that aren't on the slide (asides, extra examples, emphasis, things glossed over quickly) — fold those into the note as prose or bullets, not just slide transcription. `grep -i -n -B2 -A4 '<term>' vids/subs/*.srt`; the `-B2` keeps the cue's timestamp in view, which is what you need for a timestamped link.
 5. `cat` the matching `.json` sidecar for the `viewerUrl` when you're going to link a moment.
-6. Write/extend the note in `appunti_nlp/`, following the conventions above.
+6. Write/extend the note in `appunti/`, following the conventions above.
 
 ## When a note is finished
 
@@ -89,7 +91,7 @@ Not when you've covered every slide. When:
 - [ ] Terms defined in another note are linked with `[[...]]`, not redefined.
 - [ ] It closes with a short **`## Da ricordare`** section: the 3–8 things you'd re-check the night before the exam — exact definitions, formulas, conditions, traps. It's the most-read part of the note, so keep it tight.
 - [ ] Anything the lecturer said about the exam is marked prominently.
-- [ ] It's listed in `appunti_nlp/000 - Indice.md`.
+- [ ] It's listed in `appunti/000 - Indice.md`.
 
 (Scratch and project notes are exempt — this applies to lecture notes.)
 

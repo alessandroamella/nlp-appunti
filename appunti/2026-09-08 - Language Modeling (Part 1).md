@@ -305,7 +305,7 @@ And that is for **bigrams**, the second-simplest model there is. Trigrams are ho
 
 ### Why this is unavoidable: Zipf's law
 
-![[assets/2026-09-08/lm-pt1-051.png]]
+![[appunti/assets/2026-09-08/lm-pt1-051.png]]
 _Word frequency vs. rank in Romeo and Juliet: a handful of words ("and", "the", "I", "to") dominate, then a very long, very flat tail._
 
 $$p(w_i) \propto 1/i \qquad (w_i = \text{the } i\text{-th most frequent word})$$
@@ -327,7 +327,7 @@ Four families, in increasing sophistication:
 
 ### The intuition
 
-![[assets/2026-09-08/lm-pt1-054.png]]
+![[appunti/assets/2026-09-08/lm-pt1-054.png]]
 _Left: sparse counts for $P(w \mid \text{denied the})$ — 4 words share all 7 observations, everything else is exactly 0. Right: shave a little mass off each observed count and pool it as "other", so unseen continuations get a small but non-zero probability._
 
 The slogan from the slide: **"steal probability mass to generalise better."** You are deliberately making the model fit the training data slightly *worse* in exchange for it not being catastrophically wrong on anything it has not seen — the classic bias/variance trade.
@@ -421,7 +421,7 @@ Recall the neural NLP pipeline: embeddings → model composes them into $h_T = f
 
 ### From a vector back to a distribution over words
 
-![[assets/2026-09-08/lm-pt1-064.png]]
+![[appunti/assets/2026-09-08/lm-pt1-064.png]]
 _A low-dimensional representation of "students opened their" is projected into a probability distribution over the entire vocabulary; "books" and "laptops" get the mass._
 
 **Vocab projection + softmax layers** convert a vector representation into a probability distribution over the entire vocabulary. Given a $d$-dimensional representation $\mathbf{x}$ of a prefix:
@@ -433,7 +433,7 @@ This is exactly the projection+softmax machinery from CBOW/skip-gram ([[2026-09-
 
 ### The architecture
 
-![[assets/2026-09-08/lm-pt1-068.png]]
+![[appunti/assets/2026-09-08/lm-pt1-068.png]]
 _Fixed-context neural LM computing $P(\text{mat} \mid \text{the cat sat on the})$: five embeddings are **concatenated**, passed through one hidden layer, then projected to $|V|$ and softmaxed._
 
 With a fixed context of $n = 5$:
@@ -480,7 +480,7 @@ The starving cat, who had not eaten in six days, fanatically chased the elusive 
 
 The *cat–mouse* relationship is the same in all five, but the **distance** between them keeps changing.
 
-![[assets/2026-09-08/lm-pt1-074.png]]
+![[appunti/assets/2026-09-08/lm-pt1-074.png]]
 _A 5-word fixed context handles the first four prefixes, but once "cat" falls outside the window the model simply cannot see it._
 
 A fixed-context model would need a **different model per context length** — or one enormous model sized for the worst case, wasteful for every ordinary sentence. Real sequences are never of fixed length, so this is not an edge case; it is the normal case.
@@ -491,10 +491,10 @@ A fixed-context model would need a **different model per context length** — or
 
 > **Solution**: recurrent neural networks — NNs with **feedback loops**.
 
-![[assets/2026-09-08/lm-pt1-076.png]]
+![[appunti/assets/2026-09-08/lm-pt1-076.png]]
 _The compact ("folded") view: an input $x_t$ enters the unit, the unit maintains a state $h_t$ fed back into itself, and emits an output $z_t$._
 
-![[assets/2026-09-08/lm-pt1-077.png]]
+![[appunti/assets/2026-09-08/lm-pt1-077.png]]
 _**Unrolling** the RNN across all time steps gives the full computation graph. Allows learning from the entire sequence history, regardless of length._
 
 The two views are the same network: the folded one is how you *draw* it in a paper, the unrolled one is how it actually *executes* and how backpropagation sees it. At each step $t$ the unit receives the current input $x_t$ **and** the state $h_{t-1}$ accumulated from everything before it, and produces (i) an output $z_t$ for this step and (ii) a new state $h_t$ passed forward.
@@ -503,7 +503,7 @@ The two views are the same network: the folded one is how you *draw* it in a pap
 
 ### Putting a classifier on top
 
-![[assets/2026-09-08/lm-pt1-083.png]]
+![[appunti/assets/2026-09-08/lm-pt1-083.png]]
 _The classifier is just an output projection followed by a softmax — exactly the same prediction head as in every model so far._
 
 $$\text{Binary: } P(y) = \sigma(W_o z_T) \qquad \text{Multi-class: } P(y) = \text{softmax}(W_o z_T)$$
@@ -525,10 +525,10 @@ $$\text{Binary: } P(y) = \sigma(W_o z_T) \qquad \text{Multi-class: } P(y) = \tex
 
 You can attach a classifier at **any** step; which steps you use is determined by the task:
 
-![[assets/2026-09-08/lm-pt1-085.png]]
+![[appunti/assets/2026-09-08/lm-pt1-085.png]]
 _**Sequence labelling** (e.g. part-of-speech tagging): one classifier per time step, because each token needs its own label._
 
-![[assets/2026-09-08/lm-pt1-086.png]]
+![[appunti/assets/2026-09-08/lm-pt1-086.png]]
 _**Text generation**: the token predicted at step $t$ is **fed back in** as the input at step $t+1$, and the loop continues until `<EOS>`._
 
 That feedback loop in generation is worth noticing: it is the chain rule of §3 made operational — each step conditions on everything generated so far.
@@ -539,7 +539,7 @@ That feedback loop in generation is worth noticing: it is the chain rule of §3 
 
 *(The 08 Sep lecture stopped at the text-generation examples above. The Elman slides and the wrap-up below were presented at the start of the 15 Sep lecture.)*
 
-![[assets/2026-09-08/lm-pt1-093.png]]
+![[appunti/assets/2026-09-08/lm-pt1-093.png]]
 _The Elman network, with the two components that make it work highlighted._
 
 $$h_t = \sigma(W_{hx} x_t + W_{hh} h_{t-1} + b_h)$$

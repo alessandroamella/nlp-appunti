@@ -32,7 +32,7 @@ At each time step $t$, the model takes the tokens so far $\{y\}_{<t}$ and:
 3. **selects a token** from that distribution with a **decoding algorithm** $g$:
    $$\hat y_t = g\big(P(y_t \mid \{y_{<t}\})\big)$$
 
-![[assets/2026-10-20/nlg-046.png]]
+![[appunti/assets/2026-10-20/nlg-046.png]]
 
 The model outputs **a distribution, not a token** ("He wanted to go to the" → restroom, grocery, store, airport…). To keep the autoregressive loop going, something has to pick one token, and that something is $g$. Then $\hat y_t$ is fed back as input at $t+1$, until `<END>` is produced or a length limit is reached.
 
@@ -40,7 +40,7 @@ The model outputs **a distribution, not a token** ("He wanted to go to the" → 
 
 $$\mathcal L = -\sum_{t=1}^{T} \log P\big(y^*_t \mid \{y^*\}_{<t}\big)$$
 
-![[assets/2026-10-20/nlg-053.png]]
+![[appunti/assets/2026-10-20/nlg-053.png]]
 
 - Each step is a **multi-class classification task**: each $w \in V$ is a class, and the label is the actual next word $y^*_t$ of the training sequence, called the **gold** or **ground-truth** token.
 - The input at every step is the **gold** prefix $y^*_0, \dots, y^*_{t-1}$, not the model's own predictions. That's **teacher forcing**, the same thing seen for RNNs, Transformers and GPT ([[2026-09-22 - Seq2Seq Models and Transformers#Training]], [[2026-09-29 - Pre-trained Language Models#Pretraining]]). Pretraining is literally this objective.
@@ -72,7 +72,7 @@ $$\hat y_t = \arg\max_{w\in V} P(y_t = w \mid \{y\}_{<t})$$
 
 **Beam search: explore several different hypotheses instead of just one.** Keep track of the **$b$ most probable sequences** at each decoder step instead of one. $b$ is the **beam size**, and $b = 1$ is greedy decoding.
 
-![[assets/2026-10-20/nlg-067.png]]
+![[appunti/assets/2026-10-20/nlg-067.png]]
 
 Example with $b = 2$. The numbers are the **log-probability of the whole sequence so far** (sum of the token log-probs), not of the last token:
 
@@ -102,11 +102,11 @@ MT is close to one-to-one: syntax and length change, but the content is fixed by
 - Early dialogue systems answered **"I don't know."** all the time. It's a very common, safe continuation in the training data. (The irony noted in class: today the complaint is the opposite, that models *don't* say "I don't know" and hallucinate.)
 - Feed the model **"I don't know. I don't know. I don't know…"** and look at the NLL of each step: **the negative log-likelihood decreases over time.** The more the model has repeated something, the more confident it gets that the repetition continues.
 
-![[assets/2026-10-20/nlg-073.png]]
+![[appunti/assets/2026-10-20/nlg-073.png]]
 
 - **Worse for Transformer LMs.** On "dogs dogs dogs…", the NLL of the LSTM **saturates** after a few steps, but the Transformer's (OpenAI GPT) **keeps dropping** (see [1:17:33](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3afaa41e-2164-4a9a-ad0a-b4e90076fde1&start=4653)). My reading of why: attention can copy from any earlier position directly, so each repetition gives one more "matching" past token to copy from.
 
-![[assets/2026-10-20/nlg-074.png]]
+![[appunti/assets/2026-10-20/nlg-074.png]]
 
 - **And it keeps going: the longer it goes, the worse it gets.** This is a self-reinforcing loop: repeat → more confident → repeat. It's the "Universidad Nacional Autónoma de México" continuation from last week.
 
@@ -116,7 +116,7 @@ MT is close to one-to-one: syntax and length change, but the content is fixed by
 
 ### Are greedy methods reasonable?
 
-![[assets/2026-10-20/nlg-077.png]]
+![[appunti/assets/2026-10-20/nlg-077.png]]
 
 The probability the model assigns to each token of a 100-token text: **beam search** stays near the top, almost always ~1. **Human** text jumps all over the place, from very unlikely to very likely tokens. Human language has **higher entropy**: it's less predictable. Greedy decoding produces a *distribution* of token probabilities that looks nothing like human writing. So no, greedy methods aren't reasonable for open-ended text.
 
@@ -150,7 +150,7 @@ It's random, so **any** token can come out. But it's **not uniform**: likely tok
 
 **What's the problem with top-k?** One fixed $k$ for every step, but **the distributions are dynamic**:
 
-![[assets/2026-10-20/nlg-086.png]]
+![[appunti/assets/2026-10-20/nlg-086.png]]
 
 - **Flat** distribution ("She said, 'I never ___'": thought, knew, had, saw, did, said, wanted, told, liked… all plausible): a small $k$ **cuts off too quickly** and removes viable options.
 - **Peaky** distribution ("I ate the pizza while it was still ___": *hot*, then a tail): a large $k$ **cuts off too slowly** and lets tail tokens in. That's the same issue as vanilla sampling.
@@ -161,7 +161,7 @@ A student proposed exactly this in class: make the cutoff **distribution-aware**
 
 > **Sample from all tokens in the top-$p$ cumulative probability mass** (where the mass is concentrated). **$k$ varies with the uniformity of $P_t$.**
 
-![[assets/2026-10-20/nlg-089.png]]
+![[appunti/assets/2026-10-20/nlg-089.png]]
 
 With $p$ fixed (say 0.8): a **flat** distribution needs **many** tokens to reach 80%, so it acts like a large $k$. A **peaky** one reaches it with **2**, so it acts like a small $k$. One hyperparameter now adapts to every step. **Top-p is the sampling method used in most LLMs today.**
 
@@ -171,7 +171,7 @@ All of the above trusts the distribution as it comes. The **softmax temperature*
 
 $$P_t(y_t = w) = \frac{\exp(S_w/\tau)}{\sum_{w'\in V}\exp(S_{w'}/\tau)}$$
 
-![[assets/2026-10-20/nlg-092.png]]
+![[appunti/assets/2026-10-20/nlg-092.png]]
 
 Dividing by $\tau > 1$ **shrinks the differences** between scores. With scores 10 and 5, the gap is 5. Divide by 2 and you get 5 and 2.5, a gap of 2.5. The softmax only sees differences, so the distribution flattens.
 
@@ -192,7 +192,7 @@ Temperature is a **hyperparameter applied at decoding time**. It changes no weig
 
 **Problem: what if I don't trust how well my model's distribution is calibrated?** Temperature reshapes it blindly. Instead, **don't rely only on the model's distribution**.
 
-![[assets/2026-10-20/nlg-097.png]]
+![[appunti/assets/2026-10-20/nlg-097.png]]
 
 **Re-balance $P_t$ using retrieval from n-gram phrase statistics** (kNN-LM, Khandelwal et al. 2020):
 

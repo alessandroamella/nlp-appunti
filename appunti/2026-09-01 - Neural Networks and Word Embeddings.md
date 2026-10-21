@@ -45,7 +45,7 @@ No matter what transformation you apply on top (TF-IDF, normalization, etc.), th
 
 **What we actually want**: to capture _semantic_ relationships between words — e.g., the relationship between "man" and "woman" should be analogous to that between "king" and "queen"; "walking" relates to "walked" the same way "swimming" relates to "swam"; "country" relates to "capital" consistently across many country–capital pairs (Canada–Ottawa, Turkey–Ankara, Vietnam–Hanoi, Japan–Tokyo, etc.). These are examples of **word analogies** that emerge naturally once words are placed in a well-trained vector space — this is the key goal of neural word embeddings.
 
-![[assets/2026-09-01/nn-primer-036.png]]
+![[appunti/assets/2026-09-01/nn-primer-036.png]]
 _Male–Female, verb-tense, and country–capital relationships all show up as **consistent, parallel directions/offsets** in a well-trained embedding space — the same "arrow" (e.g., man→woman) works for king→queen too._
 
 > [!example] Lab — analogies, and the bias they expose
@@ -222,7 +222,7 @@ You instantly guess "movie" or "show" — not because anyone told you the defini
 >
 > Result: $(0.66,\ 0.24,\ 0.10)$ — non-negative, sums to 1, and it preserves the *ranking* of the original scores (cat > dog > car) while amplifying the gap between them (a score gap of only 0.9 becomes a probability gap of 0.42).
 >
-> ![[assets/2026-09-01/softmax-quick-example.png]]
+> ![[appunti/assets/2026-09-01/softmax-quick-example.png]]
 > _Left: arbitrary raw scores. Right: after softmax — same ranking, but now a proper probability distribution._
 >
 > **Why not just normalize the raw scores directly (divide by their sum)?** Two reasons: raw scores can be negative (breaks "divide by sum = probability" if the sum is small/negative), and exponentiation's amplification effect is actually desirable — it pushes the model toward a confident, peaked distribution around the highest-scoring class rather than a flat one, which is what you want when training a classifier with gradient descent.
@@ -237,7 +237,7 @@ You instantly guess "movie" or "show" — not because anyone told you the defini
 
 Architecture: take the context word embeddings → **sum** them → **project** (via a matrix) into vocabulary-sized space → **softmax** → probability distribution over the whole vocabulary.
 
-![[assets/2026-09-01/nn-primer-072.png]]
+![[appunti/assets/2026-09-01/nn-primer-072.png]]
 _CBOW architecture: context word embeddings are summed, passed through a projection matrix_ $\mathbf{U}$_, then softmaxed to predict the missing center word ("movie")._
 
 **Formally**, with window size $N=2$ on each side:
@@ -297,7 +297,7 @@ So CBOW makes **one prediction per training example** (many inputs → one outpu
 
 > Given: **movie** → predict: _watched, we, the, enjoyed_
 
-![[assets/2026-09-01/nn-primer-087.png]]
+![[appunti/assets/2026-09-01/nn-primer-087.png]]
 _Skip-gram architecture: the center word's embedding is projected and used to independently predict each surrounding context word._
 
 $$ \max\ P(\text{enjoyed}, \text{the}, \text{we}, \text{watched} \mid \text{movie}) \quad\Longrightarrow\quad \max\ P(x_{t-2}, x_{t-1}, x_{t+1}, x_{t+2} \mid x_t) $$
@@ -347,7 +347,7 @@ A human looking at this table immediately sees **two underlying topics**: a "spo
 
 **Formally**: recall from Lecture 1's classical-NLP toolkit: for topic detection, you can factorize the TF-IDF matrix (rows = docs, columns = words) into two smaller matrices $A$ (docs × topics) and $B$ (topics × words), such that $T \approx AB$. This is **Latent Semantic Analysis (LSA)**, efficiently computed via **Singular Value Decomposition (SVD)**: $T = USV^T$.
 
-![[assets/2026-09-01/nn-primer-098.png]]
+![[appunti/assets/2026-09-01/nn-primer-098.png]]
 _LSA as matrix factorization: the (docs × words) TF-IDF matrix is approximated as the product of a (docs × topics) matrix_ $A$ _and a (topics × words) matrix_ $B$_. The optimization problem is to find_ $A, B$ _minimizing_ $\sum_{d,w}(T_{dw} - A_d B_w)^2$_, i.e. the squared reconstruction error over every doc/word entry._
 
 - Both $U$ and $V$ have orthonormal columns; $S$ is diagonal with values in decreasing order (each capturing the "importance"/variance explained by a topic).
@@ -400,7 +400,7 @@ $$ M[c, w] = \text{PMI}(c, w) = \log \frac{\Pr(c, w)}{\Pr(c),\Pr(w)} $$
 >
 > So $\text{PMI}(W3,C3) > \text{PMI}(W2,C2) > \text{PMI}(W1,C2)$, answer (d). **The trap:** W1–C2 has the **largest raw count** (6) but the **smallest PMI** of the three, because both W1 and C2 are frequent everywhere, so a lot of co-occurrence is expected by chance. PMI rewards co-occurrence **above chance**, not co-occurrence as such.
 
-![[assets/2026-09-01/nn-primer-104.png]]
+![[appunti/assets/2026-09-01/nn-primer-104.png]]
 _Same factorization idea, applied to a (contexts × words) PMI matrix instead of a (docs × words) TF-IDF matrix: word2vec is essentially learning the columns of_ $B$ _("latent dims" = embedding dimensions) as word vectors._
 
 **Key theoretical connection**: it has been shown that **word2vec is implicitly performing matrix factorization of a (shifted) PMI matrix** — i.e., factorizing $M[c,w] = \text{PMI}(c,w)$ into $A$ (context vectors) and $B$ (word vectors), then using the columns of $B$ as word embeddings, is mathematically closely related to what word2vec learns via its neural training objective. In other words, the "classical" linear-algebra route (SVD/matrix factorization of a co-occurrence statistic) and the "neural" route (CBOW/skip-gram trained via backpropagation) are two different paths to a similar kind of representation. (For the curious: this connection is explored in the paper _"Neural Word Embedding as Implicit Matrix Factorization"_ and various accompanying blog explainers.)
@@ -426,7 +426,7 @@ _Same factorization idea, applied to a (contexts × words) PMI matrix instead of
 
 - **What changed with Transformer-based models (e.g., BERT)**: instead of a static lookup table, these models produce **contextual embeddings** — the vector representing a word changes depending on its surrounding sentence context, so the same word can get different vectors in different usages (e.g., a word used as a noun with one sense vs. the same word used with a different sense elsewhere) — something fundamentally impossible with classical, context-free embeddings by design. This transition (static → contextual embeddings) is the conceptual bridge into the rest of the course, starting with language modeling next week.
 
-![[assets/2026-09-01/nn-primer-108.png]]
+![[appunti/assets/2026-09-01/nn-primer-108.png]]
 _BERT (introduced by Google Research in 2018) takes a sequence of tokens and outputs one vector per token (plus an overall "doc" vector for the special_ `<START>` _token) — the vector for "bat" differs between the two sentences because it depends on the whole surrounding context, unlike a static word2vec vector._
 
 > [!note] Static vs. contextual embeddings, side by side (my own summary — not on the slides)
@@ -461,7 +461,7 @@ Left open at the end of this lecture (last content slide of the deck) and **answ
 
 Instead of reasoning from the objective functions, the lecturer answered **empirically**: train both models on the same corpus (evidently recipe text, judging by the vocabulary), then ask each one for the 10 nearest neighbours of the word *cut* — `model.wv.most_similar('cut', topn=10)`.
 
-![[assets/2026-09-08/lm-pt1-022.png]]
+![[appunti/assets/2026-09-08/lm-pt1-022.png]]
 
 | rank | Skip-gram | CBOW |
 |---|---|---|

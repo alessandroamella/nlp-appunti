@@ -17,7 +17,7 @@ Two recap Menti questions are worth remembering, because they're exam-shaped:
 
 ## 1. Scaling LMs into LLMs
 
-![[assets/2026-10-06/llms-034.png]]
+![[appunti/assets/2026-10-06/llms-034.png]]
 
 GPT → GPT-2 → GPT-3 → GPT-4: 117M → 1.5B (~10×) → 175B (~100× again) → 1.8T (rumoured). Model size, data and compute all grew together:
 
@@ -49,7 +49,7 @@ The **quantitative** change is more parameters, data and compute. The **qualitat
 | **zero-shot** | a **task description** ("Translate English to French:") + the **prompt** ("cheese =>") | no | GPT-2 |
 | **in-context learning (few-shot)** | task description + **a few examples** (*demonstrations*: "sea otter => loutre de mer", …) + prompt, **all in the same input sequence** | **no** | GPT-3 |
 
-![[assets/2026-10-06/llms-040.png]]
+![[appunti/assets/2026-10-06/llms-040.png]]
 
 > **There is no more learning in the classical sense.** The model "learns" by **attending to the tokens of the in-context examples**: no gradients, no backpropagation, no parameter updates.
 
@@ -73,7 +73,7 @@ Remove the examples from the prompt and the "learning" is gone. GPT had to be fi
 
 ### Necessity of scale
 
-![[assets/2026-10-06/llms-050.png]]
+![[appunti/assets/2026-10-06/llms-050.png]]
 
 On the same task, adding examples in context helps **a lot at 175B** (GPT-3, ~10× T5 scale), **a little at 13B** (~T5 scale, "the largest model we normally fine-tune"), and **barely at 1.3B** (GPT-2 scale).
 
@@ -81,7 +81,7 @@ On the same task, adding examples in context helps **a lot at 175B** (GPT-3, ~10
 
 ### It's sensitive
 
-![[assets/2026-10-06/llms-052.png]]
+![[appunti/assets/2026-10-06/llms-052.png]]
 
 - **Example selection matters:** GPT-3 on SST-2 sentiment with 5 random demonstrations from the training set, 5 trials: accuracy from **86.9% to 95.8%**.
 - **Example order matters:** the *same* examples in 24 different orders give a large spread. The variance is **largest for small models** and shrinks, but doesn't vanish, at 175B.
@@ -111,7 +111,7 @@ It's mostly **trial and error**, with no principled theory. Folk findings mentio
 
 **Gradient-guided search:** initialise a set of **trigger tokens** in the prompt template, estimate how the loss changes if each trigger is replaced by another vocabulary token, and keep the best ones.
 
-![[assets/2026-10-06/llms-058.png]]
+![[appunti/assets/2026-10-06/llms-058.png]]
 
 > **The optimal prompts found are sometimes sequences of random words.** For sentiment: "atmosphere alot dialogue Clone totally [MASK]".
 
@@ -126,7 +126,7 @@ If the best discrete prompt is gibberish anyway, why insist on real tokens? **Le
 3. Compute the gradients of the loss **with respect to the prompt parameters**.
 4. **Only the prompt vectors are updated. The rest of the model is frozen.**
 
-![[assets/2026-10-06/llms-062.png]]
+![[appunti/assets/2026-10-06/llms-062.png]]
 
 **Menti: (dis)advantages of prompt tuning?** (see [1:08:01](https://brightspace.au.dk/content/enforced/219812-LR60743/recordings_2026/video1764972533.mp4#t=4081))
 
@@ -134,7 +134,7 @@ If the best discrete prompt is gibberish anyway, why insist on real tokens? **Le
 - ✅ **Separable multi-task learning**: one frozen model, one small prompt per task, and you can mix tasks in the same batch. With model tuning you need a separate fine-tuned copy per task.
 - ❌ **Not as interpretable as discrete prompts**: you get dense vectors, not text you can read.
 
-![[assets/2026-10-06/llms-063.png]]
+![[appunti/assets/2026-10-06/llms-063.png]]
 
 **As scale increases** (SuperGLUE, T5 models):
 
@@ -148,13 +148,13 @@ If the best discrete prompt is gibberish anyway, why insist on real tokens? **Le
 
 ## 6. Chain-of-thought prompting
 
-![[assets/2026-10-06/llms-070.png]]
+![[appunti/assets/2026-10-06/llms-070.png]]
 
 **Standard prompting** shows the question and the answer ("The answer is 11."). For a multi-step problem the model often gets it wrong (27 instead of 9).
 
 **Chain-of-thought (CoT):** for complex problems, don't just show the example prompt and the answer. **Demonstrate the reasoning process** in the in-context example ("Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. 5 + 6 = 11."). The model **learns to produce an explanation as it decodes the answer**, and mimics the pattern on the new question ("23 − 20 = 3 … 3 + 6 = 9").
 
-![[assets/2026-10-06/llms-071.png]]
+![[appunti/assets/2026-10-06/llms-071.png]]
 
 > **CoT needs scale to work.** On GSM8K, SVAMP and MAWPS, CoT only beats standard prompting for the largest models (LaMDA/GPT/PaLM at ~100B+). Below that it doesn't help, or it hurts.
 
@@ -182,7 +182,7 @@ If the best discrete prompt is gibberish anyway, why insist on real tokens? **Le
 
 ChatGPT (late 2022) **follows instructions and explains its answers**. The recipe has three steps (from InstructGPT). The same flavour is behind every chat model today, with different RL algorithms and data:
 
-![[assets/2026-10-06/llms-081.png]]
+![[appunti/assets/2026-10-06/llms-081.png]]
 
 | step | data humans provide | what's trained |
 |---|---|---|
@@ -204,7 +204,7 @@ It's exactly next-token prediction with teacher forcing, as in pretraining ([[20
 
 ### 7.2 What's wrong with only SFT?
 
-![[assets/2026-10-06/llms-084.png]]
+![[appunti/assets/2026-10-06/llms-084.png]]
 
 1. **Expensive to collect lots of data.** Every example is a human writing a full answer. (Class answers: "we'd need a lot of answers written by hand", "with little data a lot of probabilities will be 0 or 1".) Fine-tuning *compute* isn't the issue; the pretrained model already exists.
 2. **Exposure bias.** **During training**, the model's inputs are **gold** context tokens from real human-written text: $\mathcal L_{MLE} = -\log P(y^*_t \mid \{y^*\}_{<t})$. **At generation time**, its inputs are its **own previously decoded tokens**: $\mathcal L_{dec} = -\log P(\hat y_t \mid \{\hat y\}_{<t})$. The model is never trained on the situation it's in at test time. Once its own outputs drift from human text, it is on unfamiliar ground. The slide's example: a continuation that starts fine and degenerates into repeating "Universidad Nacional Autónoma de México" again and again (see [1:37:49](https://brightspace.au.dk/content/enforced/219812-LR60743/recordings_2026/video1764972533.mp4#t=5869)).
@@ -222,7 +222,7 @@ We can't have humans judge every output during training. So:
 
 $$\mathcal L_{RM} = -\log \sigma\big(R(Y_+) - R(Y_-)\big)$$
 
-![[assets/2026-10-06/llms-086.png]]
+![[appunti/assets/2026-10-06/llms-086.png]]
 
 As $R(Y_+) - R(Y_-) \to \infty$, $\sigma(\cdot) \to 1$ and $\log(\cdot) \to 0$. The loss pushes the **gap** between the good and the bad score up, which puts them in "far-apart regions". The lecturer compared it to a margin loss, the same spirit as an SVM. (The standard name is the Bradley–Terry pairwise loss.) Only the **difference** matters, so the absolute scale of $R$ is arbitrary. That's relevant for the baseline below.
 
@@ -230,7 +230,7 @@ As $R(Y_+) - R(Y_-) \to \infty$, $\sigma(\cdot) \to 1$ and $\log(\cdot) \to 0$. 
 
 ### 7.4 Step 3: optimising with RL
 
-![[assets/2026-10-06/llms-087.png]]
+![[appunti/assets/2026-10-06/llms-087.png]]
 
 - **Rollout:** the LM (the *policy*) generates a response to a query ("This movie is" → "really great!").
 - **Evaluation:** the reward model scores query + response (e.g. 1.0). The slide notes the reward could also come from a classifier, a rule, or a human.
@@ -242,7 +242,7 @@ In words: step 1 shows the model good outputs, step 2 learns what a good output 
 
 ### 7.5 REINFORCE
 
-![[assets/2026-10-06/llms-089.png]]
+![[appunti/assets/2026-10-06/llms-089.png]]
 
 Given an instruction, **sample a demonstration from the model** ($\hat y_1, \hat y_2, \dots$, each fed back in), then:
 
@@ -264,7 +264,7 @@ $$\mathcal L_{RL} = -R(\hat Y) \sum_{t=1}^{T} \log P\big(\hat y_t \mid \{x^*\};\
 
 Covered on 20 Oct (see [2:42:18](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3afaa41e-2164-4a9a-ad0a-b4e90076fde1&start=9738)). **PPO is what was actually used for ChatGPT.** It's REINFORCE plus "hooks" that stop the model from moving too far from where it started.
 
-![[assets/2026-10-06/llms-094.png]]
+![[appunti/assets/2026-10-06/llms-094.png]]
 
 $$\mathcal L_{PPO} = -\min\!\left( R(\hat Y)\sum_{t=1}^{T} \log \frac{P_{curr}(\hat y_t \mid \{x^*\};\{\hat y\}_{<t})}{P_{base}(\hat y_t \mid \{x^*\};\{\hat y\}_{<t})},\ \ g(\epsilon, R(\hat Y)) \right) \qquad g = \begin{cases}(1+\epsilon)R(\hat Y) & R(\hat Y) \ge 0\\ (1-\epsilon)R(\hat Y) & R(\hat Y) < 0\end{cases}$$
 
@@ -279,7 +279,7 @@ $$\mathcal L_{PPO} = -\min\!\left( R(\hat Y)\sum_{t=1}^{T} \log \frac{P_{curr}(\
 
 ### 7.7 Outcome
 
-![[assets/2026-10-06/llms-097.png]]
+![[appunti/assets/2026-10-06/llms-097.png]]
 
 - **Instruction-tuned smaller models are better at human tasks than GPT-3.** Win rate against SFT-175B: PPO > SFT > prompted GPT > GPT at every size. A 1.3B PPO model beats 175B GPT-3. SFT alone already helps, and PPO on top helps much more.
 - **Multi-task abilities**: planning a two-day Paris trip, writing attention-mechanism code…
@@ -289,7 +289,7 @@ $$\mathcal L_{PPO} = -\min\!\left( R(\hat Y)\sum_{t=1}^{T} \log \frac{P_{curr}(\
 
 Covered on 20 Oct (see [2:47:33](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3afaa41e-2164-4a9a-ad0a-b4e90076fde1&start=10053)).
 
-![[assets/2026-10-06/llms-101.png]]
+![[appunti/assets/2026-10-06/llms-101.png]]
 
 RLHF needs a separate reward model trained from the preferences, *then* RL against it. **DPO** asks: we already have the preference data, so why not optimise for human preferences **directly**?
 

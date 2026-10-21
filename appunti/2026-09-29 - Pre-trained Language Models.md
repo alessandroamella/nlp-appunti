@@ -29,7 +29,7 @@ and the Transformer sees $x_i = e_i + p_i$.
 
 ### Addition vs concatenation
 
-![[assets/2026-09-29/plms-020.png]]
+![[appunti/assets/2026-09-29/plms-020.png]]
 
 | | addition $x_i = e_i + p_i$ | concatenation $[e_i; p_i]$ |
 |---|---|---|
@@ -41,7 +41,7 @@ and the Transformer sees $x_i = e_i + p_i$.
 
 ### Sinusoidal encodings: many clocks
 
-![[assets/2026-09-29/plms-022.png]]
+![[appunti/assets/2026-09-29/plms-022.png]]
 
 The original Transformer used fixed **sinusoids**:
 
@@ -110,7 +110,7 @@ Every token attends to every other, so a layer computes $T^2$ scores. The lectur
 
 ### Sparse attention
 
-![[assets/2026-09-29/plms-030.png]]
+![[appunti/assets/2026-09-29/plms-030.png]]
 
 Fixing the quadratic cost is still an active research line, called **sparse attention**. You don't need *every* pair of tokens:
 
@@ -134,7 +134,7 @@ Fixing the quadratic cost is still an active research line, called **sparse atte
 
 ### Pretraining
 
-![[assets/2026-09-29/plms-035.png]]
+![[appunti/assets/2026-09-29/plms-035.png]]
 
 - **Data:** the Toronto **BooksCorpus**, ~7,000 unpublished books (~13 GB). In the lecturer's words, "back in the day these companies were nice" and used open data.
 - The corpus is cut into **windows of 512 tokens**, so GPT can model context up to 512 tokens. In June 2018 that was a lot.
@@ -151,7 +151,7 @@ $$\mathcal L = -\log P(y^* \mid X)$$
 
 The model stays the same. **Only the way you format the input changes:**
 
-![[assets/2026-09-29/plms-039.png]]
+![[appunti/assets/2026-09-29/plms-039.png]]
 
 | task | input format | why |
 |---|---|---|
@@ -228,7 +228,7 @@ Careful with the vocabulary in the Menti answers. The *problem* is that static e
 
 ### Using ELMo embeddings
 
-![[assets/2026-09-29/plms-059.png]]
+![[appunti/assets/2026-09-29/plms-059.png]]
 
 $$\text{ELMo}_k^{task} = \gamma^{task} \sum_{j=0}^{L} s_j^{task}\, \mathbf h_{k,j}^{LM}$$
 
@@ -245,7 +245,7 @@ Result: improvements across the board over the SOTA (QA, NLI, SRL, coreference, 
 
 ### What's the issue with ELMo?
 
-![[assets/2026-09-29/plms-063.png]]
+![[appunti/assets/2026-09-29/plms-063.png]]
 
 > **ELMo (and bidirectional RNNs in general) are unidirectional models masquerading as bidirectional.** Two separate LMs encode the forward and backward sequence, and their representations are concatenated.
 
@@ -266,7 +266,7 @@ Other Menti answers that were right: only trained on sentences, **not parallelis
 - **BERT-Base:** 12 layers, $d = 768$, 12 heads, **110M** parameters. **BERT-Large:** 24 layers, $d = 1024$, 16 heads, **340M**.
 - Data: BooksCorpus (800M tokens) + English Wikipedia (2.5B tokens), ~3.3B tokens.
 
-![[assets/2026-09-29/plms-065.png]]
+![[appunti/assets/2026-09-29/plms-065.png]]
 
 **Input = token embedding + segment embedding + position embedding** (summed):
 
@@ -308,7 +308,7 @@ The pair format serves BERT's second pretraining task, **next sentence predictio
 - **Prepend** a special **`[CLS]`** token. Its **output embedding** is a contextual representation of the whole sequence.
 - **Put a linear classifier on it.** During fine-tuning, **all** of BERT's parameters are updated along with the classifier, using the gold labels.
 
-![[assets/2026-09-29/plms-071.png]]
+![[appunti/assets/2026-09-29/plms-071.png]]
 
 One pretrained model as the starting point for many tasks:
 
@@ -339,7 +339,7 @@ In GPT, the classification token has to come **last**: with a causal mask, only 
 
 ### Fine-tuning vs embeddings: ELMo is not BERT
 
-![[assets/2026-09-29/plms-079.png]]
+![[appunti/assets/2026-09-29/plms-079.png]]
 
 _❄ = frozen, 🔥 = fine-tuned, Δ = 🔥 − ❄._
 
@@ -382,7 +382,7 @@ These are the attention maps promised in [[2026-09-22 - Seq2Seq Models and Trans
   It keeps **~97% of BERT's performance** with a much smaller model. (The lecturer also gave a general figure of "10× smaller for 90–95%". The 97% on the slide is DistilBERT's. Why not just train the small model directly? A small model trained from scratch can't capture as many patterns. That answer is promised for week 13, on compression.)
 - **ELECTRA:** BERT learns only from the **15%** masked tokens, which is **inefficient**. ELECTRA uses a small **generator** (a small MLM) that fills the masks with plausible tokens ("cooked" → "ate") and a **discriminator** (the real model) that predicts, **for every token**, whether it's **original or replaced**. Learning from **all tokens** speeds up pretraining a lot. For the same compute, ELECTRA beats BERT and RoBERTa, especially at small budgets.
 
-![[assets/2026-09-29/plms-089.png]]
+![[appunti/assets/2026-09-29/plms-089.png]]
 
 > [!example] Lab — what BERT learned (`06 - Pretraining/1. Pretrained Models.ipynb`)
 > - **Context on both sides:** "I went to the [MASK] to buy some bread" → bakery/store; "… to see a doctor" → hospital/clinic. The words *before* the mask are identical, so a left-to-right model would have to give the same distribution in both. The flip side: BERT is **bad at generating**. It was trained to fill ~15% holes in an otherwise complete text, never to write left to right.
@@ -400,7 +400,7 @@ GPT uses only the decoder, BERT only the encoder. **Why not the full Transformer
 - **Oct 2019** (Facebook), 140M (Base, 6+6 layers) / 400M (Large, 12+12 layers). BooksCorpus, many more books, Wikipedia.
 - The **classic Transformer**: a **bidirectional encoder** feeds an **autoregressive decoder**. **Cross-attention is back.**
 
-![[assets/2026-09-29/plms-094.png]]
+![[appunti/assets/2026-09-29/plms-094.png]]
 
 **Pretraining combines BERT and GPT:**
 
@@ -409,7 +409,7 @@ GPT uses only the decoder, BERT only the encoder. **Why not the full Transformer
 
 This is a **denoising autoencoder**. Since the decoder always rebuilds the full original, **any corruption** is allowed, and with a decoder you can also corrupt the *order*, which BERT can't:
 
-![[assets/2026-09-29/plms-095.png]]
+![[appunti/assets/2026-09-29/plms-095.png]]
 
 | corruption | what it does |
 |---|---|
@@ -433,13 +433,13 @@ This is a **denoising autoencoder**. Since the decoder always rebuilds the full 
 
 ### T5: Text-to-Text Transfer Transformer
 
-![[assets/2026-09-29/plms-100.png]]
+![[appunti/assets/2026-09-29/plms-100.png]]
 
 - **The idea: any problem can be cast as sequence-to-sequence.** Translation: `translate English to German: That is good.` → `Das ist gut.`. Acceptability: `cola sentence: …` → `not acceptable`. Similarity: `stsb sentence1: … sentence2: …` → `3.8`, a number **written as text**.
 - This is how we use LLMs today: one model, trained only to produce text, used for classification, regression, clustering… The lecturer sees this as **T5's main novelty** over BART.
 - Same encoder–decoder as BART. It's from **Google** (Raffel et al.); the lecturer wasn't sure ("Meta or Google, don't quote me").
 
-![[assets/2026-09-29/plms-101.png]]
+![[appunti/assets/2026-09-29/plms-101.png]]
 
 **Pretraining: span corruption** (infilling). Random spans are replaced by **sentinel** tokens `<X>`, `<Y>`. The target lists **only the missing spans**, each after its sentinel:
 

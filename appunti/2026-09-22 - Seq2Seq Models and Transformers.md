@@ -23,7 +23,7 @@ So use **two** models:
 - An **encoder** reads the whole input sequence and produces a representation of it (its final hidden state).
 - A **decoder** is seeded with that representation and generates the output sequence. It is **autoregressive**: one token at a time, with each generated token fed back in as the next input, exactly like an RNN LM.
 
-![[assets/2026-09-22/transformers-020.png]]
+![[appunti/assets/2026-09-22/transformers-020.png]]
 
 _Encoder LSTM reads "Je m' appelle Akhil"; the green vector (its last state) seeds the decoder, which starts from `<START>` and generates "I am Akhil `<END>`", feeding each prediction $\hat y_t$ back as the next input._
 
@@ -50,7 +50,7 @@ The template fits any "sequence in → different sequence out" task:
 
 The encoder sees the whole input before anything is generated. So it's allowed to be **bidirectional** ([[2026-09-15 - Language Modeling (Part 2)#5. Bidirectional RNNs]]). This is the "legitimate bidirectional" case promised at the end of that section. The **decoder must stay unidirectional**: it is autoregressive and **can't know the future**.
 
-![[assets/2026-09-22/transformers-026.png]]
+![[appunti/assets/2026-09-22/transformers-026.png]]
 
 **Does the decoder have to be twice the dimensionality of the encoder?** The bidirectional encoder gives $[h^{fwd}_n; h^{bwd}_n]$, which has size $2d$. **No.** Project it first with a learned linear layer:
 
@@ -104,7 +104,7 @@ This is the RNN problem from last lecture, now in a worse position:
 
 In the encoder–decoder, **everything** the decoder knows about the input comes through that one green vector.
 
-![[assets/2026-09-22/transformers-034.png]]
+![[appunti/assets/2026-09-22/transformers-034.png]]
 
 **Toy example.** To generate "I", the decoder needs "Je". But "Je" was the **first** token encoded. Since then the state has been overwritten by 4 more tokens ("m'", "appelle", "Akhil", `<START>`), and for this prediction those are noise. With 4 tokens it may not matter. With a long document, or with a long prompt of the kind people give LLMs today, it is a real problem.
 
@@ -134,7 +134,7 @@ The whole question is how to choose the weights.
 
 ### The attention function, step by step
 
-![[assets/2026-09-22/transformers-049.png]]
+![[appunti/assets/2026-09-22/transformers-049.png]]
 
 1. **Score.** Compute a pairwise similarity between the decoder state (the "idea of what to decode") and **each** encoder state:
    $$a_n = f(h^e_n, h^d_t)$$
@@ -158,7 +158,7 @@ In the RNN version, keys and values are **the same vectors** used in two roles. 
 
 ### Scoring functions
 
-![[assets/2026-09-22/transformers-045.png]]
+![[appunti/assets/2026-09-22/transformers-045.png]]
 
 | name | formula |
 |---|---|
@@ -188,7 +188,7 @@ In the RNN version, keys and values are **the same vectors** used in two roles. 
 
 ### The attentive encoder–decoder
 
-![[assets/2026-09-22/transformers-050.png]]
+![[appunti/assets/2026-09-22/transformers-050.png]]
 
 At each decoder step $t$:
 
@@ -210,7 +210,7 @@ The contrast with §1: without attention, the decoder always used **the same** g
 
 ### Interpretability
 
-![[assets/2026-09-22/transformers-053.png]]
+![[appunti/assets/2026-09-22/transformers-053.png]]
 
 The attention weights can be **visualised** as a heatmap (output tokens × input tokens). Doing so shows **what was focused on when each word was generated**. For EN→FR, the map is close to diagonal, but not exactly: "zone économique européenne" attends to "European Economic Area" in *reversed* order, which is the adjective–noun flip between the two languages. So **training with attention gives you an alignment between the languages for free**, with no alignment labels.
 
@@ -260,7 +260,7 @@ Menti question: *do any other inefficiencies remain in our seq2seq pipeline?* Th
 
 ### 4.2 The full architecture, at a glance
 
-![[assets/2026-09-22/transformers-063.png]]
+![[appunti/assets/2026-09-22/transformers-063.png]]
 
 - It is made of an **encoder** (left) and a **decoder** (right).
 - Both are **stacks of $N$ transformer blocks**. The blocks are slightly different in the encoder and the decoder.
@@ -279,7 +279,7 @@ Notation: $h^\ell_t$ is the encoder state at position $t$ in **layer** $\ell$. T
 
 **Worked example: computing the new representation of position $s$.**
 
-![[assets/2026-09-22/transformers-070.png]]
+![[appunti/assets/2026-09-22/transformers-070.png]]
 
 Take position $s$ as the **query**. **Every** position $t$, $s$ included, acts as a **key** and a **value**:
 
@@ -292,7 +292,7 @@ It's exactly the §3 recipe (score, softmax, weighted sum). Two things changed:
 
 Then **do this for every position**, all at once:
 
-![[assets/2026-09-22/transformers-073.png]]
+![[appunti/assets/2026-09-22/transformers-073.png]]
 
 $$\tilde h^1_s = \text{Attention}\big(h^0_s,\ \{h^0_t\}_{t=1}^{T}\big) \quad \text{for } s = 1,\dots,T$$
 
@@ -311,7 +311,7 @@ The deck's "Nobel committee awards Strickland who advanced optics" slides animat
 
 ### 4.4 Multi-head self-attention
 
-![[assets/2026-09-22/transformers-080.png]]
+![[appunti/assets/2026-09-22/transformers-080.png]]
 
 Run **several attention heads in parallel**, each with its **own** $W^Q, W^K, W^V$. Each head produces its own attention distribution and its own output $M_1,\dots,M_H$. The outputs are then combined, via another learned transformation ($W^O$), into one representation per token. That representation is passed to the next layer.
 
@@ -335,7 +335,7 @@ The word cloud had parallelisation, better long-range dependencies, interpretabi
 
 ### 4.5 The transformer block
 
-![[assets/2026-09-22/transformers-082.png]]
+![[appunti/assets/2026-09-22/transformers-082.png]]
 
 **Multi-head attention is the main innovation.** Around it, each block has three "practical tricks":
 
@@ -349,7 +349,7 @@ So one block computes: $x' = \text{Norm}(x + \text{MultiHeadAttn}(x))$, then $x'
 
 ### Transformers and vanishing gradients
 
-![[assets/2026-09-22/transformers-083.png]]
+![[appunti/assets/2026-09-22/transformers-083.png]]
 
 Transformers combine the two ideas from the start of the lecture:
 
@@ -362,7 +362,7 @@ Transformers combine the two ideas from the start of the lecture:
 
 ### Summary: fighting vanishing gradients
 
-![[assets/2026-09-22/transformers-084.png]]
+![[appunti/assets/2026-09-22/transformers-084.png]]
 
 | method | what to do | why it helps |
 |---|---|---|
@@ -378,7 +378,7 @@ The lecturer said this slide is a good recap of the last two lectures.
 
 ### 4.6 The decoder: masked self-attention and cross-attention
 
-![[assets/2026-09-22/transformers-090.png]]
+![[appunti/assets/2026-09-22/transformers-090.png]]
 
 The full encoder is a stack of transformer blocks. The **decoder** block is similar, with **three** sub-layers instead of two:
 
@@ -396,7 +396,7 @@ At **training** time you do have the whole target sentence (e.g. the parallel Da
 
 #### Masked multi-head attention
 
-![[assets/2026-09-22/transformers-089.png]]
+![[appunti/assets/2026-09-22/transformers-089.png]]
 
 **Mask the attention scores of future tokens so their attention is 0.** Before the softmax, set the score to $-\infty$ for every key that comes *after* the query:
 
@@ -436,7 +436,7 @@ Shapes make the difference concrete (lab 1, Q3.2): a weight matrix has one row p
 
 **No.** Self-attention is a weighted sum over a *set*. Shuffle the input tokens and each token's output is the same, just in a different order. There is nothing in it that knows which position is first. So Transformers **add a position embedding** $p_i$ to each input embedding (the ⊕ with the wave symbol in the architecture diagram).
 
-![[assets/2026-09-22/transformers-093.png]]
+![[appunti/assets/2026-09-22/transformers-093.png]]
 
 - **Early position embeddings (the original paper)** were **sinusoids offset by a phase shift proportional to the position**:
   $$p_i = \big[\sin(i/10000^{2\cdot1/d}),\ \cos(i/10000^{2\cdot1/d}),\ \dots,\ \sin(i/10000^{2\cdot\frac d2/d}),\ \cos(i/10000^{2\cdot\frac d2/d})\big]$$
