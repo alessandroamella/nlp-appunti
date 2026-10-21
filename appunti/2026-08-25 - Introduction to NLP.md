@@ -66,7 +66,7 @@ All four tasks below reduce, in classical NLP, to **representing documents as fe
 
 > [!example] Lab — 78% accuracy that means nothing (majority baseline)
 > `ta_sessions/Exercises/01 - Intro to Tools/3. Handling Text - Part 2.ipynb`, Task D (Big Bang Theory scripts). Sheldon claims he can tell whether a line is his with >70% accuracy. The solution builds the words that *only* Sheldon says in seasons 1–8, labels a test line (seasons 9–10) "Sheldon" if it contains one of them, and gets **78.3%**. It presents that as confirming the claim.
-> ⚠️ It doesn't. Only 2,237 of the 10,938 test lines are Sheldon's, so the trivial classifier "never Sheldon" scores **79.5%**, better than the rule. With **imbalanced classes**, compare accuracy against the **majority-class baseline** before calling it good. (I computed the baseline from `data/all_scripts.txt`; the notebook doesn't mention it.)
+> ⚠️ It doesn't. Only 2,237 of the 10,938 test lines are Sheldon's, so the trivial classifier "never Sheldon" scores **79.5%**, better than the rule. With **imbalanced classes**, compare accuracy against the **majority-class baseline** before calling it good.
 
 ### Task 3 — Sentiment analysis
 
@@ -115,6 +115,10 @@ Two broad strategies:
 $$p(w_i) \propto \frac{1}{i}$$
 
 where $w_i$ is the $i$-th most frequent word. A small number of words (e.g., "and", "the") dominate frequency counts, while most vocabulary words are rare.
+
+![[appunti/assets/2026-08-25/intro-075.png]]
+
+_This is the **linear–linear** view: a handful of function words at the top, then a long flat tail. Each of those tail words has a column in the BoW matrix that's zero in almost every document, which is why the matrix is sparse. The same data on log–log axes is a straight line (see the lab below)._
 
 > [!example] Lab — plotting Zipf
 > `ta_sessions/Exercises/01 - Intro to Tools/3. Handling Text - Part 2.ipynb`, Q4. A histogram of how often each word occurs across all the Big Bang Theory scripts is useless on linear axes: one huge bar at "rare", and a long invisible tail. On **log-log axes** (with log-spaced bins) it becomes roughly a straight line, the signature of a **power law**. A power law is a straight line in log-log because $\log p = -\log i + \text{const}$.
@@ -192,7 +196,7 @@ Not all words are equally informative — beyond discarding stopwords, we want t
 
 **Inverse Document Frequency (IDF)**:
 
-$$\text{idf}(w) = -\log!\left(\frac{\text{docfreq}(w)}{N}\right) = \log(N) - \log(\text{docfreq}(w))$$
+$$\text{idf}(w) = -\log\!\left(\frac{\text{docfreq}(w)}{N}\right) = \log(N) - \log(\text{docfreq}(w))$$
 
 where:
 
@@ -218,6 +222,21 @@ This is equivalent to multiplying each column $w$ of the BoW matrix by the const
 - Min-max scaling
 - Standardization (subtract mean, divide by standard deviation)
 
+**Worked example** (natural log, $N = 3$): $d_1$ = "the cat runs", $d_2$ = "the cat the cat", $d_3$ = "the dog runs runs".
+
+| | the | cat | dog | runs |
+|---|---|---|---|---|
+| docfreq | 3 | 2 | 1 | 2 |
+| idf | $\ln\frac33 = \mathbf{0}$ | $\ln\frac32 = 0.405$ | $\ln\frac31 = 1.099$ | $0.405$ |
+| tf-idf $d_1$ | 0 | 0.405 | 0 | 0.405 |
+| tf-idf $d_2$ | 0 | 0.811 | 0 | 0 |
+| tf-idf $d_3$ | 0 | 0 | 1.099 | 0.811 |
+
+- A word that appears in **every** document gets idf $= \log 1 = 0$, so its column is wiped out. IDF does stopword removal automatically, and only for words that really are uninformative *in this corpus*.
+- The rarest word (*dog*) gets the highest weight, even though *runs* occurs twice in $d_3$.
+- $d_2$ says "cat" twice and gets twice the weight of $d_1$ on *cat*. Row normalization removes that length effect. $d_1$ becomes $(0, 0.707, 0, 0.707)$ with **L2** and $(0, 0.5, 0, 0.5)$ with **L1**: the **direction** is the same (50/50 cat/runs), and only the length convention changes. L2 puts the vector on the unit sphere; with L1 the entries sum to 1, so they read as a distribution.
+- Row and column normalization fix **different** things. **Row** normalization fixes **document length**. **Column** normalization (IDF, min-max, z-score) fixes how **common** a word is, or what scale it's on, and each column is rescaled using only its own values. They're usually combined: IDF + L2 row normalization is the default of scikit-learn's `TfidfVectorizer`. (One caveat: by default it uses a smoothed idf, $\ln\frac{1+N}{1+\text{df}} + 1$, so in sklearn *the* would get a small weight rather than exactly 0.)
+
 > [!example] Lab MCQ — more features than documents
 > From `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2 Q3: which does **not** address having more features than documents in a TF-IDF matrix? **Min-max scaling.** Rescaling a column changes its range, not the *number* of columns. The problem is still there. The fixes either reduce the number of features (**SVD**/LSA, **feature selection**) or constrain the weights (**regularization**, as in the Frankenstein classifier above).
 
@@ -237,7 +256,7 @@ Setting up a "neural" NLP problem requires answering three questions:
 
 - Each word is represented as a **high-dimensional** (though much lower than sparse BoW — still $O(10^3)$), **real-valued, dense** vector.
 - Aliases: _word vectors_, _word embeddings_, _neural embeddings_, _dense embeddings_.
-- Key property: **vector similarity ≈ meaning similarity** — words with related meaning end up close together in embedding space.
+- Key property: **vector similarity ≈ meaning similarity** — words with related meaning end up close together in embedding space (the king/queen picture is in [[2026-09-01 - Neural Networks and Word Embeddings]]).
 
 ### Building a simple NLP model — worked example (sentiment analysis)
 
@@ -262,11 +281,23 @@ Goal: map a sentence like _"I really enjoyed the movie we watched on Saturday!"_
     
     (Discussion aside: for the sentence "I enjoyed the movie I watched on Saturday!" there are 7 _unique_ embeddings needed, since some words repeat and share the same embedding row.)
     
+![[appunti/assets/2026-08-25/intro-114.png]]
+
+_The whole pipeline on one slide. Read it bottom-up: words → embeddings $X$ → sum-pool → $h_T$ → logistic regression → +/−. The two yellow boxes are the learnable parts: the embeddings are learned so that the task can be solved, by backpropagating the loss all the way down to $X$. Every later lecture keeps this skeleton and only swaps the grey box (RNN, then Transformer)._
 
 ### Beyond single-label classification: other task setups using the same embeddings→model pipeline
 
 - **Sequence labeling**: instead of one label for the whole sentence, produce a label _per token_ — e.g., tagging which words in a review are the "sentimental" ones. Requires a model (RNN, self-attention, Transformer) that produces a per-token hidden state $h_0, h_1, \ldots, h_T$, each independently mapped to a label (+/−).
-- **Text generation**: instead of a classification label, predict the next token/sentence given everything seen so far (e.g., generating the next sentence of a review) — the foundation of modern generative language models.
+
+![[appunti/assets/2026-08-25/intro-118.png]]
+
+_Compared with the pipeline above, the pooling is gone: you need one $h_t$ **per token**, so the model has to keep the sequence instead of collapsing it into a single vector. That's why sum-pool doesn't work here._
+
+- **Text generation**: instead of a classification label, predict the next token/sentence given everything seen so far (e.g., generating the next sentence of a review) — the foundation of modern generative language models. It's still classification, just with many more classes, done **word by word**:
+    - the "labels" are the whole **vocabulary $V$**, so the binary sigmoid becomes a **multi-class logistic regression**: $P(y) = \text{softmax}(W_0 h_T)$;
+    - the predicted word ("It" $= x_{T+1}$) is **appended to the input** and the model runs again to predict $x_{T+2}$, and so on. Feeding each output back in as input is what makes generation **autoregressive**, the same loop as in [[2026-09-08 - Language Modeling (Part 1)]].
+
+![[appunti/assets/2026-08-25/intro-121.png]]
 
 ### Three parts of a "Neural" NLP system (recap)
 
@@ -281,7 +312,7 @@ Goal: map a sentence like _"I really enjoyed the movie we watched on Saturday!"_
 ## Da ricordare
 
 - **BoW** = multiset of words: counts kept, **order lost**. Vectors are huge ($10^5$–$10^6$) and **sparse**, partly because of **Zipf** ($p(w_i) \propto 1/i$, a straight line on **log-log** axes).
-- **IDF** $= \log N - \log \text{docfreq}(w)$. **TF-IDF** $= \text{tf}(d,w)\cdot\text{idf}(w)$ is **column** scaling. L1/L2 normalization of each document is **row** normalization, which fixes the effect of document length.
+- **IDF** $= \log N - \log \text{docfreq}(w)$, which is **0** for a word that appears in every document. **TF-IDF** $= \text{tf}(d,w)\cdot\text{idf}(w)$ is **column** scaling. L1/L2 normalization of each document is **row** normalization, which fixes the effect of document length.
 - **Stemming** strips affixes by rule (*busy/business → busi*), while **lemmatization** maps to a dictionary form using context (*am → be*). If an output keeps *driving*, there was no stemming. *CAR → car* is casefolding.
 - **Stopword removal can hurt**: function words and punctuation carry the signal in authorship and psychological tasks. In the lab, *my/me/which/and* are among the top features for Frankenstein.
 - **More features than documents** → SVD, feature selection, regularization. ⚠️ **Not** min-max scaling (it doesn't change the dimensionality).

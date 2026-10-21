@@ -113,6 +113,13 @@ def main():
         f'<div class="note">\n\n{note_markdown(p, targets)}\n\n</div>' for p in notes)
     render(combined, "NLP — all notes", OUT / "NLP - all notes.pdf")
 
+    # drop PDFs left over from notes that were renamed or deleted
+    keep = {f"{p.stem}.pdf" for p in notes} | {"NLP - all notes.pdf"}
+    for pdf in OUT.glob("*.pdf"):
+        if pdf.name not in keep:
+            pdf.unlink()
+            print("removed", pdf.relative_to(ROOT))
+
 
 if __name__ == "__main__":
     sys.exit(main())

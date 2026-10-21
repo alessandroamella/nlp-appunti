@@ -18,7 +18,6 @@ what it covers.
 
 Not lecture notes — different conventions apply, don't reformat them.
 
-- [[2026-09-01 - Robe miste]] — esempio numerico svolto di TF-IDF e normalizzazione di riga/colonna.
 
 ## To review
 
