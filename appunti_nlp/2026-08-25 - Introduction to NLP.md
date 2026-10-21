@@ -59,6 +59,15 @@ All four tasks below reduce, in classical NLP, to **representing documents as fe
 - Example: finding gangster movies on IMDb.
 - **Approach**: supervised learning — label documents, represent as feature vectors, train a classifier (kNN, logistic regression, decision tree, random forest, boosted trees, neural net, …).
 
+> [!example] Lab — "Is this page from Frankenstein?"
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Task 2. Four novels are cut into 50-sentence chunks, turned into a raw **BoW** matrix (`CountVectorizer`), and a **regularized logistic regression** predicts Frankenstein vs. the rest.
+> - **581 chunks × 23,116 features**: far more features than samples. Without regularization the model could fit the training set perfectly with meaningless weights. The strength $C$ is picked by 10-fold cross-validation *on the training set only*, and the test accuracy is 1.0.
+> - **BoW is interpretable**: each weight belongs to a word, so you can read off what characterises the class. Among the top-20 Frankenstein features are *misery, justine, ice, father*, but also *my, me, which, and, of*. Those are **function words**, the ones a stopword list would delete. Frankenstein is told in the first person, which would explain the pronouns (my reading, the notebook doesn't say why). This is the author-identification point from the stopword section below, seen in real data.
+
+> [!example] Lab — 78% accuracy that means nothing (majority baseline)
+> `ta_sessions/Exercises/01 - Intro to Tools/3. Handling Text - Part 2.ipynb`, Task D (Big Bang Theory scripts). Sheldon claims he can tell whether a line is his with >70% accuracy. The solution builds the words that *only* Sheldon says in seasons 1–8, labels a test line (seasons 9–10) "Sheldon" if it contains one of them, and gets **78.3%**. It presents that as confirming the claim.
+> ⚠️ It doesn't. Only 2,237 of the 10,938 test lines are Sheldon's, so the trivial classifier "never Sheldon" scores **79.5%**, better than the rule. With **imbalanced classes**, compare accuracy against the **majority-class baseline** before calling it good. (I computed the baseline from `data/all_scripts.txt`; the notebook doesn't mention it.)
+
 ### Task 3 — Sentiment analysis
 
 - **Given**: a document $d$ (e.g., a product review).
@@ -66,12 +75,21 @@ All four tasks below reduce, in classical NLP, to **representing documents as fe
 - Use cases: inferring opinion without explicit ratings; tracking historical opinion shifts (e.g., toward politicians over time).
 - **Approach**: same supervised setup as classification, but can be framed as regression (continuous score) or classification (positive/negative/neutral).
 
+> [!example] Lab — lexicon-based sentiment with VADER
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Task 1. The lab doesn't train anything here: **VADER** is a hand-built sentiment lexicon plus rules, meant for short social-media text. For each sentence it gives `neg`, `neu`, `pos` (they sum to 1) and a `compound` score in $[-1, 1]$. The label comes from thresholding compound at $\pm 0.05$.
+> On Pride and Prejudice, most sentences come out **neutral** (3,595 neutral, 3,169 positive, 2,286 negative). The notebook's point is that novels are mostly neutral, while social-media opinions tend to be **polarised** (bimodal). So the same tool behaves differently depending on the domain.
+
 ### Task 4 — Topic detection
 
 - **Given**: an _unlabeled_ document collection.
 - **Task**: discover a set of prevalent topics and assign documents to them.
 - Use cases: trending topics on social media, distinct viewpoints on a political issue, exploratory analysis of a large corpus.
 - **Approach**: clustering — represent docs as feature vectors, run hierarchical (agglomerative/divisive) or point-assignment (k-means, DBSCAN) clustering. Alternative: matrix factorization.
+
+> [!example] Lab — topic detection with LDA on four novels
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Task 3. The model is **LDA** (Latent Dirichlet Allocation), a probabilistic topic model. It is *not* in the lecture, which names clustering and matrix factorization (for the latter, LSA, see [[2026-09-01 - Neural Networks and Word Embeddings]]). LDA gives each document a **probability distribution over topics**, whereas LSA gives it real-valued coordinates in a latent space.
+> - The preprocessing uses nearly the whole toolbox of §3: lemmatize, keep alphabetic tokens only, drop stopwords and tokens of ≤2 characters, add multi-token named entities and frequent bigrams (`Phrases`, the "n-grams as features" idea), then drop words in >50% of chunks or in <5 chunks (the document-frequency heuristic from the stopword section).
+> - With 4 topics for 4 books, **Moby-Dick** (*whale, sea, ship, Queequeg*) and **Pride and Prejudice** (*Elizabeth, Darcy, Bingley*) are recovered at 100%. Dracula and Frankenstein only reach ~55%. The topics mostly pick up **character names**. Topics found without supervision are not necessarily the ones you had in mind.
 
 ---
 
@@ -97,6 +115,9 @@ Two broad strategies:
 $$p(w_i) \propto \frac{1}{i}$$
 
 where $w_i$ is the $i$-th most frequent word. A small number of words (e.g., "and", "the") dominate frequency counts, while most vocabulary words are rare.
+
+> [!example] Lab — plotting Zipf
+> `ta_sessions/Exercises/01 - Intro to Tools/3. Handling Text - Part 2.ipynb`, Q4. A histogram of how often each word occurs across all the Big Bang Theory scripts is useless on linear axes: one huge bar at "rare", and a long invisible tail. On **log-log axes** (with log-spaced bins) it becomes roughly a straight line, the signature of a **power law**. A power law is a straight line in log-log because $\log p = -\log i + \text{const}$.
 
 ### The Bag-of-Words matrix
 
@@ -155,6 +176,16 @@ Converting raw text → BoW matrix requires care at several steps:
     - Using all 5-grams can even outperform neural nets on some tasks.
     - Problem: combinatorial explosion of the feature space as $n$ grows.
 
+> [!example] Lab — the preprocessing pipeline in spaCy
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`. It runs spaCy's pipeline (sentence splitting → tokenization → POS tagging → NER → stopwords → lemmatization → noun chunks → dependency parsing) on one sentence from Frankenstein. The parts the lecture list doesn't show:
+> - **Sentence splitting is not trivial**: a period doesn't always end a sentence ("U.K.", "Mr. Bennet", "Yahoo!"). spaCy uses a **statistical model** for it, not a rule.
+> - **Tokenization is split on whitespace + language-specific rules**: "don't" → `do` + `n't`, while "U.K." stays one token and "but," becomes `but` + `,`.
+> - **Lemmatization** maps *am → be*, *streets → street*, *me → I*. Stemming could never do *am → be*, because there's no shared affix to strip.
+> - **Tools make mistakes**: NER tags *London* correctly as a place (GPE), but tags *Petersburgh* as a PERSON.
+> - spaCy's default stopword list has **326** entries and removes *already* and *upon* as well as *the*. Which list you use is a real design choice, as the lecture warns.
+>
+> The lab's comprehension MCQ on this: stopwords `[a, the, is, you, I, my, with, was]` applied to *"I was driving down the street with my CAR! :)"* give `{driving, down, street, car, :)}`. The answer is **stopword removal + casefolding** only. *CAR → car* is casefolding, and *driving* would have become *drive* under stemming, so there was **no stemming**.
+
 ### Postprocessing the BoW matrix: TF-IDF
 
 Not all words are equally informative — beyond discarding stopwords, we want to down-weight generically common words (e.g., "per") relative to rarer, more informative ones (e.g., "perceptron").
@@ -186,6 +217,9 @@ This is equivalent to multiplying each column $w$ of the BoW matrix by the const
 
 - Min-max scaling
 - Standardization (subtract mean, divide by standard deviation)
+
+> [!example] Lab MCQ — more features than documents
+> From `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2 Q3: which does **not** address having more features than documents in a TF-IDF matrix? **Min-max scaling.** Rescaling a column changes its range, not the *number* of columns. The problem is still there. The fixes either reduce the number of features (**SVD**/LSA, **feature selection**) or constrain the weights (**regularization**, as in the Frankenstein classifier above).
 
 **Summary — "Classical NLP" recipe**: document retrieval, classification, sentiment analysis, and topic detection can all be tackled by building a **TF-IDF matrix** (entry = $\text{tf}(d,w) \times \text{idf}(w)$) and feeding it into a standard ML algorithm.
 
@@ -241,3 +275,15 @@ Goal: map a sentence like _"I really enjoyed the movie we watched on Saturday!"_
 3. **Prediction** — how to map the model's representation to a task-specific output.
 
 ➡️ The course's next step: focus in depth on **embeddings** (word representations), setting up subsequent lectures on neural network basics, backpropagation, and word embedding methods (e.g., Word2Vec).
+
+---
+
+## Da ricordare
+
+- **BoW** = multiset of words: counts kept, **order lost**. Vectors are huge ($10^5$–$10^6$) and **sparse**, partly because of **Zipf** ($p(w_i) \propto 1/i$, a straight line on **log-log** axes).
+- **IDF** $= \log N - \log \text{docfreq}(w)$. **TF-IDF** $= \text{tf}(d,w)\cdot\text{idf}(w)$ is **column** scaling. L1/L2 normalization of each document is **row** normalization, which fixes the effect of document length.
+- **Stemming** strips affixes by rule (*busy/business → busi*), while **lemmatization** maps to a dictionary form using context (*am → be*). If an output keeps *driving*, there was no stemming. *CAR → car* is casefolding.
+- **Stopword removal can hurt**: function words and punctuation carry the signal in authorship and psychological tasks. In the lab, *my/me/which/and* are among the top features for Frankenstein.
+- **More features than documents** → SVD, feature selection, regularization. ⚠️ **Not** min-max scaling (it doesn't change the dimensionality).
+- Always compare accuracy with the **majority-class baseline** on imbalanced data (the Sheldon classifier: 78% vs 79.5% for "never Sheldon").
+- A neural NLP system has three parts: **embeddings → model (composition) → prediction**. In the toy sentiment model the learnable parameters are the embedding table $E$ and $W_0$.

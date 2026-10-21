@@ -48,11 +48,27 @@ No matter what transformation you apply on top (TF-IDF, normalization, etc.), th
 ![[assets/2026-09-01/nn-primer-036.png]]
 _Male–Female, verb-tense, and country–capital relationships all show up as **consistent, parallel directions/offsets** in a well-trained embedding space — the same "arrow" (e.g., man→woman) works for king→queen too._
 
+> [!example] Lab — analogies, and the bias they expose
+> `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §2. "*a* is to *b* as *c* is to ?" is computed as $b - a + c$ and then the nearest word by cosine: in gensim, `most_similar(positive=[b, c], negative=[a])`. On GloVe, *king − man + woman* → *queen*.
+>
+> The same arithmetic surfaces stereotypes: *man → doctor :: woman → ?* returns **nurse** ahead of *physician*; *man → boss :: woman → ?* returns relationship words (*girlfriend*, *lover*). Nobody programmed this in: the vectors encode the co-occurrence statistics of how people wrote. You can see it without analogies: *doctor* is about equally close to *man* and *woman* (0.61 vs 0.63), *nurse* is not (0.46 vs 0.61). Used as features, e.g. for CV screening, the association is inherited silently.
+>
+> **Caveat the lab points out:** `most_similar` never returns one of its input words. Rank *all* words and $\text{doctor} - \text{man} + \text{woman}$ is closest to **doctor itself**. So analogy tests **exaggerate** the bias somewhat, and they also flatter the analogy property in general, since the trivial answer is excluded. The bias is still real (*nurse* above *physician* isn't an artefact). The course comes back to this in the Responsible AI session.
+
 ### Dense word vectors (recap + goal)
 
 - Each word → a **dense, real-valued vector**, still high-dimensional relative to a scalar, but _much_ smaller than sparse BoW vectors: typically $O(10^3)$ dimensions instead of $O(10^5)$–$O(10^6)$.
     - Aside: even today's large language models typically use embedding dimensions that are "low" by LLM standards but still in the thousands (e.g., multiples of 1024/4096-ish ranges) — nowhere near the millions of dimensions of a sparse BoW vocabulary vector.
 - **Similarity of vectors should represent similarity of meaning.** A well-trained embedding space gives $\text{sim}(\text{enjoyed}, \text{loved}) \gg 0$, unlike the sparse case.
+
+> [!example] Lab — cosine similarity, and what it actually measures
+> `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §1. The "sim" above is almost always **cosine similarity**:
+>
+> $$\cos(\mathbf u, \mathbf v) = \frac{\mathbf u \cdot \mathbf v}{\lVert \mathbf u\rVert\,\lVert \mathbf v\rVert} \in [-1, 1]$$
+>
+> It compares **direction and ignores magnitude**, which is why it's preferred over Euclidean distance (the lab's MCQ 4.8 trap: it is *not* restricted to $[0,1]$, and it doesn't require pre-normalised vectors).
+>
+> **A refinement of "similarity of meaning"**: on the lab's own skip-gram model, $\cos(\text{man}, \text{woman}) \approx 0.78$ beats $\cos(\text{jury}, \text{court}) \approx 0.58$. Same pattern in GloVe, where *good–bad* = 0.77 and *cold* is the 2nd-nearest neighbour of *hot*. **Antonyms end up close**, because they occur in the same contexts (*the ___ said*, *it was ___*), and the distributional hypothesis (§5) only sees context. So embedding cosine measures **relatedness of usage, not synonymy**. Also, even unrelated pairs score clearly above 0 (*jury–car* ≈ 0.21): word vectors share a common overall direction, so compare cosines **with each other**, not against an absolute scale.
 
 ---
 
@@ -84,9 +100,38 @@ All three always produce a **fixed-length vector** (dimension 3 here, regardless
 3. Pass the pooled representation $h_T$ into a **classifier**, e.g. logistic regression: $P(y) = \sigma(W_0 h_T)$.
 4. **Learnable parameters**: the embedding table $E$ and the classifier weight matrix $W_0$ — both trained jointly via **backpropagation**, by computing gradients of the loss with respect to the initial embeddings (and all other parameters) so the embeddings end up encoding whatever helps solve the task.
 
+> [!example] Lab — this exact model on 50k tweets, and where it breaks
+> `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §3. The lab builds the pipeline above with one difference: the embeddings are **pre-trained GloVe vectors, frozen**, not learned jointly. Tweet → **avg-pool** of the known words' vectors (zero vector if none is known) → `Linear(100, 256)` → ReLU → `Linear(256, 1)` → sigmoid, trained with binary cross-entropy on Sentiment140. It levels off at **≈ 71% test accuracy**: a decent baseline for so little.
+>
+> Then the killer test:
+>
+> | sentence | $P(\text{positive})$ |
+> |---|---|
+> | *the movie was good, not bad at all* | 0.368 |
+> | *the movie was bad, not good at all* | 0.368 |
+>
+> Same eight words, different order, so **the same average, so necessarily the same score**. The first is misclassified, and no amount of training can fix it: the information is gone before the classifier sees the input. This is the word-order weakness stated above, made concrete. Fixes, in increasing power: **n-gram features** (*not bad* ≠ *not good* as bigrams), an **RNN/LSTM** reading left to right ([[2026-09-08 - Language Modeling (Part 1)]], [[2026-09-15 - Language Modeling (Part 2)]]), a **transformer** with self-attention and positions ([[2026-09-22 - Seq2Seq Models and Transformers]]).
+
 **Worked example — counting unique embeddings**: for the sentence _"I enjoyed the movie I watched on Saturday!"_, there are only **7 unique embeddings** needed in $X$, because the word "I" appears twice and shares the same row in the embedding table $E$ both times (not 9, which is the raw token count).
 
-**Backpropagation, in plain terms**: you have labeled training data (e.g., a movie review labeled positive/negative). You initialize embeddings randomly, run the forward pass (pool → logistic regression) to get a predicted probability, compute a **loss** measuring how far that prediction is from the true label (e.g., predicted 0.1 but the true label is 1), and then propagate that error backward through the network, adjusting the embeddings and weights so that the next prediction is closer to the truth. Repeated over many examples, this is how the embeddings and classifier weights are jointly learned. (Backpropagation will be covered in depth in the coming lectures on language modeling, and practiced hands-on in this week's lab.)
+**Backpropagation, in plain terms**: you have labeled training data (e.g., a movie review labeled positive/negative). You initialize embeddings randomly, run the forward pass (pool → logistic regression) to get a predicted probability, compute a **loss** measuring how far that prediction is from the true label (e.g., predicted 0.1 but the true label is 1), and then propagate that error backward through the network, adjusting the embeddings and weights so that the next prediction is closer to the truth. Repeated over many examples, this is how the embeddings and classifier weights are jointly learned. (Backpropagation is covered in depth in [[2026-09-15 - Language Modeling (Part 2)]] §2, and practiced hands-on in this week's lab — below.)
+
+> ⚠️ **Exam (2025 paper / mock exam, Q1):** the *primary purpose* of backprop is to compute **gradients of the loss with respect to the network's parameters**. Not w.r.t. the input data (that's rare, e.g. adversarial attacks), not to adjust the learning rate (that's the optimizer), and not the vague "propagate errors backward to refine predictions".
+
+### Neural-network building blocks (lab only — not in the deck)
+
+Despite its file name, the "Neural network primer" deck is almost entirely about embeddings. The NN basics themselves are only in the lab, `ta_sessions/Exercises/02 - NN basics/0. MLP and Training.ipynb`, which builds each piece by hand and checks it against `torch.nn`:
+
+| piece | definition | what to remember |
+|---|---|---|
+| **ReLU** | $\max(0, x)$ | derivative 0 for $x<0$, 1 for $x>0$; undefined at exactly 0 (PyTorch picks 0, harmless in practice) |
+| **Sigmoid** | $S(x) = \frac{1}{1+e^{-x}} \in (0,1)$ | $S'(x) = S(x)(1-S(x)) \le 0.25$, and → 0 in both tails: the root of the **vanishing gradient** ([[2026-09-15 - Language Modeling (Part 2)]] §6) |
+| **Perceptron** | $y = \phi(\mathbf w\cdot\mathbf x + b)$ | a single one can only draw a **linear decision boundary** |
+| **Linear layer** | $\mathbf y = W\mathbf x + \mathbf b$, $W \in \mathbb R^{m\times d}$ | $m$ perceptrons at once, one per **row**; shape is **(out × in)**, as in `nn.Linear`. Purely affine, no activation |
+| **MLP** | Linear → nonlinearity → Linear → … | the **nonlinearity is what makes depth useful**: without it, stacked linear layers collapse into a single linear map |
+| **MSE** | $\frac1N\sum_i(\hat y_i - y_i)^2$ | $\partial\mathcal L/\partial\hat y_i = \frac2N(\hat y_i - y_i)$ |
+
+One training iteration is always, in this order: **forward pass → compute loss → backward pass (`loss.backward()`, after `optimizer.zero_grad()`) → update weights (`optimizer.step()`)**. At evaluation: `model.eval()` and `torch.no_grad()`, since no gradients are needed. The lab trains a 784 → 512 → 10 MLP on FashionMNIST with cross-entropy and SGD; the network outputs **logits**, and `nn.CrossEntropyLoss` applies the softmax (§6) internally.
 
 ### Beyond single-label classification
 
@@ -263,6 +308,20 @@ In practice, this means training an independent softmax prediction for _each_ co
 
 **Window size as hyperparameter, in more depth**: a larger window gives the embedding more information about related words but is more expensive. A common practical trick: set a large maximum window (e.g., $N=10$) but _randomly_ sample the effective window size $i \in [1, N]$ for each training example — this way, on average, **closer words contribute more** to learning than farther ones, which tends to match intuition (nearby words are usually more informative about a word's meaning than distant ones).
 
+> ⚠️ **Exam (2025 paper / mock exam, Q4, rated hard)** — three Word2Vec statements, only **(2)** is true:
+> 1. ❌ *"Generalises better to rare **and unseen** words than one-hot."* Better for **rare but seen** words, yes (they share a dense space with everything else). A **truly unseen** word has **no row in $E$** at all, so word2vec can't generalise to it.
+> 2. ✅ *"CBOW and skip-gram ignore the order of words in the context window."* The window is a bag: CBOW sums the context vectors, and skip-gram's independence assumption (above) treats each neighbour separately.
+> 3. ❌ *"Shuffling the words within each sentence doesn't change the vectors."* Order is ignored **inside** a window, but shuffling the sentence changes **which words fall into which window**: $A\,[C\,B\,D]\,E \to A\,[D\,B\,E]\,C$. Order-free within the window ≠ order-free overall.
+
+> [!example] Lab — training skip-gram yourself, and why data size matters
+> `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §1–2. Gensim's `Word2Vec(..., vector_size=50, window=3, sg=1)` on the Brown corpus (~1M tokens of 1960s American English, ~530k after stopword removal). `sg=1` is skip-gram, `sg=0` CBOW; the lab picks skip-gram because it "works better on small corpora" (stated, not demonstrated in the lab).
+>
+> Nearest neighbours of *jury*:
+> - own skip-gram: *wexler, reservations, subpenas, karns, prosecution*
+> - GloVe (6B tokens): *jurors, judge, trial, court, verdict*
+>
+> Why: *jury* occurs only **68 times** in Brown, most of them from one news story about a grand-jury investigation, so a surname that happened to appear near it becomes a "neighbour". About **38% of the vocabulary occurs exactly once**, and with `min_count=1` those words get vectors from a handful of windows: mostly noise, which then pollutes the neighbour lists of common words too. With ~10,000× more text the accidents average out. Also: words outside the corpus's era are **OOV** (*internet*, *email*), and *web*, *mouse*, *cloud* only have their 1960s sense. The distributional hypothesis only works with **a lot** of distribution.
+
 ---
 
 ## 8. Connection to classical NLP: matrix factorization / LSA revisited
@@ -293,6 +352,15 @@ _LSA as matrix factorization: the (docs × words) TF-IDF matrix is approximated 
 - To get $k$ topics: keep only the first $k$ columns of $U$, $V$ and the first $k$ rows/cols of $S$ → $U', S', V'$, then set e.g. $A = U'$, $B = S'V'^T$.
 - Using $A$ (the low-dimensional doc representation) instead of the raw TF-IDF matrix also sidesteps the **curse of dimensionality** that plagues clustering/classification directly on sparse, high-dimensional TF-IDF rows (too many outliers, distances become meaningless in very high dimensions).
 
+> [!example] Lab MCQ — what LSA topics are *not*
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2, Q2: which statement about LSA topic detection is **false**?
+> - ✅ It represents documents and words in a latent "topic space" (rows of $A$, columns of $B$).
+> - ✅ Topics are interpretable in "word space": read off the words with the largest weights in each row of $B$.
+> - ✅ The topic vectors in word space are **linearly independent**: they're rows of $V^T$, which are orthonormal.
+> - ❌ **"A document's topic representation is a probability distribution over topics."** False. SVD entries can be **negative** and don't sum to 1; a row of $A$ is a set of real-valued coordinates, not proportions.
+>
+> ⚠️ So the "80% sports, 15% politics" phrasing in the intuition above is a **loose** way of speaking, not what LSA outputs. Topic *proportions* are what probabilistic topic models such as LDA produce; LSA only gives coordinates. (Same lab, Q3, on the §1 recap: when a TF-IDF matrix has **more features than documents**, SVD, regularisation and feature selection all help, but **min-max scaling doesn't**: rescaling a column doesn't remove it.)
+
 > [!note] Curse of dimensionality, in plain terms
 > As the number of dimensions grows, distance-based metrics (Euclidean, cosine, ...) become progressively less informative: points tend to become **roughly equidistant** from one another, so "near" and "far" stop meaningfully separating similar items from dissimilar ones.
 >
@@ -313,10 +381,34 @@ $$ M[c, w] = \text{PMI}(c, w) = \log \frac{\Pr(c, w)}{\Pr(c),\Pr(w)} $$
 
 — intuitively, "how much more likely are context $c$ and word $w$ to co-occur than if they were statistically independent?"
 
+> [!example] Lab MCQ — PMI by hand
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2, Q5. Co-occurrence counts (total $N = 20$):
+>
+> | | W1 | W2 | W3 | row sum |
+> |---|---|---|---|---|
+> | C1 | 2 | 0 | 3 | 5 |
+> | C2 | 6 | 4 | 0 | 10 |
+> | C3 | 1 | 1 | 3 | 5 |
+> | col sum | 9 | 5 | 6 | 20 |
+>
+> With probabilities as counts over $N$, $\text{PMI}(c,w) = \log\dfrac{n_{cw}\,N}{n_c\,n_w}$:
+> - $\text{PMI}(W1, C2) = \log\frac{6\cdot20}{10\cdot9} = \log 1.33$
+> - $\text{PMI}(W2, C2) = \log\frac{4\cdot20}{10\cdot5} = \log 1.6$
+> - $\text{PMI}(W3, C3) = \log\frac{3\cdot20}{5\cdot6} = \log 2$
+>
+> So $\text{PMI}(W3,C3) > \text{PMI}(W2,C2) > \text{PMI}(W1,C2)$, answer (d). **The trap:** W1–C2 has the **largest raw count** (6) but the **smallest PMI** of the three, because both W1 and C2 are frequent everywhere, so a lot of co-occurrence is expected by chance. PMI rewards co-occurrence **above chance**, not co-occurrence as such.
+
 ![[assets/2026-09-01/nn-primer-104.png]]
 _Same factorization idea, applied to a (contexts × words) PMI matrix instead of a (docs × words) TF-IDF matrix: word2vec is essentially learning the columns of_ $B$ _("latent dims" = embedding dimensions) as word vectors._
 
 **Key theoretical connection**: it has been shown that **word2vec is implicitly performing matrix factorization of a (shifted) PMI matrix** — i.e., factorizing $M[c,w] = \text{PMI}(c,w)$ into $A$ (context vectors) and $B$ (word vectors), then using the columns of $B$ as word embeddings, is mathematically closely related to what word2vec learns via its neural training objective. In other words, the "classical" linear-algebra route (SVD/matrix factorization of a co-occurrence statistic) and the "neural" route (CBOW/skip-gram trained via backpropagation) are two different paths to a similar kind of representation. (For the curious: this connection is explored in the paper _"Neural Word Embedding as Implicit Matrix Factorization"_ and various accompanying blog explainers.)
+
+> [!example] Lab — GloVe, the count-based cousin
+> `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §2. GloVe, "not covered in this lecture" (§5), is the pre-trained model the labs actually use: `glove-wiki-gigaword-100`, 100-d vectors trained on 6B tokens of Wikipedia + Gigaword (the Handling Text lab uses spaCy's 300-d GloVe on Common Crawl). Per the lab, GloVe **factorises global co-occurrence counts** directly, i.e. it takes the explicit matrix-factorisation route of this section, where word2vec gets there implicitly through a prediction task.
+>
+> Two lab observations that belong here:
+> - **Dimensions carry no individual meaning** (Handling Text lab, MCQ Q4: *"each dimension of a word2vec embedding has a clear interpretation"* is the **false** statement). Meaning lives in *directions and distances*, which is why analogies work (§2), not in single coordinates. Contrast LSA, where each dimension is a topic you can at least try to read off from its top-weighted words.
+> - **The training corpus freezes one sense per word**: GloVe's odd-one-out on *python, java, rust, banana* answers **rust**, because in 2014 Wikipedia/news text *rust* mostly means corrosion. A static embedding can't do better than its corpus's dominant sense (§9).
 
 ---
 
@@ -398,3 +490,14 @@ Instead of reasoning from the objective functions, the lecturer answered **empir
 > Do you get embeddings for both the context words and the target word?
 
 **Yes** — in both CBOW and skip-gram you end up with **two sets of embeddings** per vocabulary word: one for the word in its role as **target**, one for the word in its role as **context**. These are exactly the two learnable matrices from §6: the input embedding table $E$ and the projection matrix $\mathbf{U} \in \mathbb{R}^{d \times V}$ (whose rows/columns are the "context" vectors). In practice the input embeddings are the ones usually kept and used as *the* word vectors, but the second set exists and can also be used.
+---
+
+## Da ricordare
+
+- **Sparse vs dense:** two different words always have similarity **0** in BoW/TF-IDF space. Embeddings are **lower-dimensional and dense** ($O(10^2\text{–}10^3)$ vs $O(|V|)$). Embedding table $E$ is **$|V| \times d$**. A linear layer's $W$ is **(out × in)**.
+- **CBOW** = predict the **center word from the context** (sum of context vectors → $\mathbf U$ → softmax). **Skip-gram** = predict **each context word from the center word** (conditional independence). CBOW neighbours are **substitutes** (*slice, chop*), skip-gram neighbours are **co-occurring** words (*crosswise, lengthwise*). Both give **two** sets of vectors ($E$ and $\mathbf U$).
+- ⚠️ **Word2Vec traps (2025 exam Q4):** order inside the window is ignored ✅, but **shuffling a sentence does change the vectors** (it changes which words share a window), and **unseen words get no vector at all**. Individual dimensions have **no interpretation**.
+- **Cosine** = direction only, range $[-1,1]$. It measures **relatedness of usage**, so **antonyms are close** (*good–bad*, *hot–cold*). Analogy: $b - a + c$, nearest by cosine, **input words excluded**, which flatters both the analogy property and the measured bias.
+- **word2vec ≈ implicit factorisation of a (shifted) PMI matrix**; $\text{PMI} = \log\frac{P(c,w)}{P(c)P(w)} = \log\frac{n_{cw}N}{n_c n_w}$. **High raw count ≠ high PMI.** LSA rows are **coordinates, not probability distributions** (entries can be negative); topic vectors are orthonormal.
+- **Averaging word vectors throws away order:** *"good, not bad"* and *"bad, not good"* get the **identical** vector, so no classifier on top can separate them. Static embeddings also give **one vector per word type** (*bat*, *rust*); contextual models (BERT) give one per token.
+- **NN basics:** without a nonlinearity, stacked linear layers = one linear map. A single perceptron = **linear boundary**. $\sigma' = \sigma(1-\sigma) \le 0.25$. Backprop computes **gradients of the loss w.r.t. the parameters** (2025 exam Q1). Order: forward → loss → backward → update.
