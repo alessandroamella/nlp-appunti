@@ -1,0 +1,56 @@
+@page { size: A4; margin: 12mm 12mm; }
+
+html { font-size: 10.5pt; }
+body {
+  font-family: "Source Serif 4", "Noto Serif", Georgia, serif;
+  line-height: 1.45;
+  color: #111;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 { font-family: "Inter", "Noto Sans", Helvetica, sans-serif; line-height: 1.2; break-after: avoid; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid #111; padding-bottom: .2em; margin-top: 0; }
+h2 { font-size: 1.35rem; margin-top: 1.6em; border-bottom: 1px solid #ccc; padding-bottom: .15em; }
+h3 { font-size: 1.12rem; margin-top: 1.3em; }
+h4 { font-size: 1rem; }
+
+/* each note starts on a new page in the combined PDF */
+.note + .note { break-before: page; }
+
+a { color: #1a4d8f; text-decoration: none; }
+
+p, li { orphans: 3; widows: 3; }
+
+blockquote {
+  margin: .8em 0;
+  padding: .3em .9em;
+  border-left: 3px solid #999;
+  color: #333;
+  background: #f6f6f6;
+}
+
+.callout {
+  margin: 1em 0;
+  padding: .5em .9em;
+  border: 1px solid #b7c8e0;
+  border-left: 4px solid #3d6fb4;
+  background: #f1f5fb;
+  break-inside: avoid;
+}
+.callout-title { display: block; font-family: "Inter", "Noto Sans", sans-serif; font-weight: 700; margin-bottom: .3em; }
+.callout > p:last-child { margin-bottom: 0; }
+
+table { border-collapse: collapse; margin: 1em 0; font-size: .92rem; break-inside: avoid; }
+th, td { border: 1px solid #bbb; padding: .3em .55em; vertical-align: top; text-align: left; }
+th { background: #eee; }
+
+img { display: block; max-width: 100%; max-height: 105mm; margin: .8em auto; break-inside: avoid; }
+
+code { font-family: "JetBrains Mono", "Noto Sans Mono", monospace; font-size: .88em; background: #f2f2f2; padding: 0 .2em; }
+pre { background: #f4f4f4; padding: .6em .8em; font-size: .85rem; white-space: pre-wrap; break-inside: avoid; }
+pre code { background: none; padding: 0; }
+
+math[display="block"] { margin: .6em 0; }
+hr { border: none; border-top: 1px solid #ddd; margin: 1.5em 0; }

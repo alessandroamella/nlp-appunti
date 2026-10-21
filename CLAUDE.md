@@ -34,7 +34,7 @@ The user will keep dropping new PDFs/subtitles/exams into `docs/`, `lab/`, or `e
 
 - Filename: `YYYY-MM-DD - Title.md`, placed directly in `appunti/`.
 - **Language: lecture notes are in English.** That's what the substantial ones use (`Introduction to NLP`, `Neural Networks and Word Embeddings`), and the exam is in English, so terminology is English regardless. Don't switch an existing note's language — when extending one, match what's already in the file.
-  - The Italian files are a different kind of thing: `Robe miste` is scratch, `Sessione gruppo progetto` is personal project notes. Lecture conventions don't apply to them; leave them in Italian and don't reformat them.
+  - The Italian file is a different kind of thing: `Robe miste` is scratch (a worked TF-IDF example). Lecture conventions don't apply to it; leave it in Italian and don't reformat it.
   - When a note is genuinely new and unrelated to any existing one, default to English.
 - Structure: `##`/`###` headings per topic/subtopic, sometimes prefixed with slide/page references, e.g. `## Pag. 24 — Matrice TF-IDF` or `### Historical framing`.
 - Heavy use of **bold** for key terms, `-` bullet lists, and Markdown tables for side-by-side comparisons.

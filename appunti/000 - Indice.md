@@ -14,12 +14,11 @@ what it covers.
 7. [[2026-10-06 - From GPT to ChatGPT]] — scaling and emergence, in-context learning, prompt engineering and prompt tuning, chain-of-thought, SFT → reward model → RL (REINFORCE, PPO), DPO.
 8. [[2026-10-20 - Natural Language Generation]] — the generation step and teacher forcing, argmax and beam search, why greedy text repeats, sampling (top-k, top-p, temperature), re-balancing and re-ranking, MLE's lack of diversity, exposure bias, generation as RL and reward hacking.
 
-## Scratch and project notes
+## Scratch notes
 
 Not lecture notes — different conventions apply, don't reformat them.
 
-- [[2026-09-01 - Robe miste]] — appunti sparsi su TF-IDF e normalizzazione (pag. 24–28).
-- [[2026-09-01 - Sessione gruppo progetto]] — note personali sul progetto di gruppo (SealQA, RAG).
+- [[2026-09-01 - Robe miste]] — esempio numerico svolto di TF-IDF e normalizzazione di riga/colonna.
 
 ## To review
 

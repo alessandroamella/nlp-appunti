@@ -16,3 +16,6 @@ vids/.env
 
 ta_sessions
 __pycache__/
+
+# PDF stampabili generati da print/build.py
+print/pdf/
