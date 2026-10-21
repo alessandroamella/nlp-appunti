@@ -390,6 +390,20 @@ def write_sidecar(video, name, transcript, ctx):
     (SUBS / f"{name}.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
 
 
+def link_subs(name):
+    """Point videos/<name>.srt at subs/<name>.srt, so players load the AssemblyAI
+    captions instead of the Panopto ones panopto-dl saves next to the video."""
+    video, subs, link = VIDEOS / f"{name}.mp4", SUBS / f"{name}.srt", VIDEOS / f"{name}.srt"
+    if not (video.exists() and subs.exists()) or (link.is_symlink() and link.exists()):
+        return
+    if link.exists() and not link.is_symlink():
+        # Kept, out of the way: VLC also loads any .srt whose name contains the video's.
+        (VIDEOS / "panopto-srt").mkdir(exist_ok=True)
+        link.rename(VIDEOS / "panopto-srt" / link.name)
+    link.unlink(missing_ok=True)
+    link.symlink_to(Path("..") / SUBS.name / subs.name)
+
+
 # ---------------------------------------------------------------- plumbing
 
 
@@ -461,6 +475,8 @@ def main():
                     log(f"[{step}] {v['name']}: FAILED - {e}")
                 break  # re-enter as_completed so newly queued transcriptions are watched
 
+    for v in videos:
+        link_subs(v["name"])
     log(f"done in {(time.time() - started) / 60:.0f} min" + (f", {len(failures)} failed: {failures}" if failures else ""))
     sys.exit(1 if failures else 0)
 
