@@ -29,8 +29,8 @@ Major processing tasks in an NLP system include:
     - **Low- vs. high-resource language**: defined by amount of available data/speakers/researchers/Wikipedia articles for that language. Translating low→low resource is harder than low→high→low (pivoting through English/high-resource languages), though pivoting isn't ideal since it loses cultural/contextual nuance.
 - **Conversational systems / voice assistants**: Siri, Alexa, Google Home — an older but foundational NLP application category.
 - **Question answering**: search engines evolved from "10 blue links" → direct AI-generated answer overviews (e.g., Google's AI Overview).
-- **Text generation & agents**: modern LLMs (ChatGPT, Claude) can generate full documents, plan/orchestrate multi-step tasks (agentic workflows), and are described as "an orchestrated agentic harness on top of a base language model."
-    - Caution highlighted: over-relying on LLMs for tasks like curriculum design risks **loss of diversity** — heavy sampling from a model clusters around its "mode," so many people prompting similarly get very similar (homogeneous) outputs, losing the tails of the true distribution of ideas/knowledge.
+- **Text generation & agents**: modern LLMs (ChatGPT, Claude) can generate full documents and plan/orchestrate multi-step tasks (agentic workflows). The live demo was Claude Code designing a whole course: the lecturer described it as "an orchestrator or an agentic harness on top of the models", with sub-agents working on different parts of the problem in parallel.
+    - Caution highlighted: over-relying on LLMs for tasks like curriculum design risks **loss of diversity**. If everyone asks the same thing, everyone gets very similar answers, so if the answer misses some fine points, everyone misses them. The lecturer's image: it's like repeatedly sampling from a skewed distribution, where you keep getting the same region and miss the other parts of the distribution.
 
 ### Why language models got so good
 
@@ -157,7 +157,7 @@ Converting raw text → BoW matrix requires care at several steps:
         - Sometimes stopword removal _hurts_ — e.g., author identification and psychological modeling rely on function words and punctuation (pronoun usage, "!!!", ":-)" carry signal). Reference: James Pennebaker, _The Secret Life of Pronouns_.
 5. **Word normalization**
     
-    - **Casefolding**: lowercase everything so "Yams"/"yams" aren't separate features. But this creates ambiguity (e.g., "apple" the fruit vs. "Apple" the company). In practice, with large datasets, casefolding is often best _avoided_; with small datasets it can help reduce sparsity.
+    - **Casefolding**: lowercase everything so "Yams"/"yams" aren't separate features. But this creates ambiguity (e.g., "apple" the fruit vs. "Apple" the company). Its purpose was to **shrink the vocabulary** and so the sparsity of BoW, which mattered when every word was a column. The lecturer: *"these days, case folding is almost always not done"*, because modern tokenizers keep the vocabulary small anyway (with characters as tokens it's ~100 symbols), so there's no reason to throw away the case information.
     - **Stemming**: crude, rule-based stripping of affixes to a common root (e.g., "walking"/"walks"/"walked" → "walk"; "business"/"busy" → "busi"). Typically done heuristically (e.g., Porter stemmer).
         - Pro: reduces sparsity.
         - Con: discards information/introduces collisions (e.g., "business" vs. "busy"; "operating" as in "operating system").

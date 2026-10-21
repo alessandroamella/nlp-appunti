@@ -58,7 +58,7 @@ _Male–Female, verb-tense, and country–capital relationships all show up as *
 ### Dense word vectors (recap + goal)
 
 - Each word → a **dense, real-valued vector**, still high-dimensional relative to a scalar, but _much_ smaller than sparse BoW vectors: typically $O(10^3)$ dimensions instead of $O(10^5)$–$O(10^6)$.
-    - Aside: even today's large language models typically use embedding dimensions that are "low" by LLM standards but still in the thousands (e.g., multiples of 1024/4096-ish ranges) — nowhere near the millions of dimensions of a sparse BoW vocabulary vector.
+    - Aside from the lecturer: some of today's large models have an embedding dimensionality of **8,192**, or around 16,000 (always powers of 2). The lecturer wouldn't call that low-dimensional, but it's nowhere near the millions of dimensions of a sparse BoW vocabulary vector, and it isn't sparse.
 - **Similarity of vectors should represent similarity of meaning.** A well-trained embedding space gives $\text{sim}(\text{enjoyed}, \text{loved}) \gg 0$, unlike the sparse case.
 
 > [!example] Lab — cosine similarity, and what it actually measures
@@ -144,7 +144,9 @@ One training iteration is always, in this order: **forward pass → compute loss
         - Step 2: append `"It"` to the input, recompute $h_{T+1} = \sum_{t=0}^{T+1} x_t$ → predict `"was"` = $x_{T+2}$.
         - Repeat, feeding each newly generated word back in as input, one word at a time — this word-by-word feedback loop is literally how many generative language models operate.
     - **Key change needed**: this is no longer _binary_ classification (+/−) — it's **multi-class classification over the entire vocabulary** $V$. If your vocabulary has a million words, you effectively have a million "classes," one per possible next word. This requires **softmax** instead of a simple sigmoid, since softmax converts a raw vector of scores into a full probability distribution over many classes (see §5 below), rather than a single probability of a binary outcome.
-    - **In the lecturer's own words** (from the recording, paraphrased since the auto-transcript is rough): "it takes a sequence as input and it generates the next word — you feed in all the words you want, then you generate the next word, then you feed that new word back in as well and generate one more, and you keep going like this." On why it must be multi-class rather than binary: "if you have a million words in your vocabulary, you have a million classes — because you want to see which word comes next, all the vocabulary words are your class labels. You cannot just use a sigmoid, you need a softmax, which converts a vector into a probability distribution — the weight matrix transforms the hidden vector into a vector the size of your vocabulary, and softmax turns that into a probability distribution over all words. That tells you the most likely next word. Then you feed it back in and keep going."
+    - **Shapes, as the lecturer put it**: with a million-word vocabulary and a 1,000-dimensional hidden vector, the weight matrix takes the 1,000-dimensional vector and turns it into a million-entry vector, one score per word. The softmax turns that into the distribution, the most likely word (*it*) is fed back in, the next prediction is *was*, and so on.
+
+    > «If you have a million words in your vocabulary, you have a million classes. […] To do that, you cannot rely just on a sigmoid activation function. You need a softmax, which actually converts a vector into a probability distribution.» — [1:42:12](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e32acb17-9550-4cdc-adea-b4b80077ea46&start=6132)
 
 ---
 
@@ -153,7 +155,7 @@ One training iteration is always, in this order: **forward pass → compute loss
 You _can_ — embeddings can be learned end-to-end as part of a supervised task (e.g., sentiment classification), using backpropagation exactly as above. But this has two real downsides:
 
 - **Data scarcity**: high-quality embeddings need a lot of training data, and clean, labeled data (e.g., thousands of hand-labeled movie reviews) is expensive and limited to collect.
-- **Task-specificity**: embeddings learned this way are optimized _only_ for that one task/objective — e.g., embeddings learned purely from a movie-sentiment classifier will only capture what's needed to distinguish positive/negative sentiment. They won't necessarily capture the general relationship between, say, "Ukraine" and "Kyiv," or any broader semantic structure — because the model was never asked to learn that.
+- **Task-specificity**: embeddings learned this way are optimized _only_ for that one task/objective — e.g., embeddings learned purely from a movie-sentiment classifier will only capture what's needed to distinguish positive/negative sentiment. They won't tell you which words are more positive or negative, or the relationship between, say, "Ankara" and "Turkey," or any broader semantic structure — because the model was never asked to learn that.
 
 **Contrast**: today's large language models are trained not on a small labeled dataset, but essentially on the entire internet — with no realistic upper bound on available (unlabeled) training data — which is a big part of why their embeddings capture so much general-purpose knowledge.
 
@@ -194,7 +196,7 @@ You instantly guess "movie" or "show" — not because anyone told you the defini
 
 **Why does this give you *meaning* instead of just co-occurrence counts?** Two words never even have to appear in the exact same sentence to end up with similar vectors — they just need to show up in *similar kinds of surrounding words* across the corpus. That's the key upgrade over sparse BoW vectors (§2): meaning comes from *distributional pattern*, not from literal shared words.
 
-**Mechanically, in plain terms** (matches the "in the lecturer's own words" quote in §3): you take the embeddings of the context words (e.g. *enjoyed, the, we, watched*), squash them together into one vector (by summing them), then ask "given this squashed context, which word from my entire vocabulary is most likely to be the missing one?" That last question — a probability over *every* word in the vocabulary — is exactly what softmax computes (see the primer box just below). The formal setup and a fully worked numeric example follow.
+**Mechanically, in plain terms** (the same projection + softmax as the text-generation example in §3): you take the embeddings of the context words (e.g. *enjoyed, the, we, watched*), squash them together into one vector (by summing them), then ask "given this squashed context, which word from my entire vocabulary is most likely to be the missing one?" That last question — a probability over *every* word in the vocabulary — is exactly what softmax computes (see the primer box just below). The formal setup and a fully worked numeric example follow.
 
 > [!note] Quick primer: what softmax actually does
 > Before CBOW: softmax's job is to turn an arbitrary vector of real numbers (**scores**, aka **logits** — can be negative, can be huge, don't sum to anything meaningful) into a **valid probability distribution** — all entries $\geq 0$ and summing to 1.
@@ -479,7 +481,7 @@ Instead of reasoning from the objective functions, the lecturer answered **empir
 - **CBOW** → *slice, tear, dice, break, chop, carve*: words denoting the **same kind of action**, near-synonyms that could be **substituted for** "cut" in the same slot. This is **paradigmatic** similarity (same-role, interchangeable words).
 - **Skip-gram** → *crosswise, crossways, 1/2-inch-thick, diamonds, diagonally, lengthwise, wise*: not other ways of cutting at all, but words describing **how** the cutting is done — i.e. words that literally **appear around** "cut" in real text ("cut *crosswise*", "cut *lengthwise*", "cut into *diamonds*", "cut *1/2-inch-thick*"). This is **syntagmatic** relatedness (co-occurrence, not substitutability).
 
-> **In the lecturer's own words** (paraphrased — the auto-transcript is rough): "when you look at skip-gram, it gives you a relationship of how this word actually appears in a surrounding context, and the other one [CBOW] gives you more of a relationship of this word with words that are similar to it in terms of the action."
+> «When you look at skip-gram […] the one actually gives you a relationship that tells you how this word actually appears in the surrounding context, right? And the other [CBOW] actually gives you more of a relationship of this word with words that are similar to this in terms of the action.» — [50:12](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=3012) (08 Sep recording)
 
 **Why this falls out of the two objectives** (§6–§7): CBOW's training signal is *"given this bag of neighbours, which word fills the blank?"* — so any two words that plausibly fill the **same** blank get pushed together, which is essentially the definition of substitutability. Skip-gram's signal is *"given this word, what surrounds it?"* — so a word's vector becomes a compressed description of its **typical neighbourhood**, and words with overlapping neighbourhoods end up close even when they are not interchangeable.
 
@@ -489,7 +491,7 @@ Instead of reasoning from the objective functions, the lecturer answered **empir
 
 > Do you get embeddings for both the context words and the target word?
 
-**Yes** — in both CBOW and skip-gram you end up with **two sets of embeddings** per vocabulary word: one for the word in its role as **target**, one for the word in its role as **context**. These are exactly the two learnable matrices from §6: the input embedding table $E$ and the projection matrix $\mathbf{U} \in \mathbb{R}^{d \times V}$ (whose rows/columns are the "context" vectors). In practice the input embeddings are the ones usually kept and used as *the* word vectors, but the second set exists and can also be used.
+Answered in the same 08 Sep recap: **yes** — in both CBOW and skip-gram you end up with **two sets of embeddings** per vocabulary word: one for the word in its role as **target**, one for the word in its role as **context**. These are exactly the two learnable matrices from §6: the input embedding table $E$ and the projection matrix $\mathbf{U} \in \mathbb{R}^{d \times V}$ (whose rows/columns are the "context" vectors). In practice the input embeddings are the ones usually kept and used as *the* word vectors, but the second set exists and can also be used.
 ---
 
 ## Da ricordare

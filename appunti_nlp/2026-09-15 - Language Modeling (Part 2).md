@@ -1,6 +1,6 @@
 Continuation of [[2026-09-08 - Language Modeling (Part 1)]], which ended with the Elman RNN. This lecture covers three things. First, **how an RNN is trained**: backpropagation through time. Second, **why training breaks down on long sequences**: vanishing gradients. Third, **the fix**: gated RNNs (LSTM, GRU).
 
-The deck opens with a recap of Part 1 (n-grams, perplexity, fixed-context NLMs, the Elman network, slides 6–20). It's not repeated here. See [[2026-09-08 - Language Modeling (Part 1)#16. Recurrent neural networks (RNNs) — introduction]].
+The deck opens with a recap of Part 1 (n-grams, perplexity, fixed-context NLMs, the Elman network, slides 6–20). It's not repeated here. The Elman slides weren't a recap in practice: the 08 Sep lecture ran out of time before them, so they were presented here for the first time. See [[2026-09-08 - Language Modeling (Part 1)#16. Recurrent neural networks (RNNs) — introduction]].
 
 One loose end from Part 1 was closed in this lecture: **what should $h_0$ be?** The class's answers were all accepted. (a) **Zeros**, because at the start there is no history. (b) Something **task-dependent/pre-trained**. (c) A **learnable** parameter, trained like the others (see [24:38](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=1478)).
 
@@ -119,7 +119,7 @@ The fix is to run **two** RNNs, one left→right ($h^f$) and one right→left ($
 - ✅ **Sequence labelling** (POS tagging, per-token sentiment): each token's label can depend on what comes after it.
 - ❌ **Next-token generation / language modelling**: the whole task is predicting the future, so the future isn't available.
 
-There was a long discussion in class about the ❌ case. The key refinement is "*can* ≠ *should*". You *can* bolt a backward RNN onto a generator, but it runs over tokens that don't exist yet. At the position you're predicting, the backward direction has nothing to read, so it adds no information. You're "throwing compute at it without any expected gain" (see [1:20:42](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=4842) for the discussion and [1:29:10](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=5350) for the conclusion). The lecturer also said that **machine translation** has a setup where a bidirectional encoder *is* legitimate, because the source sentence is fully known. That's the encoder–decoder model of the next lecture.
+There was a long discussion in class about the ❌ case. The key refinement is "*can* ≠ *should*". You *can* bolt a backward RNN onto a generator, but it runs over tokens that don't exist yet. At the position you're predicting, the backward direction has nothing to read, so it adds no information. You're "throwing compute at it without any expected gain" (see [1:20:42](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=4842) for the discussion and [1:29:10](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=5350) for the conclusion). The lecturer also said there is a setup where this *is* legitimate, "without cheating", and that **machine translation** is still done that way, to be shown "maybe 3 weeks from now". My reading: it's the bidirectional encoder of the encoder–decoder model, since the source sentence is fully known. That model came the very next week, see [[2026-09-22 - Seq2Seq Models and Transformers#Bidirectional encoders]].
 
 ### Wrap-up of the RNN half
 
@@ -174,7 +174,7 @@ This is the irony the lecture was built around. Weight sharing is the RNN's big 
 The class suggested **skip/residual connections**, **ReLU** (or other activations), and **normalisation layers**. The lecturer's take:
 
 - **Different activation (ReLU):** its derivative isn't forced below 1, so the systematic shrinking goes away. Reasonable.
-- **Skip connections:** give the gradient a shorter path. They help, but "skip connections are not the way we solved this problem for language models" (see [1:46:24](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=6384)). The actual solution is **gating**, which is closely related (§11).
+- **Skip connections:** give the gradient a shorter path. They help, but "skip connections is not the way we solve this problem in language models or in recurrent neural networks" (see [1:46:24](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=6384)). The actual solution is **gating**, which is closely related (§11).
 
 ---
 
@@ -219,7 +219,7 @@ The LSTM keeps **two** states:
 
 The cell state update is the gated abstraction of §7 made concrete. $f_t$ decides how much of the old $c_{t-1}$ survives, and $i_t$ decides how much of the new candidate $\tilde c_t$ gets written.
 
-LSTMs date from the 1990s (Hochreiter & Schmidhuber, 1997). The lecturer noted it took **years** before people could train them well enough to be useful in practice.
+LSTMs date from the 1990s (Hochreiter & Schmidhuber, 1997). The lecturer's anecdote: it took **almost 13 years** before people could use them meaningfully in practice. The concept looked nice in theory, but for those years it was "a bit unusable".
 
 ### The three gates, one at a time
 
@@ -240,7 +240,7 @@ Take a trained LSTM, pick **one dimension** of $c$, and colour each input charac
 - **Source code (Linux kernel):** the answers pointed to a dimension tracking **scope/indentation depth**, which changes as you enter `if`/`for` blocks.
 - **Online news / novel text:** a dimension that switches on **inside quotation marks**. Some people answered "the speaker", but a speaker-tracking unit would have to react to the speaker's name specifically, and it doesn't. It flips exactly at the quote marks.
 
-> ⚠️ **Exam:** you won't get interpretation questions this under-specified. If something like this appears, it will come with more information, and you can ask for clarification in the room (see [2:25:18](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=8718); repeated at the start of the 22 Sep lecture, [13:46](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=826)).
+> ⚠️ **Exam:** you won't get interpretation questions this under-specified. On 15 Sep: the teachers will be in the exam room, and an under-specified question would be removed. On 22 Sep: a question like this would come with more information, you can ask clarification questions in the room, and a clarification that applies to everyone goes on the whiteboard/projector (see [2:25:18](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=201e3530-b7b1-48c4-ac4a-b4c6007554f3&start=8718); repeated at the start of the 22 Sep lecture, [13:46](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=826)).
 
 ### Quick comprehension questions (Menti)
 
@@ -341,7 +341,7 @@ The slide shows the results of Chung et al. (2014) on speech and music modelling
 
 ### Could there be better architectures?
 
-Jozefowicz et al. (2015) searched automatically over thousands of recurrent cell variants (MUT1–3 on the slide). Some beat the LSTM/GRU on particular tasks, but none did so consistently. The lecturer's comment: at that point it "started becoming more of a hacking/engineering exercise". It's for background only.
+Jozefowicz et al. (2015) searched automatically over thousands of recurrent cell variants (MUT1–3 on the slide). Some beat the LSTM/GRU on particular tasks, but none did so consistently. The lecturer's comment: at that point it "started becoming more like a hack or an engineering exercise". It's for background only.
 
 ### Wrap-up
 

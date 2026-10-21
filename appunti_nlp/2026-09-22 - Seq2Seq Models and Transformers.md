@@ -88,7 +88,7 @@ $$\mathcal L = \sum_{t=1}^{T} -\log P(y_t \mid y_1,\dots,y_{t-1},\, x_1,\dots,x_
 - A **language model** has practically **unlimited data**: any text will do, because it only learns which word follows which.
 - An **encoder–decoder** learns which sequences **align** with which. It needs **paired data**: parallel sentences for MT, image–caption pairs, code–comment pairs, and so on. ⚠️ **Paired data is much harder to find in the wild.**
 
-The lecturer added a point that came out of a break discussion. Many inputs have **more than one valid output**: several correct translations of a sentence, many ways to implement the same function. A paired dataset usually gives you *one*, so the model sees a narrow slice of the valid outputs and generalises worse. The lecturer also said this architecture was genuinely used in industry before Transformers. At American Express, about nine years ago, they trained one of these to turn natural-language questions into SQL queries for analysts (see [1:02:55](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=3775)).
+The lecturer added a point that came out of a break discussion. Many inputs have **more than one valid output**: several correct translations of a sentence, many ways to implement the same function. A paired dataset usually gives you *one*, so the model sees a narrow slice of the valid outputs and generalises worse (see [1:03:07](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=3787)). The lecturer also said this architecture was genuinely used in industry before Transformers. When the lecturer worked at American Express, "9, 10 years ago", they trained one of these to turn textual queries into SQL queries for analysts (see [1:04:25](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=3865)).
 
 ---
 
@@ -110,7 +110,7 @@ In the encoder–decoder, **everything** the decoder knows about the input comes
 
 ### Menti: how can we mitigate the temporal bottleneck?
 
-Many answers were "attention", which is where the lecture goes next. Some said **skip connections**. The lecturer explained why that isn't the fix here. The LSTM blocks *already* have learned, residual-like paths ([[2026-09-15 - Language Modeling (Part 2)#11. Recap from 22 Sep: gates as learned skip connections]]), which are stronger than a plain skip. Adding skips between blocks "will not be useful" (see [1:09:25](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=4165)).
+Many answers were "attention", which is where the lecture goes next. Some said **skip connections**. The lecturer explained why that isn't the fix here. The LSTM blocks *already* have learned, residual-like paths ([[2026-09-15 - Language Modeling (Part 2)#11. Recap from 22 Sep: gates as learned skip connections]]), which are stronger than a plain skip. You can still add skips between the blocks, and they'd still help a bit, "but it will not be as useful" (see [1:09:25](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=4165)).
 
 > My reading of why (not stated this way in the lecture): skip connections fix **gradient flow**. The bottleneck is a **capacity** problem: all the input must pass through one fixed-size vector. Better gradient paths don't give the decoder more to look at.
 
@@ -328,7 +328,7 @@ Run **several attention heads in parallel**, each with its **own** $W^Q, W^K, W^
 
 The word cloud had parallelisation, better long-range dependencies, interpretability, no vanishing gradients, and also computational cost on long documents. The lecturer said most were correct, and stressed these two:
 
-1. **Parallelisation.** Each position's attention is independent of the others, so the whole input is processed **at once**, not token by token. This is why the architecture fits **GPUs** so well. GPUs were designed for games and graphics, not for training models, but they happen to be built for exactly this kind of massively parallel computation. Transformers and GPUs "helped each other" (see [2:28:45](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=8925)).
+1. **Parallelisation.** Each position's attention is independent of the others, so the whole input is processed **at once**, not token by token. This is why the architecture fits **GPUs** so well. GPUs were designed for games and graphics, not for training models, but they happen to be built for exactly this kind of massively parallel computation. Transformers and GPUs "helped each other" (see [2:30:28](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=9028)).
 2. **Better long-range dependencies.** Any two positions interact **directly, in one layer**. There is no chain of recurrent state updates in between. Attention with an RNN encoder only fixed the decoder↔encoder link. Self-attention removes recurrence from the encoder too.
 
 > About "computational cost on long documents": the lecturer didn't expand on it. It's a real *disadvantage*. Every position attends to every other, so a layer costs $O(T^2)$ in the sequence length. Keep it in mind as the price of advantage 2.
@@ -444,7 +444,7 @@ Shapes make the difference concrete (lab 1, Q3.2): a weight matrix has one row p
 - **In practice, the easiest thing is to learn position embeddings from scratch.**
 - **Menti: what's a disadvantage of learned position embeddings?** **Poor generalization to sequences longer than the maximum position embedding you've learned.** If you trained positions 1–512, there's simply no vector for position 513.
 
-The next lecture's deck (`06 - PLMs`) re-opens with this, so the full treatment will be in that note.
+The next lecture finished this topic: see [[2026-09-29 - Pre-trained Language Models#1. Position embeddings]] (addition vs concatenation, the clock intuition, and the lab on RoPE, ALiBi and NoPE).
 
 > [!example] Lab — order-blindness, shown and fixed (lab material, not yet lecture)
 > `ta_sessions/Exercises/05 - Transformers/0. Attention.ipynb` (§4).

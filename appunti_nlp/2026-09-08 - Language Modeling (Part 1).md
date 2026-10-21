@@ -30,7 +30,9 @@ The deck's framing: *predicting the next token is important in many situations.*
 - **Classical — spell checking**: $P(high\ school\ \textbf{principal}) > P(high\ school\ \textbf{principle})$. Note this is a *homophone* error that a dictionary-based spell checker cannot catch — both words exist; only the sequence probability distinguishes them. This is the cleanest argument for why you need a model of sequences and not of words.
 - **Modern**: information extraction, question answering, instruction-following LLMs.
 
-Everyday examples the lecturer walked through: Google search autocomplete, Gmail's "Smart Compose" suggestions, and your phone keyboard's next-word bar. His point, said explicitly: these do **not** have to be LLMs — *"your phone keyboard is a language model. It can be a stupid language model, but it is still a language model."* The autocomplete in Gmail is powered by an **LSTM**-class model (covered next week), not a frontier LLM.
+Everyday examples the lecturer walked through: Google search autocomplete, Gmail's autocomplete when you write an email, and the dictionary on your phone. The point, said explicitly: these do **not** have to be LLMs. Phone dictionaries already were language models in 2011–2013, with no GPU on the phone. Gmail's autocomplete is *"literally powered by an LSTM"* (covered next week), not a frontier LLM.
+
+> «Even your dictionaries on phones actually are language models. They can be a stupid language model, but they are still language models.» — [56:59](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=3419)
 
 ---
 
@@ -158,7 +160,7 @@ The research process is the standard ML pipeline:
 - **Train** parameters on a suitable training corpus.
 - **Assumption**: *observed sentences are probably good sentences.* This is what makes LM training **self-supervised** — there are no labels; you feed it text and the text itself is the supervision, exactly as in CBOW/skip-gram ([[2026-09-01 - Neural Networks and Word Embeddings]]). The assumption is load-bearing: garbage training text means the model learns that garbage is likely.
 - **Test** on a different, unseen corpus.
-- **Training on any part of the test set is not acceptable!!** The lecturer's analogy: it is like *having access to the book while writing the exam* — you are doing a lookup, not modelling. The measurement stops meaning anything.
+- **Training on any part of the test set is not acceptable!!** The lecturer's analogy: it is like *having access to the answer books while writing the exam* — you are doing a lookup, not modelling. The measurement stops meaning anything.
 - **Evaluate** with a suitable metric.
 
 ---
@@ -171,7 +173,7 @@ Train LM → apply to a downstream task → observe accuracy → refine.
 - **Con**: expensive and time consuming — a new expensive evaluation, and a new tuned model, for **every** task.
 - **Con**: hard to optimise the downstream objective (indirect feedback).
 
-The lecturer's sharper version of the last point, which is *not* on the slide: you end up training the model to be a better movie-review classifier or a better email writer, **not a better model of language**. It can take shortcuts — learn a few simple task-specific rules that get the accuracy up without ever modelling language in a general sense (see [1:34:10](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=5650)). Since an LM is trained in a deliberately generic manner with no task objective, grading it on one task defeats the point.
+The lecturer's sharper version of the last point, which is *not* on the slide: you end up training the model to be a better movie-review classifier or a better email writer, **not a better model of language**. It can take shortcuts — learn a few simple task-specific rules that get the accuracy up without ever modelling language in a general sense (see [1:34:00](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=5640)). Since an LM is trained in a deliberately generic manner with no task objective, grading it on one task defeats the point.
 
 So we want an **intrinsic** metric: one computed from the model's own probabilities, on held-out text, with no downstream task attached.
 
@@ -219,7 +221,7 @@ The useful mental model: **perplexity ≈ the effective number of choices the mo
 
 ### Two things the lecturer drew out of the Menti polls
 
-**(a) Perplexity depends on the vocabulary, so it is not comparable across models with different vocabularies.** The uniform case above makes this obvious: $ppl = |V|$, so a model over a 100,000-word vocabulary and a model over a 1,000-word vocabulary are on completely different scales before you even look at their quality. Comparing their perplexities is *"literally comparing apples and oranges"* (see [1:46:40](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=6400)). **Same vocabulary and same test set, or no comparison.**
+**(a) Perplexity depends on the vocabulary, so it is not comparable across models with different vocabularies.** The uniform case above makes this obvious: $ppl = |V|$, so a model over a 100,000-word vocabulary and a model over a 1,000-word vocabulary are on completely different scales before you even look at their quality. Comparing their perplexities is *"literally comparing apples with oranges"* (see [1:46:40](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=6400)). **Same vocabulary and same test set, or no comparison.**
 
 **(b) What does $ppl > |V|$ mean?** Poll options were: better than a random LM / the same as a random LM / **worse than a random LM**. The answer is **worse than random**, and the reasoning is worth re-hearing (see [1:53:00](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=6780)):
 
@@ -445,7 +447,7 @@ $$P(w = i \mid \text{the cat sat on the}) = \text{softmax}_i(\mathbf{z}) = \frac
 
 **Why concatenate instead of sum?** Summing (as in CBOW) destroys word order — *"the cat sat"* and *"sat the cat"* would get the same representation. Concatenating keeps each position in its own slice of the input vector, so $\mathbf{W}$ can learn position-specific behaviour. The price is that $\mathbf{W}$ grows linearly with the context length $n$.
 
-> **Could the hidden layer just learn to do a sum?** A student asked this, and the answer is **yes — it can**: a suitable $\mathbf{W}$ reproduces a sum exactly. But then you would be "wasting compute to learn an operation you could have hard-coded". The point of the learned layer is that it discovers whichever composition suits your **data and task**; if summing happens to be optimal for your data, backprop will find something like it, but you don't have to commit to it in advance (see [2:44:55](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=9895)).
+> **Could the hidden layer just learn to do a sum?** A student asked this, and the answer is **yes — it can**: a suitable $\mathbf{W}$ reproduces a sum exactly. But *"it would be waste of a compute to use a neural network to just do a sum where you can just do a sum yourself"*. The point of the learned layer is that it discovers whichever composition suits your **data and task**; if summing happens to be optimal for your data, backprop will find something like it, but you don't have to commit to it in advance (see [2:44:55](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=9895)).
 
 **Menti: which word-embedding algorithm does this resemble most?** → **CBOW.** Same shape — take surrounding/preceding words as input, predict a single target word through a projection + softmax. The difference is *which* words count as context (CBOW: symmetric window; fixed-context LM: only the preceding $n$) and that the composition is a learned layer rather than a plain sum.
 
@@ -535,6 +537,8 @@ That feedback loop in generation is worth noticing: it is the chain rule of §3 
 
 ### The classical RNN: the Elman network
 
+*(The 08 Sep lecture stopped at the text-generation examples above. The Elman slides and the wrap-up below were presented at the start of the 15 Sep lecture.)*
+
 ![[assets/2026-09-08/lm-pt1-093.png]]
 _The Elman network, with the two components that make it work highlighted._
 
@@ -546,7 +550,7 @@ $$z_t = \sigma(W_{zh} h_t + b_z)$$
 1. **Memory** is maintained across time steps by the state $h$ — specifically by the $W_{hh} h_{t-1}$ term, which is the slide's answer to *"what part of this formulation allows the model to maintain a state of previously input tokens?"* Delete that one term and you have an ordinary feedforward network applied independently per token.
 2. **Parameter matrices are shared across all time steps** — $W_{hx}, W_{hh}, W_{zh}, b_h, b_z$ are the *same* at every $t$. This is precisely the weight sharing the fixed-context model lacked (§15), and it is why **model size does not grow with sequence length**.
 
-> **What should $h_0$ be?** The question was left open here and settled at the start of the next lecture. Any of these works: **zeros** (there's no history yet), something **task-dependent/pre-trained**, or a **learnable** parameter trained with everything else. See [[2026-09-15 - Language Modeling (Part 2)]].
+> **What should $h_0$ be?** Asked and answered when these slides were presented on 15 Sep. Any of these works: **zeros** (there's no history yet), something **task-dependent/pre-trained**, or a **learnable** parameter trained with everything else. See [[2026-09-15 - Language Modeling (Part 2)]].
 
 **Objective**: learn the parameter matrices $W_{hh}, W_{hx}, W_{zh}$ such that the RNN can represent textual sequences.
 
@@ -556,7 +560,7 @@ $$z_t = \sigma(W_{zh} h_t + b_z)$$
 - **Problem**: fixed-context LMs can only process a limited window of the word history at a time.
 - **Solution**: RNNs can **theoretically** learn to model an **unbounded context length**, with **no increase in model size**, because weights are shared across time steps.
 
-The word **theoretically** is flagged in the slide and was flagged aloud: in practice training RNNs over long sequences runs into vanishing/exploding gradients. **Challenges in training RNNs** and **mitigations (LSTMs, GRUs)** are next week's lecture.
+The word **theoretically** is flagged in the slide and was flagged aloud on 15 Sep (*"I'm just saying theoretically"*): in practice training RNNs over long sequences runs into vanishing/exploding gradients. **Challenges in training RNNs** and **mitigations (LSTMs, GRUs)** are next week's lecture.
 
 ---
 
