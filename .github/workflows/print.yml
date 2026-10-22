@@ -25,16 +25,22 @@ jobs:
       # only the images the notes embed, not the slide/lab/exam PDFs
       - run: git lfs pull --include="appunti/assets/**"
 
-      # pandoc straight from its GitHub release: apt mirrors occasionally hang
+      # pandoc from its GitHub release, fonts straight from upstream: no apt,
+      # whose mirrors occasionally hang. Same fonts the local build picks.
       - name: Install pandoc and fonts
-        timeout-minutes: 4
+        timeout-minutes: 3
         run: |
           curl -fsSL -o pandoc.deb https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-1-amd64.deb
           sudo dpkg -i pandoc.deb
-          echo 'set man-db/auto-update false' | sudo debconf-communicate >/dev/null
-          sudo rm -f /var/lib/man-db/auto-update
-          sudo apt-get update -q
-          sudo apt-get install -y -q --no-install-recommends fonts-noto-core fonts-inter
+          dir=~/.local/share/fonts && mkdir -p $dir && cd $dir
+          gf=https://github.com/google/fonts/raw/main/ofl
+          for f in "inter/Inter[opsz,wght].ttf" "inter/Inter-Italic[opsz,wght].ttf" \
+                   "notoserif/NotoSerif[wdth,wght].ttf" "notoserif/NotoSerif-Italic[wdth,wght].ttf" \
+                   "notosansmono/NotoSansMono[wdth,wght].ttf" "notocoloremoji/NotoColorEmoji-Regular.ttf"; do
+            curl -fsSL -o "$(basename "$f")" "$gf/$(echo "$f" | sed 's/\[/%5B/; s/\]/%5D/')"
+          done
+          curl -fsSL -O https://mirrors.ctan.org/fonts/lm-math/opentype/latinmodern-math.otf
+          fc-cache -f
 
       - run: python3 print/build.py
         env:
