@@ -108,6 +108,11 @@ In the encoder–decoder, **everything** the decoder knows about the input comes
 
 **Toy example.** To generate "I", the decoder needs "Je". But "Je" was the **first** token encoded. Since then the state has been overwritten by 4 more tokens ("m'", "appelle", "Akhil", `<START>`), and for this prediction those are noise. With 4 tokens it may not matter. With a long document, or with a long prompt of the kind people give LLMs today, it is a real problem.
 
+> ⚠️ **Exam (2025 Q5 = mock exam, rated easy):** *key disadvantage of RNNs for long sequences?* → **all the history is compressed into a single fixed-size state vector, so information is lost.** That's this section. The three distractors are each false about RNNs in general ([[2026-09-08 - Language Modeling (Part 1)#16. Recurrent neural networks (RNNs) — introduction]]):
+> - "**quadratic** in the sequence length": no, an RNN is **linear** in $T$ (one step per token). Quadratic is the *Transformer's* cost (§4).
+> - "**different parameters** at each timestep": no, the **same weights are shared across all steps**. That's what lets an RNN handle any length.
+> - "can't learn **nonlinear** representations": no, $h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1} + b)$ goes through a nonlinearity at every step.
+
 ### Menti: how can we mitigate the temporal bottleneck?
 
 Many answers were "attention", which is where the lecture goes next. Some said **skip connections**. The lecturer explained why that isn't the fix here. The LSTM blocks *already* have learned, residual-like paths ([[2026-09-15 - Language Modeling (Part 2)#11. Recap from 22 Sep: gates as learned skip connections]]), which are stronger than a plain skip. You can still add skips between the blocks, and they'd still help a bit, "but it will not be as useful" (see [1:09:25](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fa3c84d3-b9d6-47b6-b8bd-b4cd0076eb7a&start=4165)).
@@ -185,6 +190,11 @@ In the RNN version, keys and values are **the same vectors** used in two roles. 
 > **Why that's a problem.** The softmax exponentiates *differences*: a gap of 20 between two scores is a factor $e^{20}$. Unscaled, one random key takes practically all the weight, so the softmax becomes a hard argmax **by chance, at initialisation**. A saturated softmax has ≈ **zero gradient**: nudging the scores doesn't change a one-hot output, so no signal reaches $W^Q, W^K$ telling them which key *should* have won. The model starts on a plateau (the lab compares it to a closed forget gate, [[2026-09-15 - Language Modeling (Part 2)#8. Long Short-Term Memory (LSTM)]]). Scaled, attention starts soft and near-uniform and can sharpen where training wants it.
 >
 > A sharp attention distribution isn't bad in itself. It's bad when it's there before the model has learned anything.
+
+> ⚠️ **Exam (2025 Q8 = mock exam):** *which is correct about a Transformer self-attention layer?* → **dividing $QK^\top$ by $\sqrt{d_k}$ keeps the softmax out of its near-zero-gradient regions when $d_k$ is large** (the derivation above). Each distractor tests a different fact:
+> - "each token attends **only to previous tokens**": that's **masked** self-attention, used only in the decoder (§4.6). Plain self-attention (the encoder, BERT) sees the whole sequence.
+> - "softmax **over the Query matrix**, normalising across the dimensions of one token": the softmax is over the **scores $QK^\top$**, one row per query, and it normalises **across keys** (positions), not across embedding dimensions.
+> - "a larger Q/K dimension **doesn't change the cost**": it does. $QK^\top$ is $T^2$ dot products of length $d_k$, so $O(T^2 d_k)$, and $W^Q, W^K$ get more parameters.
 
 ### The attentive encoder–decoder
 
@@ -406,6 +416,11 @@ Because $e^{-\infty} = 0$, future positions get exactly zero weight, and the rem
 
 **Why this matters:** you **keep the parallelism**. The mask is just a fixed (triangular) matrix applied to the score matrix. All positions are still computed at once during training, but each one only "sees" its past. You get causality without going back to sequential computation.
 
+> ⚠️ **Exam (2025 Q6 = mock exam):** *role of masked self-attention in the decoder?* → **it stops the decoder attending to future tokens during training, preserving the autoregressive property.** The distractors:
+> - "attends to **all encoder outputs**, aligning input and output": that's **cross-attention** (below), not masked self-attention.
+> - "**randomly** masks part of the encoder outputs, a regulariser like dropout": the mask is a **fixed triangular** matrix, not random, and it hides the decoder's *own* future tokens, not encoder outputs.
+> - "attends to **all positions** of the output to improve parallelism": the opposite. Parallelism comes from computing every position in one pass (teacher forcing), and the mask is what makes that safe.
+
 > [!example] Lab — causal mask, padding mask, and why before the softmax
 > `ta_sessions/Exercises/05 - Transformers/0. Attention.ipynb` (§3) and `1. Transformer.ipynb` (§4–5). There are **two** masks, built the same way (`True` = may attend, forbidden scores set to $-\infty$):
 > - **Causal mask** = `torch.tril(ones(L, L))`: query $i$ sees keys $0..i$. Only in the **decoder's self-attention**.
@@ -480,11 +495,11 @@ Not in the lecture. `ta_sessions/Exercises/05 - Transformers/2. Pretrained Trans
 ## Da ricordare
 
 - **Encoder–decoder:** encoder (can be **bidirectional**) → representation → **autoregressive, unidirectional** decoder. Trained **end-to-end** with cross-entropy $\sum_t -\log P(y_t\mid y_{<t}, x)$. **Teacher forcing** at training (gold target shifted right, all positions in one pass); **greedy decoding** at inference (one forward pass per token). It needs **paired data**, which is hard to find. Bidirectional $2d$ state → decoder: **project** with $W_{dec}[h^{fwd};h^{bwd}]+b$, so no need to double the decoder's size.
-- **Temporal bottleneck:** the whole input is squeezed into **one vector**. Attention fixes it with **direct connections from decoder states to all encoder states**. This also helps vanishing gradients and gives **interpretability** (alignment for free).
+- **Temporal bottleneck:** the whole input is squeezed into **one vector** (⚠️ 2025 Q5: *the* key RNN disadvantage; RNNs are linear in $T$, share weights across steps, and are nonlinear). Attention fixes it with **direct connections from decoder states to all encoder states**. This also helps vanishing gradients and gives **interpretability** (alignment for free).
 - **Attention recipe:** score $a_n = f(h^e_n, h^d_t)$ → **softmax** $\alpha_n$ → weighted sum $\sum_n \alpha_n h^e_n$. **Query** = decoder state, **keys/values** = encoder states. It's recomputed at **every** decoder step. Output layer gets $[\tilde h^d_t; h^d_t]$ (**concatenated**, not added). Weights are in $[0,1]$ **and** sum to 1.
 - **Scaled dot product:** $\text{softmax}(QK^\top/\sqrt d)\,V$ with learned $W^Q, W^K, W^V$. **Self-attention:** Q, K and V all come from the same sequence. Every element is a key and a value, one is the query, and **the position attends to itself too**. The weight matrix is **not symmetric** (row-wise softmax).
-- **Why $\sqrt{d_k}$:** $\text{Var}(q\cdot k) = d_k$ → large scores → **saturated softmax → ≈ zero gradients** (at init, by chance). It's the **scores** that are divided, not the keys, and it's not about cost. **Multi-head:** heads are **concatenated** + $W^O$ (**not averaged**); #parameters **doesn't depend on #heads** ($d$ is split into $H$ chunks of $d/H$).
+- **Why $\sqrt{d_k}$** (⚠️ 2025 Q8)**:** $\text{Var}(q\cdot k) = d_k$ → large scores → **saturated softmax → ≈ zero gradients** (at init, by chance). It's the **scores** that are divided, not the keys, and it's not about cost. **Multi-head:** heads are **concatenated** + $W^O$ (**not averaged**); #parameters **doesn't depend on #heads** ($d$ is split into $H$ chunks of $d/H$).
 - **Two advantages over RNNs:** **parallelisation** (no recurrence, fits GPUs) and **direct long-range interactions** (path length 1). Price: $O(T^2)$ in the sequence length (more precisely $O(T^2 d_k)$: **a larger $d_k$ does make the attention matrix costlier**, mock-exam trap). An RNN is *linear* in $T$; its problem is the lack of parallelism.
 - **Transformer block** = multi-head attention + **Add & Norm** + FFN + **Add & Norm**. **Attention handles sequence distance; residuals handle network depth.** The FFN is **position-wise** = the *same* network at every position. Decoder block = **masked** self-attention ($a_{st} := -\infty$ for $t>s$) → **cross-attention** (query from decoder, keys/values from the **final** encoder layer; ⚠️ exam: the options differ by one word) → FFN.
-- **Masks:** set **scores** to $-\infty$ **before** the softmax (so rows still sum to 1). **Causal** mask only in **decoder self-attention**; the encoder and cross-attention mask only **padding** keys. Not random (≠ dropout). Without the causal mask + teacher forcing, the model copies the next token: loss ≈ 0, garbage at inference.
+- **Masks** (⚠️ 2025 Q6: masked self-attention = no attending to future tokens)**:** set **scores** to $-\infty$ **before** the softmax (so rows still sum to 1). **Causal** mask only in **decoder self-attention**; the encoder and cross-attention mask only **padding** keys. Not random (≠ dropout). Without the causal mask + teacher forcing, the model copies the next token: loss ≈ 0, garbage at inference.
 - **Self-attention has no notion of order** (permutation-equivariant; extra heads/layers/projections **don't** fix it), so add **position embeddings**: sinusoidal (original) or learned (easiest in practice, but **can't generalise past the max trained length**).

@@ -325,6 +325,101 @@ The flip side works too: an exclamation-mark-based "rudeness" reward gets you 20
 
 ---
 
+## Practice questions
+
+> Not from the course: written in the style of the 2025 paper to test this lecture, which the past paper doesn't cover. One correct option each. Answers are folded.
+
+**P1. Which statement about softmax temperature $\tau$ is correct?**
+
+A. $\tau > 1$ makes the distribution more peaked, so outputs are less diverse.
+
+B. As $\tau \to 0$, sampling approaches greedy decoding.
+
+C. Temperature is a hyperparameter of fine-tuning that rescales the model's weights.
+
+D. Temperature can be combined with top-k but not with top-p.
+
+> [!success]- Answer
+> **B.** A is backwards: $\tau>1$ shrinks score differences → **flatter**, more diverse. C: it's applied **at decoding time** and changes no weights. D: it reshapes the distribution *before* any sampling method, so it combines with all of them.
+
+**P2. A model's next-token distribution, sorted, is $(0.5, 0.2, 0.15, 0.1, 0.05)$. With top-p sampling at $p = 0.8$, how many tokens are kept, and what is the top token's probability after renormalising?**
+
+A. 2 tokens; ≈ 0.71
+
+B. 3 tokens; ≈ 0.59
+
+C. 3 tokens; 0.5
+
+D. 4 tokens; ≈ 0.53
+
+> [!success]- Answer
+> **B.** Cumulative mass: 0.5, 0.7 (< 0.8), **0.85** (≥ 0.8) → the smallest set reaching $p$ is 3 tokens. Renormalise: $0.5/0.85 \approx 0.59$. A stops before reaching $p$. C forgets to renormalise. D keeps one token too many.
+
+**P3. After `<START>`, a model gives $P(\text{a}) = 0.6$, $P(\text{the}) = 0.4$. The best continuation of "a" is "cat" with $P = 0.3$; the best continuation of "the" is "dog" with $P = 0.8$. Which two-token output do greedy decoding and beam search with $b = 2$ return?**
+
+A. Both return "a cat".
+
+B. Greedy returns "a cat" (0.18); beam search returns "the dog" (0.32).
+
+C. Greedy returns "the dog"; beam search returns "a cat".
+
+D. Both return "the dog".
+
+> [!success]- Answer
+> **B.** Greedy commits to "a" (0.6 > 0.4) and can't revise it: $0.6 \times 0.3 = 0.18$. Beam search keeps both prefixes and finds $0.4 \times 0.8 = 0.32$. Beam search still isn't guaranteed to find the most likely sequence in general (it's not exhaustive).
+
+**P4. Why does beam search work well for machine translation but poorly for open-ended story generation?**
+
+A. Beam search is too slow for long outputs.
+
+B. It maximises sequence likelihood, but human open-ended text isn't maximum-likelihood text, so it produces generic and repetitive output.
+
+C. Translation models are trained without teacher forcing.
+
+D. Beam search can't produce the `<END>` token.
+
+> [!success]- Answer
+> **B.** MT has a strong input–output correspondence, so the most likely output is a good one. Open-ended text has many valid answers and human token probabilities are low and variable.
+
+**P5. Which statement about repetition in generated text is correct?**
+
+A. The NLL of a repeated phrase increases with each repetition, so models naturally escape loops.
+
+B. Re-ranking candidates by perplexity reliably removes repetitive outputs.
+
+C. The NLL of a repeated phrase decreases with each repetition, and greedy-style decoding exploits this; the effect is stronger for Transformers than for LSTMs.
+
+D. It's caused by MLE training alone and appears with any decoding algorithm.
+
+> [!success]- Answer
+> **C.** A is backwards. B is a trap: repetitive text gets **low** perplexity, so it would be ranked *higher*. D: the lecturer blamed **MLE + greedy decoding** together; sampling methods mitigate it.
+
+**P6. Why was top-p (nucleus) sampling proposed over top-k?**
+
+A. Top-k can't be combined with temperature.
+
+B. A fixed $k$ is too small for flat distributions and too large for peaky ones; top-p adapts the number of candidates to the distribution.
+
+C. Top-k is deterministic, while top-p is random.
+
+D. Top-p removes exposure bias.
+
+> [!success]- Answer
+> **B.** C: both are sampling methods. D: exposure bias is a training problem; no decoder fixes it.
+
+**P7. Consider these statements about text generation as reinforcement learning:**
+
+1. The policy is the decoder, and the actions are the vocabulary tokens.
+2. Using BLEU as the reward reliably improves human-judged translation quality.
+3. With REINFORCE, every token of a sampled sequence typically gets the same sequence-level reward.
+
+**Which are TRUE?** A. 1 · B. 1, 3 · C. 2, 3 · D. 1, 2, 3
+
+> [!success]- Answer
+> **B.** Statement 2 is false: metrics are proxies and get **gamed** (Google NMT: better BLEU, barely better to humans). That's why rewards now come from human preferences.
+
+---
+
 ## Da ricordare
 
 - **One step:** scores $S = f(y_{<t};\theta)$ → softmax → $P$ → **decoding algorithm $g$** picks $\hat y_t$, which is fed back. **Training = MLE / teacher forcing** (gold prefixes, multi-class classification over $V$). **Decoding changes no weights.**

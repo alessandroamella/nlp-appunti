@@ -26,6 +26,7 @@ Not lecture notes — different conventions apply, don't reformat them.
 ## Exam
 
 - Format: **midterm Fri 06 Nov 2026, 9:00–12:00** (starts at 9:00, not 9:15), rooms 5344-101 "Benjamin" and 5123-122 "Seminarrum"; room assignments via Brightspace by Fri 30 Oct. MCQ only. A confusing question can be raised within a week and discounted. See [[2026-10-20 - Natural Language Generation#Exam info given in this lecture]].
+- Past paper: all 10 questions of the 2025 exam (= `ta_sessions/Exam/mock_exam.ipynb`) are flagged `⚠️ Exam (2025 Qn)` in the note that covers them, with the distractors explained. Lectures the paper doesn't cover have unofficial `## Practice questions`: [[2026-10-06 - From GPT to ChatGPT#Practice questions]], [[2026-10-20 - Natural Language Generation#Practice questions]].
 - Out of syllabus:
   - State-space models / Mamba (mentioned only). See [[2026-09-29 - Pre-trained Language Models]].
   - Diffusion models for text. See [[2026-10-20 - Natural Language Generation]].

@@ -66,7 +66,9 @@ _Male–Female, verb-tense, and country–capital relationships all show up as *
 >
 > $$\cos(\mathbf u, \mathbf v) = \frac{\mathbf u \cdot \mathbf v}{\lVert \mathbf u\rVert\,\lVert \mathbf v\rVert} \in [-1, 1]$$
 >
-> It compares **direction and ignores magnitude**, which is why it's preferred over Euclidean distance (the lab's MCQ 4.8 trap: it is *not* restricted to $[0,1]$, and it doesn't require pre-normalised vectors).
+> where $\mathbf u, \mathbf v$ are the two word embeddings being compared (where $\mathbf u \cdot \mathbf v = \sum_i u_i v_i$, $\lVert \mathbf u\rVert\,\lVert \mathbf v\rVert = \sqrt{\sum_i u_i^2}\,\sqrt{\sum_i v_i^2}$).
+>
+> It compares **direction and ignores magnitude** (length reflects things like word frequency or document length, not meaning: a document pasted twice gives $2\mathbf v$, cosine 1 with $\mathbf v$), which is why it's preferred over Euclidean distance (the lab's MCQ 4.8 trap: it is *not* restricted to $[0,1]$, and it doesn't require pre-normalised vectors).
 >
 > **A refinement of "similarity of meaning"**: on the lab's own skip-gram model, $\cos(\text{man}, \text{woman}) \approx 0.78$ beats $\cos(\text{jury}, \text{court}) \approx 0.58$. Same pattern in GloVe, where *good–bad* = 0.77 and *cold* is the 2nd-nearest neighbour of *hot*. **Antonyms end up close**, because they occur in the same contexts (*the ___ said*, *it was ___*), and the distributional hypothesis (§5) only sees context. So embedding cosine measures **relatedness of usage, not synonymy**. Also, even unrelated pairs score clearly above 0 (*jury–car* ≈ 0.21): word vectors share a common overall direction, so compare cosines **with each other**, not against an absolute scale.
 

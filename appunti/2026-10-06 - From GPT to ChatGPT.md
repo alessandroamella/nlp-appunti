@@ -320,6 +320,101 @@ Two lines to take away, in the lecturer's words: "DPO makes the preferred respon
 
 ---
 
+## Practice questions
+
+> Not from the course: written in the style of the 2025 paper to test this lecture, since the past paper only covers PPO from it. One correct option each. Answers are folded.
+
+**P1. Which statement about in-context (few-shot) learning in GPT-3 is correct?**
+
+A. The model's weights are updated with a few gradient steps on the demonstrations before answering.
+
+B. The demonstrations are part of the same input sequence; no parameters change, and the model uses them through attention.
+
+C. It works about equally well at all model sizes, as long as the prompt is well designed.
+
+D. The order of the demonstrations doesn't matter, because self-attention treats its input as a set.
+
+> [!success]- Answer
+> **B.** A describes fine-tuning. C is false: ICL **needs scale** (big gains at 175B, barely any at 1.3B). D is false: the same examples in 24 orders give a large spread in accuracy, and position embeddings mean the model does see order.
+
+**P2. Which statement about prompt tuning (soft prompts) is correct?**
+
+A. All model weights are updated, but the loss is computed only on the prompt tokens.
+
+B. Trainable prompt vectors are prepended to the input while the model stays frozen; at large scale it becomes competitive with full fine-tuning.
+
+C. The learned prompts are more interpretable than hand-written ones, because they're optimised directly.
+
+D. Each task still needs its own fine-tuned copy of the model.
+
+> [!success]- Answer
+> **B.** A mixes it up with SFT. C is backwards: soft prompts are dense vectors, **less** interpretable than text. D is backwards too: one frozen model + one small prompt per task is the point (separable multi-task).
+
+**P3. The RLHF reward model is trained with $\mathcal L_{RM} = -\log\sigma\big(R(Y_+) - R(Y_-)\big)$. Which statement is correct?**
+
+A. Annotators give each output an absolute score from 1 to 10, and the reward model regresses on it.
+
+B. The reward model is trained on demonstrations written by the labellers.
+
+C. Adding the same constant to every reward leaves the loss unchanged, because only the difference between the two scores matters.
+
+D. At inference time the reward model picks the next token instead of the policy.
+
+> [!success]- Answer
+> **C.** A and B: the data are **rankings** of model outputs (cheap), not scores and not written demonstrations (that's SFT). D: the RM is only used during training. The arbitrary scale of $R$ is also why REINFORCE needs a **baseline**.
+
+**P4. Why does REINFORCE for RLHF subtract a baseline $b$ from the reward?**
+
+A. To keep the policy close to the SFT model.
+
+B. Because with always-positive rewards every sampled sequence gets its probability increased; with a baseline, below-average sequences are pushed down.
+
+C. To give each token its own reward, solving credit assignment.
+
+D. To make the reward model converge faster.
+
+> [!success]- Answer
+> **B.** A is the job of the KL term / PPO's cap. C: the baseline is still one number per sequence; credit assignment stays unsolved (every token gets the same reward). D: the baseline is in the *policy* loss, it doesn't touch the reward model.
+
+**P5. Which statement about DPO is correct?**
+
+A. DPO first trains a separate reward model, then optimises the policy against it without RL.
+
+B. DPO doesn't need a reference model, only the preference pairs.
+
+C. DPO optimises preferences directly with a classification-style loss on (chosen, rejected) pairs, relative to a frozen reference model; a larger $\beta$ keeps the model closer to the reference.
+
+D. Like PPO, DPO samples new generations from the policy and scores them during training.
+
+> [!success]- Answer
+> **C.** A: there is **no** reward model; the policy's log-ratio is the implicit reward. B: it **does** need the frozen reference (SFT) model. D: no RL loop; it trains on a fixed set of preference pairs.
+
+**P6. In the context of SFT, what is exposure bias?**
+
+A. The model only sees a small fraction of the vocabulary during training.
+
+B. The model is trained conditioning on gold prefixes, but at generation time it conditions on its own previous outputs.
+
+C. The model overfits to the preferences of the labellers who ranked its outputs.
+
+D. The model memorises training data and reproduces it verbatim.
+
+> [!success]- Answer
+> **B.** It's the teacher-forcing mismatch. RL (step 3) trains on the model's **own** generations, which is part of the fix. See [[2026-10-20 - Natural Language Generation#Issue #2: exposure bias]].
+
+**P7. Consider these statements about chain-of-thought (CoT) prompting:**
+
+1. CoT demonstrates the reasoning steps, not just the answer, in the in-context examples.
+2. CoT improves accuracy at every model size.
+3. One explanation of why it helps: a Transformer does a fixed amount of computation per generated token, so written intermediate steps become input for later tokens.
+
+**Which are TRUE?** A. 1 · B. 1, 3 · C. 1, 2 · D. 1, 2, 3
+
+> [!success]- Answer
+> **B.** Statement 2 is false: CoT only beats standard prompting at ~100B+ parameters, and below that it doesn't help or even hurts. Statement 3 is the lab's explanation.
+
+---
+
 ## Da ricordare
 
 - **Emergence** = quantitative change (scale) → qualitative change (new abilities): an ability present in large models but absent in small ones. Controversial term. **ICL and CoT only work with very large models.**
