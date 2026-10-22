@@ -82,7 +82,7 @@ For sentiment analysis on _"I really enjoyed the movie we watched on Saturday!"_
 2. Feed $X$ into a **model** that composes/transforms the embeddings into a useful representation. Candidate model families (covered in coming weeks): RNNs/LSTM/GRU (Week 3), self-attention/Transformers (Week 4) — or, as a simple baseline, **sum-pool / avg-pool / max-pool**.
     - **Sum-pool example**: $h_t = \sum_{t=0}^{T} x_t$ — literally just add up all the word embeddings in the sentence into one fixed-length vector.
     - All three poolings always produce a **fixed-length vector** whatever the sentence length, which is what makes them usable as input to a fixed-size classifier $W_0$. But they completely discard word order: "movie enjoyed the I" gives the exact same $h_T$ as "I enjoyed the movie", a key weakness that motivates RNNs/self-attention (Weeks 3–4). (Numeric example below.)
-3. Pass the pooled representation $h_T$ into a **classifier**, e.g. logistic regression: $P(y) = \sigma(W_0 h_T)$ (the standard binary classifier: $W_0 h_T$ gives one score, the sigmoid $\sigma$ squashes it into $(0,1)$ to be read as $P(+)$; the multi-class version, with softmax, comes up in [[#Beyond single-label classification]]).
+3. Pass the pooled representation $h_T$ into a **classifier**, e.g. logistic regression: $\mathbb{P}(y) = \sigma(W_0 h_T)$ (the standard binary classifier: $W_0 h_T$ gives one score, the sigmoid $\sigma$ squashes it into $(0,1)$ to be read as $\mathbb{P}(+)$; the multi-class version, with softmax, comes up in [[#Beyond single-label classification]]).
 4. **Learnable parameters**: the embedding table $E$ and the classifier weight matrix $W_0$ — both trained jointly via **backpropagation**, by computing gradients of the loss with respect to the initial embeddings (and all other parameters) so the embeddings end up encoding whatever helps solve the task.
     - **In plain terms**: start from random $E$ and $W_0$, run the forward pass on a labeled review to get a predicted probability, measure with a **loss** how far it is from the true label (e.g. predicted 0.1, true label 1), then nudge every parameter so the next prediction is closer. Repeated over many examples, this learns the embeddings and the classifier together. Backprop itself is covered in [[2026-09-15 - Language Modeling (Part 2)]] §2.
 
@@ -115,7 +115,7 @@ For sentiment analysis on _"I really enjoyed the movie we watched on Saturday!"_
 >
 > Then the killer test:
 >
-> | sentence | $P(\text{positive})$ |
+> | sentence | $\mathbb{P}(\text{positive})$ |
 > |---|---|
 > | *the movie was good, not bad at all* | 0.368 |
 > | *the movie was bad, not good at all* | 0.368 |
@@ -124,7 +124,7 @@ For sentiment analysis on _"I really enjoyed the movie we watched on Saturday!"_
 
 ### Neural-network building blocks (lab only — not in the deck)
 
-We're trying to build a function from input to answer (e.g. tweet → $P(\text{positive})$) that we don't write by hand, for NLP tasks (classify sentiment, predict the next word, …) where nobody could spell out the rules explicitly. We give it a generic shape full of adjustable weights, then **train** it: show labelled examples, measure how wrong it is (the **loss**), nudge the weights to be less wrong, repeat. A neural network is that generic shape, and the pieces below are what it's built from. It's the same mechanism that learns the embeddings in CBOW/skip-gram (§6–7), where $E$ and $\mathbf U$ are just more weights.
+We're trying to build a function from input to answer (e.g. tweet → $\mathbb{P}(\text{positive})$) that we don't write by hand, for NLP tasks (classify sentiment, predict the next word, …) where nobody could spell out the rules explicitly. We give it a generic shape full of adjustable weights, then **train** it: show labelled examples, measure how wrong it is (the **loss**), nudge the weights to be less wrong, repeat. A neural network is that generic shape, and the pieces below are what it's built from. It's the same mechanism that learns the embeddings in CBOW/skip-gram (§6–7), where $E$ and $\mathbf U$ are just more weights.
 
 Source: the lab `ta_sessions/Exercises/02 - NN basics/0. MLP and Training.ipynb`, which builds each piece by hand and checks it against `torch.nn`. Notation: plain $x$ is **one number** (what enters an activation, applied element-wise to a vector), bold $\mathbf x$ is the **input vector** of a neuron/layer (e.g. the 100-d averaged tweet embedding in the lab above).
 
@@ -146,7 +146,7 @@ One training iteration is always, in this order: **forward pass** (run the input
 - **Text generation**: instead of predicting a label, predict **the next word**, one word at a time.
     
     - **Worked example**: given _"I really enjoyed the movie we watched on Saturday!"_, generate the continuation word by word:
-        - Step 1: feed $X = {x_0, \ldots, x_T}$ → model → $h_T$ → **multi-class logistic regression** → $P(y) = \text{softmax}(W_0 h_T)$ → predicts `"It"` = $x_{T+1}$.
+        - Step 1: feed $X = {x_0, \ldots, x_T}$ → model → $h_T$ → **multi-class logistic regression** → $\mathbb{P}(y) = \text{softmax}(W_0 h_T)$ → predicts `"It"` = $x_{T+1}$.
         - Step 2: append `"It"` to the input, recompute $h_{T+1} = \sum_{t=0}^{T+1} x_t$ → predict `"was"` = $x_{T+2}$.
         - Repeat, feeding each newly generated word back in as input, one word at a time — this word-by-word feedback loop is literally how many generative language models operate.
     - **Key change needed**: this is no longer _binary_ classification (+/−) — it's **multi-class classification over the entire vocabulary** $V$. If your vocabulary has a million words, you effectively have a million "classes," one per possible next word. This requires **softmax** instead of a simple sigmoid, since softmax converts a raw vector of scores into a full probability distribution over many classes (primer just below), rather than a single probability of a binary outcome.
@@ -183,7 +183,7 @@ One training iteration is always, in this order: **forward pass** (run the input
 >
 > **Why not just normalize the raw scores directly (divide by their sum)?** Two reasons: raw scores can be negative (breaks "divide by sum = probability" if the sum is small/negative), and exponentiation's amplification effect is actually desirable — it pushes the model toward a confident, peaked distribution around the highest-scoring class rather than a flat one, which is what you want when training a classifier with gradient descent.
 >
-> In text generation (above) and in CBOW/skip-gram (§6–7), the "classes" are every word in the vocabulary $V$ — softmax converts the $V$-dimensional score vector ($W_0 h_T$ here, $\mathbf{U}h_t$ in CBOW) into $P(\text{word} \mid \text{context})$ for every possible word at once.
+> In text generation (above) and in CBOW/skip-gram (§6–7), the "classes" are every word in the vocabulary $V$ — softmax converts the $V$-dimensional score vector ($W_0 h_T$ here, $\mathbf{U}h_t$ in CBOW) into $\mathbb{P}(\text{word} \mid \text{context})$ for every possible word at once.
 >
 > Softmax will reappear constantly throughout the course whenever multi-class prediction is needed — it's worth understanding cold.
 
@@ -248,17 +248,22 @@ _CBOW architecture: context word embeddings are summed, passed through a project
 
 **Formally**, with window size $N=2$ on each side:
 
-$$ \max\ P(x_t \mid {x_s}_{s=t-2}^{s=t+2}) = \text{softmax}\!\left(\mathbf{U} \sum_{\substack{s=t-2 \\ s \neq t}}^{t+2} \mathbf{x}_s\right) $$
+$$ \max\ \mathbb{P}(x_t \mid {x_s}_{s=t-2}^{s=t+2}) = \text{softmax}\!\left(\mathbf{U} \sum_{\substack{s=t-2 \\ s \neq t}}^{t+2} \mathbf{x}_s\right) $$
 
 where:
 
 - $\mathbf{x}_s \in \mathbb{R}^{1 \times d}$: the embedding of a context word ($d$ = embedding dimension)
 - $\mathbf{U} \in \mathbb{R}^{d \times V}$: the **projection matrix**, mapping the $d$-dimensional summed context representation up to a $V$-dimensional vector (one entry per vocabulary word), where $V$ = vocabulary size
-- $\mathbf{y} = \mathbf{U}^T \mathbf{x}^T$ (equivalently $\mathbf{y} = \mathbf{x} , @, \mathbf{U}$ in code notation)
+- $\mathbf{y} = \mathbf{U}^T \mathbf{x}^T$ (equivalently $\mathbf{y} = \mathbf{x} \,@\, \mathbf{U}$ in code notation)
+- $\mathbb{P}(x_t \mid \ldots)$: "probability of word $x_t$ **given** (`|`) the context". It's **not a separate function**: it *is* the $x_t$ entry of the softmax output vector (spelled out on the numbers below).
+
+**Watch the dimensions** — the $\mathbf{U} \sum \mathbf{x}_s$ in the formula can't literally be multiplied: $\mathbf{U}$ is $d \times V$ and the summed context is $1 \times d$. The lecturer flagged this aloud: it's abstract notation, "not wrong", but to actually compute it you transpose both, $\underbrace{\mathbf{U}^T}_{V \times d}\, \underbrace{\mathbf{x}^T}_{d \times 1} = \underbrace{\mathbf{y}}_{V \times 1}$ — one score per vocabulary word. In PyTorch you just write `x @ U` (see [2:14:24](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e32acb17-9550-4cdc-adea-b4b80077ea46&start=8064)).
 
 **Fully worked numeric toy example** — suppose the output vocabulary is just 4 words: _"movie," "show," "book," "shelf"_ (so $V = 4$), and context embeddings sum to a 3-dimensional vector $h_t = \langle -2.3,\ 0.9,\ 5.4 \rangle$ (so $d = 3$). Suppose the projection matrix is:
 
 $$ \mathbf{U} = \begin{pmatrix} 1.2 & -0.3 & 0.9 \\ 0.2 & 0.4 & -2.2 \\ 8.9 & -1.9 & 6.5 \\ 4.5 & 2.2 & -0.1 \end{pmatrix} \begin{matrix} \text{movie} \\ \text{show} \\ \text{book} \\ \text{shelf} \end{matrix} $$
+
+_(Careful: this matrix is $4 \times 3$, i.e. $V \times d$ — the slide shows $\mathbf{U}$ already in the transposed layout of the dimension note above, one row per word. So "$\mathbf{U} h_t$" here is the same operation as $\mathbf{U}^T \mathbf{x}^T$ there.)_
 
 Each **row** of $\mathbf{U}$ holds the "feature weights" for one vocabulary word; each **dimension** of $h_t$ corresponds to some learned feature of the context. Computing $\mathbf{U} h_t$ is just the dot product of each row of $\mathbf{U}$ with $h_t$:
 
@@ -275,6 +280,11 @@ $$ \text{softmax}(\mathbf{U} h_t) = \langle 0.24,\ 0.006,\ 0.73,\ 0.02 \rangle $
 i.e., the model currently assigns 73% probability to "book," 24% to "movie," and near-zero to the other two — this is _before_ training; once trained on real data, a well-fit model would assign the highest probability to "movie" for a context like "enjoyed the ___ we watched," and this shape would gradually emerge from data through backpropagation.
 
 **Training objective**: maximize the probability of the correct (missing) word given its context — equivalently, in practice, **minimize the negative log probability** of the missing word (for numerical/computational reasons — this is standard in ML, same idea as minimizing negative log-likelihood elsewhere). The window size $N$ (how many words on each side count as "context") is a **hyperparameter**, tuned the same way as row/column normalization choices — via a train/validation split, picking whatever setting performs best empirically.
+
+> [!note] What the output vector is actually *for*
+> - **Reading off the prediction** is just the **argmax** of the softmax output, here "book" (0.73). No cosine/nearest-neighbour search is needed: $\mathbf{U} h_t$ has already dot-producted $h_t$ against every word's row, which *is* the similarity comparison, for the whole vocabulary at once.
+> - **During training**, the true word is known (it was blanked out of real text), so the output gives the **loss**: $-\log \mathbb{P}(\text{movie}) = -\log 0.24 \approx 1.43$ (it would be $\approx 0.01$ at $\mathbb{P} = 0.99$). The gradient w.r.t. the scores is $\mathbf{p} - \mathbf{y}_{\text{one-hot}}$ ($\mathbf{p} = \langle 0.24, 0.006, 0.73, 0.02 \rangle$ is the whole softmax vector, $\mathbf{y} = \langle 1, 0, 0, 0 \rangle$ marks the true word), so backprop pulls $\text{row}_{\text{movie}}$ **towards** $h_t$, pushes $\text{row}_{\text{book}}$ **away** from it, and nudges the context embeddings (*enjoyed, the, we, watched*) so that their sum points more at $\text{row}_{\text{movie}}$.
+> - **After training, the predictor is thrown away.** Filling in blanks is only a **pretext task**. What you keep is the **embedding table**, because the only way to win the guessing game is to give words with similar contexts similar vectors. Cosine similarity comes in *here*, between learned embeddings (§2 lab callout, §10's *cut* neighbours), and not in the prediction step.
 
 _(Aside: for computational efficiency at scale, the true softmax over the entire vocabulary is often replaced with a cheaper approximation such as hierarchical softmax — mentioned here only for awareness, not required knowledge for this course.)_
 
@@ -306,11 +316,11 @@ So CBOW makes **one prediction per training example** (many inputs → one outpu
 ![[appunti/assets/2026-09-01/nn-primer-087.png]]
 _Skip-gram architecture: the center word's embedding is projected and used to independently predict each surrounding context word._
 
-$$ \max\ P(\text{enjoyed}, \text{the}, \text{we}, \text{watched} \mid \text{movie}) \quad\Longrightarrow\quad \max\ P(x_{t-2}, x_{t-1}, x_{t+1}, x_{t+2} \mid x_t) $$
+$$ \max\ \mathbb{P}(\text{enjoyed}, \text{the}, \text{we}, \text{watched} \mid \text{movie}) \quad\Longrightarrow\quad \max\ \mathbb{P}(x_{t-2}, x_{t-1}, x_{t+1}, x_{t+2} \mid x_t) $$
 
 Since jointly modeling this full conditional distribution directly is hard, skip-gram makes a **conditional independence assumption**: treat each surrounding-word prediction as independent given the center word, and just sum their log-probabilities:
 
-$$ \max \sum_{s \neq t} \log P(x_s \mid x_t), \qquad \text{where } P(x_s \mid x_t) = \text{softmax}(\mathbf{U} x_t) $$
+$$ \max \sum_{s \neq t} \log \mathbb{P}(x_s \mid x_t), \qquad \text{where } \mathbb{P}(x_s \mid x_t) = \text{softmax}(\mathbf{U} x_t) $$
 
 In practice, this means training an independent softmax prediction for _each_ context word position, and summing (or maximizing) across them — again with $\mathbf{x}_t \in \mathbb{R}^{1\times d}$ and $\mathbf{U} \in \mathbb{R}^{d \times V}$.
 
@@ -506,6 +516,6 @@ Answered in the same 08 Sep recap: **yes** — in both CBOW and skip-gram you en
 - **CBOW** = predict the **center word from the context** (sum of context vectors → $\mathbf U$ → softmax). **Skip-gram** = predict **each context word from the center word** (conditional independence). CBOW neighbours are **substitutes** (*slice, chop*), skip-gram neighbours are **co-occurring** words (*crosswise, lengthwise*). Both give **two** sets of vectors ($E$ and $\mathbf U$).
 - ⚠️ **Word2Vec traps (2025 exam Q4):** order inside the window is ignored ✅, but **shuffling a sentence does change the vectors** (it changes which words share a window), and **unseen words get no vector at all**. Individual dimensions have **no interpretation**.
 - **Cosine** = direction only, range $[-1,1]$. It measures **relatedness of usage**, so **antonyms are close** (*good–bad*, *hot–cold*). Analogy: $b - a + c$, nearest by cosine, **input words excluded**, which flatters both the analogy property and the measured bias.
-- **word2vec ≈ implicit factorisation of a (shifted) PMI matrix**; $\text{PMI} = \log\frac{P(c,w)}{P(c)P(w)} = \log\frac{n_{cw}N}{n_c n_w}$. **High raw count ≠ high PMI.** LSA rows are **coordinates, not probability distributions** (entries can be negative); topic vectors are orthonormal.
+- **word2vec ≈ implicit factorisation of a (shifted) PMI matrix**; $\text{PMI} = \log\frac{\mathbb{P}(c,w)}{\mathbb{P}(c)\mathbb{P}(w)} = \log\frac{n_{cw}N}{n_c n_w}$. **High raw count ≠ high PMI.** LSA rows are **coordinates, not probability distributions** (entries can be negative); topic vectors are orthonormal.
 - **Averaging word vectors throws away order:** *"good, not bad"* and *"bad, not good"* get the **identical** vector, so no classifier on top can separate them. Static embeddings also give **one vector per word type** (*bat*, *rust*); contextual models (BERT) give one per token.
 - **NN basics:** without a nonlinearity, stacked linear layers = one linear map. A single perceptron = **linear boundary**. $\sigma' = \sigma(1-\sigma) \le 0.25$. Backprop computes **gradients of the loss w.r.t. the parameters** (2025 exam Q1). Order: forward → loss → backward → update.
