@@ -1,0 +1,46 @@
+# Builds the printable PDFs (print/build.py) and publishes them on a rolling
+# "latest" release, so the newest copy is always at the same link.
+name: Print notes
+
+on:
+  push:
+    branches: [master]
+    paths: ["appunti/**", "print/**", ".github/workflows/print.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: print
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      # only the images the notes embed, not the slide/lab/exam PDFs
+      - run: git lfs pull --include="appunti/assets/**"
+
+      - name: Install pandoc and fonts
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q pandoc fonts-noto-core fonts-inter
+
+      - run: python3 print/build.py
+        env:
+          CHROME: google-chrome
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # spaces in asset names become dots on GitHub: give the combined one a clean name
+          mv "print/pdf/NLP - all notes.pdf" print/pdf/nlp-all-notes.pdf
+          gh release delete latest --cleanup-tag --yes || true
+          gh release create latest print/pdf/*.pdf \
+            --target "$GITHUB_SHA" \
+            --title "Notes ($(date -u +%F))" \
+            --notes "Built from ${GITHUB_SHA::7}. Combined PDF: nlp-all-notes.pdf"

@@ -8,6 +8,7 @@ embeds, [[wikilinks]], > [!callouts]) is rewritten into plain Markdown, pandoc
 turns it into HTML with MathML, and headless Chromium prints it.
 """
 
+import os
 import re
 import subprocess
 import sys
@@ -18,6 +19,8 @@ ROOT = Path(__file__).resolve().parent.parent
 NOTES = ROOT / "appunti"
 OUT = ROOT / "print" / "pdf"
 CSS = ROOT / "print" / "print.css"
+# CI runners ship google-chrome, not chromium-browser
+CHROME = os.environ.get("CHROME", "chromium-browser")
 
 EMBED = re.compile(r"!\[\[([^\]|]+)(?:\|[^\]]*)?\]\]")
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(#[^\]|]*)?(?:\|([^\]]*))?\]\]")
@@ -93,7 +96,7 @@ def render(markdown, title, pdf):
              "--css", str(CSS), "--metadata", f"pagetitle={title}", "-o", str(html)],
             check=True)
         subprocess.run(
-            ["chromium-browser", "--headless", "--disable-gpu", "--no-pdf-header-footer",
+            [CHROME, "--headless", "--disable-gpu", "--no-pdf-header-footer",
              f"--print-to-pdf={pdf}", html.as_uri()],
             check=True, capture_output=True)
     print("wrote", pdf.relative_to(ROOT))
