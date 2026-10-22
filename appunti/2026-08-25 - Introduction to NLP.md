@@ -188,7 +188,13 @@ Converting raw text → BoW matrix requires care at several steps:
 > - **Tools make mistakes**: NER tags *London* correctly as a place (GPE), but tags *Petersburgh* as a PERSON.
 > - spaCy's default stopword list has **326** entries and removes *already* and *upon* as well as *the*. Which list you use is a real design choice, as the lecture warns.
 >
-> The lab's comprehension MCQ on this: stopwords `[a, the, is, you, I, my, with, was]` applied to *"I was driving down the street with my CAR! :)"* give `{driving, down, street, car, :)}`. The answer is **stopword removal + casefolding** only. *CAR → car* is casefolding, and *driving* would have become *drive* under stemming, so there was **no stemming**.
+> The lab's comprehension MCQ on this (Part 2, Q1): *An NLP preprocessing model, using the list of stopwords `['a', 'the', 'is', 'you', 'I', 'my', 'with', 'was']` for the input sentence "I was driving down the street with my CAR! :)" gives the output `{driving, down, street, car, :)}`. The model consists of:*
+> - ❌ **a)** Stopword removal, casefolding and stemming
+> - ✅ **b)** Stopword removal and casefolding
+> - ❌ **c)** Stopword removal and stemming
+> - ❌ **d)** Casefolding and stemming
+>
+> *CAR → car* is casefolding, and *I, was, the, with, my* are gone, so stopwords were removed. *driving* would have become *drive* under stemming, so there was **no stemming**.
 
 ### Postprocessing the BoW matrix: TF-IDF
 
@@ -238,7 +244,13 @@ This is equivalent to multiplying each column $w$ of the BoW matrix by the const
 - Row and column normalization fix **different** things. **Row** normalization fixes **document length**. **Column** normalization (IDF, min-max, z-score) fixes how **common** a word is, or what scale it's on, and each column is rescaled using only its own values. They're usually combined: IDF + L2 row normalization is the default of scikit-learn's `TfidfVectorizer`. (One caveat: by default it uses a smoothed idf, $\ln\frac{1+N}{1+\text{df}} + 1$, so in sklearn *the* would get a small weight rather than exactly 0.)
 
 > [!example] Lab MCQ — more features than documents
-> From `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2 Q3: which does **not** address having more features than documents in a TF-IDF matrix? **Min-max scaling.** Rescaling a column changes its range, not the *number* of columns. The problem is still there. The fixes either reduce the number of features (**SVD**/LSA, **feature selection**) or constrain the weights (**regularization**, as in the Frankenstein classifier above).
+> From `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2 Q3: *The problem of having more features than documents when using a TF-IDF matrix for document classification cannot be addressed by:*
+> - ❌ **a)** Using SVD for dimensionality reduction
+> - ✅ **b)** Using min-max scaling of features
+> - ❌ **c)** Penalizing very large positive and very large negative weights (a.k.a. regularization)
+> - ❌ **d)** Using online feature selection
+>
+> Rescaling a column changes its range, not the *number* of columns. The problem is still there. The other three are real fixes: they either reduce the number of features (**SVD**/LSA, **feature selection**) or constrain the weights (**regularization**, as in the Frankenstein classifier above).
 
 **Summary — "Classical NLP" recipe**: document retrieval, classification, sentiment analysis, and topic detection can all be tackled by building a **TF-IDF matrix** (entry = $\text{tf}(d,w) \times \text{idf}(w)$) and feeding it into a standard ML algorithm.
 

@@ -108,10 +108,13 @@ In the encoder–decoder, **everything** the decoder knows about the input comes
 
 **Toy example.** To generate "I", the decoder needs "Je". But "Je" was the **first** token encoded. Since then the state has been overwritten by 4 more tokens ("m'", "appelle", "Akhil", `<START>`), and for this prediction those are noise. With 4 tokens it may not matter. With a long document, or with a long prompt of the kind people give LLMs today, it is a real problem.
 
-> ⚠️ **Exam (2025 Q5 = mock exam, rated easy):** *key disadvantage of RNNs for long sequences?* → **all the history is compressed into a single fixed-size state vector, so information is lost.** That's this section. The three distractors are each false about RNNs in general ([[2026-09-08 - Language Modeling (Part 1)#16. Recurrent neural networks (RNNs) — introduction]]):
-> - "**quadratic** in the sequence length": no, an RNN is **linear** in $T$ (one step per token). Quadratic is the *Transformer's* cost (§4).
-> - "**different parameters** at each timestep": no, the **same weights are shared across all steps**. That's what lets an RNN handle any length.
-> - "can't learn **nonlinear** representations": no, $h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1} + b)$ goes through a nonlinearity at every step.
+> ⚠️ **Exam (2025 Q5 = mock exam, rated easy):** *Which of the following accurately describes a key disadvantage of using recurrent neural networks (RNNs) for modeling long sequences?*
+> - ✅ **A.** RNNs compress all historical context into a single fixed-size state vector, causing information loss. That's this section.
+> - ❌ **B.** RNNs always have quadratic computational complexity with respect to sequence length, making them impractical for long sequences. No, an RNN is **linear** in $T$ (one step per token). Quadratic is the *Transformer's* cost (§4).
+> - ❌ **C.** RNNs require extremely large datasets for training because each timestep uses different parameter sets. No, the **same weights are shared across all steps**. That's what lets an RNN handle any length.
+> - ❌ **D.** RNNs cannot learn nonlinear representations because their hidden states must remain linear combinations of past inputs. No, $h_t = \sigma(W_{hx}x_t + W_{hh}h_{t-1} + b)$ goes through a nonlinearity at every step.
+>
+> The three distractors are each false about RNNs in general ([[2026-09-08 - Language Modeling (Part 1)#16. Recurrent neural networks (RNNs) — introduction]]).
 
 ### Menti: how can we mitigate the temporal bottleneck?
 
@@ -191,10 +194,11 @@ In the RNN version, keys and values are **the same vectors** used in two roles. 
 >
 > A sharp attention distribution isn't bad in itself. It's bad when it's there before the model has learned anything.
 
-> ⚠️ **Exam (2025 Q8 = mock exam):** *which is correct about a Transformer self-attention layer?* → **dividing $QK^\top$ by $\sqrt{d_k}$ keeps the softmax out of its near-zero-gradient regions when $d_k$ is large** (the derivation above). Each distractor tests a different fact:
-> - "each token attends **only to previous tokens**": that's **masked** self-attention, used only in the decoder (§4.6). Plain self-attention (the encoder, BERT) sees the whole sequence.
-> - "softmax **over the Query matrix**, normalising across the dimensions of one token": the softmax is over the **scores $QK^\top$**, one row per query, and it normalises **across keys** (positions), not across embedding dimensions.
-> - "a larger Q/K dimension **doesn't change the cost**": it does. $QK^\top$ is $T^2$ dot products of length $d_k$, so $O(T^2 d_k)$, and $W^Q, W^K$ get more parameters.
+> ⚠️ **Exam (2025 Q8 = mock exam, rated medium):** *In a Transformer's self-attention layer, which one of the following statements is correct?* Each distractor tests a different fact.
+> - ❌ **A.** The self-attention mechanism ensures that each token attends only to previous tokens, which allows the model to preserve causal order. That's **masked** self-attention, used only in the decoder (§4.6). Plain self-attention (the encoder, BERT) sees the whole sequence.
+> - ❌ **B.** The attention weights are computed by applying a softmax over the Query matrix, normalizing the importance of each input dimension within a single token representation. The softmax is over the **scores $QK^\top$**, one row per query, and it normalises **across keys** (positions), not across embedding dimensions.
+> - ❌ **C.** Increasing the dimension of the Query and Key vectors does not change the computational complexity of the attention matrix. It does. $QK^\top$ is $T^2$ dot products of length $d_k$, so $O(T^2 d_k)$, and $W^Q, W^K$ get more parameters.
+> - ✅ **D.** The scaled dot-product attention divides the dot product of Query and Key by $\sqrt{d_k}$ to prevent the softmax function from entering regions with extremely small gradients when the vector dimension is large. That's the derivation above.
 
 ### The attentive encoder–decoder
 
@@ -416,10 +420,11 @@ Because $e^{-\infty} = 0$, future positions get exactly zero weight, and the rem
 
 **Why this matters:** you **keep the parallelism**. The mask is just a fixed (triangular) matrix applied to the score matrix. All positions are still computed at once during training, but each one only "sees" its past. You get causality without going back to sequential computation.
 
-> ⚠️ **Exam (2025 Q6 = mock exam):** *role of masked self-attention in the decoder?* → **it stops the decoder attending to future tokens during training, preserving the autoregressive property.** The distractors:
-> - "attends to **all encoder outputs**, aligning input and output": that's **cross-attention** (below), not masked self-attention.
-> - "**randomly** masks part of the encoder outputs, a regulariser like dropout": the mask is a **fixed triangular** matrix, not random, and it hides the decoder's *own* future tokens, not encoder outputs.
-> - "attends to **all positions** of the output to improve parallelism": the opposite. Parallelism comes from computing every position in one pass (teacher forcing), and the mask is what makes that safe.
+> ⚠️ **Exam (2025 Q6 = mock exam, rated easy):** *In a Transformer encoder-decoder model, each decoder block utilizes masked self-attention followed by encoder-decoder cross-attention. Which of the following correctly explains the role of masked self-attention in the decoder?*
+> - ❌ **A.** It enables the decoder to attend to all encoder outputs, aligning the input and output sequences. That's **cross-attention** (below), not masked self-attention.
+> - ❌ **B.** It randomly masks part of the encoder outputs to act as a regularization mechanism similar to dropout, preventing overfitting. The mask is a **fixed triangular** matrix, not random, and it hides the decoder's *own* future tokens, not encoder outputs.
+> - ❌ **C.** It allows the decoder to attend to all positions in the output sequence during training to improve parallelism. The opposite. Parallelism comes from computing every position in one pass (teacher forcing), and the mask is what makes that safe.
+> - ✅ **D.** It ensures the decoder does not attend to future tokens during training to maintain autoregressive property.
 
 > [!example] Lab — causal mask, padding mask, and why before the softmax
 > `ta_sessions/Exercises/05 - Transformers/0. Attention.ipynb` (§3) and `1. Transformer.ipynb` (§4–5). There are **two** masks, built the same way (`True` = may attend, forbidden scores set to $-\infty$):
@@ -443,7 +448,13 @@ Again, a representation from the decoder is used to **attend** to the encoder ou
 
 Shapes make the difference concrete (lab 1, Q3.2): a weight matrix has one row per query and one column per key, so decoder self-attention is `tgt_len × tgt_len`, cross-attention is `tgt_len × src_len`. **Cross-attention needs no causal mask**: the source is fully known before the first output token is written, at training *and* at inference. The only thing to hide there is padding. Cross-attention is also **the only place where information flows from source to target**.
 
-> ⚠️ **Exam (mock exam Q9 = 2025 exam):** "keys and queries of cross-attention in BART/T5?" Correct: **output of the *final* encoder layer as keys** (and values), **decoder hidden states as queries**. The distractor "encoder hidden states as keys and decoder hidden states as queries" differs by one word; the options are easy to misread.
+> ⚠️ **Exam (2025 Q9 = mock exam, rated medium):** *In a BART/T5 model, what are the keys and queries for the cross-attention module in the decoder?*
+> - ❌ **A.** Decoder's token embeddings as keys and encoder outputs as queries. Backwards: the queries come from the decoder.
+> - ❌ **B.** Decoder hidden states as keys and output of the final encoder layer as queries. Backwards too.
+> - ❌ **C.** Encoder hidden states as keys and decoder hidden states as queries. Differs from D by a few words: the keys are the output of the *final* encoder layer, not "encoder hidden states" in general.
+> - ✅ **D.** The output of the final encoder layer as keys and decoder hidden states as queries (and the same encoder output as values).
+>
+> The options are easy to misread: check *which side* gives the keys, then *which layer*.
 
 ### 4.7 Position embeddings (preview — covered next lecture)
 

@@ -41,6 +41,7 @@ The user will keep dropping new PDFs/subtitles/exams into `docs/`, `lab/`, or `e
 - Math in LaTeX: inline `$...$`, display `$$...$$` — Obsidian renders both natively.
 - Images embedded with Obsidian wikilink syntax, path from the vault (= repo) root: `![[appunti/assets/YYYY-MM-DD/filename.png]]`.
 - **Links between notes**: `[[2026-08-25 - Introduction to NLP]]` whenever a concept is properly defined in another note. Don't redefine it — link it. This is a vault, not a stack of PDFs, and at revision time the connections are half the value.
+- **MCQs are written out in full.** Whenever a note comments on the answer to a question (past exam, mock exam, lab MCQ), it quotes the question and **every option**, marks the correct one (✅/❌ per option, with the reason next to each distractor), and names the source (e.g. `2025 Q5 = mock exam`, `lab MCQ 6.3`). The note must be readable without opening the exam or the notebook. `## Da ricordare` bullets can stay short, as long as the full question is in the body.
 - Don't invent structure/sections beyond what's needed to capture the material — no filler, no restating the obvious.
 
 ## Timestamped references to the recording

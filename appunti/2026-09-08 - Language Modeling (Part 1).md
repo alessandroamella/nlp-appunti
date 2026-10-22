@@ -223,6 +223,14 @@ The useful mental model: **perplexity ≈ the effective number of choices the mo
 
 **(a) Perplexity depends on the vocabulary, so it is not comparable across models with different vocabularies.** The uniform case above makes this obvious: $ppl = |V|$, so a model over a 100,000-word vocabulary and a model over a 1,000-word vocabulary are on completely different scales before you even look at their quality. Comparing their perplexities is *"literally comparing apples with oranges"* (see [1:46:40](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=6400)). **Same vocabulary and same test set, or no comparison.**
 
+> ⚠️ **Exam (2025 Q2 = mock exam, rated medium):** *A model has a perplexity of 20 on dataset A and 40 on dataset B. Which conclusion is correct?*
+> - ❌ **A.** The model performs twice as well on A as on B.
+> - ❌ **B.** The model is twice as confident on A as on B.
+> - ❌ **C.** The model's vocabulary coverage is higher on dataset B than on dataset A.
+> - ✅ **D.** Perplexity cannot be compared across datasets.
+>
+> The official solution gives no per-option explanation. Mine: the same model on two test sets means two different distributions (and possibly different OOV rates), so the numbers aren't on a common scale and A, B and C all read meaning into a ratio that has none. "Twice as good" is the tempting one.
+
 **(b) What does $ppl > |V|$ mean?** Poll options were: better than a random LM / the same as a random LM / **worse than a random LM**. The answer is **worse than random**, and the reasoning is worth re-hearing (see [1:53:00](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=6780)):
 
 - A "random" LM = the uniform model, which by the computation above sits at exactly $ppl = |V|$. It is the *expectation* baseline — it is not faithful to the true distribution, but it is not actively wrong either.
@@ -366,10 +374,20 @@ Note the denominator: you added $\alpha$ to the count of **every one of the $|V|
 >
 > The notebook's sanity check is worth keeping: for a fixed $w_{i-1}$, $\sum_{w} P_\text{add-1}(w \mid w_{i-1})$ must equal 1 **over the whole vocabulary**. If it doesn't, the $+|V|$ in the denominator is wrong (or $|V|$ was counted without the boundary tokens).
 
-> ⚠️ **Exam — this exact computation is in the 2025 exam and in the mock exam** (same question, `exams/exam_2025_with_solutions.md` and `ta_sessions/Exam/mock_exam.ipynb`). Six sentences (*the cat sat on the mat*, *she sat on the sofa*, …), $|V| = 18$, **no special tokens**, add-one smoothing. Asked: $P(\text{sat} \mid \text{on})$ and $P(\text{on} \mid \text{sat})$.
+> ⚠️ **Exam — this exact computation is in the 2025 exam and in the mock exam** (Q7, rated hard; `exams/exam_2025_with_solutions.md` and `ta_sessions/Exam/mock_exam.ipynb`). The question:
+>
+> *Given a training set containing the following sequences:*
+> *"the cat sat on the mat" / "the dog chased after the cat" / "a cat and a dog ran" / "she sat on the sofa" / "they bought a new mat" / "the sofa was comfortable".*
+> *The training set includes 18 unique tokens and 32 tokens in total. We consider the words split by whitespace as the tokens in the vocabulary. We don't consider adding any special tokens (e.g. `<UNK>` or `<stop>`) unless specifically stated. To avoid the OOV problem, we apply add-one Laplace smoothing, $P(A \mid B) = \frac{\text{count}(B, A) + \alpha}{\text{count}(B) + \alpha|V|}$. With $\alpha = 1$, what are $P(\text{sat} \mid \text{on})$ and $P(\text{on} \mid \text{sat})$?*
+> - ❌ **A.** None of the other options is correct.
+> - ✅ **B.** $P(\text{sat} \mid \text{on}) = \frac{1}{20}$, $P(\text{on} \mid \text{sat}) = \frac{3}{20}$.
+> - ❌ **C.** $P(\text{sat} \mid \text{on}) = 1$, $P(\text{on} \mid \text{sat}) = 0$.
+> - ❌ **D.** $P(\text{sat} \mid \text{on}) = \frac{3}{20}$, $P(\text{on} \mid \text{sat}) = \frac{1}{20}$.
+>
+> Working:
 > - *sat → on* occurs **2** times, *on → sat* **0** times, $C(\text{sat}) = C(\text{on}) = 2$.
 > - $P(\text{on} \mid \text{sat}) = \frac{2+1}{2+18} = \frac{3}{20}$, and $P(\text{sat} \mid \text{on}) = \frac{0+1}{2+18} = \frac{1}{20}$.
-> - The trap is the **direction**: $P(A \mid B)$ counts the bigram $(B, A)$, i.e. *B followed by A*. The wrong option simply swaps the two values.
+> - The trap is the **direction**: $P(A \mid B)$ counts the bigram $(B, A)$, i.e. *B followed by A*. Option D simply swaps the two values. C is the **unsmoothed** estimate, swapped too (without smoothing, $P(\text{sat} \mid \text{on}) = 0/2 = 0$ and $P(\text{on} \mid \text{sat}) = 2/2 = 1$).
 
 ### Back-off
 
@@ -449,7 +467,13 @@ $$P(w = i \mid \text{the cat sat on the}) = \text{softmax}_i(\mathbf{z}) = \frac
 
 > **Could the hidden layer just learn to do a sum?** A student asked this, and the answer is **yes — it can**: a suitable $\mathbf{W}$ reproduces a sum exactly. But *"it would be waste of a compute to use a neural network to just do a sum where you can just do a sum yourself"*. The point of the learned layer is that it discovers whichever composition suits your **data and task**; if summing happens to be optimal for your data, backprop will find something like it, but you don't have to commit to it in advance (see [2:44:55](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ec320a2-fe53-47e8-a98f-b4bf00712f16&start=9895)).
 
-> ⚠️ **Exam (2025 Q10, option C):** "*A fixed-window language model using only **average pooling** can perform generation tasks*" is marked **false**. The official reason: it "captures only local context and lacks an autoregressive or sequential prediction mechanism". **That reasoning doesn't convince me.** Any model that outputs a next-word distribution can be run autoregressively. The n-gram models of §6 are fixed-window too and they generate, and even the unigram model, which ignores order entirely, produces (bad) text. What average pooling really costs is **word order** ("the cat sat" = "sat the cat", which is why this model concatenates), so its output would be poor, but "can't generate" is a stretch. In 2025 it didn't matter, because the correct option (BERT can't generate without modification) was unambiguous. If a statement like this decides a question, expect the official answer to be "can't generate", and remember that confusing questions can be raised within a week of the exam.
+> ⚠️ **Exam (2025 Q10 = mock exam, option C).** The question: *Which of the following statements about model applicability is correct?*
+> - ❌ **A.** T5 can only perform generation tasks without any modification and cannot perform text classification tasks.
+> - ✅ **B.** BERT cannot perform text generation tasks without any modification.
+> - ❌ **C.** A fixed-window language model using only average pooling can perform generation tasks.
+> - ❌ **D.** ELMo can perform both generation and classification tasks without any modification.
+>
+> (The other options are covered in [[2026-09-29 - Pre-trained Language Models#Wrap-up]].) Option C is the one about this section, and it's marked **false**. The official reason: it "captures only local context and lacks an autoregressive or sequential prediction mechanism". **That reasoning doesn't convince me.** Any model that outputs a next-word distribution can be run autoregressively. The n-gram models of §6 are fixed-window too and they generate, and even the unigram model, which ignores order entirely, produces (bad) text. What average pooling really costs is **word order** ("the cat sat" = "sat the cat", which is why this model concatenates), so its output would be poor, but "can't generate" is a stretch. In 2025 it didn't matter, because the correct option (BERT can't generate without modification) was unambiguous. If a statement like this decides a question, expect the official answer to be "can't generate", and remember that confusing questions can be raised within a week of the exam.
 
 **Menti: which word-embedding algorithm does this resemble most?** → **CBOW.** Same shape — take surrounding/preceding words as input, predict a single target word through a projection + softmax. The difference is *which* words count as context (CBOW: symmetric window; fixed-context LM: only the preceding $n$) and that the composition is a learned layer rather than a plain sum.
 

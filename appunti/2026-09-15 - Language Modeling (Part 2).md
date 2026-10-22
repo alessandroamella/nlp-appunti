@@ -78,7 +78,13 @@ At full scale, the gradient flows back from each output $z_t$, horizontally thro
 - The course uses **PyTorch**, so you won't compute gradients by hand in the labs either.
 
 > [!example] Lab — truncated BPTT
-> `ta_sessions/Exercises/04 - RNNs/0. RNNs.ipynb`, MCQ 6.4. Not in the lecture, but asked in the lab. Full BPTT over a sequence of thousands of steps needs every step's activations in memory and a chain of thousands of Jacobians. **Truncated BPTT** unrolls only a fixed window (e.g. 20 or 50 steps), processes the sequence in chunks, and backpropagates only inside each window. **Why:** it bounds the cost per update and the length of the Jacobian chain, so it also limits vanishing/exploding. **Price:** a dependency longer than the window can't be learned through the gradient. The trap options: it is *not* about overfitting, fixed-length inputs, or parallelism.
+> `ta_sessions/Exercises/04 - RNNs/0. RNNs.ipynb`, MCQ 6.4. Not in the lecture, but asked in the lab. Full BPTT over a sequence of thousands of steps needs every step's activations in memory and a chain of thousands of Jacobians. **Truncated BPTT** unrolls only a fixed window (e.g. 20 or 50 steps), processes the sequence in chunks, and backpropagates only inside each window. **Why:** it bounds the cost per update and the length of the Jacobian chain, so it also limits vanishing/exploding. **Price:** a dependency longer than the window can't be learned through the gradient.
+>
+> The MCQ: *RNNs are often trained with truncated BPTT: the network is unrolled for only a fixed number of time steps, the sequence is processed in chunks, and gradients are backpropagated only within these windows. The main reason for doing this is:*
+> - ❌ **A.** To avoid overfitting by randomly dropping parts of the sequence. Nothing is dropped, and nothing is random.
+> - ✅ **B.** To limit the computational cost and mitigate exploding/vanishing gradients over very long sequences.
+> - ❌ **C.** To enforce fixed-length sequences as input. The input can be any length; only the gradient window is fixed.
+> - ❌ **D.** To increase the parallelism of the recurrent connections. The recurrence is still sequential inside each window.
 
 ---
 
@@ -165,7 +171,13 @@ This is the irony the lecture was built around. Weight sharing is the RNN's big 
 > [!example] Lab — exploding gradients and gradient clipping
 > `ta_sessions/Exercises/04 - RNNs/0. RNNs.ipynb`, §4 and MCQ 6.3. The lab's training loop has one line the earlier labs didn't: `torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)`, between `backward()` and `step()`. **Gradient clipping:** if the norm of the whole gradient exceeds a threshold, rescale it down to that threshold before the update. The direction is kept and only the step size is capped. **Why:** backprop through 50 steps multiplies 50 Jacobians, and for a vanilla RNN the product occasionally **explodes**, and a single huge step throws the weights off. The notebook says clipping "makes the difference between an RNN that trains and one that does not". It fixes **exploding** only: it can't make a vanishing gradient bigger.
 >
-> MCQ 6.3 (the cause of vanishing gradients in BPTT) wants the **product of the Jacobians $\partial h_t/\partial h_{t-1}$** over many steps. That is the formula above. Norms below 1 give vanishing, norms above 1 give exploding. The wrong options blame the softmax/cross-entropy derivative, the biases, or the parameter count.
+> MCQ 6.3: *In BPTT for RNNs, which factor is primarily responsible for the vanishing gradient problem?*
+> - ✅ **A.** The gradient repeatedly involves products of Jacobians $\partial h_t/\partial h_{t-1}$ of the recurrent transition across many time steps. That is the formula above. Norms below 1 give vanishing, norms above 1 give exploding.
+> - ❌ **B.** The gradient becomes dominated by the output layer's softmax cross-entropy derivative when the sequence length grows.
+> - ❌ **C.** The gradient decays mainly because the bias terms accumulate through the recurrent connections.
+> - ❌ **D.** The gradient is suppressed because the input-to-hidden transformation has fewer parameters than the hidden-to-hidden recurrence.
+>
+> B, C and D each blame something that doesn't get *multiplied once per step*, which is what makes the decay exponential in the distance.
 >
 > *Small difference from the slides:* PyTorch's `nn.RNN` uses $\tanh$, not the sigmoid, so the lab writes the Jacobian as $\text{diag}(1-h_k^2)\,W_{hh}$. The derivative of $\tanh$ peaks at 1 instead of 0.25, which is gentler, but it's still ≤ 1 and still near 0 when the unit saturates, so the argument is the same.
 

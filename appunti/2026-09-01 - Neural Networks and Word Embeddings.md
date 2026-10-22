@@ -108,7 +108,11 @@ For sentiment analysis on _"I really enjoyed the movie we watched on Saturday!"_
 > [!example]- Worked example — counting unique embeddings
 > For the sentence _"I enjoyed the movie I watched on Saturday!"_, there are only **7 unique embeddings** needed in $X$, because the word "I" appears twice and shares the same row in the embedding table $E$ both times (not 9, which is the raw token count).
 
-> ⚠️ **Exam (2025 paper / mock exam, Q1):** the *primary purpose* of backprop is to compute **gradients of the loss with respect to the network's parameters**. Not w.r.t. the input data (that's rare, e.g. adversarial attacks), not to adjust the learning rate (that's the optimizer), and not the vague "propagate errors backward to refine predictions".
+> ⚠️ **Exam (2025 paper / mock exam, Q1, rated easy):** *What is the primary purpose of backpropagation in neural networks?*
+> - ❌ **A.** To compute gradients of the loss function with respect to the input data. That gradient does get computed sometimes, but rarely (e.g. adversarial attacks), so it's not the *primary* purpose.
+> - ❌ **B.** To adjust the learning rate dynamically during training. That's the optimizer's job.
+> - ❌ **C.** To propagate error values backward through the network to refine predictions. Vague: the errors are only used to compute gradients, they don't "refine predictions".
+> - ✅ **D.** To compute gradients of the loss function with respect to the network's parameters.
 
 > [!example] Lab — this exact model on 50k tweets, and where it breaks
 > `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §3. The lab builds the pipeline above with one difference: the embeddings are **pre-trained GloVe vectors, frozen**, not learned jointly. Tweet → **avg-pool** of the known words' vectors (zero vector if none is known) → `Linear(100, 256)` → ReLU → `Linear(256, 1)` → sigmoid, trained with binary cross-entropy on Sentiment140. It levels off at **≈ 71% test accuracy**: a decent baseline for so little.
@@ -259,7 +263,7 @@ where:
 
 **Watch the dimensions** — the $\mathbf{U} \sum \mathbf{x}_s$ in the formula can't literally be multiplied: $\mathbf{U}$ is $d \times V$ and the summed context is $1 \times d$. The lecturer flagged this aloud: it's abstract notation, "not wrong", but to actually compute it you transpose both, $\underbrace{\mathbf{U}^T}_{V \times d}\, \underbrace{\mathbf{x}^T}_{d \times 1} = \underbrace{\mathbf{y}}_{V \times 1}$ — one score per vocabulary word. In PyTorch you just write `x @ U` (see [2:14:24](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e32acb17-9550-4cdc-adea-b4b80077ea46&start=8064)).
 
-**Fully worked numeric toy example** — suppose the output vocabulary is just 4 words: _"movie," "show," "book," "shelf"_ (so $V = 4$), and context embeddings sum to a 3-dimensional vector $h_t = \langle -2.3,\ 0.9,\ 5.4 \rangle$ (so $d = 3$). Suppose the projection matrix is:
+**Fully worked numeric toy example** — suppose the vocabulary we use for the output (the candidate words softmax picks from — normally the whole vocabulary, toy-sized here) is just 4 words: _"movie," "show," "book," "shelf"_ (so $V = 4$), and context embeddings sum to a 3-dimensional vector $h_t = \langle -2.3,\ 0.9,\ 5.4 \rangle$ (so $d = 3$). Suppose the projection matrix is:
 
 $$ \mathbf{U} = \begin{pmatrix} 1.2 & -0.3 & 0.9 \\ 0.2 & 0.4 & -2.2 \\ 8.9 & -1.9 & 6.5 \\ 4.5 & 2.2 & -0.1 \end{pmatrix} \begin{matrix} \text{movie} \\ \text{show} \\ \text{book} \\ \text{shelf} \end{matrix} $$
 
@@ -326,10 +330,12 @@ In practice, this means training an independent softmax prediction for _each_ co
 
 **Window size as hyperparameter, in more depth**: a larger window gives the embedding more information about related words but is more expensive. A common practical trick: set a large maximum window (e.g., $N=10$) but _randomly_ sample the effective window size $i \in [1, N]$ for each training example — this way, on average, **closer words contribute more** to learning than farther ones, which tends to match intuition (nearby words are usually more informative about a word's meaning than distant ones).
 
-> ⚠️ **Exam (2025 paper / mock exam, Q4, rated hard)** — three Word2Vec statements, only **(2)** is true:
-> 1. ❌ *"Generalises better to rare **and unseen** words than one-hot."* Better for **rare but seen** words, yes (they share a dense space with everything else). A **truly unseen** word has **no row in $E$** at all, so word2vec can't generalise to it.
-> 2. ✅ *"CBOW and skip-gram ignore the order of words in the context window."* The window is a bag: CBOW sums the context vectors, and skip-gram's independence assumption (above) treats each neighbour separately.
-> 3. ❌ *"Shuffling the words within each sentence doesn't change the vectors."* Order is ignored **inside** a window, but shuffling the sentence changes **which words fall into which window**: $A\,[C\,B\,D]\,E \to A\,[D\,B\,E]\,C$. Order-free within the window ≠ order-free overall.
+> ⚠️ **Exam (2025 paper / mock exam, Q4, rated hard):** *Consider the following statements about Word2Vec. Which of them are TRUE?*
+> 1. ❌ *"Word2Vec usually can generalize better to rare and unseen words than those using one-hot vectors."* Better for **rare but seen** words, yes (they share a dense space with everything else). A **truly unseen** word has **no row in $E$** at all, so word2vec can't generalise to it.
+> 2. ✅ *"Both CBOW and Skip-gram algorithms do not take into account the order of words that appear in the context window."* The window is a bag: CBOW sums the context vectors, and skip-gram's independence assumption (above) treats each neighbour separately.
+> 3. ❌ *"Shuffling the order of words within each sentence does not affect the Word2Vec vector representations."* Order is ignored **inside** a window, but shuffling the sentence changes **which words fall into which window**: $A\,[C\,B\,D]\,E \to A\,[D\,B\,E]\,C$. Order-free within the window ≠ order-free overall.
+>
+> Options: **A.** 2 ✅ · **B.** 1, 3 · **C.** 1, 2 · **D.** 2, 3. C is the tempting one if you miss the "and unseen" in (1).
 
 > [!example] Lab — training skip-gram yourself, and why data size matters
 > `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §1–2. Gensim's `Word2Vec(..., vector_size=50, window=3, sg=1)` on the Brown corpus (~1M tokens of 1960s American English, ~530k after stopword removal). `sg=1` is skip-gram, `sg=0` CBOW; the lab picks skip-gram because it "works better on small corpora" (stated, not demonstrated in the lab).
@@ -371,13 +377,13 @@ _LSA as matrix factorization: the (docs × words) TF-IDF matrix is approximated 
 - Using $A$ (the low-dimensional doc representation) instead of the raw TF-IDF matrix also sidesteps the **curse of dimensionality** that plagues clustering/classification directly on sparse, high-dimensional TF-IDF rows (too many outliers, distances become meaningless in very high dimensions).
 
 > [!example] Lab MCQ — what LSA topics are *not*
-> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2, Q2: which statement about LSA topic detection is **false**?
-> - ✅ It represents documents and words in a latent "topic space" (rows of $A$, columns of $B$).
-> - ✅ Topics are interpretable in "word space": read off the words with the largest weights in each row of $B$.
-> - ✅ The topic vectors in word space are **linearly independent**: they're rows of $V^T$, which are orthonormal.
-> - ❌ **"A document's topic representation is a probability distribution over topics."** False. SVD entries can be **negative** and don't sum to 1; a row of $A$ is a set of real-valued coordinates, not proportions.
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2, Q2: *What statement is false about topic detection using LSA?* (✅ = true statement, ❌ = the false one, which is the answer.)
+> - ✅ **a)** It finds the representation of documents and words in the latent "topic space". Rows of $A$, columns of $B$.
+> - ✅ **b)** It produces topics interpretable in "word space". Read off the words with the largest weights in each row of $B$.
+> - ❌ **c)** A document's topic representation is a probability distribution over topics. **Answer.** SVD entries can be **negative** and don't sum to 1; a row of $A$ is a set of real-valued coordinates, not proportions.
+> - ✅ **d)** The vectors representing topics in "word space" are linearly independent. They're rows of $V^T$, which are orthonormal.
 >
-> ⚠️ So the "80% sports, 15% politics" phrasing in the intuition above is a **loose** way of speaking, not what LSA outputs. Topic *proportions* are what probabilistic topic models such as LDA produce; LSA only gives coordinates. (Same lab, Q3, on the §1 recap: when a TF-IDF matrix has **more features than documents**, SVD, regularisation and feature selection all help, but **min-max scaling doesn't**: rescaling a column doesn't remove it.)
+> ⚠️ So the "80% sports, 15% politics" phrasing in the intuition above is a **loose** way of speaking, not what LSA outputs. Topic *proportions* are what probabilistic topic models such as LDA produce; LSA only gives coordinates. (Same lab, Q3, is in [[2026-08-25 - Introduction to NLP#Postprocessing the BoW matrix: TF-IDF]]: when a TF-IDF matrix has **more features than documents**, SVD, regularisation and feature selection all help, but **min-max scaling doesn't**.)
 
 > [!note] Curse of dimensionality, in plain terms
 > As the number of dimensions grows, distance-based metrics (Euclidean, cosine, ...) become progressively less informative: points tend to become **roughly equidistant** from one another, so "near" and "far" stop meaningfully separating similar items from dissimilar ones.
@@ -400,7 +406,13 @@ $$ M[c, w] = \text{PMI}(c, w) = \log \frac{\Pr(c, w)}{\Pr(c),\Pr(w)} $$
 — intuitively, "how much more likely are context $c$ and word $w$ to co-occur than if they were statistically independent?"
 
 > [!example] Lab MCQ — PMI by hand
-> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2, Q5. Co-occurrence counts (total $N = 20$):
+> `ta_sessions/Exercises/01 - Intro to Tools/2. Handling Text - Part 1.ipynb`, Part 2, Q5: *Given the following word (W) / context (C) co-occurrence frequencies, which statement is true regarding the pointwise mutual information (PMI)?*
+> - **a)** PMI(W1, C2) > PMI(W2, C2) > PMI(W3, C3)
+> - **b)** PMI(W2, C2) > PMI(W1, C2) > PMI(W3, C3)
+> - **c)** PMI(W3, C3) > PMI(W1, C2) > PMI(W2, C2)
+> - **d)** PMI(W3, C3) > PMI(W2, C2) > PMI(W1, C2) ✅
+>
+> Co-occurrence counts (the lab gives the 3×3 table; sums and total $N = 20$ added):
 >
 > | | W1 | W2 | W3 | row sum |
 > |---|---|---|---|---|
@@ -425,7 +437,7 @@ _Same factorization idea, applied to a (contexts × words) PMI matrix instead of
 > `ta_sessions/Exercises/03 - Language Modeling/0. Word Embeddings.ipynb`, §2. GloVe, "not covered in this lecture" (§5), is the pre-trained model the labs actually use: `glove-wiki-gigaword-100`, 100-d vectors trained on 6B tokens of Wikipedia + Gigaword (the Handling Text lab uses spaCy's 300-d GloVe on Common Crawl). Per the lab, GloVe **factorises global co-occurrence counts** directly, i.e. it takes the explicit matrix-factorisation route of this section, where word2vec gets there implicitly through a prediction task.
 >
 > Two lab observations that belong here:
-> - **Dimensions carry no individual meaning** (Handling Text lab, MCQ Q4: *"each dimension of a word2vec embedding has a clear interpretation"* is the **false** statement). Meaning lives in *directions and distances*, which is why analogies work (§2), not in single coordinates. Contrast LSA, where each dimension is a topic you can at least try to read off from its top-weighted words.
+> - **Dimensions carry no individual meaning.** Handling Text lab, Part 2, Q4: *Which of the following is false about word vectors?* (a) Word2vec is used to achieve a lower dimensional representation than bag of words; (b) Semantically similar words typically have similar word2vec vectors; **(c) Each dimension in the word2vec embedding has a clear interpretation** ← the false one, the answer; (d) Word2Vec can be used for the computation of sentence vectors (e.g. by pooling, §3). Meaning lives in *directions and distances*, which is why analogies work (§2), not in single coordinates. Contrast LSA, where each dimension is a topic you can at least try to read off from its top-weighted words.
 > - **The training corpus freezes one sense per word**: GloVe's odd-one-out on *python, java, rust, banana* answers **rust**, because in 2014 Wikipedia/news text *rust* mostly means corrosion. A static embedding can't do better than its corpus's dominant sense (§9).
 
 ---

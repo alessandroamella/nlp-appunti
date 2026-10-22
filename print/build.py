@@ -91,7 +91,7 @@ def render(markdown, title, pdf):
         src, html = Path(tmp) / "in.md", Path(tmp) / "out.html"
         src.write_text(markdown)
         subprocess.run(
-            ["pandoc", str(src), "-f", "markdown+tex_math_dollars-implicit_figures",
+            ["pandoc", str(src), "-f", "markdown+tex_math_dollars+lists_without_preceding_blankline-implicit_figures",
              "-t", "html5", "--standalone", "--mathml", "--embed-resources",
              "--css", str(CSS), "--metadata", f"pagetitle={title}", "-o", str(html)],
             check=True)

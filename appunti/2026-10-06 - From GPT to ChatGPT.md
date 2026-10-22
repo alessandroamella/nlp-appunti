@@ -275,7 +275,11 @@ $$\mathcal L_{PPO} = -\min\!\left( R(\hat Y)\sum_{t=1}^{T} \log \frac{P_{curr}(\
 
 > Standard PPO (my addition, for context): the clip is on the probability **ratio** $r_t = P_{curr}/P_{base}$ itself, $\ \min\big(r_t A,\ \text{clip}(r_t, 1-\epsilon, 1+\epsilon)\,A\big)$, with $A$ an advantage (reward minus baseline). The slide's version is a simplified rendering of the same idea: **cap the update once the new policy has moved more than $\epsilon$ from the old one.** For the exam, the idea is what matters.
 
-> ⚠️ **Exam (2025 Q3 = mock exam):** *Why does RLHF use PPO instead of REINFORCE?* → **PPO stabilises updates by limiting policy drift.** The distractors: it does **not** avoid catastrophic forgetting (that's about old tasks), does **not** manage exploration (that's reward design/sampling), and does **not** reduce the *reward* variance (PPO doesn't touch the reward model, only the policy).
+> ⚠️ **Exam (2025 Q3 = mock exam, rated medium):** *Why does RLHF use PPO (Proximal Policy Optimization) instead of standard policy gradient methods like REINFORCE?*
+> - ❌ **A.** PPO avoids catastrophic forgetting. Catastrophic forgetting is about losing old tasks when learning new ones; PPO's goal is stable updates, not memory retention.
+> - ❌ **B.** PPO allows the model to explore unseen tokens safely. PPO doesn't manage exploration; that comes from reward design, entropy bonuses or sampling.
+> - ❌ **C.** PPO reduces the reward variance. PPO doesn't touch the reward model, only the policy.
+> - ✅ **D.** PPO stabilizes updates by limiting policy drift.
 
 ### 7.7 Outcome
 

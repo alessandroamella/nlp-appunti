@@ -169,7 +169,11 @@ The model stays the same. **Only the way you format the input changes:**
 
 This was "pushed under the carpet" in the RNN lectures: in practice, those RNNs weren't learning their embeddings from scratch. They used the static embeddings from week 2. With GPT, *everything* is pretrained and *everything* is updated during fine-tuning, embeddings included.
 
-> ⚠️ Lab MCQ 8.3 asks exactly this. The PLM paradigm shift = **fine-tuning full pretrained models**. "Pretrained embeddings + RNN" is the *old* paradigm.
+> ⚠️ Lab MCQ 8.3 (`06 - Pretraining/0. Mini GPT.ipynb`) asks exactly this: *Which of the following was the paradigm shift introduced by pre-trained language models (PLMs) like GPT and BERT?*
+> - ❌ **A.** Training from scratch on small datasets. That's what each task-specific model did *before*, on top of pretrained embeddings.
+> - ❌ **B.** Using pretrained embeddings (Word2Vec, GloVe) with RNNs. That's the *old* paradigm.
+> - ✅ **C.** Fine-tuning full pretrained models for downstream tasks.
+> - ❌ **D.** Training only with unsupervised objectives. Pretraining is self-supervised, but fine-tuning uses labelled data.
 
 ### GPT-2 and scale
 
@@ -469,6 +473,12 @@ target    <X> for inviting <Y> last <Z>
 | **BART / T5** | full **encoder–decoder** | **denoising** (infilling, permutation…) / **span corruption** | **extendable to all task types** | ✓ |
 
 **Contextual representations** let us model words and sequences conditioned on their context. These models laid the foundations for today's LLMs.
+
+> ⚠️ **Exam (2025 Q10 = mock exam, rated medium):** *Which of the following statements about model applicability is correct?* The table's last column answers it.
+> - ❌ **A.** T5 can only perform generation tasks without any modification and cannot perform text classification tasks. T5 frames **every** task as text-to-text, so it classifies by writing the label.
+> - ✅ **B.** BERT cannot perform text generation tasks without any modification. It's an encoder: no autoregressive decoder.
+> - ❌ **C.** A fixed-window language model using only average pooling can perform generation tasks. Marked false; the official reasoning is debatable, see [[2026-09-08 - Language Modeling (Part 1)#14. Fixed-context neural language models]].
+> - ❌ **D.** ELMo can perform both generation and classification tasks without any modification. ELMo only provides contextual embeddings, fed to another model.
 
 Chronology: **ELMo** (early 2018) → **GPT** (Jun 2018) → **BERT** (Oct 2018) → **GPT-2** (Feb 2019) → **BART**, **T5** (Oct 2019) → **GPT-3** (2020). (In class the lecturer once said GPT and GPT-2 "had already been done" when ELMo came out. The order above is the right one: ELMo predates both.)
 
