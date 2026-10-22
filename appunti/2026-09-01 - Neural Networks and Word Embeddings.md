@@ -124,18 +124,20 @@ For sentiment analysis on _"I really enjoyed the movie we watched on Saturday!"_
 
 ### Neural-network building blocks (lab only — not in the deck)
 
-Despite its file name, the "Neural network primer" deck is almost entirely about embeddings. The NN basics themselves are only in the lab, `ta_sessions/Exercises/02 - NN basics/0. MLP and Training.ipynb`, which builds each piece by hand and checks it against `torch.nn`:
+We're trying to build a function from input to answer (e.g. tweet → $P(\text{positive})$) that we don't write by hand, for NLP tasks (classify sentiment, predict the next word, …) where nobody could spell out the rules explicitly. We give it a generic shape full of adjustable weights, then **train** it: show labelled examples, measure how wrong it is (the **loss**), nudge the weights to be less wrong, repeat. A neural network is that generic shape, and the pieces below are what it's built from. It's the same mechanism that learns the embeddings in CBOW/skip-gram (§6–7), where $E$ and $\mathbf U$ are just more weights.
 
-| piece | definition | what to remember |
-|---|---|---|
-| **ReLU** | $\max(0, x)$ | derivative 0 for $x<0$, 1 for $x>0$; undefined at exactly 0 (PyTorch picks 0, harmless in practice) |
-| **Sigmoid** | $S(x) = \frac{1}{1+e^{-x}} \in (0,1)$ | $S'(x) = S(x)(1-S(x)) \le 0.25$, and → 0 in both tails: the root of the **vanishing gradient** ([[2026-09-15 - Language Modeling (Part 2)]] §6) |
-| **Perceptron** | $y = \phi(\mathbf w\cdot\mathbf x + b)$ | a single one can only draw a **linear decision boundary** |
-| **Linear layer** | $\mathbf y = W\mathbf x + \mathbf b$, $W \in \mathbb R^{m\times d}$ | $m$ perceptrons at once, one per **row**; shape is **(out × in)**, as in `nn.Linear`. Purely affine, no activation |
-| **MLP** | Linear → nonlinearity → Linear → … | the **nonlinearity is what makes depth useful**: without it, stacked linear layers collapse into a single linear map |
-| **MSE** | $\frac1N\sum_i(\hat y_i - y_i)^2$ | $\partial\mathcal L/\partial\hat y_i = \frac2N(\hat y_i - y_i)$ |
+Source: the lab `ta_sessions/Exercises/02 - NN basics/0. MLP and Training.ipynb`, which builds each piece by hand and checks it against `torch.nn`. Notation: plain $x$ is **one number** (what enters an activation, applied element-wise to a vector), bold $\mathbf x$ is the **input vector** of a neuron/layer (e.g. the 100-d averaged tweet embedding in the lab above).
 
-One training iteration is always, in this order: **forward pass → compute loss → backward pass (`loss.backward()`, after `optimizer.zero_grad()`) → update weights (`optimizer.step()`)**. At evaluation: `model.eval()` and `torch.no_grad()`, since no gradients are needed. The lab trains a 784 → 512 → 10 MLP on FashionMNIST with cross-entropy and SGD; the network outputs **logits**, and `nn.CrossEntropyLoss` applies the softmax (§6) internally.
+| piece | what it's for | definition | what to remember |
+|---|---|---|---|
+| **ReLU** | activation: bends a layer's output so the network isn't purely linear; zeroes out negatives | $\max(0, x)$ | derivative 0 for $x<0$, 1 for $x>0$; undefined at exactly 0 (PyTorch picks 0, harmless in practice) |
+| **Sigmoid** | activation that squashes a number into $(0,1)$, read as a probability (last step of a binary classifier) | $S(x) = \frac{1}{1+e^{-x}} \in (0,1)$ | $S'(x) = S(x)(1-S(x)) \le 0.25$, and → 0 in both tails: the root of the **vanishing gradient** ([[2026-09-15 - Language Modeling (Part 2)]] §6) |
+| **Perceptron** | a single neuron: weighted sum of the inputs + bias, then an activation | $y = \phi(\mathbf w\cdot\mathbf x + b)$ | a single one can only draw a **linear decision boundary** |
+| **Linear layer** | many neurons side by side on the same input: $d$-dim vector → $m$-dim vector. **Its weights are what training learns** | $\mathbf y = W\mathbf x + \mathbf b$, $W \in \mathbb R^{m\times d}$ | $m$ perceptrons at once, one per **row**; shape is **(out × in)**, as in `nn.Linear`. Purely affine, no activation |
+| **MLP** (Multi-Layer Perceptron) | the whole network: layers stacked with activations in between | Linear → nonlinearity → Linear → … | the **nonlinearity is what makes depth useful**: without it, stacked linear layers collapse into a single linear map |
+| **MSE** (Mean Squared Error) | a loss: one number saying how wrong the predictions are (numeric targets); training minimises it | $\frac1N\sum_i(\hat y_i - y_i)^2$ | $\partial\mathcal L/\partial\hat y_i = \frac2N(\hat y_i - y_i)$ |
+
+One training iteration is always, in this order: **forward pass** (run the input through the network to get a prediction) → **compute loss** → **backward pass** (backprop: compute how much each weight contributed to the error, i.e. the gradient of the loss w.r.t. each weight; `loss.backward()`, after `optimizer.zero_grad()`) → **update weights** (`optimizer.step()`). At evaluation: `model.eval()` and `torch.no_grad()`, since no gradients are needed. The lab trains a 784 → 512 → 10 MLP on FashionMNIST with cross-entropy and SGD; the network outputs **logits**, and `nn.CrossEntropyLoss` applies the softmax (primer in [[#Beyond single-label classification]]) internally.
 
 ### Beyond single-label classification
 
@@ -147,10 +149,43 @@ One training iteration is always, in this order: **forward pass → compute loss
         - Step 1: feed $X = {x_0, \ldots, x_T}$ → model → $h_T$ → **multi-class logistic regression** → $P(y) = \text{softmax}(W_0 h_T)$ → predicts `"It"` = $x_{T+1}$.
         - Step 2: append `"It"` to the input, recompute $h_{T+1} = \sum_{t=0}^{T+1} x_t$ → predict `"was"` = $x_{T+2}$.
         - Repeat, feeding each newly generated word back in as input, one word at a time — this word-by-word feedback loop is literally how many generative language models operate.
-    - **Key change needed**: this is no longer _binary_ classification (+/−) — it's **multi-class classification over the entire vocabulary** $V$. If your vocabulary has a million words, you effectively have a million "classes," one per possible next word. This requires **softmax** instead of a simple sigmoid, since softmax converts a raw vector of scores into a full probability distribution over many classes (see §5 below), rather than a single probability of a binary outcome.
+    - **Key change needed**: this is no longer _binary_ classification (+/−) — it's **multi-class classification over the entire vocabulary** $V$. If your vocabulary has a million words, you effectively have a million "classes," one per possible next word. This requires **softmax** instead of a simple sigmoid, since softmax converts a raw vector of scores into a full probability distribution over many classes (primer just below), rather than a single probability of a binary outcome.
     - **Shapes, as the lecturer put it**: with a million-word vocabulary and a 1,000-dimensional hidden vector, the weight matrix takes the 1,000-dimensional vector and turns it into a million-entry vector, one score per word. The softmax turns that into the distribution, the most likely word (*it*) is fed back in, the next prediction is *was*, and so on.
 
     > «If you have a million words in your vocabulary, you have a million classes. […] To do that, you cannot rely just on a sigmoid activation function. You need a softmax, which actually converts a vector into a probability distribution.» — [1:42:12](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e32acb17-9550-4cdc-adea-b4b80077ea46&start=6132)
+
+> [!note] Quick primer: what softmax actually does
+> Softmax's job is to turn an arbitrary vector of real numbers (**scores**, aka **logits** — can be negative, can be huge, don't sum to anything meaningful) into a **valid probability distribution** — all entries $\geq 0$ and summing to 1.
+>
+> $$ \text{softmax}(\mathbf{a})_i = \frac{e^{a_i}}{\sum_{j=1}^{|\mathbf{a}|} e^{a_j}} $$
+>
+> ($\mathbf{a}$ is a vector, $a_i$ is its $i$-th dimension.)
+>
+> Mechanically, in two steps:
+>
+> 1. **Exponentiate** every entry ($e^{a_i}$) — this makes everything positive, and it *exaggerates* differences: a slightly bigger score becomes a *much* bigger number after exponentiation.
+> 2. **Normalize** by dividing each exponentiated entry by the sum of all of them — this forces the result to sum to 1, i.e. a genuine distribution.
+>
+> **Tiny worked example** — 3 classes ("cat", "dog", "car") with raw scores $\mathbf{a} = (2.0,\ 1.0,\ 0.1)$:
+>
+> | class | score $a_i$ | $e^{a_i}$ | softmax probability |
+> |---|---|---|---|
+> | cat | 2.0 | 7.3891 | 7.3891 / 11.2125 ≈ **0.66** |
+> | dog | 1.0 | 2.7183 | 2.7183 / 11.2125 ≈ **0.24** |
+> | car | 0.1 | 1.1052 | 1.1052 / 11.2125 ≈ **0.10** |
+>
+> (sum of $e^{a_i}$ = 7.3891 + 2.7183 + 1.1052 = **11.2125**, used as the denominator for every entry)
+>
+> Result: $(0.66,\ 0.24,\ 0.10)$ — non-negative, sums to 1, and it preserves the *ranking* of the original scores (cat > dog > car) while amplifying the gap between them (a score gap of only 0.9 becomes a probability gap of 0.42).
+>
+> ![[appunti/assets/2026-09-01/softmax-quick-example.png]]
+> _Left: arbitrary raw scores. Right: after softmax — same ranking, but now a proper probability distribution._
+>
+> **Why not just normalize the raw scores directly (divide by their sum)?** Two reasons: raw scores can be negative (breaks "divide by sum = probability" if the sum is small/negative), and exponentiation's amplification effect is actually desirable — it pushes the model toward a confident, peaked distribution around the highest-scoring class rather than a flat one, which is what you want when training a classifier with gradient descent.
+>
+> In text generation (above) and in CBOW/skip-gram (§6–7), the "classes" are every word in the vocabulary $V$ — softmax converts the $V$-dimensional score vector ($W_0 h_T$ here, $\mathbf{U}h_t$ in CBOW) into $P(\text{word} \mid \text{context})$ for every possible word at once.
+>
+> Softmax will reappear constantly throughout the course whenever multi-class prediction is needed — it's worth understanding cold.
 
 ---
 
@@ -200,40 +235,7 @@ You instantly guess "movie" or "show" — not because anyone told you the defini
 
 **Why does this give you *meaning* instead of just co-occurrence counts?** Two words never even have to appear in the exact same sentence to end up with similar vectors — they just need to show up in *similar kinds of surrounding words* across the corpus. That's the key upgrade over sparse BoW vectors (§2): meaning comes from *distributional pattern*, not from literal shared words.
 
-**Mechanically, in plain terms** (the same projection + softmax as the text-generation example in §3): you take the embeddings of the context words (e.g. *enjoyed, the, we, watched*), squash them together into one vector (by summing them), then ask "given this squashed context, which word from my entire vocabulary is most likely to be the missing one?" That last question — a probability over *every* word in the vocabulary — is exactly what softmax computes (see the primer box just below). The formal setup and a fully worked numeric example follow.
-
-> [!note] Quick primer: what softmax actually does
-> Before CBOW: softmax's job is to turn an arbitrary vector of real numbers (**scores**, aka **logits** — can be negative, can be huge, don't sum to anything meaningful) into a **valid probability distribution** — all entries $\geq 0$ and summing to 1.
->
-> $$ \text{softmax}(\mathbf{a})_i = \frac{e^{a_i}}{\sum_{j=1}^{|\mathbf{a}|} e^{a_j}} $$
->
-> ($\mathbf{a}$ is a vector, $a_i$ is its $i$-th dimension.)
->
-> Mechanically, in two steps:
->
-> 1. **Exponentiate** every entry ($e^{a_i}$) — this makes everything positive, and it *exaggerates* differences: a slightly bigger score becomes a *much* bigger number after exponentiation.
-> 2. **Normalize** by dividing each exponentiated entry by the sum of all of them — this forces the result to sum to 1, i.e. a genuine distribution.
->
-> **Tiny worked example** — 3 classes ("cat", "dog", "car") with raw scores $\mathbf{a} = (2.0,\ 1.0,\ 0.1)$:
->
-> | class | score $a_i$ | $e^{a_i}$ | softmax probability |
-> |---|---|---|---|
-> | cat | 2.0 | 7.3891 | 7.3891 / 11.2125 ≈ **0.66** |
-> | dog | 1.0 | 2.7183 | 2.7183 / 11.2125 ≈ **0.24** |
-> | car | 0.1 | 1.1052 | 1.1052 / 11.2125 ≈ **0.10** |
->
-> (sum of $e^{a_i}$ = 7.3891 + 2.7183 + 1.1052 = **11.2125**, used as the denominator for every entry)
->
-> Result: $(0.66,\ 0.24,\ 0.10)$ — non-negative, sums to 1, and it preserves the *ranking* of the original scores (cat > dog > car) while amplifying the gap between them (a score gap of only 0.9 becomes a probability gap of 0.42).
->
-> ![[appunti/assets/2026-09-01/softmax-quick-example.png]]
-> _Left: arbitrary raw scores. Right: after softmax — same ranking, but now a proper probability distribution._
->
-> **Why not just normalize the raw scores directly (divide by their sum)?** Two reasons: raw scores can be negative (breaks "divide by sum = probability" if the sum is small/negative), and exponentiation's amplification effect is actually desirable — it pushes the model toward a confident, peaked distribution around the highest-scoring class rather than a flat one, which is what you want when training a classifier with gradient descent.
->
-> In CBOW/skip-gram (and text generation, §3), the "classes" are every word in the vocabulary $V$ — softmax converts the $V$-dimensional score vector $\mathbf{U}h_t$ into $P(\text{word} \mid \text{context})$ for every possible word at once.
->
-> Softmax will reappear constantly throughout the course whenever multi-class prediction is needed — it's worth understanding cold.
+**Mechanically, in plain terms** (the same projection + softmax as the text-generation example in §3): you take the embeddings of the context words (e.g. *enjoyed, the, we, watched*), squash them together into one vector (by summing them), then ask "given this squashed context, which word from my entire vocabulary is most likely to be the missing one?" That last question — a probability over *every* word in the vocabulary — is exactly what softmax computes (primer in [[#Beyond single-label classification]]). The formal setup and a fully worked numeric example follow.
 
 **Setup**: predict the missing word from a window of surrounding words.
 
@@ -246,7 +248,7 @@ _CBOW architecture: context word embeddings are summed, passed through a project
 
 **Formally**, with window size $N=2$ on each side:
 
-$$ \max\ P(x_t \mid {x_s}_{s=t-2}^{s=t+2}) = \text{softmax}!\left(\mathbf{U} \sum_{\substack{s=t-2 \\ s \neq t}}^{t+2} \mathbf{x}_s\right) $$
+$$ \max\ P(x_t \mid {x_s}_{s=t-2}^{s=t+2}) = \text{softmax}\!\left(\mathbf{U} \sum_{\substack{s=t-2 \\ s \neq t}}^{t+2} \mathbf{x}_s\right) $$
 
 where:
 
