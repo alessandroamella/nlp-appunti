@@ -18,16 +18,23 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
 
       # only the images the notes embed, not the slide/lab/exam PDFs
       - run: git lfs pull --include="appunti/assets/**"
 
+      # pandoc straight from its GitHub release: apt mirrors occasionally hang
       - name: Install pandoc and fonts
+        timeout-minutes: 4
         run: |
+          curl -fsSL -o pandoc.deb https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-1-amd64.deb
+          sudo dpkg -i pandoc.deb
+          echo 'set man-db/auto-update false' | sudo debconf-communicate >/dev/null
+          sudo rm -f /var/lib/man-db/auto-update
           sudo apt-get update -q
-          sudo apt-get install -y -q pandoc fonts-noto-core fonts-inter
+          sudo apt-get install -y -q --no-install-recommends fonts-noto-core fonts-inter
 
       - run: python3 print/build.py
         env:

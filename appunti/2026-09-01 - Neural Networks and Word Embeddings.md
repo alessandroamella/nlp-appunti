@@ -78,32 +78,35 @@ _Male–Female, verb-tense, and country–capital relationships all show up as *
 
 For sentiment analysis on _"I really enjoyed the movie we watched on Saturday!"_:
 
-1. Convert the sentence $S$ into a sequence of embeddings $X = {x_0, x_1, \ldots, x_T}$, where each $x_t$ is looked up from a **shared embedding dictionary** $E$ — every unique word in the vocabulary has exactly one row/entry in $E$, no matter how many times or where it appears in a sentence.
+1. Convert the sentence $S$ into a sequence of embeddings $X = {x_0, x_1, \ldots, x_T}$, where each $x_t$ is looked up from a **shared embedding dictionary** $E$ — every unique word in the vocabulary has exactly one row/entry in $E$, no matter how many times or where it appears in a sentence (see *Counting unique embeddings* below).
 2. Feed $X$ into a **model** that composes/transforms the embeddings into a useful representation. Candidate model families (covered in coming weeks): RNNs/LSTM/GRU (Week 3), self-attention/Transformers (Week 4) — or, as a simple baseline, **sum-pool / avg-pool / max-pool**.
     - **Sum-pool example**: $h_t = \sum_{t=0}^{T} x_t$ — literally just add up all the word embeddings in the sentence into one fixed-length vector.
-
-**Worked numeric example — sum/avg/max-pool side by side**: take the sentence _"I enjoyed the movie"_ ($T=4$ words) with toy embeddings of dimension $d=3$ (in practice $d$ is $O(10^3)$, kept tiny here so the arithmetic is visible):
-
-| word | embedding $x_t$ |
-|---|---|
-| I | (0.1, 0.0, 0.2) |
-| enjoyed | (0.9, 0.8, 0.1) |
-| the | (0.0, 0.1, 0.0) |
-| movie | (0.7, 0.6, 0.3) |
-
-- **Sum-pool** — add component-wise:
-    $$h_T = (0.1+0.9+0.0+0.7,\ 0.0+0.8+0.1+0.6,\ 0.2+0.1+0.0+0.3) = (1.7,\ 1.5,\ 0.6)$$
-- **Avg-pool** — same as sum-pool, then divide by $T=4$ (normalizes away sentence length, so a 4-word and a 40-word sentence with similar content land in a similar range):
-    $$h_T = (1.7/4,\ 1.5/4,\ 0.6/4) = (0.425,\ 0.375,\ 0.15)$$
-- **Max-pool** — take the element-wise maximum across all word vectors (each output dimension independently picks whichever word "activates" it most):
-    $$h_T = (\max(0.1,0.9,0.0,0.7),\ \max(0.0,0.8,0.1,0.6),\ \max(0.2,0.1,0.0,0.3)) = (0.9,\ 0.8,\ 0.3)$$
-
-All three always produce a **fixed-length vector** (dimension 3 here, regardless of $T$) — this is what makes them usable as input to a fixed-size classifier $W_0$. Notice all three variants completely discard word order: shuffling the sentence to "movie enjoyed the I" gives the exact same $h_T$ in every case — a key weakness that motivates RNNs/self-attention (Weeks 3–4), which preserve positional/sequential information.
-3. Pass the pooled representation $h_T$ into a **classifier**, e.g. logistic regression: $P(y) = \sigma(W_0 h_T)$.
-    - **Logistic regression** isn't introduced anywhere in the course; the lecturer treats it as known from a basic ML class. It is the simplest binary classifier there is, and here it does two things. First, $W_0 h_T$ multiplies the vector by a weight matrix. For a binary task, $W_0$ has a single row, so the result is **one real number** (a score). Second, the **sigmoid** $\sigma(z) = \frac{1}{1+e^{-z}}$ squashes that number into $(0, 1)$, which is read as $P(+)$. A large positive score means "almost surely positive", a large negative score means "almost surely negative", and a score of 0 gives 0.5. Despite the name, it's a classifier, not a regression: "regression" refers to the linear score inside. (see [1:31:55](https://au.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e32acb17-9550-4cdc-adea-b4b80077ea46&start=5515), where he says logistic regression "is just applying the sigmoid activation function")
-    - Seen as a neural network, this is **one linear layer plus a sigmoid**, the smallest network possible. The building blocks are in [[#Neural-network building blocks (lab only — not in the deck)|the section below]]. With more than two classes, the sigmoid becomes a **softmax** over a $W_0$ with one row per class ("multi-class logistic regression", which comes up again below).
+    - All three poolings always produce a **fixed-length vector** whatever the sentence length, which is what makes them usable as input to a fixed-size classifier $W_0$. But they completely discard word order: "movie enjoyed the I" gives the exact same $h_T$ as "I enjoyed the movie", a key weakness that motivates RNNs/self-attention (Weeks 3–4). (Numeric example below.)
+3. Pass the pooled representation $h_T$ into a **classifier**, e.g. logistic regression: $P(y) = \sigma(W_0 h_T)$ (the standard binary classifier: $W_0 h_T$ gives one score, the sigmoid $\sigma$ squashes it into $(0,1)$ to be read as $P(+)$; the multi-class version, with softmax, comes up in [[#Beyond single-label classification]]).
 4. **Learnable parameters**: the embedding table $E$ and the classifier weight matrix $W_0$ — both trained jointly via **backpropagation**, by computing gradients of the loss with respect to the initial embeddings (and all other parameters) so the embeddings end up encoding whatever helps solve the task.
-    - **What that means in practice**: you have labeled training data (e.g., movie reviews labeled positive/negative). You initialize $E$ and $W_0$ randomly and run the forward pass (look up → pool → logistic regression) to get a predicted probability. Then you compute a **loss** measuring how far that prediction is from the true label (e.g., predicted 0.1 but the true label is 1). Finally, backprop computes how much each parameter contributed to that error, and each one is nudged so that the next prediction is a bit closer to the truth. Repeated over many examples, this is how the embeddings and the classifier are learned together. Backprop itself is covered properly in [[2026-09-15 - Language Modeling (Part 2)]] §2, and the NN basics in the lab section below.
+    - **In plain terms**: start from random $E$ and $W_0$, run the forward pass on a labeled review to get a predicted probability, measure with a **loss** how far it is from the true label (e.g. predicted 0.1, true label 1), then nudge every parameter so the next prediction is closer. Repeated over many examples, this learns the embeddings and the classifier together. Backprop itself is covered in [[2026-09-15 - Language Modeling (Part 2)]] §2.
+
+> [!example]- Worked example — sum/avg/max-pool side by side
+> Take the sentence _"I enjoyed the movie"_ ($T=4$ words) with toy embeddings of dimension $d=3$ (in practice $d$ is $O(10^3)$, kept tiny here so the arithmetic is visible):
+>
+> | word | embedding $x_t$ |
+> |---|---|
+> | I | (0.1, 0.0, 0.2) |
+> | enjoyed | (0.9, 0.8, 0.1) |
+> | the | (0.0, 0.1, 0.0) |
+> | movie | (0.7, 0.6, 0.3) |
+>
+> - **Sum-pool** — add component-wise:
+>   $$h_T = (0.1+0.9+0.0+0.7,\ 0.0+0.8+0.1+0.6,\ 0.2+0.1+0.0+0.3) = (1.7,\ 1.5,\ 0.6)$$
+> - **Avg-pool** — same as sum-pool, then divide by $T=4$ (normalizes away sentence length, so a 4-word and a 40-word sentence with similar content land in a similar range):
+>   $$h_T = (1.7/4,\ 1.5/4,\ 0.6/4) = (0.425,\ 0.375,\ 0.15)$$
+> - **Max-pool** — take the element-wise maximum across all word vectors (each output dimension independently picks whichever word "activates" it most):
+>   $$h_T = (\max(0.1,0.9,0.0,0.7),\ \max(0.0,0.8,0.1,0.6),\ \max(0.2,0.1,0.0,0.3)) = (0.9,\ 0.8,\ 0.3)$$
+>
+> All three give a vector of dimension 3 regardless of $T$, and shuffling the words changes none of them.
+
+> [!example]- Worked example — counting unique embeddings
+> For the sentence _"I enjoyed the movie I watched on Saturday!"_, there are only **7 unique embeddings** needed in $X$, because the word "I" appears twice and shares the same row in the embedding table $E$ both times (not 9, which is the raw token count).
 
 > ⚠️ **Exam (2025 paper / mock exam, Q1):** the *primary purpose* of backprop is to compute **gradients of the loss with respect to the network's parameters**. Not w.r.t. the input data (that's rare, e.g. adversarial attacks), not to adjust the learning rate (that's the optimizer), and not the vague "propagate errors backward to refine predictions".
 
@@ -118,8 +121,6 @@ All three always produce a **fixed-length vector** (dimension 3 here, regardless
 > | *the movie was bad, not good at all* | 0.368 |
 >
 > Same eight words, different order, so **the same average, so necessarily the same score**. The first is misclassified, and no amount of training can fix it: the information is gone before the classifier sees the input. This is the word-order weakness stated above, made concrete. Fixes, in increasing power: **n-gram features** (*not bad* ≠ *not good* as bigrams), an **RNN/LSTM** reading left to right ([[2026-09-08 - Language Modeling (Part 1)]], [[2026-09-15 - Language Modeling (Part 2)]]), a **transformer** with self-attention and positions ([[2026-09-22 - Seq2Seq Models and Transformers]]).
-
-**Worked example — counting unique embeddings**: for the sentence _"I enjoyed the movie I watched on Saturday!"_, there are only **7 unique embeddings** needed in $X$, because the word "I" appears twice and shares the same row in the embedding table $E$ both times (not 9, which is the raw token count).
 
 ### Neural-network building blocks (lab only — not in the deck)
 
